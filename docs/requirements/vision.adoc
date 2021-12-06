@@ -6,13 +6,25 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Einführung
-Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des <Projektname-Systems> zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die  Details, wie das <Projektname-System> diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
+Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten der
+Webanwendung zur Verwaltung der Datenbank der Stabsstelle Internationales zu sammeln, 
+zu analysieren und zu definieren. Der Fokus liegt auf den
+Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. 
+Die Details, wie die Webanwendung diese Bedarfe erfüllt, werden in der Use-Case und
+Supplementary Specification beschrieben.
+
 
 === Zweck
-Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
+Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
+
+
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf das <Projektthema-System>, das von <Team> entwickelt wird. Das System wird es <Zielkunde/Auftraggeber> erlauben, <Hauptfunktionen> zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
+Dieses Visions-Dokument bezieht sich auf das System der Webanwendung zur Verwaltung 
+der Datenbank der Stabsstelle Internationales, das von Team I3 entwickelt wird. 
+
+Das System wird es den Mitarbeitern der Stabsstelle Internationales erlauben, innerhalb einer Webanwendung die Hochschulpartnerschaften sowie die Austauschprogramme für Studierende und Hochschullehrer zu verwalten. Außerdem werden für Studierende relevante Informationen zu den Hochschulpartnerschaften aus der Datenbank im Backend auf der Webseite angezeigt.
+
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -21,21 +33,52 @@ Siehe <<#glossary, Glossar>>.
 === Referenzen
 (hier externe Verweise zu anderen Dokumenten, Quellen, Standards etc. einfügen, sofern notwendig)
 
+XX
 
 == Positionierung
 
 === Fachliche Motivation
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
+Die Hochschulpartnerschaften und ihre Nutzung durch Studierende werden von den 
+Mitarbeiter:Innen der Stabsstelle Internationales verwaltet. Zu einer Partnerschaft 
+gehören diverse Angaben zu Hochschule, Institut, Art der Vereinbarung, Kontakte, 
+Mentoren, Studierende usw. Dazu wird momentan von der Stabsstelle Internationales 
+eine Microsoft Access-Datenbank genutzt. Damit gestaltet sich der Mehrbenutzer-
+betrieb als nicht möglich und muss umständlich realisiert werden. 
+Die Handhabung der Access Datenbank ist laut den Mitarbeiter:Innen zunehmend umständlich. Zudem sind bestimmte benötigte Funktionen wie das Löschen veralteter Daten nicht ausreichend verfügbar. Daher wird eine Modernisierung angestrebt.
+
+
 === Problem Statement
 //Stellen Sie zusammenfassend das Problem dar, das mit diesem Projekt gelöst werden soll. Das folgende Format kann dazu verwendet werden:
 
 [cols="1,3"]
 |===
-| Das Problem | [beschreiben Sie das Problem]
-| betrifft | [die Stakeholder, die vom Problem betroffen sind]
-| die Auswirkung davon ist | [welche Auswirkungen hat das Problem?]
-| eine erfolgreiche Lösung wäre | Führen Sie einige wesentliche Vorteile einer erfolgreichen Lösung auf]
+| Das Problem | der unzureichenden Bedienbarkeit und hohen Fehleranfälligkeit des MS Access Datenbanksystems.
+
+Mitarbeiter:Innen können nicht gleichzeitig an der Datenbank zur Verwaltung der Hochschulpartnerschaften arbeiten 
+
+und bestimmte Funktionen wie das Löschen von veralteten Daten nicht nutzen
+
+XXX
+
+| betrifft | Mitarbeiter:Innen der Stabsstelle Internationales
+und die Studierenden, die sich über die Partnerschaft informieren wollen
+
+| die Auswirkung davon ist | - ein umständlicher und zeitaufwendiger Verwaltungsprozess
+-veraltete nicht löschbare Daten machen die Datenbank unübersichtlich
+- erhöhter Arbeitsaufwand für die Mitarbeiter der Stabstelle
+Internationales, 
+-unzureichende Aktualität der Daten 
+- sowie Systemausfälle
+
+| eine erfolgreiche Lösung wäre | - ein neues Online-Datenbankverwaltungssystem für die
+Hochschulpartnerschaften zur Pflege der Daten der Partnerschaften und
+eventuelle Weiterentwicklung
+
+- eine intuitve Webanwendung, die gleichzeitiges Arbeiten ermöglich
+- und ebenso das Verwalten (Anlegen, Ändern, Löschen) von Daten ermöglicht
+
 |===
 
 ////
@@ -56,12 +99,13 @@ Beispiel:
 
 [cols="1,3"]
 |===
-| Für | [Zielkunde / Nutzer]
-| der / die | [Angabe des Bedarfs oder Chance]
-| Das Produkt / die Lösung ist ein | [Produktkategorie]
-| Die / Das | [Aussage zum Hauptvorteil / Alleinstellungsmerkmal]
-| Im Gegensatz zu | [wesentliche Lösungsalternative]
-| Unser Produkt | [Aussage zum Hauptunterschied]
+| Für | Mitarbeiter:Innen der Stabsstelle Internationales und an Austauschprogrammen interessierte Studierende
+| die | die Verwaltung effizienter durchführen möchten bzw. Interesse an
+Auslandsaufenthalten haben
+| Das Produkt ist ein | eine Webanwendung mit Schnittstelle zur MS SQL Datenbank (Online-Datenbankverwaltungssystem)
+| Die | für die Mitarbeiter:Innen die Datenverwaltung ermöglicht und für die Studierenden Informationen zu Partneruniversiäten/Austauschprogrammen darstellt. 
+| Im Gegensatz zu | der aktuell genutzten MS Access Datenbank
+| Unser Produkt | ermöglicht es intuitiv und im Mehrbenutzerbetrieb die Datenbank zu verwalten und Informationen daraus abzufragen.
 |===
 
 ////
@@ -88,12 +132,39 @@ Beispiel Produkt:
 | [Benennung des Stakeholder-Typs.]
 | [Kurze Beschreibung des Stakeholders.]
 | [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
+| Mitarbeiter:innen Stabsstelle
+| Sind bei Stabstelle angestellt. Als Nutzer des Systens verwalten sie die Datenbank 
+| - Anlegen, Verändern und Löschen von Universitäten und deren Verträge. 
+
+- Modifizieren Bestandsdaten 
+
+- Bearbeiten Daten von Austauschstudenten 
+
+- Erstellen Statistiken und Berichte zu Austauschprogrammen und Hochschulpartnerschaften
+
+| Austauschstudenten Incoming
+| Sind Studierende von Partnerhochschulen und interessiert an einem Austauschprogramm an der HTW
+| Informieren sich über Austauschprogramme an der HTW
+
+| Austauschstudenten Outgoing
+| Sind Studierende der HTW und interessiert an einem Austauschprogramm an einer Partneruniversität der HTW
+| Informieren sich über Austauschprogramme mit Partnerhochschulen
+
+| [Benennung des Stakeholder-Typs.]
+| [Kurze Beschreibung des Stakeholders.]
+|  XX
+
+| [Benennung des Stakeholder-Typs.]
+| [Kurze Beschreibung des Stakeholders.]
+|  XX
+
 |===
 
 === Benutzerumgebung
-Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
+//Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
-//Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
+////
+Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
 . Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
 . Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
 . Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
@@ -101,6 +172,23 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 . Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
 
 Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
+////
+
+
+==== Mitarbeiter:Innen Stabsstelle Internationales
+• Anzahl der Mitarbeiter:Innen beträgt XX
+• Mitarbeiter:In ist an einem Datenbankverwaltungsprozess interessiert, der intuitiv und aufwandsarm ist
+• Datenverwaltung wird über die Webanwendung online erfolgen
+• Datenverwaltung sollte für mehrere Mitarbeiter:Innen gleichzeitig erfolgen
+• XX
+
+
+==== Studierende
+
+• muss die für Sie zu Austauschprogrammen bzw. Partnerhochschulen relevanten Informationen einsehen können.
+• Darstellung auf einer Desktopansicht
+• Beliebig viele der Studierenden sollen auf der Webseite Daten abfragen können 
+• XX
 
 
 == Produkt-/Lösungsüberblick
@@ -111,12 +199,45 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 [%header, cols="4,1,4,1"]
 |===
 | Bedarf | Priorität | Features | Geplantes Release
-| xx | xx | xx | xx
+| Daten der Partnerhochschulen  Anlegen, Verändern und Löschen 
+| 7 
+| Eingabe und Aktualisierung der Hochschuldatenüber ein separates Fenster im Verwaltungsfrontend
+| Sommersemester 2022
+
+| Daten der Partnerschaftsverträge Anlegen, Verändern und Löschen
+| 7 
+| Eingabe und Aktualisierung der Hochschuldaten
+über ein separates Fenster im Verwaltungsfrontend
+| Sommersemester 2022
+
+| Anzeige der Informationen zu Partnerhochschulen auf HTW Dresden Webseite 
+| 10 
+| Es kann nach Kriterien wie (Länder, Art der Partnerschaft) gefiltert werden 
+| Sommersemester 2022
+
+| Anzeige von Statistiken 
+| 7 
+| Es können mittels verschiedener Filteroptionen verschiedene Statistiken erstellt werden. 
+| Sommersemester 2022
+
+| Anzeigen und Bearbeiten von Austauschstudenten 
+| 3 
+| Eingabe und Aktualisierung der Hochschuldaten
+über ein separates Fenster im Verwaltungsfrontend
+ 
+| Sommersemester 2022
+
+| xx 
+| xx 
+| xx 
+| Sommersemester 2022
+
 |===
 
 
 == Zusätzliche Produktanforderungen
-//Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
+////
+Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
 Hinweise:
 
 . Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
@@ -124,9 +245,38 @@ Hinweise:
 . Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
 . Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
 . Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
+////
 
 [%header, cols="4,1,1"]
 |===
 | Anforderung | Priorität | Geplantes Release
-| xx | xx | xx
+
+| Detaillierte Entwicklerdokumentation für die Weiterentwicklung
+| 7
+| Sommersemester 2022
+
+| Nutzerdokumentation für Akedmisches Auslandsamt  
+| 7 
+| Sommersemester 2022
+
+| Umsetzung der Lösung als Webanwendung 
+| 10 
+| Sommersemester 2022
+
+| einfache/intuitive Bedienbarkeit
+| 7 
+| Sommersemester 2022
+
+|  Zugriff darf nur innerhalb des HTW Netzes erfolgen und wird durch eine IP-Sperre gewährleistet
+|  10
+| Sommersemester 2022
+
+|  Personenbezogene Daten dürfen das System nicht verlassen und werden periodisch gelöscht. 
+|  10
+| Sommersemester 2022
+
+|  XX
+|  XX
+| Sommersemester 2022
+
 |===
