@@ -12,9 +12,13 @@ include::../_includes/default-attributes.inc.adoc[]
 |===
 | Meilenstein | Datum
 
-| Beginn der Iteration | -
-| ... | -
-| Ende der Iteration | -
+| Beginn der Iteration | 29.11.2021
+| Rollen im Team verteilen| 29.11.2021
+| Einblick in die Dokumentation des Teams aus dem vergangenen Semester| 04.12.2021
+| Visionsdokument erstellen | 06.12.2021
+| Risiken in Risk List kategorisieren | 07.12.2021
+| Erstellung eines Glossars | 08.12.2021
+| Ende der Iteration | 12.12.2021
 |===
 
 
