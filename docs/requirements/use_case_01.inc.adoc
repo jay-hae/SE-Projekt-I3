@@ -1,16 +1,19 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
 
-== Use-Case: <use-case name>
+== Use-Case: In System einloggen (UC01)
 
 === Kurzbeschreibung
 //<Kurze Beschreibung des Use Case>
 
 === Kurzbeschreibung der Akteure
 
-==== <Akteur 1 Name>
+==== Mitarbeiter:Innen Stabsstelle Internationales
+Sind bei Stabsstelle Internationales angestellt. Als Nutzer des Systems verwalten sie die Datenbank
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
+
+
 
 <Vorbedingung 1>
 

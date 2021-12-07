@@ -25,11 +25,12 @@ include::../_includes/default-attributes.inc.adoc[]
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
-Beispiele:
-
-* Beheben der Usability-Probleme, die von Abteilung X berichtet wurden
-* Ausliefern der Hauptszenarios, die die Integration mit System Y zeigen
-* Present a technical demonstration (demo).
+* Team verteilt Rollen und Aufgaben
+* Das Visionsdokument wird erstellt
+* Projektplan wird erstellt
+* Iterationsplan für die erste Iteration wird erstellt
+* Das Glossar wird erstellt und ab sofort gepflegt
+* Eine Risklist wird erstellt
 
 
 == Aufgabenzuordnung
@@ -40,9 +41,32 @@ Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestel
 _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 [%header, cols="3,1,1,1,2,1,1,1,1"]
 |===
-| Aufgabe bzw. Beschreibung | Priorität | Schätzung der Größe (Punkte) |Status | Referenzen | geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
+| Aufgabe bzw. Beschreibung 
+| Priorität 
+| Schätzung der Größe (Punkte 1-10) 
+|Status 
+| Referenzen 
+| geplante Iteration 
+| Zugewiesen (Name) 
+| Gearbeite Stunden 
+| Schätzung der verbleibenden Stunden
 
-| x | x | x | x | x | x | x | x | x
+| x | x | x | x | x | x | x | x | x 
+|Terminfindung für gesamtes Team + Betreuer
+|hoch
+|2
+|erledigt
+|-
+|1
+|Luca Meißner
+|2
+|1
+|Terminvereinbarung mit Auftraggeber|hoch|2|erledigt|-|1|Jakob Häcker|2|0
+|Herstellung Visionsdokument|hoch|4|halbfertig|Vision|1|Jens Rosenkranz|4|2
+|Projektplan erstellen|hoch|4|unbearbeitet|Projektplan|1|-|-|
+|Iterationsplan für die erste Iteration erstellen|hoch|4|halbfertig|Iteraionsplan 1|1|Jens Rosenkranz|3|
+|Glossar erstellen|niedrig||||1||
+||||||1||
 |===
 
 
@@ -53,7 +77,8 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |===
 | Problem | Status | Notizen
 
-| x | x | x
+| Terminfindung zum gemeinsamen Treffen aller Teammitglieder unmöglich | ungelöst | Auf Grund der Unterschiedlichen Stundenpläne der Teammitglieder aus verschiedenenen Studiengänge, die zu dem zwischen gerade und ungeraden Wochen alternieren, war es nicht möglich einen gemeinsamen regelmäßigen Termin zu finden
+|X|X|X
 |===
 
 
