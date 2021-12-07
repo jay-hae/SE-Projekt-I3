@@ -1,5 +1,5 @@
 = Iteration Plan 01: Datenbank Webverwaltung Stabsstelle Internationales
-Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>;
+Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
@@ -28,7 +28,7 @@ include::../_includes/default-attributes.inc.adoc[]
 * Team verteilt Rollen und Aufgaben
 * Das Visionsdokument wird erstellt
 * Projektplan wird erstellt
-* Iterationsplan für die erste Iteration wird erstellt
+* Iterationsplan für die erste Iteration Inception wird erstellt
 * Das Glossar wird erstellt und ab sofort gepflegt
 * Eine Risklist wird erstellt
 
@@ -91,20 +91,20 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |-
 |
 
-|Iterationsplan für die erste Iteration erstellen
+|Iterationsplan für die erste Iteration Inception erstellen
 |hoch
 |4
 |halbfertig
-|Iteraionsplan 1
+|iteration_plan_01.adoc
 |1
 |Jens Rosenkranz
 |5
-|
+|2
 
 |Glossar erstellen/beginnen
 |niedrig
 |4
-|Glossar
+|glossary.adoc
 |1
 |1
 |-
