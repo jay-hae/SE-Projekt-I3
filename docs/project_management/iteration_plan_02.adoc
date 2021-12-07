@@ -1,5 +1,5 @@
-= Iteration Plan 01: Datenbank Webverwaltung Stabsstelle Internationales
-Jens Rosenkranz <s82099@htw-dresden.de>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+= Iteration Plan 02: Datenbank Webverwaltung Stabsstelle Internationales
+Jens Rosenkranz <s82099@htw-dresden.de>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
@@ -10,22 +10,32 @@ include::../_includes/default-attributes.inc.adoc[]
 
 [%header, cols="3,1"]
 |===
-| Meilenstein | Datum
+|Meilenstein | Datum
 
-| Beginn der Iteration | -
-| ... | -
-| Ende der Iteration | -
+|Beginn der Iteration | 15.12.2021
+
+|Verfeinerung von Use Cases für die Hauptfunktionalitäten, ggf. inkl. Aktivitätsdiagrammen und Wireframes 
+|20.01.2021
+
+|Verfeinerung von Vision
+|20.01.2021
+
+|Verfeinerung Glossar
+|20.01.2021
+
+|Verfeinerung Supplementary Specs
+|20.01.2021
+
+| Ende der Iteration | 28.01.2021
 |===
 
 
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
-Beispiele:
-
-* Beheben der Usability-Probleme, die von Abteilung X berichtet wurden
-* Ausliefern der Hauptszenarios, die die Integration mit System Y zeigen
-* Present a technical demonstration (demo).
+* Erarbeitung der Use Cases für die Hauptfunktionalitäten, ggf. inkl. Aktivitätsdiagrammen und Wireframes 
+* Lösungsweg zur Bereitstellung der Hauptfunktionen erarbeitet
+* Präsentation der Ergebnisse der ersten beiden Iterationen
 
 
 == Aufgabenzuordnung
