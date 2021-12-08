@@ -77,7 +77,7 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |in Bearbeitung
 |Vision
 |1
-|Jens Rosenkranz, Nico Rosenkranzu´
+|Jens Rosenkranz, Nico Rosenkranz
 |4
 |2
 
