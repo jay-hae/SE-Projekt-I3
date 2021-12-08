@@ -74,10 +74,10 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |Herstellung der ersten Version des Visionsdokument
 |hoch
 |4
-|fertig
+|in Bearbeitung
 |Vision
 |1
-|Jens Rosenkranz
+|Jens Rosenkranz, Nico Rosenkranzu´
 |4
 |2
 

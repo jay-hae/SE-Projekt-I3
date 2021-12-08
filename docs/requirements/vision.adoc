@@ -263,6 +263,10 @@ Hinweise:
 | 10 
 | Sommersemester 2022
 
+| Soll in jedem modernen Browser nutzbar sein 
+| 8 
+| Sommersemester 2022
+
 | einfache/intuitive Bedienbarkeit
 | 7 
 | Sommersemester 2022
