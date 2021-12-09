@@ -13,9 +13,9 @@ In diesem Dokument sind die wesentlichen Risiken des Projekts aufgeführt.
 Dabei werden folgende Attribute verwendet:
 
 * *Typ*: Ressourcen, Geschäftlich, Technisch, Zeitlich
-* *Auswirkung (IMP)*: Wert zwischen 1 (niedrig) und 5 (hoch), der die Auswirkungen auf das Projekt angibt, wenn das Risiko eintritt
-* *Wahrscheinlichkeit (PRB)*: Prozentangabe für die Eintrittswahrscheinlichkeit des Risikos
-* *Stärke (MAG)*: Produkt aus Auswirkung und Wahrscheinlichkeit (damit kann die Liste sortiert werden)
+* *Auswirkung/Impact (IMP)*: Wert zwischen 1 (niedrig) und 5 (hoch), der die Auswirkungen auf das Projekt angibt, wenn das Risiko eintritt
+* *Wahrscheinlichkeit/Propability (PRB)*: Prozentangabe für die Eintrittswahrscheinlichkeit des Risikos
+* *Stärke/Magnitude (MAG)*: Produkt aus Auswirkung und Wahrscheinlichkeit (damit kann die Liste sortiert werden)
 
 == Risiken
 
