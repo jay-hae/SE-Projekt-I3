@@ -1,5 +1,5 @@
-= Use-Case Model: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+= Use-Case Model: {I3_Hochschulpartnerschaften_Stabsstelle_Internationales}
+Pascal Thielemann <s82101@htw-dresden.de>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
@@ -11,9 +11,28 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Identifizierte Use Cases
 // Liste aller identifizierten Use Cases (priorisiert)
-* *UC01*: ...
-* *UC02*: ...
+= für Akteur Mitarbeiter SI 
+* *UC01*: Authentifizierung für Verwaltungsanwendung 
+* *UC02*: Modifizieren von Bestandsdaten
+* *UC03*: AVL von Universitäten
+* *UC04*: AVL von Universitätsverträgen
+* *UC05*: AVL von Studententabellen für Austauschstudierende
+* *UC06*: Statistiken generieren
 
+= für Akteur HTW-Website 
+* *UC07*: Einsicht auf Informationen über Partnerschaften 
+* *UC08*: Filtern und Ausgeben bestimmter Bestandsdaten
+* *UC09*: Senden von Nutzergenerierten Datenbankabfragen
+
+
+//Weitere mögliche Use-Cases, wobei noch nicht geklärt ist ob es sich tatsächlich um reale Akteure handelt / ob es zu den Anforderungen gehört
+//= für Akteur Incoming students
+//* *UC10*: Einsicht Bewerbungsprozess
+//* *UC11*: Anzeigen persönlicher Daten
+
+//= für Aktuer Outgoing students
+//* *UC12*: Einsicht Bewerbungprozess
+//* *UC13*: Anzeigen persönliche Daten
 
 == Use Case Diagramm
 // ...
