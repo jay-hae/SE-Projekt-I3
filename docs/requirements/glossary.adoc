@@ -22,7 +22,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Abkürzung | Bedeutung | Erläuterung
 //| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
-| xx | xx | xx
+| SI | Stabstelle Internationales | Auftraggeber des Softwareprojektes
 |===
 
 == Verzeichnis der Datenstrukturen
