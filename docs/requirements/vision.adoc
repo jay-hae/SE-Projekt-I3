@@ -1,4 +1,4 @@
-= Vision: {project-name}
+= Vision: {Datenbank Webverwaltung Stabsstelle Internationales}
 Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -23,7 +23,7 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System 
 Dieses Visions-Dokument bezieht sich auf das System der Webanwendung zur Verwaltung 
 der Datenbank der Stabsstelle Internationales, das von Team I3 entwickelt wird. 
 
-Das System wird es den Mitarbeitern der Stabsstelle Internationales erlauben, innerhalb einer Webanwendung die Hochschulpartnerschaften sowie die Austauschprogramme für Studierende und Hochschullehrer zu verwalten. Außerdem werden für Studierende relevante Informationen zu den Hochschulpartnerschaften aus der Datenbank im Backend auf der Webseite angezeigt.
+Das System wird es den Mitarbeitern der Stabsstelle Internationales erlauben, innerhalb einer Webanwendung die Hochschulpartnerschaften sowie die Austauschprogramme für Studierende und Hochschullehrer zu verwalten und Statistiken und Berichte aus diesen Informationen zu erstellen. Außerdem werden für Studierende relevante Informationen zu den Hochschulpartnerschaften aus der Datenbank im Backend auf der Webseite angezeigt. 
 
 
 === Definitionen, Akronyme und Abkürzungen
@@ -40,14 +40,16 @@ XX
 === Fachliche Motivation
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
+Das Projekt wird im Rahmen der Module Software Engineering I (I150) und II (I151) der Studiengänge Wirtschaftsinformatik, Verwaltungsinformatik, Wirtschaftsingenieurwesen und Informatik bearbeitet. 
+
 Die Hochschulpartnerschaften und ihre Nutzung durch Studierende werden von den 
 Mitarbeiter:Innen der Stabsstelle Internationales verwaltet. Zu einer Partnerschaft 
 gehören diverse Angaben zu Hochschule, Institut, Art der Vereinbarung, Kontakte, 
 Mentoren, Studierende usw. Dazu wird momentan von der Stabsstelle Internationales 
 eine Microsoft Access-Datenbank genutzt. Damit gestaltet sich der Mehrbenutzer-
-betrieb als nicht möglich und muss umständlich realisiert werden. 
-Die Handhabung der Access Datenbank ist laut den Mitarbeiter:Innen zunehmend umständlich. Zudem sind bestimmte benötigte Funktionen wie das Löschen veralteter Daten nicht ausreichend verfügbar. Daher wird eine Modernisierung angestrebt.
+betrieb als nicht möglich und muss umständlich realisiert werden. Zudem sind bestimmte benötigte Funktionen wie das Löschen veralteter Daten nicht ausreichend verfügbar. Daher wird eine Modernisierung angestrebt.
 
+In Zukunft soll es den Mitarbeiter:innen möglich sein, über eine Webanwendung die Daten neu anzulegen, zu verändern bzw. zu löschen, welche durch eine MySQL-Datenbank bereitgestellt werden. Mit dieser Erneuerung verspricht sich die Stabstelle Internationales verbesserte Benutzerfreundlichkeit sowie einen geringeren Arbeitsaufwand für die Instandhaltung.
 
 === Problem Statement
 //Stellen Sie zusammenfassend das Problem dar, das mit diesem Projekt gelöst werden soll. Das folgende Format kann dazu verwendet werden:
@@ -132,7 +134,8 @@ Beispiel Produkt:
 | [Benennung des Stakeholder-Typs.]
 | [Kurze Beschreibung des Stakeholders.]
 | [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
-| Mitarbeiter:innen Stabsstelle
+
+| Mitarbeiter:innen Stabsstelle und Studentische Hilfskräfte (SHK)
 | Sind bei Stabstelle angestellt. Als Nutzer des Systens verwalten sie die Datenbank 
 | - Anlegen, Verändern und Löschen von Universitäten und deren Verträge. 
 
@@ -148,15 +151,13 @@ Beispiel Produkt:
 
 | Austauschstudenten Outgoing
 | Sind Studierende der HTW und interessiert an einem Austauschprogramm an einer Partneruniversität der HTW
-| Informieren sich über Austauschprogramme mit Partnerhochschulen
+| Informieren sich über Austauschprogramme mit Partnerhochschulen 
 
-| [Benennung des Stakeholder-Typs.]
-| [Kurze Beschreibung des Stakeholders.]
-|  XX
-
-| [Benennung des Stakeholder-Typs.]
-| [Kurze Beschreibung des Stakeholders.]
-|  XX
+| Rechenzentrum der HTW
+| Mitarbeiter der HTW, welche für die Webseite verantwortlich sind
+| - Ermöglicht die Einbindung des Systems in die Website der HTW Dresden
+ 
+- Instandhaltung der Datenbankserver
 
 |===
 
