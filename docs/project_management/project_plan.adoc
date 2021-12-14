@@ -8,14 +8,113 @@ include::../_includes/default-attributes.inc.adoc[]
 == Einführung
 //Briefly describe the content of the project plan.
 
+Der Projektplan bietet dem Team die Möglichkeit, sich auf den Projektumfang, die Ziele, den anfänglichen Zeitrahmen und die Ergebnisse zu einigen. Das Team kann damit beginnen, sich selbst zu organisieren, indem es Erfolgskriterien und Arbeitsmethoden festlegt, die es anwenden will. Die Zusammenarbeit und der Konsens aller wichtigen Projektteilnehmer ist das Ziel des Projektplans.
+
+Der Projektplan dient als Orientierung und Übersicht für den gesamten Lebenszyklus des Projektes "{project-name}".
+
+In ihm werden die:
+
+* Projektorganisation, 
+* die Aufgabenverteilung, 
+* die Projektpraktiken und deren Messung, 
+* eine klare Zielstellung sowie 
+* Meilensteine, 
+* primäre Risiken, 
+* Erkenntnisse und
+* Entwicklungsfortschritte für das Projekt 
+
+definiert, analysiert und dokumentiert.
+
+Die detaillierte Planung der einzelnen Projektphasen findet im Iterationsplan statt.
 
 == Projektorganisation
 //Introduce the project team, team members, and roles that they play during this project. If applicable, introduce work areas, domains, or technical work packages that are assigned to team members. Introduce neighboring projects, relationships, and communication channels. If the project is introduced somewhere else, reference that location with a link.
+Das Team SE-Projekt-I3 setzt sich aus insgesamt acht Studierenden aus den Studiengängen Informatik, Wirtschaftsinformatik und Wirtschaftsingenieurwesen. 
 
+Die Projektleitung besteht aus zwei Teammitgliedern, die restlichen Aufgaben (Analyse, Testung, Entwicklung, etc.) verteilt sich auf den Rest der Gruppe, wobei Mitglieder auch mehrere Rollen übernehmen. Grund dafür ist, dass die einige Bereiche recht stark miteinander vernetzt sind. 
 
+Im Folgenden ist eine genaue Aufschlüsselung der einzelnen Rollen gegeben: 
+
+[.landscape]
+
+<<<
+
+[%header, cols="2,1,3,2"]
+|===
+| Rolle
+| Team-Mitglied
+| Beschreibung der Aufgabe
+|Artefakte
+
+| Teamleitung
+a|
+* Luca Meißner
+*  
+a| 
+* Leitung des Projekts
+* Kommunikation/ Schnittstelle mit Auftraggeber, Coach, Stakeholder, Gruppe
+* Koordination der Iterationen
+* Kontrolle des Projektfortschritts 
+a|* Projekplan
+* Iterationsplan
+* Work-Item-List
+* Essence Naviagtor
+* Vision
+
+ 
+| Analyse
+a|
+* Raphael Rezaii
+* Tim Grünert
+* Lavinia Kaufmann
+* Niklas Rinke
+* Maximilian Dießl 
+a|
+* Erkennung und Beschreibung von Kundenwünschen und -anforderungen
+* Probleme verstehen
+* Prioritäten setzen 
+a| * Glossary
+* System-Wide Requirements
+* Use Case Model
+* Domänenmodel
+
+|Implementierung
+a|
+* Raphael Rezaii
+* 
+a| 
+* Definition Softwarearchitektur
+* Entscheidung wichtiger technischer Aspekte und Bestimmung von Rahmenbedingungen
+a| * Architecture Notebook
+|Testung
+a| 
+* Maximilian Dießl 
+* Tim Grünert
+* Louis Linke 
+a| 
+* Identifizierung, Definition und Durchführung notwendiger Tests
+* Protokollierung und Auswertung der Testergebnisse
+a| * Test Cases
+|===
+
+Alle Dokumente werden auf GitHub in einem eigens angelegten https://github.com/jay-hae/SE-Projekt-I3[Projekt-Repository] gespeichert. 
+
+Die Kommunikation innerhalb der Gruppe findet über WhatsApp, wöchtenliche Meetings auf einem eigens eingerichteten Discord-Server statt.
+
+Während des gesamten Projektes nutzen wir eine Work-Items-List in Form einer Google Sheets-Tabelle, um Aufgaben übersichtlich zu verteilen, zu verschriftlichen und um Termine für jedes Teammitglied zugänglich zu machen.
+
+Grund für die Entscheidung für besagte Medien sind die Einfachheit der Handhabung der jeweiligen Systeme, sowie die schnelle Verfügbarkeit geteilter Informationen auf allen Endgeräten.  
+
+[.portrait]
+
+<<<
 == Praktiken und Bewertung
 //Describe or reference which management and technical practices will be used in the project, such as iterative development, continuous integration, independent testing and list any changes or particular configuration to the project. Specify how you will track progress in each practice. As an example, for iterative development the team may decide to use iteration assessments and iteration burndown reports and collect metrics such as velocity (completed work item points/ iteration).
+Im Rahmen des Projektes "{project-name}" wenden wir den Open Unified Process (OpenUP) an. Dabei ist es unser Ziel das Projekt in Zyklen (Iterationen) aufzuteilen und ergebnisgesteuert voranzubringen.
 
+Am Ende des Semester glichen wir unseren Projektstand mit Hilfe des Essence-Navigators mit der darin zur Verfügung gestellten Checkliste ab. Das Ergebnis kann in der nächsten Abbildung eingesehen werden.
+
+Dadurch konnten noch einmal einige Anpassungen und Feinarbeiten an Beleg und Projekt vorgenommen werden.
 
 == Meilensteine und Ziele
 //Define and describe the high-level objectives for the iterations and define milestones. For example, use the following table to lay out the schedule. If needed you may group the iterations into phases and use a separate table for each phase
