@@ -1,4 +1,4 @@
-= Glossar: {project-name}
+= Glossar: Datenbank Webverwaltung Stabsstelle Internationales
 Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -12,8 +12,64 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 [%header]
 |===
 | Begriff | Definition und Erläuterung | Synonyme
-//| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
+
+| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
+
 | xx | xx | xx
+
+| Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Unterbau, hinteres Ende
+
+| Erasmus _+_ | EU-Programm zur Förderung von allgemeiner und beruflicher Bildung, Jugend und Sport in Europa. Ermöglicht den Austausch von sowohl Lehrenden als auch Studierenden.
+| Erasmus
+
+| Department | Auslandsbüro an einer
+Hochschule | Abteilung
+
+| Frontend | Schnittstelle des Systems, die
+vom Nutzer bedient wird | Oberbau, vorderes Ende
+
+| Incoming | Studierende aus dem Ausland, die zeitweise an der HTW-Dresden studieren | An die Hochschule kommende Auslandsstudierende
+
+| Informationsfrontend | Das bisher bestehende Frontend zur Datenbank, das Studierenden und Mitarbeitern die Information über die bestehenden Partnerschaften ermöglicht
+| Frontend für die Studierenden, Anzeigefrontend, bisheriges Frontend
+
+| Mentor | Ansprechpartner an der jeweiligen Hochschule | Kontaktperson, Ansprechpartner
+
+| MariaDB | Open-Source, relationeles Datenbankverwaltungssystem | Maria-Datenbank
+
+| Nicht-funktionale Anforderung | Anforderungen, die die Qualität des Systems sicherstellen | Qualitätsanforderungen für das Gesamtsystem
+
+| Online-Datenbank | Eine Datenbank, die über Intraoder Internet zugänglich ist und auf welche mehrere Nutzer parallel zugreifen können | Web-Datenbank
+
+| Open Unified Process | Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: iterative Softwareentwicklung, Anwendungsfälle, szenarienbasierte Entwicklung, Risikomanagement, architekturzentrierte Vorgehen | OpenUP
+
+| Outgoing | Studierende der HTW, der zeitweise ins Ausland gehen | Von der Hochschule gehende Auslandsstudierende
+
+| Programmiersprache | Formale Sprache zur Formulierung von Datenstrukturen und Algorithmen für Computer | --
+
+| Stakeholder | Personen oder Gruppe, die Interesse am positiven Verlauf des Projektes haben und es beeinflussen können oder durch dieses beeinflusst werden. | Anspruchsberechtigter
+
+| SQL-Query | Abfrage in einer MariaDBDatenbank | SQL Abfrage
+
+| Systemweite, funktionale Anforderungen | Anforderungen, die das System erfüllen muss | System-Wide functional requirements
+
+| Test Cases | Die Eingaben, Konditionen und erwarteten Ergebnisse beim Test von Systemfunktionen | Testfall
+
+| Use Cases | Die funktionalen Anforderungen an das System aus der Sicht des Anwenders | Anwendungsfall
+
+| User | Personen oder Gruppen, welche das fertige Produkt nutzen | Nutzer, Benutzer
+
+| User Interface | Stelle oder Handlung, mit der ein Mensch mit einem Programm in Interaktion tritt | Benutzerschnittstelle
+
+| Verwaltungsfrontend | Das Frontend, das von der Stabstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabstelle Internationales
+
+| Wireframe | Früher konzeptioneller Entwurf einer Webseite oder eines Softwarefrontends | Drahtmodell
+
+| Webanwendung | Anwendungsprogramm, welches nicht auf dem Computer des Users installiert wird und über den Browser bedient wird | Online-Anwendung, Webapplikation
+
+| Webspace | Speicherplatz für Dateien auf einem Server, auf den über das Internet dauerhaft zugegriffen werden kann | --
+
+| Workflow | Reihenfolge von Arbeitsvorgängen | Arbeitsablauf
 |===
 
 
@@ -21,8 +77,26 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 [%header]
 |===
 | Abkürzung | Bedeutung | Erläuterung
-//| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
+
 | SI | Stabstelle Internationales | Auftraggeber des Softwareprojektes
+
+| xx | xx | xx
+
+| CRUD | Create, Read, Update and Delete | Erstellen, Lesen, Aktualisieren und Löschen von Daten
+
+| NFA | Nicht-funktionale Anforderung | Anforderungen, die die Qualität des Systems sicherstellen
+
+| FURPS+ | Functionality (Funktionalität), Usability (Benutzbarkeit), Reliability (Zuverlässigkeit), Performance (Effizienz), Supportability (Änderbarkeit/Wartbarkeit) | Fasst Qualitätsmerkmale von Software zusammen
+
+| ODBC | Open Database Connectivity | Programmierschnittstelle, die eine einheitliche Kommunikation mit unterschiedlichen Datenbankentypen ermöglicht
+
+| SWFA | Systemweite funktionale Anforderungen | Anforderungen, die das System erfüllen muss
+
+| TC | Test Case | Die Eingaben, Konditionen und erwarteten Ergebnisse beim Test von Systemfunktionen
+
+| UC | Use Case | Die funktionalen Anforderungen an das System aus der Sicht des Anwenders
+
+| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
 |===
 
 == Verzeichnis der Datenstrukturen
@@ -41,4 +115,41 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | xx
 | xx
 | xx
+
+| Fakultät
+| Fakultätsnamen in Englisch und Deutsch und deren Webadresse
+| String
+| Webadresse muss Punkt und Top Level Domain enthalten
+| --
+
+| Hochschule
+| Hochschulname in Englisch und der nationalen Sprache, sowie die Anschrift, Webadresse und ggf. Erasmuscode
+| String
+| Anschrift muss Ort, Postleitzahl, Straßenname und
+Nummer enthalten, Webadresse muss Punkt und Top Level Domain enthalten, Erasmuscode ist nach Schema: XX XXXXXXX11 aufgebaut (Ländercode in 2 Buchstaben gefolgt von 7 Buchstaben und 2 Zahlen zur Hochschulidentifikation)
+| Partnerhochschule, Universität, Partneruniversität
+
+| Hochschulvereinbarung
+| Vereinbarungstyp auf Englisch und Deutsch, Gültigkeitsdauer, Anzahl Incomings und Outgoings insgesamt und pro Studienfach, sowie deren maximale Aufenthaltszeit
+| String, Integer
+| Gültigkeitsdauer muss "von-bis"-Datum sein, Aufenthaltsdauer muss in Monaten angegeben werden
+| Hochschulpartnerschaft, Mobility Agreement
+
+| Land
+| Ländernamen auf Englisch und Deutsch, sowie das Kürzel und ob Erasmus für das Land verfügbar ist
+| String
+| Ländercode muss 2 Buchstaben enthalten
+| --
+
+| Mentor
+| Name, Titel, Email und Webadresse
+| String
+| Emailadresse muss @-Zeichen und Punkt enthalten, Webadresse muss Punkt und Top Level Domain enthalten
+| --
+
+| Studienfach
+| Namen des Fachs auf Englisch und Deutsch, sowie die zugehörige Fakultät
+| String
+| --
+| --
 |===

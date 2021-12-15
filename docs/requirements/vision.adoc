@@ -1,4 +1,4 @@
-= Vision: {project-name}
+= Vision: {Datenbank Webverwaltung Stabsstelle Internationales}
 Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -23,7 +23,7 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System 
 Dieses Visions-Dokument bezieht sich auf das System der Webanwendung zur Verwaltung 
 der Datenbank der Stabsstelle Internationales, das von Team I3 entwickelt wird. 
 
-Das System wird es den Mitarbeitern der Stabsstelle Internationales erlauben, innerhalb einer Webanwendung die Hochschulpartnerschaften sowie die Austauschprogramme für Studierende und Hochschullehrer zu verwalten. Außerdem werden für Studierende relevante Informationen zu den Hochschulpartnerschaften aus der Datenbank im Backend auf der Webseite angezeigt.
+Das System wird es den Mitarbeitern der Stabsstelle Internationales erlauben, innerhalb einer Webanwendung die Hochschulpartnerschaften sowie die Austauschprogramme für Studierende und Hochschullehrer zu verwalten und Statistiken und Berichte aus diesen Informationen zu erstellen. Außerdem werden für Studierende relevante Informationen zu den Hochschulpartnerschaften aus der Datenbank im Backend auf der Webseite angezeigt. 
 
 
 === Definitionen, Akronyme und Abkürzungen
@@ -40,44 +40,27 @@ XX
 === Fachliche Motivation
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
+Das Projekt wird im Rahmen der Module Software Engineering I (I150) und II (I151) der Studiengänge Wirtschaftsinformatik, Verwaltungsinformatik, Wirtschaftsingenieurwesen und Informatik bearbeitet. 
+
 Die Hochschulpartnerschaften und ihre Nutzung durch Studierende werden von den 
 Mitarbeiter:Innen der Stabsstelle Internationales verwaltet. Zu einer Partnerschaft 
 gehören diverse Angaben zu Hochschule, Institut, Art der Vereinbarung, Kontakte, 
 Mentoren, Studierende usw. Dazu wird momentan von der Stabsstelle Internationales 
 eine Microsoft Access-Datenbank genutzt. Damit gestaltet sich der Mehrbenutzer-
-betrieb als nicht möglich und muss umständlich realisiert werden. 
-Die Handhabung der Access Datenbank ist laut den Mitarbeiter:Innen zunehmend umständlich. Zudem sind bestimmte benötigte Funktionen wie das Löschen veralteter Daten nicht ausreichend verfügbar. Daher wird eine Modernisierung angestrebt.
+betrieb als nicht möglich und muss umständlich realisiert werden. Zudem sind bestimmte benötigte Funktionen wie das Löschen veralteter Daten nicht ausreichend verfügbar. Daher wird eine Modernisierung angestrebt.
 
+In Zukunft soll es den Mitarbeiter:innen möglich sein, über eine Webanwendung die Daten neu anzulegen, zu verändern bzw. zu löschen, welche durch eine MySQL-Datenbank bereitgestellt werden. Mit dieser Erneuerung verspricht sich die Stabstelle Internationales verbesserte Benutzerfreundlichkeit sowie einen geringeren Arbeitsaufwand für die Instandhaltung.
 
 === Problem Statement
 //Stellen Sie zusammenfassend das Problem dar, das mit diesem Projekt gelöst werden soll. Das folgende Format kann dazu verwendet werden:
 
 [cols="1,3"]
 |===
-| Das Problem | der unzureichenden Bedienbarkeit und hohen Fehleranfälligkeit des MS Access Datenbanksystems.
-
-Mitarbeiter:Innen können nicht gleichzeitig an der Datenbank zur Verwaltung der Hochschulpartnerschaften arbeiten 
-
-und bestimmte Funktionen wie das Löschen von veralteten Daten nicht nutzen
-
-XXX
-
-| betrifft | Mitarbeiter:Innen der Stabsstelle Internationales
-und die Studierenden, die sich über die Partnerschaft informieren wollen
-
-| die Auswirkung davon ist | - ein umständlicher und zeitaufwendiger Verwaltungsprozess
--veraltete nicht löschbare Daten machen die Datenbank unübersichtlich
-- erhöhter Arbeitsaufwand für die Mitarbeiter der Stabstelle
-Internationales, 
--unzureichende Aktualität der Daten 
-- sowie Systemausfälle
-
-| eine erfolgreiche Lösung wäre | - ein neues Online-Datenbankverwaltungssystem für die
-Hochschulpartnerschaften zur Pflege der Daten der Partnerschaften und
-eventuelle Weiterentwicklung
-
-- eine intuitve Webanwendung, die gleichzeitiges Arbeiten ermöglich
-- und ebenso das Verwalten (Anlegen, Ändern, Löschen) von Daten ermöglicht
+| Das Problem | eine unzureichenden Bedienbarkeit und hohe Fehleranfälligkeit
+| betrifft | Mitarbeiter:Innen der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und die Studierenden, die sich über die Partnerschaft informieren wollen
+| die Auswirkung davon ist | ein erhöhter und umständlicher Arbeitsaufwand in der Verwaltung  
+| eine erfolgreiche Lösung wäre | ein neues Online-Datenbankverwaltungssystem für die
+Hochschulpartnerschaften zur Pflege der Daten der Partnerschaften (Anlegen, Ändern, Löschen)
 
 |===
 
@@ -99,13 +82,12 @@ Beispiel:
 
 [cols="1,3"]
 |===
-| Für | Mitarbeiter:Innen der Stabsstelle Internationales und an Austauschprogrammen interessierte Studierende
-| die | die Verwaltung effizienter durchführen möchten bzw. Interesse an
-Auslandsaufenthalten haben
-| Das Produkt ist ein | eine Webanwendung mit Schnittstelle zur MS SQL Datenbank (Online-Datenbankverwaltungssystem)
-| Die | für die Mitarbeiter:Innen die Datenverwaltung ermöglicht und für die Studierenden Informationen zu Partneruniversiäten/Austauschprogrammen darstellt. 
-| Im Gegensatz zu | der aktuell genutzten MS Access Datenbank
-| Unser Produkt | ermöglicht es intuitiv und im Mehrbenutzerbetrieb die Datenbank zu verwalten und Informationen daraus abzufragen.
+| Für | Mitarbeiter:Innen der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und die Studierenden, die sich über die Partnerschaft informieren wollen
+| die | effizientere Verwaltung, Interesse an Auslandsaufenthalten
+| Das Produkt ist ein | eine Webanwendung mit Schnittstelle zur MySQL-Datenbank (Online-Datenbankverwaltungssystem)
+| Die | Datenverwaltung für die Mitarbeiter:Innen, Informationsbeschaffung für die Studierenden zu Partneruniversiäten/Austauschprogrammen
+| Im Gegensatz zu | der aktuell genutzten MS-Access-Datenbank
+| Unser Produkt | ermöglicht den Mehrbenutzerbetrieb für Datenbank zu verwalten und Informationen daraus abzufragen
 |===
 
 ////
@@ -127,36 +109,21 @@ Beispiel Produkt:
 
 [%header, cols="1,3,3"]
 |===
-| Name | Beschreibung | Verantwortlichkeiten
-
-| [Benennung des Stakeholder-Typs.]
-| [Kurze Beschreibung des Stakeholders.]
-| [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
-| Mitarbeiter:innen Stabsstelle
+| Mitarbeiter:innen Stabsstelle und Studentische Hilfskräfte (SHK)
 | Sind bei Stabstelle angestellt. Als Nutzer des Systens verwalten sie die Datenbank 
 | - Anlegen, Verändern und Löschen von Universitäten und deren Verträge. 
-
 - Modifizieren Bestandsdaten 
-
 - Bearbeiten Daten von Austauschstudenten 
-
 - Erstellen Statistiken und Berichte zu Austauschprogrammen und Hochschulpartnerschaften
-
 | Austauschstudenten Incoming
 | Sind Studierende von Partnerhochschulen und interessiert an einem Austauschprogramm an der HTW
 | Informieren sich über Austauschprogramme an der HTW
-
 | Austauschstudenten Outgoing
 | Sind Studierende der HTW und interessiert an einem Austauschprogramm an einer Partneruniversität der HTW
-| Informieren sich über Austauschprogramme mit Partnerhochschulen
-
-| [Benennung des Stakeholder-Typs.]
-| [Kurze Beschreibung des Stakeholders.]
-|  XX
-
-| [Benennung des Stakeholder-Typs.]
-| [Kurze Beschreibung des Stakeholders.]
-|  XX
+| Informieren sich über Austauschprogramme mit Partnerhochschulen 
+| Rechenzentrum der HTW
+| Mitarbeiter der HTW, für die Instanthaltung der Server
+| Ermöglicht die Einbindung des Systems in die Website der HTW Dresden und sind verantwortlich für die Instandhaltung der Datenbankserver
 
 |===
 
@@ -175,21 +142,17 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 ////
 
 
-==== Mitarbeiter:Innen Stabsstelle Internationales
+==== Mitarbeiter:Innen Stabsstelle Internationales und Studentische Hilfskräfte (SHK)
 • Anzahl der Mitarbeiter:Innen beträgt XX
 • Mitarbeiter:In ist an einem Datenbankverwaltungsprozess interessiert, der intuitiv und aufwandsarm ist
 • Datenverwaltung wird über die Webanwendung online erfolgen
 • Datenverwaltung sollte für mehrere Mitarbeiter:Innen gleichzeitig erfolgen
-• XX
-
 
 ==== Studierende
 
 • muss die für Sie zu Austauschprogrammen bzw. Partnerhochschulen relevanten Informationen einsehen können.
 • Darstellung auf einer Desktopansicht
 • Beliebig viele der Studierenden sollen auf der Webseite Daten abfragen können 
-• XX
-
 
 == Produkt-/Lösungsüberblick
 
@@ -224,12 +187,6 @@ über ein separates Fenster im Verwaltungsfrontend
 | 3 
 | Eingabe und Aktualisierung der Hochschuldaten
 über ein separates Fenster im Verwaltungsfrontend
- 
-| Sommersemester 2022
-
-| xx 
-| xx 
-| xx 
 | Sommersemester 2022
 
 |===
@@ -279,8 +236,8 @@ Hinweise:
 |  10
 | Sommersemester 2022
 
-|  XX
-|  XX
+|  Entwicklerdokumentation
+|  10
 | Sommersemester 2022
 
 |===

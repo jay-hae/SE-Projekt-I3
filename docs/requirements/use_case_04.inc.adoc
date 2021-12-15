@@ -30,6 +30,8 @@ Die Arbeitskraft hat uneingeschränkten Zugriff auf die Verwaltungsanwendung.
 
 image::uc04.png[]
 
+//Unvollständig, Dokument muss ab hier weiterbearbeitet werden
+
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 

@@ -1,5 +1,5 @@
 // Meta
-:project-name: <Projektname (T00)>
+:project-name: Webanwendung zur Verwaltung von Hochschulpartnerschaften
 // Settings:
 :toc:
 :toc-title: Inhaltsverzeichnis
