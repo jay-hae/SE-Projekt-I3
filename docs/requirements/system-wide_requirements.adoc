@@ -17,6 +17,10 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
+* Authentifizierung
+** Anmelden mit Datenbanknutzern
+* Sicherheit der Daten
+** Nutzer bekommen, ihnen angepasste, Datenbankrechte zugewiesen
 
 
 == Qualitätsanforderungen für das Gesamtsystem
@@ -47,10 +51,14 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 === Organisatorische Randbedingungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
-* Anforderungen an Betrieb, Management und Wartung der Anwendung
-* zu beachtende Standards, Normen und Regeln
+* Erweiterbarkeit muss gegeben sein
+* Saubere Dokumentation 
+* Datenbankstruktur
+** bestehende Struktur nicht ändern
+** erweitern ist möglich 
 
 === Rechtliche Anforderungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
-* Lizensierung der Anwendung
-* Datenschutz
+* Personenbezogene Daten
+** Intervallweises löschen 
+** dürfen System nicht verlassen
