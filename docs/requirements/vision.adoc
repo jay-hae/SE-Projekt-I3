@@ -57,7 +57,7 @@ In Zukunft soll es den Mitarbeiter:innen möglich sein, über eine Webanwendung 
 [cols="1,3"]
 |===
 | Das Problem | eine unzureichenden Bedienbarkeit und hohe Fehleranfälligkeit
-| betrifft | Mitarbeiter:Innen der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und die Studierenden, die sich über die Partnerschaft informieren wollen
+| betrifft | Mitarbeiter:Innen der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und die Studierenden, die sich über die Partnerschaften informieren wollen
 | die Auswirkung davon ist | ein erhöhter und umständlicher Arbeitsaufwand in der Verwaltung  
 | eine erfolgreiche Lösung wäre | ein neues Online-Datenbankverwaltungssystem für die
 Hochschulpartnerschaften zur Pflege der Daten der Partnerschaften (Anlegen, Ändern, Löschen)
@@ -82,9 +82,9 @@ Beispiel:
 
 [cols="1,3"]
 |===
-| Für | Mitarbeiter:Innen der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und die Studierenden, die sich über die Partnerschaft informieren wollen
+| Für | Mitarbeiter:Innen der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und die Studierenden, die sich über die Partnerschaften informieren wollen
 | die | effizientere Verwaltung, Interesse an Auslandsaufenthalten
-| Das Produkt ist ein | eine Webanwendung mit Schnittstelle zur MySQL-Datenbank (Online-Datenbankverwaltungssystem)
+| Das Produkt ist eine | Webanwendung mit Schnittstelle zur MySQL-Datenbank (Online-Datenbankverwaltungssystem)
 | Die | Datenverwaltung für die Mitarbeiter:Innen, Informationsbeschaffung für die Studierenden zu Partneruniversiäten/Austauschprogrammen
 | Im Gegensatz zu | der aktuell genutzten MS-Access-Datenbank
 | Unser Produkt | ermöglicht den Mehrbenutzerbetrieb für Datenbank zu verwalten und Informationen daraus abzufragen
@@ -107,14 +107,11 @@ Beispiel Produkt:
 
 === Zusammenfassung der Stakeholder
 
-[%header, cols="1,3,3"]
+[cols="1,3,3"]
 |===
 | Mitarbeiter:innen Stabsstelle und Studentische Hilfskräfte (SHK)
 | Sind bei Stabstelle angestellt. Als Nutzer des Systens verwalten sie die Datenbank 
-| - Anlegen, Verändern und Löschen von Universitäten und deren Verträge. 
-- Modifizieren Bestandsdaten 
-- Bearbeiten Daten von Austauschstudenten 
-- Erstellen Statistiken und Berichte zu Austauschprogrammen und Hochschulpartnerschaften
+| Anlegen, Verändern und Löschen von Universitäten und deren Verträge sowie die Erstellung von Statistiken und Berichte
 | Austauschstudenten Incoming
 | Sind Studierende von Partnerhochschulen und interessiert an einem Austauschprogramm an der HTW
 | Informieren sich über Austauschprogramme an der HTW
@@ -143,14 +140,13 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 
 
 ==== Mitarbeiter:Innen Stabsstelle Internationales und Studentische Hilfskräfte (SHK)
-• Anzahl der Mitarbeiter:Innen beträgt XX
 • Mitarbeiter:In ist an einem Datenbankverwaltungsprozess interessiert, der intuitiv und aufwandsarm ist
 • Datenverwaltung wird über die Webanwendung online erfolgen
 • Datenverwaltung sollte für mehrere Mitarbeiter:Innen gleichzeitig erfolgen
 
 ==== Studierende
 
-• muss die für Sie zu Austauschprogrammen bzw. Partnerhochschulen relevanten Informationen einsehen können.
+• muss die für sie zu Austauschprogrammen bzw. Partnerhochschulen relevanten Informationen einsehen können
 • Darstellung auf einer Desktopansicht
 • Beliebig viele der Studierenden sollen auf der Webseite Daten abfragen können 
 
@@ -162,31 +158,29 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 [%header, cols="4,1,4,1"]
 |===
 | Bedarf | Priorität | Features | Geplantes Release
-| Daten der Partnerhochschulen  Anlegen, Verändern und Löschen 
+| Authentifizierung für Verwaltungsanwendung
 | 7 
-| Eingabe und Aktualisierung der Hochschuldatenüber ein separates Fenster im Verwaltungsfrontend
+| Eingabe und Anmeldung für die Mitarbeiter:Innen der Stabsstelle Internationales
 | Sommersemester 2022
 
-| Daten der Partnerschaftsverträge Anlegen, Verändern und Löschen
-| 7 
-| Eingabe und Aktualisierung der Hochschuldaten
-über ein separates Fenster im Verwaltungsfrontend
-| Sommersemester 2022
-
-| Anzeige der Informationen zu Partnerhochschulen auf HTW Dresden Webseite 
+| Anlegen von Objekten
 | 10 
-| Es kann nach Kriterien wie (Länder, Art der Partnerschaft) gefiltert werden 
+| Zum erzeugen neuer Datenbankeinträge in der Verwaltungsanwendung
 | Sommersemester 2022
 
-| Anzeige von Statistiken 
+| Bearbeiten von Objekten 
+| 10 
+| Zum anpassen eines Datenbankeinträgen in der Verwaltungsanwendung   
+| Sommersemester 2022
+
+| Löschen von Objekten 
 | 7 
-| Es können mittels verschiedener Filteroptionen verschiedene Statistiken erstellt werden. 
+| Zum löschen eines Datenbankeinträgen in der Verwaltungsanwendung
 | Sommersemester 2022
 
-| Anzeigen und Bearbeiten von Austauschstudenten 
-| 3 
-| Eingabe und Aktualisierung der Hochschuldaten
-über ein separates Fenster im Verwaltungsfrontend
+| Statistiken generieren 
+| 5
+| Zum erstellen von Statistiken und Berichten
 | Sommersemester 2022
 
 |===
