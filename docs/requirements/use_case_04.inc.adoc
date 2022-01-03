@@ -1,32 +1,33 @@
 :imagesdir: images 
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
 
-== Use-Case: Löschen von Objekten (UC04)
+== Use-Case: Löschen von fehlerhaften Datensätzen (UC04)
 
 === Kurzbeschreibung
-Eine Arbeitskraft der Stabsstelle Internationales löscht ein Objekt
+Eine Leitung der Stabsstelle Internationales löscht ein Hochschulattribut.
 
 === Kurzbeschreibung der Akteure
 ==== Mitarbeiter*Innen Stabsstelle Internationales
-Sind bei der Stabsstelle Internationales angestellt. Sie möchten ein bestehendes Objekt aus der Datenbank löschen.
+Sind die Leitung der Stabsstelle Internationales. Sie möchten ein bestehendes Hochschulattribut aus der Datenbank löschen.
 
 === Vorbedingungen
-Die Arbeitskraft hat uneingeschränkten Zugriff auf die Verwaltungsanwendung.
+Die Leitung hat uneingeschränkten Zugriff auf die gesamte Verwaltungsanwendung. Die Mitarbeiter der SI haben keinen Zugriff auf den Löschvorgang.
+Ruhende Hochschulpartnerschaften dürfen nicht gelöscht werden. 
 
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-1. Der Use Case beginnt, wenn MSI die Funktion zum Löschen eines Objektes ausgewählt hat  
+1. Der Use Case beginnt, wenn MSI die Funktion zum Löschen eines Hochschulattributs ausgewählt hat  
 2. Das System gibt einen Warnhinweis aus und fordert erneute Bestätigung des Vorhabens
 2.1 IF Nutzer gibt keine erneute Bestätigung
-2.1.1 Objekt wird nicht gelöscht
+2.1.1 Hochschulattribut wird nicht gelöscht
 2.1.2 Der Use Case wird beendet
-2.2 System prüft ob Objekt gelöscht werden kann
+2.2 System prüft ob Hochschulattribut gelöscht werden kann
 2.3 IF System gibt keine Löscherlaubnis
 2.3.1 Löschvorgang wird beendet.
 2.3.2 Use Case wird beendet 
-3. Das System löscht das gewählte Objekt aus der Datenbank 
+3. Das System löscht das gewählte Hochschulattribut aus der Datenbank 
 
 image::uc04.png[]
 
@@ -36,23 +37,23 @@ image::uc04.png[]
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
 
-==== Objekt wurde erfolgreich gelöscht
+==== Hochschulattribut wurde erfolgreich gelöscht
 . <Szenario 1.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.>
-. <Szenario 1.2, Es wird für ein bestehendes Objekt die Löschfunktion ausgewählt.>
-. <Szenario 1.3, Das System prüft ob das Objekt gelöscht werden kann und liefert ein positives Feedback.>
+. <Szenario 1.2, Es wird für ein bestehendes Hochschulattribut die Löschfunktion ausgewählt.>
+. <Szenario 1.3, Das System prüft ob das Hochschulattribut gelöscht werden kann und liefert ein positives Feedback.>
 . <Szenario 1.4, System fragt ob Löschaktion wirklich ausgeführt werden soll.>
-. <Szenario 1.5, Mitarbeiter bestätigt, das Objekt wird aus der Datenbank entfernt.>
+. <Szenario 1.5, Mitarbeiter bestätigt, das Hochschulattribut wird aus der Datenbank entfernt.>
 
-=== Objekt konnte nicht gelöscht werden
+=== Hochschulattribut konnte nicht gelöscht werden
 . <Szenario 1.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.>
-. <Szenario 1.2, Es wird für ein bestehendes Objekt die Löschfunktion ausgewählt.>. 
-. <Szenario 1.3, Das System prüft ob das Objekt gelöscht werden kann.>
-. <Szenario 1.4, Das System erkennt noch bestehende Abhängigkeiten weswegen das Objekt nicht gelöscht werden kann.>
+. <Szenario 1.2, Es wird für ein bestehendes Hochschulattribut die Löschfunktion ausgewählt.>. 
+. <Szenario 1.3, Das System prüft ob das Hochschulattribut gelöscht werden kann.>
+. <Szenario 1.4, Das System erkennt noch bestehende Abhängigkeiten weswegen das Hochschulattribut nicht gelöscht werden kann.>
 . <Szenario 1.5, Es erscheint eine Fehlermeldung. Der Löschvorgang wird automatisch abgebrochen und der Use Case beendet>
 
 === Nachbedingungen
 Nach erfolgreichem Abschluss des Use Cases lautet der Ist-Zustand wie folgt:
-* Das zu löschende Objekt wurde aus der entsprechenden Relation in der Datenbank entfernt.
+- Das zu löschende Hochschulattribut wurde aus der entsprechenden Relation in der Datenbank entfernt.
 
 
 === Besondere Anforderungen
