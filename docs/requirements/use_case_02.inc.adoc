@@ -17,6 +17,7 @@ Die Arbeitskraft hat sich erfolgreich eingeloggt. (UC01)
 
 1. Der Use Case beginnt, wenn MSI die Funktion zum Anlegen einer neuen Hochschule ausgewählt hat. 
 2. System öffnet ein externes Fenster zum Eingeben aller Hochschulattribute (Fakultät, Vereinbarungen, Land, Mentor, Studienfach).
+2.1 IF Hochschule ohne Vereinbarung = Freemover
 3. WHILE Eingabe nicht validiert
 3.1 IF MSI beendet den Vorgang
 3.1.1 Externe Eingabemaske wird geschlossen.
