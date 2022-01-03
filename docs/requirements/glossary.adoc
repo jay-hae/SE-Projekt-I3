@@ -28,6 +28,8 @@ Hochschule | Abteilung
 | Frontend | Schnittstelle des Systems, die
 vom Nutzer bedient wird | Oberbau, vorderes Ende
 
+| Hochschulattribute | Alle möglichen Attribute einer Hochschule (siehe Verzeichnis Datenstrukturen) | Attribute, Hochschuleigenschaften
+
 | Incoming | Studierende aus dem Ausland, die zeitweise an der HTW-Dresden studieren | An die Hochschule kommende Auslandsstudierende
 
 | Informationsfrontend | Das bisher bestehende Frontend zur Datenbank, das Studierenden und Mitarbeitern die Information über die bestehenden Partnerschaften ermöglicht
