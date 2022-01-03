@@ -59,6 +59,9 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 
 | User | Personen oder Gruppen, welche das fertige Produkt nutzen | Nutzer, Benutzer
 
+| Leitung | Person oder Gruppe, welche volle brechtigung über das System besitzten | Superuser
+| Mitarbeiter | Person oder Grupper, welche bei der Stabsstelle Internationales arbeitet | normaler User
+
 | User Interface | Stelle oder Handlung, mit der ein Mensch mit einem Programm in Interaktion tritt | Benutzerschnittstelle
 
 | Verwaltungsfrontend | Das Frontend, das von der Stabstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabstelle Internationales
@@ -79,6 +82,7 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 | Abkürzung | Bedeutung | Erläuterung
 
 | SI | Stabstelle Internationales | Auftraggeber des Softwareprojektes
+| MSI | Mitarbeiter oder Leitungs Person | Hauptnutzer der Software
 
 | xx | xx | xx
 
