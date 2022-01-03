@@ -10,7 +10,7 @@ Bei diesem Use Case soll den Nutzern per Authentifizierung der Zugang zum System
 Sind bei der Stabsstelle Internationales angestellt. Sie möchten auf die Verwaltungsanwendung zugreifen.
 
 === Vorbedingungen
-Die Arbeitskraft wählt eine der Verwaltungsanwendung zugehörige URL im Browser. Sie befindet sich im Netz der HTW Dresden. Die Arbeitskraft darf noch nicht eingeloggt sein.
+Die Arbeitskraft wählt eine der Verwaltungsanwendung zugehörige URL im Browser. Sie befindet sich im Netz der HTW Dresden. Die Arbeitskraft darf noch nicht eingeloggt sein. Unterteilt wird in die Leitung und die Mitarbeiter. 
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
@@ -21,7 +21,7 @@ Die Arbeitskraft wählt eine der Verwaltungsanwendung zugehörige URL im Browser
     b) DB-Nutzername + zugehöriges Kennwort eingeben 
     c) Eingegebene Daten an System übermitteln
     d) System wertet die Daten aus und liefert entsprechende Antwort
-3. Personal wird auf die Startseite der Verwaltungsanwendung weitergeleitet
+3. Leitung oder Mitarbeiter wird auf die Startseite der Verwaltungsanwendung weitergeleitet
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
