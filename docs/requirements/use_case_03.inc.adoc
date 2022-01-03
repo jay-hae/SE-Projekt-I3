@@ -7,7 +7,7 @@ Eine Arbeitskraft der Stabsstelle Internationales verändert Attribute der Hochs
 
 === Kurzbeschreibung der Akteure
 ==== Mitarbeiter*Innen Stabsstelle Internationales
-Sind bei der Stabsstelle Internationales angestellt. Sie möchten Bestandsdaten eines Objektes anpassen.
+Sind bei der Stabsstelle Internationales angestellt. Sie möchten Bestandsdaten einer Hochschulpartnerschaft anpassen.
 
 === Vorbedingungen
 Die Arbeitskraft hat uneingeschränkten Zugriff auf die Verwaltungsanwendung.
