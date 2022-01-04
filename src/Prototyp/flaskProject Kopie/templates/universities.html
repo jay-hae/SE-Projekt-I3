@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>overview</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+    <link rel="stylesheet" href="mainpage.css">
+    <script src="firstDBcall.js"></script>
+</head>
+<body>
+<!-- Modal HTML embedded directly into document -->
+<!-- Modal for edit institute -->
+<div id="ex1" class="modal">
+    <div id="leftSide">   <!-- Right side of modal box -->
+    </div>
+    <hr>
+    <div id="rightSide">  <!-- Left side of modal box -->
+    </div>
+    <button id="save">Speichern</button>
+    <a href="#ex1" rel="modal:close"><button id="quit">Abbrechen</button></a>
+</div>
+<!-- modal to add institute -->
+<div id="ex2" class="modal">
+    <!-- 3 different div's to structure form -->
+    <div id="overall">
+        <!-- main construct for modal to add new institute -->
+        <label for="modal_country">Land</label>
+        <select id="modal_country" name="mod_country">
+        </select><br>
+        <label for="modal_eng">Englische Bezeichnung</label>
+        <input type="text" id="modal_eng" name="mod_eng"><br>
+        <label for="modal_local">Lokale Bezeichnung</label>
+        <input type="text" id="modal_local" name="mod_local"><br>
+        <label for="modal_adr">Adresse</label>
+        <input type="text" id="modal_adr" name="mod_adr"><br>
+        <label for="modal_ws">Website</label>
+        <input type="text" id="modal_ws" name="mod_ws"><br>
+        <label for="modal_ntzn">Notizen</label>
+        <input type="text" id="modal_ntzn" name="mod_ntzn"><br>
+        <label for="modal_anz">Öffentlich anzeigen?</label>
+        <input type="checkbox" id="modal_anz" name="mod=anz"><br>
+        <label for="modal_ec">Erasmus-Code</label>
+        <input type="text" id="modal_ec" name="mod_ec"><br>
+        <!-- 2 buttons to close modal, 'Speichern' triggers post request also -->
+        <a href="#ex2" rel="modal:close"><button id="mod_add_institute">Speichern</button></a>
+        <a href="#ex2" rel="modal:close"><button id="leave_mod">Abbrechen</button></a>
+    </div>
+    <div id="intern_office">
+
+    </div>
+    <div id="anspr_person">
+
+    </div>
+</div>
+
+    <div id="FilterAll">        <!-- div for every filter needed -->
+        <select id='fc' name="filter_country">
+            <option value="none">Country</option>
+        </select>
+        <select id='fil_fac' name="filter_fac">
+            <option value="none">Faculty</option>
+        </select>
+        <select name="filter_agreetype">
+            <option value="none">Agreement type</option>
+        </select>
+        <select id='sorting' name="sortby"> <!-- implement sorting filter -->
+            <option id="asc" value="a">Ascending</option>
+            <option id="desc" value="d">Descending</option>
+        </select>
+    </div>
+    <br>
+    <a href="#ex2" rel="modal:open"><button>Add Institute</button></a>
+    <table> <!-- Table for information needed for main page -->
+        <thead id="head">
+        <tr>
+        <td>Institute</td>
+        <td>Agreements</td>
+        </tr>
+        </thead>
+        <tbody id="addItems">   <!-- insert all rows from database when load page for the first time -->
+        </tbody>
+    </table>
+</body>
+</html>
