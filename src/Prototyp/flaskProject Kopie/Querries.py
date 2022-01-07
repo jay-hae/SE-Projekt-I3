@@ -78,10 +78,50 @@ def for_modal(university_name):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     # get institute id from inst. name (clicked on website)
-    cur.execute("SELECT ID FROM tbl_institure WHERE eng = ", (university_name,))
-    id = cur.fetchall()
-    # get single id extracted from result set
-    p_id = id[0]
+    # sql statement
+    sql = "SELECT ID FROM tbl_institute WHERE eng = %s"
+    # parameter
+    adr = (university_name,)
+    # execute sql statement and pass param
+    cur.execute(sql, adr)
+    my_id = cur.fetchall()
+    # get id extracted from result set
+    p_id = my_id[0]
+    cur.callproc('get_modal_information', p_id)
+    payload = []
+    for result in cur.stored_results():
+        rows = result.fetchall()
+        for row in rows:
+            if row[13] == 1:
+                gender = 'männlich'
+            elif row[13] == 2:
+                gender = 'weiblich'
+            else:
+                gender = 'divers'
+            content = {
+                'country': row[0],
+                'eng': row[1],
+                'local': row[2],
+                'adr': row[3],
+                'website': row[4],
+                'notes': row[5],
+                'display': row[6],
+                'ec': row[7],
+                'dep': row[8],
+                'tel': row[9],
+                'mail': row[10],
+                'off_website': row[11],
+                'function': row[12],
+                'gender': gender,
+                'title': row[14],
+                'firstname': row[15],
+                'lastname': row[16],
+                'pers_tel': row[17],
+                'pers_mail': row[18]
+            }
+            payload.append(content)
+    return jsonify(payload)
+
 
 
 # execute stored procedure with parameter p_id

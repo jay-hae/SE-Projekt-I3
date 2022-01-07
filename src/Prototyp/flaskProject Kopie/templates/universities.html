@@ -5,69 +5,101 @@
     <title>overview</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+    <link rel="stylesheet" href="my_modal.css"/>
     <link rel="stylesheet" href="mainpage.css">
     <script src="firstDBcall.js"></script>
+    <script src="Modal_edit.js"></script>
 </head>
 <body>
 <!-- Modal HTML embedded directly into document -->
 <!-- Modal for edit institute -->
 <div id="ex1" class="modal">
-    <div id="leftSide">   <!-- Right side of modal box -->
-    </div>
-    <hr>
-    <div id="rightSide">  <!-- Left side of modal box -->
-    </div>
-    <button id="save">Speichern</button>
-    <a href="#ex1" rel="modal:close"><button id="quit">Abbrechen</button></a>
+    <form class="modal_form" id="form_edit">
+        <div id="leftSide">   <!-- Right side of modal box -->
+            <label for="edit_mod_country">Land</label>
+            <select id="edit_mod_country" class="filter_country" name="edit_fil_country">
+            </select><br>
+            <label for="edit_modal_eng">Englische Bezeichnung</label>
+            <input type="text" id="edit_modal_eng"><br>
+            <label for="edit_modal_local">Lokale Bezeichnung</label>
+            <input type="text" id="edit_modal_local"><br>
+            <label for="edit_modal_adr">Adresse</label>
+            <input type="text" id="edit_modal_adr"><br>
+            <label for="edit_modal_ws">Website</label>
+            <input type="text" id="edit_modal_ws"><br>
+            <label for="edit_modal_ntzn">Notizen</label>
+            <input type="text" id="edit_modal_ntzn"><br>
+            <label for="edit_modal_anz">Öffentlich anzeigen?</label>
+            <input class="my_check" type="checkbox" id="edit_modal_anz"><br>
+            <label for="edit_modal_ec">Erasmus-Code</label>
+            <input type="text" id="edit_modal_ec"><br>
+        </div>
+        <hr>
+        <div id="rightSide">  <!-- Left side of modal box -->
+        </div>
+        <button type="submit" id="save">Speichern</button>
+        <a href="#ex1" rel="modal:close"><button id="quit">Abbrechen</button></a>
+    </form>
 </div>
 <!-- modal to add institute -->
 <div id="ex2" class="modal">
     <!-- 3 different div's to structure form -->
-    <div id="overall">
-        <!-- main construct for modal to add new institute -->
-        <label for="modal_country">Land</label>
-        <select id="modal_country" name="mod_country">
-        </select><br>
-        <label for="modal_eng">Englische Bezeichnung</label>
-        <input type="text" id="modal_eng" name="mod_eng"><br>
-        <label for="modal_local">Lokale Bezeichnung</label>
-        <input type="text" id="modal_local" name="mod_local"><br>
-        <label for="modal_adr">Adresse</label>
-        <input type="text" id="modal_adr" name="mod_adr"><br>
-        <label for="modal_ws">Website</label>
-        <input type="text" id="modal_ws" name="mod_ws"><br>
-        <label for="modal_ntzn">Notizen</label>
-        <input type="text" id="modal_ntzn" name="mod_ntzn"><br>
-        <label for="modal_anz">Öffentlich anzeigen?</label>
-        <input type="checkbox" id="modal_anz" name="mod=anz"><br>
-        <label for="modal_ec">Erasmus-Code</label>
-        <input type="text" id="modal_ec" name="mod_ec"><br>
+    <form class="modal_form" id="form_add" action="">
+        <div id="overall">
+            <!-- main construct for modal to add new institute -->
+            <label for="modal_country">Land</label>
+            <select id="modal_country" class="filter_country" name="mod_country">
+            </select><br>
+            <label for="modal_eng">Englische Bezeichnung</label>
+            <input type="text" id="modal_eng" name="mod_eng"><br>
+            <label for="modal_local">Lokale Bezeichnung</label>
+            <input type="text" id="modal_local" name="mod_local"><br>
+            <label for="modal_adr">Adresse</label>
+            <input type="text" id="modal_adr" name="mod_adr"><br>
+            <label for="modal_ws">Website</label>
+            <input type="text" id="modal_ws" name="mod_ws"><br>
+            <label for="modal_ntzn">Notizen</label>
+            <input type="text" id="modal_ntzn" name="mod_ntzn"><br>
+            <label for="modal_anz">Öffentlich anzeigen?</label>
+            <input class="my_check" type="checkbox" id="modal_anz" name="mod_anz"><br>
+            <label for="modal_ec">Erasmus-Code</label>
+            <input type="text" id="modal_ec" name="mod_ec"><br>
+        </div>
+        <div id="intern_office">
+
+        </div>
+        <div id="anspr_person">
+
+        </div>
         <!-- 2 buttons to close modal, 'Speichern' triggers post request also -->
-        <a href="#ex2" rel="modal:close"><button id="mod_add_institute">Speichern</button></a>
-        <a href="#ex2" rel="modal:close"><button id="leave_mod">Abbrechen</button></a>
-    </div>
-    <div id="intern_office">
-
-    </div>
-    <div id="anspr_person">
-
-    </div>
+            <a href="#ex2" rel="modal:close"><button type="submit" id="mod_add_institute">Speichern</button></a>
+            <a href="#ex2" rel="modal:close"><button id="leave_mod">Abbrechen</button></a>
+    </form>
 </div>
 
     <div id="FilterAll">        <!-- div for every filter needed -->
-        <select id='fc' name="filter_country">
-            <option value="none">Country</option>
+        <select id='fc' class="filter_country" name="filter_country">
+            <option value="none">-Land-</option>
         </select>
         <select id='fil_fac' name="filter_fac">
-            <option value="none">Faculty</option>
+            <option value="none">-Fakultät-</option>
+        </select>
+        <select id="fil_shown" name="filter_shown">
+            <option value="none">-Anzeige extern-</option>
+            <option value="y">Ja</option>
+            <option value="n">Nein</option>
+        </select>
+        <select id="fil_act" name="filter_activity">
+            <option value="none">-Aktiv-</option>
+            <option value="y">Ja</option>
+            <option value="n">Nein</option>
         </select>
         <select name="filter_agreetype">
-            <option value="none">Agreement type</option>
+            <option value="none">-Vertragstyp-</option>
         </select>
         <select id='sorting' name="sortby"> <!-- implement sorting filter -->
-            <option id="asc" value="a">Ascending</option>
-            <option id="desc" value="d">Descending</option>
+            <option id="asc" value="d">Sortierung absteigend</option>
+            <option id="desc" value="a">Sortierung aufsteigend</option>
         </select>
     </div>
     <br>

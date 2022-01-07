@@ -15,6 +15,10 @@ app.secret_key = os.urandom(24)
 @app.route('/', methods=['GET', 'POST'])
 def LoginPage():
     if request.method == 'GET':
+        session["usr"] = 'yes'
+        return redirect(url_for('sql'))
+    """
+    if request.method == 'GET':
         if "usr" in session:
             return redirect(url_for('sql'))
         else:
@@ -22,6 +26,7 @@ def LoginPage():
     else:
         session["usr"] = Login.LoginDB(request.form["usr"], request.form["pwd"])
         return redirect(url_for('sql'))
+"""
 
 
 # show user homepage
@@ -63,7 +68,7 @@ def ret_fac():
 @app.route('/openModal', methods=['POST'])
 def exec_sp():
     if "usr" in session:
-        return Querries.mod_box(request.form['id'])
+        return Querries.for_modal(request.form['eng'])
     else:
         redirect(url_for('LoginPage'))
 
@@ -78,29 +83,29 @@ def lol(filename):
 # return a value to let js script know if insert was successful
 @app.route('/addInstitute', methods=['POST'])
 def new_institute():
-    if "usr" in session:
-        if not request.form['show'] == "":
-            val_show = True
+    if request.method == 'POST':
+        if "usr" in session:
+            if "mod_anz" in request.form:
+                show = True
+            else:
+                show = False
+            # create dict with data from post request
+            add_inst_dict = {
+                'country': request.form['mod_country'],
+                'eng': request.form['mod_eng'],
+                'local': request.form['mod_local'],
+                'adr': request.form['mod_adr'],
+                'ws': request.form['mod_ws'],
+                'note': request.form['mod_ntzn'],
+                'erasmus': request.form['mod_ec']
+            }
+            # check if institute was successful added to db
+            if Querries.new_Institute(add_inst_dict):
+                return jsonify('success')
+            else:
+                return jsonify('failed')
         else:
-            val_show = False
-        # create dict with data from post request
-        add_inst_dict = {
-            'country': request.form['country'],
-            'eng': request.form['eng'],
-            'local': request.form['loc'],
-            'adr': request.form['adr'],
-            'ws': request.form['website'],
-            'note': request.form['note'],
-            'show': val_show,
-            'erasmus': request.form['erasmus'],
-        }
-        # check if institute was successful added to db
-        if Querries.new_Institute(add_inst_dict):
-            success = True
-        else:
-            success = False
-    else:
-        return redirect(url_for('LoginPage'))
+            return redirect(url_for('LoginPage'))
 
 
 if __name__ == '__main__':
