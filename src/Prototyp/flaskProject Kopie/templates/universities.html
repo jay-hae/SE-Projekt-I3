@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="mainpage.css">
     <script src="firstDBcall.js"></script>
     <script src="Modal_edit.js"></script>
+    <script src="addModalEvents.js"></script>
+    <script src="filterChanges.js"></script>
+    <script src="loadInstitutes.js"></script>
 </head>
 <body>
 <!-- Modal HTML embedded directly into document -->
 <!-- Modal for edit institute -->
 <div id="ex1" class="modal">
-    <form class="modal_form" id="form_edit">
+    <form class="modal_form" id="form_edit" action="">
         <div id="leftSide">   <!-- Right side of modal box -->
             <label for="edit_mod_country">Land</label>
             <select id="edit_mod_country" class="filter_country" name="edit_fil_country">
@@ -37,7 +40,7 @@
         <hr>
         <div id="rightSide">  <!-- Left side of modal box -->
         </div>
-        <button type="submit" id="save">Speichern</button>
+        <a href="#ex1" rel="modal:close"><button id="mod_edit">Speichern</button></a>
         <a href="#ex1" rel="modal:close"><button id="quit">Abbrechen</button></a>
     </form>
 </div>
@@ -47,6 +50,7 @@
     <form class="modal_form" id="form_add" action="">
         <div id="overall">
             <!-- main construct for modal to add new institute -->
+            <input type="hidden" id="institute_ID">
             <label for="modal_country">Land</label>
             <select id="modal_country" class="filter_country" name="mod_country">
             </select><br>
@@ -76,32 +80,35 @@
             <a href="#ex2" rel="modal:close"><button id="leave_mod">Abbrechen</button></a>
     </form>
 </div>
-
     <div id="FilterAll">        <!-- div for every filter needed -->
-        <select id='fc' class="filter_country" name="filter_country">
-            <option value="none">-Land-</option>
-        </select>
-        <select id='fil_fac' name="filter_fac">
-            <option value="none">-Fakultät-</option>
-        </select>
-        <select id="fil_shown" name="filter_shown">
-            <option value="none">-Anzeige extern-</option>
-            <option value="y">Ja</option>
-            <option value="n">Nein</option>
-        </select>
-        <select id="fil_act" name="filter_activity">
-            <option value="none">-Aktiv-</option>
-            <option value="y">Ja</option>
-            <option value="n">Nein</option>
-        </select>
-        <select name="filter_agreetype">
-            <option value="none">-Vertragstyp-</option>
-        </select>
-        <select id='sorting' name="sortby"> <!-- implement sorting filter -->
-            <option id="asc" value="d">Sortierung absteigend</option>
-            <option id="desc" value="a">Sortierung aufsteigend</option>
-        </select>
-    </div>
+        <form id="filter_form" action="">
+            <select id='fc' class="filter filter_country" name="filter_country">
+                <option value="none">-Land-</option>
+            </select>
+            <select id='fil_fac' name="filter_fac" class="filter">
+                <option value="none">-Fakultät-</option>
+            </select>
+            <select id="fil_shown" name="filter_shown" class="filter">
+                <option value="none">-Anzeige extern-</option>
+                <option value="y">Ja</option>
+                <option value="n">Nein</option>
+            </select>
+            <select id="fil_act" name="filter_activity" class="filter">
+                <option value="none">-Aktiv-</option>
+                <option value="y">Ja</option>
+                <option value="n">Nein</option>
+            </select>
+            <select id="fil_agree" name="filter_agreetype" class="filter">
+                <option value="none">-Vertragstyp-</option>
+            </select>
+            <select id='sorting' name="sortby" class="filter"> <!-- implement sorting filter -->
+                <option id="asc" value="d">Sortierung absteigend</option>
+                <option id="desc" value="a">Sortierung aufsteigend</option>
+            </select>
+            <br>
+            <button id="fil_reset">Zurücksetzen</button>
+        </div>
+    </form>
     <br>
     <a href="#ex2" rel="modal:open"><button>Add Institute</button></a>
     <table> <!-- Table for information needed for main page -->

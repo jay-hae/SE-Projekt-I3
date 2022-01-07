@@ -17,21 +17,61 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 //Hinweise: Beschreiben Sie die Philosophie der Architektur, d.h. den zentralen Ansatz für ihre Architektur. Identifizieren Sie alle Aspekte, die die Philosophie beeinflussen, z.B. komplexe Auslieferung Aspekte, Anpassung von Altsystemen oder besondere Geschwindigkeitsanforderungen. Muss es besonders robust sein, um eine langfristige Wartung und Pflege zu ermöglichen?
 
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung).
+Der Zweck des Softwareprojekts bezieht sich auf die Verwaltung der Datenbank, welche die Hochschulpartnerschaften und alle dazugehörigen Datensätze beinhaltet. Benutzer sollten die Software auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rechner) aufrufen können. Mobile Endgeräte sind dabei nicht zu berücksichtigen.
+
+Durch eine Formatierung der vorhandenen Datenbank soll ein einheitlicher Zugriff, für das Verwaltungs-/Informationsfrontend, auf die Daten geschaffen werden. Es sollen für Abfragen auf beiden Seiten dieselben Tabellen genutzt werden.
+
 
 
 == Annahmen und Abhängigkeiten
 //[List the assumptions and dependencies that drive architectural decisions. This could include sensitive or critical areas, dependencies on legacy interfaces, the skill and experience of the team, the availability of important resources, and so forth]
 
+Ein Mitglied der Gruppe hat begrenztes Vorwissen in der Webentwicklung mit Python Flask. Die Gruppen Analyse, Entwurf und Implementierung haben gefestigtes Wissen im Umgang mit Datenbanken. Grundkenntnisse innerhalb des Teams zu HTML, CSS und Javascript sind vereinzelt vorhanden.
+
+Die bereits vorhandene Datenbank befindet sich im Webspace des Nutzers: 'aaapartnerhs', und ist mit entsprechenden Login-Daten aufrufbar.
+
+Um die volle Funktionsfähigkeit der Anwendung zu gewährleisten ist der Nutzer verpflichtet, innerhalb seines Browsers, das Ausführen von Javascript-Skripten zu erlauben.
+
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
-
+System wide requirements
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
-. Entscheidung oder Einschränkung oder Begründung 1
-. Entscheidung oder Einschränkung oder Begründung 2
+=== Schichtenarchitektur
+
+Dadurch ist es möglich dem Softwaresystem und den dazugehörigen Bestandteilen feste Aufgabenbereiche zuzuordnen.
+
+. Untergliedern der Software in 3 Hauptbestandteile
+.. Speichern der Daten (Datenbank)
+. Schnittstelle zwischen Datenbank und Verwaltungsfrontend
+.. Auswerten Clientseitiger Anfragen
+.. Lesen der Datenbankeinträge
+.. Verändern der Datenbankeinträge
+
+
+=== Webtechnologien
+
+Durch das Verwenden der aufgeführten Webtechnologien möchten wir eine, Betriebssystem unabhängige, Nutzung ermöglichen. Die Anwendung soll des Weiteren ohne Installation bestimmter Tools, auf etablierten Browsern nutzbar sein und durch spätere Arbeitsgruppen leicht zu erweitern sein.
+
+. CSS / Javascript / HTML
+.. Weitverbreitete, allgegenwärtige Technologien zur Webentwicklung
+.. Vorkenntnisse innerhalb der Gruppe
+
+=== Serverseitige Programmierung mit Python
+
+Es wurde sich in diesem Fall für Python entschieden, da durch das Framework 'Flask' die Serverseitige Programmierung sehr übersichtlich gehalten wird. Es ist sehr einfach möglich, URL-Pfade anzupassen oder zu erweitern. Des Weiteren bestand im Bezug auf Flask innerhalb des Teams vereinzelt Vorerfahrung.
+
+
+=== Frameworks
+
+Das Verwenden von Frameworks ist gerade in Gruppen mit wenig Vorerfahrung sehr von Vorteil, der Code bleibt übersichtlich und die Webentwicklung erheblich vereinfacht.
+
+. jQuery
+. Flask
+. kleine Frameworks welche auf bestimmte Anwendungsfälle spezialisiert sind
 
 
 == Architekturmechanismen

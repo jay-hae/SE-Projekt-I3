@@ -17,8 +17,9 @@ def institutes_ret():
         # append it to payload, where all objects created out of result list x are stored
         for i in x:
             content = {
-                'name': i[0],
-                'agreements': i[1]
+                'id': i[0],
+                'name': i[1],
+                'agreements': i[2]
             }
             payload.append(content)
     cur.close()
@@ -68,8 +69,9 @@ def new_Institute(inst_inf_dict):
     cur = cnxn.cursor()
     # create parameter list to insert into tbl_institute
     param_log = (
-    inst_inf_dict['country'], inst_inf_dict['eng'], inst_inf_dict['local'], inst_inf_dict['adr'], inst_inf_dict['ws'],
-    inst_inf_dict['note'], inst_inf_dict['show'], inst_inf_dict['erasmus'])
+        inst_inf_dict['country'], inst_inf_dict['eng'], inst_inf_dict['local'], inst_inf_dict['adr'], inst_inf_dict['ws'],
+        inst_inf_dict['note'], inst_inf_dict['show'], inst_inf_dict['erasmus']
+    )
     print(param_log)
 
 
@@ -122,13 +124,4 @@ def for_modal(university_name):
             payload.append(content)
     return jsonify(payload)
 
-
-
-# execute stored procedure with parameter p_id
-
-
-def get_smth_changed():
-    # check if institute data shown on webpage is up-to-date
-    cnxn = Login.newConnection()
-    cur = cnxn.cursor()
-    cur.execute()
+    # execute stored procedure with parameter p_id

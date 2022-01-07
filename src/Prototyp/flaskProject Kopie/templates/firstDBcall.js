@@ -1,23 +1,9 @@
 // do everything below as soon as document is ready (document loaded)
 $(document).ready(function () {
-    $('#mod_add_institute').on('click', function (event){
-        event.preventDefault();
-        let form = $('#form_add');
-        $.ajax({
-            type: 'POST',
-            url: '/addInstitute',
-            data: form.serialize(), // serializes the form's elements.
-            success: function(data)
-            {
-
-              event.submit();
-            }
-        });
-    });
-    $(' .modal').on($.modal.CLOSE, function(event, modal) {
-        //$(' .my_check').prop('checked', false);
-        $(' .modal_form').trigger('reset'); //clear modal after closing it
-    });
+    //Laden der Daten für Startseite
+    loadStartpage();
+    //add events to modal; submit form & add button events
+    modal_events();
  /*   $('#mod_add_institute').on('click', function (event) {
         event.preventDefault(); // don't do event that is attached to click
         $.ajax({
@@ -42,42 +28,7 @@ $(document).ready(function () {
     });*/
     //main page; declare change events
     // trigger events after select filter
-    $('#sorting').on('change', function () {     //get val after select
-        //sort array a-z / z-a
-        alert($('#sorting').val()); // get value of selected element
-    });
-    $('#fil_fac').on('change', function () {
-        // filter faculties
-        alert($('#fil_fac').val()); //get the value of selected option
-    });
-
-    $.get('/getInstitutes', function (data) {
-        // load institutes from database
-        $.each(data, function (index) {
-            // callback function; do something for every data that is returned from get call
-            now = data[index]; // get data from json file at position [index]
-            //add new table row to main page
-            $('#addItems').append("<tr id='" + index + "'><td id='name'>" + now['name'] + "</td><td id='cntry'>" + now['agreements'] + "</td><td><a href=\"#ex1\" rel=\"modal:open\"><button class='btn' type='button'>Edit</button></a></tr>");
-        });
-        $(" .btn").each(function () {   //add function to dynamically created buttons (shown institutes)
-            $(this).click(function () {   //event triggerd on 'click'
-                let link = $(this).parent();
-                let td = link.parent();
-                let parent = td.parent();
-                let child = parent.children();//liefert alle Elemente dieser Tabellenzeile zurück; nodes.innerhtml[0] = name; innerhtml[1] == alle Verträge
-                let node = child[0];
-                let eng_name = node.innerHTML;  //get name from institute in this row
-                loadModal(eng_name);
-
-                /*$.post('', {    //make post request to stored procedure call (get data for modal box)
-                    name: nodes.innerHTML[0]
-                },
-                function (data, status){
-
-                })*/
-            });
-        });
-    });
+    addFilterChangeEvents();
     // load countries and add to select option
     $.get('/loadCountries', function (data2) {
         $.each(data2, function (index2) {
