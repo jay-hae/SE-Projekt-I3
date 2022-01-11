@@ -17,7 +17,7 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 //Hinweise: Beschreiben Sie die Philosophie der Architektur, d.h. den zentralen Ansatz für ihre Architektur. Identifizieren Sie alle Aspekte, die die Philosophie beeinflussen, z.B. komplexe Auslieferung Aspekte, Anpassung von Altsystemen oder besondere Geschwindigkeitsanforderungen. Muss es besonders robust sein, um eine langfristige Wartung und Pflege zu ermöglichen?
 
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung).
-Der Zweck des Softwareprojekts bezieht sich auf die Verwaltung der Datenbank, welche die Hochschulpartnerschaften und alle dazugehörigen Datensätze beinhaltet. Benutzer sollten die Software auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rechner) aufrufen können. Mobile Endgeräte sind dabei nicht zu berücksichtigen.
+Der Zweck des Softwareprojekts bezieht sich auf die Verwaltung einer Datenbank, welche die Hochschulpartnerschaften und alle dazugehörigen Datensätze beinhaltet. Benutzer sollten die Software auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rechner) aufrufen können. Mobile Endgeräte sind dabei nicht zu berücksichtigen.
 
 Durch eine Formatierung der vorhandenen Datenbank soll ein einheitlicher Zugriff, für das Verwaltungs-/Informationsfrontend, auf die Daten geschaffen werden. Es sollen für Abfragen auf beiden Seiten dieselben Tabellen genutzt werden.
 
@@ -46,15 +46,19 @@ Dadurch ist es möglich dem Softwaresystem und den dazugehörigen Bestandteilen 
 
 . Untergliedern der Software in 3 Hauptbestandteile
 .. Speichern der Daten (Datenbank)
-. Schnittstelle zwischen Datenbank und Verwaltungsfrontend
+. Schnittstelle zwischen Datenbank und Verwaltungsfrontend (Backend)
 .. Auswerten Clientseitiger Anfragen
 .. Lesen der Datenbankeinträge
 .. Verändern der Datenbankeinträge
+. Schnittstelle zum Nutzer (Frontend)
+.. Abrufen der Bestandsdaten
+.. Verändern, Löschen der vorhandenen Datenbankeinträge
+.. Hinzufügen neuer Datensätze
 
 
 === Webtechnologien
 
-Durch das Verwenden der aufgeführten Webtechnologien möchten wir eine, Betriebssystem unabhängige, Nutzung ermöglichen. Die Anwendung soll des Weiteren ohne Installation bestimmter Tools, auf etablierten Browsern nutzbar sein und durch spätere Arbeitsgruppen leicht zu erweitern sein.
+Durch das Verwenden der aufgeführten Webtechnologien möchten wir eine Nutzung, unabhängig des Betriebssystems, ermöglichen. Die Anwendung soll des Weiteren ohne Installation bestimmter Tools, auf etablierten Browsern nutzbar sein, sowie die einfache Erweiterung durch spätere Arbeitsgruppen.
 
 . CSS / Javascript / HTML
 .. Weitverbreitete, allgegenwärtige Technologien zur Webentwicklung
@@ -67,11 +71,10 @@ Es wurde sich in diesem Fall für Python entschieden, da durch das Framework 'Fl
 
 === Frameworks
 
-Das Verwenden von Frameworks ist gerade in Gruppen mit wenig Vorerfahrung sehr von Vorteil, der Code bleibt übersichtlich und die Webentwicklung erheblich vereinfacht.
+Das Verwenden von Frameworks ist gerade in Gruppen mit wenig Vorerfahrung sehr von Vorteil, der Code bleibt übersichtlich und die Webentwicklung wird erheblich vereinfacht.
 
-. jQuery
-. Flask
-. kleine Frameworks welche auf bestimmte Anwendungsfälle spezialisiert sind
+. jQuery (Javascript)
+. Flask (Python)
 
 
 == Architekturmechanismen
