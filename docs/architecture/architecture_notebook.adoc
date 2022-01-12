@@ -17,25 +17,32 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 //Hinweise: Beschreiben Sie die Philosophie der Architektur, d.h. den zentralen Ansatz für ihre Architektur. Identifizieren Sie alle Aspekte, die die Philosophie beeinflussen, z.B. komplexe Auslieferung Aspekte, Anpassung von Altsystemen oder besondere Geschwindigkeitsanforderungen. Muss es besonders robust sein, um eine langfristige Wartung und Pflege zu ermöglichen?
 
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung).
-Der Zweck des Softwareprojekts bezieht sich auf die Verwaltung einer Datenbank, welche die Hochschulpartnerschaften und alle dazugehörigen Datensätze beinhaltet. Benutzer sollten die Software auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rechner) aufrufen können. Mobile Endgeräte sind dabei nicht zu berücksichtigen.
+Der Zweck des Systems ist das Schaffen einer Webanwendung zum Verwalten von Hochschulpartnerschaften und Studenten-/Lehreraustausch. Benutzer
+sollten die Anwendung auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rechner) im Browser aufrufen können. Mobile Endgeräte sind dabei nicht
+zu berücksichtigen. Die Erreichbarkeit des Systems ist sehr eingrenzbar, sie ist gebunden an die Arbeitszeiten der Stabsstelle Internationales
+welche sich auf 8 Stunden, 7-15 Uhr, werktags beläuft. Außerhalb dieser Zeit gibt es keine Verpflichtung zur Erreichbarkeit.
 
-Durch eine Formatierung der vorhandenen Datenbank soll ein einheitlicher Zugriff, für das Verwaltungs-/Informationsfrontend, auf die Daten geschaffen werden. Es sollen für Abfragen auf beiden Seiten dieselben Tabellen genutzt werden.
+Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des Interfaces stark an einem Prototyp und dem Arbeitsablauf der SI orientiert, intuitives arbeiten wird so ermöglicht. Daraus resultierend sind Vorschriften bezüglich Performance, bei Aufruf versteckter Seitenelemente oder Laden von Daten, sollten nicht mehr als 3 Sekunden vergehen.
+
 
 
 
 == Annahmen und Abhängigkeiten
 //[List the assumptions and dependencies that drive architectural decisions. This could include sensitive or critical areas, dependencies on legacy interfaces, the skill and experience of the team, the availability of important resources, and so forth]
 
-Ein Mitglied der Gruppe hat begrenztes Vorwissen in der Webentwicklung mit Python Flask. Die Gruppen Analyse, Entwurf und Implementierung haben gefestigtes Wissen im Umgang mit Datenbanken. Grundkenntnisse innerhalb des Teams zu HTML, CSS und Javascript sind vereinzelt vorhanden.
+=== Annahmen
+. Nutzer sind Mitarbeiter der Stabsstelle Internationales
+. Nutzer befinden sich, mit einer stabilen Internetverbindung und einem modernen Browser, im Netz der HTW
+. Jeder Nutzer erlaubt das Ausführen von Javascript-Skripts innerhalb seines Browsers
 
-Die bereits vorhandene Datenbank befindet sich im Webspace des Nutzers: 'aaapartnerhs', und ist mit entsprechenden Login-Daten aufrufbar.
-
-Um die volle Funktionsfähigkeit der Anwendung zu gewährleisten ist der Nutzer verpflichtet, innerhalb seines Browsers, das Ausführen von Javascript-Skripten zu erlauben.
-
+=== Abhängigkeiten
+. Wir sind abhängig vom Rechenzentrum der HTW
+.. Unser Server läuft über eine, vom Rechenzentrum bereitgestellte, virtuelle Maschine und muss wochentags von 7-15 Uhr erreichbar sein
+.. Die Administration unserer Datenbank erfolgt über das Rechenzentrum, somit muss ein verantwortlicher Mitarbeiter die Verwaltung der Logins übernehmen
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
-System wide requirements
+
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
@@ -44,12 +51,13 @@ System wide requirements
 
 Dadurch ist es möglich dem Softwaresystem und den dazugehörigen Bestandteilen feste Aufgabenbereiche zuzuordnen.
 
-. Untergliedern der Software in 3 Hauptbestandteile
-.. Speichern der Daten (Datenbank)
+. Datenbank
+.. Speichern der Daten
+.. Ändern der Bestandsdaten
 . Schnittstelle zwischen Datenbank und Verwaltungsfrontend (Backend)
 .. Auswerten Clientseitiger Anfragen
 .. Lesen der Datenbankeinträge
-.. Verändern der Datenbankeinträge
+.. Ausführen von Datenbankbefehlen
 . Schnittstelle zum Nutzer (Frontend)
 .. Abrufen der Bestandsdaten
 .. Verändern, Löschen der vorhandenen Datenbankeinträge
@@ -85,8 +93,14 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
-. Architekturmechanismus 1
-. Architekturmechanismus 2
+=== Sicherheit
+Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung zu schützen. Dies passiert zum einen durch einen IP-Schutz, welcher außerhalb des Softwaresystems eingebettet wird, und durch die Implementierung von Mitarbeiteraccounts (SWFA-2). Diese Accounts werden innerhalb der Datenbank verwaltet. Um den Punkt (SWFA-3) zu realisieren wird diese Art von Nutzersystem benötigt, wir müssen uns somit aber keine Gedanken mehr zur Nutzerverwaltung machen, dies übernimmt die Datenbank für uns.
+
+=== Persistente Daten
+Die Anforderung (SWFA-1) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. Uns blieb, aufgrund einiger Vorgaben, nichts anderes übrig als das bestehende Datenbankmodell zu übernehmen. Die Entscheidung wurde von Vorgängern getroffen, somit verwenden wir eine MariaDB welche vom Rechenzentrum gehostet wird.
+
+=== Interface
+In der Analyse wurde festgestellt das SWFA-3, die unterschiedliche Darstellung der Webseite je nach Nutzerrechten, ein wesentlicher Bestandteil des Projektes ist. Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen. Der Fakt dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis das die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen entsprechen. Unsere Website ist nun in der Lage sich dem Bildschirm des jeweiligen Endgerätes anzupassen, insofern es sich um ein Notebook, einen Laptop oder Desktop-PC handelt.
 
 
 == Wesentliche Abstraktionen

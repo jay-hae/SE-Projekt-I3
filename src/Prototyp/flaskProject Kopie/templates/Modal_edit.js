@@ -1,8 +1,8 @@
-function loadModal(inst_name){
+function loadModal(inst_id){
     // $('#edit_modal_anz').prop('checked', true); set checkbox true manually
     $.ajax({
         data: {
-            eng: inst_name
+            id: inst_id
         },
         type: 'POST',
         url: '/openModal'

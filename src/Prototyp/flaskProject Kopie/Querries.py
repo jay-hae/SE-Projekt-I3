@@ -75,21 +75,12 @@ def new_Institute(inst_inf_dict):
     print(param_log)
 
 
-# get all data needed for modal box
-def for_modal(university_name):
+# get all data needed for modal box; specified inst by ID given from html site
+def for_modal(institute_id):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    # get institute id from inst. name (clicked on website)
-    # sql statement
-    sql = "SELECT ID FROM tbl_institute WHERE eng = %s"
-    # parameter
-    adr = (university_name,)
-    # execute sql statement and pass param
-    cur.execute(sql, adr)
-    my_id = cur.fetchall()
-    # get id extracted from result set
-    p_id = my_id[0]
-    cur.callproc('get_modal_information', p_id)
+    param_list = (institute_id,)
+    cur.callproc('get_modal_information', param_list)
     payload = []
     for result in cur.stored_results():
         rows = result.fetchall()
@@ -123,5 +114,3 @@ def for_modal(university_name):
             }
             payload.append(content)
     return jsonify(payload)
-
-    # execute stored procedure with parameter p_id

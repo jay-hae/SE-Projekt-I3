@@ -26,6 +26,9 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 ** Zur Überprüfung wird versucht von außerhalb des HTW-Netzes auf das Verwaltungsfrontend zu zugreifen. Weiterhin werden falsche Login-Daten getestet.
 
+*SWFA-3: Das Interface des Systems ist je nach Nutzer unterschiedlich. Einige Funktionen können nur von bestimmten Nutzern durchgeführt werden.*
+
+** Zur Überprüfung wird sich mit 2 Accounts angemeldet welche verschiedene Rechte haben, daraufhin wird die Funktionsvielfalt innerhalb der Verwaltungsanwendung verglichen
 
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
@@ -57,11 +60,7 @@ Barrierefreie Webredaktion ]
 ** Zur Überprüfung werden zwei Loginsessions genutzt um parallel Daten zu modifizieren.
 ... parallel Lesen
 ... parallel Schreiben
-... parallel den gleichen Datensatz bearbeiten
 
-*NFAR-4: Das System sollte Konflikte durch paralleles Arbeiten an einem Datensatz verhindern.*
-
-** Zur Überprüfung werden zwei Loginsessions genutzt um parallel Daten im selben Datensatz zu modifizieren.
 
 === Effizienz (Performance)
 // Die Performanz Charakteristiken des Systems sollten in diesem Bereich ausgeführt werden. Beispiele sind Antwortzeit, Durchsatz, Kapazität und Zeiten zum Starten oder Beenden.
@@ -89,7 +88,6 @@ Barrierefreie Webredaktion ]
 
 * Das Verwaltungsfrontend muss auf den Rechnern der Stabstelle Internationales lauffähig sein.
 ** Windows 10 mit den Browsern Edge, Firefox und Chrome
-* Die Datenbank muss als MariaDB portiert werden, um mit dem derzeitigen Informationsfrontend kompatibel zu sein und ein einfaches Einpflegen in die bestehenden Systeme des Rechenzentrums zu ermöglichen.
 
 //* Ressourcenbegrenzungen
 //* zu nutzende Komponenten / Bibliotheken / Frameworks

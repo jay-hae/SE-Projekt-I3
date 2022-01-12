@@ -68,7 +68,7 @@ def ret_fac():
 @app.route('/openModal', methods=['POST'])
 def exec_sp():
     if "usr" in session:
-        return Querries.for_modal(request.form['eng'])
+        return Querries.for_modal(request.form['id'])
     else:
         redirect(url_for('LoginPage'))
 
