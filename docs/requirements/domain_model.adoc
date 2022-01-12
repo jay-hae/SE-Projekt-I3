@@ -6,6 +6,9 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Allgemeine Informationen
+Das Domain Model bildet die relevante Terminologie der Fachdomäne ab, mit dem Ziel, eine
+gemeinsame Sprache zwischen Entwicklern und Fachexperten herzustellen und
+Missverständnissen vorzubeugen
 
-
-== ...
+== Domänenmodel
+image::domain_model.png[]
