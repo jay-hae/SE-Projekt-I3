@@ -1,11 +1,69 @@
 = Design: {project-name}
-Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
-== Allgemeine Informationen
+== Technische Designaspekte
+Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Funktionsweise einzelner Systemkomponenten haben.
+
+=== Datenbankserver
+
+Es wird ein bereits existenter MariaDB Datenbankserver vom Rechenzentrum genutzt. Der Datenbankserver führt täglich automatische Backups aus. Ebenso liegt die Verantwortlichkeit der Nutzerverwaltung bei dem Rechenzentrum. Dadurch besitzt der DB-Server eine exzellente Verfügbarkeit, Skalierung und Wartbarkeit.
+
+==== Datenbankmodell
+Aufgrund der geforderten Kompatibilität mit dem Informationsfrontend ist die Datenbankstruktur weitestgehend vorgeschrieben und festgelegt. Bereits in der Vorgruppe wurden zahlreiche Änderungen im Vergleich zur Access Datenbank vorgenommen, um die Komplexität zu senken und Qualität der Datensätze zu steigern. 
+
+Dabei wurden teils 1:n Beziehungen von Hochschulen zu ihren Ansprechpartnern aufgelöst. 
+
+In folgendem Diagramm wurden Spalten ohne Beziehungen weggelassen, um eine bessere Übersicht zu erzielen.
+
+(Platzhalter Datenbankmodell)
+
+==== Tabellen
+
+Untenstehend werden alle Tabellen erläutert und aufgezeigt, was innerhalb des Verwaltungsfrontends ermöglicht wird:
+
+• diese hat generell überall Lese- aber nicht Schreibzugriff
+
+(Platzhalter Tabelle)
+
+==== Views 
+
+Für das Informationsfrontend müssern entsprechende Views den Anforderungen entsprechend für fast jede Tabelle eingerichtet werden. Ausgenommen: tbl_exchange und tbl_exchange_type
+
+Dabei dürfen nur aktive Verträge berücksichtigt werden.
 
 
-== ...
+==== Verwaltung der Datenbank
+
+Zur administrativen Verwaltung der Datenbank wird ein Super-User eingerichtet. Dieser hat - neben dem normalen User - die notwendigen Berechtigungen falsch angelegte Daten zu löschen.
+
+=== Webserver
+
+(ToDo)
+
+=== Synchronisation
+
+Es ist nicht notwendig Daten in einer anderen Datenbank zwischenzuspeichern, weshalb die Website und Datenbank zum Zeitpunkt des Aufrufs immer auf den aktuellen Stand ist.
+
+Auf der anderen Seite werden Änderungen direkt an die Datenbank gesendet, daher ist kein Synchronisationsmechanismus nötig.
+
+=== Schnittstelle zwischen Front- und Backend
+
+(ToDo)
+
+== Graphische Designaspekte
+
+Graphische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Darstellungsweise einzelner Systemkomponenten für den Benutzer haben.
+
+Da der Kunde bereits vorher mit Microsoft Access und einem Prototypen gearbeitet hatte, wurde bei der Erstellung der Anwendung der Fokus auf eine möglichst nahe Anlehnung der Gestaltung unserer Vorgruppe gelegt.
+
+=== Verwaltungsfrontend
+
+Bei der Darstellung wird eine Mischung aus Bootstrap und lokalem CSS genutzt.
+
+Die Listen von Hochschulen, Mentoren, Ländern usw. werden beim Aufruf der Seite durch das PHP-Skript geladen und zusätzlich bei der Bedarf eines Filters aktualisiert und werden in einer Tabelle angeordnet.
+
+Das Bearbeitungsformular wird in Form eines neuen Fensters (welches sich über den Inhalt der Seite hervorhebt) zu Beginn des Aufrufes versteckt. Bei dem Drücken des Bearbeiten-Buttons oder des Erstellen-Buttons wird das Bearbeitungsformular sichtbar und die Daten werden in die entsprechenden Eingabefelder hineingeladen.
