@@ -27,7 +27,37 @@ Untenstehend werden alle Tabellen erläutert und aufgezeigt, was innerhalb des V
 
 • diese hat generell überall Lese- aber nicht Schreibzugriff
 
-(Platzhalter Tabelle)
++
+|===
+|Tabelle | Inhalt | Verwaltungsfrontend
+
+|tbl_mentor | Betreuer der Hochschulverträge der HTW | Anlegen, Bearbeiten, Deaktivieren
+
+|tbl_gender | Geschlechterauswahl für Ansprechpersonen und Mentoren | -
+
+|tbl_institute | Partnerhochschule, International office | Auf Informationsfrontend: Anlegen, Bearbeiten, Deaktivieren
+
+|tbl_partnership | Zuweisung eines Partnerschaftstypes (1:n) zu _tbl_institute_ | implizites Anlegen mit Vertrag
+
+|tbl_partnership_type | Definition unterschiedlicher Abkommenstypen | -
+
+|tbl_mobility_agreement | Vertragsinformationen - verweist auf den Mentor und den Vertragstyp / Hochschule in _tbl_partnership_ | Anlegen, Bearbeiten, Deaktivieren
+
+|tbl_mobility_agreement_x_course | "Optionale" Beschränkung der Anzahl von Incoming / Outgoing je Vertrag und Studiengang
+
+Bsp.: Vertrag der Fakultät Informatik für 8 Studenten Incoming/Outgoing -> davon dürfen nur 4 Wirtschaftsinformatik und 4 Informatik sein| Anlegen, Bearbeiten, Deaktivieren
+
+|tbl_faculty | Fakultäten der HTW | -
+
+|tbl_course | Kurse der HTW, genutzt von
+_tbl_mobility_agreement_x_course_ und der Statistik | Anlegen, Bearbeiten, Deaktivieren
+
+|tbl_exchange_type | Art des Austausches z.B. Erasmus, Promos, Freemover -> Verwendung für Statistik| -
+
+|tbl_exchange| anonymisierte Daten von Incoming / Outgoing Studenten | Import von Excel Datei zum Hinzufügen von Datensätzen
+|===
+
+NOTE: Um Probleme mit Modifikationen zu vermeiden, ist allein dem Super-User das Löschen fehlerhafter Datensätze erlaubt. Der Nutzen dieser Funktion sollte jedoch die Ausnahme bilden und nicht die Regel.
 
 ==== Views 
 
