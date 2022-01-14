@@ -19,7 +19,10 @@ Dabei wurden teils 1:n Beziehungen von Hochschulen zu ihren Ansprechpartnern auf
 
 In folgendem Diagramm wurden Spalten ohne Beziehungen weggelassen, um eine bessere Übersicht zu erzielen.
 
-(Platzhalter Datenbankmodell)
+
+[[phys_erm]]
+.physisches Entity-Relationship-Diagram
+image::physical_erm.svg[]
 
 ==== Tabellen
 
