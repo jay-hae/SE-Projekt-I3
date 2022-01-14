@@ -92,8 +92,4 @@ Da der Kunde bereits vorher mit Microsoft Access und einem Prototypen gearbeitet
 
 === Verwaltungsfrontend
 
-Bei der Darstellung wird eine Mischung aus Bootstrap und lokalem CSS genutzt.
-
-Die Listen von Hochschulen, Mentoren, Ländern usw. werden beim Aufruf der Seite durch das PHP-Skript geladen und zusätzlich bei der Bedarf eines Filters aktualisiert und werden in einer Tabelle angeordnet.
-
-Das Bearbeitungsformular wird in Form eines neuen Fensters (welches sich über den Inhalt der Seite hervorhebt) zu Beginn des Aufrufes versteckt. Bei dem Drücken des Bearbeiten-Buttons oder des Erstellen-Buttons wird das Bearbeitungsformular sichtbar und die Daten werden in die entsprechenden Eingabefelder hineingeladen.
+(To-Do)
