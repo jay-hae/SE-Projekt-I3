@@ -26,16 +26,16 @@ Die Arbeitskraft wählt eine der Verwaltungsanwendung zugehörige URL im Browser
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
-==== Erfolreicher Login
+==== Erfolgreicher Login
 . <Szenario 1.1: Die Arbeitskraft befindet sich im HTW-Netz und ist derzeit nicht eingeloggt.>
-. <Szenario 1.2, Die Arbeitskraft Authentifiziert sich und übermittelt die Daten an das System>
-. <Szenario 1.3, Das System bestätigt diese Daten und gewährt der Arbeitskraft Zugang zur Anwendung>
-. <Szenario 1.4, Weiterleiten der AK auf die Startseite der Anwendung>
+. <Szenario 1.2: Die Arbeitskraft authentifiziert sich und übermittelt die Daten an das System>
+. <Szenario 1.3: Das System bestätigt diese Daten und gewährt der Arbeitskraft Zugang zur Anwendung>
+. <Szenario 1.4: Weiterleiten der AK auf die Startseite der Anwendung>
 
 === Gescheiterter Login
 . <Szenario 2.1: Die Arbeitskraft befindet sich im HTW-Netz und ist derzeit nicht eingeloggt.>
-. <Szenario 2.2, Die Arbeitskraft Authentifiziert sich und übermittelt die Daten an das System>
-. <Szenario 2.3, Das System lehnt die Daten ab, der Nutzer bekommt keinen Zugang>
+. <Szenario 2.2: Die Arbeitskraft authentifiziert sich und übermittelt die Daten an das System>
+. <Szenario 2.3: Das System lehnt die Daten ab, der Nutzer bekommt keinen Zugang>
 
 === Kein Zugang zur Verwaltungsanwendung
 . <Szenario 3.1: Die Arbeitskraft befindet sich nicht HTW-Netz.>

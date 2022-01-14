@@ -1,3 +1,5 @@
+:imagesdir: images
+
 = Architecture Notebook: {project-name}
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
@@ -42,31 +44,18 @@ Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des Interfac
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
-
+* SWFA-1
+* SWFA-2
+* SWFA-3
+* NFAU-2
+* Lauffähig in Chrome, Firefox und Edge
+* Erweiterbarkeit der Systemfunktionalität
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
-
-=== Schichtenarchitektur
-
-Dadurch ist es möglich dem Softwaresystem und den dazugehörigen Bestandteilen feste Aufgabenbereiche zuzuordnen.
-
-. Datenbank
-.. Speichern der Daten
-.. Ändern der Bestandsdaten
-. Schnittstelle zwischen Datenbank und Verwaltungsfrontend (Backend)
-.. Auswerten Clientseitiger Anfragen
-.. Lesen der Datenbankeinträge
-.. Ausführen von Datenbankbefehlen
-. Schnittstelle zum Nutzer (Frontend)
-.. Abrufen der Bestandsdaten
-.. Verändern, Löschen der vorhandenen Datenbankeinträge
-.. Hinzufügen neuer Datensätze
-
-
 === Webtechnologien
 
-Durch das Verwenden der aufgeführten Webtechnologien möchten wir eine Nutzung, unabhängig des Betriebssystems, ermöglichen. Die Anwendung soll des Weiteren ohne Installation bestimmter Tools, auf etablierten Browsern nutzbar sein, sowie die einfache Erweiterung durch spätere Arbeitsgruppen.
+Durch das Verwenden der aufgeführten Webtechnologien möchten wir eine Betriebssystem unabhängige Nutzung ermöglichen. Die Anwendung soll des Weiteren ohne Installation bestimmter Tools auf etablierten Browsern nutzbar sein, sowie die einfache Erweiterung durch spätere Arbeitsgruppen ermöglichen.
 
 . CSS / Javascript / HTML
 .. Weitverbreitete, allgegenwärtige Technologien zur Webentwicklung
@@ -74,7 +63,7 @@ Durch das Verwenden der aufgeführten Webtechnologien möchten wir eine Nutzung,
 
 === Serverseitige Programmierung mit Python
 
-Es wurde sich in diesem Fall für Python entschieden, da durch das Framework 'Flask' die Serverseitige Programmierung sehr übersichtlich gehalten wird. Es ist sehr einfach möglich, URL-Pfade anzupassen oder zu erweitern. Des Weiteren bestand im Bezug auf Flask innerhalb des Teams vereinzelt Vorerfahrung.
+Es wurde sich in diesem Fall für Python entschieden, da durch das Framework 'Flask' die Serverseitige Programmierung sehr übersichtlich gehalten wird. Es ist sehr einfach möglich, URL-Pfade anzupassen oder zu erweitern. Des Weiteren bestand in Bezug auf Flask innerhalb des Teams vereinzelt Vorerfahrung.
 
 
 === Frameworks
@@ -94,13 +83,13 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
 === Sicherheit
-Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung zu schützen. Dies passiert zum einen durch einen IP-Schutz, welcher außerhalb des Softwaresystems eingebettet wird, und durch die Implementierung von Mitarbeiteraccounts (SWFA-2). Diese Accounts werden innerhalb der Datenbank verwaltet. Um den Punkt (SWFA-3) zu realisieren wird diese Art von Nutzersystem benötigt, wir müssen uns somit aber keine Gedanken mehr zur Nutzerverwaltung machen, dies übernimmt die Datenbank für uns.
+Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung zu schützen. Dies passiert zum einen durch einen IP-Schutz. Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden(SWFA-2). Derzeit wird noch die Logik der Vorgruppe verfolgt um einen Login per Datenbank-Credentials zu ermöglichen. Durch Anforderung SWFA-3 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren. Es wird eine Serverseitige Unterscheidung zwischen den Mitarbeitern benötigt.
 
 === Persistente Daten
 Die Anforderung (SWFA-1) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. Uns blieb, aufgrund einiger Vorgaben, nichts anderes übrig als das bestehende Datenbankmodell zu übernehmen. Die Entscheidung wurde von Vorgängern getroffen, somit verwenden wir eine MariaDB welche vom Rechenzentrum gehostet wird.
 
 === Interface
-In der Analyse wurde festgestellt das SWFA-3, die unterschiedliche Darstellung der Webseite je nach Nutzerrechten, ein wesentlicher Bestandteil des Projektes ist. Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen. Der Fakt dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis das die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen entsprechen. Unsere Website ist nun in der Lage sich dem Bildschirm des jeweiligen Endgerätes anzupassen, insofern es sich um ein Notebook, einen Laptop oder Desktop-PC handelt.
+In der Analyse wurde festgestellt das SWFA-3, die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist. Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen. Der Fakt dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis das die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen entsprechen. Unsere Website ist nun in der Lage sich dem Bildschirm des jeweiligen Endgerätes anzupassen, insofern es sich um ein Notebook, einen Laptop oder Desktop-PC handelt.
 
 
 == Wesentliche Abstraktionen
@@ -109,18 +98,25 @@ In der Analyse wurde festgestellt das SWFA-3, die unterschiedliche Darstellung d
 
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
-
+=== Schichtenarchitektur
+Dadurch ist es möglich dem Softwaresystem und den dazugehörigen Bestandteilen feste Aufgabenbereiche zuzuordnen.
+Das System wird in logische Schichten aufgeteilt. Diese sind die Datenbank, das Backend und das Frontend. Die Datenbank wird den Aspekt des speicherns, bereitstellen und ändern der Daten übernehmen. Das Frontend wird die Schnittstelle zwischen User und Systemlogik sein, welche sich im Backend befindet. Dort werden Nutzeranfragen verarbeitet, sprich Kommunikation mit der Datenbank. Dem Frontend werden aber auch, abhängig der Anfrage, die richtigen Dateien zum Abbilden der HTML-Seiten bereitgestellt-
 
 == Architektursichten (Views)
 //[Describe the architectural views that you will use to describe the software architecture. This illustrates the different perspectives that you will make available to review and to document architectural decisions.]
 
 Folgende Sichten werden empfohlen:
 
+
+
 === Logische Sicht
 //Beschreibt die Struktur und das Verhalten Systemteilen, die hohen Einfluss auf die Architektur haben. Dies kann die Paketstruktur, kritische Schnittstellen, wichtige Klassen und Subsysteme sowie die Beziehungen zwischen diesen Elementen enthalten. Zudem sollten die physische und logische Sicht persistenter Daten beschrieben werden, wenn es diesen Aspekt im System gibt. Dies ist ein hier dokumentierter Teilaspekt des Entwurfs.
+image::C4_lvl1.png[]
 
 === Physische Sicht (Betriebssicht)
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
 
 === Use cases
-//Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungne enthalten.
+//Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungen enthalten.
+
+*

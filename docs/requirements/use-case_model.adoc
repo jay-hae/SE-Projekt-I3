@@ -11,13 +11,13 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Identifizierte Use Cases
 // Liste aller identifizierten Use Cases (priorisiert)
-= für Akteur Mitarbeiter SI 
-* *UC01*: Authentifizierung für Verwaltungsanwendung
-* *UC02*: Anlegen von Objekten 
-* *UC03*: Verändern von Objekten
-* *UC04*: Löschen von Objekten
-* *UC05*: AVL Studierenden
-* *UC06*: Statistiken generieren 
+=== für Akteur Mitarbeiter SI
+* *UC01*: In System einloggen
+* *UC02*: Anlegen von Hochschulen
+* *UC03*: Bearbeiten von Hochschulen
+* *UC04*: Löschen von fehlerhaften Datensätzen
+* *UC05*: ABL von Mentoren
+* *UC06*: Erstellen von Berichten
 
 = für Akteur HTW-Website 
 //* *UC07*: Einsicht auf Informationen über Partnerschaften  

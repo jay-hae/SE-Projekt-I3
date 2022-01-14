@@ -4,7 +4,7 @@ function addFilterChangeEvents(){
         let fil_form = $('#filter_form');
         $.ajax({
             type: 'POST',
-            url: '/filterInsitute',
+            url: '/filterInstitute',
             data: fil_form.serialize(), // serializes the form's elements.
             success: function(data)
             {

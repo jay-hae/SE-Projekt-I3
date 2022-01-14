@@ -108,5 +108,24 @@ def new_institute():
             return redirect(url_for('LoginPage'))
 
 
+@app.route('/filterInstitute', methods=['POST'])
+def handle_filter():
+    if request.method == 'POST':
+        payload = []
+        filter_dict = {}
+        for x in request.form:
+            if request.form[x] != 'none':
+                filter_dict = {
+                    x: request.form[x]
+                }
+            else:
+                filter_dict = {
+                    x: '%'
+                }
+            payload.append(filter_dict)
+
+    return jsonify('hi')
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
