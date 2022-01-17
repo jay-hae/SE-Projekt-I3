@@ -15,12 +15,11 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 
 | Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
 
-| xx | xx | xx
-
 | Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Unterbau, hinteres Ende
 
 | Erasmus _+_ | EU-Programm zur Förderung von allgemeiner und beruflicher Bildung, Jugend und Sport in Europa. Ermöglicht den Austausch von sowohl Lehrenden als auch Studierenden.
 | Erasmus
+| Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interressierte Personen
 
 | Department | Auslandsbüro an einer
 Hochschule | Abteilung
@@ -32,7 +31,7 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 
 | Incoming | Studierende aus dem Ausland, die zeitweise an der HTW-Dresden studieren | An die Hochschule kommende Auslandsstudierende
 
-| Informationsfrontend | Das bisher bestehende Frontend zur Datenbank, das Studierenden und Mitarbeitern die Information über die bestehenden Partnerschaften ermöglicht
+| Informationsfrontend | Das bisher bestehende Frontend zur Datenbank, das Externen Informationen über die bestehenden Partnerschaften ermöglicht
 | Frontend für die Studierenden, Anzeigefrontend, bisheriges Frontend
 
 | Mentor | Ansprechpartner an der jeweiligen Hochschule | Kontaktperson, Ansprechpartner
@@ -87,7 +86,7 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 | SI | Stabstelle Internationales | Auftraggeber des Softwareprojektes
 | MSI | Mitarbeiter oder Leitungs Person | Hauptnutzer der Software
 
-| xx | xx | xx
+| DB | Datenbank | genutztes System zur langfristigen Speicherung von Datenbeständen 
 
 | CRUD | Create, Read, Update and Delete | Erstellen, Lesen, Aktualisieren und Löschen von Daten
 
