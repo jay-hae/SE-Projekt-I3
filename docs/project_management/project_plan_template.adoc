@@ -1,5 +1,5 @@
-= Projektplan: {project-name}
-Richard Benndorf <s82003@htw-dresden.de>; Daria Bolotova <s82065@htw-dresden.de>; Tilman Ischner <s82044@htw-dresden.de>; Melanie Kadner <s81056@htw-dresden.de>; Alio Leuchtmann <s82067@htw-dresden.de>; Vincent Peters <s82627@htw-dresden.de>; Celine Wamser <s81090@htw-dresden.de>; Dominik Weber <s82021@htw-dresden.de>; Jordi Zmiani <s82071@htw-dresden.de>
+= Projektplan: Datenbank Webverwaltung Stabsstelle Internationales
+
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
