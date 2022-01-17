@@ -158,29 +158,59 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 [%header, cols="4,1,4,1"]
 |===
 | Bedarf | Priorität | Features | Geplantes Release
-| Authentifizierung für Verwaltungsanwendung
+| In System einloggen
 | 7 
-| Eingabe und Anmeldung für die Mitarbeiter:Innen der Stabsstelle Internationales
+| soll den Nutzern per Authentifizierung der Zugang zum System gewährt werden
 | Sommersemester 2022
 
-| Anlegen von Objekten
+| Anlegen von Partnerhochschulen
 | 10 
-| Zum erzeugen neuer Datenbankeinträge in der Verwaltungsanwendung
+| Zum erzeugen neuer Partnerhochschulen in der Verwaltungsanwendung
 | Sommersemester 2022
 
-| Bearbeiten von Objekten 
+| Bearbeiten von Hochschulen 
 | 10 
-| Zum anpassen eines Datenbankeinträgen in der Verwaltungsanwendung   
+| Zum anpassen eines Hochschulattributes in der Verwaltungsanwendung   
 | Sommersemester 2022
 
-| Löschen von Objekten 
-| 7 
-| Zum löschen eines Datenbankeinträgen in der Verwaltungsanwendung
+| Löschen von fehlerhaften Datensätzen
+| 5 
+| Zum löschen eines Datenbankattributes in der Verwaltungsanwendung
 | Sommersemester 2022
 
-| Statistiken generieren 
-| 5
-| Zum erstellen von Statistiken und Berichten
+| Anlegen von Mentoren 
+| 7
+| Zum erzeugen neuer Mentoren in der Verwaltungsanwendung
+| Sommersemester 2022
+
+| Bearbeiten von Mentoren 
+| 7
+| Zum anpassen eines Mentoren in der Verwaltungsanwendung   
+| Sommersemester 2022
+
+| Löschen von Mentoren
+| 5 
+| Zum löschen eines Mentoren in der Verwaltungsanwendung
+| Sommersemester 2022
+
+| Erstellen von Berichten über Erasmusvereinbarungen
+| 3 
+| Zum Erstellen eines Berichtes in der Verwaltungsanwendung
+| Sommersemester 2022
+
+| Erstellen von Berichten über Mentoren
+| 3 
+| Zum Erstellen eines Berichtes in der Verwaltungsanwendung
+| Sommersemester 2022
+
+| Erstellen von Berichten über Hochschulvereinbarungen
+| 3 
+| Zum Erstellen eines Berichtes in der Verwaltungsanwendung
+| Sommersemester 2022
+
+| Erstellen von Berichten über Abkommen nach nach Länder sortiert
+| 3 
+| Zum Erstellen eines Berichtes in der Verwaltungsanwendung
 | Sommersemester 2022
 
 |===

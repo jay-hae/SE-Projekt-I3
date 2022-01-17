@@ -16,14 +16,21 @@ include::../_includes/default-attributes.inc.adoc[]
 * *UC02*: Anlegen von Hochschulen
 * *UC03*: Bearbeiten von Hochschulen
 * *UC04*: Löschen von fehlerhaften Datensätzen
-* *UC05*: ABL von Mentoren
-* *UC06*: Erstellen von Berichten
+* *UC05*: Anlegen von Mentoren
+* *UC06*: Bearbeiten von Mentoren
+* *UC07*: Löschen von Mentoren
 
-= für Akteur HTW-Website 
+=== Use Cases für die Berichtsabfragen
+* *UC08*: Erstellen von Berichten über Erasmusvereinbarungen
+* *UC09*: Erstellen von Berichten über Mentoren
+* *UC10*: Erstellen von Berichten über Hochschulvereinbarungen
+* *UC11*: Erstellen von Berichten über Abkommen nach nach Länder sortiert
+
+//= für Akteur HTW-Website 
 //* *UC07*: Einsicht auf Informationen über Partnerschaften  
 //* *UC08*: Filtern und Ausgeben bestimmter Bestandsdaten
 //* *UC09*: Senden von Nutzergenerierten Datenbankabfragen
-* *UC07*: Anfordern gefilteter Bestandsdaten
+//* *UC07*: Anfordern gefilteter Bestandsdaten
 
 
 //Weitere mögliche Use-Cases, wobei noch nicht geklärt ist ob es sich tatsächlich um reale Akteure handelt / ob es zu den Anforderungen gehört
@@ -40,7 +47,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 //Fügen Sie nachfolgend alle detailierten Use-Cases per Include ein.
 //Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem use_case_01.inc.adoc Template basiert.
-<<<
+//<<<
 include::use_case_01.inc.adoc[]
 //<<<
 include::use_case_02.inc.adoc[]
@@ -49,14 +56,17 @@ include::use_case_03.inc.adoc[]
 //<<<
 include::use_case_04.inc.adoc[]
 //<<<
-//include::use_case_05.inc.adoc[]
+include::use_case_05.inc.adoc[]
 //<<<
-//include::use_case_06.inc.adoc[]
+include::use_case_06.inc.adoc[]
 //<<<
-//include::use_case_07.inc.adoc[]
+include::use_case_07.inc.adoc[]
 //<<<
-//include::use_case_08.inc.adoc[]
+include::use_case_08.inc.adoc[]
 //<<<
-//include::use_case_09.inc.adoc[]
+include::use_case_09.inc.adoc[]
 //<<<
-//include::use_case_10.inc.adoc[]
+include::use_case_10.inc.adoc[]
+//<<<
+include::use_case_11.inc.adoc[]
+    
