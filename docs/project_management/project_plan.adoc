@@ -148,6 +148,13 @@ Der Projektplan besteht aus einzelnen Iterationen für die jeweils ein Iteration
 * Kontakt zu Rechenzentrum und Datenschutzbeauftragtem der HTW Dresden aufbauen
 | 08.12.2021 - 22.12.2021
 | 7
+
+| I3
+|
+* Beginn der Use Cases-Definition
+
+| 23.12.2021 - 22.12.2021
+| 7
 |===
 
 

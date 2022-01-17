@@ -16,11 +16,11 @@ Der Projektplan dient als Übersicht für das Vorgehen, die Zuständigkeiten und
 [cols="2",width="80%",align="center",frame="topbot",options="header"]
 |===
 |Rolle | Name
-|Projektleitung         | Melanie Kadner, (in SE II Alio Leuchtmann)
-|Analyse      | Celine Wamser, Melanie Kadner
-|Entwurf       |Alio Leuchtmann, Vincent Peters, Dominik Weber
-|Implementierung  |Alio Leuchtmann, Dominik Weber, Tilman Ischner, Richard Bennedorf, Jordi Zmiani
-|Test      |Daria Bolotova, Vincent Peters
+|Projektleitung         | 
+|Analyse      | 
+|Entwurf       |
+|Implementierung  |
+|Test      |
 |===
 
 
