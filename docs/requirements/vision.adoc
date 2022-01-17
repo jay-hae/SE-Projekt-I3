@@ -7,7 +7,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Einführung
-Um das Projekt im groben einordnen zu können, ist es wichtig sich mit den Rahemenbedingungen des Projektes vertraut zu machen.
+Um das Projekt im Groben einordnen zu können, ist es wichtig sich mit den Rahemenbedingungen des Projektes vertraut zu machen.
 Dafür werden in dem Dokument das Grundproblem, Stakeholder und wesentliche Anforderungen definiert.
 Die Details, wie die Webanwendung diese Anforderungen erfüllt, werden in der Use-Case und
 Supplementary Specification beschrieben.
