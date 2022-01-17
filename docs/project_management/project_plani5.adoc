@@ -1,0 +1,209 @@
+= Projektplan: {project-name}
+Lavinia Kaufmann <s79188@htw-dresden.de>; Niklas Rinke <s79383@htw-dresden.de>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
+
+== Einführung
+Der Projektplan dient als Orientierung und Übersicht für den gesamten Lebenszyklus des Projektes "{project-name}".
+
+In ihm werden die:
+
+* Projektorganisation, 
+* die Aufgabenverteilung, 
+* die Projektpraktiken und deren Messung, 
+* eine klare Zielstellung sowie 
+* Meilensteine, 
+* primäre Risiken, 
+* Erkenntnisse und
+* Entwicklungsfortschritte für das Projekt 
+
+definiert, analysiert und dokumentiert.
+
+Die detaillierte Planung der einzelnen Projektphasen findet im Iterationsplan statt.
+
+== Projektorganisation
+//Introduce the project team, team members, and roles that they play during this project. If applicable, introduce work areas, domains, or technical work packages that are assigned to team members. Introduce neighboring projects, relationships, and communication channels. If the project is introduced somewhere else, reference that location with a link.
+Die Projektgruppe besteht aus insgesamt sieben Studierenden aus den Studiengängen Informatik, Wirtschaftsinformatik und Wirtschaftsingenieurwesen. 
+
+Die Projektleitung besteht aus zwei Teammitgliedern, die restlichen Aufgaben (Analyse, Testung, Entwicklung, etc.) verteilt sich auf den Rest der Gruppe, wobei Mitglieder auch mehrere Rollen übernehmen. Grund dafür ist, dass die einige Bereiche recht stark miteinander vernetzt sind. 
+
+Im Folgenden ist eine genaue Aufschlüsselung der einzelnen Rollen gegeben: 
+
+[.landscape]
+
+<<<
+
+[%header, cols="2,1,3,2"]
+|===
+| Rolle
+| Team-Mitglied
+| Beschreibung der Aufgabe
+|Artefakte
+
+| Projektmanagement
+a|
+* Niklas Rinke
+* Lavinia Kaufmann 
+a| 
+* Leitung des Projekts
+* Kommunikation/ Schnittstelle mit Auftraggeber, Coach, Stakeholder, Gruppe
+* Koordination der Iterationen
+* Kontrolle des Projektfortschritts 
+a|* Projekplan
+* Iterationsplan
+* Work-Item-List
+* Essence Naviagtor
+* Vision
+
+ 
+| Analyse
+a|
+* Raphael Rezaii
+* Tim Grünert
+* Lavinia Kaufmann
+* Niklas Rinke
+* Maximilian Dießl 
+a|
+* Erkennung und Beschreibung von Kundenwünschen und -anforderungen
+* Probleme verstehen
+* Prioritäten setzen 
+a| * Glossary
+* System-Wide Requirements
+* Use Case Model
+* Domänenmodel
+
+|Entwicklung/Architektur
+a|
+* Raphael Rezaii
+* Louis Linke 
+* Benjamin Paddags 
+* Tim Grünert 
+a| 
+* Definition Softwarearchitektur
+* Entscheidung wichtiger technischer Aspekte und Bestimmung von Rahmenbedingungen
+a| * Architecture Notebook
+|Testung
+a| 
+* Maximilian Dießl 
+* Tim Grünert
+* Louis Linke 
+a| 
+* Identifizierung, Definition und Durchführung notwendiger Tests
+* Protokollierung und Auswertung der Testergebnisse
+a| * Test Cases
+|===
+
+Alle Dokumente werden auf GitHub in einem eigens angelegten https://github.com/m3l0n3/i5-hochschulpartnerschaften[Projekt-Repository] gespeichert. 
+
+Die Kommunikation innerhalb der Gruppe findet über WhatsApp, wöchtenliche Jitsi-Meetings und einen eigens für das Projekt angelegten Google-Drive-Ordner statt.
+
+Während des gesamten Projektes nutzen wir eine Work-Items-List in Form einer Google Sheets-Tabelle, um Aufgaben übersichtlich zu verteilen, zu verschriftlichen und um Termine für jedes Teammitglied zugänglich zu machen.
+
+Grund für die Entscheidung für besagte Medien sind die Einfachheit der Handhabung der jeweiligen Systeme, sowie die schnelle Verfügbarkeit geteilter Informationen auf allen Endgeräten.  
+
+[.portrait]
+
+<<<
+
+== Praktiken und Bewertung
+//TODO 47:50 im Video: Es gibt verschiedene Praktiken, müssen sagen welche wir nehmen und wie wir die einsetzen
+//Describe or reference which management and technical practices will be used in the project, such as iterative development, continuous integration, independent testing and list any changes or particular configuration to the project. Specify how you will track progress in each practice. As an example, for iterative development the team may decide to use iteration assessments and iteration burndown reports and collect metrics such as velocity (completed work item points/ iteration).
+Im Rahmen des Projektes "{project-name}" wenden wir den Open Unified Process (OpenUP) an. Dabei ist es unser Ziel das Projekt in Zyklen (Iterationen) aufzuteilen und ergebnisgesteuert voranzubringen.
+
+Am Ende des Semester glichen wir unseren Projektstand mit Hilfe des Essence-Navigators mit der darin zur Verfügung gestellten Checkliste ab. Das Ergebnis kann in der nächsten Abbildung eingesehen werden.
+
+Dadurch konnten noch einmal einige Anpassungen und Feinarbeiten an Beleg und Projekt vorgenommen werden.
+
+.Essence Navigator (je voller das Tortendiagramm, desto weiter ist die Entwicklung des Projektes)
+image::essence navigator.PNG[]
+
+== Meilesteine und Ziele
+//Define and describe the high-level objectives for the iterations and define milestones. For example, use the following table to lay out the schedule. If needed you may group the iterations into phases and use a separate table for each phase
+
+Die benannten Zyklen (Iterationen) des OpenUP dauern jeweils zwei Wochen (mit Ausnahmen) und bilden jeweils einen Meilenstein. 
+
+So stand in der ersten Iteration hauptsächlich das Kennenlernen im Projektteam, des  Coaches und des Auftraggebers im Mittelpunkt sowie die Auseinandersetzung mit dem OpenUP und der Projektaufgabe.
+
+Die folgenden zwei Iterationen fokusierten sich dann auf die Anforderungsanalyse und Konzeptentwicklung des Projektes "{project-name}", wobei in Iteration Drei, mit der Einrichtung der Datenbank als Entwicklungsplattform, bereits die ersten entwicklungstechnischen Schritte unternommen wurden.
+
+In den Iteration Vier und Fünf stand dann die Weiterentwicklung der Architektur, Systemanforderungen und die Bearbeitung und Fertigstellung des Beleges im Mittelpunkt.
+
+Unser Auftraggeber, das Akademische Auslandsamt, stellte außerdem die Anforderung, dass die von uns entwickelte webbasierte Datenbank auch nach Abschluss des Projektes im Zuge der Module "SE1" und "SE2" weiterentwickelt werden kann, wir also keinen einmaligen "Big-Bang" anstreben.
+
+Desweiteren streben wir den Einsatz einer "Agilen Softwarentwicklung" an, also möglichst früh mit der eigentlichen Arbeit am Endprodukt zu beginnen und die Vorbereitung bzw. Entwurfsarbeit auf ein Mindestmaß zu reduzieren. Grund dafür sind zum einen die Erhöhung der Transparenz aller Arbeitsschritte für jedes Teammitglied sowie den Auftraggeber, als auch die möglichst frühe und aktive Einbindung des Auftraggebers in die Entwicklungsarbeit. So erhoffen wir uns mögliche Fehler und Entwicklungen in falsche, nicht gewünschte oder überflüssige Richtungen rechtzeitig zu identifizieren und zu eliminieren.
+
+[%header, cols="1,3a,2,1"]
+|===
+| Iteration
+| Hauptziele/Meilensteine
+| Zeitraum
+| Zielumfang
+
+| I1
+|
+* Kennenlernen des Projektes, der Gruppe, des Auftraggebers und des Coaches 
+* Erarbeitung der grundlegenen Aufgaben
+* Informationsbeschaffung von Auftraggeber
+* Studium der vorhandenen Access-Datenbank
+* Erste Konsultation mit Coach 
+| 24.11.2020 - 08.12.2020
+| 5
+
+| I2
+|
+* Beginn der Use Cases-Definition
+* Vision und Positionierung erstellen
+* Beginn Anforderungsanalyse
+* Beginn Risikoliste
+* Beginn Glossar
+* Beginn der Projektplanerstellung
+* Kontakt zu Rechenzentrum und Datenschutzbeauftragtem der HTW Dresden aufbauen
+| 08.12.2020 - 22.12.2020
+| 7
+
+| I3 
+|* Erstellung Use Cases
+* Erstellung Wireframes
+* Erstellung Test Cases
+* Beginn Erstellung Architecture Notebook
+* Ergänzung Glossary
+* Ergänzung Risikoliste
+* Ergänzung Visionsprotokoll
+|22.12.2020 - 12.01.2021
+| 7
+
+|I4
+|* Vervollständigung sämtlicher belegrelevanter Dokumente
+* Erste Kontaktaufnahme zu Gruppe "Incomings" für Verknüpfung von Projekten
+|12.01.2021 - 26.01.2021
+| 2
+
+|I5
+|* Feinarbeit 
+* Finalisierung des Beleges 
+* Abgabe am/bis 12.02.2021
+|26.01.2021 - 12.02.2021
+|3
+|===
+
+//TODO Zielumfang Einheit ergänzen
+
+== Deployment
+//Outline the strategy for deploying the software (and its updates) into the production environment.
+
+* Endprodukt wird über einen Link an den Auftraggeber (Akademisches Auslandsamt der HTW Dresden) per Mail ausgeliefert
+//TODO 49:00 im Video: Deployment muss definieren wer, wie, wo das Produkt übergibt. (viele Varianten wie Git-Hub-Link, CD, ich installieren, er installiert,...). Auch interessant ob der Kunde uns was bereitstellt und ob was migiriert wird
+* Quellcode, Log-In-Daten, sowie Handbuch (als PDF) werden persönlich über USB-Stick übergeben
+
+== Erkenntnisse (Lessons learned)
+//List lessons learned from the retrospective, with special emphasis on actions to be taken to improve, for example: the development environment, the process, or team collaboration.
+Als Grundlage für die Erkenntnisse während der Arbeit dieses Projekte dienen der Austausch während Einzelsessions, sowie im Gesamten zu den regulären Teammeetings. Die hierbei besprochenen Erkenntnisse, Wünsche und Problemlösungen der Gruppenmitglieder sollen auch für den weiteren Verlauf des Projektes im Sommersester 2021 berücksichtigt und entstanden Probleme und Fehler nicht wiederholt werden. 
+
+Folgende Erkenntnisse haben sich herauskristalisiert:
+
+* Analyse- und Findungsphase länger als angenommen
+* Unerwartete Zusatzaufgaben (z.B. Verknüpfung mit Projekt "Incomings" ) sind immer möglich und führen zu erhöhtem, spontanen Aufwand
+* Verlässlichkeit von direkt an der Entwicklung beteiligten Stakeholdern (hier hauptsächlich Auslandsamt) ist sehr wichtig 
+* Anpassung der Arbeitsweise an Teammitglieder nötig 
+* Alle Informationen müssen schriftlich festgehalten werden, damit sie nicht verloren gehen

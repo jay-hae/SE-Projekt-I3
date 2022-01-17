@@ -1,0 +1,210 @@
+= Projektplan: Datenbank Webverwaltung Stabsstelle Internationales
+
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+== Einführung
+//Briefly describe the content of the project plan.
+Der Projektplan dient als Übersicht für das Vorgehen, die Zuständigkeiten und Erkenntnisse im und aus dem Projektprozess. 
+
+== Projektorganisation
+//Introduce the project team, team members, and roles that they play during this project. If applicable, introduce work areas, domains, or technical work packages that are assigned to team members. Introduce neighboring projects, relationships, and communication channels. If the project is introduced somewhere else, reference that location with a link.
+
+#### Rollenverteilung
+[cols="2",width="80%",align="center",frame="topbot",options="header"]
+|===
+|Rolle | Name
+|Projektleitung         | Melanie Kadner, (in SE II Alio Leuchtmann)
+|Analyse      | Celine Wamser, Melanie Kadner
+|Entwurf       |Alio Leuchtmann, Vincent Peters, Dominik Weber
+|Implementierung  |Alio Leuchtmann, Dominik Weber, Tilman Ischner, Richard Bennedorf, Jordi Zmiani
+|Test      |Daria Bolotova, Vincent Peters
+|===
+
+
+#### genutzte Tools
+- GitHub - Link zum Repository: https://github.com/AlioLeuchtmannUni/SoftwareEngineeringProject.git
+- AsciiDoc
+- Excel
+- OneNote (Meetingprotokolle)
+- Essence Naviagtor
+- jhipster (Toolgrundlage)
+
+== Praktiken und Bewertung
+//Describe or reference which management and technical practices will be used in the project, such as iterative development, continuous integration, independent testing and list any changes or particular configuration to the project. Specify how you will track progress in each practice. As an example, for iterative development the team may decide to use iteration assessments and iteration burndown reports and collect metrics such as velocity (completed work item points/ iteration).
+
+Der Projektplan wird agil in einzelnen Projects in GitHub abgebildet. Pro Project gibt es dann als Issues die einzelnen Aufgaben, welche zu erledigen sind. Meilensteine und deren Zieldefinition hier in diesem Projektplan (nachfolgend aufgelistet) stellen einen groben Überblick dar. Die einzelnen Iterationen gehen über eine Zeitspanne von einer Woche. Das Planen der nächsten Iteration erfolgt am Ende der Vergangenen. 
+
+
+== Meilensteine und Ziele
+//Define and describe the high-level objectives for the iterations and define milestones. For example, use the following table to lay out the schedule. If needed you may group the iterations into phases and use a separate table for each phase
+
+[%header, cols="1,3a"]
+|===
+| Phase
+| Inhalte, Meilenstein
+
+
+| I1: Elaboration Phase
+|
+* Rollen verteilen
+* Projektdauer, Iterationsplanung
+* Ziele und Meilensteine
+* Vision
+* Use-Case-Models
+* Technik/Tools: entwurf einer Architektur
+* Risiken: Risikomatrix, Risiken identifizieren
+* Gantt-Chart +
+_erster Meilenstein: LCO_
+
+
+| I2: Inception Phase
+|
+* wesentliche Anforderungen spezifiziern
+* Architekturkern implementieren
+* Architekturbeschreibung
+* horizintale und vertikale Prototypen
+* Plan für die Realisierung
+* Testfälle entwerfen +
+_zweiter Meilenstein: LCA_
+
+
+| I3: Construction Phase
+|
+* Abschluss Entwurf
+* Implementierung der Funktionalität
+* Definition weiterer Testfälle
+* Durchführung der Tests
+* Anpassen des Projektplans (falls nötig)
+* Benutzerdokumentation erstellen
+* Zielumgebung für Installation vorbereiten +
+_dritter Meilenstein: IOC_
+
+
+| I4: Transition Phase
+|
+* finale Tests und Qualitätssicherung
+* Korrektur gefundener Fehler
+* Überführung des Systems auf die Zielplattform
+* Anwenderschulung
+* Projektabschluss +
+_vierter Meilenstein: PRM_
+|===
+
+=== Iterationsplanung
+
+Kursiv geschriebene Inhalte sind nur als Orientierungshilfen bzw. Ideen gedacht und noch keine geplanten Iterationsinhalte!
+
+[%header, cols="1,3a,2"]
+|===
+| Iteration
+| Aufgaben/Ziele
+| Zeitraum
+
+
+| Iteration 1
+|
+* Datenmodelle erstellen (für Studenten, Dozenten und Praktikumsfirmen)
+* Anforderungen spezifizieren
+| 07.12.2021-11.12.2021
+
+
+
+| Iteration 2
+|
+* Besipieldaten generieren (für Studenten, Dozenten und Praktikumsfirmen)
+* Beispieldaten einbinden
+* Beispieldaten in GUI anzeigen können
+|13.12.2021-18.12.2021
+
+
+| Iteration 3
+|
+* Daten ändern können
+* Daten löschen können
+|20.12.2021-08.01.2022
+
+
+| Iteration 4
+| 
+* Fokus auf administrative Aufgaben zur Projektdokumentation
+|10.01.2022-15.01.2022
+
+
+| Iteration 5
+|
+* Praktikumsverträge einbinden können (über GUI)
+* Praktikumsverträge anzeigen können
+* Praktikumslänge berechnen und automatisch eintragen
+* Praktikumslänge prüfen
+|17.01.2022-22.01.2022
+
+
+| Iteration 6
+|
+* Praktikumsbescheinigung erstellen können
+* Dokumentationsaufgaben abgabereif machen
+|24.01.2022-29.01.2022
+
+
+| Iteration 7
+|
+* _(Suchfunktion für Studenten-, Dozenten- und Firmendaten)_
+|31.01.2022-05.02.2022
+
+
+| Iteration 8
+|
+* _(Mails schicken können)_
+|07.02.2022-12.02.2022
+
+
+| Iteration 9
+|
+* _(Meldungen an Prüfungsamt schicken können)_
+|14.02.2022-19.02.2022
+
+
+| Iteration 10
+|
+* _(Einloggen mit LDAP)_
+|21.02.2022-26.02.2022
+
+
+| Iteration 11
+|
+* _(Zugriffsrechte je Nutzergruppe regeln)_
+|28.02.2022-05.03.2022
+
+
+| Iteration 10
+|
+* _(Änderungs- und Fehlermeldungsprotokoll)_
+|07.03.2022-12.03.2022
+|===
+
+
+//include::../project_management/iteration_plan_01.adoc[lines=1..1;4..-1,leveloffset=+1]
+//obigen include Befehl könnte man machen, aber dann kommt es in dem Belegabgabedokument doppelt vor ~Melanie
+
+== Deployment
+//Outline the strategy for deploying the software (and its updates) into the production environment.
+
+
+== Erkenntnisse (Lessons learned)
+//List lessons learned from the retrospective, with special emphasis on actions to be taken to improve, for example: the development environment, the process, or team collaboration.
+
+
+1. Es ist sehr wichtig, frühzeitig damit zu beginnen, Fragen zu stellen wenn man das System des OpenUP Prozesses noch nicht verinnerlicht hat
+
+2. Überflüssige Tools mit redundanten Informationen sind zu vermeiden. In unserem Falle habe ich (Melanie) mich für die Projektplanung in Git entschieden, nachdem ich es vorher noch parallel in einem anderen Tool gemacht habe -> unnötiger Aufwand
+
+3. Die Kommunikation bildet die Grundlage für erfolgreiche Projektarbeit
+
+4. Die begleitenden Dokumentationsaufgaben sind in ihrem Umfang nicht zu unterschätzen und müssen auch von allen bearbeitet werden
+
+5. Als Wirtschaftsingenieur fehlt einem oft das nötige Hintergrundwissen, um bestimmte Inhalte richtig und vollständig zu dokumentieren. Deshalb ist es notwendig, dass sich auch die Informatiker an daran beteiligen. Ein Beispiel wären die systemweiten Anforderungen
+
+6. Eine Pflege der Git-Projekte ist unerlässlich, um andere Teammitglieder über den aktuellen Stand des Projektes unkompliziert informieren zu können. 
