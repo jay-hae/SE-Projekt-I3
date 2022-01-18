@@ -48,25 +48,11 @@ include::../_includes/default-attributes.inc.adoc[]
 //Fügen Sie nachfolgend alle detailierten Use-Cases per Include ein.
 //Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem use_case_01.inc.adoc Template basiert.
 //<<<
-include::use_case_01.inc.adoc[]
-//<<<
-include::use_case_02.inc.adoc[]
-//<<<
-include::use_case_03.inc.adoc[]
-//<<<
-include::use_case_04.inc.adoc[]
-//<<<
-include::use_case_05.inc.adoc[]
-//<<<
-include::use_case_06.inc.adoc[]
-//<<<
-include::use_case_07.inc.adoc[]
-//<<<
-include::use_case_08.inc.adoc[]
-//<<<
-include::use_case_09.inc.adoc[]
-//<<<
-include::use_case_10.inc.adoc[]
-//<<<
-include::use_case_11.inc.adoc[]
+
+.Use Case Diagram 
+[#use_case_diagram]
+[plantuml, "{diagramsdir}/use_case_diagram",svg]
+....
+include::{plantumlsdir}/use_case_diagram.puml[]
+....
     

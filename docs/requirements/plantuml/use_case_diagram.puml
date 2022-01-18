@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+
+actor Mitarbeiter
+
+rectangle " Verwaltungsfrontend" {
+usecase "UC01\nIn System einloggen" as uc01
+usecase "UC02\nAnlegen von Hochschulen" as uc02
+usecase "UC03\nBearbeiten von Hochschulen" as uc03
+usecase "UC04\nLöschen von fehlerhaften Datensätzen" as uc04
+usecase "UC05\nAnlegen von Mentoren" as uc05
+usecase "UC06\nBearbeiten von Mentoren" as uc06
+usecase "UC07\nLöschen von Mentoren" as uc07
+usecase "UC08\nErstellen von Berichten \nüber Erasmusvereinbarungen" as uc08
+usecase "UC09\nErstellen von Berichten \nüber Mentoren" as uc09
+usecase "UC10\nErstellen von Berichten \nüber Hochschulvereinbarungen" as uc10
+usecase "UC11\nErstellen von Berichten \nüber Abkommen nach nach Länder sortiert" as uc11
+usecase "UC12\nBerichte Exportieren" as uc12
+}
+
+Mitarbeiter -- uc01
+uc01 .down.> uc02 : include
+uc01 .down.> uc03 : include
+uc01 .down.> uc04 : include
+uc01 .down.> uc05 : include
+uc01 .down.> uc06 : include
+uc01 .down.> uc07 : include
+uc01 .down.> uc08 : include
+uc01 .down.> uc09 : include
+uc01 .down.> uc10 : include
+uc01 .down.> uc11 : include
+uc08 .down.> uc12 : extends
+uc09 .down.> uc12 : extends
+uc10 .down.> uc12 : extends
+uc11 .down.> uc12 : extends
+@enduml
