@@ -62,43 +62,40 @@ _tbl_mobility_agreement_x_course_ und der Statistik | Anlegen, Bearbeiten, Deakt
 
 NOTE: Um Probleme mit Modifikationen zu vermeiden, ist allein dem Super-User das Löschen fehlerhafter Datensätze erlaubt. Der Nutzen dieser Funktion sollte jedoch die Ausnahme bilden und nicht die Regel.
 
-==== Views 
+==== Views
 
-Für das Informationsfrontend müssern entsprechende Views den Anforderungen entsprechend für fast jede Tabelle eingerichtet werden. Ausgenommen: tbl_exchange und tbl_exchange_type
+Für das Informationsfrontend müssen entsprechende Views den Anforderungen entsprechend für fast jede Tabelle eingerichtet werden. Ausgenommen: tbl_exchange und tbl_exchange_type
 
 Dabei dürfen nur aktive Verträge berücksichtigt werden.
 
 
 ==== Verwaltung der Datenbank
 
-Zur administrativen Verwaltung der Datenbank wird ein Super-User eingerichtet. Dieser hat - neben dem normalen User - die notwendigen Berechtigungen falsch angelegte Daten zu löschen.
+Die administrativen Rechte liegen derzeit noch bei einem Mitarbeiter aus dem Rechenzentrum. Abhängig von der Nutzerauthentifizierung wird dies bei Bedarf geändert.
 
 === Webserver
 
 ==== Aufbau
 
-Als Webserver dient der www2-Server des Rechenzentrums, auf welchem ein Webspace des Funktionsaccountes liegt. Dort läuft das Backend in (...) und das Frontend mithilfe von (...)
+Als Webserver dient eine virtuelle Maschine, welche vom Rechenzentrum bereitgestellt wird. Diese ist im Webspace eines Funktionsaccounts aufrufbar. Dort läuft das Backend in Python und das Frontend mithilfe von HTML und Javascript.
 
 ==== Authentifizierung im Browser
 
-Die Authentifizierung erfolgt grundlegend über die `$_SESSION`-Variable in PHP. Der Nutzer loggt sich zunächst auf der Login-Seite ein - wenn die Zugangsdaten dem Datenbank-Nutzer gleichen, ist dieser erfolgreich authentifiziert. Es existiert keine seperate Nutzerdatenverwaltung.
-
-Nach dem Login-Vorgang wird der Nutzer auf die Startseite weitergeleitet. Für alle weiteren Seiten wird erst überprüft, ob in der `$_SESSION`-Variable ein Nutzername und Passwort hinterlegt sind und erst dann wird ein Verbindungsaufbau versucht. 
-
-Somit verhindert man direkten Zugriff auf einzelne Seiten, indem der Nutzer bei einem nicht erfolgten Zugriff auf die Datenbank zur Login-Seite weitergeleitet wird.
+Der Punkt Authentifizierung kann noch nicht vollständig berücksichtigt werden, denn es gibt noch keinen konkreten Plan wie mit der Nutzerunterscheidung innerhalb des Softwaresystems umgegangen wird. Man kann aber mit einer Clientseitigen authentifizierung rechnen, das heißt der Nutzer bekommt z.B. einen Cookie gesetzt welcher bei Aufrufen einer Seite mitgeschickt wird.
 
 ==== Darstellung
+Beim Entwickeln unseres Prototyps haben wir diesen Aspekt noch nicht berücksichtigt, aufgrund der existierenden Vorarbeit werden wir uns aber an der Darstellung der Vorgruppe orientieren.
 
 Das User-Interface hat das Ziel intuitiv nutzbar zu sein. Daher ist dieses einfach gestaltet: Nutzung einer Navigationsleiste mit den wichtigsten Links, in der Tabellenansicht weisen Icons auf die Funktion der Buttons hin - Plus bspw. hinzufügen, Stift bspw. bearbeiten...
 
 Die Formularansicht wurde mit Eingabefelder und Labels versehen, um die einfache Zuordnung durch einen Nutzer zu garantieren. Der Speichern-Button ist auch hier Grün hinterlegt, um die Funktion zu verdeutlichen.
 
-==== Validierung der Daten
 
-Da eine bloße Validierung von Daten im Frontend unsicher ist, werden eingegebene Daten im Backend validiert. Prinzipiell geschieht das über if-Abfragen im Code, es wird z.B. überprüft, ob der übergebene POST-Parameter existiert, ob er numerisch oder ein leerer String ist. 
+//==== Validierung der Daten
 
-Die letzte Instanz der Validierung stellt die Datenbank dar, da nicht valide Formate in einer SQL-Query abgewiesen werden.
+//Da eine bloße Validierung von Daten im Frontend unsicher ist, werden eingegebene Daten im Backend validiert. Prinzipiell geschieht das über if-Abfragen im Code, es wird z.B. überprüft, ob der übergebene POST-Parameter existiert, ob er numerisch oder ein leerer String ist.
 
+//Die letzte Instanz der Validierung stellt die Datenbank dar, da nicht valide Formate in einer SQL-Query abgewiesen werden.
 === Synchronisation
 
 Es ist nicht notwendig Daten in einer anderen Datenbank zwischenzuspeichern, weshalb die Website und Datenbank zum Zeitpunkt des Aufrufs immer auf den aktuellen Stand ist.
@@ -107,18 +104,23 @@ Auf der anderen Seite werden Änderungen direkt an die Datenbank gesendet, daher
 
 === Schnittstelle zwischen Front- und Backend
 
-(ToDo)
+Das Übergeben von Daten aus dem Frontend ins Backend wird durch POST-Anfragen geregelt. Verschiedene Javascript-Skripte werten, je nach Anfrage, die Nutzerdaten aus und senden sie an das Backend. Dort werden die einzelnen Parameter der Anfrage ausgewertet und weiterverarbeitet.
+Geht es um die reine Darstellung der Webseiten, so nutzt der Client, GET-Anfragen um die entsprechende Website vom Server zurückgeliefert zu bekommen.
 
-== Graphische Designaspekte
+Um eine einfache Verarbeitung der, vom Server geschickten Daten, im Frontend vornehmen zu können, haben wir uns für eine übermittlung per JSON-Datei entschieden. Es gibt eine einfache Möglichkeit Pythoneigene Datentypen in eine JSON-Datei zu packen, somit ist der Clientseitige Zugriff auf die Daten ähnlich wie auf dem Server.
 
-Graphische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Darstellungsweise einzelner Systemkomponenten für den Benutzer haben.
 
-Da der Kunde bereits vorher mit Microsoft Access und einem Prototypen gearbeitet hatte, wurde bei der Erstellung der Anwendung der Fokus auf eine möglichst nahe Anlehnung der Gestaltung unserer Vorgruppe gelegt.
+
+== Grafische Designaspekte
+
+Grafische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Darstellungsweise einzelner Systemkomponenten für den Benutzer haben.
+
+Da der Kunde bereits vorher mit Microsoft Access und einem Prototyp gearbeitet hat, wurde bei der Erstellung der Anwendung der Fokus auf eine möglichst nahe Anlehnung der Gestaltung unserer Vorgruppe gelegt.
 
 === Verwaltungsfrontend
 
-Für die Darstellung wird generell eine Mischung aus (...) und (...) genutzt.
+Für die Darstellung wird generell eine Mischung aus HTML, CSS und Javascript genutzt.
 
-Die Listen von Hochschulen, Mentoren, Ländern, usw. werden beim Aufruf der Seite durch das PHP-Skript geladen und zusätzlich bei der Auswahl eines Filters aktualisiert. Sie sind zur besseren Übersicht in einer Tabelle angeordnet.
+Die Liste von Hochschulen, Ländern, Vertragstypen etc. werden beim Laden der Seite durch Javascript-Skripte geladen.
 
-Das Bearbeitungsformular wird als neues Fenster über dem Inhalt der Seite dargestellt. Dieses ist am Anfang des Seitenaufrufes versteckt und wird nur angezeigt, wenn der Bearbeiten- oder Erstellen-Button betätigt wurde.
+Das Bearbeitungsformular wird als neues Fenster über dem Inhalt der Seite dargestellt. Dieses ist am Anfang des Seitenaufrufs versteckt und wird nur angezeigt, wenn der Bearbeiten- oder Erstellen-Button betätigt wurde.
