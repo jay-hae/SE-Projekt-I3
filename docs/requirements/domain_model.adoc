@@ -1,4 +1,4 @@
-= Domain Model: {project-name}
+= Domain Model: I3 Hochschulpartnerschaften
 Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -6,9 +6,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Allgemeine Informationen
-Das Domain Model bildet die relevante Terminologie der Fachdomäne ab, mit dem Ziel, eine
-gemeinsame Sprache zwischen Entwicklern und Fachexperten herzustellen und
-Missverständnissen vorzubeugen
+Das Domain Model bildet die relevante Terminologie der Fachdomäne ab, mit dem Ziel, eine gemeinsame Sprache zwischen Entwicklern und Fachexperten herzustellen und Missverständnissen vorzubeugen
 
 == Domänenmodel
 image::domain_model.png[]
