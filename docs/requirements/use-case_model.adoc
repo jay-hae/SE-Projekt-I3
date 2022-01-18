@@ -56,5 +56,4 @@ include::../_includes/default-attributes.inc.adoc[]
 include::{plantumlsdir}/use_case_diagram.puml[]
 ....
 
-image::use_case_diagram.svg[width=65%]
 
