@@ -1,5 +1,6 @@
 
 :imagesdir: images
+:diagramsdir: diagrams
 :plantumlsdir: plantuml
 
 = Use-Case Model: {project-name}
