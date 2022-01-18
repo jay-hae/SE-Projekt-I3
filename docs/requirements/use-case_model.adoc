@@ -1,10 +1,9 @@
+:imagesdir: images
 = Use-Case Model: {project-name}
 Pascal Thielemann <s82101@htw-dresden.de>; 
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
-:diagramsdir: diagrams
-:plantumlsdir: plantuml
-:imagesdir: images
+
 // Platzhalter für weitere Dokumenten-Attribute
 
 
