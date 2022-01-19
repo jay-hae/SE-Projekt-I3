@@ -92,19 +92,20 @@ a|
 a| * Test Cases
 |===
 
-#### Verwendete Tools
+#### Verwendete Hilfsmittel
 Alle Dokumente werden auf GitHub in einem eigens angelegten https://github.com/jay-hae/SE-Projekt-I3[Projekt-Repository] gespeichert. 
 
-Die Kommunikation innerhalb der Gruppe findet über WhatsApp und wöchtenliche Meetings auf einem eigens eingerichteten Discord-Server statt.
+Die Dokumente werden als AsciiDoc und mit Excel erstellt.
 
-- AsciiDoc
-- Excel
-- Essence Naviagtor
+Die Kommunikation innerhalb der Gruppe findet adhoc über WhatsApp und wöchtenliche Meetings auf einem eigens eingerichteten Discord-Server statt.
 
-Während des gesamten Projektes nutzen wir eine Work-Items-List in Form einer Google Sheets-Tabelle, um Aufgaben übersichtlich zu verteilen, zu verschriftlichen und um Termine für jedes Teammitglied zugänglich zu machen.
+Protokolle werden auf der für alle Teammitglieder zugänglichen https://pentapad.c3d2.de/p/SE_Projekt_I3_Protokolle[Pentapad Webseite] festgehalten.
 
-Grund für die Entscheidung für besagte Medien sind die Einfachheit der Handhabung der jeweiligen Systeme, sowie die schnelle Verfügbarkeit geteilter Informationen auf allen Endgeräten.
+Um einen Überblick über die akut bzw. in der akutellen Iteration zu erledigenden Aufgaben zu behalten pflegt der Teamleiter Luca Meißner ein Excel-Dokument als Work-Items-Liste.
 
+Die Aufgaben für das gesamte Projekt wird durch die verwendung des Essence Navigators begleitet.
+
+Wir haben uns für diese Hilfsmittel entschieden, da das nötige Know-How über die Bedienung im Team bereits vorhanden war und sie den Team-Mitgliedern allen ohne weiteres zur Verfügung standen.
 [.portrait]
 
 <<<
@@ -112,11 +113,17 @@ Grund für die Entscheidung für besagte Medien sind die Einfachheit der Handhab
 //Describe or reference which management and technical practices will be used in the project, such as iterative development, continuous integration, independent testing and list any changes or particular configuration to the project. Specify how you will track progress in each practice. As an example, for iterative development the team may decide to use iteration assessments and iteration burndown reports and collect metrics such as velocity (completed work item points/ iteration).
 
 Zur erfolgreichen Durchführung des Projektes "{project-name}" wenden wir den Open Unified Process (OpenUP) an. 
-Der Projektplan besteht aus einzelnen Iterationen für die jeweils ein Iterationsplan angelegt wird. Jede Iterations soll dabei eine Zeit von circa zwei Wochen Umfassen innerhalb derer jedes Team-Mitglied die zuvor festgelegten Aufgaben erledigt. Um einen Überblick über die einzelnen zu erledigenden Aufgaben zu behalten gleichen wir den Fortschritt unseres Projekts mit Hilfe des Essence-Navigators und den darin zur Verfügung gestellten Checkliste ab. Das Ergebnis kann in der nächsten Abbildung eingesehen werden.
+Der Projektplan besteht aus einzelnen Iterationen für die jeweils ein Iterationsplan angelegt wird. Jede Iterations soll dabei eine Zeit von circa zwei bis drei Wochen Umfassen innerhalb derer jedes Team-Mitglied die zuvor festgelegten Aufgaben erledigt. 
+
+Um einen Überblick über die einzelnen zu erledigenden Aufgaben zu behalten gleichen wir den Fortschritt unseres Projekts mit Hilfe des https://www2.htw-dresden.de/~anke/openup/index.htm[Essence-Navigators] und den darin zur Verfügung gestellten Checkliste ab. Das Ergebnis kann in der nächsten Abbildung eingesehen werden.
+
+HIER BILD VON AKTUELLEN ESSENCE NAVIGAOR TORTENDIAGRAMM EINFÜGEN
+image::essence navigator.PNG[]
 
 
 == Meilensteine und Ziele
 //Define and describe the high-level objectives for the iterations and define milestones. For example, use the following table to lay out the schedule. If needed you may group the iterations into phases and use a separate table for each phase
+
 
 
 
@@ -161,6 +168,19 @@ Der Projektplan besteht aus einzelnen Iterationen für die jeweils ein Iteration
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
 
+Das Produkt wird dem Kunden als Link per E-Mail zur Verfügung gestellt werden.
+
 
 == Erkenntnisse (Lessons learned)
 //List lessons learned from the retrospective, with special emphasis on actions to be taken to improve, for example: the development environment, the process, or team collaboration.
+
+
+Im laufe des ersten Semesters und somit der ersten Hälfte des Projekts haben wir festgestellt, dass es sehr wichtig ist sowohl innerhalb des Teams als auch mit den Kunden und dem Betreuer unserers Projektes zu kommunizieren. Es gilt durch regelmäßigen Austausch und offene Kommunikation Sicherheit über ein gemeinsames Verständnis der vorliegeneden Aufgabe zu schaffen.
+
+Probleme bei der Erfüllung der Aufgaben sollten frühzeitig benannt und im Team gelöst werden. Jedes Team muss die Verantwortung für die ihm/ihr übertragenen Aufgaben übernehmen. Die Verantwortung zu übernehmen heißt an dieser Stelle nicht, diel Aufgabe allein zu bewältigen sondern den organisatorischen sowie zeitlichen Überblick zu behalten.
+
+Während es zunächst als zusätzliche Herausforderung empfunden werden kann, den Prinzipien des OpenUP zu folgen und damit jeden Schritt des Software Entwicklungsprozesses im Vorfeld theoretisch zu entwickeln und gleichzeitig zu dokumentieren, stellt sich bei einem Projekt dieser Größenordnung schnell heraus, dass es ohne die Einhaltung dieser Prinzipien unmöglich ist effektiv im Team zusammenzuarbeiten.
+
+Nur durch klare Kommunikatione und umfassende Dokumentation, kann sichergestellt werden, die Risiken des Scheiterns des Projektes zum Beispiel durch den Ausfall eines Team-Mitglied zu minimieren.
+
+
