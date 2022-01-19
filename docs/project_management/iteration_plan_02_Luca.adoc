@@ -14,10 +14,13 @@ include::../_includes/default-attributes.inc.adoc[]
 
 |Beginn der Iteration | 15.12.2021
 
-|Use Cases für die Hauptfunktionalitäten im Detail beschrieben, ggf. inkl. Aktivitätsdiagrammen und Wireframes 
+|Use Cases für die Hauptfunktionalitäten im Detail beschrieben
 |Ende der Iteration
 
-|Vision ist vollständig und detailliert ausgearbeitet
+|Aktivitätsdiagramme und Wireframes der Use Cases
+|Ende der Iteration
+
+|Vision ist (für den aktuellen Stand) vollständig und detailliert ausgearbeitet
 |Ende der Iteration
 
 |Glossar beinhält und erklärt alle wesentlichen Begriffe
@@ -48,7 +51,7 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 
 |Iterationsplanung in GitHub Issues übernehmen
 |Hoch
-|-
+|7
 |In Arbeit
 |-
 |2
