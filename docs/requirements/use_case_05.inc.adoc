@@ -8,7 +8,7 @@ Eine Arbeitskraft der SI legt einen neuen Metoren an.
 Sind bei der Stabsstelle Internationales angestellt. Sie möchten innerhalb der Verwaltungsanwendung neue Mentoren erzeugen.
 
 === Vorbedingungen
-Die Arbeitskraft hat sich erfolgreich eingeloggt. (UC01) und hat uneingeschränkten Zugriff auf die Verwaltungsanwendung.
+Die Arbeitskraft hat sich erfolgreich eingeloggt (UC01) und hat uneingeschränkten Zugriff auf die Verwaltungsanwendung.
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
