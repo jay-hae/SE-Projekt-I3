@@ -99,6 +99,8 @@ Die Dokumente werden als AsciiDoc und mit Excel erstellt.
 
 Die Kommunikation innerhalb der Gruppe findet adhoc über WhatsApp und wöchtenliche Meetings auf einem eigens eingerichteten Discord-Server statt.
 
+Mit der Stabstelle Internationales haben wir über Big Blue Button kommuniziert.
+
 Protokolle werden auf der für alle Teammitglieder zugänglichen https://pentapad.c3d2.de/p/SE_Projekt_I3_Protokolle[Pentapad Webseite] festgehalten.
 
 Um einen Überblick über die akut bzw. in der akutellen Iteration zu erledigenden Aufgaben zu behalten pflegt der Teamleiter Luca Meißner ein Excel-Dokument als Work-Items-Liste.
