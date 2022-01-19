@@ -29,7 +29,7 @@ Die detaillierte Planung der einzelnen Projektphasen findet im Iterationsplan st
 
 == Projektorganisation
 //Introduce the project team, team members, and roles that they play during this project. If applicable, introduce work areas, domains, or technical work packages that are assigned to team members. Introduce neighboring projects, relationships, and communication channels. If the project is introduced somewhere else, reference that location with a link.
-Das Team SE-Projekt-I3 setzt sich aus insgesamt acht Studierenden aus den Studiengängen Informatik, Wirtschaftsinformatik und Wirtschaftsingenieurwesen zusammen. 
+Das Team SE-Projekt-I3 setzt sich aus insgesamt acht Studierenden aus den Studiengängen Informatik, Wirtschaftsinformatik und Verwaltungsinformatik zusammen. 
 
 Die Rollen wurden von den Studierenden wie folgt eingenommen:
 
