@@ -98,6 +98,16 @@
   animation-delay: -0.9s;
 }
 
+.tbl_column_huge {
+  width: 60%;
+  text-align: left;
+}
+
+.tbl_column_small {
+  width: 20%;
+  text-align: left;
+}
+
 @-webkit-keyframes sk-stretchdelay {
   0%, 40%, 100% { -webkit-transform: scaleY(0.5) }
   20% { -webkit-transform: scaleY(1.0) }

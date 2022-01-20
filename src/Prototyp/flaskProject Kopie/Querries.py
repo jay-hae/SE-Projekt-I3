@@ -27,6 +27,22 @@ def institutes_ret():
     return jsonify(payload)
 
 
+def ag_type_ret():
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    cur.execute('SELECT ID, deu FROM tbl_partnership_type')
+    x = cur.fetchall()
+    payload = []
+    for i in x:
+        content = {
+            'ID': i[0],
+            'ps_type': i[1]
+        }
+        payload.append(content)
+    cur.close()
+    return jsonify(payload)
+
+
 # get all country names + ID's from country table
 # same logic as in institutes_ret() func
 def all_countries():
@@ -114,3 +130,7 @@ def for_modal(institute_id):
             }
             payload.append(content)
     return jsonify(payload)
+
+
+def filter_institutes(payload):
+    print(payload)
