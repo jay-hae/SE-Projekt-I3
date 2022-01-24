@@ -213,6 +213,16 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 | Zum Erstellen eines Berichtes im Verwaltungsfrontend
 | Sommersemester 2022
 
+| Berichte exportieren
+| 3 
+| Zum Exportieren eines Berichtes im Verwaltungsfrontend
+| Sommersemester 2022
+
+| Externe Abfragen
+| 3 
+| Zum Anzeigen von Informationen für Externe
+| Sommersemester 2022
+
 |===
 
 
