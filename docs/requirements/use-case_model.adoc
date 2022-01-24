@@ -4,7 +4,7 @@
 :plantumlsdir: plantuml
 
 = Use-Case Model: {project-name}
-Pascal Thielemann <s82101@htw-dresden.de>; 
+Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 
@@ -31,6 +31,8 @@ include::../_includes/default-attributes.inc.adoc[]
 * *UC09*: Erstellen von Berichten über Mentoren
 * *UC10*: Erstellen von Berichten über Hochschulvereinbarungen
 * *UC11*: Erstellen von Berichten über Abkommen nach nach Länder sortiert
+* *UC12*: Berichte exportieren
+* *UC13*: Externe Abfragen
 
 //= für Akteur HTW-Website 
 //* *UC07*: Einsicht auf Informationen über Partnerschaften  
@@ -61,5 +63,3 @@ include::../_includes/default-attributes.inc.adoc[]
 ....
 include::{plantumlsdir}/use_case_diagram.puml[]
 ....
-image::use_case_diagram.png[]
-
