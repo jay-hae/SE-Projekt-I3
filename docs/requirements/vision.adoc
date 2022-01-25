@@ -56,11 +56,10 @@ zu verändern bzw. zu löschen, welche durch eine Maria-Datenbank bereitgestellt
 [cols="1,3"]
 |===
 | Das Problem | einer unzureichenden Bedienbarkeit und hohe Fehleranfälligkeit
-| betrifft | Mitarbeiter der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und Studierende, die sich über die Partnerschaften informieren wollen
-| die Auswirkung davon ist | ein erhöhter und umständlicher Arbeitsaufwand in der Verwaltung  
-| eine erfolgreiche Lösung wäre | ein neues Online-Datenbankverwaltungssystem für die
-Hochschulpartnerschaften zur Pflege der Daten der Hochschul-Partnerschaften (Anlegen, Ändern, Löschen) und evtl. Weiterentwicklungsmöglichkeiten zu gewährleisten.
-
+| betrifft | Mitarbeiter der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und implizit Externe, die sich über die Partnerschaften informieren wollen
+| die Auswirkung davon ist | ein erhöhter und umständlicher Arbeitsaufwand in der Verwaltung.
+| Eine erfolgreiche Lösung wäre | ein neues Online-Datenbankverwaltungssystem für die
+Hochschulpartnerschaften zur Pflege der Daten der Hochschul-Partnerschaften zu etablieren. Sowie eine automatisierte Berichtsanfertigung, eine zuverlässige Schnittstelle zum Informationsfrontend zu gewährleisten und evtl.Weiterentwicklungsmöglichkeiten bereit zustellen.
 |===
 
 ////
@@ -81,14 +80,20 @@ Beispiel:
 
 [cols="1,3"]
 |===
-| Für | Mitarbeiter der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und interessierte Externe (zB. Studierende, die sich über die Partnerschaften informieren wollen)
+| Für | Mitarbeiter der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) 
 | die | die Verwaltung effizienter durchführen möchten bzw. die Einsicht freigegebener Daten für interessierte Externe leicht zugänglich zu machen. 
-| Das Produkt ist eine | Webanwendung mit einer Schnittstelle zur Maria-Datenbank (Online-Datenbankverwaltungssystem)
-| die | die Datenverwaltung für die Mitarbeiter, Informationsbeschaffung für die Studierenden zu Partneruniversiäten/Austauschprogrammen ermöglicht. 
+| Das Produkt ist eine | Webanwendung mit einer Schnittstelle zu einer Maria-Datenbank (Online-Datenbankverwaltungssystem)
+| die | die Datenverwaltung und Pflege vereinfacht. 
 | Im Gegensatz zu | der aktuell genutzten MS-Access-Datenbank 
-| Unser Produkt | ermöglicht den Mehrbenutzerbetrieb für die Datenbank zu verwalten und Informationen daraus abzufragen bzw. hinzuzufügen.
+| Unser Produkt | ermöglicht eine komfortable Form der Datenbankverwaltung im Mehrbenutzer betrieb.
 |===
 
+[cols="1,3"]
+|===
+| Für | Externe
+| die | sich über Partner-Hochschulen und Austausch-Programme interessieren.
+| Das Produkt stellt eine | Schnittstelle für eine Webanschicht von ausgewählten Daten aus der Maria-Datenbank zur Verfügung, welche auf der HTW-Webseite betrachtet werden können.
+|===
 ////
 Beispiel Produkt:
 |===
@@ -153,6 +158,7 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 == Produkt-/Lösungsüberblick
 
 === Hauptfunktionen
+Die Priorität der Funktion ist mit den Zahlen 1 bis 10 skaliert, wobei 1 die niedrigste Prioritätsstufe darstellt und 10 die höchste.
 //Vermeiden Sie Angaben zum Entwurf. Nennen wesentliche Features (Produktmerkmale) auf allgemeiner Ebene. Fokussieren Sie sich auf die benötigten Fähigkeiten des Systems und warum (nicht wie!) diese realisiert werden sollen. Geben Sie die von den Stakeholdern vorgegebenen Prioritäten und das geplante Release für die Veröffentlichung der Features an.
 
 [%header, cols="4,1,4,1"]
