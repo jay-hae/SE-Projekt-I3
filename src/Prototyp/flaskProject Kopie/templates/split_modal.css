@@ -1,0 +1,14 @@
+#institute_info{
+    float: left;
+    width: 33%;
+}
+
+#ansprechperson {
+    float: left;
+    width: 33%;
+}
+
+#right{
+    float: right;
+    width: 33%;
+}

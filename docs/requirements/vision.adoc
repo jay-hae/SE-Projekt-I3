@@ -219,6 +219,16 @@ Die Priorität der Funktion ist mit den Zahlen 1 bis 10 skaliert, wobei 1 die ni
 | Zum Erstellen eines Berichtes im Verwaltungsfrontend
 | Sommersemester 2022
 
+| Berichte exportieren
+| 3 
+| Zum Exportieren eines Berichtes im Verwaltungsfrontend
+| Sommersemester 2022
+
+| Externe Abfragen
+| 3 
+| Zum Anzeigen von Informationen für Externe
+| Sommersemester 2022
+
 |===
 
 

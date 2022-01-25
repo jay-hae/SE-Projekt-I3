@@ -53,6 +53,16 @@ $(document).ready(function () {
             })); //Name of option = faculty['fac'] == Name; value = faculty['id'] == Fac_ID
         });
     });
+    $.get('/getAgreement', function (data3) {
+        //add to filter on main page
+        $.each(data3, function (index3) {
+            let agreement = data3[index3];
+            $(' .fil_agree').append($('<option>', {
+                value: agreement['ID'],
+                text: agreement['ps_type']
+            })); //Name of option = faculty['fac'] == Name; value = faculty['id'] == Fac_ID
+        });
+    });
 }
 );
 

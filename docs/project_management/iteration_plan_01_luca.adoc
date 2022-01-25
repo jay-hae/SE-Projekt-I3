@@ -105,12 +105,22 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |Risklist erstellen/beginnen
 |mittel
 |6
+|in Bearbeitung
 |Risklist
-|-
 |1
 |Roman Patzig
 |-
 |0
+
+|Projektplan erstellen/beginnen
+|hoch
+|6
+|in Bearbeitung
+|Projektplan
+|1
+|Jens Rosenkranz
+|2
+|2
 
 |===
 

@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="my_modal.css"/>
+    <link rel="stylesheet" href="split_modal.css"/>
     <script src="firstDBcall.js"></script>
     <script src="Modal_edit.js"></script>
     <script src="addModalEvents.js"></script>
@@ -37,7 +38,7 @@
             <input type="text" id="edit_modal_ec"><br>
         </div>
         <hr>
-        <div id="rightSide">  <!-- Left side of modal box -->
+        <div id="right_side">
         </div>
         <a href="#ex1" rel="modal:close"><button id="mod_edit">Speichern</button></a>
         <a href="#ex1" rel="modal:close"><button id="quit">Abbrechen</button></a>
@@ -47,36 +48,68 @@
 <div id="ex2" class="modal">
     <!-- 3 different div's to structure form -->
     <form class="modal_form" id="form_add" action="">
-        <div id="overall">
+        <div id="institute_info">
             <!-- main construct for modal to add new institute -->
-            <input type="hidden" id="institute_ID">
+            <h1>Hochschule anlegen</h1>
+            <label for="modal_eng">Englische Bezeichnung</label><br>
+            <input type="text" id="modal_eng" name="mod_eng"><br>
             <label for="modal_country">Land</label>
+            <br>
             <select id="modal_country" class="filter_country" name="mod_country">
             </select><br>
-            <label for="modal_eng">Englische Bezeichnung</label>
-            <input type="text" id="modal_eng" name="mod_eng"><br>
-            <label for="modal_local">Lokale Bezeichnung</label>
+            <label for="modal_local">Lokale Bezeichnung</label><br>
             <input type="text" id="modal_local" name="mod_local"><br>
-            <label for="modal_adr">Adresse</label>
+            <label for="modal_adr">Adresse</label><br>
             <input type="text" id="modal_adr" name="mod_adr"><br>
-            <label for="modal_ws">Website</label>
-            <input type="text" id="modal_ws" name="mod_ws"><br>
-            <label for="modal_ntzn">Notizen</label>
-            <input type="text" id="modal_ntzn" name="mod_ntzn"><br>
-            <label for="modal_anz">Öffentlich anzeigen?</label>
-            <input class="my_check" type="checkbox" id="modal_anz" name="mod_anz"><br>
-            <label for="modal_ec">Erasmus-Code</label>
+            <!-- <label for="modal_ws">Website</label>
+            <input type="text" id="modal_ws" name="mod_ws"><br>  -->
+            <label for="md_add_homepage">Homepage</label><br>
+            <input type="text" id="md_add_homepage"><br>
+            <label for="modal_ec">Erasmus-Code</label><br>
             <input type="text" id="modal_ec" name="mod_ec"><br>
+            <label for="modal_ntzn">Notizen</label><br>
+            <input type="text" id="modal_ntzn" name="mod_ntzn"><br>
+            <label for="modal_anz">Öffentlich anzeigen?</label><br>
+            <input class="my_check" type="checkbox" id="modal_anz" name="mod_anz"><br>
         </div>
-        <div id="intern_office">
-
+        <div id="ansprechperson">
+            <h1>Ansprechperson</h1>
+            <label for="">Titel</label><br>
+            <input type="text" id="add_title"><br>
+            <label for="">Vorname</label><br>
+            <input type="text" id="add_firstname"><br>
+            <label for="">Nachname</label><br>
+            <input type="text" id="add_lastname"><br>
+            <label for="">Geschlecht</label><br>
+            <select id="add gender">
+            <option value="0">Männlich</option>
+            <option value="1">Weiblich</option>
+            <option value="2">Divers</option>
+            </select><br>
+            <label for="">Funktion</label><br>
+            <input type="text" id="add_function"><br>
+            <label for="">Telefonnummer</label><br>
+            <input type="text" id="add_tel_prv"><br>
+            <label for="">Email</label><br>
+            <input type="text" id="add_mail_prv"><br>
         </div>
-        <div id="anspr_person">
-
-        </div>
-        <!-- 2 buttons to close modal, 'Speichern' triggers post request also -->
+        <div id="right">
+            <h1>International Office</h1>
+            <label for="int_off_name">Name</label><br>
+            <input type="text" id="int_off_name"><br>
+            <label for="int_off_tel">Telefon</label><br>
+            <input type="text" id="int_off_tel"><br>
+            <label for="int_off_mail">Email</label><br>
+            <input type="text" id="int_off_mail"><br>
+            <label for="int_off_hp">Homepage</label><br>
+            <input type="text" id="int_off_hp"><br>
+            <h1>Partnerschaft</h1>
+            <label for="">Vertragstyp</label><br>
+            <select id="add_agreement" class="fil_agree"></select><br><br>
             <a href="#ex2" rel="modal:close"><button type="submit" id="mod_add_institute">Speichern</button></a>
             <a href="#ex2" rel="modal:close"><button id="leave_mod">Abbrechen</button></a>
+        </div>
+        <!-- 2 buttons to close modal, 'Speichern' triggers post request also -->
     </form>
 </div>
     <div id="FilterAll">        <!-- div for every filter needed -->
@@ -97,7 +130,7 @@
                 <option value="y">Ja</option>
                 <option value="n">Nein</option>
             </select>
-            <select id="fil_agree" name="filter_agreetype" class="filter">
+            <select id="fil_agree" name="filter_agreetype" class="filter fil_agree">
                 <option value="none">-Vertragstyp-</option>
             </select>
             <select id='sorting' name="sortby" class="filter"> <!-- implement sorting filter -->
@@ -106,15 +139,16 @@
             </select>
             <br>
             <button id="fil_reset">Zurücksetzen</button>
-        </div>
-    </form>
+        </form>
+    </div>
     <br>
     <a href="#ex2" rel="modal:open"><button>Add Institute</button></a>
     <table> <!-- Table for information needed for main page -->
         <thead id="head">
         <tr>
-        <th>Institute</th>
-        <th>Agreements</th>
+        <th class="tbl_column_huge">Hochschule</th>
+        <th class="tbl_column_small">Öffentliche Anzeige</th>
+        <th class="tbl_column_small">Verträge</th>
         </tr>
         </thead>
         <tbody id="addItems">   <!-- insert all rows from database when load page for the first time -->

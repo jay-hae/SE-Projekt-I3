@@ -5,7 +5,7 @@ function loadStartpage(){
             // callback function; do something for every data that is returned from get call
             now = data[index]; // get data from json file at position [index]
             //add new table row to main page
-            $('#addItems').append("<tr id='" + index + "'><td style=\"display:none;\">"+now['id']+"</td><td style='width: 60%' id='name'>" + now['name'] + "</td><td style='width: 20%' id='cntry'>" + now['agreements'] + "</td><td style='width: 20%'><a href=\"#ex1\" rel=\"modal:open\"><button class='btn' type='button'>Edit</button></a></tr>");
+            $('#addItems').append("<tr id='" + index + "'><td style=\"display:none;\">"+now['id']+"</td><td class='tbl_column_huge'>" + now['name'] + "</td><td class='tbl_column_small'>" + now['agreements'] + "</td><td class='tbl_column_small'><a href=\"#ex1\" rel=\"modal:open\"><button class='btn' type='button'>Edit</button></a></tr>");
         });
         $(" .btn").each(function () {   //add function to dynamically created buttons (shown institutes)
             $(this).click(function () {   //event triggerd on 'click'

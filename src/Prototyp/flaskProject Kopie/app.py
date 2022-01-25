@@ -45,6 +45,11 @@ def ret_inst():
     return Querries.institutes_ret()
 
 
+@app.route('/getAgreement', methods=['GET'])
+def ret_type():
+    return Querries.ag_type_ret()
+
+
 # DB call load all countries
 @app.route('/loadCountries', methods=['GET'])
 def ret_countries():
@@ -115,15 +120,32 @@ def handle_filter():
         filter_dict = {}
         for x in request.form:
             if request.form[x] != 'none':
-                filter_dict = {
-                    x: request.form[x]
-                }
+                if request.form[x].isalnum():
+                    filter_dict = {
+                        x: request.form[x]
+                    }
+                if request.form[x] == 'n':
+                    filter_dict = {
+                        x: 0
+                    }
+                elif request.form[x] == 'y':
+                    filter_dict = {
+                        x: 1
+                    }
+                elif request.form[x] == 'd':
+                    filter_dict = {
+                        x: 'DESC'
+                    }
+                elif request.form[x] == 'a':
+                    filter_dict = {
+                        x: 'ASC'
+                    }
             else:
                 filter_dict = {
                     x: '%'
                 }
             payload.append(filter_dict)
-
+        Querries.filter_institutes(payload)
     return jsonify('hi')
 
 
