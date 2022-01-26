@@ -1,5 +1,13 @@
 // do everything below as soon as document is ready (document loaded)
 $(document).ready(function () {
+    $('#add-eng').on('blur', function (){
+        if ($(this).val() !== ''){
+            $('#mod_add_institute').removeAttr('disabled');
+        }
+        else {
+            $('#mod_add_institute').attr('disabled', true);
+        }
+    });
     //Laden der Daten für Startseite
     loadStartpage();
     //add events to modal; submit form & add button events

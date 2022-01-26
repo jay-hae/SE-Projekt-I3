@@ -8,8 +8,7 @@ function modal_events(){
             data: form.serialize(), // serializes the form's elements.
             success: function(data)
             {
-
-              event.submit();
+                alert('Hi');
             }
         });
     });
@@ -30,5 +29,6 @@ function modal_events(){
     $(' .modal').on($.modal.CLOSE, function(event, modal) {
         //$(' .my_check').prop('checked', false);
         $(' .modal_form').trigger('reset'); //clear modal after closing it
+        $('#mod_add_institute').attr('disabled', true)
     });
 }

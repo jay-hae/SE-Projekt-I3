@@ -89,64 +89,23 @@ def lol(filename):
 @app.route('/addInstitute', methods=['POST'])
 def new_institute():
     if request.method == 'POST':
-        if "usr" in session:
-            if "mod_anz" in request.form:
-                show = True
-            else:
-                show = False
-            # create dict with data from post request
-            add_inst_dict = {
-                'country': request.form['mod_country'],
-                'eng': request.form['mod_eng'],
-                'local': request.form['mod_local'],
-                'adr': request.form['mod_adr'],
-                'ws': request.form['mod_ws'],
-                'note': request.form['mod_ntzn'],
-                'erasmus': request.form['mod_ec']
-            }
-            # check if institute was successful added to db
-            if Querries.new_Institute(add_inst_dict):
-                return jsonify('success')
-            else:
-                return jsonify('failed')
-        else:
-            return redirect(url_for('LoginPage'))
+        my_var = request.form.to_dict()
+        col_list = []
+        val_list = []
+        for key in my_var:
+            if my_var[key] != '':
+                col_list.append(key)
+                val_list.append(my_var[key])
+        return Querries.new_Institute(col_list, val_list)
+    return redirect(url_for('LoginPage'))
 
 
 @app.route('/filterInstitute', methods=['POST'])
 def handle_filter():
     if request.method == 'POST':
-        payload = []
-        filter_dict = {}
-        for x in request.form:
-            if request.form[x] != 'none':
-                if request.form[x].isalnum():
-                    filter_dict = {
-                        x: request.form[x]
-                    }
-                if request.form[x] == 'n':
-                    filter_dict = {
-                        x: 0
-                    }
-                elif request.form[x] == 'y':
-                    filter_dict = {
-                        x: 1
-                    }
-                elif request.form[x] == 'd':
-                    filter_dict = {
-                        x: 'DESC'
-                    }
-                elif request.form[x] == 'a':
-                    filter_dict = {
-                        x: 'ASC'
-                    }
-            else:
-                filter_dict = {
-                    x: '%'
-                }
-            payload.append(filter_dict)
-        Querries.filter_institutes(payload)
-    return jsonify('hi')
+        my_list = request.form.values()
+        var = ['%' if i == 'none' else i for i in my_list]
+        return 4
 
 
 if __name__ == '__main__':
