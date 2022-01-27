@@ -38,6 +38,8 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 | Informationsfrontend | Das bisher bestehende Frontend zur Datenbank, das Externen Informationen über die bestehenden Partnerschaften ermöglicht
 | Frontend für die Studierenden, Anzeigefrontend, bisheriges Frontend
 
+| International Office | Abteilung einer ausländischen Hochschule, die für die Kommunikation in Angelegenheiten von Austauschstudierenden und Partnerschaftsverttägen zuständig ist. | (keine)
+
 | Kontaktperson | Person über die eine ausländische Hochschule kontaktiert werden kann, um einen Partnerschaftsvertrag einzuleiten | (keine)
 
 | Leitung | Person oder Gruppe, welche volle brechtigung über das System besitzten | Superuser
