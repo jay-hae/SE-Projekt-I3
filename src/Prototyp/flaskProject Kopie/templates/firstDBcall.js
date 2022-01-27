@@ -1,5 +1,13 @@
 // do everything below as soon as document is ready (document loaded)
 $(document).ready(function () {
+    $('#add-eng').on('blur', function (){
+        if ($(this).val() !== ''){
+            $('#mod_add_institute').removeAttr('disabled');
+        }
+        else {
+            $('#mod_add_institute').attr('disabled', true);
+        }
+    });
     //Laden der Daten für Startseite
     loadStartpage();
     //add events to modal; submit form & add button events
@@ -50,6 +58,16 @@ $(document).ready(function () {
             $('#fil_fac').append($('<option>', {
                 value: faculty['id'],
                 text: faculty['fac']
+            })); //Name of option = faculty['fac'] == Name; value = faculty['id'] == Fac_ID
+        });
+    });
+    $.get('/getAgreement', function (data3) {
+        //add to filter on main page
+        $.each(data3, function (index3) {
+            let agreement = data3[index3];
+            $(' .fil_agree').append($('<option>', {
+                value: agreement['ID'],
+                text: agreement['ps_type']
             })); //Name of option = faculty['fac'] == Name; value = faculty['id'] == Fac_ID
         });
     });

@@ -19,11 +19,30 @@ def institutes_ret():
             content = {
                 'id': i[0],
                 'name': i[1],
-                'agreements': i[2]
+                'agreements': i[2],
+                'display': i[3]
             }
             payload.append(content)
     cur.close()
+    cnxn.close()
     # convert payload to json format and send it back to server
+    return jsonify(payload, {'sorting': 'a'})
+
+
+def ag_type_ret():
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    cur.execute('SELECT ID, deu FROM tbl_partnership_type')
+    x = cur.fetchall()
+    payload = []
+    for i in x:
+        content = {
+            'ID': i[0],
+            'ps_type': i[1]
+        }
+        payload.append(content)
+    cur.close()
+    cnxn.close()
     return jsonify(payload)
 
 
@@ -42,6 +61,7 @@ def all_countries():
         }
         payload.append(content)
     cur.close()
+    cnxn.close()
     return jsonify(payload)
 
 
@@ -60,19 +80,8 @@ def faculty():
         }
         payload.append(content)
     cur.close()
+    cnxn.close()
     return jsonify(payload)
-
-
-# insert new institute into table
-def new_Institute(inst_inf_dict):
-    cnxn = Login.newConnection()
-    cur = cnxn.cursor()
-    # create parameter list to insert into tbl_institute
-    param_log = (
-        inst_inf_dict['country'], inst_inf_dict['eng'], inst_inf_dict['local'], inst_inf_dict['adr'], inst_inf_dict['ws'],
-        inst_inf_dict['note'], inst_inf_dict['show'], inst_inf_dict['erasmus']
-    )
-    print(param_log)
 
 
 # get all data needed for modal box; specified inst by ID given from html site
@@ -113,4 +122,49 @@ def for_modal(institute_id):
                 'pers_mail': row[18]
             }
             payload.append(content)
+    cur.close()
+    cnxn.close()
     return jsonify(payload)
+
+
+def filter_institutes(parameters):
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    payload = []
+    parameter_list = (parameters[0], parameters[1], parameters[2], parameters[3], parameters[4])
+    cur.callproc('count_agreements_filter', parameter_list, )
+    x = cur.fetchall()
+    for result in cur.stored_results():
+        x = result.fetchall()
+        for i in x:
+            content = {
+                'id': i[0],
+                'name': i[1],
+                'agreements': i[2],
+                'display': i[3]
+            }
+            payload.append(content)
+    cur.close()
+    cnxn.close()
+    return jsonify(payload, {'sorting': parameters[5]})
+
+
+    # insert new institute into table
+def new_Institute(tuple_col, tuple_val):
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    x = "%s, "
+    x = x*len(tuple_val)
+    a = ""
+    for columns in tuple_col:
+        a += ", "+columns
+    print(a[2:])
+    query = "INSERT INTO tbl_institute (" + a[2:] + ") VALUES (" + x[:-2] + ")"
+    try:
+        cur.execute(query, tuple_val)
+        cnxn.commit()
+        answer = {'success': 'True'}
+    finally:
+        cur.close()
+        cnxn.close()
+        return jsonify(answer)

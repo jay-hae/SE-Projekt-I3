@@ -1,5 +1,5 @@
 function addFilterChangeEvents(){
-    $(' .filter').change(function (){
+    $(' .filter').on('change', function (){
         //beim Auswählen eines Filters werden alle Select optionen mit jeweiligen Werten an das Backend geschickt
         let fil_form = $('#filter_form');
         $.ajax({
@@ -8,7 +8,7 @@ function addFilterChangeEvents(){
             data: fil_form.serialize(), // serializes the form's elements.
             success: function(data)
             {
-                //gefilterte Daten ausgeben
+                insertData(data);
             }
         });
     });

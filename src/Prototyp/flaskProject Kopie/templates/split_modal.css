@@ -1,0 +1,24 @@
+#institute_info{
+    float: left;
+    width: 33%;
+}
+
+#ansprechperson {
+    float: left;
+    width: 33%;
+}
+
+#right{
+    float: right;
+    width: 33%;
+}
+
+.main {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+}
+
+#FilterAll {
+    padding-top: 3%;
+}
