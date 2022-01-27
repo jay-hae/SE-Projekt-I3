@@ -6,7 +6,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Allgemeine Informationen
-Das Domain Model bildet die relevante Terminologie der Fachdomäne ab, mit dem Ziel, eine gemeinsame Sprache zwischen Entwicklern und Fachexperten herzustellen und Missverständnissen vorzubeugen
+Das Domain Model bildet die relevante Terminologie der Fachdomäne ab, mit dem Ziel, eine gemeinsame Sprache zwischen Entwicklern und Fachexperten herzustellen und Missverständnissen vorzubeugen. Es handelt sich um ein so genanntes „Visual Data Dictionary", welches für ein besseres Verständnis im Team über fachliche Zusammenhänge sorgen soll.
 
 == Domänenmodel
 image::domain_model.png[]
