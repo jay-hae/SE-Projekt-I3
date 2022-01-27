@@ -138,24 +138,22 @@ image::essence navigator.PNG[]
 
 | I1
 |
-* Kennenlernen des Projektes, der Gruppe, des Auftraggebers und des Coaches 
-* Erarbeitung der grundlegenen Aufgaben
-* Informationsbeschaffung von Auftraggeber
-* Studium der vorhandenen Access-Datenbank
-* Erste Konsultation mit Coach 
-| 24.11.2021 - 08.12.2021
+* Erste UseCases anlegen
+* Risk List Anlegen
+* Mit Essence Navigator Vertraut machen / Aktuellen Stand eintragen
+* Glossar Anlegen
+* Vision beginnen
+
+| 01.12.2021 - 15.12.2021
 | 5
 
 | I2
 |
-* Beginn der Use Cases-Definition
-* Vision und Positionierung erstellen
-* Beginn Anforderungsanalyse
-* Beginn Risikoliste
-* Beginn Glossar
-* Beginn der Projektplanerstellung
-* Kontakt zu Rechenzentrum und Datenschutzbeauftragtem der HTW Dresden aufbauen
-| 08.12.2021 - 22.12.2021
+* Use Cases für die Hauptfunktionalitäten im Detail beschreiben
+* Aktivitätsdiagramme und Wireframes der Use Cases
+* Vision ist (für den aktuellen Stand) vollständig und detailliert ausgearbeitet
+* Glossar beinhält und erklärt alle wesentlichen Begriffe
+| 15.12.2021 - 22.12.2021
 | 7
 
 | I3
