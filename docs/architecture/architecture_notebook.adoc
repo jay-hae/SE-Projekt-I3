@@ -24,7 +24,7 @@ sollten die Anwendung auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rech
 zu berücksichtigen. Die Erreichbarkeit des Systems ist sehr eingrenzbar, sie ist gebunden an die Arbeitszeiten der Stabsstelle Internationales
 welche sich auf 8 Stunden, 7-15 Uhr, werktags beläuft. Außerhalb dieser Zeit gibt es keine Verpflichtung zur Erreichbarkeit.
 
-Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des Interfaces stark an einem Prototyp und dem Arbeitsablauf der SI orientiert, intuitives arbeiten wird so ermöglicht. Daraus resultierend sind Vorschriften bezüglich Performance, bei Aufruf versteckter Seitenelemente oder Laden von Daten, sollten nicht mehr als 3 Sekunden vergehen.
+Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des bisherigen Interfaces stark an einem Prototyp und dem Arbeitsablauf der SI orientiert, intuitives arbeiten wird so ermöglicht. Daraus resultierenen Vorschriften bezüglich der Performance, somit sollten beim Aufruf versteckter Seitenelemente oder Laden von Daten, nicht mehr als 3 Sekunden vergehen.
 
 
 
@@ -35,7 +35,7 @@ Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des Interfac
 === Annahmen
 . Nutzer sind Mitarbeiter der Stabsstelle Internationales
 . Nutzer befinden sich, mit einer stabilen Internetverbindung und einem modernen Browser, im Netz der HTW
-. Jeder Nutzer erlaubt das Ausführen von Javascript-Skripts innerhalb seines Browsers
+. Jeder Nutzer erlaubt das Ausführen von Javascript-Skripten innerhalb seines Browsers
 
 === Abhängigkeiten
 . Wir sind abhängig vom Rechenzentrum der HTW
@@ -47,7 +47,7 @@ Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des Interfac
 * SWFA-1
 * SWFA-2
 * SWFA-3
-* NFAU-2
+* NFAU-1
 * Lauffähig in Chrome, Firefox und Edge
 * Erweiterbarkeit der Systemfunktionalität
 
@@ -55,7 +55,7 @@ Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des Interfac
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 === Webtechnologien
 
-Durch das Verwenden der aufgeführten Webtechnologien möchten wir ein Betriebssystem unabhängiges Nutzen ermöglichen. Die Anwendung soll des Weiteren ohne Installation bestimmter Tools auf etablierten Browsern nutzbar sein, sowie die einfache Erweiterung durch spätere Arbeitsgruppen ermöglichen.
+Durch das Verwenden der aufgeführten Webtechnologien, möchten wir eine Nutzung ohne Installation bestimmter Tools auf etablierten Browsern ermöglichen. Des weiteren soll es späteren Arbeitsgruppen möglich sein, das bestehende System problemlos weiterzuentwickeln.
 
 . CSS / Javascript / HTML
 .. Weitverbreitete, allgegenwärtige Technologien zur Webentwicklung
