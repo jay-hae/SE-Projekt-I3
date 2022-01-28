@@ -92,11 +92,15 @@ def new_institute():
         my_var = request.form.to_dict()
         col_list = []
         val_list = []
+        if "display" not in request.form:
+            col_list.append("display")
+            val_list.append() #append 0/1 -> je nachdem was in DB für NEIN steht
         for key in my_var:
             if my_var[key] != '':
                 col_list.append(key)
                 val_list.append(my_var[key])
-        return Querries.new_Institute(col_list, val_list)
+        #return Querries.new_Institute(col_list, val_list)
+        return jsonify('HI')
     return redirect(url_for('LoginPage'))
 
 

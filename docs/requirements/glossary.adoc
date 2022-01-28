@@ -14,7 +14,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 |===
 | Begriff | Definition und Erläuterung | Synonyme
 
-| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
+//| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
 
 | Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Unterbau, hinteres Ende
 

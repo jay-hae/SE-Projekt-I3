@@ -55,7 +55,7 @@ Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des Interfac
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 === Webtechnologien
 
-Durch das Verwenden der aufgeführten Webtechnologien möchten wir eine Betriebssystem unabhängige Nutzung ermöglichen. Die Anwendung soll des Weiteren ohne Installation bestimmter Tools auf etablierten Browsern nutzbar sein, sowie die einfache Erweiterung durch spätere Arbeitsgruppen ermöglichen.
+Durch das Verwenden der aufgeführten Webtechnologien möchten wir ein Betriebssystem unabhängiges Nutzen ermöglichen. Die Anwendung soll des Weiteren ohne Installation bestimmter Tools auf etablierten Browsern nutzbar sein, sowie die einfache Erweiterung durch spätere Arbeitsgruppen ermöglichen.
 
 . CSS / Javascript / HTML
 .. Weitverbreitete, allgegenwärtige Technologien zur Webentwicklung
@@ -63,7 +63,7 @@ Durch das Verwenden der aufgeführten Webtechnologien möchten wir eine Betriebs
 
 === Serverseitige Programmierung mit Python
 
-Es wurde sich in diesem Fall für Python entschieden, da durch das Framework 'Flask' die Serverseitige Programmierung sehr übersichtlich gehalten wird. Es ist sehr einfach möglich, URL-Pfade anzupassen oder zu erweitern. Des Weiteren bestand in Bezug auf Flask innerhalb des Teams vereinzelt Vorerfahrung.
+Es wurde sich in diesem Fall für Python entschieden, da durch das Framework 'Flask' die Serverseitige Programmierung sehr übersichtlich gehalten wird. Es ist sehr einfach möglich, die aufrufbaren Seiten innerhalb des Systems zu erweitern. Des Weiteren bestand in Bezug auf Flask innerhalb des Teams vereinzelt Vorerfahrung.
 
 
 === Frameworks
@@ -89,7 +89,7 @@ Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Protot
 Die Anforderung (SWFA-1) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. Uns blieb, aufgrund einiger Vorgaben, nichts anderes übrig als das bestehende Datenbankmodell zu übernehmen. Die Entscheidung wurde von Vorgängern getroffen, somit verwenden wir eine MariaDB welche vom Rechenzentrum gehostet wird.
 
 === Interface
-In der Analyse wurde festgestellt das SWFA-3, die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist. Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen. Der Fakt dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis das die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen entsprechen. Unsere Website ist nun in der Lage sich dem Bildschirm des jeweiligen Endgerätes anzupassen, insofern es sich um ein Notebook, einen Laptop oder Desktop-PC handelt.
+In der Analyse wurde festgestellt das SWFA-3, die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist. Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen. Der Fakt, dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis das die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen entsprechen. Unsere Webanwendung soll später in der Lage sein, sich den jeweiligen Endgeräten der Nutzer anzupassen.
 
 
 == Wesentliche Abstraktionen
@@ -105,7 +105,6 @@ Das System wird in logische Schichten aufgeteilt. Diese sind die Datenbank, das 
 == Architektursichten (Views)
 //[Describe the architectural views that you will use to describe the software architecture. This illustrates the different perspectives that you will make available to review and to document architectural decisions.]
 
-Folgende Sichten werden empfohlen:
 
 
 

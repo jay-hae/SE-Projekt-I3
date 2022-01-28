@@ -51,8 +51,8 @@
 <!-- modal to add institute -->
 <div id="ex2" class="modal">
     <!-- 3 different div's to structure form -->
-    <form class="modal_form" id="form_add" action="">
-        <div id="institute_info">
+    <form class="modal_form" id="form_left_col" action="">
+        <div id="add_left_col" class="add_modal_columns">
             <!-- main construct for modal to add new institute -->
             <h1>Hochschule anlegen</h1>
             <label for="add-eng">Englische Bezeichnung</label><br>
@@ -76,45 +76,49 @@
             <label for="add-display">Öffentlich anzeigen?</label><br>
             <input class="my_check" type="checkbox" id="add-display" name="display"><br>
         </div>
-        <div id="ansprechperson">
+    </form>
+    <form class="modal_form" id="form_mid_col" action="">
+        <div id="add_mid_col" class="add_modal_columns">
             <h1>Ansprechperson</h1>
             <label for="add-title">Titel</label><br>
-            <input type="text" id="add-title"><br>
+            <input type="text" id="add-title" name="title"><br>
             <label for="add-firstname">Vorname</label><br>
-            <input type="text" id="add-firstname"><br>
+            <input type="text" id="add-firstname" name="firstname"><br>
             <label for="add-lastname">Nachname</label><br>
-            <input type="text" id="add-lastname"><br>
+            <input type="text" id="add-lastname" name="lastname"><br>
             <label for="add-gender_ID">Geschlecht</label><br>
-            <select id="add-gender_ID">
+            <select id="add-gender_ID" name="gender_ID">
             <option value="0">Männlich</option>
             <option value="1">Weiblich</option>
             <option value="2">Divers</option>
             </select><br>
             <label for="add-function">Funktion</label><br>
-            <input type="text" id="add-function"><br>
+            <input type="text" id="add-function" name="function"><br>
             <label for="add-person_phone">Telefonnummer</label><br>
-            <input type="text" id="add-person_phone"><br>
+            <input type="text" id="add-person_phone" name="person_phone"><br>
             <label for="add-person_email">Email</label><br>
-            <input type="text" id="add-person_email"><br>
+            <input type="text" id="add-person_email" name="person_email"><br>
         </div>
-        <div id="right">
+    </form>
+    <form class="modal_form" id="form_right_col" action="">
+        <div id="add_right_col" class="add_modal_columns">
             <h1>International Office</h1>
             <label for="add-department">Abteilung</label><br>
-            <input type="text" id="add-department"><br>
+            <input type="text" id="add-department" name="department"><br>
             <label for="add-phone">Telefon</label><br>
-            <input type="text" id="add-phone"><br>
+            <input type="text" id="add-phone" name="phone"><br>
             <label for="add-email">Email</label><br>
-            <input type="text" id="add-email"><br>
+            <input type="text" id="add-email" name="email"><br>
             <label for="add-int_office_homepage">Homepage</label><br>
-            <input type="text" id="add-int_office_homepage"><br>
+            <input type="text" id="add-int_office_homepage" name="int_office_homepage"><br>
             <h1>Partnerschaft</h1>
             <label for="add-partnership_type_ID">Vertragstyp</label><br>
-            <select id="add-partnership_type_ID" class="fil_agree"></select><br><br>
+            <select id="add-partnership_type_ID" class="fil_agree" name="partnership_type_ID"></select><br><br>
             <a href="#ex2" rel="modal:close"><button type="submit" id="mod_add_institute" disabled>Speichern</button></a>
             <a href="#ex2" rel="modal:close"><button id="leave_mod">Abbrechen</button></a>
         </div>
-        <!-- 2 buttons to close modal, 'Speichern' triggers post request also -->
     </form>
+    <!-- 2 buttons to close modal, 'Speichern' triggers post request also -->
 </div>
     <div id="Page_one">
         <div id="FilterAll" class="main">        <!-- div for every filter needed -->
