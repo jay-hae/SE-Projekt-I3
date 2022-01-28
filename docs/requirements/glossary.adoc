@@ -19,6 +19,8 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 
 | Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Unterbau, hinteres Ende
 
+| Datenbank| System zur elektronischen Datenverwaltung, welches einen Mehrbenutzerzugriff erlaubt | (keine)
+
 | Erasmus _+_ | EU-Programm zur Förderung von allgemeiner und beruflicher Bildung, Jugend und Sport in Europa. Ermöglicht den Austausch von sowohl Lehrenden als auch Studierenden.
 | Erasmus
 | Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interressierte Personen
@@ -51,8 +53,6 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 | Mitarbeiter | Person oder Grupper, welche bei der Stabsstelle Internationales arbeitet | normaler User, SI Mitarbeiter
 
 | Nicht-funktionale Anforderung | Anforderungen, die die Qualität des Systems sicherstellen | Qualitätsanforderungen für das Gesamtsystem
-
-| Datenbank| System zur elektronischen Datenverwaltung, welches einen Mehrbenutzerzugriff erlaubt | (keine)
 
 | Open Unified Process | Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: iterative Softwareentwicklung, Anwendungsfälle, szenarienbasierte Entwicklung, Risikomanagement, architekturzentrierte Vorgehen | OpenUP
 
