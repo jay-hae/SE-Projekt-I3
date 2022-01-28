@@ -29,7 +29,7 @@ Die detaillierte Planung der einzelnen Projektphasen findet im Iterationsplan st
 
 == Projektorganisation
 //Introduce the project team, team members, and roles that they play during this project. If applicable, introduce work areas, domains, or technical work packages that are assigned to team members. Introduce neighboring projects, relationships, and communication channels. If the project is introduced somewhere else, reference that location with a link.
-Das Team SE-Projekt-I3 setzt sich aus insgesamt acht Studierenden aus den Studiengängen Informatik, Wirtschaftsinformatik und Wirtschaftsingenieurwesen zusammen. 
+Das Team SE-Projekt-I3 setzt sich aus insgesamt acht Studierenden aus den Studiengängen Informatik, Wirtschaftsinformatik und Verwaltungsinformatik zusammen. 
 
 Die Rollen wurden von den Studierenden wie folgt eingenommen:
 
@@ -138,24 +138,22 @@ image::essence navigator.PNG[]
 
 | I1
 |
-* Kennenlernen des Projektes, der Gruppe, des Auftraggebers und des Coaches 
-* Erarbeitung der grundlegenen Aufgaben
-* Informationsbeschaffung von Auftraggeber
-* Studium der vorhandenen Access-Datenbank
-* Erste Konsultation mit Coach 
-| 24.11.2021 - 08.12.2021
+* Erste UseCases anlegen
+* Risk List Anlegen
+* Mit Essence Navigator Vertraut machen / Aktuellen Stand eintragen
+* Glossar Anlegen
+* Vision beginnen
+
+| 01.12.2021 - 15.12.2021
 | 5
 
 | I2
 |
-* Beginn der Use Cases-Definition
-* Vision und Positionierung erstellen
-* Beginn Anforderungsanalyse
-* Beginn Risikoliste
-* Beginn Glossar
-* Beginn der Projektplanerstellung
-* Kontakt zu Rechenzentrum und Datenschutzbeauftragtem der HTW Dresden aufbauen
-| 08.12.2021 - 22.12.2021
+* Use Cases für die Hauptfunktionalitäten im Detail beschreiben
+* Aktivitätsdiagramme und Wireframes der Use Cases
+* Vision ist (für den aktuellen Stand) vollständig und detailliert ausgearbeitet
+* Glossar beinhält und erklärt alle wesentlichen Begriffe
+| 15.12.2021 - 22.12.2021
 | 7
 
 | I3

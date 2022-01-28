@@ -14,7 +14,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 |Beginn der Iteration | 15.12.2021
 
-|Use Cases für die Hauptfunktionalitäten im Detail beschrieben
+|Use Cases für die Hauptfunktionalitäten im Detail beschreiben
 |Ende der Iteration
 
 |Aktivitätsdiagramme und Wireframes der Use Cases
