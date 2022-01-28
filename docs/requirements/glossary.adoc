@@ -17,7 +17,9 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 | Austauschprogramm | Verschiedene Arten von Programmen, wie Erasmus oder Freemover | Exchange
 
 
-| Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Unterbau, hinteres Ende
+| Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Serverseitig
+
+| Client | Computer eines Nutzers, welcher Serveranfragen stellt | (keine)
 
 | Datenbank| System zur elektronischen Datenverwaltung, welches einen Mehrbenutzerzugriff erlaubt | (keine)
 
@@ -31,7 +33,7 @@ Hochschule | Abteilung
 | Fakultät | eine Gruppe zusammengehörender Wissenschaften oder Wissenschaftsgebiete umfassende Abteilung als Lehr- und Verwaltungseinheit einer Universität oder Hochschule | (keine)
 
 | Frontend | Schnittstelle des Systems, die
-vom Nutzer bedient wird | Oberbau, vorderes Ende
+vom Nutzer bedient wird | Clientseitig
 
 | Hochschulattribute | Alle möglichen Attribute einer Hochschule (siehe Verzeichnis Datenstrukturen) | Attribute, Hochschuleigenschaften
 
