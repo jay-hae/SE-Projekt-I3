@@ -8,7 +8,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Zweck
-Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Begründungen, wesentliche Elemente und andere übergreifende Aspekte des Systems, die Einfluss auf Entwurf und Implementierung haben.
+Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Begründungen, wesentliche Elemente und andere Aspekte des Systems, die Einfluss auf den Entwurf und die Implementierung haben.
 
 //Hinweise: Bearbeiten Sie immer die Abschnitte 2-6 dieser Vorlage. Nachfolgende Abschnitte sind empfohlen, aber optional und sollten je nach Umfang der künftigen Wartungsarbeiten, Fähigkeiten des Entwicklungsteams und Bedeutung anderer architektureller Belange.
 
@@ -19,12 +19,14 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 //Hinweise: Beschreiben Sie die Philosophie der Architektur, d.h. den zentralen Ansatz für ihre Architektur. Identifizieren Sie alle Aspekte, die die Philosophie beeinflussen, z.B. komplexe Auslieferung Aspekte, Anpassung von Altsystemen oder besondere Geschwindigkeitsanforderungen. Muss es besonders robust sein, um eine langfristige Wartung und Pflege zu ermöglichen?
 
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung).
-Der Zweck des Systems ist das Schaffen einer Webanwendung zum Verwalten von Hochschulpartnerschaften und Studenten-/Lehreraustausch. Benutzer
-sollten die Anwendung auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rechner) im Browser aufrufen können. Mobile Endgeräte sind dabei nicht
-zu berücksichtigen. Die Erreichbarkeit des Systems ist sehr eingrenzbar, sie ist gebunden an die Arbeitszeiten der Stabsstelle Internationales
-welche sich auf 8 Stunden, 7-15 Uhr, werktags beläuft. Außerhalb dieser Zeit gibt es keine Verpflichtung zur Erreichbarkeit.
+Der Zweck des Systems ist das Bereitstellen einer Webanwendung zum Verwalten von Hochschulpartnerschaften und dem Austausch von Studierenden. 
+Benutzer sollten die Anwendung auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rechner), außer mobile Endgeräte (Smartphones), im Browser benutzen können. 
+Die unabdingbare Erreichbarkeit des Systems ist an die Arbeitszeiten der Stabsstelle Internationales gebunden,
+welche sich auf 8 Stunden, 7-15 Uhr, werktags beschränkt. Außerhalb dieser Zeit besteht keine Verpflichtung für die Erreichbarkeit.
 
-Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des bisherigen Interfaces stark an einem Prototyp und dem Arbeitsablauf der SI orientiert, intuitives arbeiten wird so ermöglicht. Daraus resultierenen Vorschriften bezüglich der Performance, somit sollten beim Aufruf versteckter Seitenelemente oder Laden von Daten, nicht mehr als 3 Sekunden vergehen.
+Zur Unterstützung einer effizienten Bedienbarkeit wurde sich beim Design des Interfaces stark an einem bereits vorhandendem Prototyp und dem Arbeitsablauf der SI orientiert, intuitives arbeiten wird so ermöglicht. 
+//Daraus resultierenen Vorschriften bezüglich der Performance. 
+//TODO Somit sollten beim Aufruf versteckter Seitenelemente oder Laden von Daten, nicht mehr als 3 Sekunden vergehen.
 
 
 
@@ -44,18 +46,19 @@ Zur Unterstützung der schnellen Bearbeitung wurde sich beim Design des bisherig
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
-* SWFA-1
-* SWFA-2
-* SWFA-3
+* SWFA-1 bis SWFA-4
 * NFAU-1
-* Lauffähig in Chrome, Firefox und Edge
+* NFAU-2
+* NFAR-1 bis NAFAR-3
+* NFAP-1
+* NFAP-2
 * Erweiterbarkeit der Systemfunktionalität
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 === Webtechnologien
 
-Durch das Verwenden der aufgeführten Webtechnologien, möchten wir eine Nutzung ohne Installation bestimmter Tools auf etablierten Browsern ermöglichen. Des weiteren soll es späteren Arbeitsgruppen möglich sein, das bestehende System problemlos weiterzuentwickeln.
+Durch das Verwenden der aufgeführten Webtechnologien, möchten wir eine Nutzung ohne Installation bestimmter Tools auf etablierten Browsern ermöglichen. Des Weiteren soll es späteren Arbeitsgruppen möglich sein, das bestehende System problemlos weiterzuentwickeln.
 
 . CSS / Javascript / HTML
 .. Weitverbreitete, allgegenwärtige Technologien zur Webentwicklung
@@ -68,7 +71,7 @@ Es wurde sich in diesem Fall für Python entschieden, da durch das Framework 'Fl
 
 === Frameworks
 
-Das Verwenden von Frameworks ist gerade in Gruppen mit wenig Vorerfahrung sehr von Vorteil, der Code bleibt übersichtlich und die Webentwicklung wird erheblich vereinfacht.
+Das Verwenden von Frameworks ist gerade in Gruppen mit wenig Vorerfahrung sehr von Vorteil. Der Code bleibt übersichtlich und die Webentwicklung wird erheblich vereinfacht.
 
 . jQuery (Javascript)
 . Flask (Python)
@@ -83,13 +86,22 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
 === Sicherheit
-Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung zu schützen. Dies passiert zum einen durch einen IP-Schutz. Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden(SWFA-2). Derzeit wird noch die Logik der Vorgruppe verfolgt um einen Login per Datenbank-Credentials zu ermöglichen. Durch Anforderung SWFA-3 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren. Es wird eine Serverseitige Unterscheidung zwischen den Mitarbeitern benötigt.
+Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung zu schützen.
+Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden(SWFA-2).
+Derzeit wird noch die Logik der Vorgruppe verfolgt den Zugriffschutz übere einen Datenbankaccount zu ermöglichen.
+Durch die Anforderung SWFA-3 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren.
+Es wird eine Serverseitige Unterscheidung zwischen den Mitarbeitern benötigt.
 
 === Persistente Daten
-Die Anforderung (SWFA-1) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. Uns blieb, aufgrund einiger Vorgaben, nichts anderes übrig als das bestehende Datenbankmodell zu übernehmen. Die Entscheidung wurde von Vorgängern getroffen, somit verwenden wir eine MariaDB welche vom Rechenzentrum gehostet wird.
+Die Anforderung (SWFA-1) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. 
+Uns blieb, aufgrund einiger Vorgaben, nichts anderes übrig als das bestehende Datenbankmodell zu übernehmen. 
+Die Entscheidung wurde von Vorgängern getroffen, somit verwenden wir eine MariaDB welche vom Rechenzentrum gehostet wird.
 
 === Interface
-In der Analyse wurde festgestellt das SWFA-3, die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist. Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen. Der Fakt, dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis das die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen entsprechen. Unsere Webanwendung soll später in der Lage sein, sich den jeweiligen Endgeräten der Nutzer anzupassen.
+In der Analyse wurde festgestellt das SWFA-3, die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist.
+Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen.
+Der Fakt, dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis, dass die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen besitzen.
+Unsere Webanwendung soll später in der Lage sein, sich den jeweiligen Endgeräten der Nutzer anzupassen.
 
 
 == Wesentliche Abstraktionen
