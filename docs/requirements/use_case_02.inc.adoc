@@ -3,59 +3,60 @@
 == Use-Case: Anlegen von Partnerhochschulen (UC02)
 
 === Kurzbeschreibung
-Eine Arbeitskraft der SI legt eine neue Hochschule an
+Bei diesem Use Case soll der Mitarbeiter eine neue Hochschule anlegen.
 
 === Kurzbeschreibung der Akteure
-==== Mitarbeiter*Innen Stabsstelle Internationales
+==== Mitarbeiter Stabsstelle Internationales
 Sind bei der Stabsstelle Internationales angestellt. Sie möchten innerhalb der Verwaltungsanwendung neue Hochschulen erzeugen.
 
 === Vorbedingungen
-Die Arbeitskraft hat sich erfolgreich eingeloggt. (UC01)
+Der Mitarbeiter hat sich erfolgreich eingeloggt. (UC01)
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-1. Der Use Case beginnt, wenn MSI die Funktion zum Anlegen einer neuen Hochschule ausgewählt hat. 
-2. System öffnet ein externes Fenster zum Eingeben aller Hochschulattribute (Fakultät, Vereinbarungen, Land, Mentor, Studienfach).
-2.1 IF Hochschule ohne Vereinbarung = Freemover
-3. WHILE Eingabe nicht validiert
-3.1 IF MSI beendet den Vorgang
-3.1.1 Externe Eingabemaske wird geschlossen.
-3.1.2 Use Case wird beendet.
-3.2 MSI gibt Attributwerte ein
-3.3 System überprüft Eingabe auf Gültigkeit
-4. MSI wählt Option zum Anlegen der Hochschule
-5. System legt Hochschule in der Datenbank an
-6. Eingabemaske wird geschlossen
+. Das Use Case beginnt, wenn MSI die Funktion zum Anlegen einer neuen Hochschule ausgewählt hat. 
+. System öffnet ein externes Fenster zum Eingeben aller Hochschulattribute (Fakultät, Vereinbarungen, Land, Mentor, Studienfach).
+.. IF Hochschule ohne Vereinbarung = Freemover
+. WHILE Eingabe nicht validiert
+.. IF MSI beendet den Vorgang
+... Externe Eingabemaske wird geschlossen.
+... Use Case wird beendet.
+.. MSI gibt Attributwerte ein
+.. System überprüft Eingabe auf Gültigkeit
+. MSI wählt Option zum Anlegen der Hochschule
+. System legt Hochschule in der Datenbank an
+. Eingabemaske wird geschlossen
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
-==== MSI legt erfolgreich ein neues Objekt an
-. <Szenario 1.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.>
-. <Szenario 1.2, Die Funktion zum Anlegen einer neuen Hochschule wird gewählt.>
-. <Szenario 1.3, Die Arbeitskraft trägt die Daten in die Eingabemaske ein.>
-. <Szenario 1.4, Es handelt sich um valide Daten, somit wird die Hochschule in der Datenbank angelegt.>
+==== MSI legt erfolgreich eine neue Hochschule an
+* Szenario 1.1: Der Mitarbeiter ist erfolreich in die Anwendung eingeloggt.
+* Szenario 1.2: Die Funktion zum Anlegen einer neuen Hochschule wird gewählt.
+* Szenario 1.3: Der Mitarbeiter trägt die Daten in die Eingabemaske ein.
+* Szenario 1.4: Es handelt sich um valide Daten, somit wird die Hochschule in der Datenbank angelegt.
 
-=== Daten konnten nicht validiert werden, Mitarbeiter beendet den Vorgang
-. <Szenario 2.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.>
-. <Szenario 2.2, Die Funktion zum Anlegen einer neuen Hochschule wird gewählt.>
-. <Szenario 2.3, Die Arbeitskraft trägt die Daten in die Eingabemaske ein.>
-. <Szenario 2.4, Das System erkennt eine fehlerhafte Eingabe>
-. <Szenario 2.5, Die Arbeitskraft beendet den Use Case eigenständig>
+=== Daten konnten nicht validiert werden, MSI beendet den Vorgang
+* Szenario 2.1: Der Mitarbeiter ist erfolreich in die Anwendung eingeloggt.
+* Szenario 2.2: Die Funktion zum Anlegen einer neuen Hochschule wird gewählt.
+* Szenario 2.3: Der Mitarbeiter trägt die Daten in die Eingabemaske ein.
+* Szenario 2.4: Das System erkennt eine fehlerhafte Eingabe.
+* Szenario 2.5: Der Mitarbeiter beendet den Use Case eigenständig.
 
 === Nachbedingungen
 Nach erfolgreichem Abschluss des Use Cases lautet der Ist-Zustand wie folgt:
-* Der Datenbank wurde ein valides Objekt in der richtigen Tabelle hinzugefügt.
+
+* Der Datenbank wurde eine valide Hochschule in der richtigen Tabelle hinzugefügt.
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 
-==== <Zugangssperre>
+==== Zugangssperre
 Der Zugang zum System darf nur innerhalb des HTW-Netzes erfolgen, eine IP-Sperre ist erforderlich.
 
-==== <Gültigkeitsregeln>
+==== Gültigkeitsregeln
 Die entsprechenden Abhängigkeiten und Datentypen innerhalb der bestehenden Datenbank müssen eingehalten werden.
 
-==== <Benutzeroberfläche>
-Das Interface welches, zum Eingeben der Objektattribute und dem speichern der Hochschule benutzt werden soll, muss als externes Fenster auf der Seite geöffnet werden.
+==== Benutzeroberfläche
+Das Interface, welches zum Eingeben der Hochschulattribute und dem speichern der Hochschule benutzt werden soll, muss als externes Fenster auf der Seite geöffnet werden.
