@@ -1,7 +1,7 @@
 = Glossar: {project-name} 
-Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
-{localdatetime}
-include::../_includes/default-attributes.inc.adoc[]
+// Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
+// {localdatetime}
+// include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
@@ -21,7 +21,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 
 | Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Serverseitig
 
-| Bestandsdaten | Attribute der Hochschule | -- 
+| Bestandsdaten | Daten Über Hochschulen und Partnerschaften, die bereits in die Datenbank eingepflegt wurden| -- 
 
 | Client | Computer eines Nutzers, welcher Serveranfragen stellt | --
 
@@ -41,7 +41,7 @@ Hochschule | Abteilung
 
 | Fakultät | eine Gruppe zusammengehörender Wissenschaften oder Wissenschaftsgebiete umfassende Abteilung als Lehr- und Verwaltungseinheit einer Universität oder Hochschule | --
 
-| Flask | eine in Python geschriebene Anwendung, die zur Erweiterung und guter Dokumentation dient | --
+| Flask | Eine Erweiterung zur Dokumentation für Programmierung in Python | --
 
 | Frontend | Schnittstelle des Systems, die
 vom Nutzer bedient wird | Clientseitig
@@ -61,9 +61,9 @@ vom Nutzer bedient wird | Clientseitig
 
 | jQuery |  eine freie JavaScript-Bibliothek | -- 
 
-| Kontaktperson | Person über die eine ausländische Hochschule kontaktiert werden kann, um einen Partnerschaftsvertrag einzuleiten | --
+| Kontaktperson | Person über die eine ausländische Hochschule kontaktiert werden kann | --
 
-| Leitung | Person oder Gruppe, welche volle brechtigung über das System besitzten | Superuser
+| Leitung | Leitung der Stabsstelle Internationales, welche volle Berechtigung über das System besitzten | Superuser
 
 | MariaDB | Open-Source, relationeles Datenbankverwaltungssystem | Maria-Datenbank
 
@@ -71,19 +71,19 @@ vom Nutzer bedient wird | Clientseitig
 
 | Mitarbeiter | Person oder Grupper, welche bei der Stabsstelle Internationales arbeitet | normaler User, SI Mitarbeiter, SHK
 
-| Nicht-funktionale Anforderung | Anforderungen, die die Qualität des Systems sicherstellen | Qualitätsanforderungen für das Gesamtsystem
+| Nicht-funktionale Anforderung | beschreiben Beschränkungen der vom System angebotenen Funktionalität. Sie beziehen sich eher auf das ganze System als auf einzelne Funktionen.| --
 
 | Open Unified Process | Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: iterative Softwareentwicklung, Anwendungsfälle, szenarienbasierte Entwicklung, Risikomanagement, architekturzentrierte Vorgehen | OpenUP
 
-| Outgoing | Studierende der HTW, der zeitweise ins Ausland gehen | Von der Hochschule gehende Auslandsstudierende
+| Outgoing | Studierende der HTW, die an einem Austauschprogramm zu einer ausländischen Hochschule teilnehmen | Von der Hochschule gehende Auslandsstudierende
 
 | Partnerschaftsvertrag | Vertrag zwischen HTW und ausländischen Hochschulen über ein Austauschprogramm | --
 
-| Personenbezogene Daten | Sind alle Informationen, die sich auf eine identifizierbare lebende Person beziehen | --
+| Personenbezogene Daten | Alle Informationen, die sich auf eine identifizierbare lebende Person beziehen | --
 
 | Programmiersprache | Formale Sprache zur Formulierung von Datenstrukturen und Algorithmen für Computer | --
 
-| Prototype | Vereinfachtes Modell eines geplanten Produktes | erste Bildung, Urbild
+| Prototype | Nicht voll funktionsfähige erste Version der Software | erste Bildung, Urbild
 
 | Python | eine höhere Programmiersprache | --
 
@@ -93,7 +93,8 @@ vom Nutzer bedient wird | Clientseitig
 
 | Systemweite, funktionale Anforderungen | Anforderungen, die das System erfüllen muss | System-Wide functional requirements
 
-| responsive Webdesign | gestalterischer und technischer Prototype | reagierendes Webdesign
+| Responsive Webdesign | 
+Beim Responsive Webdesign wird nur eine einzige Version einer Website erstellt. Diese passt sich selbstständig der verfügbaren Umgebung an. | reagierendes Webdesign
 
 | Test Cases | Die Eingaben, Konditionen und erwarteten Ergebnisse beim Test von Systemfunktionen | Testfall
 
@@ -101,13 +102,13 @@ vom Nutzer bedient wird | Clientseitig
 
 | User | Personen oder Gruppen, welche das fertige Produkt nutzen | Nutzer, Benutzer
 
-| User Interface | Stelle oder Handlung, mit der ein Mensch mit einem Programm in Interaktion tritt | Benutzerschnittstelle
+| User Interface | Bereich der Software mit der eine Person mit dem Programm in Interaktion tritt | Benutzerschnittstelle
 
-| Verwaltungsfrontend | Das Frontend, das von der Stabstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabstelle Internationales (Verwaltungsanwendung)
+| Verwaltungsfrontend | Für den Nutzer sichtbarerer Teil der Software, der von der Stabstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabstelle Internationales (Verwaltungsanwendung)
 
 | Wireframe | Früher konzeptioneller Entwurf einer Webseite oder eines Softwarefrontends | Drahtmodell
 
-| Webanwendung | Anwendungsprogramm, welches nicht auf dem Computer des Users installiert wird und über den Browser bedient wird | Online-Anwendung, Webapplikation
+| Webanwendung | Anwendungsprogramm, welches nicht auf dem Computer des Users installiert wird, sondern mittels Browser über eine Internetverbindung auf einem Server bedient wird | Online-Anwendung, Webapplikation
 
 | Webspace | Speicherplatz für Dateien auf einem Server, auf den über das Internet dauerhaft zugegriffen werden kann | --
 
@@ -130,9 +131,9 @@ vom Nutzer bedient wird | Clientseitig
 
 | HTML | Hypertext Markup Language | textbasierte Auszeichnungssprache zur Strukturierung elektronischer Dokumente
 
-| HTW | Hochschule | Hoschule für Technik und Wirtschaft Dresden
+| HTW | Hochschule | Hochschule für Technik und Wirtschaft Dresden
 
-| MSI | Mitarbeiter oder Leitungs Person | Hauptnutzer der Software
+| MSI | Mitarbeiter oder Leitungs Person der Stabsstelle Internationales | Hauptnutzer der Software
 
 | NFA | Nicht-funktionale Anforderung | Anforderungen, die die Qualität des Systems sicherstellen
 

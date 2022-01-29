@@ -37,7 +37,7 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 <<<
 
 // --- 4. include Pfade anpassen ---------------
-
+include::../docs/_includes/default-attributes.inc.adoc[]
 // --- Technische Spezifikation ---
 = Technische Spezifikation
 * Vision
