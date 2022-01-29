@@ -10,11 +10,11 @@ include::../_includes/default-attributes.inc.adoc[]
 Um das Projekt im Groben einordnen zu können, ist es wichtig sich mit den Rahemenbedingungen des Projektes vertraut zu machen.
 Dafür werden in dem Dokument das Grundproblem, Stakeholder und wesentliche Anforderungen definiert.
 Die Details, wie die Webanwendung diese Anforderungen erfüllt, werden in der Use-Case und
-Supplementary Specification beschrieben.
+systemweite Anforderungen beschrieben.
 
 
 === Zweck
-Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben. Des Weitern werden die Stakholder identifiziert und die Grundproblematik
+Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben. Des Weiteren werden die Stakholder identifiziert und die Grundproblematik
 der Auftraggeber benannt.
 
 
@@ -31,7 +31,7 @@ Das System wird es den Mitarbeitern der Stabsstelle Internationales erlauben, in
 Siehe <<#glossary, Glossar>>.
 
 === Referenzen
-Referentzen und Verweise werden - gegebenenfalls - an den benötigten Stellen eingefügt.
+Referenzen und Verweise werden - gegebenenfalls - an den benötigten Stellen eingefügt.
 
 == Positionierung
 
@@ -44,11 +44,10 @@ Die Hochschulpartnerschaften und ihre Nutzung durch Studierende werden von den
 Mitarbeitern  der Stabsstelle Internationales verwaltet. Zu einer Hochschul-Partnerschaft 
 gehören diverse Angaben zur Hochschule, Art der Vereinbarung, Kontakte, 
 Mentoren etc. Dazu wird momentan von der Stabsstelle Internationales 
-eine Microsoft Access-Datenbank genutzt. Damit ist jedoch der Mehrbenutzer-
-betrieb nicht möglich und muss umständlich realisiert werden. Zudem sind bestimmte benötigte Funktionen wie das Löschen inkonsistenter oder veralteter Daten nicht ausreichend vorhanden. Daher wird das Ersetzten der Access-Datenbank und eine Bedinung durch eine Webanwendung angestrebt.
+eine Microsoft Access-Datenbank genutzt. Damit ist jedoch der Mehrbenutzerbetrieb nicht möglich und muss umständlich realisiert werden. Zudem sind bestimmte benötigte Funktionen wie das Löschen inkonsistenter oder veralteter Daten nicht ausreichend vorhanden. Daher wird das Ersetzen der Access-Datenbank und eine Bedienung durch eine Webanwendung angestrebt.
 
-In Zukunft soll es den Mitarbeitern möglich sein, über diese Webanwendung die Daten neu anzulegen,
-zu verändern bzw. zu löschen, welche durch eine Maria-Datenbank bereitgestellt werden. Mit dieser Erneuerung verspricht sich die Stabstelle Internationales verbesserte Benutzerfreundlichkeit sowie einen geringeren Arbeitsaufwand für die Pflege der Daten.
+In Zukunft soll es den Mitarbeitern möglich sein, über die Webanwendung die Daten neu anzulegen,
+zu verändern bzw. zu löschen, welche durch eine Maria-Datenbank bereitgestellt werden. Mit dieser Erneuerung verspricht sich die Stabsstelle Internationales verbesserte Benutzerfreundlichkeit sowie einen geringeren Arbeitsaufwand für die Pflege der Daten.
 
 === Problem Statement
 //Stellen Sie zusammenfassend das Problem dar, das mit diesem Projekt gelöst werden soll. Das folgende Format kann dazu verwendet werden:
@@ -59,7 +58,7 @@ zu verändern bzw. zu löschen, welche durch eine Maria-Datenbank bereitgestellt
 | betrifft | Mitarbeiter der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und implizit Externe, die sich über die Partnerschaften informieren wollen
 | die Auswirkung davon ist | ein erhöhter und umständlicher Arbeitsaufwand in der Verwaltung.
 | Eine erfolgreiche Lösung wäre | ein neues Online-Datenbankverwaltungssystem für die
-Hochschulpartnerschaften zur Pflege der Daten der Hochschul-Partnerschaften zu etablieren. Sowie eine automatisierte Berichtsanfertigung, eine zuverlässige Schnittstelle zum Informationsfrontend zu gewährleisten und evtl.Weiterentwicklungsmöglichkeiten bereit zustellen.
+Hochschulpartnerschaften zur Pflege der Daten der Hochschul-Partnerschaften zu etablieren. Sowie eine automatisierte Berichtsanfertigung, eine zuverlässige Schnittstelle zum Informationsfrontend zu gewährleisten und evtl.Weiterentwicklungsmöglichkeiten bereitzustellen.
 |===
 
 ////
@@ -85,14 +84,14 @@ Beispiel:
 | Das Produkt ist eine | Webanwendung mit einer Schnittstelle zu einer Maria-Datenbank (Online-Datenbankverwaltungssystem)
 | die | die Datenverwaltung und Pflege vereinfacht. 
 | Im Gegensatz zu | der aktuell genutzten MS-Access-Datenbank 
-| Unser Produkt | ermöglicht eine komfortable Form der Datenbankverwaltung im Mehrbenutzer betrieb.
+| Unser Produkt | ermöglicht eine komfortable Form der Datenbankverwaltung im Mehrbenutzerbetrieb.
 |===
 
 [cols="1,3"]
 |===
 | Für | Externe
-| die | sich über Partner-Hochschulen und Austausch-Programme interessieren.
-| Das Produkt stellt eine | Schnittstelle für eine Webanschicht von ausgewählten Daten aus der Maria-Datenbank zur Verfügung, welche auf der HTW-Webseite betrachtet werden können.
+| die | sich über Partner-Hochschulen und Austauschprogramme interessieren.
+| Das Produkt stellt eine | Schnittstelle für eine Webansicht von ausgewählten Daten aus der Maria-Datenbank zur Verfügung, welche auf der HTW-Webseite betrachtet werden können.
 |===
 ////
 Beispiel Produkt:
@@ -115,8 +114,8 @@ Beispiel Produkt:
 |===
 |Stakeholder | Beschreibung | Zusammenhang zum Softwaresystem
 | Mitarbeiter der SI und Studentische Hilfskräfte (SHK)
-| Sind bei SI angestellt. Als Nutzer des Systens verwalten sie die Datenbank.
-| Verwalten die Daten der DB über Webfrontend
+| Sind bei SI angestellt. Als Nutzer des Systems verwalten sie die Datenbank.
+| Verwalten die Daten der DB über Verwaltungsfrontend
 | Austauschstudenten Incoming
 | Sind Studierende von Partnerhochschulen und interessiert an einem Austauschprogramm an der HTW
 | Informieren sich über Austauschprogramme an der HTW über Informationsfrontend
@@ -145,13 +144,16 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 
 
 ==== Mitarbeiter Stabsstelle Internationales und Studentische Hilfskräfte (SHK)
-• Mitarbeiter ist an einem Datenbankverwaltungsprozess interessiert, der intuitiv und aufwandsarm ist
-• Datenverwaltung wird über die Webanwendung online erfolgen
+• Mitarbeiter sind dafür verantwortlich eine Datenbank hinsichtlich der Verträge zu Hochschulpartnerschaften und den damit zusammenhängenden Partnerhochschulen zu pflegen
+und Statistiken über die Austauschprogramme zu erstellen
+• Aktuell wird eine MS-Access Datenbank verwendet, welche für die Mitarbeiter aufwendige zu bedienen ist und keinen Mehrbenutzerbetrieb zulässt
+• Mitarbeiter ist an einem Datenbankverwaltungsprozess interessiert, der intuitiv und aufwandsarm bedienbar ist
+• Datenverwaltung soll über die Webanwendung online erfolgen
 • Datenverwaltung sollte für mehrere Mitarbeiter gleichzeitig erfolgen
 
 ==== Externe 
 
-• müssen die für sie zu Austauschprogrammen bzw. Partnerhochschulen relevanten Informationen einsehen können
+• sollen weiterhin die für sie zu Austauschprogrammen bzw. Partnerhochschulen relevanten Informationen auf der Webseite der HTW Dresden einsehen können
 • Darstellung auf einer öffentlich zugänglichen Webseite der HTW Dresden (bisheriges Frontend)
 • Beliebig viele der Studierenden sollen auf der Webseite Daten abfragen können 
 
@@ -165,38 +167,38 @@ Die Priorität der Funktion ist mit den Zahlen 1 bis 10 skaliert, wobei 1 die ni
 |===
 | Funktionalität | Priorität | Features | Geplantes Release
 | System login 
-| 7 
+| 10 
 | soll den Nutzern per Authentifizierung den Zugang zum Verwaltungsfrontend gewähren 
 | Sommersemester 2022
 
 | Anlegen von Partnerhochschulen
 | 10 
-| Zum erzeugen neuer Partnerhochschulen im Verwaltungsfrontend
+| Zum Erzeugen neuer Partnerhochschulen im Verwaltungsfrontend
 | Sommersemester 2022
 
 | Bearbeiten von Hochschulen 
 | 10 
-| Zum anpassen eines oder mehrerer Hochschulattribute im Verwaltungsfrontend
+| Zum Snpassen eines oder mehrerer Hochschulattribute im Verwaltungsfrontend
 | Sommersemester 2022
 
 | Löschen von fehlerhaften Datensätzen
 | 5 
-| Zum löschen eines Datenbankattributes im Verwaltungsfrontend
+| Zum Löschen eines Datenbankattributes im Verwaltungsfrontend
 | Sommersemester 2022
 
 | Anlegen von Mentoren 
 | 7
-| Zum erzeugen neuer Mentoren im Verwaltungsfrontend
+| Zum Erzeugen neuer Mentoren im Verwaltungsfrontend
 | Sommersemester 2022
 
 | Bearbeiten von Mentoren 
 | 7
-| Zum anpassen eines Mentoren im Verwaltungsfrontend
+| Zum Anpassen eines Mentoren im Verwaltungsfrontend
 | Sommersemester 2022
 
 | Löschen von Mentoren
 | 5 
-| Zum löschen eines Mentoren im Verwaltungsfrontend
+| Zum Löschen eines Mentoren im Verwaltungsfrontend
 | Sommersemester 2022
 
 | Erstellen von Berichten über Erasmusvereinbarungen
@@ -219,7 +221,7 @@ Die Priorität der Funktion ist mit den Zahlen 1 bis 10 skaliert, wobei 1 die ni
 | Zum Erstellen eines Berichtes im Verwaltungsfrontend
 | Sommersemester 2022
 
-| Berichte exportieren
+| Berichte Exportieren
 | 3 
 | Zum Exportieren eines Berichtes im Verwaltungsfrontend
 | Sommersemester 2022
@@ -252,7 +254,7 @@ Hinweise:
 | 7
 | Sommersemester 2022
 
-| Nutzerdokumentation für das Akedmisches Auslandsamt  
+| Nutzerdokumentation für die Stabsstelle Internationales 
 | 7 
 | Sommersemester 2022
 
