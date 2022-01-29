@@ -126,22 +126,30 @@ Für die Beziehungen zwischen den einzelnen Objekten siehe das Domänenmodel.
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
 === Schichtenarchitektur
 Dadurch ist es möglich dem Softwaresystem und den dazugehörigen Bestandteilen feste Aufgabenbereiche zuzuordnen.
-Das System wird in logische Schichten aufgeteilt. Diese sind die Datenbank, das Backend und das Frontend. Die Datenbank wird den Aspekt des speicherns, bereitstellen und ändern der Daten übernehmen. Das Frontend wird die Schnittstelle zwischen User und Systemlogik sein, welche sich im Backend befindet. Dort werden Nutzeranfragen verarbeitet, sprich Kommunikation mit der Datenbank. Dem Frontend werden aber auch, abhängig der Anfrage, die richtigen Dateien zum Abbilden der HTML-Seiten bereitgestellt-
+Das System wird in logische Schichten aufgeteilt.
+Diese sind die Datenbank, das Backend und das Frontend.
+Die Datenbank wird den Aspekt des speicherns, bereitstellen und ändern der Daten übernehmen.
+Das Frontend wird die Schnittstelle zwischen User und Systemlogik sein, welche sich im Backend befindet.
+Dort werden Nutzeranfragen verarbeitet, also die Kommunikation mit der Datenbank vorgenommen.
+Dem Frontend werden aber auch, abhängig der Anfrage, die richtigen Dateien zum Abbilden der HTML-Seiten bereitgestellt.
 
-image::C4_lvl1.png[]
 
 == Architektursichten (Views)
 //[Describe the architectural views that you will use to describe the software architecture. This illustrates the different perspectives that you will make available to review and to document architectural decisions.]
-
+Folgende Sichten auf die Architektur werden empfohlen:
 
 
 
 === Logische Sicht
-//Beschreibt die Struktur und das Verhalten Systemteilen, die hohen Einfluss auf die Architektur haben. Dies kann die Paketstruktur, kritische Schnittstellen, wichtige Klassen und Subsysteme sowie die Beziehungen zwischen diesen Elementen enthalten. Zudem sollten die physische und logische Sicht persistenter Daten beschrieben werden, wenn es diesen Aspekt im System gibt. Dies ist ein hier dokumentierter Teilaspekt des Entwurfs.
+//Beschreibt die Struktur und das Verhalten Systemteilen, die hohen Einfluss auf die Architektur haben. Dies kann die Paketstruktur, kritische Schnittstellen, wichtige Klassen und Subsysteme sowie die Beziehungen zwischen diesen Elementen enthalten. Zudem sollten die physische und logische Sicht persistenter Daten beschrieben werden, wenn es diesen Aspekt im System gibt. Dies ist ein hier dokumentierter Teilaspekt des Entwurfs
+Das Bild beschreibt unseren bisherigen Stand der logischen Sicht auf unser System.
+image::C4_lvl1.png[]
 
 === Physische Sicht (Betriebssicht)
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
-
+Das Verwaltungsfrontend wird im Browser des Nutzers ausgeführt.
+Das Backend wird auf dem www2-Server des Rechenzentrums bereitgestellt.
+Die Datenbank läuft auf einem MariaDB-Server des Rechenzentrums.
 === Use Cases
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungen enthalten.
 Architektur relvante Use Cases sind:
