@@ -21,7 +21,7 @@ Der Mitarbeiter wählt eine dem Verwaltungsfrontend zugehörige URL im Browser. 
 .. Datenbank-Nutzername + zugehöriges Kennwort eingeben 
 .. Eingegebene Daten an System übermitteln
 .. System wertet die Daten aus und liefert entsprechende Antwort
-. Leitung oder Mitarbeiter wird auf die Startseite der Verwaltungsanwendung weitergeleitet
+. Leitung oder Mitarbeiter wird auf die Startseite des Verwaltungsfrontends weitergeleitet
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.

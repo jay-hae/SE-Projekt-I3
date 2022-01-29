@@ -58,7 +58,6 @@ Nach erfolgreichem Abschluss des Use Cases lautet der Ist-Zustand wie folgt:
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 
 ==== Zugangssperre
-Der Zugang zum System darf nur innerhalb des HTW-Netzes erfolgen, eine IP-Sperre ist erforderlich.
-
+Der Zugang zum System darf nur innerhalb des HTW-Netzes erfolgen. Die Zugangskontrolle auf das HTW-Netz wird durch das Rechenzentrum bereitgestellt.
 ==== Gültigkeitsregeln
 Die entsprechenden Abhängigkeiten und Datentypen innerhalb der bestehenden Datenbank müssen eingehalten werden.
