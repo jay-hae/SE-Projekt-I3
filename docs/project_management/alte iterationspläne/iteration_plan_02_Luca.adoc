@@ -1,0 +1,154 @@
+= Iteration Plan 02 Elaboration Phase: {project-name}
+Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
+{localdatetime}
+include::../../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+== Meilensteine
+//Meilensteine zeigen den Ablauf der Iteration, wie z.B. den Beginn und das Ende, Zwischen-Meilensteine, Synchronisation mit anderen Teams, Demos usw.
+
+[%header, cols="3,1"]
+|===
+|Meilenstein | Datum
+
+|Beginn der Iteration | 15.12.2021
+
+|Use Cases für die Hauptfunktionalitäten im Detail beschreiben
+|Ende der Iteration
+
+|Aktivitätsdiagramme und Wireframes der Use Cases
+|Ende der Iteration
+
+|Vision ist (für den aktuellen Stand) vollständig und detailliert ausgearbeitet
+|Ende der Iteration
+
+|Glossar beinhält und erklärt alle wesentlichen Begriffe
+|Ende der Iteration
+
+
+| Ende der Iteration | 22.12.2021
+|===
+
+//Dies ist nur ein Test
+== Wesentliche Ziele
+//Nennen Sie 1-5 wesentliche Ziele für die Iteration.
+
+* Wireframes erstellen und SI präsentieren
+* Prototyp Entwicklung beginnen
+* Aktuellen Stand im Essence Navigator eintragen
+
+
+== Aufgabenzuordnung
+//Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
+
+Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
+
+_alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
+[%header, cols="3,1,1,1,2,1,1,1,1"]
+|===
+| Aufgabe bzw. Beschreibung | Priorität | Schätzung der Größe (Punkte) |Status | Referenzen | geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
+
+|Iterationsplanung in GitHub Issues übernehmen
+|Hoch
+|7
+|In Arbeit
+|-
+|2
+|Jens Rosenkranz
+|1
+|-
+
+|Wireframe Hauptmenü erstellen
+|Hoch
+|-
+|Unbearbeitet
+|-
+|2
+|Thanh Ha Khuong
+|3
+|-
+
+|Aktuellen Stand im Essence Navigator eintragen
+|Mittel
+|-
+|In Arbeit
+|-
+|2
+|Luca Meißner
+|1
+|-
+
+|Prototyp Entwicklung beginnen
+|Hoch
+|7
+|In Arbeit
+|-
+|2
+|Roman Patzig, Nico Rosenkranz, Pascal Thielemann, Jakob Häcker
+|4
+|2
+
+|Vision weiter ausarbeiten
+|Hoch
+|4
+|In Arbeit
+|-
+|2
+|Nico Rosenkranz
+|3
+|-
+
+|===
+
+
+== Probleme (optional)
+//Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.
+
+[%header, cols="2,1,3"]
+|===
+| Problem | Status | Notizen
+
+|Abgehakte Punkte im EssenceNavigator werden nicht gespeichert
+|gelöst
+|Muss so hingenommen werden, "Speichern" durch Screenshots
+|===
+
+
+== Bewertungskriterien
+//Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
+
+Beispiele:
+
+* Kontinuierlicher Fortschritt in der Dokumentation
+* Rückmeldung in Teammeeting ob Unklarheiten bestehen und/oder Fragen geklärt werden müssen
+
+
+== Assessment
+//In diesem Abschnitt werden die Ergebnisse und Maßnahmen der Bewertung erfasst und kommuniziert. Die Bewertung wird üblicherweise am Ende jeder Iteration durchgeführt. Wenn Sie diese Bewertungen nicht machen, ist das Team möglicherweise nicht in der Lage, die eigene Arbeitsweise ("Way of Working") zu verbessern.
+
+[%header, cols="1,3"]
+|===
+| Assessment Ziel | Feststellung des Projektfortschritts
+
+| Assessment Datum | 22.12.2021
+| Teilnehmer | Gesamtes Team, SI
+| Projektstatus	| Ziele wurden weitestgehend erreicht, Aufgaben teilweise an nächste Iteration weiter gegeben. 
+|===
+
+* Beurteilung im Vergleich zu den Zielen
+** UseCases müssen noch in die Vision eingebunden werden
+//Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
+
+* Geplante vs. erledigte Aufgaben
+** Aufgaben wurden weitestgehend bearbeitet
+//Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
+
+* Beurteilung im Vergleich zu den Bewertungskriterien
+** Unklarheiten/Fragen konnten in den Teammeetings geklärt werden
+//Document whether you met the evaluation criteria as specified in the Iteration Plan.
+//Geben Sie an, ob Sie die o.g. Bewertungskriterien erfüllt haben. Das kann z.B. folgende Informationen enthalten: “Demo for Department X was well-received, with some concerns raised around usability,” or “495 test cases were automated with a 98% pass rate. 9 test cases were deferred because the corresponding Work Items were postponed.”
+
+* Andere Belange und Abweichungen
+** -
+//Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.

@@ -103,7 +103,7 @@ Mit der Stabstelle Internationales haben wir über Big Blue Button kommuniziert.
 
 Protokolle werden auf der für alle Teammitglieder zugänglichen https://pentapad.c3d2.de/p/SE_Projekt_I3_Protokolle[Pentapad Webseite] festgehalten.
 
-Um einen Überblick über die akut bzw. in der akutellen Iteration zu erledigenden Aufgaben zu behalten pflegt der Teamleiter Luca Meißner ein Excel-Dokument als Work-Items-Liste.
+Um einen Überblick über die akut bzw. in der akutellen Iteration zu erledigenden Aufgaben zu behalten, wird ein Excel-Dokument als Work-Items-Liste geführt.
 
 Die Aufgaben für das gesamte Projekt wird durch die verwendung des Essence Navigators begleitet.
 
@@ -119,8 +119,7 @@ Der Projektplan besteht aus einzelnen Iterationen für die jeweils ein Iteration
 
 Um einen Überblick über die einzelnen zu erledigenden Aufgaben zu behalten gleichen wir den Fortschritt unseres Projekts mit Hilfe des https://www2.htw-dresden.de/~anke/openup/index.htm[Essence-Navigators] und den darin zur Verfügung gestellten Checkliste ab. Das Ergebnis kann in der nächsten Abbildung eingesehen werden.
 
-HIER BILD VON AKTUELLEN ESSENCE NAVIGAOR TORTENDIAGRAMM EINFÜGEN
-image::essence navigator.PNG[]
+image::Essence_Navigator_Screenshot.PNG[]
 
 
 == Meilensteine und Ziele

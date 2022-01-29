@@ -1,11 +1,12 @@
 function modal_events(){
     $('#mod_add_institute').on('click', function (event){
         event.preventDefault();
-        let form = $('#form_add');
+        let all = $('#form_left_col, #form_mid_col, #form_right_col').serialize();
+        console.log(all);
         $.ajax({
             type: 'POST',
             url: '/addInstitute',
-            data: form.serialize(), // serializes the form's elements.
+            data: all,
             success: function(data)
             {
                 alert('Hi');

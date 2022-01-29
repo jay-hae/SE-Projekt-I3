@@ -19,22 +19,11 @@ Dabei werden folgende Attribute verwendet:
 
 == Risiken
 
-Die Risiken sind in folgender Tabelle: <<table_risks>> dargestellt. Das Datum des Dokuments oben gibt an, wann die Risikoliste zuletzt aktualisiert wurde.
+Die Risiken einer erfolgreichen Durchführung des Projekts sind in folgender Tabelle: risk.xlsx dargestellt. Zur Detailbetrachtung sollte diese in MS Excel geöffnet werden. 
 
-image::../project_management/images/risk_list.png[]
+image::risk_list.png[]
 // Die inkludierte csv-Datei "risks.csv" verwendet `;` Semmikolons als Trennzeichen. Achten Sie beim Export als csv-Datei auf das Angeben des entsprechenden Trennzeichens. Verwenden Sie stattdessen `,` Kommas, kann das Tabellenattribut `separator=` weggelassen werden oder muss entprechend angepasst werden.
 
-// PDF-Export: Seite im Querformat
-[.landscape]
-<<<
-
-// table risks
-[#table_risks]
-.Risiken
-[%header, format="csv", separator=";", cols="^1,^2,3,4,3,^1,^1,^1,3,4"]
-|===
-include::risks.csv[]
-|===
 
 // PDF-Export: Seite zurück zum Hochformat
 [.portrait]

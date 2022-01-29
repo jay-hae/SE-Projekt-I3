@@ -1,35 +1,32 @@
-:imagesdir: images 
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
 
 == Use-Case: Löschen von fehlerhaften Datensätzen (UC04)
 
 === Kurzbeschreibung
-Eine Leitung der Stabsstelle Internationales löscht ein Hochschulattribut.
+Bei diesem Use Case soll die Leitung der Stabsstelle Internationales ein Hochschulattribut löschen.
 
 === Kurzbeschreibung der Akteure
-==== Mitarbeiter*Innen Stabsstelle Internationales
+==== Leitung Stabsstelle Internationales
 Sind die Leitung der Stabsstelle Internationales. Sie möchten ein bestehendes Hochschulattribut aus der Datenbank löschen.
 
 === Vorbedingungen
-Die Leitung hat uneingeschränkten Zugriff auf die gesamte Verwaltungsanwendung. Die Mitarbeiter der SI haben keinen Zugriff auf den Löschvorgang.
+Die Leitung hat uneingeschränkten Zugriff auf die gesamte Verwaltungsanwendung. (UC01) Die Mitarbeiter der SI haben keinen Zugriff auf den Löschvorgang.
 Ruhende Hochschulpartnerschaften dürfen nicht gelöscht werden. 
 
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-1. Der Use Case beginnt, wenn MSI die Funktion zum Löschen eines Hochschulattributs ausgewählt hat  
-2. Das System gibt einen Warnhinweis aus und fordert erneute Bestätigung des Vorhabens
-2.1 IF Nutzer gibt keine erneute Bestätigung
-2.1.1 Hochschulattribut wird nicht gelöscht
-2.1.2 Der Use Case wird beendet
-2.2 System prüft ob Hochschulattribut gelöscht werden kann
-2.3 IF System gibt keine Löscherlaubnis
-2.3.1 Löschvorgang wird beendet.
-2.3.2 Use Case wird beendet 
-3. Das System löscht das gewählte Hochschulattribut aus der Datenbank 
-
-image::uc04.png[]
+. Das Use Case beginnt, wenn MSI die Funktion zum Löschen eines Hochschulattributs ausgewählt hat.  
+. Das System gibt einen Warnhinweis aus und fordert erneute Bestätigung des Vorhabens.
+.. IF Nutzer gibt keine erneute Bestätigung
+... Hochschulattribut wird nicht gelöscht
+... Der Use Case wird beendet
+.. System prüft ob Hochschulattribut gelöscht werden kann
+.. IF System gibt keine Löscherlaubnis
+... Löschvorgang wird beendet
+... Use Case wird beendet 
+. Das System löscht das gewählte Hochschulattribut aus der Datenbank.
 
 //Unvollständig, Dokument muss ab hier weiterbearbeitet werden
 
@@ -38,29 +35,29 @@ image::uc04.png[]
 
 
 ==== Hochschulattribut wurde erfolgreich gelöscht
-. <Szenario 1.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.>
-. <Szenario 1.2, Es wird für ein bestehendes Hochschulattribut die Löschfunktion ausgewählt.>
-. <Szenario 1.3, Das System prüft ob das Hochschulattribut gelöscht werden kann und liefert ein positives Feedback.>
-. <Szenario 1.4, System fragt ob Löschaktion wirklich ausgeführt werden soll.>
-. <Szenario 1.5, Mitarbeiter bestätigt, das Hochschulattribut wird aus der Datenbank entfernt.>
+* Szenario 1.1: Die Leitung ist erfolreich in die Anwendung eingeloggt.
+* Szenario 1.2: Es wird für ein bestehendes Hochschulattribut die Löschfunktion ausgewählt.
+* Szenario 1.3: Das System prüft ob das Hochschulattribut gelöscht werden kann und liefert ein positives Feedback.
+* Szenario 1.4: Das System fragt ob Löschaktion wirklich ausgeführt werden soll.
+* Szenario 1.5: Die Leitung bestätigt und das Hochschulattribut wird aus der Datenbank entfernt.
 
 === Hochschulattribut konnte nicht gelöscht werden
-. <Szenario 1.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.>
-. <Szenario 1.2, Es wird für ein bestehendes Hochschulattribut die Löschfunktion ausgewählt.>. 
-. <Szenario 1.3, Das System prüft ob das Hochschulattribut gelöscht werden kann.>
-. <Szenario 1.4, Das System erkennt noch bestehende Abhängigkeiten weswegen das Hochschulattribut nicht gelöscht werden kann.>
-. <Szenario 1.5, Es erscheint eine Fehlermeldung. Der Löschvorgang wird automatisch abgebrochen und der Use Case beendet>
+* Szenario 1.1: Die Leitung ist erfolreich in die Anwendung eingeloggt.
+* Szenario 1.2: Es wird für ein bestehendes Hochschulattribut die Löschfunktion ausgewählt.
+* Szenario 1.3: Das System prüft ob das Hochschulattribut gelöscht werden kann.
+* Szenario 1.4: Das System erkennt noch bestehende Abhängigkeiten, weswegen das Hochschulattribut nicht gelöscht werden kann.
+* Szenario 1.5: Es erscheint eine Fehlermeldung. Der Löschvorgang wird automatisch abgebrochen und das Use Case beendet.
 
 === Nachbedingungen
 Nach erfolgreichem Abschluss des Use Cases lautet der Ist-Zustand wie folgt:
-- Das zu löschende Hochschulattribut wurde aus der entsprechenden Relation in der Datenbank entfernt.
+
+* Das zu löschende Hochschulattribut wurde aus der entsprechenden Relation in der Datenbank entfernt.
 
 
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 
-==== <Zugangssperre>
-Der Zugang zum System darf nur innerhalb des HTW-Netzes erfolgen, eine IP-Sperre ist erforderlich.
-
-==== <Gültigkeitsregeln>
+==== Zugangssperre
+Der Zugang zum System darf nur innerhalb des HTW-Netzes erfolgen. Die Zugangskontrolle auf das HTW-Netz wird durch das Rechenzentrum bereitgestellt.
+==== Gültigkeitsregeln
 Die entsprechenden Abhängigkeiten und Datentypen innerhalb der bestehenden Datenbank müssen eingehalten werden.
