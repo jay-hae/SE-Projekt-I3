@@ -1,7 +1,7 @@
-= Iteration Plan 01 Elaboration Phase: {project-name}
+= Iteration Plan 01: Datenbank Webverwaltung Stabsstelle Internationales
 Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
 {localdatetime}
-include::../_includes/default-attributes.inc.adoc[]
+include::../../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
@@ -12,12 +12,12 @@ include::../_includes/default-attributes.inc.adoc[]
 |===
 | Meilenstein | Datum
 
-| Beginn der Iteration | 01.12.2021
-| Erste UseCases anlegen | Ende der Iteration
-| Risk List Anlegen| Ende der Iteration
-| Mit Essence Navigator Vertraut machen / Aktuellen Stand eintragen | Ende der Iteration
-| Glossar Anlegen | Ende der Iteration
-| Vision beginnen | Ende der Iteration
+| Beginn der Iteration | 29.11.2021
+| Rollen im Team verteilen| 29.11.2021
+| Einblick in die Dokumentation des Teams aus dem vergangenen Semester| 04.12.2021
+| Visionsdokument erstellen | 06.12.2021
+| Risiken in Risk List kategorisieren | 07.12.2021
+| Erstellung eines Glossars | 08.12.2021
 | Ende der Iteration | 15.12.2021
 |===
 
@@ -27,6 +27,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 * Team verteilt Rollen und Aufgaben
 * Das Visionsdokument wird erstellt
+* Projektplan wird erstellt
 * Iterationsplan für die erste Iteration Inception wird erstellt
 * Das Glossar wird erstellt und ab sofort gepflegt
 * Eine Risklist wird erstellt
@@ -50,7 +51,6 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 | Gearbeite Stunden 
 | Schätzung der verbleibenden Stunden
 
-
 |(wesentliche) Stakeholder identifizieren
 |hoch
 |3
@@ -67,7 +67,7 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |unbearbeitet
 |-
 |1
-|Pascal Thielemann, Luca Meißner
+|-
 |2
 |0
 
@@ -81,46 +81,45 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |4
 |2
 
-|Aktuellen Stand in Essence Navigator eintragen
-|niedrig
-|5
-|Problem aufgetreten
-|-
+|Projektplan erstellen
+|hoch
+|4
+|unbearbeitet
+|Projektplan
 |1
-|Jakob Häcker, Luca Meißner
 |-
-|1
+|-
+|
 
+|Iterationsplan für die erste Iteration Inception erstellen
+|hoch
+|4
+|halbfertig
+|iteration_plan_01.adoc
+|1
+|Jens Rosenkranz
+|5
+|2
 
 |Glossar erstellen/beginnen
 |niedrig
 |4
-|in Bearbeitung
 |glossary.adoc
 |1
-|Patrick Matthes
+|1
+|-
 |-
 |3
 
 |Risklist erstellen/beginnen
 |mittel
 |6
-|in Bearbeitung
 |Risklist
 |1
-|Roman Patzig
 |-
-|0
-
-|Projektplan erstellen/beginnen
-|hoch
-|6
-|in Bearbeitung
-|Projektplan
-|1
-|Jens Rosenkranz
-|2
-|2
+|-
+|-
+|4
 
 |===
 
@@ -133,14 +132,8 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 | Problem | Status | Notizen
 
 | Terminfindung zum gemeinsamen Treffen aller Teammitglieder problematisch 
-| gelöst 
+| ungelöst 
 | Auf Grund der unterschiedlichen Stundenpläne der Teammitglieder (verschiedenenen Studiengänge), die außerdem zwischen geraden und ungeraden Wochen alternieren, war es bisher nicht möglich einen gemeinsamen regelmäßigen Termin zu finden
-
-Update: Es konnte sich auf einen wöchentlichen Termin am Dienstag um 16 Uhr geeinigt werden.
-
-|Abgehakte Punkte im EssenceNavigator werden nicht gespeichert
-|ungelöst
-|Jakob kontaktiert Herrn Anke diesbezüglich
 
 
 |===
@@ -148,8 +141,14 @@ Update: Es konnte sich auf einen wöchentlichen Termin am Dienstag um 16 Uhr gee
 
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
-* Kontinuierlicher Fortschritt in der Dokumentation
-* Rückmeldung in Teammeeting ob Unklarheiten bestehen und/oder Fragen geklärt werden müssen
+
+Beispiele:
+
+* Rollen wurden auf Personen verteilt
+* Vision wurde vollständig erstellt und in ASCII Doc eingebunden
+* Gerüst für Glossar wurde erstellt erste Begriffe aufgenommen und Glossar in ASCII Doc eingebunden
+* Risklist wurde erstellt und in ASCII Doc eingebunden
+* Präsentation durch Prof. Anke erhält positive Rückmeldungen.
 
 
 == Assessment
@@ -157,28 +156,22 @@ Update: Es konnte sich auf einen wöchentlichen Termin am Dienstag um 16 Uhr gee
 
 [%header, cols="1,3"]
 |===
-| Assessment Ziel | Feststellung des Projektfortschritts
+| Assessment Ziel | Das kann die gesamte Iteration oder eine spezifische Komponente sein
 
-| Assessment Datum | 15.12.2021
-| Teilnehmer | Gesamtes Team, SI
-| Projektstatus	| Ziele wurden weitestgehend erreicht, Aufgaben teilweise an nächste Iteration weiter gegeben. 
+| Assessment Datum | ...
+| Teilnehmer | ...
+| Projektstatus	| Zum Beispiel ausgedrückt als rot, gelb oder grün.
 |===
 
 * Beurteilung im Vergleich zu den Zielen
-** Weitere Aktualisierung von Dokumenten nötig (Glossar, Essence Navigator)
 //Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
 
 * Geplante vs. erledigte Aufgaben
-** Aufgaben wurden weitestgehend bearbeitet
-** Essence Navigator speichert keine Daten, antwort von Herrn Anke wird abgewartet
 //Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
 
 * Beurteilung im Vergleich zu den Bewertungskriterien
-** Unklarheiten/Fragen konnten in den Teammeetings geklärt werden
-** Fortschritt ist in Dokumenation sichtbar
 //Document whether you met the evaluation criteria as specified in the Iteration Plan.
 //Geben Sie an, ob Sie die o.g. Bewertungskriterien erfüllt haben. Das kann z.B. folgende Informationen enthalten: “Demo for Department X was well-received, with some concerns raised around usability,” or “495 test cases were automated with a 98% pass rate. 9 test cases were deferred because the corresponding Work Items were postponed.”
 
 * Andere Belange und Abweichungen
-** Reflektionsrunden unzureichend durchgeführt
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
