@@ -23,6 +23,8 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 
 | Datenbank| System zur elektronischen Datenverwaltung, welches einen Mehrbenutzerzugriff erlaubt | (keine)
 
+| Datenbankaccount | Der von der Datenbank bereitgestellte Account | Datenbankbenutzerkonto
+
 | Erasmus _+_ | EU-Programm zur Förderung von allgemeiner und beruflicher Bildung, Jugend und Sport in Europa. Ermöglicht den Austausch von sowohl Lehrenden als auch Studierenden.
 | Erasmus
 | Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interressierte Personen
@@ -52,7 +54,7 @@ vom Nutzer bedient wird | Clientseitig
 
 | Mentor | Ansprechpartner an der jeweiligen Hochschule. Betreut das Austauschprogramm im Auftrag der Fakultät | Kontaktperson, Ansprechpartner
 
-| Mitarbeiter | Person oder Grupper, welche bei der Stabsstelle Internationales arbeitet | normaler User, SI Mitarbeiter
+| Mitarbeiter | Person oder Grupper, welche bei der Stabsstelle Internationales arbeitet | normaler User, SI Mitarbeiter, SHK
 
 | Nicht-funktionale Anforderung | Anforderungen, die die Qualität des Systems sicherstellen | Qualitätsanforderungen für das Gesamtsystem
 
@@ -110,6 +112,8 @@ vom Nutzer bedient wird | Clientseitig
 | ODBC | Open Database Connectivity | Programmierschnittstelle, die eine einheitliche Kommunikation mit unterschiedlichen Datenbankentypen ermöglicht
 
 | SI | Stabstelle Internationales | Auftraggeber des Softwareprojektes
+
+| SHK | Studentische Hilfskräfte | Studenten die Mitarbeiter in der SI sind
 
 | SWFA | Systemweite funktionale Anforderungen | Anforderungen, die das System erfüllen muss
 
