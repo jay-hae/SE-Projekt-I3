@@ -268,10 +268,6 @@ Hinweise:
 | 7 
 | Sommersemester 2022
 
-|  Zugriff darf nur innerhalb des HTW Netzes erfolgen und wird durch eine IP-Sperre gewährleistet
-|  10
-| Sommersemester 2022
-
 |  Personenbezogene Daten (sofern vorhanden) dürfen das System nicht verlassen und werden periodisch gelöscht. 
 |  10
 | Sommersemester 2022

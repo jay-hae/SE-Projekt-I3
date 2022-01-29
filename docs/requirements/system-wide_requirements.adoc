@@ -18,15 +18,17 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
 
-*SWFA-1: Das System muss alle Hochschulpartnerschaften und Statistiken persistent speichern.*
+*SWFA-1: Das System muss mit der bereits bestehenden Datenbankstruktur funktionieren.*
+
+*SWFA-2: Das System muss alle Hochschulpartnerschaften und Statistiken persistent speichern.*
 
 ** Zur Überprüfung wird die Seite neu geladen.
 
-*SWFA-2: Das System darf nur beschränkten Zugriff auf die Daten/das System bereitstellen, sodass nur autorisierte Mitarbeiter des Akademischen Auslandsamtes Zugriff auf das Verwaltungsfrontend haben.*
+*SWFA-3: Nur autorisierte Mitarbeiter des Akademischen Auslandsamtes dürfen Zugriff auf das Verwaltungsfrontend haben.*
 
 ** Zur Überprüfung wird versucht von außerhalb des HTW-Netzes auf das Verwaltungsfrontend zu zugreifen. Weiterhin werden falsche Login-Daten getestet.
 
-*SWFA-3: Das Interface des Systems ist je nach Nutzer unterschiedlich. Einige Funktionen können nur von bestimmten Nutzern durchgeführt werden.*
+*SWFA-4: Das Interface des Systems ist je nach Nutzer unterschiedlich. Einige Funktionen können nur von bestimmten Nutzern durchgeführt werden.*
 
 ** Zur Überprüfung wird sich mit 2 Accounts angemeldet welche verschiedene Rechte haben, daraufhin wird die Funktionsvielfalt innerhalb der Verwaltungsanwendung verglichen
 
@@ -35,15 +37,15 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 === Benutzbarkeit (Usability)
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
-*NFAU-1: Das System sollte den allgemeinen Ansprüchen der HTW an die Barrierefreiheit entsprechen.*
-
-** Zur Überprüfung siehe folgende Website: link:https://www.htw-dresden.de/hochschule/organisation/rechenzentrum/weitere-hrz-dienste/webauftritt/informationen-fuer-redakteure/barrierefreiheit-der-webseite/barrierefreie-webredaktion[
-Barrierefreie Webredaktion ]
 
 
-*NFAU-2: Das System sollte sowohl auf großen PC-Monitoren sowie auf kleinen Laptop Bildschirmen bedienbar sein.*
+*NFAU-1: Das System sollte sowohl auf großen PC-Monitoren sowie auf kleinen Laptop Bildschirmen bedienbar sein.*
 
 ** Zur Überprüfung werden unterschiedliche Bildschirmgrößen ausprobiert sowie der Webseitenzoom verändert.
+
+*NFAU-2: Das Verwaltungsfrontend sollte auf verschiedenen Betriebssystemen mit unterschiedlichen Browsern laufen.*
+
+** Zur Überprüfung wird das Verwaltungsfrontend auf den gängigsten Systemen und Browsern aufgerufen.
 
 === Zuverlässigkeit (Reliability)
 // Zuverlässigkeit beinhaltet die Fähigkeit des Produkts und/oder des Systems unter Stress und ungünstigen Bedingungen am laufen zu bleiben. Spezifizieren Sie Anforderungen für zuverlässige Akzeptanzstufen, und wie diese gemessen und evaluiert werden. Vorgeschlagene Themen sind Verfügbarkeit, Häufigkeit und Schwere von Fehlern und Wiederherstellbarkeit.
@@ -55,7 +57,7 @@ Barrierefreie Webredaktion ]
 
 ** Zur Überprüfung wird ein Datensatz im Verwaltungsfrontend modifiziert während jemand im Informationsfrontend sich diesen anschaut.
 
-*NFAR-3: Das System sollte paralleles Lesen und Schreiben im Verwaltungsfrontend unterstützen. (Multi-User-System)*
+*NFAR-3: Das System muss paralleles Lesen und Schreiben im Verwaltungsfrontend unterstützen. (Multi-User-System)*
 
 ** Zur Überprüfung werden zwei Loginsessions genutzt um parallel Daten zu modifizieren.
 ... parallel Lesen
@@ -69,17 +71,15 @@ Barrierefreie Webredaktion ]
 
 ** Zur Überprüfung wird ein Skript Seitenaufrufe simulieren und deren Antwortzeit messen.
 
+*NFAP-2: In 90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein.*
+
+** Zur Überprüfung wird ein Skript SQL Befehle ausführen und deren Abarbeitungszeit messen.
+
 === Wartbarkeit (Supportability)
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
 
-*NFAS-1: Das Verwaltungsfrontend sollte auf verschiedenen Betriebssystemen mit unterschiedlichen Browsern laufen.*
 
-** Zur Überprüfung wird das Verwaltungsfrontend auf den gängigsten Systemen und Browsern aufgerufen.
-
-*NFAS-2: Ein Umzug des Datenbankservers sollte durch technisches Personal möglich sein.*
-
-** Zur Überprüfung wird innerhalb der config Datei auf dem Webserver der Pfad zur Datenbank geändert.
-
+*NFAS-1: Ein Umzug des Datenbankservers sollte durch technisches Personal in maximal 8h möglich sein.*
 
 == Zusätzliche Anforderungen
 
@@ -97,14 +97,7 @@ Barrierefreie Webredaktion ]
 
 === Organisatorische Randbedingungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
-* Erweiterbarkeit muss gegeben sein
-* Saubere Dokumentation 
-* Datenbankstruktur
-** bestehende Struktur nicht ändern
-** erweitern ist möglich 
+* aussagekräftige Dokumentation 
 
 === Rechtliche Anforderungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
-* Personenbezogene Daten
-** Intervallweises löschen 
-** dürfen System nicht verlassen

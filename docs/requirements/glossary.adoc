@@ -17,7 +17,11 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 | Austauschprogramm | Verschiedene Arten von Programmen, wie Erasmus oder Freemover | Exchange
 
 
-| Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Unterbau, hinteres Ende
+| Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Serverseitig
+
+| Client | Computer eines Nutzers, welcher Serveranfragen stellt | (keine)
+
+| Datenbank| System zur elektronischen Datenverwaltung, welches einen Mehrbenutzerzugriff erlaubt | (keine)
 
 | Erasmus _+_ | EU-Programm zur Förderung von allgemeiner und beruflicher Bildung, Jugend und Sport in Europa. Ermöglicht den Austausch von sowohl Lehrenden als auch Studierenden.
 | Erasmus
@@ -29,7 +33,7 @@ Hochschule | Abteilung
 | Fakultät | eine Gruppe zusammengehörender Wissenschaften oder Wissenschaftsgebiete umfassende Abteilung als Lehr- und Verwaltungseinheit einer Universität oder Hochschule | (keine)
 
 | Frontend | Schnittstelle des Systems, die
-vom Nutzer bedient wird | Oberbau, vorderes Ende
+vom Nutzer bedient wird | Clientseitig
 
 | Hochschulattribute | Alle möglichen Attribute einer Hochschule (siehe Verzeichnis Datenstrukturen) | Attribute, Hochschuleigenschaften
 
@@ -52,8 +56,6 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 
 | Nicht-funktionale Anforderung | Anforderungen, die die Qualität des Systems sicherstellen | Qualitätsanforderungen für das Gesamtsystem
 
-| Online-Datenbank | Eine Datenbank, die über Intraoder Internet zugänglich ist und auf welche mehrere Nutzer parallel zugreifen können | Web-Datenbank
-
 | Open Unified Process | Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: iterative Softwareentwicklung, Anwendungsfälle, szenarienbasierte Entwicklung, Risikomanagement, architekturzentrierte Vorgehen | OpenUP
 
 | Outgoing | Studierende der HTW, der zeitweise ins Ausland gehen | Von der Hochschule gehende Auslandsstudierende
@@ -64,7 +66,7 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 
 | Stakeholder | Personen oder Gruppe, die Interesse am positiven Verlauf des Projektes haben und es beeinflussen können oder durch dieses beeinflusst werden. | Anspruchsberechtigter
 
-| SQL-Query | Abfrage in einer MariaDBDatenbank | SQL Abfrage
+| SQL-Query | Abfrage in einer Datenbank | SQL Abfrage
 
 | Systemweite, funktionale Anforderungen | Anforderungen, die das System erfüllen muss | System-Wide functional requirements
 
