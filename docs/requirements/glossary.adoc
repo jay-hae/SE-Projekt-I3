@@ -17,19 +17,18 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 | Austauschprogramm | Verschiedene Arten von Programmen, wie Erasmus oder Freemover | Exchange
 
 
-| Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Unterbau, hinteres Ende
+| Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | (keine)
 
 | Erasmus _+_ | EU-Programm zur Förderung von allgemeiner und beruflicher Bildung, Jugend und Sport in Europa. Ermöglicht den Austausch von sowohl Lehrenden als auch Studierenden.
 | Erasmus
+
 | Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interressierte Personen
 
-| Department | Auslandsbüro an einer
-Hochschule | Abteilung
+| Department | Auslandsbüro an einer Hochschule | Abteilung
 
 | Fakultät | eine Gruppe zusammengehörender Wissenschaften oder Wissenschaftsgebiete umfassende Abteilung als Lehr- und Verwaltungseinheit einer Universität oder Hochschule | (keine)
 
-| Frontend | Schnittstelle des Systems, die
-vom Nutzer bedient wird | Oberbau, vorderes Ende
+| Frontend | Schnittstelle des Systems, die vom Nutzer bedient wird | (keine)
 
 | Hochschulattribute | Alle möglichen Attribute einer Hochschule (siehe Verzeichnis Datenstrukturen) | Attribute, Hochschuleigenschaften
 
@@ -54,7 +53,12 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 
 | Online-Datenbank | Eine Datenbank, die über Intraoder Internet zugänglich ist und auf welche mehrere Nutzer parallel zugreifen können | Web-Datenbank
 
-| Open Unified Process | Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: iterative Softwareentwicklung, Anwendungsfälle, szenarienbasierte Entwicklung, Risikomanagement, architekturzentrierte Vorgehen | OpenUP
+| Open Unified Process a| - Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: 
+* iterative Softwareentwicklung
+* Anwendungsfälle
+* szenarienbasierte Entwicklung
+* Risikomanagement
+* architekturzentrierte Vorgehen | OpenUP
 
 | Outgoing | Studierende der HTW, der zeitweise ins Ausland gehen | Von der Hochschule gehende Auslandsstudierende
 
@@ -97,7 +101,11 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 
 | DB | Datenbank | genutztes System zur langfristigen Speicherung von Datenbeständen 
 
-| FURPS+ | Functionality (Funktionalität), Usability (Benutzbarkeit), Reliability (Zuverlässigkeit), Performance (Effizienz), Supportability (Änderbarkeit/Wartbarkeit) | Fasst Qualitätsmerkmale von Software zusammen
+| FURPS+ a| - Functionality (Funktionalität)
+- Usability (Benutzbarkeit)
+- Reliability (Zuverlässigkeit)
+- Performance (Effizienz)
+- Supportability (Änderbarkeit/Wartbarkeit) | Fasst Qualitätsmerkmale von Software zusammen
 
 | HTW | Hochschule | Hoschule für Technik und Wirtschaft Dresden
 
@@ -139,14 +147,16 @@ vom Nutzer bedient wird | Oberbau, vorderes Ende
 | Hochschule
 | Hochschulname in Englisch und der nationalen Sprache, sowie die Anschrift, Webadresse und ggf. Erasmuscode
 | String
-| Anschrift muss Ort, Postleitzahl, Straßenname und
-Nummer enthalten, Webadresse muss Punkt und Top Level Domain enthalten, Erasmuscode ist nach Schema: XX XXXXXXX11 aufgebaut (Ländercode in 2 Buchstaben gefolgt von 7 Buchstaben und 2 Zahlen zur Hochschulidentifikation)
+a| - Anschrift muss Ort, Postleitzahl, Straßenname und Nummer enthalten
+- Webadresse muss Punkt und Top Level Domain enthalten
+- Erasmuscode ist nach Schema: XX XXXXXXX11 aufgebaut (Ländercode in 2 Buchstaben gefolgt von 7 Buchstaben und 2 Zahlen zur Hochschulidentifikation)
 | Partnerhochschule, Universität, Partneruniversität
 
 | Hochschulvereinbarung
 | Vereinbarungstyp auf Englisch und Deutsch, Gültigkeitsdauer, Anzahl Incomings und Outgoings insgesamt und pro Studienfach, sowie deren maximale Aufenthaltszeit
 | String, Integer
-| Gültigkeitsdauer muss "von-bis"-Datum sein, Aufenthaltsdauer muss in Monaten angegeben werden
+a| - Gültigkeitsdauer muss "von-bis"-Datum sein
+- Aufenthaltsdauer muss in Monaten angegeben werden
 | Hochschulpartnerschaft, Mobility Agreement
 
 | Land
@@ -158,7 +168,8 @@ Nummer enthalten, Webadresse muss Punkt und Top Level Domain enthalten, Erasmusc
 | Mentor
 | Name, Titel, Email und Webadresse
 | String
-| Emailadresse muss @-Zeichen und Punkt enthalten, Webadresse muss Punkt und Top Level Domain enthalten
+a| - Emailadresse muss @-Zeichen und Punkt enthalten
+- Webadresse muss Punkt und Top Level Domain enthalten
 | --
 
 | Studienfach
