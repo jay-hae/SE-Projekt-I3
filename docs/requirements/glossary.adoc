@@ -36,8 +36,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 
 | Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interressierte Personen
 
-| Department | Auslandsbüro an einer
-Hochschule | Abteilung
+| Department | Auslandsbüro an einer Hochschule | Abteilung
 
 | Fakultät | eine Gruppe zusammengehörender Wissenschaften oder Wissenschaftsgebiete umfassende Abteilung als Lehr- und Verwaltungseinheit einer Universität oder Hochschule | --
 
@@ -73,6 +72,14 @@ vom Nutzer bedient wird | Clientseitig
 
 | Nicht-funktionale Anforderung | beschreiben Beschränkungen der vom System angebotenen Funktionalität. Sie beziehen sich eher auf das ganze System als auf einzelne Funktionen.| --
 
+| Online-Datenbank | Eine Datenbank, die über Intraoder Internet zugänglich ist und auf welche mehrere Nutzer parallel zugreifen können | Web-Datenbank
+
+| Open Unified Process a| - Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: 
+* iterative Softwareentwicklung
+* Anwendungsfälle
+* szenarienbasierte Entwicklung
+* Risikomanagement
+* architekturzentrierte Vorgehen | OpenUP
 | Open Unified Process | Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: iterative Softwareentwicklung, Anwendungsfälle, szenarienbasierte Entwicklung, Risikomanagement, architekturzentrierte Vorgehen | OpenUP
 
 | Outgoing | Studierende der HTW, die an einem Austauschprogramm zu einer ausländischen Hochschule teilnehmen | Von der Hochschule gehende Auslandsstudierende
@@ -127,7 +134,11 @@ Beim Responsive Webdesign wird nur eine einzige Version einer Website erstellt. 
 
 | DB | Datenbank | genutztes System zur langfristigen Speicherung von Datenbeständen 
 
-| FURPS+ | Functionality (Funktionalität), Usability (Benutzbarkeit), Reliability (Zuverlässigkeit), Performance (Effizienz), Supportability (Änderbarkeit/Wartbarkeit) | Fasst Qualitätsmerkmale von Software zusammen
+| FURPS+ a| - Functionality (Funktionalität)
+- Usability (Benutzbarkeit)
+- Reliability (Zuverlässigkeit)
+- Performance (Effizienz)
+- Supportability (Änderbarkeit/Wartbarkeit) | Fasst Qualitätsmerkmale von Software zusammen
 
 | HTML | Hypertext Markup Language | textbasierte Auszeichnungssprache zur Strukturierung elektronischer Dokumente
 
@@ -173,14 +184,16 @@ Beim Responsive Webdesign wird nur eine einzige Version einer Website erstellt. 
 | Hochschule
 | Hochschulname in Englisch und der nationalen Sprache, sowie die Anschrift, Webadresse und ggf. Erasmuscode
 | String
-| Anschrift muss Ort, Postleitzahl, Straßenname und
-Nummer enthalten, Webadresse muss Punkt und Top Level Domain enthalten, Erasmuscode ist nach Schema: XX XXXXXXX11 aufgebaut (Ländercode in 2 Buchstaben gefolgt von 7 Buchstaben und 2 Zahlen zur Hochschulidentifikation)
+a| - Anschrift muss Ort, Postleitzahl, Straßenname und Nummer enthalten
+- Webadresse muss Punkt und Top Level Domain enthalten
+- Erasmuscode ist nach Schema: XX XXXXXXX11 aufgebaut (Ländercode in 2 Buchstaben gefolgt von 7 Buchstaben und 2 Zahlen zur Hochschulidentifikation)
 | Partnerhochschule, Universität, Partneruniversität
 
 | Hochschulvereinbarung
 | Vereinbarungstyp auf Englisch und Deutsch, Gültigkeitsdauer, Anzahl Incomings und Outgoings insgesamt und pro Studienfach, sowie deren maximale Aufenthaltszeit
 | String, Integer
-| Gültigkeitsdauer muss "von-bis"-Datum sein, Aufenthaltsdauer muss in Monaten angegeben werden
+a| - Gültigkeitsdauer muss "von-bis"-Datum sein
+- Aufenthaltsdauer muss in Monaten angegeben werden
 | Hochschulpartnerschaft, Mobility Agreement
 
 | Land
@@ -192,7 +205,8 @@ Nummer enthalten, Webadresse muss Punkt und Top Level Domain enthalten, Erasmusc
 | Mentor
 | Name, Titel, Email und Webadresse
 | String
-| Emailadresse muss @-Zeichen und Punkt enthalten, Webadresse muss Punkt und Top Level Domain enthalten
+a| - Emailadresse muss @-Zeichen und Punkt enthalten
+- Webadresse muss Punkt und Top Level Domain enthalten
 | --
 
 | Studienfach
