@@ -87,18 +87,18 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 === Sicherheit
 Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung zu schützen.
-Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden(SWFA-2).
+Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden(SWFA-3).
 Derzeit wird noch die Logik der Vorgruppe verfolgt den Zugriffschutz übere einen Datenbankaccount zu ermöglichen.
-Durch die Anforderung SWFA-3 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren.
+Durch die Anforderung SWFA-4 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren.
 Es wird eine Serverseitige Unterscheidung zwischen den Mitarbeitern benötigt.
 
 === Persistente Daten
-Die Anforderung (SWFA-1) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. 
+Die Anforderung (SWFA-2) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. 
 Uns blieb, aufgrund einiger Vorgaben, nichts anderes übrig als das bestehende Datenbankmodell zu übernehmen. 
 Die Entscheidung wurde von Vorgängern getroffen, somit verwenden wir eine MariaDB welche vom Rechenzentrum gehostet wird.
 
 === Interface
-In der Analyse wurde festgestellt das SWFA-3, die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist.
+Während der Analyse wurde mit NFAU-1, NFAU-2 festgehlaten, dass die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist.
 Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen.
 Der Fakt, dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis, dass die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen besitzen.
 Unsere Webanwendung soll später in der Lage sein, sich den jeweiligen Endgeräten der Nutzer anzupassen.
@@ -106,7 +106,21 @@ Unsere Webanwendung soll später in der Lage sein, sich den jeweiligen Endgerät
 
 == Wesentliche Abstraktionen
 //[List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.]
+*Objekte* sind Instanzen der im Domänenmodell aufgeführten Klassen.
 
+* Fakultät: enthält Fakultätsinformationen
+
+* Studiengang: enthält Studiengang und 1:n Beziehungen zu einer Fakultät
+
+* Hochschule: enthält Kontaktinformationen der Hochschule und ggf einen Erasmuscode
+
+* Ausländische Hochschule: enthält Kontaktinformationen der Hochschule 
+
+* Mentor: enthält Kontaktinformationen der betreuenden Person des Austauschprogramms
+
+* Hochschulvereinbarung: enthält die Art der Vereinbarung, Länge, Anzahl der Incomings/Outgoings pro Studienfach und deren maximale Aufenthaltszeit
+
+Für die Beziehungen zwischen den einzelnen Objekten siehe das Domänenmodel.
 
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
