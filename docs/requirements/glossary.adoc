@@ -14,25 +14,34 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 |===
 | Begriff | Definition und Erläuterung | Synonyme
 
+| Akademisches Auslandsamt | Stabstelle Internationales | --
+
 | Austauschprogramm | Verschiedene Arten von Programmen, wie Erasmus oder Freemover | Exchange
 
 
 | Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Serverseitig
 
-| Client | Computer eines Nutzers, welcher Serveranfragen stellt | (keine)
+| Bestandsdaten | Attribute der Hochschule | -- 
 
-| Datenbank| System zur elektronischen Datenverwaltung, welches einen Mehrbenutzerzugriff erlaubt | (keine)
+| Client | Computer eines Nutzers, welcher Serveranfragen stellt | --
+
+| Datenbank| System zur elektronischen Datenverwaltung, welches einen Mehrbenutzerzugriff erlaubt | --
 
 | Datenbankaccount | Der von der Datenbank bereitgestellte Account | Datenbankbenutzerkonto
 
 | Erasmus _+_ | EU-Programm zur Förderung von allgemeiner und beruflicher Bildung, Jugend und Sport in Europa. Ermöglicht den Austausch von sowohl Lehrenden als auch Studierenden.
 | Erasmus
+
+|Essence Navigator | Onlineanwendung zur Überprüfung der Projektfortschritte | --
+
 | Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interressierte Personen
 
 | Department | Auslandsbüro an einer
 Hochschule | Abteilung
 
-| Fakultät | eine Gruppe zusammengehörender Wissenschaften oder Wissenschaftsgebiete umfassende Abteilung als Lehr- und Verwaltungseinheit einer Universität oder Hochschule | (keine)
+| Fakultät | eine Gruppe zusammengehörender Wissenschaften oder Wissenschaftsgebiete umfassende Abteilung als Lehr- und Verwaltungseinheit einer Universität oder Hochschule | --
+
+| Flask | eine in Python geschriebene Anwendung, die zur Erweiterung und guter Dokumentation dient | --
 
 | Frontend | Schnittstelle des Systems, die
 vom Nutzer bedient wird | Clientseitig
@@ -44,9 +53,15 @@ vom Nutzer bedient wird | Clientseitig
 | Informationsfrontend | Das bisher bestehende Frontend zur Datenbank, das Externen Informationen über die bestehenden Partnerschaften ermöglicht
 | Frontend für die Studierenden, Anzeigefrontend, bisheriges Frontend
 
-| International Office | Abteilung einer ausländischen Hochschule, die für die Kommunikation in Angelegenheiten von Austauschstudierenden und Partnerschaftsverttägen zuständig ist. | (keine)
+| International Office | Abteilung einer ausländischen Hochschule, die für die Kommunikation in Angelegenheiten von Austauschstudierenden und Partnerschaftsverttägen zuständig ist. | --
 
-| Kontaktperson | Person über die eine ausländische Hochschule kontaktiert werden kann, um einen Partnerschaftsvertrag einzuleiten | (keine)
+| Issue | Probleme, die während des Projekts unerwartet auftreten | Probleme
+
+| Javascript | eine Skriptsprache um HTML- Inhalte zu erweitern | --
+
+| jQuery |  eine freie JavaScript-Bibliothek | -- 
+
+| Kontaktperson | Person über die eine ausländische Hochschule kontaktiert werden kann, um einen Partnerschaftsvertrag einzuleiten | --
 
 | Leitung | Person oder Gruppe, welche volle brechtigung über das System besitzten | Superuser
 
@@ -62,15 +77,23 @@ vom Nutzer bedient wird | Clientseitig
 
 | Outgoing | Studierende der HTW, der zeitweise ins Ausland gehen | Von der Hochschule gehende Auslandsstudierende
 
+| Partnerschaftsvertrag | Vertrag zwischen HTW und ausländischen Hochschulen über ein Austauschprogramm | --
+
+| Personenbezogene Daten | Sind alle Informationen, die sich auf eine identifizierbare lebende Person beziehen | --
+
 | Programmiersprache | Formale Sprache zur Formulierung von Datenstrukturen und Algorithmen für Computer | --
 
-| Partnerschaftsvertrag | Vertrag zwischen HTW und ausländischen Hochschulen über ein Austauschprogramm | --
+| Prototype | Vereinfachtes Modell eines geplanten Produktes | erste Bildung, Urbild
+
+| Python | eine höhere Programmiersprache | --
 
 | Stakeholder | Personen oder Gruppe, die Interesse am positiven Verlauf des Projektes haben und es beeinflussen können oder durch dieses beeinflusst werden. | Anspruchsberechtigter
 
 | SQL-Query | Abfrage in einer Datenbank | SQL Abfrage
 
 | Systemweite, funktionale Anforderungen | Anforderungen, die das System erfüllen muss | System-Wide functional requirements
+
+| responsive Webdesign | gestalterischer und technischer Prototype | reagierendes Webdesign
 
 | Test Cases | Die Eingaben, Konditionen und erwarteten Ergebnisse beim Test von Systemfunktionen | Testfall
 
@@ -80,7 +103,7 @@ vom Nutzer bedient wird | Clientseitig
 
 | User Interface | Stelle oder Handlung, mit der ein Mensch mit einem Programm in Interaktion tritt | Benutzerschnittstelle
 
-| Verwaltungsfrontend | Das Frontend, das von der Stabstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabstelle Internationales
+| Verwaltungsfrontend | Das Frontend, das von der Stabstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabstelle Internationales (Verwaltungsanwendung)
 
 | Wireframe | Früher konzeptioneller Entwurf einer Webseite oder eines Softwarefrontends | Drahtmodell
 
@@ -99,9 +122,13 @@ vom Nutzer bedient wird | Clientseitig
 
 | CRUD | Create, Read, Update and Delete | Erstellen, Lesen, Aktualisieren und Löschen von Daten
 
+| CSS | Cascading Style Sheets | eine Sprache zur Gestaltung für elektronische Dokumente
+
 | DB | Datenbank | genutztes System zur langfristigen Speicherung von Datenbeständen 
 
 | FURPS+ | Functionality (Funktionalität), Usability (Benutzbarkeit), Reliability (Zuverlässigkeit), Performance (Effizienz), Supportability (Änderbarkeit/Wartbarkeit) | Fasst Qualitätsmerkmale von Software zusammen
+
+| HTML | Hypertext Markup Language | textbasierte Auszeichnungssprache zur Strukturierung elektronischer Dokumente
 
 | HTW | Hochschule | Hoschule für Technik und Wirtschaft Dresden
 
