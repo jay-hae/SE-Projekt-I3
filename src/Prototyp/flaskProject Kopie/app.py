@@ -109,7 +109,7 @@ def handle_filter():
     if request.method == 'POST':
         my_list = request.form.values()
         var = ['%' if i == 'none' else i for i in my_list]
-        return 4
+        return Querries.filter_institutes(var)
 
 
 if __name__ == '__main__':
