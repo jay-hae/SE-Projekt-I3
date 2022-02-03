@@ -1,14 +1,31 @@
 = Test Cases: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
-{localdatetime}
-include::../_includes/default-attributes.inc.adoc[]
+// Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+// {localdatetime}
+// include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 
 == Allgemeine Informationen
 
+- Die Arbeitskraft wählt eine der Verwaltungsanwendung zugehörige URL im Browser.
+- Die Arbeitskraft befindet sich im Netz der HTW Dresden.
+
 == Test Cases
 
-=== Test Case 01
+=== Test Case 01: Erfolgreich ins System einloggen
 
-=== Test Case 02
+|===
+| Beschreibung | Die Arbeitskraft gibt ihre Anmeldedaten zur Authentifizierung ein, um Zugang zum System zu erlangen.
+| Vorbedingungen und benötigte Daten a| - die Arbeitskraft ist als Nutzer angelegt
+- valide Anmeldedaten (DB-Nutzername + zugehöriges Kennwort) eingegeben
+| Nachbedingung a| - eine aktive Session wird gestartet
+- die Arbeitskraft erhält Zugang zur Verwaltungsanwendung
+|===
+
+=== Test Case 02: 
+
+|===
+| Beschreibung | 
+| Vorbedingungen und benötigte Daten | 
+| Nachbedingung | 
+|===

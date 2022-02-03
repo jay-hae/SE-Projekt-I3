@@ -1,8 +1,13 @@
 
+:imagesdir: images
+:diagramsdir: diagrams
+:plantumlsdir: plantuml
+
 = Vision: {project-name}
-Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
-{localdatetime}
-include::../_includes/default-attributes.inc.adoc[]
+// Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
+// {localdatetime}
+//include::../_includes/default-attributes.inc.adoc[]
+
 // Platzhalter für weitere Dokumenten-Attribute
 
 
