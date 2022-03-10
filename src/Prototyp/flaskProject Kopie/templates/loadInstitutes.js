@@ -21,23 +21,21 @@ function insertData(data) {
             x = 'Ja'
         }
         if (sort === "a") {
-            $('#addItems').append("<tr><td style=\"display:none;\">" + now['id'] + "</td><td class='tbl_column_huge'>" + now['name'] + "</td><td class='tbl_column_small'>" + x + "</td><td class='tbl_column_small'>" + now['agreements'] + "</td><td class='tbl_column_small'><a href=\"#ex1\" rel=\"modal:open\"><button class='btn' type='button'>Edit</button></a></tr>");
+            $('#addItems').append("<tr><th style=\"display:none;\">" + now['id'] + "</th><th >" + now['name'] + "</th><th >" + x + "</th><th >" + now['agreements'] + "</th><th ><button type=\"button\" class=\"btn my_btn\" >Bearbeiten</button></th></tr>");
         }
         else {
-            $('#addItems').prepend("<tr><td style=\"display:none;\">" + now['id'] + "</td><td class='tbl_column_huge'>" + now['name'] + "</td><td class='tbl_column_small'>" + x + "</td><td class='tbl_column_small'>" + now['agreements'] + "</td><td class='tbl_column_small'><a href=\"#ex1\" rel=\"modal:open\"><button class='btn' type='button'>Edit</button></a></tr>");
+                $('#addItems').prepend("<tr><th style=\"display:none;\">" + now['id'] + "</th><th class='tbl_column_huge'>" + now['name'] + "</th><th class='tbl_column_small'>" + x + "</th><th class='tbl_column_small'>" + now['agreements'] + "</th><th class='tbl_column_small' ><button type=\"button\" class=\"btn my_btn my_btn\" >Bearbeiten</button></th></tr>");
         }
-    })
+    });
     add_button_event();
 }
 
 function add_button_event(){
-    $(" .btn").on('click', function () {   //event triggerd on 'click'
-        let link = $(this).parent();
-        let td = link.parent();
-        let parent = td.parent();
-        let child = parent.children();//liefert alle Elemente dieser Tabellenzeile zurück; nodes.innerhtml[0] = name; innerhtml[1] == alle Verträge
-        let node = child[0];
-        let inst_id = node.innerHTML;  //get name from institute in this row
-        loadModal(inst_id);
+    $(" .my_btn").on('click', function () {   //event triggerd on 'click'
+        let entry = $(this).parent(); //get <th> where button is located in
+        let my_row = entry.parent(); //get <tr> --> row
+        let col = my_row[0].children; //extract <th> where id is inside
+        let id = col[0].innerHTML; // get ID of institute
+        loadModal(id);
     });
 }

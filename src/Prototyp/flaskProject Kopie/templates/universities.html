@@ -4,165 +4,272 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Hochschulpartnerschaften</title>
     <script src="ajax.js"></script>
-    <script src="jquery.js"></script>
-    <link rel="stylesheet" href="my_modal.css"/>
-    <link rel="stylesheet" href="split_modal.css"/>
     <script src="firstDBcall.js"></script>
     <script src="Modal_edit.js"></script>
     <script src="addModalEvents.js"></script>
     <script src="filterChanges.js"></script>
     <script src="loadInstitutes.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<!-- Navbar hier einfügen -->
 
-<div id="head_main">
+<!-- Modal zum Bearbeiten -->
+<div id="modal_edit" class="modal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Hochschule bearbeiten</h4>
+                <button type="button" class="btn-close close_modal_edit"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div id="leftSide" class="col-4 border-right">
+                        <form class="modal_form" id="form_edit">
+                            <label for="edit_mod_country">Land</label>
+                            <select id="edit_mod_country" class="filter_country" name="edit_fil_country">
+                            </select><br>
+                            <label for="edit_modal_eng">Englische Bezeichnung</label>
+                            <input type="text" id="edit_modal_eng"><br>
+                            <label for="edit_modal_local">Lokale Bezeichnung</label>
+                            <input type="text" id="edit_modal_local"><br>
+                            <label for="edit_modal_adr">Adresse</label><br>
+                            <input type="text" id="edit_modal_adr"><br>
+                            <label for="edit_modal_ws">Website</label><br>
+                            <input type="text" id="edit_modal_ws"><br>
+                            <label for="edit_modal_ntzn">Notizen</label><br>
+                            <input type="text" id="edit_modal_ntzn"><br>
+                            <label for="edit_modal_anz">Öffentlich anzeigen?</label><br>
+                            <input class="my_check" type="checkbox" id="edit_modal_anz"><br>
+                            <label for="edit_modal_ec">Erasmus-Code</label><br>
+                            <input type="text" id="edit_modal_ec"><br>
+                            <h4>International Office</h4>
+                            <label for="edit_mod_dep">Abteilung</label><br>
+                            <input type="text" id="edit_mod_dep"><br>
+                            <label for="edit_mod_tel">Telefon</label><br>
+                            <input type="text" id="edit_mod_tel"><br>
+                            <label for="edit_mod_mail">Email</label><br>
+                            <input type="text" id="edit_mod_mail"><br>
+                            <label for="edit_mod_int_off_ws">Website International Office</label><br>
+                            <input type="text" id="edit_mod_int_off_ws"><br>
+                            <h4>Ansprechperson</h4>
+                            <label for="edit_mod_func">Funktion</label><br>
+                            <input type="text" id="edit_mod_func"><br>
+                            <select id="edit_mod_gender">
+                            <option value="1">Männlich</option>
+                            <option value="2">Weiblich</option>
+                            <option value="3">Divers</option>
+                            </select><br>
+                            <label for="edit_mod_title">Titel</label><br>
+                            <input type="text" id="edit_mod_title"><br>
+                            <label for="edit_mod_vn">Vorname</label><br>
+                            <input type="text" id="edit_mod_vn"><br>
+                            <label for="edit_mod_nn">Nachname</label><br>
+                            <input type="text" id="edit_mod_nn"><br>
+                            <label for="edit_mod_ap_tel">Telefon</label><br>
+                            <input type="text" id="edit_mod_ap_tel"><br>
+                            <label for="edit_mod_ap_mail">Email</label><br>
+                            <input type="text" id="edit_mod_ap_mail"><br>
+                        </form>
+                    </div>
+                    <div id="rightSide" class="col-8">
+                        <h4>Partnerschaften bearbeiten</h4>
+                        <div class="container mt-4">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Fakultät</th>
+                                        <th>Aktiv</th>
+                                        <th>Mentor</th>
+                                        <th>Studiengang</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="add_mob_ag">
 
-</div>
-<!-- Modal HTML embedded directly into document -->
-<!-- Modal for edit institute -->
-<div id="ex1" class="modal">
-    <form class="modal_form" id="form_edit" action="">
-        <div id="leftSide">   <!-- Right side of modal box -->
-            <label for="edit_mod_country">Land</label>
-            <select id="edit_mod_country" class="filter_country" name="edit_fil_country">
-            </select><br>
-            <label for="edit_modal_eng">Englische Bezeichnung</label>
-            <input type="text" id="edit_modal_eng"><br>
-            <label for="edit_modal_local">Lokale Bezeichnung</label>
-            <input type="text" id="edit_modal_local"><br>
-            <label for="edit_modal_adr">Adresse</label>
-            <input type="text" id="edit_modal_adr"><br>
-            <label for="edit_modal_ws">Website</label>
-            <input type="text" id="edit_modal_ws"><br>
-            <label for="edit_modal_ntzn">Notizen</label>
-            <input type="text" id="edit_modal_ntzn"><br>
-            <label for="edit_modal_anz">Öffentlich anzeigen?</label>
-            <input class="my_check" type="checkbox" id="edit_modal_anz"><br>
-            <label for="edit_modal_ec">Erasmus-Code</label>
-            <input type="text" id="edit_modal_ec"><br>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary close_modal_edit">Abbrechen</button>
+                <button type="button" class="btn btn-primary">Speichern</button>
+            </div>
         </div>
-        <hr>
-        <div id="right_side">
-        </div>
-        <a href="#ex1" rel="modal:close"><button id="mod_edit">Speichern</button></a>
-        <a href="#ex1" rel="modal:close"><button id="quit">Abbrechen</button></a>
-    </form>
+    </div>
 </div>
 <!-- modal to add institute -->
-<div id="ex2" class="modal">
+<div id="modal_add" class="modal">
     <!-- 3 different div's to structure form -->
-    <form class="modal_form" id="form_left_col" action="">
-        <div id="add_left_col" class="add_modal_columns">
-            <!-- main construct for modal to add new institute -->
-            <h1>Hochschule anlegen</h1>
-            <label for="add-eng">Englische Bezeichnung</label><br>
-            <input type="text" id="add-eng" name="eng"><br>
-            <label for="add-country_ID">Land</label>
-            <br>
-            <select id="add-country_ID" class="filter_country" name="country_ID">
-            </select><br>
-            <label for="add-local">Lokale Bezeichnung</label><br>
-            <input type="text" id="add-local" name="local"><br>
-            <label for="add-address">Adresse</label><br>
-            <input type="text" id="add-address" name="address"><br>
-            <!-- <label for="modal_ws">Website</label>
-            <input type="text" id="modal_ws" name="mod_ws"><br>  -->
-            <label for="add-homepage">Homepage</label><br>
-            <input type="text" id="add-homepage" name="homepage"><br>
-            <label for="add-erasmus_code">Erasmus-Code</label><br>
-            <input type="text" id="add-erasmus_code" name="erasmus_code"><br>
-            <label for="add-note">Notizen</label><br>
-            <input type="text" id="add-note" name="note"><br>
-            <label for="add-display">Öffentlich anzeigen?</label><br>
-            <input class="my_check" type="checkbox" id="add-display" name="display"><br>
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Anlegen Partnerhochschule</h5>
+                <button type="button" class="btn-close close_modal_add"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm">
+                        <form class="modal_form modal_form_add" id="form_left_col">
+                            <!-- main construct for modal to add new institute -->
+                            <h1>Hochschule anlegen</h1>
+                            <label for="add-eng">Englische Bezeichnung</label><br>
+                            <input type="text" id="add-eng" name="eng"><br>
+                            <label for="add-country_ID">Land</label>
+                            <br>
+                            <select id="add-country_ID" class="filter_country" name="country_ID">
+                            </select><br>
+                            <label for="add-local">Lokale Bezeichnung</label><br>
+                            <input type="text" id="add-local" name="local"><br>
+                            <label for="add-address">Adresse</label><br>
+                            <input type="text" id="add-address" name="address"><br>
+                            <!-- <label for="modal_ws">Website</label>
+                            <input type="text" id="modal_ws" name="mod_ws"><br>  -->
+                            <label for="add-homepage">Homepage</label><br>
+                            <input type="text" id="add-homepage" name="homepage"><br>
+                            <label for="add-erasmus_code">Erasmus-Code</label><br>
+                            <input type="text" id="add-erasmus_code" name="erasmus_code"><br>
+                            <label for="add-note">Notizen</label><br>
+                            <input type="text" id="add-note" name="note"><br>
+                            <label for="add-display">Öffentlich anzeigen?</label><br>
+                            <input class="my_check" type="checkbox" id="add-display" name="display"><br>
+                        </form>
+                        <form class="modal_form modal_form_add" id="form_mid_col">
+                            <h1>Ansprechperson</h1>
+                            <label for="add-title">Titel</label><br>
+                            <input type="text" id="add-title" name="title"><br>
+                            <label for="add-firstname">Vorname</label><br>
+                            <input type="text" id="add-firstname" name="firstname"><br>
+                            <label for="add-lastname">Nachname</label><br>
+                            <input type="text" id="add-lastname" name="lastname"><br>
+                            <label for="add-gender_ID">Geschlecht</label><br>
+                            <select id="add-gender_ID" name="gender_ID">
+                            <option value="0">Männlich</option>
+                            <option value="1">Weiblich</option>
+                            <option value="2">Divers</option>
+                            </select><br>
+                            <label for="add-function">Funktion</label><br>
+                            <input type="text" id="add-function" name="function"><br>
+                            <label for="add-person_phone">Telefonnummer</label><br>
+                            <input type="text" id="add-person_phone" name="person_phone"><br>
+                            <label for="add-person_email">Email</label><br>
+                            <input type="text" id="add-person_email" name="person_email"><br>
+                        </form>
+                    </div>
+                    <div class="col-sm">
+                        <form class="modal_form modal_form_add" id="form_right_col">
+                            <h1>International Office</h1>
+                            <label for="add-department">Abteilung</label><br>
+                            <input type="text" id="add-department" name="department"><br>
+                            <label for="add-phone">Telefon</label><br>
+                            <input type="text" id="add-phone" name="phone"><br>
+                            <label for="add-email">Email</label><br>
+                            <input type="text" id="add-email" name="email"><br>
+                            <label for="add-int_office_homepage">Homepage</label><br>
+                            <input type="text" id="add-int_office_homepage" name="int_office_homepage"><br>
+                            <h1>Partnerschaft</h1>
+                            <label for="add-partnership_type_ID">Vertragstyp</label><br>
+                            <select id="add-partnership_type_ID" class="fil_agree" name="partnership_type_ID"></select><br><br>
+                        </form>
+                        <button type="button" class="btn btn-secondary close_modal_add">Abbrechen</button>
+                        <button type="button" id="mod_add_institute" class="btn btn-primary" disabled="true">Speichern</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-    <form class="modal_form" id="form_mid_col" action="">
-        <div id="add_mid_col" class="add_modal_columns">
-            <h1>Ansprechperson</h1>
-            <label for="add-title">Titel</label><br>
-            <input type="text" id="add-title" name="title"><br>
-            <label for="add-firstname">Vorname</label><br>
-            <input type="text" id="add-firstname" name="firstname"><br>
-            <label for="add-lastname">Nachname</label><br>
-            <input type="text" id="add-lastname" name="lastname"><br>
-            <label for="add-gender_ID">Geschlecht</label><br>
-            <select id="add-gender_ID" name="gender_ID">
-            <option value="0">Männlich</option>
-            <option value="1">Weiblich</option>
-            <option value="2">Divers</option>
-            </select><br>
-            <label for="add-function">Funktion</label><br>
-            <input type="text" id="add-function" name="function"><br>
-            <label for="add-person_phone">Telefonnummer</label><br>
-            <input type="text" id="add-person_phone" name="person_phone"><br>
-            <label for="add-person_email">Email</label><br>
-            <input type="text" id="add-person_email" name="person_email"><br>
-        </div>
-    </form>
-    <form class="modal_form" id="form_right_col" action="">
-        <div id="add_right_col" class="add_modal_columns">
-            <h1>International Office</h1>
-            <label for="add-department">Abteilung</label><br>
-            <input type="text" id="add-department" name="department"><br>
-            <label for="add-phone">Telefon</label><br>
-            <input type="text" id="add-phone" name="phone"><br>
-            <label for="add-email">Email</label><br>
-            <input type="text" id="add-email" name="email"><br>
-            <label for="add-int_office_homepage">Homepage</label><br>
-            <input type="text" id="add-int_office_homepage" name="int_office_homepage"><br>
-            <h1>Partnerschaft</h1>
-            <label for="add-partnership_type_ID">Vertragstyp</label><br>
-            <select id="add-partnership_type_ID" class="fil_agree" name="partnership_type_ID"></select><br><br>
-            <a href="#ex2" rel="modal:close"><button type="submit" id="mod_add_institute" disabled>Speichern</button></a>
-            <a href="#ex2" rel="modal:close"><button id="leave_mod">Abbrechen</button></a>
-        </div>
-    </form>
-    <!-- 2 buttons to close modal, 'Speichern' triggers post request also -->
-</div>
-    <div id="Page_one">
-        <div id="FilterAll" class="main">        <!-- div for every filter needed -->
-            <form id="filter_form" action="">
-                <select id='fc' class="filter filter_country" name="filter_country">
-                    <option value="none">-Land-</option>
-                </select>
-                <select id='fil_fac' name="filter_fac" class="filter">
-                    <option value="none">-Fakultät-</option>
-                </select>
-                <select id="fil_shown" name="filter_shown" class="filter">
-                    <option value="none">-Anzeige extern-</option>
-                    <option value="y">Ja</option>
-                    <option value="n">Nein</option>
-                </select>
-                <select id="fil_act" name="filter_activity" class="filter">
-                    <option value="none">-Aktiv-</option>
-                    <option value="y">Ja</option>
-                    <option value="n">Nein</option>
-                </select>
-                <select id="fil_agree" name="filter_agreetype" class="filter fil_agree">
-                    <option value="none">-Vertragstyp-</option>
-                </select>
-                <select id='sorting' name="sortby" class="filter"> <!-- implement sorting filter -->
-                    <option id="desc" value="a">Sortierung absteigend</option>
-                    <option id="asc" value="d">Sortierung aufsteigend</option>
-                </select>
-                <br>
-                <button id="fil_reset">Zurücksetzen</button>
-            </form>
-        </div>
-    <br>
-    <a href="#ex2" rel="modal:open"><button>Add Institute</button></a>
-    <table class="main"> <!-- Table for information needed for main page -->
-        <thead id="head">
-        <tr>
-        <th class="tbl_column_huge">Hochschule</th>
-        <th class="tbl_column_small">Öffentliche Anzeige</th>
-        <th class="tbl_column_small">Verträge</th>
-        </tr>
-        </thead>
-        <tbody id="addItems">   <!-- insert all rows from database when load page for the first time -->
-        </tbody>
-    </table>
     </div>
+</div>
+
+
+</div>
+<div id="Page_one" > <!-- class container -->
+    <div id="my-nav">
+        <div class="in-navbar" id="htw_logo">
+            <img id="htw-logo" src="htw-logo.jpg">
+        </div>
+        <div class="in-navbar" id="Logout">
+            <button class="btn" type="button">Logout</button>
+        </div>
+        <div class="in-navbar" id="handbuch">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
+                 <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">...</a></li>
+                      <li><a class="dropdown-item" href="#">...</a></li>
+                      <li><a class="dropdown-item" href="#">...</a></li>
+                    </ul>
+            </div>
+        </div>
+        <div class="in-navbar" id="Themen">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Übersicht</button>
+                 <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="/sql">Hochschulen</a></li>
+                     <li><a class="dropdown-item" href="/homepage/faculties">Fakultäten</a></li>
+                     <li><a class="dropdown-item" href="/homepage/courses">Studiengänge</a></li>
+                     <li><a class="dropdown-item" href="/homepage/mentor">Mentoren</a></li>
+                      <li><a class="dropdown-item" href="/homepage/countries">Länder</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="my-content">
+        <div id="fil"> <!-- container mt-4-->
+            <div id="FilterAll">        <!-- div for every filter needed -->
+                <form id="filter_form" action="">
+                    <select id='fc' class="filter filter_country" name="filter_country">
+                        <option value="none">-Land-</option>
+                    </select>
+                    <select id='fil_fac' name="filter_fac" class="filter">
+                        <option value="none">-Fakultät-</option>
+                    </select>
+                    <select id="fil_shown" name="filter_shown" class="filter">
+                        <option value="none">-Anzeige extern-</option>
+                        <option value="y">Ja</option>
+                        <option value="n">Nein</option>
+                    </select>
+                    <select id="fil_act" name="filter_activity" class="filter">
+                        <option value="none">-Aktiv-</option>
+                        <option value="y">Ja</option>
+                        <option value="n">Nein</option>
+                    </select>
+                    <select id="fil_agree" name="filter_agreetype" class="filter fil_agree">
+                        <option value="none">-Vertragstyp-</option>
+                    </select>
+                    <select id='sorting' name="sortby" class="filter"> <!-- implement sorting filter -->
+                        <option id="desc" value="a">Sortierung absteigend</option>
+                        <option id="asc" value="d">Sortierung aufsteigend</option>
+                    </select>
+                </form>
+                <button class="btn" id="fil_reset">Zurücksetzen</button>
+            </div>
+        </div>
+        <br>
+        <!-- Tabelle für die Partnerhochschulen -->
+        <div id="tbl"> <!-- container mt-4-->
+            <div class="add-hs">
+                <button type="button" class="btn" id="btn_hs_add">Partnerhochschule anlegen</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Hochschule</th>
+                        <th>Anzeige</th>
+                        <th>Verträge</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody id="addItems">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>

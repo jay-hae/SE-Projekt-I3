@@ -89,17 +89,12 @@ def for_modal(institute_id):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     param_list = (institute_id,)
-    cur.callproc('get_modal_information', param_list)
+    cur.callproc('institute_information', param_list)
     payload = []
     for result in cur.stored_results():
         rows = result.fetchall()
         for row in rows:
-            if row[13] == 1:
-                gender = 'männlich'
-            elif row[13] == 2:
-                gender = 'weiblich'
-            else:
-                gender = 'divers'
+            print(row)
             content = {
                 'country': row[0],
                 'eng': row[1],
@@ -114,12 +109,69 @@ def for_modal(institute_id):
                 'mail': row[10],
                 'off_website': row[11],
                 'function': row[12],
-                'gender': gender,
+                'gender': row[13],
                 'title': row[14],
                 'firstname': row[15],
                 'lastname': row[16],
                 'pers_tel': row[17],
                 'pers_mail': row[18]
+            }
+            payload.append(content)
+    cur.close()
+    cnxn.close()
+    return jsonify(payload)
+
+
+# get mobility agreements referring to institute / partnership
+def get_ma(institute):
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    param_list = (institute,)
+    cur.callproc('get_ma', param_list)
+    payload = []
+    for result in cur.stored_results():
+        rows = result.fetchall()
+        for row in rows:
+            print(row)
+            content = {
+                'agreement_ID': row[0],
+                'faculty': row[1],
+                'mentor_ID': row[2],
+                'gender_ID': row[3],
+                'mentor_active': row[4],
+                'from_valid': row[5],
+                'until_valid': row[6],
+                'agreement_inactive': row[7],
+                'number_incoming': row[8],
+                'months_incoming': row[9],
+                'number_outgoing': row[10],
+                'months_outgoing': row[11],
+                'note': row[12]
+            }
+            payload.append(content)
+    cur.close()
+    cnxn.close()
+    return jsonify(payload)
+
+
+#  get all courses related to single mobility agreement
+def get_ma_x_course(agreement):
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    param_list = (agreement,)
+    cur.callproc('get_ma_x_course', param_list)
+    payload = []
+    for result in cur.stored_results():
+        rows = result.fetchall()
+        for row in rows:
+            content = {
+                'ag_x_course_id': row[0],
+                'course': row[1],
+                'faculty': row[2],
+                'sac': row[3], #subject area code
+                'num_incoming': row[4],
+                'subnum_mob': row[5],
+                'subnum_months': row[6]
             }
             payload.append(content)
     cur.close()

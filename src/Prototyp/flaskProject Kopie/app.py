@@ -94,13 +94,12 @@ def new_institute():
         val_list = []
         if "display" not in request.form:
             col_list.append("display")
-            val_list.append() #append 0/1 -> je nachdem was in DB für NEIN steht
+            val_list.append("0") #append 0/1 -> je nachdem was in DB für NEIN steht
         for key in my_var:
             if my_var[key] != '':
                 col_list.append(key)
                 val_list.append(my_var[key])
-        #return Querries.new_Institute(col_list, val_list)
-        return jsonify('HI')
+        return Querries.new_Institute(col_list, val_list)
     return redirect(url_for('LoginPage'))
 
 
@@ -111,6 +110,30 @@ def handle_filter():
         var = ['%' if i == 'none' else i for i in my_list]
         return Querries.filter_institutes(var)
 
+
+@app.route('/editInstitute', methods=['POST'])
+def edit_inst():
+    return 'HI'
+
+
+@app.route('/homepage/mentor', methods=['GET', 'POST'])
+def hp_mentor():
+    return render_template('mentor.html')
+
+
+@app.route('/homepage/countries', methods=['GET', 'POST'])
+def hp_countries():
+    return render_template('country.html')
+
+
+@app.route('/homepage/faculties', methods=['GET', 'POST'])
+def hp_fac():
+    return render_template('faculty.html')
+
+
+@app.route('/homepage/courses', methods=['GET', 'POST'])
+def hp_course():
+    return render_template('course.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
