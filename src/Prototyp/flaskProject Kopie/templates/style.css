@@ -42,6 +42,10 @@
     background-color: #f6f1e5;
 }
 
+#btn_mentor {
+    padding-left: 0px;
+}
+
 #my-nav{
     /*position: sticky;
     position: -webkit-sticky;

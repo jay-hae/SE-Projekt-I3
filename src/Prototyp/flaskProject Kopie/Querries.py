@@ -220,3 +220,91 @@ def new_Institute(tuple_col, tuple_val):
         cur.close()
         cnxn.close()
         return jsonify(answer)
+
+
+def return_countries():
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    cur.execute('SELECT de, en, erasmus FROM tbl_country')
+    x = cur.fetchall()
+    payload = []
+    for row in x:
+        content = {
+            'de': row[0],
+            'en': row[1],
+            'er': row[2]
+        }
+        payload.append(content)
+    cnxn.close()
+    cur.close()
+    return jsonify(payload)
+
+
+def return_courses():
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    cur.execute('SELECT deu, eng FROM tbl_course')
+    x = cur.fetchall()
+    payload = []
+    for row in x:
+        content = {
+            'de': row[0],
+            'eng': row[1]
+        }
+        payload.append(content)
+    cnxn.close()
+    cur.close()
+    return jsonify(payload)
+
+
+def return_mentor():
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    query = """SELECT m.ID, m.firstname, m.lastname, m.active, count(mentor_ID) 
+                FROM tbl_mobility_agreement ma 
+                JOIN tbl_mentor m  
+                ON ma.mentor_ID = m.ID 
+                GROUP BY mentor_ID
+                ORDER BY m.firstname"""
+    cur.execute(query)
+    all_mentors = cur.fetchall()
+    payload = []
+    for mentor in all_mentors:
+        if mentor[3] == 1:
+            display = "Ja"
+        else:
+            display = "Nein"
+        content = {
+            'ID': mentor[0],
+            'f_name': mentor[1],
+            'l_name': mentor[2],
+            'act': display,
+            'amount': mentor[4]
+        }
+        payload.append(content)
+    cnxn.close()
+    cur.close()
+    return jsonify(payload)
+
+
+def return_faculties():
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    query = """SELECT f.deu, f.eng, COUNT(m.faculty_ID) 
+                FROM tbl_mobility_agreement m
+                JOIN tbl_faculty f 
+                ON f.ID = m.faculty_ID
+                GROUP BY m.faculty_ID"""
+    cur.execute(query)
+    faculties = cur.fetchall()
+    payload = []
+    for fac in faculties:
+        content = {
+            'de': fac[0],
+            'eng': fac[1],
+            'agreements': fac[2]
+        }
+        payload.append(content)
+    cnxn.close()
+    cur.close()
+    return jsonify(payload)

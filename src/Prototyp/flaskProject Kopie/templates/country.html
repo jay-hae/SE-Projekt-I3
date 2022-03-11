@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Länder</title>
+    <script src="../ajax.js"></script>
+    <script src="../firstDBcall.js"></script>
+    <script src="../Modal_edit.js"></script>
+    <script src="../addModalEvents.js"></script>
+    <script src="../filterChanges.js"></script>
+    <script src="../loadInstitutes.js"></script>
+    <link href="../style.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
+<div id="Page_one" > <!-- class container -->
+    <div id="my-nav">
+        <div class="in-navbar" id="htw_logo">
+            <img id="htw-logo" src="../htw-logo.jpg">
+        </div>
+        <div class="in-navbar" id="Logout">
+            <button class="btn" type="button">Logout</button>
+        </div>
+        <div class="in-navbar" id="handbuch">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
+                 <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">...</a></li>
+                      <li><a class="dropdown-item" href="#">...</a></li>
+                      <li><a class="dropdown-item" href="#">...</a></li>
+                    </ul>
+            </div>
+        </div>
+        <div class="in-navbar" id="Themen">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Übersicht</button>
+                 <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="/homepage/institutes">Hochschulen</a></li>
+                     <li><a class="dropdown-item" href="/homepage/faculties">Fakultäten</a></li>
+                     <li><a class="dropdown-item" href="/homepage/courses">Studiengänge</a></li>
+                     <li><a class="dropdown-item" href="/homepage/mentor">Mentoren</a></li>
+                      <li><a class="dropdown-item" href="/homepage/countries">Länder</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
