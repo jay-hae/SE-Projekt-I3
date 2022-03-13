@@ -30,50 +30,86 @@
                 <div class="row">
                     <div id="leftSide" class="col-4 border-right">
                         <form class="modal_form" id="form_edit">
-                            <label for="edit_mod_country">Land</label>
-                            <select id="edit_mod_country" class="filter_country" name="edit_fil_country">
-                            </select><br>
-                            <label for="edit_modal_eng">Englische Bezeichnung</label>
-                            <input type="text" id="edit_modal_eng"><br>
-                            <label for="edit_modal_local">Lokale Bezeichnung</label>
-                            <input type="text" id="edit_modal_local"><br>
-                            <label for="edit_modal_adr">Adresse</label><br>
-                            <input type="text" id="edit_modal_adr"><br>
-                            <label for="edit_modal_ws">Website</label><br>
-                            <input type="text" id="edit_modal_ws"><br>
-                            <label for="edit_modal_ntzn">Notizen</label><br>
-                            <input type="text" id="edit_modal_ntzn"><br>
-                            <label for="edit_modal_anz">Öffentlich anzeigen?</label><br>
-                            <input class="my_check" type="checkbox" id="edit_modal_anz"><br>
-                            <label for="edit_modal_ec">Erasmus-Code</label><br>
-                            <input type="text" id="edit_modal_ec"><br>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_country">Land</label>
+                                <select class="form-select" id="edit_mod_country" class="filter_country" name="edit_fil_country">
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_modal_eng">Englische Bezeichnung</label>
+                                <input class="form-control" type="text" id="edit_modal_eng">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_modal_local">Lokale Bezeichnung</label>
+                                <input class="form-control" type="text" id="edit_modal_local">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_modal_adr">Adresse</label>
+                                <input class="form-control" type="text" id="edit_modal_adr">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_modal_ws">Website</label>
+                                <input class="form-control" type="text" id="edit_modal_ws">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_modal_ntzn">Notizen</label>
+                                <input class="form-control" type="text" id="edit_modal_ntzn">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_modal_anz">Öffentlich anzeigen?</label>
+                                <input class="form-control-check" class="my_check" type="checkbox" id="edit_modal_anz">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_modal_ec">Erasmus-Code</label>
+                                <input class="form-control" type="text" id="edit_modal_ec">
+                            </div>
                             <h4>International Office</h4>
-                            <label for="edit_mod_dep">Abteilung</label><br>
-                            <input type="text" id="edit_mod_dep"><br>
-                            <label for="edit_mod_tel">Telefon</label><br>
-                            <input type="text" id="edit_mod_tel"><br>
-                            <label for="edit_mod_mail">Email</label><br>
-                            <input type="text" id="edit_mod_mail"><br>
-                            <label for="edit_mod_int_off_ws">Website International Office</label><br>
-                            <input type="text" id="edit_mod_int_off_ws"><br>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_dep">Abteilung</label>
+                                <input class="form-control" type="text" id="edit_mod_dep">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_tel">Telefon</label>
+                                <input class="form-control" type="text" id="edit_mod_tel">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_mail">Email</label>
+                                <input class="form-control" type="text" id="edit_mod_mail">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_int_off_ws">Website International Office</label>
+                                <input class="form-control" type="text" id="edit_mod_int_off_ws">
+                            </div>
                             <h4>Ansprechperson</h4>
-                            <label for="edit_mod_func">Funktion</label><br>
-                            <input type="text" id="edit_mod_func"><br>
-                            <select id="edit_mod_gender">
-                            <option value="1">Männlich</option>
-                            <option value="2">Weiblich</option>
-                            <option value="3">Divers</option>
-                            </select><br>
-                            <label for="edit_mod_title">Titel</label><br>
-                            <input type="text" id="edit_mod_title"><br>
-                            <label for="edit_mod_vn">Vorname</label><br>
-                            <input type="text" id="edit_mod_vn"><br>
-                            <label for="edit_mod_nn">Nachname</label><br>
-                            <input type="text" id="edit_mod_nn"><br>
-                            <label for="edit_mod_ap_tel">Telefon</label><br>
-                            <input type="text" id="edit_mod_ap_tel"><br>
-                            <label for="edit_mod_ap_mail">Email</label><br>
-                            <input type="text" id="edit_mod_ap_mail"><br>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_func">Funktion</label>
+                                <input class="form-control" type="text" id="edit_mod_func">
+                            <select class="form-select" id="edit_mod_gender">
+                                <option value="1">Männlich</option>
+                                <option value="2">Weiblich</option>
+                                <option value="3">Divers</option>
+                            </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_title">Titel</label>
+                                <input class="form-control" type="text" id="edit_mod_title">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_vn">Vorname</label>
+                                <input class="form-control" type="text" id="edit_mod_vn">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_nn">Nachname</label>
+                                <input class="form-control" type="text" id="edit_mod_nn">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_ap_tel">Telefon</label>
+                                <input class="form-control" type="text" id="edit_mod_ap_tel">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="edit_mod_ap_mail">Email</label>
+                                <input class="form-control" type="text" id="edit_mod_ap_mail">
+                            </div>
                         </form>
                     </div>
                     <div id="rightSide" class="col-8">
@@ -105,119 +141,163 @@
 </div>
 <!-- modal to add institute -->
 <div id="modal_add" class="modal">
-    <!-- 3 different div's to structure form -->
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Anlegen Partnerhochschule</h5>
+                <h5 class="modal-title"> Neue Partnerhochschule Anlegen</h5>
                 <button type="button" class="btn-close close_modal_add"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-sm p-3 m-3 pt-1">
                         <form class="modal_form modal_form_add" id="form_left_col">
-                            <!-- main construct for modal to add new institute -->
-                            <h1>Hochschule anlegen</h1>
-                            <label for="add-eng">Englische Bezeichnung</label><br>
-                            <input type="text" id="add-eng" name="eng"><br>
-                            <label for="add-country_ID">Land</label>
-                            <br>
-                            <select id="add-country_ID" class="filter_country" name="country_ID">
-                            </select><br>
-                            <label for="add-local">Lokale Bezeichnung</label><br>
-                            <input type="text" id="add-local" name="local"><br>
-                            <label for="add-address">Adresse</label><br>
-                            <input type="text" id="add-address" name="address"><br>
+                            <h2>Hochschule</h2>
+                            <div class="mb-3">
+                                <label for="add-eng" class="form-label">Englische Bezeichnung</label>
+                                <input type="text" id="add-eng" name="eng" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-country_ID" class="form-label">Land</label>
+                                <select id="add-country_ID" class="filter_country form-select" name="country_ID"></select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-local" class="form-label">Lokale Bezeichnung</label>
+                                <input type="text" id="add-local" name="local" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-address" class="form-label">Adresse</label>
+                                <input type="text" id="add-address" name="address" class="form-control">
+                            </div>
                             <!-- <label for="modal_ws">Website</label>
-                            <input type="text" id="modal_ws" name="mod_ws"><br>  -->
-                            <label for="add-homepage">Homepage</label><br>
-                            <input type="text" id="add-homepage" name="homepage"><br>
-                            <label for="add-erasmus_code">Erasmus-Code</label><br>
-                            <input type="text" id="add-erasmus_code" name="erasmus_code"><br>
-                            <label for="add-note">Notizen</label><br>
-                            <input type="text" id="add-note" name="note"><br>
-                            <label for="add-display">Öffentlich anzeigen?</label><br>
-                            <input class="my_check" type="checkbox" id="add-display" name="display"><br>
-                        </form>
-                        <form class="modal_form modal_form_add" id="form_mid_col">
-                            <h1>Ansprechperson</h1>
-                            <label for="add-title">Titel</label><br>
-                            <input type="text" id="add-title" name="title"><br>
-                            <label for="add-firstname">Vorname</label><br>
-                            <input type="text" id="add-firstname" name="firstname"><br>
-                            <label for="add-lastname">Nachname</label><br>
-                            <input type="text" id="add-lastname" name="lastname"><br>
-                            <label for="add-gender_ID">Geschlecht</label><br>
-                            <select id="add-gender_ID" name="gender_ID">
-                            <option value="0">Männlich</option>
-                            <option value="1">Weiblich</option>
-                            <option value="2">Divers</option>
-                            </select><br>
-                            <label for="add-function">Funktion</label><br>
-                            <input type="text" id="add-function" name="function"><br>
-                            <label for="add-person_phone">Telefonnummer</label><br>
-                            <input type="text" id="add-person_phone" name="person_phone"><br>
-                            <label for="add-person_email">Email</label><br>
-                            <input type="text" id="add-person_email" name="person_email"><br>
+                            <input type="text" id="modal_ws" name="mod_ws">  -->
+                            <div class="mb-3">
+                                <label for="add-homepage" class="form-label">Homepage</label>
+                                <input type="text" id="add-homepage" name="homepage" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-erasmus_code" class="form-label">Erasmus-Code</label>
+                                <input type="text" id="add-erasmus_code" name="erasmus_code" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-note" class="form-label">Notizen</label>
+                                <input type="text" id="add-note" name="note" class="form-control">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input my_check" id="add-display">
+                                <label class="form-check-label" for="add-display">Öffentlich anzeigen?</label>
+                            </div>
                         </form>
                     </div>
-                    <div class="col-sm">
-                        <form class="modal_form modal_form_add" id="form_right_col">
-                            <h1>International Office</h1>
-                            <label for="add-department">Abteilung</label><br>
-                            <input type="text" id="add-department" name="department"><br>
-                            <label for="add-phone">Telefon</label><br>
-                            <input type="text" id="add-phone" name="phone"><br>
-                            <label for="add-email">Email</label><br>
-                            <input type="text" id="add-email" name="email"><br>
-                            <label for="add-int_office_homepage">Homepage</label><br>
-                            <input type="text" id="add-int_office_homepage" name="int_office_homepage"><br>
-                            <h1>Partnerschaft</h1>
-                            <label for="add-partnership_type_ID">Vertragstyp</label><br>
-                            <select id="add-partnership_type_ID" class="fil_agree" name="partnership_type_ID"></select><br><br>
+                    <div class="col-sm p-3 m-3 pt-1">
+                        <form class="modal_form modal_form_add" id="form_mid_col">
+                            <h2>Ansprechperson</h2>
+                            <div class="mb-3">
+                                <label for="add-title" class="form-label">Titel</label>
+                                <input type="text" id="add-title" name="title" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-firstname" class="form-label">Vorname</label>
+                                <input type="text" id="add-firstname" name="firstname" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-lastname" class="form-label">Nachname</label>
+                                <input type="text" id="add-lastname" name="lastname" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-gender_ID" class="form-label">Geschlecht</label>
+                                <select id="add-gender_ID" name="gender_ID" class="form-select">
+                                    <option value="0">Männlich</option>
+                                    <option value="1">Weiblich</option>
+                                    <option value="2">Divers</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-function" class="form-label">Funktion</label>
+                                <input type="text" id="add-function" name="function" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-person_phone" class="form-label">Telefonnummer</label>
+                                <input type="text" id="add-person_phone" name="person_phone" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-person_email" class="form-label">Email</label>
+                                <input type="text" id="add-person_email" name="person_email" class="form-control">
+                            </div>
                         </form>
-                        <button type="button" class="btn btn-secondary close_modal_add">Abbrechen</button>
-                        <button type="button" id="mod_add_institute" class="btn btn-primary" disabled="true">Speichern</button>
+                    </div>
+                    <div class="col-sm p-3 m-3 pt-1">
+                        <form class="modal_form modal_form_add" id="form_right_col">
+                            <h2>International Office</h2>
+                            <div class="mb-3">
+                                <label for="add-department" class="form-label">Abteilung</label>
+                                <input type="text" id="add-department" name="department" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-phone" class="form-label">Telefon</label>
+                                <input type="text" id="add-phone" name="phone" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-email" class="form-label">Email</label>
+                                <input type="text" id="add-email" name="email" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-int_office_homepage" class="form-label">Homepage</label>
+                                <input type="text" id="add-int_office_homepage" name="int_office_homepage" class="form-control">
+                            </div>
+                            <h2>Partnerschaft</h2>
+                            <div class="mb-3">
+                                <label for="add-partnership_type_ID" class="form-label">Vertragstyp</label>
+                                <select id="add-partnership_type_ID" class="fil_agree form-select"
+                                    name="partnership_type_ID"></select>
+                            </div>
+                            <button type="button" class="btn btn-secondary">Abbrechen</button>
+                            <button type="button" id="mod_add_institute" class="btn btn-primary">Speichern</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-</div>
 <div id="Page_one" > <!-- class container -->
-    <div id="my-nav">
-        <div class="in-navbar" id="htw_logo">
-            <img id="htw-logo" src="../htw-logo.jpg">
-        </div>
-        <div class="in-navbar" id="Logout">
-            <button class="btn" type="button">Logout</button>
-        </div>
-        <div class="in-navbar" id="handbuch">
-            <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
-                 <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">...</a></li>
-                      <li><a class="dropdown-item" href="#">...</a></li>
-                      <li><a class="dropdown-item" href="#">...</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand me-0 ms-3" href="#">
+        <img src="htw-logo.png" height="30" width="auto" class="d-inline-block align-top"
+            alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="/homepage/faculties">Fakultäten</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/homepage/institutes">Hochschulen</a></li>
+            <li class="nav-item"><a class="nav-link" href="/homepage/countries">Länder</a></li>
+            <li class="nav-item"><a class="nav-link" href="/homepage/mentor">Mentoren</a></li>
+            <li class="nav-item"><a class="nav-link" href="/homepage/courses">Studiengänge</a></li>
+        </ul>
+        <ul class="navbar-nav me-2">
+        <li class="nav-item m-1">
+            <div class="in-navbar" id="handbuch">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">...</a></li>
+                        <li><a class="dropdown-item" href="#">...</a></li>
+                        <li><a class="dropdown-item" href="#">...</a></li>
                     </ul>
+                </div>
             </div>
-        </div>
-        <div class="in-navbar" id="Themen">
-            <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Übersicht</button>
-                 <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="/homepage/institutes">Hochschulen</a></li>
-                     <li><a class="dropdown-item" href="/homepage/faculties">Fakultäten</a></li>
-                     <li><a class="dropdown-item" href="/homepage/courses">Studiengänge</a></li>
-                     <li><a class="dropdown-item" href="/homepage/mentor">Mentoren</a></li>
-                      <li><a class="dropdown-item" href="/homepage/countries">Länder</a></li>
-                    </ul>
+        </li>
+        <li class="nav-item m-1">
+            <div class="in-navbar" id="Logout">
+                <button class="btn btn-sm btn-outline-danger" type="button">Logout</button>
             </div>
-        </div>
+        </li>
+        </ul>
     </div>
+    </nav>
     <div class="my-content">
         <div id="fil"> <!-- container mt-4-->
             <div id="FilterAll">        <!-- div for every filter needed -->
