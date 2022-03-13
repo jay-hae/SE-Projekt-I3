@@ -202,24 +202,32 @@ def filter_institutes(parameters):
 
 
     # insert new institute into table
-def new_Institute(tuple_col, tuple_val):
+def new_Institute(tuple_col_inst, tuple_val_inst, partnership_ID, value):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     x = "%s, "
-    x = x*len(tuple_val)
+    x = x*len(tuple_val_inst)
     a = ""
-    for columns in tuple_col:
+    for columns in tuple_col_inst:
         a += ", "+columns
     print(a[2:])
+    print(x[:-2])
+    print(tuple_val_inst)
     query = "INSERT INTO tbl_institute (" + a[2:] + ") VALUES (" + x[:-2] + ")"
     try:
-        cur.execute(query, tuple_val)
+        # insert into tbl_institute
+        cur.execute(query, tuple_val_inst)
         cnxn.commit()
-        answer = {'success': 'True'}
+        # query for insert into tbl_partnership
+
+        x = True
     finally:
         cur.close()
         cnxn.close()
-        return jsonify(answer)
+        if x:
+            return jsonify({'success': 'True'})
+        else:
+            return jsonify({'success': 'False'})
 
 
 def return_countries():

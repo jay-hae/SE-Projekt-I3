@@ -93,16 +93,24 @@ def ret_file(filename):
 def new_institute():
     if request.method == 'POST':
         my_var = request.form.to_dict()
-        col_list = []
-        val_list = []
+        # for insert into tbl_institute
+        col_list_institute = []
+        val_list_institute = []
         if "display" not in request.form:
-            col_list.append("display")
-            val_list.append("0") #append 0/1 -> je nachdem was in DB für NEIN steht
+            col_list_institute.append("display")
+            val_list_institute.append("0") #append 0/1 -> je nachdem was in DB für NEIN steht
         for key in my_var:
             if my_var[key] != '':
-                col_list.append(key)
-                val_list.append(my_var[key])
-        return Querries.new_Institute(col_list, val_list)
+                if key is not "partnership_ID":
+                    col_list_institute.append(key)
+                    if my_var[key] == 'on':
+                        val_list_institute.append(1)
+                    else:
+                        val_list_institute.append(my_var[key])
+                else:
+                    partnership = key
+                    ps_id = my_var[key]
+        return Querries.new_Institute(col_list_institute, val_list_institute, partnership, ps_id)
     return redirect(url_for('LoginPage'))
 
 

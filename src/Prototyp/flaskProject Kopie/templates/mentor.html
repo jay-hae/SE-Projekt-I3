@@ -52,13 +52,13 @@
                 <button type="button" class="btn" id="btn_mentor">Mentor hinzufügen</button>
             </div>
             <div class="search_mentor">
-                <input id="tbl_search" onkeyup="sortMentor()" type="text" placeholder="Mentor suchen">
+                <input id="tbl_search" onkeyup="searchMentor()" type="text" placeholder="Mentor suchen">
             </div>
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Vorname</th>
-                        <th>Nachname</th>
+                        <th class="tbl_mentor_head" id="tbl_mentor_first">Vorname</th>
+                        <th class="tbl_mentor_head" id="tbl_mentor_last">Nachname</th>
                         <th>Aktiv</th>
                         <th>Betreute Agreements</th>
                         <th></th>

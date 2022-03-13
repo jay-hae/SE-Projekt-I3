@@ -1,7 +1,9 @@
 $(document).ready(function (){
     $.get('/loader/mentor', function (data){
        insertMentor(data);
+       sortMentor("firstname");
     });
+
 });
 
 
@@ -13,7 +15,7 @@ function insertMentor(mentors) {
     });
 }
 
-function sortMentor() {
+function searchMentor() {
     let element = $('#mnt_body');
     let children = element.children();
     let search_for = $('#tbl_search').val().toLowerCase();
@@ -21,7 +23,7 @@ function sortMentor() {
         let row = children[index];
         let cells = row.children;
         let id = cells[0].innerHTML;
-;       let rowid = "#mentor" + id;
+        let rowid = "#mentor" + id;
         let firstname = cells[1].innerHTML;
         let lastname = cells[2].innerHTML;
         if (!(firstname.toLowerCase().includes(search_for) || lastname.toLowerCase().includes(search_for))) {
@@ -32,3 +34,17 @@ function sortMentor() {
         }
     });
 }
+
+function sortMentor(attribute) {
+    let all_rows = $('#mnt_body').children();
+
+    if (attribute === "firstname") {
+        //sort table after firstname; after first click z-a; a-z; ...;
+
+    }
+    else if (attribute === "lastname") {
+        //sort lastname after first click: a-z; z-a; ...;
+
+    }
+}
+
