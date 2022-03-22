@@ -34,7 +34,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 
 |Essence Navigator | Onlineanwendung zur Überprüfung der Projektfortschritte | --
 
-| Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interressierte Personen
+| Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interessierte Personen
 
 | Department | Auslandsbüro an einer Hochschule | Abteilung
 
@@ -87,8 +87,6 @@ vom Nutzer bedient wird | Clientseitig
 | Partnerschaftsvertrag | Vertrag zwischen HTW und ausländischen Hochschulen über ein Austauschprogramm | --
 
 | Personenbezogene Daten | Alle Informationen, die sich auf eine identifizierbare lebende Person beziehen | --
-
-| Programmiersprache | Formale Sprache zur Formulierung von Datenstrukturen und Algorithmen für Computer | --
 
 | Prototype | Nicht voll funktionsfähige erste Version der Software | erste Bildung, Urbild
 

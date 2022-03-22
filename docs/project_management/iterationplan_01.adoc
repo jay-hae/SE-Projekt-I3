@@ -13,7 +13,7 @@
 | Meilenstein | Datum
 
 | Beginn der Iteration | 01.12.2021
-| Ersten Termin mit SI warnehmen | 09.12.2021
+| Ersten Termin mit SI wahrnehmen | 09.12.2021
 | Ende der Iteration | 15.12.2021
 |===
 
@@ -78,13 +78,6 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |in Bearbeitung
 |Vision
 |Jens Rosenkranz, Nico Rosenkranz
-
-|Aktuellen Stand in Essence Navigator eintragen
-|niedrig
-|5
-|Problem aufgetreten
-|-
-|Jakob Häcker, Luca Meißner
 
 
 |Glossar erstellen/beginnen
