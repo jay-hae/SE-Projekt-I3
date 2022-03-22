@@ -8,6 +8,17 @@ $(document).ready(function () {
             $('#mod_add_institute').attr('disabled', true);
         }
     });
+    //clear form before open modal
+    $('#btn_hs_add').on('click', function (){
+        $(' .modal_form_add').trigger("reset");
+        $('#modal_add').toggle();
+    });
+    $(' .close_modal_add').on('click', function (){
+        $('#modal_add').toggle();
+    });
+    $(' .close_modal_edit').on('click', function (){
+        $('#modal_edit').toggle();
+    });
     //Laden der Daten für Startseite
     loadStartpage();
     //add events to modal; submit form & add button events

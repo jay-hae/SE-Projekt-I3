@@ -1,7 +1,7 @@
 function modal_events(){
     $('#mod_add_institute').on('click', function (event){
-        event.preventDefault();
-        let all = $('#form_left_col, #form_mid_col, #form_right_col').serialize();
+
+        let all = $('#form_left_col, #form_mid_col, #form_right_col').serialize();  //mehrere Formen parallel auswerten; aneinanderhängen der Forminhalte
         console.log(all);
         $.ajax({
             type: 'POST',
@@ -27,9 +27,9 @@ function modal_events(){
             }
         });
     });
-    $(' .modal').on($.modal.CLOSE, function(event, modal) {
+    $(' .modal').on('close', function(event, modal) {
         //$(' .my_check').prop('checked', false);
         $(' .modal_form').trigger('reset'); //clear modal after closing it
-        $('#mod_add_institute').attr('disabled', true)
+        $('#mod_add_institute').attr('disabled', "true")
     });
 }

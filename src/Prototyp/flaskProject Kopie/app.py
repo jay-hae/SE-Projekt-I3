@@ -16,7 +16,7 @@ app.secret_key = os.urandom(24)
 def LoginPage():
     if request.method == 'GET':
         session["usr"] = 'yes'
-        return redirect(url_for('sql'))
+        return redirect('/homepage/institutes')
     """
     if request.method == 'GET':
         if "usr" in session:
@@ -29,17 +29,20 @@ def LoginPage():
 """
 
 
-# show user homepage
-# insight into every institute in tbl + opportunity to add institute
-@app.route('/sql', methods=['GET'])
-def sql():
-    if "usr" in session:
-        return render_template('universities.html')
-    else:
-        return redirect(url_for('LoginPage'))
+# return of filter objects
+""""@app.route('/get/<name>', methods=['GET'])
+def load_filter(name):
+    if name == 'institutes':
+        return Querries.institutes_ret()
+    elif name == 'agreements':
+        return Querries.ag_type_ret()
+    elif name == 'countries':
+        return Querries.all_countries()
+    elif name == 'fac':
+        return Querries.faculty()
+    else: return None"""
 
 
-# DB call to get data from institute table
 @app.route('/getInstitutes', methods=['GET'])
 def ret_inst():
     return Querries.institutes_ret()
@@ -80,7 +83,7 @@ def exec_sp():
 
 # give browser all files that are needed (js files,...)
 @app.route('/<string:filename>', methods=['GET'])
-def lol(filename):
+def ret_file(filename):
     return send_from_directory('templates', filename)
 
 
@@ -90,17 +93,24 @@ def lol(filename):
 def new_institute():
     if request.method == 'POST':
         my_var = request.form.to_dict()
-        col_list = []
-        val_list = []
+        # for insert into tbl_institute
+        col_list_institute = []
+        val_list_institute = []
         if "display" not in request.form:
-            col_list.append("display")
-            val_list.append() #append 0/1 -> je nachdem was in DB für NEIN steht
+            col_list_institute.append("display")
+            val_list_institute.append("0") #append 0/1 -> je nachdem was in DB für NEIN steht
         for key in my_var:
             if my_var[key] != '':
-                col_list.append(key)
-                val_list.append(my_var[key])
-        #return Querries.new_Institute(col_list, val_list)
-        return jsonify('HI')
+                if key is not "partnership_ID":
+                    col_list_institute.append(key)
+                    if my_var[key] == 'on':
+                        val_list_institute.append(1)
+                    else:
+                        val_list_institute.append(my_var[key])
+                else:
+                    partnership = key
+                    ps_id = my_var[key]
+        return Querries.new_Institute(col_list_institute, val_list_institute, partnership, ps_id)
     return redirect(url_for('LoginPage'))
 
 
@@ -109,7 +119,40 @@ def handle_filter():
     if request.method == 'POST':
         my_list = request.form.values()
         var = ['%' if i == 'none' else i for i in my_list]
-        return 4
+        return Querries.filter_institutes(var)
+
+
+@app.route('/editInstitute', methods=['POST'])
+def edit_inst():
+    return 'HI'
+
+
+@app.route('/homepage/<name>', methods=['GET', 'POST'])
+def hp_file(name):
+    if name == 'mentor':
+        return render_template('mentor.html')
+    elif name == 'countries':
+        return render_template('country.html')
+    elif name == 'courses':
+        return render_template('course.html')
+    elif name == 'faculties':
+        return render_template('faculty.html')
+    elif name == 'institutes':
+        return render_template('universities.html')
+
+
+@app.route('/loader/<name>', methods=['GET'])
+def ret_js(name):
+    if name == 'mentor':
+        return Querries.return_mentor()
+    elif name == 'country':
+        return Querries.return_countries()
+    elif name == 'course':
+        return Querries.return_courses()
+    elif name == 'faculty':
+        return Querries.return_faculties()
+    else:
+        return jsonify('answer: Unexpected Request')
 
 
 if __name__ == '__main__':
