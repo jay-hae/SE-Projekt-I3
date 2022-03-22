@@ -1,17 +1,23 @@
 import os, Login
+#### os : When Python starts, it loads many modules into sys. module.os module is also loaded when Python starts. It assigns its path to the os specific module attribute.
+#### Login : imports Login.py File
 
+#### Erklärung Flask: https://flask.palletsprojects.com/en/2.0.x/quickstart/
 from flask import Flask, render_template, request, session, url_for, jsonify, send_from_directory
 from flask_wtf import CSRFProtect
 from werkzeug.utils import redirect
 
 import Querries
 
+#### Spezialvariable "__name__" =  https://www.pythontutorial.net/python-basics/python-__name__/#:~:text=The%20__name__%20is,file%20associated%20with%20the%20module.
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 
 # Login Page, atm login with db credentials
 # redirect user to homepage if he is already logged in
+
+#### app.rpute = We use the route() decorator to tell Flask what URL should trigger our function.
 @app.route('/', methods=['GET', 'POST'])
 def LoginPage():
     if request.method == 'GET':
@@ -41,7 +47,6 @@ def load_filter(name):
     elif name == 'fac':
         return Querries.faculty()
     else: return None"""
-
 
 @app.route('/getInstitutes', methods=['GET'])
 def ret_inst():
