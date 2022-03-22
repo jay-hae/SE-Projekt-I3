@@ -1,0 +1,47 @@
+Meeting Protokoll 22.03.2022
+Protokverantwortliche: Jakob
+Anwesende: Jakob, Jens, Nico, Pascal, Patrick, Ha
+
+
+1. Arbeitsorganisation
+- Alle Dokumente ins Repo
+- Verfügbarkeit werden über Doodle bestimmt
+- Teammeeting immer online 
+- Protokollverantwortlichen vor dem Meeting festlegen
+-> archiviert werden Protokolle auf GitHub Dateiname: Datum_Thema
+-> dieser sorgt dafür das die Protokolle für Lesende Verständliche
+-> ToDos als Issue formulieren (mit Wichtung der Issues versehen)
+- Jede Aufgabe soll in GitHub als Issue angelegt werden und bei Project unter To Do geschoben werden, so dass sie in Progress gezogen werden können
+
+
+2. Jakob stellt Reflexionstool Mirror vor
+
+3. Benötigte Dokumente
+- Entwickler Dokumentation verfeinert
+- Architecture Notebook detaillierter schreiben
+- Work Item List
+
+4. Termin
+- KW 13 Termin mit Ringel
+- Doodle Termin für Teammeting
+- Verfügbarkeits liste
+- Iterations länge 2 Wochen
+
+To Do:
+
+- Jens kreiert Doodle liste für wöchentliches Meeting
+- Präsenz mit Ringel oder SI?
+- Protokollordner im Repo  für alle zukünftigen Protokolle anlegen 
+- Index Datei anlegen (dort ist beschrieben wo welches Dokument zu finden ist, also Name und Speicherort im Repo)
+- Esscense Navigator ausfüllen (Jakob, Luca)
+- Regelwerk anlegen (Jakob)
+
+- Usersystem (mit Rechenzentrum auseinandersetzen ob wir selbst DB Logins anlegen können für die Mitarbeiter der SI?) Wir sollen ein Login System für die Mitarbeiter der SI umsetzen. Wie soll das mit der Datenbank umgesetzt werden? 
+- Views für Verwaltungsfrontend -> wie müssen die Views von uns aussehen um den Abfragen des Verwaltunsfrontends gerecht zu werden? ggf. mit Verantwortlichem der Website auseinandersetzen (Raphael fragen -> Pascal)
+- aufspielen des aktuellen Stands des Prototypen auf die VM, mit SI auseinandersetzen und ihnen zu beliebigem Termin den Prototypen zur Verfügung stellen + Feedback einholen zu user interface (Jakob)
+
+- wie teste man was  (Patrick, Roman)
+- was muss getestet werden (Patrick, Roman)
+
+- Belegarbeit korrektur Issues anlgen und evtl schon zu weisen
+

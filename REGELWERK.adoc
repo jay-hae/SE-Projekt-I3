@@ -1,0 +1,31 @@
+= Regelwerk: {project-name}
+=== Vor ab
+Diese Dokument dient zum festlegen von Regeln für Arbeitsroutinen.
+Den hier formulierten Regeln ist bitte unbedingt folge zuleisten, damit eine bessere Sturktur des Projektes ermöglicht wird.
+Bei Änderungswünschen bitte an den Regelverantwortlichen wenden oder im Teammeeting den Wunsch ansprechen.
+
+=== Regelverantwortlicher
+Jakob Häcker
+
+== Dateien
+Alle Dateien die mit dem Projekt in Beziehung stehen werden bitte in das GitHub Repo aufgenommen.
+Falls neue Dateien hinzukommen werden diese mit dem Namen und Speicherort in die Datei INDEX hinzugefügt.
+
+== Protokolle
+* Zu jedem Meeting ist ein Protokoll zu führen.
+* VOR jedem Meeting wird ein Protokollverantwortlicher festgelegt. Dessen Aufgaben sind:
+** Archivierung des Protokolls in den GitHub Ordner protocol als txt (einfache Kopie des PentaPad's)
+** Gewärleistung, dass die Protokolle verständlich formuliert sind
+** die ToDos nach dem Meeting als Issue eintragen
+** dafür sorgen, dass das Protokoll nicht alleine geschreiben wird
+* Was muss in das Protokoll:
+** Thema/Anlass
+** Datum
+** Protokollverantwortliche
+** Anwesende
+** besprochene Punkte (wenn möglich Hauptthemen durchnummerieren)
+** ToDo's
+
+== Agenden für Meetings
+* VOR jedem Meeting ist in den Chat "offen Fragen" auf Discord Wünsche für zu besprechende Themen zu posten.
+

@@ -71,11 +71,13 @@ image::wf_uc03_hochschule_bearbeiten_2.JPG[]
 //<<<
 
 .Use Case Diagram 
+//Merge coflict:
 [#use_case_diagram]
 [plantuml, "{diagramsdir}/use_case_diagram",svg]
 ....
 include::{plantumlsdir}/use_case_diagram.puml[]
 ....
+//================== Merge conflict
 // [#use_case_diagram]
 // [plantuml, "{diagramsdir}/use_case_diagram",SVG]
 // ....
