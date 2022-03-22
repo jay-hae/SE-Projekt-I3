@@ -176,7 +176,7 @@ Das Produkt wird dem Kunden als Link per E-Mail zur Verfügung gestellt werden.
 
 Im laufe des ersten Semesters und somit der ersten Hälfte des Projekts haben wir festgestellt, dass es sehr wichtig ist sowohl innerhalb des Teams als auch mit den Kunden und dem Betreuer unserers Projektes zu kommunizieren. Es gilt durch regelmäßigen Austausch und offene Kommunikation Sicherheit über ein gemeinsames Verständnis der vorliegeneden Aufgabe zu schaffen.
 
-Probleme bei der Erfüllung der Aufgaben sollten frühzeitig benannt und im Team gelöst werden. Jedes Team muss die Verantwortung für die ihm/ihr übertragenen Aufgaben übernehmen. Die Verantwortung zu übernehmen heißt an dieser Stelle nicht, diel Aufgabe allein zu bewältigen sondern den organisatorischen sowie zeitlichen Überblick zu behalten.
+Probleme bei der Erfüllung der Aufgaben sollten frühzeitig benannt und im Team gelöst werden. Jedes Team-Mitglied muss die Verantwortung für die ihm/ihr übertragenen Aufgaben übernehmen. Die Verantwortung zu übernehmen heißt an dieser Stelle nicht, diel Aufgabe allein zu bewältigen sondern den organisatorischen sowie zeitlichen Überblick zu behalten.
 
 Während es zunächst als zusätzliche Herausforderung empfunden werden kann, den Prinzipien des OpenUP zu folgen und damit jeden Schritt des Software Entwicklungsprozesses im Vorfeld theoretisch zu entwickeln und gleichzeitig zu dokumentieren, stellt sich bei einem Projekt dieser Größenordnung schnell heraus, dass es ohne die Einhaltung dieser Prinzipien unmöglich ist effektiv im Team zusammenzuarbeiten.
 

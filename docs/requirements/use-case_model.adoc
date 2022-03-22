@@ -19,8 +19,21 @@
 // Liste aller identifizierten Use Cases (priorisiert)
 === für Akteur Mitarbeiter SI
 * *UC01*: In System einloggen
+
+image::wf_uc01_anmelden.JPG[]
+
 * *UC02*: Anlegen von Hochschulen
+
+image::wf_uc02_hochschule_anlegen.JPG[]
+
+image::wf_uc02_hochschulen_uebersicht.JPG[]
+
 * *UC03*: Bearbeiten von Hochschulen
+
+image::wf_uc03_hochschule_bearbeiten_1.JPG[]
+
+image::wf_uc03_hochschule_bearbeiten_2.JPG[]
+
 * *UC04*: Löschen von fehlerhaften Datensätzen
 * *UC05*: Anlegen von Mentoren
 * *UC06*: Bearbeiten von Mentoren
@@ -63,3 +76,11 @@
 ....
 include::{plantumlsdir}/use_case_diagram.puml[]
 ....
+// [#use_case_diagram]
+// [plantuml, "{diagramsdir}/use_case_diagram",SVG]
+// ....
+// include::{plantumlsdir}/use_case_diagram.PUML[]
+// ....
+
+//image::use_case_diagram.PNG[]
+

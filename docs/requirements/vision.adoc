@@ -19,7 +19,7 @@ systemweite Anforderungen beschrieben.
 
 
 === Zweck
-Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben. Des Weiteren werden die Stakholder identifiziert und die Grundproblematik
+Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben. Des Weiteren werden die Stakeholder identifiziert und die Grundproblematik
 der Auftraggeber benannt.
 
 
@@ -42,8 +42,6 @@ Referenzen und Verweise werden - gegebenenfalls - an den benötigten Stellen ein
 
 === Fachliche Motivation
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
-
-Das Projekt wird im Rahmen der Module Software Engineering I (I150) und II (I151) der Studiengänge Wirtschaftsinformatik, Verwaltungsinformatik, Wirtschaftsingenieurwesen und Informatik bearbeitet. 
 
 Die Hochschulpartnerschaften und ihre Nutzung durch Studierende werden von den 
 Mitarbeitern  der Stabsstelle Internationales verwaltet. Zu einer Hochschul-Partnerschaft 
@@ -96,7 +94,7 @@ Beispiel:
 |===
 | Für | Externe
 | die | sich über Partner-Hochschulen und Austauschprogramme interessieren.
-| Das Produkt stellt eine | Schnittstelle für eine Webansicht von ausgewählten Daten aus der Maria-Datenbank zur Verfügung, welche auf der HTW-Webseite betrachtet werden können.
+| Das Produkt stellt eine | Schnittstelle für eine Webansicht von ausgewählten Daten aus einer Datenbank zur Verfügung, welche auf der HTW-Webseite betrachtet werden können.
 |===
 ////
 Beispiel Produkt:
