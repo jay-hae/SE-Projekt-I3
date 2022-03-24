@@ -1,3 +1,0 @@
-= Datei Index: {project-name}
-* gilt noch zu füllen
-* Sinnhaftigkeit ist zu prüfen
