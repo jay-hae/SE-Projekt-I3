@@ -84,7 +84,7 @@ Beispiel:
 |===
 | Für | Mitarbeiter der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) 
 | die | die Verwaltung effizienter durchführen möchten bzw. die Einsicht freigegebener Daten für interessierte Externe leicht zugänglich zu machen. 
-| Das Produkt ist eine | Webanwendung mit einer Schnittstelle zu einer Maria-Datenbank (Online-Datenbankverwaltungssystem)
+| Das Produkt ist eine | Webanwendung mit einer Schnittstelle zu einer Datenbank (Online-Datenbankverwaltungssystem)
 | die | die Datenverwaltung und Pflege vereinfacht. 
 | Im Gegensatz zu | der aktuell genutzten MS-Access-Datenbank 
 | Unser Produkt | ermöglicht eine komfortable Form der Datenbankverwaltung im Mehrbenutzerbetrieb.
