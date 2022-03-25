@@ -1,4 +1,4 @@
-= Domain Model: I3 Hochschulpartnerschaften
+= Domain Model: {project-name}
 // Jens Rosenkranz <s82099@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
 // {localdatetime}
 // include::../_includes/default-attributes.inc.adoc[]
