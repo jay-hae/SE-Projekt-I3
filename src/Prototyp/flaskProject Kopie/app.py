@@ -1,4 +1,4 @@
-import os, Login
+import os, Login, Querries
 #### os : When Python starts, it loads many modules into sys. module.os module is also loaded when Python starts. It assigns its path to the os specific module attribute.
 #### Login : imports Login.py File
 
@@ -6,8 +6,6 @@ import os, Login
 from flask import Flask, render_template, request, session, url_for, jsonify, send_from_directory
 from flask_wtf import CSRFProtect
 from werkzeug.utils import redirect
-
-import Querries
 
 #### Spezialvariable "__name__" =  https://www.pythontutorial.net/python-basics/python-__name__/#:~:text=The%20__name__%20is,file%20associated%20with%20the%20module.
 app = Flask(__name__)
@@ -17,7 +15,7 @@ app.secret_key = os.urandom(24)
 # Login Page, atm login with db credentials
 # redirect user to homepage if he is already logged in
 
-#### app.rpute = We use the route() decorator to tell Flask what URL should trigger our function.
+#### app.route = We use the route() decorator to tell Flask what URL should trigger our function.
 @app.route('/', methods=['GET', 'POST'])
 def LoginPage():
     if request.method == 'GET':
@@ -47,6 +45,7 @@ def load_filter(name):
     elif name == 'fac':
         return Querries.faculty()
     else: return None"""
+
 
 @app.route('/getInstitutes', methods=['GET'])
 def ret_inst():
@@ -103,19 +102,24 @@ def new_institute():
         val_list_institute = []
         if "display" not in request.form:
             col_list_institute.append("display")
-            val_list_institute.append("0") #append 0/1 -> je nachdem was in DB für NEIN steht
+            val_list_institute.append(0)
         for key in my_var:
-            if my_var[key] != '':
-                if key is not "partnership_ID":
-                    col_list_institute.append(key)
+            if key != 'partnership_type_ID':
+                if my_var[key] != '':
+                    if key == 'eng':
+                        name = my_var[key]
                     if my_var[key] == 'on':
-                        val_list_institute.append(1)
+                        col_list_institute.append(key)
+                        val_list_institute.append(int(1))
+                    elif my_var[key].isnumeric():
+                        val_list_institute.append(int(my_var[key]))
+                        col_list_institute.append(key)
                     else:
                         val_list_institute.append(my_var[key])
-                else:
-                    partnership = key
-                    ps_id = my_var[key]
-        return Querries.new_Institute(col_list_institute, val_list_institute, partnership, ps_id)
+                        col_list_institute.append(key)
+            else:
+                val = my_var[key]
+        return Querries.new_Institute(col_list_institute, val_list_institute, name, val)
     return redirect(url_for('LoginPage'))
 
 
@@ -131,6 +135,16 @@ def handle_filter():
 def edit_inst():
     return 'HI'
 
+
+""""@app.route('changeData/<name>', methods=['POST'])
+def changes(name):
+    if name == 'add':
+
+    elif name == '':
+
+    else:
+    return redirect(url_for('LoginPage'))
+"""
 
 @app.route('/homepage/<name>', methods=['GET', 'POST'])
 def hp_file(name):

@@ -1,3 +1,5 @@
+import time
+
 import Login
 from flask import jsonify
 
@@ -202,7 +204,8 @@ def filter_institutes(parameters):
 
 
     # insert new institute into table
-def new_Institute(tuple_col_inst, tuple_val_inst, partnership_ID, value):
+def new_Institute(tuple_col_inst, tuple_val_inst, name, val):
+    params = (name, val)
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     x = "%s, "
@@ -215,19 +218,23 @@ def new_Institute(tuple_col_inst, tuple_val_inst, partnership_ID, value):
     print(tuple_val_inst)
     query = "INSERT INTO tbl_institute (" + a[2:] + ") VALUES (" + x[:-2] + ")"
     try:
+        newL = tuple(tuple_val_inst)
         # insert into tbl_institute
-        cur.execute(query, tuple_val_inst)
+        cur.execute(query, newL)
         cnxn.commit()
         # query for insert into tbl_partnership
-
-        x = True
+        cur.callproc('insert_partnership', params,)
+        cnxn.commit()
+        for result in cur.stored_results():
+            x = result.fetchall()
+            for i in x:
+                print(x)
+        cur.close()
+        cnxn.close()
+        return jsonify({'success': 'True'})
     finally:
         cur.close()
         cnxn.close()
-        if x:
-            return jsonify({'success': 'True'})
-        else:
-            return jsonify({'success': 'False'})
 
 
 def return_countries():
