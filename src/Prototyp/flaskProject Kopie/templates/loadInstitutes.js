@@ -37,6 +37,7 @@ function add_button_event(){
         let col = my_row[0].children; //extract <th> where id is inside
         let id = col[0].innerHTML; // get ID of institute
         //in file "Modal_edit.js"
+        loadAgreements(id);
         loadModal(id);
     });
 }

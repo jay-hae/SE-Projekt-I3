@@ -134,7 +134,6 @@ def get_ma(institute):
     for result in cur.stored_results():
         rows = result.fetchall()
         for row in rows:
-            print(row)
             content = {
                 'agreement_ID': row[0],
                 'faculty': row[1],

@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <title>Länder</title>
     <script src="../ajax.js"></script>
-    <script src="../firstDBcall.js"></script>
-    <script src="../Modal_edit.js"></script>
-    <script src="../addModalEvents.js"></script>
-    <script src="../filterChanges.js"></script>
-    <script src="../loadInstitutes.js"></script>
+    <script src="../country_loader.js"></script>
     <link href="../style.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -55,6 +51,22 @@
         </ul>
     </div>
     </nav>
+    <div class="my-content">
+        <div id="tbl"> <!-- container mt-4-->
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Land (DE)</th>
+                        <th>Land (EN)</th>
+                        <th>Erasmus berechtigt</th>
+                    </tr>
+                </thead>
+                <tbody id="addCountries">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 </body>
 </html>

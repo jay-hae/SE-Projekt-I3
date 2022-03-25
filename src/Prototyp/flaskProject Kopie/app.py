@@ -161,7 +161,7 @@ def hp_file(name):
         return render_template('universities.html')
 
 
-@app.route('/loader/<name>', methods=['GET'])
+@app.route('/loader/<name>', methods=['GET', 'POST'])
 def ret_js(name):
     if name == 'mentor':
         return Querries.return_mentor()
@@ -171,6 +171,8 @@ def ret_js(name):
         return Querries.return_courses()
     elif name == 'faculty':
         return Querries.return_faculties()
+    elif name == 'mobAgreements':
+        return Querries.get_ma(request.form['id'])
     else:
         return jsonify('answer: Unexpected Request')
 

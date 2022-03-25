@@ -35,3 +35,23 @@ function loadModal(inst_id){
         });
 }
 
+function loadAgreements(inst_id) {
+    $.ajax({
+        data: {
+            id: inst_id
+        },
+        type: 'POST',
+        url: '/loader/mobAgreements'
+    })
+        .done((data) => {
+            //einfügen der Daten auf zweiter Seite des Modals
+            const add = $('#addAgreements');
+            data.forEach((obj) => {
+                allAgreements.push(obj);
+                add.append("<tr><th style=\"display:none;\">" + obj['agreement_ID'] + "</th><th >" + obj['faculty'] + "</th><th >" + obj['agreement_inactive'] + "</th><th >" + obj['mentor_ID'] + "</th><th>" + obj['note'] + "</th></tr>");
+            });
+        });
+    return allAgreements;
+}
+
+const allAgreements = [];

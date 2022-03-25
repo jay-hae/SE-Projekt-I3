@@ -32,4 +32,12 @@ function modal_events(){
         $(' .modal_form').trigger('reset'); //clear modal after closing it
         $('#mod_add_institute').attr('disabled', "true")
     });
+    $('#next').on('click', () => {
+        $('#first_slide').hide();
+        $('#second_slide').show();
+    });
+    $('#previous').on('click', () =>{
+         $('#first_slide').show();
+         $('#second_slide').hide();
+    });
 }
