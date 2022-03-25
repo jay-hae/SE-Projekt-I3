@@ -24,7 +24,7 @@ function insertData(data) {
             $('#addItems').append("<tr><th style=\"display:none;\">" + now['id'] + "</th><th >" + now['name'] + "</th><th >" + x + "</th><th >" + now['agreements'] + "</th><th ><button type=\"button\" class=\"btn my_btn\" >Bearbeiten</button></th></tr>");
         }
         else {
-                $('#addItems').prepend("<tr><th style=\"display:none;\">" + now['id'] + "</th><th class='tbl_column_huge'>" + now['name'] + "</th><th class='tbl_column_small'>" + x + "</th><th class='tbl_column_small'>" + now['agreements'] + "</th><th class='tbl_column_small' ><button type=\"button\" class=\"btn my_btn my_btn\" >Bearbeiten</button></th></tr>");
+                $('#addItems').prepend("<tr><th style=\"display:none;\">" + now['id'] + "</th><th class='tbl_column_huge'>" + now['name'] + "</th><th class='tbl_column_small'>" + x + "</th><th class='tbl_column_small'>" + now['agreements'] + "</th><th class='tbl_column_small' ><button type=\"button\" class=\"btn my_btn\" >Bearbeiten</button></th></tr>");
         }
     });
     add_button_event();
@@ -36,6 +36,7 @@ function add_button_event(){
         let my_row = entry.parent(); //get <tr> --> row
         let col = my_row[0].children; //extract <th> where id is inside
         let id = col[0].innerHTML; // get ID of institute
+        //in file "Modal_edit.js"
         loadModal(id);
     });
 }

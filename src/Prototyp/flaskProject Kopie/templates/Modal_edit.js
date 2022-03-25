@@ -31,7 +31,7 @@ function loadModal(inst_id){
             $('#edit_mod_nn').val(chosen_inst['lastname']);
             $('#edit_mod_ap_tel').val(chosen_inst['pers_tel']);
             $('#edit_mod_ap_mail').val(chosen_inst['pers_mail']);
-            $('#modal_edit').toggle();
+            $('#exampleModalToggle').toggle();
         });
 }
 

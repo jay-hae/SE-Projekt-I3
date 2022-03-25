@@ -19,9 +19,11 @@ $(document).ready(function () {
     $(' .close_modal_edit').on('click', function (){
         $('#modal_edit').toggle();
     });
-    //Laden der Daten für Startseite
+    //load institutes
+    //in file "loadInstitutes.js"
     loadStartpage();
     //add events to modal; submit form & add button events
+    // in file "addModalEvents.js"
     modal_events();
  /*   $('#mod_add_institute').on('click', function (event) {
         event.preventDefault(); // don't do event that is attached to click
@@ -47,6 +49,7 @@ $(document).ready(function () {
     });*/
     //main page; declare change events
     // trigger events after select filter
+    // in file "filterChanges.js"
     addFilterChangeEvents();
     // load countries and add to select option
     $.get('/loadCountries', function (data2) {

@@ -146,6 +146,7 @@ def changes(name):
     return redirect(url_for('LoginPage'))
 """
 
+
 @app.route('/homepage/<name>', methods=['GET', 'POST'])
 def hp_file(name):
     if name == 'mentor':
