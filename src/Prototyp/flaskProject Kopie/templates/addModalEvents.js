@@ -20,11 +20,6 @@ function modal_events(){
             type: 'POST',
             url: '/editInstitute',
             data: form.serialize(), // serializes the form's elements.
-            success: function(data)
-            {
-                //if edit was successful close modal; sonst Fehlermeldung o.Ä.
-                event.submit();
-            }
         });
     });
     $(' .modal').on('close', function(event, modal) {

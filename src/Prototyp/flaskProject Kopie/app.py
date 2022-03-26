@@ -177,5 +177,12 @@ def ret_js(name):
         return jsonify('answer: Unexpected Request')
 
 
+@app.route('/logout', methods=['GET'])
+def logout():
+    if "usr" in session:
+        session.pop(session["usr"], None)
+    return redirect(url_for('LoginPage'))
+
+
 if __name__ == '__main__':
     app.run(debug=True)

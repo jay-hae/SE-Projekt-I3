@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Studiengänge</title>
-   <script src="../ajax.js"></script>
-    <script src="../firstDBcall.js"></script>
-    <script src="../Modal_edit.js"></script>
-    <script src="../addModalEvents.js"></script>
-    <script src="../filterChanges.js"></script>
-    <script src="../loadInstitutes.js"></script>
+    <script src="../ajax.js"></script>
+    <script src="../course_loader.js"></script>
     <link href="../style.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../navbarEvents.js"></script>
 </head>
 <body>
 <div id="Page_one" > <!-- class container -->
@@ -49,12 +46,27 @@
         </li>
         <li class="nav-item m-1">
             <div class="in-navbar" id="Logout">
-                <button class="btn btn-sm btn-outline-danger" type="button">Logout</button>
+                <button class="btn btn-sm btn-outline-danger btn-logout" type="button">Logout</button>
             </div>
         </li>
         </ul>
     </div>
     </nav>
+    <div class="my-content">
+        <div id="tbl"> <!-- container mt-4-->
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Studiengang (DE)</th>
+                        <th>Studiengang (EN)</th>
+                    </tr>
+                </thead>
+                <tbody id="addCourses">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 </body>
 </html>

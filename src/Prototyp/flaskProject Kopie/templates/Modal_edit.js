@@ -53,5 +53,5 @@ function loadAgreements(inst_id) {
         });
     return allAgreements;
 }
-
+//store all mobility agreement objects
 const allAgreements = [];
