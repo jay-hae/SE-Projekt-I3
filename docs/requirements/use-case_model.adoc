@@ -22,6 +22,12 @@ Im folgenden werden die bisher identifizierten Use Cases benannt. Die 3 wichtigs
 * <<_uc03_bearbeiten_von_hochschulen>>
 * <<_uc04_löschen_von_fehlerhaften_datensätzen>>
 * <<_uc05_mentoren_editieren>>
+* <<_uc06_erstellen_von_berichten_über_erasmusvereinbarungen>>
+* <<_uc07_erstellen_von_berichten_über_mentoren>>
+* <<_uc08_erstellen_von_berichten_über_hochschulvereinbarungen>>
+* <<_uc09_erstellen_von_berichten_über_abkommen_nach_länder_sortiert>>
+* <<_uc10_berichte_exportieren>>
+* <<_uc11_externe_abfragen>>
 
 === für Akteur Mitarbeiter SI
 ==== *UC01*: In System einloggen
@@ -42,15 +48,30 @@ image::wf_uc03_hochschule_bearbeiten_1.jpg[]
 image::wf_uc03_hochschule_bearbeiten_2.jpg[]
 
 ==== *UC04*: Löschen von fehlerhaften Datensätzen
+include::use_case_04.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 ==== *UC05*: Mentoren editieren
+//include::use_case_05.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 === Use Cases für die Berichtsabfragen
 ==== *UC06*: Erstellen von Berichten über Erasmusvereinbarungen
+//include::use_case_06.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 ==== *UC07*: Erstellen von Berichten über Mentoren
+//include::use_case_07.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 ==== *UC08*: Erstellen von Berichten über Hochschulvereinbarungen
-==== *UC09*: Erstellen von Berichten über Abkommen nach nach Länder sortiert
+//include::use_case_08.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+
+==== *UC09*: Erstellen von Berichten über Abkommen nach Länder sortiert
+//include::use_case_09.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+
 ==== *UC10*: Berichte exportieren
-==== *UC11*: Externe Abfragen
+//include::use_case_10.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+
+==== *UC11*: Externe Abfragen 
+//TODO UC11 umbenennen
+//include::use_case_11.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 //= für Akteur HTW-Website 
 //* *UC07*: Einsicht auf Informationen über Partnerschaften  
