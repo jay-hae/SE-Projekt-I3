@@ -97,11 +97,11 @@ include::use_case_04.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 .Use Case Diagram 
 //Merge coflict:
-[#use_case_diagram]
-[plantuml, "{diagramsdir}/use_case_diagram",svg]
-....
-include::{plantumlsdir}/use_case_diagram.puml[]
-....
+//[#use_case_diagram]
+//[plantuml, "{diagramsdir}/use_case_diagram",svg]
+//....
+//include::{plantumlsdir}/use_case_diagram.puml[]
+//....
 //================== Merge conflict
 // [#use_case_diagram]
 // [plantuml, "{diagramsdir}/use_case_diagram",SVG]
@@ -109,5 +109,5 @@ include::{plantumlsdir}/use_case_diagram.puml[]
 // include::{plantumlsdir}/use_case_diagram.PUML[]
 // ....
 
-//image::use_case_diagram.PNG[]
+image::use_case_diagram.png[]
 
