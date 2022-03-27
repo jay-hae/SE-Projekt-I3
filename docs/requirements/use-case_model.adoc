@@ -17,6 +17,12 @@ Im folgenden werden die bisher identifizierten Use Cases benannt. Die 3 wichtigs
 
 == Identifizierte Use Cases
 // Liste aller identifizierten Use Cases (priorisiert)
+* <<_uc01_in_system_einloggen>>
+* <<_uc02_anlegen_von_hochschulen>>
+* <<_uc03_bearbeiten_von_hochschulen>>
+* <<_uc04_löschen_von_fehlerhaften_datensätzen>>
+* <<_uc05_mentoren_editieren>>
+
 === für Akteur Mitarbeiter SI
 ==== *UC01*: In System einloggen
 
@@ -36,24 +42,21 @@ image::wf_uc03_hochschule_bearbeiten_1.jpg[]
 image::wf_uc03_hochschule_bearbeiten_2.jpg[]
 
 ==== *UC04*: Löschen von fehlerhaften Datensätzen
-==== *UC05*: Anlegen von Mentoren
-==== *UC06*: Bearbeiten von Mentoren
-==== *UC07*: Löschen von Mentoren
+==== *UC05*: Mentoren editieren
 
 === Use Cases für die Berichtsabfragen
-==== *UC08*: Erstellen von Berichten über Erasmusvereinbarungen
-==== *UC09*: Erstellen von Berichten über Mentoren
-==== *UC10*: Erstellen von Berichten über Hochschulvereinbarungen
-==== *UC11*: Erstellen von Berichten über Abkommen nach nach Länder sortiert
-==== *UC12*: Berichte exportieren
-==== *UC13*: Externe Abfragen
+==== *UC06*: Erstellen von Berichten über Erasmusvereinbarungen
+==== *UC07*: Erstellen von Berichten über Mentoren
+==== *UC08*: Erstellen von Berichten über Hochschulvereinbarungen
+==== *UC09*: Erstellen von Berichten über Abkommen nach nach Länder sortiert
+==== *UC10*: Berichte exportieren
+==== *UC11*: Externe Abfragen
 
 //= für Akteur HTW-Website 
 //* *UC07*: Einsicht auf Informationen über Partnerschaften  
 //* *UC08*: Filtern und Ausgeben bestimmter Bestandsdaten
 //* *UC09*: Senden von Nutzergenerierten Datenbankabfragen
 //* *UC07*: Anfordern gefilteter Bestandsdaten
-
 
 //Weitere mögliche Use-Cases, wobei noch nicht geklärt ist ob es sich tatsächlich um reale Akteure handelt / ob es zu den Anforderungen gehört
 //= für Akteur Incoming students

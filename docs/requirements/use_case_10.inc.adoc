@@ -1,2 +1,1 @@
-== Use-Case: Erstellen von Berichten über Hochschulvereinbarungen (UC10)
-
+== Use-Case: Berichte exportieren (UC10)

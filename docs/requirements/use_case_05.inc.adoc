@@ -1,1 +1,1 @@
-== Use-Case: Anlegen von Mentoren (UC05)
+== Use-Case: Mentoren editieren (UC05)

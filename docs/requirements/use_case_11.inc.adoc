@@ -1,1 +1,1 @@
-== Use-Case: Berichte exportieren (UC12)
+== Use-Case: Externe Abfragen (UC11)
