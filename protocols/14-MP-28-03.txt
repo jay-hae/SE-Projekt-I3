@@ -1,0 +1,41 @@
+Meeting Protokoll 28.03
+
+Protokollverantwortlicher: Jakob
+Anwesende: Luca, Jens, Ha, Jakob
+
+1) Stand Entwicklerdoku
+- Pascal will code überarbeiten
+- Pascal hat Jens Code erklärt
+- Ha und Jens wollen Entwicklerdoku mit der Doku des vorjahres befüllen
+
+2) Arbeitsorga
+- Iterations ende 11.4
+- Ende der Woche Prototyp an SI
+- Ende der Woche muss sich jeder mit der Datenbank-Struktur beschäftigt haben
+, jeder muss die Prä-Entwicklerdoku-Doku von Pascal gelesen haben
+- ende der Woche sollen grobe informationen für das vorgehen beim testen vorhanden sein (nächste Iteration)
+
+
+3) wichtige benötigte Dokumente
+- Entwicklerdoku
+- Architekturenotebook
+
+4) Meetings
+4.1)Ringel
+Es wurd von Ihnen und Herrn Anke von Anfang an vermittelt, dass wir Probleme ansprechen sollen.
+Wir meinen folgendes  Problem erkannt zu haben aber gehen nicht davon aus dass dafür eine Lösung für uns parat haben.
+- Problem: es sieht sich keiner außer Pascal (und Ha) etwas sinnvolles zur Implementierung bei zu tragen; Grund: Als letztes Semesters  Pascal mit der Implementierung begann waren alle anderen Teammitglieder mit anderen Aufgaben ausgelastet, wodurch niemand anderes so gut mit dem Code vertraut ist wie er. Außerdem waren Pascals Programmierkentnisse (vorallem in Sachen Python und Flask) denen des reslichen Teams schon sehr weit vorraus. 
+- teammitglieder bereit und motiviert sich in code einzuarbeiten halten es aktuell aber für unrealistisch an einen Punkt zu kommen an dem wir ihm eine Hilfe sein können (stand 28.3)
+- Unsere Einarbeitung in den Code würde einen massiven Mehraufwand für Pascal bedeuten der eh schon viel zu viel macht
+- Daraus ergibt sich leider noch ein weiteres Problem: alle Aufgaben für dieses Semsters basieren auf dem Verständnis Code den nur Pascal hat (Entwicklerdoku, Test etc.).
+
+4.2) SI
+
+Probleme:
+- Pascal macht alles für den Code
+- abstand von Pascal technischen Stand und technischer Stand anderer
+- allgemeine Übervorderung (-> Ohnmachtsgefühl)
+- Ziel des Projektes (das Konzept Iterativer entwicklung zu lernen und zu erproben) wird nicht von allen Team mitglidern geteilt, das primäre ziel der Studenten ist aber einfach durch zukommen. Anwenden der Iterativen entwicklung stellt sich als sehr schwer dar da hoher Zeitdruck und es fühlt sich jetzt etwas zu spät an
+-> man sollte erst bei einem Projekt mit Profis mit machen und es dann selbst ausprobieren
+
+- es hat keiner eine übersicht was seine Pflichten sind (Vorschlag von Jakob -> README.md soll arbeitsinformationen zur arbeitweise erhalten 
