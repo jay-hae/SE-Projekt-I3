@@ -1,0 +1,55 @@
+Protokoll Meeting mit Herrn Ringel am 20.12.2021
+
+Vorstellung des Projekts
+
+Teilnehmer:
+
+Team: Luca Meißner, Jakob Häcker, Matthes Patrick, Nico Rosenkranz, Pascal Thielemans, Roman Patzig, Than Ha Khuong, Jens Rosenkranz
+
+Betreuer: Herr Ringel
+
+
+Abstrakte Zusammenfassung der Projektaufgabe: Webanwendung über Datenbank, die es Nutzern ohne SQL-Kenntnisse ermöglichen soll die Daten der Datenbank zu pflegen und Statistiken aus ihr zu beziehen.
+
+Frage: Selbst Userverwaltung anlegen oder in Datenbank Gruppen/Rollen Funktion nutzen.
+==> über Analyse der verschiedenen Aufgaben mit SI klären, ob die Rollen (zB Leserolle, Schreiberolle) über Datenbank geregelt werden können oder ob spezifische Nutzer gebraucht werden. Ist vorerst noch nicht ganz so relevant.
+
+Vorstellung Use Cases durch Roman Patzig:
+
+Frage von Herrn Ringel: Wie würde eine Schnittstelle für ein mögliches Folgeprojekt aussehen, das es ermöglicht sich für Studierende einzuloggen und sich für ein Austauschprogramm zu erwerben? ==>  vorerst nicht relevant, es soll nur das Datenmodell erweitert werden.
+
+Frage von Herrn Ringel: was ist mit Objekten gemeint und kennen Sie das Datenmodell? 
+Empfehlung: 
+Datenmodell ansehen und verstehen und überprüfen, ob der Aufbau verbessert werden könnte.
+
+Wirframehinweis:
+Hinweis Herr Ringel zum erstellen guter Wireframes: Mehrere (1-2er)Teams stellen für den gleichen Use Case getrennt von einander Wire Frames her und gleich ab. Dabei stellen sich möglicherweise Unsicherheiten bgl. des Use Cases heraus, die mit der Stabstelle besprochen werden können.
+
+
+Pascal Thielemann über technische Umsetzung:
+- Backend wird mit Python neugeschrieben
+- Basis ist eine MaridDB Datenbank
+
+Herr Ringel zum Thema was noch im Januar funktionieren soll:
+Backup von Datenbank auf Rechner auspielen um zu Testen. Flask über MariaDB stöpseln.
+Architekturprototyp so weit bekommen, dass Flask über MariaDB funktioniert.
+
+Herr Ringel zu Essende Navigator:
+- ist wichtigstes Tool zur Ermittlung des aktuellen Projektzustands
+- "Blume" soll möglichst gleichmäßig blühen.
+
+Frage an Herrn Ringel über RiskList:
+-dürfen wir die Risklist als Screenshot der Excel verwenden oder muss die CSV AsciDoc vorlage genutzt werden?
+Herr Ringel: Frage im Praktikum stellen
+
+
+ToDo: 
+akut: E-Mail an Herrn Ringel mit dem (Jakob) (closed)
+
+-Use Cases aktualisieren und konkretisieren (sind zu generell)! (Roman und Nico)
+-Use Case Diagramm fertig machen/updaten (Roman und Nico)
+-Datenmodell verstehen und auf Verbesserungsmöglichkeit prüfen. (Analyse: Ha, Matthes)
+-Wireframes von Use Cases anfertigen (siehe Hinweis oben von Herrn Ringel)
+-Technologie Erprobung (Es soll möglich sein mittels Flask auf dem Backup der MariaDB überhaupt zu nutzen)
+(Pascal, Luca, Jens )
+==>Wenn die Kombination aus MariaDB, Flask und Python auf lokalem Rechner funktioniert, sollen wir uns eine Arbeitsumgebung vom Rechenzentrum einrichten lassen.

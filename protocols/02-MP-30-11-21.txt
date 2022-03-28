@@ -1,0 +1,103 @@
+Meeting Protokoll 30.11.2021: 
+
+- sammlung von Fragen:
+-Frage nach Stakeholder:
+- extra Benutzergruppe für Lehrer? Wenn ja was muss er sehen können? Unterschied Lehrer HTW / außsländische Uni
+- gibt es personenbezogene Daten? Wenn ja welche?
+
+
+-Frage nach Use Cases:
+-
+
+- sonstieges 
+- wie viel muss gecodet, was muss gecoded werden
+
+
+Agenda:
+- Vorstellung
+- welche expliziten Ansprechpartner gibt es für uns aus der SI
+- Briefing aktuelle Lage Datenbank und Frontend
+- verwendetes Datenmodell
+- welche Funktionen sind schon implementiert (php prototyp)
+- Access oder MySQL? Stand der Dinge
+- Anforderungen aus Nutzersicht
+- Besprechung Stakeholder
+- Mitarbeiter SI
+- Studierende (HTW/außenstehende?)
+- Rechenzentrum
+- Gesetzt, wenn ja welche?
+- Hochschuhllehrer
+- Hochschule (Welche Organe?)
+- Partnerhochschulen / Studierende aus dem Ausland?
+- Use Cases
+- ...
+- nächsten Termin vereinbaren bzw. regelmäßige Termine
+
+Fragen an Raphael:
+- DB Abfragen im Front-/Backend
+- Access oder MySQL? Stand der Dinge
+---------------------------------------------------------------------------------------------------------------------------------
+
+AGENDA:
+
+1. Vorstellungsrunde
+2. Ist-Zustand: Darum bitten den bisherigen Stand zu sehen. 
+3. 
+
+
+STAKEHOLDER:
+- Studierende
+
+
+USE Cases:
+
+
+
+ZWECK:
+
+- wissenschaftliche Zusammenarbeit in Lehre und Forschung
+- Austausch von Studierenden
+- Austausch von Hochschullehrern
+
+
+NUTZER/AKTEURE:
+
+Mitarbeiterinnen der Stabsstelle Internationales 
+
+Studierende
+
+Hochschullehrer:(F1)
+
+
+AUFGABEN/REQUIREMENTS:
+
++Mitarbeiter*Innen der Stabsstelle Internationales: 
+- Verwaltung Studierende, 
+- Verwaltung Verträge,
+- Verwaltung von Informationen zu Hochschulpartnerschaften 
+(Institut, Art der Vereinbarung, Kontakte, Mentoren, Anzahl Plätze an Austauschstudierende, Informationen zu Studiengebühren usw.)
+- Erstellung von Statistiken 
+- Berichten zu den Partnerschaften pro Fakultät bzw. für die Gesamte Hochschule
+
++Studierende:
+werden relevante Informationen (Anzahl Plätze, Fachrichtung, Betreuer)(F3) zu den Hochschulpartnerschaften 
+aus der Datenbank im Backend auf unserer Webseite angezeigt. (F2)
+
+- Erstellung von Statistiken und Berichten
+- Informationsbereitstellung für Studierende auf der HTW Dresden Webseite
+
+- Falls möglich die Verwaltung der Austauschstudierenden 
+(Zwei Kategorien: Aus- und Einreisende, die durch diverse Datenkategorien charakterisiert werden)
+
+
+FRAGEN:
+-F1 Werden Hochschullehrer der HTW, die einen Austausch planen, auch Nutzer der Anwendung sein und Informationen wie Studierende abfragen?
+-Sollen ausländische Hochschullehrer Informationen abfragen?
+-F2 Werden den Studierenden außer: Anzahl Plätze, Fachrichtung, Betreuer weitere Informationen bereitgestellt?
+-F3 welche Informationen sind für Studierende relevant und sollen auf der Webseite angezeigt werden.
+-
+
+Technische Anforderungen:
+-Webanwendugn: Verwaltung der Hochschulpartnerschaften als Webanwendung
+- Basierend auf der MS SQL Datenbank
+

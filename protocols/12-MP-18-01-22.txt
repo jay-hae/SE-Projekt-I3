@@ -1,0 +1,29 @@
+Meeting Protokoll 18.01.2022
+
+Teilnehmer:
+    Jens, Luca, Nico, Pascal, Ha
+    
+    
+- Durch gehen des 3. Itreationsplanes:
+    - UC mit ringel auf agenda für 19.01 setzten
+    - Funktionssaccount mit Python? -> nicht geschafft wird nach dem Meeting bearbeitet
+    -
+    
+- Agenda für Herrn Ringel (es geht ums Feedback)
+- Use Cases für den Beleg durch gehen (-> haben wir zu viel gemacht was fehlt etc)
+- Domänenmodell vorstellen 
+- WF (ist das so gewollt)
+
+- Agenda für SI
+- Es soll nur die Anzhal der Studierenden aufgenommen die in einem bestimmten Studiengang von der Fakultät x an Hochschule y (keine Klare Meinung)
+-  Eingaben validierung?
+
+
+- To Do
+- Daten auf Funktions Acc (-> wie Daten auf dadrauf?)
+- Screen shots Acces Berichte an Ha (macht Nico im anschluss)
+- Esscens Navigator durchgehen in kleinerer Gruppe
+- ggf. 
+- Ideen für Nutzerverwaltung(Accounts etc)
+- Wir benötigen Rechte Accounts zu erstellen
+- Wer hat die Website der HTW gemacht? Was laufen dort für Abfragen? 

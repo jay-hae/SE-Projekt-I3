@@ -1,0 +1,23 @@
+Meeting Protokoll 11.01.2022
+Teilnehmer:
+Luca, Jakob, Jens, Nico, Ha, 
+
+
+Was heißt Qualitätsgesichert bei der Übertragung von Ascii Doc zu PDF
+
+
+ToDo
+- Domänenmodell Prüfen -> GitHub/docs/requirements/diagrams (Jens/Ha)
+- Korrektur lesen der Technischen Anforderungen 
+- Vision korrekturlesen (Nico, Jakob)
+- Use Cases + Use Cases Modell (Nico, Jakob -> treffen)
+- Systemweiteanforderungen korrektur (Jakob, Abnahe von der SI) 
+
+- Projekplan (Jens, Roman (evtl))
+- Iterations Plan (Luca)
+- 
+- 4. KW Repo korrektur lesen
+- 4. KW Einheitliche Modelle?
+
+- jeder muss sich die Datenbankstruktur von der Vorgruppe angucken!!!!
+- Issiues in Discord  nicht vergessen

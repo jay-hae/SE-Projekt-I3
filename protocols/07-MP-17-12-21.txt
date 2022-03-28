@@ -1,0 +1,13 @@
+17.12.21 Kurz-Meeting bezgl. der Verwendung von Ajax/jQuery
+
+Teilnehmer:
+    Pascal Thielemnn
+    Thanh Ha Khuong
+    Jens Rosenkranz
+    
+    Themen:
+        -Pascal Thielemann stellt seine Ideen zur Umsetzung der Webanwendung vor.
+        Vorschlag: Verwendung von ajax zur Verbesserung der Performance der Webanwendung und zum dynamische Seitenmanagement.
+        -dazu hat Pascal auch YouTube Tutorials für die anderen Team-Mitglieder bereitgestellt.
+        
+    Vorschlag wurde angenommen

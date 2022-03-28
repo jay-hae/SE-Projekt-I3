@@ -1,0 +1,33 @@
+Meeting 4.1.
+
+Teilenhmer:
+    Jakob, Jens, Luca, Nico, Pascal, Ha
+
+
+Fragen an SI
+-Mehrbenutzter: Wie hoch ist die WK das mehrere Mitarbieter die selbe Hochschule/Vertrag editieren? 
+- falls WK > 0 -> Unser Vorschlag: schreibsperre für Hochschule 
+- Was für berichte? Form der Ausgabe(Excel, CSV, etc...)
+- WF Fakultätenübersicht/Länderübersicht/Mentorenübersicht benötigt oder nicht -> Art des WF als Idee für Bericht
+- Sollen Mentoren anlegbar, löschbar und anzeigbar sein?  -> Wie oft wechseln Mentoren
+- Soll es Studenten als Tabelle geben oder nicht (zB  KlarName ,Semster, wo der Student ist) oder ob nur erfasst werden soll wo wie viele Studenten sind?
+-> rechtliche Anforderungen (sollen Personenbezogene Dataen erfasst werden abgesehen der Mentoren)
+- NFAU-1 Webredaktions zeug auch für Mitarbeiter Frontend oder nur für Studierenden Frontend
+- (geplant) Das System sollte den Import von Excel-Tabellen mit statistischen Daten von Incomings und Outgoings nur einmal pro Semester ermöglichen. Noch mal genauer
+
+Vorstellung SI 
+ - Wireframes (Ha)
+ - wenn fertig Domänenmodell (Ha)
+ - UseCases (Jakob)
+
+Frage an Ringel:
+    - Wie soll man den Entwurf/Architektur des Systems aufschreiben (zB Aktivitätsdiagramm)
+    
+TODO
+- Use Case mit Ringel besprechen (sind sie noch zu allgemein)
+- Wireframes zu Use Caese zuordnern
+- Free Mover in Use Case 2,3 aufnehmen (eventuell mit Checkbox die dann Vertragsabschnitt ausgraut)
+- treffen mit Raühael für ER Diagramm und Domänenmodell
+- Wie kriegen Wir es hin das auf dem Funktions ACC Python läuft (Luca)
+
+

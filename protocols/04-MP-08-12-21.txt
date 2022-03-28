@@ -1,0 +1,70 @@
+Meeting Protokoll 08.12.21
+
+
+
+Fragen an Stabstelle:
+
+- Wie viele Mitarbeiter:Innen und Studentische Hilfskräfte (SHK), insgesamt sollen mit der Datenbank gleichzeitig arbeiten können? Vorjahr 10. Hat sich etwas geändert?
+Für Vision!
+
+- Use Cases abnehmen lassen
+
+------------------------------------------------------------
+Fragen an Herrn Ringel:
+
+- Was wird in KW 50/51 präsentiert?
+Wie weit fortgeschritten sollte das Projekt sein?   
+Was soll abgegeben werden? 
+
+- Wird das Projekt benotet oder ist das nur eine Prüfungsvorleistung?
+
+---------------------------------------------------------------------------------
+
+Welche Programmiersprache
+-Da wir alle keine Programmier sind und keiner von uns PHP gelernt hat, brauchen wir eine Empfehlung, ob wir mit PHP arbeiten sollten oder dem intuitiveren Python?
+
+Zwei Möglichkeiten alles neu machen mit Python oder Aufbauen auf PHP
+
+PHO
+Pro: 
+- PHP-Skripte laufen auf dem bereitgestellten Webspace
+- Einbindung der Datenbank einfach möglich durch mysqli (typischerweise bei PHP dabei) 
+- Es existiert bereits Code auf den aufgebaut werden kann.
+- Nur Jakob hat ein bisschen Erfahrung mit Python
+
+
+Con: 
+- Keiner von uns hat Erfahrung mit PHP
+
+
+Aufgabenzuteilung: 
+    
+FÜR ALLE !!!!:ja
+    Repository auf Rechner klonen
+    Unterlagen der Vorgruppe studieren
+    
+Vision ausarbeiten:
+Nico Rosenkranz
+
+Use Cases:
+Pascal Thielemann & Luca Meißner 
+
+Risikoanalyse:
+Roman Patzig  (Hinweis von Nico Rosenkranz)
+Jens Rosenkranz Projektplan  
+
+Fragen an Herrn Ringel: (siehe oben)
+Luca 
+
+neues Terminfindungstool finden:
+Luca 
+
+Patrick Matthes Aufgabe zuteilen:
+Luca
+
+Glossar: (siehe Vorlage)
+Patrick Matthes
+
+Raphael Zwecks Code kontaktieren:
+Meeting ausmachen: Jens
+Meeting-Teilnehmer: Jakob Häcker & Jens Rosenkranz & Ha Khuong (&Luca)

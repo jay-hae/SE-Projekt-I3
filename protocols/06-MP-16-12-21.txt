@@ -1,0 +1,81 @@
+Meeting Protokoll 16.12.2021 Meeting mit SI
+Jakob/Luca:
+    
+Änderungs Wünsche:
+    - Login zur Software über HTW-Login?
+    - für einzelne Mitarbeiter Sonderrechte(z.B. Löschen + anzeigen der Abhängigkeiten) -> Benutzerkonten?
+    - nach Programmbeauftrage filtern
+    - Filtermöglichkeit Anzeige (-> öffentliches Anzeigen auf Webseite)
+    
+Wie Arbeitet Nutzer:
+    1) Mail -> Landfiltern -> zB 5 Hochshulen -> dann Hochschule wählen
+    2) -> Land -> Hochschulart -> Verträge ->  ... (siehe Aufzeichnung)  
+
+
+Studierend:
+    - egtl. keine Daten von Ihnen
+    - Schnittstelle für Daten von Studierenden -> was benötigt man für geeignete Schnittstelle
+
+
+- 1 Vertrag pro Hochschule
+- wenn Fak. dazu kommt muss Mentor
+- Vertragstyp Kontakt-> Hochschule ohne Vertrag
+
+Nutzerverwaltung: - über DB nutzer mit rechten?
+
+Jens:
+    
+Teilnehmer:Innen Team I3:
+Pascal Thielemann
+Luca Meißner
+Thanh Ha Khuong
+Nico Rosenkranz
+Jakob Häcker
+
+
+Teilnehmer:Innen SI:
+Juliane Terpe
+Lisa Wunderlich
+Raphael Rezaii
+
+
+Themen:
++ Vorstellung der bisherigen Use Cases
+wurden durch Stabstelle Internationales abgenommen
+
++ Rückfrage zum Löschen von Objekten:
+Sollen Objekte gelöscht werden können oder nur deaktiviert werden?
+Antwort SI: 
+    Es gibt zwei Fälle:
+-Es sollen ruhende Hochschulpartnerschaften nicht gelöscht werden können.
+
+-Bisher konnten Redundante und falsche nicht gelöscht werden. 
+Es wäre wünschenswert Löschungen nur für besonders berechtigte Mitarbeiter möglich zu machen.(zB Datenbank User mit bestimmten Rechten anlegen oder ein extra Webtool getrennt von sonstiger Webanwendung nur fürs löschen einrichten oder auf Website ein Usersystem implementieren was zw. Usern entscheidet)
+- Anregung: möglicherweise direkt vor dem erfolgreichen Löschen der Mitarbeiter:In alle davon betroffenen Datensätze als Zusammenfassung anzeigen (zB. :Wie viele Verträge, wie viele sind davon aktiv/passive, wie viele Studenten sind betroffen)
+
++,Verträge zum Beispiel auf Inaktiv setzen (auch automatische nach Vertragslaufzeit)
+und sollen wieder aktiv gesetzt werden sobald Vertrag wieder aufgenommen werden.
+aktivitätsstatus entscheidet über Sichtbarkeit von Studenten (Außensicht; nicht aktiv = nicht sichtbar)
+
+Hinweis: Ein Vertrag wird immer für einer Universität zugeordnet
+
++ Vorstellung des Wireframes zur Übersicht vor dem wählen des Objektes
+- Vorgehen Mitarbeiterin Terre: Filterschritte sind Land->Hochschulart->Fakultät->
+- Alle Funktionen können über das Hauptmenü des Prototyps abgerufen werden (Hochschulen anlegen, erfordert Vertrag anlegen etc.)
+
+Zusätzliche Filtermöglichketien auf Hauptseite:
+- in Interface fehlt die Filtermöglichkeit Programmbeauftragte:R. 
+Es wäre interessant nach allen Partnerschaften filtern zu können die von einer bestimmten Person betreut wurden
+- Spalten "Anzahl Verträge" sollte nie 0 sein. Anzeige von Anzahl aktiver und inaktiver Verträge. Mglw. Extraspalte aktive Verträge Verträge insgesamt (aktiv + inaktiv).
+
+Sollen pro Fakultät mehrere Mentoren möglich sein?
++ Manche Fakultäten haben mehrere (2-3) Mentoren, soll das bestehen bleiben? Ja, denn Mentoren haben versch. Fachbereiche. Die sich gggf. besser eignen.
+
+Umgang mit Freemovern
++Universität grundsätzlich sollen nur angelegt werden können, wenn auch ein Vertrag angelegt wird. Allerdings gibt es Freemover. Austauschstudenten, die ohne Hochschulparternschaft an einem Austauschprogramm teilnehmen. Um diese zu erfassen, ist es nötig auch Universitäten ohne Vertrag hinzuzufügen.
+Im Bearbeitungsmodus der Universität Option Freemover hinzufügen (Checkbox)
+damit man sieht, warum die Universität keinen Vertrag hat.
+
++Use Case Berichte:
+neuen Bericht hinzufügen soll möglich sein für Mitarbeiter 
+-Team muss Entscheidung treffen zwischen: Bericht-Funktion in die Anwendung direkt einzubindende Standardberichte (hardcoding) und andererseits extra Tool programmieren, welches dynamische immer neue Berichte ermöglicht (auch nur für SQL-fähigen shK) und dafür einfach erweiterbar ist

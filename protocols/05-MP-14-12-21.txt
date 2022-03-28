@@ -1,0 +1,51 @@
+Meeting Protokoll 14.12.2021
+
+für heutiges Meeting: Wollen wir Work Items List in Google anlegen? Aufgabe, Beauftragter, Deadline, Hinweis, etc. Wenn nein, wie wollen wir unsere Aufgabenverteilung sonst organisieren?
+
+Agenda für Meetin mit SI
+- erste 4 use cases abnehmen lassen -> Pascal / Luca
+- Wireframe Vorstellen -> Ha / Jakob
+- 
+---------------------------------------------------------------------
+Fragen an Herrn Ringel:
+- RiskList in AsciiDoc einbinden oder reicht Excel?
+- wie kleinteilig muss Glossary sein (zB definieren von "Programmiersprache","Use Case", etc.)
+
+Aufgabenverteilung:
+- GitHub Iterationsplanung -> Jens
+- Wireframe Prototyp -> Ha
+- Speichern im EssenceNavigator -> Jakob
+- Excel für EssenceNavigator/Iterationen -> Luca
+- Vision weiter bearbeiten -> Nico 
+- Prototyp erarbeiten -> Roman Nico (Pascal Jakob)
+- Terminvorschläge für nächste Woche mit Herrn Ringel -> Luca
+- Herrn Ringel Kontaktieren -> Jakob
+- was haben wir schon im  EssenceNavigator (checkboxen anklicken) -> Luca
+
+Aufgaben für jeden:
+- 
+- ssh verbindung einrichten
+- Discord meetings immer öffentlich bekannt geben (nicht per privat chat)
+- Essence Navigator ansehen und verstehen
+- Git Hub Issues anlegen commit porbieren (falls noch nicht geschen)
+- nach Aufgaben sucher, wer keine Aufgabe hat ;-)
+
+Nächstes Meeting Donnerstag oder Freitag nach Gespräch mit SI
+
+Studiengang:
+    Bachelor WINFO
+    - Luca
+    - Jens
+    - Nico
+    - Roman
+    - Ha
+    
+    Bachelor Informatik
+    - Patrick 
+    - Jakob
+    
+    Verwaltungsinormatik
+    - Pascal
+-------------------------------------------------------------------
+Done:
+    - Python genehmigt (-> nutzen von Flask)

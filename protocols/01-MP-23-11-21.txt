@@ -1,0 +1,48 @@
+Meeting Protokoll 23.11.2021: (Jens Rosenkranz)
+
+Ringel:
+-bei Fragen und Probleme (fachliche und soziale) direkt ansprechen. Sonst kein Feedback.
+- ein guter Plan setzt voraus die Mannstunden pro Monat zu klären. Also wieviel Zeitstunden pro Monat kann jeder einbringen.
+diese Zahl muss ungefähr übereinstimmen mit der Anzahl an Stunden die im Modulhandbuch für SE steht. Dies entspricht dem Zeitbudget. 
+- Meetingkultur: 
+für jedes Meeting Protokoll führen, 
+es muss nicht jedes Teammitglied dabei sein, 
+im Vorfeld Tagesordnungspunkte klären und wer diese vorträgt, 
+für jedes Meeting Gesprächsleiter festlegen
+maximale länge ca. 60min, 
+in Meetings wird nicht Software entwickelt sondern bestehende Software besprochen/bewertet, 
+es sollen im Meeting weitere Aktionen und Verantwortlichkeiten festgelegt werden, 
+diejenigen, die nicht anwesend sein können müssen sich das Protokoll ansehen, 
+
+- Botschaft von Ringel: Projekt ernst nehmen, Entscheidungen / Konflikte nicht aussitzen
+
+Was noch in diesem Semester laufen sollte:
+- Softwarestack soll funktionieren + Proof of Konzept + Anforderungsanalyse
+
+- 1.Schritt. Anhand Kundenanforderung soll entschieden werden, welche Items im Sprint realisiert werden sollen.
+Geringes Risiko, geringer Aufwand und hoher Wert zuerst erledigen, die komplexen Aufgaben aber nicht vernachlässigen
+
+
+Aufgabenstellung: 
+- Frontend für Mitarbeiter und Studierende, um Informationen zu Hochschulpartnerschaften und Austauschstudenten zu verwalten
+- Herausfinden auf welchem Stand das Projekt bis dato ist (mit Raphael und dem Kunden abklären) kein "grüne Wiese Projekt"
+- Entwicklung im Unified Process (iterativ) 
+
+Raphael Rezaii-Djafari: (Kontakt: s80455@htw-dresden.de)
+-hat zuvor an dem Projekt gearbeitet (ehm. Teamleiter) und ist studentische Hilfskraft bei Kunde vermittelt zwischen Kunden und Team.
+- Kennt das Bestandssystem
+- Ist NICHT der Ansprechpartner für die Anforderungen an die Software! Dafür direkt Stabstelle ansprechen
+-das Umziehen der Datenbank von Access nach MySQL ist nicht nötig. Wird schon getan
+MySQL Datenbank funktioniert schon und kann als Dummy verwendet werden:
+- Meetings mit Auslandsamt können <<auf Anfrage>> aufgezeichnet werden.
+ 
+
+Beschluss:
+- Teamkommunikation über Discord Server ; Ansprechpartner: Luca Meißner
+- Hinweis: Nachrichten an bestimmte Personen des Teams auf Discord mittels "@name" taggen
+- Luca: Termin mit Themensteller/Kunden vereinbaren: 
+Themensteller Terminmöglichkeit 7-15 Uhr, Teilnehmer sollten Teamleiter und Analysten sein + alle die können
+Deadline für Alex nächste Woche Freitag.
+- Jakob: schreibt E-Mail an fehlenden Studenten Alex eine weitere Mail schreiben mit Herrn Anke in cc
+- Jedes Teammitglied: überlegt sich Fragen für den Kunden/Themensteller
+- Jedes Teammitglied überlegt sich wie viele Stunden pro Woche es für das Projekt investieren kann, um damit auf die Gesamtanzahl der Mannschstunden schließen zu können

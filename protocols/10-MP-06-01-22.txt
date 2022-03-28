@@ -1,0 +1,61 @@
+Meeting mit SI 6.1
+
+Anwesende
+Luca, Frau Terpe, Jakob, Jens, Frau Wunderlich, Nico, Pascal, Ha
+
+
+Agenda
+
+Unsere Agenda:
+1) Vorstellung von Layout Skizzen (Wireframes), welche werden gebraucht welche nicht.
+
+-Generell Rechtschreibung Wireframes
+- 1.Use Case Anmeldung durch User. 
+
+- 2.Hauptseite übersicht Hochschulen (es fehlt noch Spalte wie in letzem Meeting besprochen)
+Zusätzliche Filtermöglichketien auf Hauptseite:
+- in Interface fehlt die Filtermöglichkeit Programmbeauftragte:R. 
+Es wäre interessant nach allen Partnerschaften filtern zu können die von einer bestimmten Person betreut wurden
+- Spalten "Anzahl Verträge" sollte nie 0 sein. Anzeige von Anzahl aktiver und inaktiver Verträge. Mglw. Extraspalte aktive Verträge Verträge insgesamt (aktiv + inaktiv).
+
+- 3. Bearbeitungsfenster: Notizenfeld muss größer sein. Spalte für Mentorename soll größer sein.
+-Bevorzugte Studienrichtung fehlt für Incoming und Outgoing  (Studiengang) . Insebsondere bei Outgoing Studierenden soll bevorzugter Studienganng zu sehen sein.
+- Bei erstellung einer neuen Hochschule MUSS Vertragstyp angegeben werden
+- Hochschuleanlegen vertragstyp angeben ist Pflicht! 
+Vertragstyp Kein Vertrag: FreeMover; Kontakt
+
+
+
+
+2) Besprechung von Fragen:
+- Welche Bericht sind zu erstellen. Was soll deren Inhalt sein. In welchem Format sollen sie erscheinen (Excel, PDF,...)
+Kein Access Datenbank. Frau Terbe bittet ShK alte anfragen an uns zu schicken oder wir Fragen Raphael nach den alten Abfragen.
+Bzw Raphael selbst fragen wenn innerhalb einer halben woche nichts kommt
+
+
+- Wie genau sollen Studentendaten Aufgenommen werden, da dies Rechtliche Einschränkungen nach sich zieht.
+Mit Raphael besprechen für Relevanz: Am ende Studiernend als Zahl in best Studiengeang in Fak. xy bei Partnerhochschule
+
+- Sollen Mentoren anlegbar, löschbar und anzeigbar sein?  -> Wie oft wechseln Mentoren. (wird evtl schon bei (1) besprochen)
+Ja, sollen anlegbar und löschbar sein. Falls Mentor in Ruhestand geht oder Hochschule wechselt, wird alter Mentor durch neuen Mentor ersetzt. Alter Mentor kann gelöscht werden. (relativ hohe Prio)
+Auch mehrer Mentoren pro Vertrag
+
+
+3) evtl Verifzierung von Use Cases
+
+
+4) Lost updates verhindern (im Multiuser mode). 
+Es kommt gar nicht vor, dass zwei Mitarbeiter gleichzeitig Unis bearbeiten. Es kann also die Datenbank blockiert werden, wenn eine Mitarbeiter:Inn im Berarbeitungsmodus ist
+
+
+Wunsch:
+    
+TODO 
+- Eineitliche Rechtschreibung in Wireframes
+Mit Raphael:
+- AccesDaten Bank Copie
+- Berichte
+- Details Outgoing welche Studiengänge
+
+- (sehr niedrige Prio)Studienplätze mit Studien oder ohne Studiengebühren Anzeigen und erfassen (wenn ja wie hoch)
+- In Zukunft zu präsentierende Unterlagen vorher an SI schicken.

@@ -1,0 +1,47 @@
+Meeting Protokoll 2.12.2021: 
+1) Vorstellung
+2) Anforderungen aus Nutzersicht (schwer Punkt)
+3) Briefing aktuelle Lage Datenbank und Fronten (evtl. im extra Treffen mit Ihrer SHK)
+4) nächsten Termin vereinbaren bzw. regelmäßige Termine finden
+
+1)
+- nächstes mal bbb
+
+2)
+- zuerst Acces, jetzt soll in Web Datenbank
+- verwaltung 
+- auch für statistiken-> bericht erstellen (Software, extra riter, wo parametriesierte abfragen möglich)
+- 
+
+-aktuell Probleme:
+- Daten nicht lösch bar -> keine konsitenz, integrität möglich
+- momentan wegen referentieller integrität nicht löschber
+- intuitiv nutzbar, eindeutige benenung
+- vertrag für Fakultät aber bei manchen Unis können nur bestimmte Studiengänge 
+-Fkt:
+- export view auf HTW seite kann genutzt werden (schnittstelle anpassen)
+- zugang hinter login (-> bis jetzt nur HTW VPN)
+- schnittestelle zu web front end für anmeldeformular
+- Wunsch: anlegen von Studenten (-> Datenschutz?), import vonPersonen  Excel Daten (?)
+- daten auf HTW Webs. schon in MySQL/MarieaDB
+- 1 ansprechperson ist in DB muss aber nicht implementiert werden (Fragen)
+- Mentoren erstellen (kein Zugriif auf Mentoren DB)
+- Hacken für Anzeigen auf HTW Seite
+- akktueller Login, ist Datenbank Login
+
+3)
+- phpmyadmin
+-  git repo (durcharbeiten)
+- wird auf www2 Server gehosted
+- Code nicht als keine Code basis nehmen (nochmal neu bauen
+- model view presenter , model view ...
+- länder nicht löschen, ändern(niedirg priorisiert) genauso Fakultäten
+
+Tipps:
+-prioriseren, Bauen, Testen
+
+
+4)
+-Termine: mit Raphael und Lisa, fester Termin aller 2 Wochen
+- Montag Termin aller 2 Wochen
+
