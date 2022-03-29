@@ -1,23 +1,44 @@
-/*
+<!--
 # Vorlage Projektstruktur & OpenUP-Templates
-
 Das Repository enthält die Vorlage einer Projektstruktur und Template-Dokumente im AsciiDoc-Format. Dies wird für die Bearbeitung der Belegarbeit in Software Engineering I und II benötigt. Im Detail wären dies:
 
 - Projektstruktur anhand der Work Products im OpenUP
 - Templates der benötigten OpenUP-Dokumente (AsciiDoc-Format)
 - Vorlage für die Belegabgabe in SE I (AsciiDoc-Format)
+-->
 
+# Arbeitsweise und Hinweise des SE-Projekt-I3
 
+Dieses Dokument enthält die allgemiene Arbeitsweise die seit SE II gilt, damit eine effektive Arbeitsweise 
+etabliert und für mehr transparenz in der Projektarbeit gesorgt wird. Es ist daher wichtig, dass jedes Teammitglied sich an diese Abmachungen hält!
+Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Template aus SE I.
 
 **Inhaltsverzeichnis**
-- [Projektstruktur](#projektstruktur)
+- [Meetings](#meetings)
+- [Protokolle](#protokolle)
+- [Dokumentierung](#dokumentierung)
+- [Iterationen](#iterationen)
+- [Dateistruktur](#dateistruktur)
 - [Unified Process - Templates](#unified-process---templates)
 - [Hinweise zu AsciiDoc](#hinweise-zu-asciidoc)
 - [Belegabgabe in SE I](#belegabgabe-in-se-i)
 - [Lizenz](#lizenz)
 
+## Meetings
+### Agenda
+**VOR** jedem Meeting sind folgende Dinge zu tun: 
+* in dem Chat "offene-fragen-und-agenda" sind die gewünschten Gesprächsthemen zu posten 
 
-## Projektstruktur
+## Protokolle
+
+## Dokumentierung
+
+## Iteration
+### ToDo's
+
+## Dateistruktur
+**Alle Dateien die im Bezug zu dem Projekt stehen müssen in das Repository**
+
 Die Projektstruktur im Verzeichnis **docs** orientiert sich an den <ins>Work Products</ins> im OpenUP und den für die <ins>Abgabe im SE 1 Beleg</ins> geforderten Dokumenten.
 
 ```
@@ -142,4 +163,3 @@ Folgende Schritte sind für eine Belegabgabe durchzuführen:
 
 ## Lizenz
 Sämtliche Inhalte dieses Repositories unterliegen der [CC-BY-4.0](https://choosealicense.com/licenses/cc-by-4.0/) Lizenz.
-*/
