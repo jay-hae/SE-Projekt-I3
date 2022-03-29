@@ -240,9 +240,9 @@ def return_countries():
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     cur.execute('SELECT de, en, erasmus FROM tbl_country')
-    x = cur.fetchall()
+    rows = cur.fetchall() # zusammenfassen aller Objekte der Datenbankanfrage
     payload = []
-    for row in x:
+    for row in rows:
         content = {
             'de': row[0],
             'en': row[1],

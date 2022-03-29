@@ -26,7 +26,7 @@ def LoginPage():
         if "usr" in session:
             return redirect(url_for('sql'))
         else:
-            return render_template('index.html')
+            return render_template('login.html')
     else:
         session["usr"] = Login.LoginDB(request.form["usr"], request.form["pwd"])
         return redirect(url_for('sql'))
@@ -34,7 +34,7 @@ def LoginPage():
 
 
 # return of filter objects
-""""@app.route('/get/<name>', methods=['GET'])
+@app.route('/get/<name>', methods=['GET'])
 def load_filter(name):
     if name == 'institutes':
         return Querries.institutes_ret()
@@ -42,37 +42,10 @@ def load_filter(name):
         return Querries.ag_type_ret()
     elif name == 'countries':
         return Querries.all_countries()
-    elif name == 'fac':
-        return Querries.faculty()
-    else: return None"""
-
-
-@app.route('/getInstitutes', methods=['GET'])
-def ret_inst():
-    return Querries.institutes_ret()
-
-
-@app.route('/getAgreement', methods=['GET'])
-def ret_type():
-    return Querries.ag_type_ret()
-
-
-# DB call load all countries
-@app.route('/loadCountries', methods=['GET'])
-def ret_countries():
-    if "usr" in session:
-        return Querries.all_countries()
-    else:
-        return redirect(url_for('LoginPage'))
-
-
-# DB call load faculties
-@app.route('/loadFac', methods=['GET'])
-def ret_fac():
-    if "usr" in session:
+    elif name == 'faculties':
         return Querries.faculty()
     else:
-        redirect(url_for('LoginPage'))
+        return None
 
 
 # get data needed for modal
@@ -158,10 +131,10 @@ def hp_file(name):
     elif name == 'faculties':
         return render_template('faculty.html')
     elif name == 'institutes':
-        return render_template('universities.html')
+        return render_template('institutes.html')
 
 
-@app.route('/loader/<name>', methods=['GET', 'POST'])
+@app.route('/loader/<name>', methods=['GET', 'POST']) # <name> : URL-Parameter kann übergeben
 def ret_js(name):
     if name == 'mentor':
         return Querries.return_mentor()

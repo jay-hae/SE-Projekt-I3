@@ -18,7 +18,7 @@ function addFilterChangeEvents(){
         event.preventDefault();
         //kill all child elements created by loadInstitutes to clear page for reload child
         $('#addItems').empty();
-        loadStartpage();
+        loadAll();
         $('#filter_form').trigger('reset');
     });
 }

@@ -1,20 +1,13 @@
-function loadStartpage(){
-    $.get('/getInstitutes', function (data) {
-        // load institutes from database
-        insertData(data);
-    });
-}
-
 function insertData(data) {
     $('#addItems').empty();
     let order_clause = data[1];
-    sort = order_clause['sorting'];
+    let sort = order_clause['sorting'];
     let my_data = data[0];
     $.each(my_data, function (index){
-        now = my_data[index];
+        let now = my_data[index];
         //check if Institute is displayed on extern website
         let x = now['display'];
-        if (x == 0){
+        if (x === 0){
             x = 'Nein'
         }
         else {
@@ -28,16 +21,4 @@ function insertData(data) {
         }
     });
     add_button_event();
-}
-
-function add_button_event(){
-    $(" .my_btn").on('click', function () {   //event triggerd on 'click'
-        let entry = $(this).parent(); //get <th> where button is located in
-        let my_row = entry.parent(); //get <tr> --> row
-        let col = my_row[0].children; //extract <th> where id is inside
-        let id = col[0].innerHTML; // get ID of institute
-        //in file "Modal_edit.js"
-        loadAgreements(id);
-        loadModal(id);
-    });
 }
