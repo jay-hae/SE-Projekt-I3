@@ -5,7 +5,7 @@ Den hier formulierten Regeln ist bitte unbedingt folge zuleisten, damit eine bes
 Bei Änderungswünschen bitte an den Regelverantwortlichen wenden oder im Teammeeting den Wunsch ansprechen.
 
 === Regelverantwortlicher
-Jakob Häcker
+"Jakob Häcker"
 
 == Dateien
 Alle Dateien die mit dem Projekt in Beziehung stehen werden bitte in das GitHub Repo aufgenommen.
