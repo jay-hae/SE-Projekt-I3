@@ -1,0 +1,4 @@
+= Arbeitsorganisations Log: {project-name}
+
+* 28.3 Debatte über Problem im Team
+* 29.3 beginn vom Notieren von Arbeitsweisen in README.md

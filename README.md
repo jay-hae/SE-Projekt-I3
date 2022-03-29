@@ -30,11 +30,30 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
 * in dem Chat "offene-fragen-und-agenda" sind die gewünschten Gesprächsthemen zu posten 
 
 ## Protokolle
+* Zu jedem Meeting ist ein Protokoll zu führen.
+* VOR jedem Meeting wird ein Protokollverantwortlicher festgelegt. Dessen Aufgaben sind:
+    * Archivierung des Protokolls in den GitHub Ordner protocol als txt (einfache Kopie des PentaPad's)
+    * Gewärleistung, dass die Protokolle verständlich formuliert sind
+    * die ToDos nach dem Meeting als Issue eintragen
+    * dafür sorgen, dass das Protokoll nicht alleine geschreiben wird
+* Was muss in das Protokoll:
+    * Thema/Anlass
+    * Datum
+    * Protokollverantwortliche
+    * Anwesende
+    * besprochene Punkte (wenn möglich Hauptthemen durchnummerieren)
 
 ## Dokumentierung
+(alle Pfade beziehen sich auf docs/)
+
+**JEDE** Entscheidung: 
+* der Implementation ist in implementation_log.adoc mit Dautm und kurzer Beschreibung fest zuhlaten. Dies muss spätestens am Ende einer Arbeitsphase (kurz nach einem Commit geschehen).
+* der Änderung an Arbeitsorganisation ist in workflow_log.adoc mit Datum und kurzer Beschreibung fest zu halten.
 
 ## Iteration
-### ToDo's
+* eine Iteration dauert 2 Wochen
+* Aufgaben für die jeweilige Iteration sind als Issue formuliert oder in project_management/Iterationen.xlsx notiert
+
 
 ## Dateistruktur
 **Alle Dateien die im Bezug zu dem Projekt stehen müssen in das Repository**

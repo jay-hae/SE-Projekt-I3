@@ -124,3 +124,4 @@ Für die Darstellung wird generell eine Mischung aus HTML, CSS und Javascript ge
 Die Liste von Hochschulen, Ländern, Vertragstypen etc. werden beim Laden der Seite durch Javascript-Skripte geladen.
 
 Das Bearbeitungsformular wird als neues Fenster über dem Inhalt der Seite dargestellt. Dieses ist am Anfang des Seitenaufrufs versteckt und wird nur angezeigt, wenn der Bearbeiten- oder Erstellen-Button betätigt wurde.
+
