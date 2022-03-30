@@ -18,17 +18,16 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
 
-*SWFA-1: Das System muss mit der bereits bestehenden Datenbankstruktur funktionieren.*
 
-*SWFA-2: Das System muss alle Hochschulpartnerschaften und Statistiken persistent speichern.*
+*SWFA-1: Das System muss alle Hochschulpartnerschaften und Statistiken persistent speichern.*
 
 ** Zur Überprüfung wird die Seite neu geladen.
 
-*SWFA-3: Nur autorisierte Mitarbeiter des Akademischen Auslandsamtes dürfen Zugriff auf das Verwaltungsfrontend haben.*
+*SWFA-2: Nur autorisierte Mitarbeiter des Akademischen Auslandsamtes dürfen Zugriff auf das Verwaltungsfrontend haben.*
 
 ** Zur Überprüfung wird versucht von außerhalb des HTW-Netzes auf das Verwaltungsfrontend zu zugreifen. Weiterhin werden falsche Login-Daten getestet.
 
-*SWFA-4: Das Interface des Systems ist je nach Nutzer unterschiedlich. Einige Funktionen können nur von bestimmten Nutzern durchgeführt werden.*
+*SWFA-3: Das Interface des Systems ist je nach Nutzer unterschiedlich. Einige Funktionen können nur von bestimmten Nutzern durchgeführt werden.*
 
 ** Zur Überprüfung wird sich mit 2 Accounts angemeldet welche verschiedene Rechte haben, daraufhin wird die Funktionsvielfalt innerhalb der Verwaltungsanwendung verglichen
 
@@ -88,6 +87,9 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 * Das Verwaltungsfrontend muss auf den Rechnern der Stabstelle Internationales lauffähig sein.
 ** Windows 10 mit den Browsern Edge, Firefox und Chrome
+
+* Das System muss mit der bereits bestehenden Datenbankstruktur funktionieren.
+
 
 //* Ressourcenbegrenzungen
 //* zu nutzende Komponenten / Bibliotheken / Frameworks
