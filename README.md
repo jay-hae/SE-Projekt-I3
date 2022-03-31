@@ -59,6 +59,11 @@ Diese Meetings finden (vorerst) alle 2 Wochen statt.
     * Anwesende
     * besprochene Punkte (wenn möglich Hauptthemen durchnummerieren)
 
+### Retrospektive
+Die Retrospektive findet aller 2 Wochen statt und dient der Anpassung unsere Arbeitweis bzw. zum klären von Problem oder um eine Gelegenheit zu bieten, "Gut gemacht" zu sagen.
+Es wird das Tool [EasyRetro](https://easyretro.io/) verwendet, bei dem ich mich angemeldet habe.
+Ihr braucht euch stand meines Wissens nicht anzumelden.
+
 ## Subteams
 Ein Subteam ist eine Arbeitsgruppe die sich zur Bearbeitung eines Issues / Work Items zusammen gefunden hat.
 Jedes Subteam macht sich einen Verantwortlichen aus, der dafür sorgt, dass der Fortschritt/Rückschlag/Änderung in der Datei fortschritt.adoc (im Root verzeichnis des Projekts auf Git) festgehlaten wird.
@@ -80,6 +85,8 @@ Die Dokumente sind spätestens zum Ende einer Arbeitsphase (nach abschluss der A
 ## Kritik an der Arbeitsorganisation
 Die hier verfassten Punkte können sich je nach der praktischen Erprobung ändern.
 Dafür ist in der Retrospektive unter dem Punkt "Was hat uns zurück gehalten" eine Begründete Kritik anzubringen, welche dann diskutiert werden kann.
+Falls akuter Änderungsbedarf besteht, ist eine einstimmige Abstimmung, von nöten oder ich werde von der Sinnlosigkeit der Regeln überzeugt.
+
 
 ## Dateistruktur
 **Alle Dateien die im Bezug zu dem Projekt stehen müssen in das Repository**
