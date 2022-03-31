@@ -55,7 +55,7 @@ Zur Unterstützung einer effizienten Bedienbarkeit wurde sich beim Design des In
 .. Ein Teammitglied hat Vorkenntnisse in der Webentwicklung mittles Python und JavaScript (jQuery)
 .. Ein Teammitglied hat Vorkenntnisse in der Webentwicklung mittles HTML, CSS (Bootstrap)
 . Abhängigkeit von Funktionsfähigkeit und Pflege der eingesetzten Frameworks und externen Komponenten
-.. Die genutzten Frameworks (Flask, jQuery) müssen von Hersteller regelmäßig geplegt werden.
+.. Die genutzten Frameworks (Flask, jQuery) müssen von Hersteller regelmäßig gepflegt werden.
 
 == Architektur-relevante Anforderungen
 
@@ -97,7 +97,7 @@ Es wurde sich in diesem Fall für Python entschieden, da durch das Framework 'Fl
 === Datenbank MariaDB 
 ** Einfache Bereitstellung durch das Rechenzentrum der HTW Dresden
 ** Guter Zugriffsschutz und Backups auf deren Servern
-** MySQL ähnlich zu MSSQL, mit dem einige Gruppenmitglieder schon Erfahrung haben
+** MySQL ähnlich zu MS SQL, mit dem einige Gruppenmitglieder schon Erfahrung haben
 ** Administration mithilfe von phpMyAdmin
 *** Erstellung von Datenbankobjekten
 *** Ändern von Datensätzen außerhalb des Verwaltungsfrontends
@@ -122,10 +122,10 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 === Sicherheit
 
-Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung zu schützen.
-Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden (SWFA-2).
+Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung, durch die einzige Möglichkeit der Erreichbarkeit innerhalb des HTW Netzes, zu schützen.
+Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden (SWFA-3).
 Derzeit wird noch die Logik der Vorgruppe verfolgt den Zugriffschutz über einen Datenbankaccount zu ermöglichen.
-Durch die Anforderung SWFA-3 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren.
+Durch die Anforderung SWFA-4 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren.
 Es wird eine Serverseitige Unterscheidung zwischen den Mitarbeitern benötigt.
 
 === Persistente Daten
@@ -184,7 +184,7 @@ Folgende Sichten auf die Architektur werden empfohlen:
 //Beschreibt die Struktur und das Verhalten Systemteilen, die hohen Einfluss auf die Architektur haben. Dies kann die Paketstruktur, kritische Schnittstellen, wichtige Klassen und Subsysteme sowie die Beziehungen zwischen diesen Elementen enthalten. Zudem sollten die physische und logische Sicht persistenter Daten beschrieben werden, wenn es diesen Aspekt im System gibt. Dies ist ein hier dokumentierter Teilaspekt des Entwurfs
 Das Bild beschreibt unseren bisherigen Stand der logischen Sicht auf unser System.
 
-image::C4_lvl1.PNG[]
+image::images/C4_lvl1.png[]
 
 === Physische Sicht (Betriebssicht)
 
