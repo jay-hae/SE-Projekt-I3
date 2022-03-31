@@ -123,14 +123,14 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 === Sicherheit
 
 Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung, durch die einzige Möglichkeit der Erreichbarkeit innerhalb des HTW Netzes, zu schützen.
-Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden (SWFA-3).
+Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden (SWFA-2).
 Derzeit wird noch die Logik der Vorgruppe verfolgt den Zugriffschutz über einen Datenbankaccount zu ermöglichen.
-Durch die Anforderung SWFA-4 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren.
+Durch die Anforderung SWFA-3 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren.
 Es wird eine Serverseitige Unterscheidung zwischen den Mitarbeitern benötigt.
 
 === Persistente Daten
 
-Die Anforderung (SWFA-2) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. 
+Die Anforderung (SWFA-1) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. 
 Uns blieb, aufgrund einiger Vorgaben, nichts anderes übrig als das bestehende Datenbankmodell zu übernehmen. 
 Die Entscheidung wurde von Vorgängern getroffen, somit verwenden wir eine MariaDB welche vom Rechenzentrum gehostet wird.
 
