@@ -1,0 +1,12 @@
+== Fortschrit: {project-name}
+=== Zweck
+Hier wird der Fortschritt bzw. die Rückschläge der Subteams oder einzelner Personen fest gehalten.
+Das Dokument dient dem Zweck eine bessere Transparenz zu schaffen und die Meetingzeit zu verkürze, in dem jedes Teammitglied dazu verpflichte ist sich die Neuerungen dieses Dokumentes durch zulesen.
+
+=== Fortschritts Log
+In den Folgenden Punkten wird jedeglich kurz und kanapp benannt was erreicht wurde und was nicht.
+Dazu ist ggf. der Grund einer Änderung zu schildern und/oder zu benennen was die informative Grundlage dieser Änderung war. (zB. "das Desgin des Hochschul-Dateneingabe-Fensters wurde von der Vorgruppe übernommen" oder "der Fortschritt Log war ein Tipp von Herrn Ringel")
+
+
+* von Jakob am 31.03: es wurde eine Log-Datei für den Fortschritt angelegt, damit sich jeder vor den Teammeetings auf den aktuellen Projektstand bringen kann und dieser in den Meetings nicht mehr besprochen werden muss
+* von Jakob am 31.03: in der README.md wurden Informationen zum Iterations-Ablauf, zur Meeting-Kultur, zu Protokollregelen, zu Dokumentationsregeln verfasst

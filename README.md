@@ -18,6 +18,7 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
 - [Protokolle](#protokolle)
 - [Dokumentierung](#dokumentierung)
 - [Iterationen](#iterationen)
+- [Kritik an der Arbeitsorga](#kritik_an_der_arbeitsorganisation)
 - [Dateistruktur](#dateistruktur)
 - [Unified Process - Templates](#unified-process---templates)
 - [Hinweise zu AsciiDoc](#hinweise-zu-asciidoc)
@@ -25,11 +26,25 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
 - [Lizenz](#lizenz)
 
 ## Meetings
-### Agenda
-**VOR** jedem Meeting sind folgende Dinge zu tun: 
-* in dem Chat "offene-fragen-und-agenda" sind die gewünschten Gesprächsthemen zu posten 
 
-## Protokolle
+### Agenda
+**VOR** jedem Meeting sind folgende Dinge, in Bezug auf die Agenda, zu tun: 
+* in dem Chat "offene-fragen-und-agenda" sind die gewünschten Gesprächsthemen zu posten 
+* Gesprächswunsch template: \[Meeting Art(zB. Teammeeting)\] \[Datum (falls bekannt, siehe Chat "termine")\] TOP: (zB. Planung nächstes SI Meeting) 
+* Vom Protokollverantwortlichen sind die Punkte aus dem Chat als TOP's (Topics) in das Protokoll zu übernehmen
+    * von allen ist während des Meetings darauf zu achten, dass die Reihenfolge der TOP's eingehlaten wird bzw. eine Idee zu einem späteren TOP schriftlich (ohne Diskussion) festgehalten wird
+    * neue, in dem Gespräch aufkommende TOP's sind  
+
+### Teammeeting
+Es folgt der generelle Ablauf eines Teammeetings:
+* Begrüßung / Ankunft
+* Besprechung des aktuellen Arbeitsstandes (Was wurde in den Subteams erreicht, was nicht)
+
+### SI Meeting
+Diese Meetings finden (vorerst) alle 2 Wochen statt.
+* Grund: war letztes Semester auch so
+
+### Protokolle
 * Zu jedem Meeting ist ein Protokoll zu führen.
 * VOR jedem Meeting wird ein Protokollverantwortlicher festgelegt. Dessen Aufgaben sind:
     * Archivierung des Protokolls in den GitHub Ordner protocol als txt (einfache Kopie des PentaPad's)
@@ -37,23 +52,33 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
     * die ToDos nach dem Meeting als Issue eintragen
     * dafür sorgen, dass das Protokoll nicht alleine geschreiben wird
 * Was muss in das Protokoll:
-    * Thema/Anlass
+    * Thema/Anlass (Teammeeting, SI Meeting, Meeting mit Herrn Ringel)
     * Datum
     * Protokollverantwortliche
     * Anwesende
     * besprochene Punkte (wenn möglich Hauptthemen durchnummerieren)
 
-## Dokumentierung
-(alle Pfade beziehen sich auf docs/)
+## Subteams
+Ein Subteam ist eine Arbeitsgruppe die sich zur Bearbeitung eines Issues / Work Items zusammen gefunden hat.
+Jedes Subteam macht sich einen Verantwortlichen aus, der dafür sorgt, dass der Fortschritt/Rückschlag/Änderung in der Datei fortschritt.adoc (im Root verzeichnis des Projekts auf Git) festgehlaten wird.
+Beispiele finden sich in der Datei.
 
-**JEDE** Entscheidung: 
-* der Implementation ist in implementation_log.adoc mit Dautm und kurzer Beschreibung fest zuhlaten. Dies muss spätestens am Ende einer Arbeitsphase (kurz nach einem Commit geschehen).
-* der Änderung an Arbeitsorganisation ist in workflow_log.adoc mit Datum und kurzer Beschreibung fest zu halten.
+## Dokumentierung
+Jeder muss sich bewusst sein, welche Dokumente in der [Dateistruktur](#dateistruktur), von seiner gerade zu erledigenden Aufgabe beeinflusst werden.
+Ist dies nicht der Fall sind die Dokumente zu dem Themengebiet durch zu gehen und zu prüfen wo sich Änderungen in den Dokumenten ergeben könnten oder es ist im [OpenUP](https://www2.htw-dresden.de/~anke/openup/index.htm) unter "Work Products" nachzulesen was gemacht werden muss.
+
+Die Dokumente sind spätestens zum Ende einer Arbeitsphase (nach abschluss der Aufgabe) zu updaten.
 
 ## Iteration
-* eine Iteration dauert 2 Wochen
+* eine Iteration dauert 1 Wochen (erstmal nur Vorschlag)
+    * Grund: Regelmäßiges Treffen am Montag zu dem alle können, bessere Planbarkeit, kleinere Meilensteine zu jedem nächsten Montag
+    * Dadurch kann Retropsektive jede Woche statt finden und sich die benötigte Zeit dafür insgesamt Verkürzen.
+
 * Aufgaben für die jeweilige Iteration sind als Issue formuliert oder in project_management/Iterationen.xlsx notiert
 
+## Kritik an der Arbeitsorganisation
+Die hier verfassten Punkte können sich je nach der praktischen Erprobung ändern.
+Dafür ist in der Retrospektive unter dem Punkt "Was hat uns zurück gehalten" eine Begründete Kritik anzubringen, welche dann diskutiert werden kann.
 
 ## Dateistruktur
 **Alle Dateien die im Bezug zu dem Projekt stehen müssen in das Repository**
@@ -122,6 +147,13 @@ requirements
 // vision.adoc
 image::example.jpg[Beispielbild]
 ```
+## Hilfe
+Wenn unklar ist wie man sich einer Aufgabe nähern soll gibt es hier ein paar Hinweise:
+* wurde das Thema in der Vorlesung behandelt? (Vorlesungsscripte mit Schlagwort oder das Inhaltsverzeichnis durch suchen)
+* gibt es Hinweise im [OpenUP](https://www2.htw-dresden.de/~anke/openup/index.htm) ?
+* schon mal den Aufgabengegenstand gegooglet?
+* Teammitglieder fragen oder Personen aus anderen Teams mit gleicher Rolle fragen
+* Herrn Ringel, Herrn Anke oder Herrn Zirkelbach fragen
 
 
 ## Belegabgabe in SE I
