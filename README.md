@@ -20,6 +20,7 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
 - [Iterationen](#iterationen)
 - [Kritik an der Arbeitsorga](#kritik_an_der_arbeitsorganisation)
 - [Dateistruktur](#dateistruktur)
+- [Hilfe](#hilfe)
 - [Unified Process - Templates](#unified-process---templates)
 - [Hinweise zu AsciiDoc](#hinweise-zu-asciidoc)
 - [Belegabgabe in SE I](#belegabgabe-in-se-i)
@@ -109,6 +110,13 @@ docs
     └── test_cases.adoc
 ```
 
+## Hilfe
+Wenn unklar ist wie man sich einer Aufgabe nähern soll gibt es hier ein paar Hinweise:
+* wurde das Thema in der Vorlesung behandelt? (Vorlesungsscripte mit Schlagwort oder das Inhaltsverzeichnis durch suchen)
+* gibt es Hinweise im [OpenUP](https://www2.htw-dresden.de/~anke/openup/index.htm) ?
+* schon mal den Aufgabengegenstand gegooglet?
+* Teammitglieder fragen oder Personen aus anderen Teams mit gleicher Rolle fragen
+* Herrn Ringel, Herrn Anke oder Herrn Zirkelbach fragen
 
 ## Unified Process - Templates
 Dieses Repositority enthält Vorlagen im AsciiDoc-Format für die Arbeit mit dem Open Unified Process. Die Vorlagen basieren auf den Templates der offiziellen OpenUP Dokumentation in der Version 1.5x aus dem Eclipse Process Framework (EPF) und wurden bis auf geringe inhaltliche / strukturelle Anpassungen lediglich auf deutsch übersetzt.
@@ -147,14 +155,6 @@ requirements
 // vision.adoc
 image::example.jpg[Beispielbild]
 ```
-## Hilfe
-Wenn unklar ist wie man sich einer Aufgabe nähern soll gibt es hier ein paar Hinweise:
-* wurde das Thema in der Vorlesung behandelt? (Vorlesungsscripte mit Schlagwort oder das Inhaltsverzeichnis durch suchen)
-* gibt es Hinweise im [OpenUP](https://www2.htw-dresden.de/~anke/openup/index.htm) ?
-* schon mal den Aufgabengegenstand gegooglet?
-* Teammitglieder fragen oder Personen aus anderen Teams mit gleicher Rolle fragen
-* Herrn Ringel, Herrn Anke oder Herrn Zirkelbach fragen
-
 
 ## Belegabgabe in SE I
 
