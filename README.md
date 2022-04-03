@@ -9,8 +9,8 @@ Das Repository enthält die Vorlage einer Projektstruktur und Template-Dokumente
 
 # Arbeitsweise und Hinweise des SE-Projekt-I3
 
-Dieses Dokument enthält die allgemiene Arbeitsweise die seit SE II gilt, damit eine effektive Arbeitsweise 
-etabliert und für mehr transparenz in der Projektarbeit gesorgt wird. Es ist daher wichtig, dass jedes Teammitglied sich an diese Abmachungen hält!
+Dieses Dokument enthält die allgemeine Arbeitsweise, die seit SE II gilt, damit eine effektive Arbeitsweise 
+etabliert und für mehr Transparenz in der Projektarbeit gesorgt wird. Es ist daher wichtig, dass jedes Teammitglied sich an diese Abmachungen hält!
 Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Template aus SE I.
 
 **Inhaltsverzeichnis**
@@ -31,9 +31,9 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
 ### Agenda
 **VOR** jedem Meeting sind folgende Dinge, in Bezug auf die Agenda, zu tun: 
 * in dem Chat "offene-fragen-und-agenda" sind die gewünschten Gesprächsthemen zu posten 
-* Gesprächswunsch template: \[Meeting Art(zB. Teammeeting)\] \[Datum (falls bekannt, siehe Chat "termine")\] TOP: (zB. Planung nächstes SI Meeting) 
-* Vom Protokollverantwortlichen sind die Punkte aus dem Chat als TOP's (Topics) in das Protokoll zu übernehmen
-    * von allen ist während des Meetings darauf zu achten, dass die Reihenfolge der TOP's eingehlaten wird bzw. eine Idee zu einem späteren TOP schriftlich (ohne Diskussion) festgehalten wird
+* Gesprächswunsch Template: \[Meeting Art(zB. Teammeeting)\] \[Datum (falls bekannt, siehe Chat "termine")\] TOP: (zB. Planung nächstes SI Meeting) 
+* Vom Protokollverantwortlichen sind die Punkte aus dem Chat als TOP's (Tagesordnungspunkte) in das Protokoll zu übernehmen
+    * von allen ist während des Meetings darauf zu achten, dass die Reihenfolge der TOP's eingehalten wird bzw. eine Idee zu einem späteren TOP schriftlich (ohne Diskussion) festgehalten wird
     * neue, in dem Gespräch aufkommende TOP's sind  
 
 ### Teammeeting
@@ -48,8 +48,8 @@ Diese Meetings finden (vorerst) alle 2 Wochen statt.
 ### Protokolle
 * Zu jedem Meeting ist ein Protokoll zu führen.
 * VOR jedem Meeting wird ein Protokollverantwortlicher festgelegt. Dessen Aufgaben sind:
-    * Archivierung des Protokolls in den GitHub Ordner protocol als txt (einfache Kopie des PentaPad's)
-    * Gewärleistung, dass die Protokolle verständlich formuliert sind
+    * Archivierung des Protokolls in den GitHub Ordner protocol als .txt (einfache Kopie des PentaPad's)
+    * Gewährleistung, dass die Protokolle verständlich formuliert sind
     * die ToDos nach dem Meeting als Issue eintragen
     * dafür sorgen, dass das Protokoll nicht alleine geschreiben wird
 * Was muss in das Protokoll:
@@ -60,31 +60,31 @@ Diese Meetings finden (vorerst) alle 2 Wochen statt.
     * besprochene Punkte (wenn möglich Hauptthemen durchnummerieren)
 
 ### Retrospektive
-Die Retrospektive findet aller 2 Wochen statt und dient der Anpassung unsere Arbeitweis bzw. zum klären von Problem oder um eine Gelegenheit zu bieten, "Gut gemacht" zu sagen.
+Die Retrospektive findet aller 2 Wochen statt und dient der Anpassung unserer Arbeitweise bzw. zum Klären von Problemen oder um eine Gelegenheit zu bieten, "Gut gemacht" zu sagen.
 Es wird das Tool [EasyRetro](https://easyretro.io/) verwendet, bei dem ich mich angemeldet habe.
 Ihr braucht euch stand meines Wissens nicht anzumelden.
 
 ## Subteams
 Ein Subteam ist eine Arbeitsgruppe die sich zur Bearbeitung eines Issues / Work Items zusammen gefunden hat.
-Jedes Subteam macht sich einen Verantwortlichen aus, der dafür sorgt, dass der Fortschritt/Rückschlag/Änderung in der Datei fortschritt.adoc (im Root verzeichnis des Projekts auf Git) festgehlaten wird.
+Jedes Subteam macht sich einen Verantwortlichen aus, der dafür sorgt, dass der Fortschritt/Rückschlag/Änderung in der Datei fortschritt.adoc (im Root Verzeichnis des Projekts auf Git) festgehalten wird.
 Beispiele finden sich in der Datei.
 
 ## Dokumentierung
 Jeder muss sich bewusst sein, welche Dokumente in der [Dateistruktur](#dateistruktur), von seiner gerade zu erledigenden Aufgabe beeinflusst werden.
-Ist dies nicht der Fall sind die Dokumente zu dem Themengebiet durch zu gehen und zu prüfen wo sich Änderungen in den Dokumenten ergeben könnten oder es ist im [OpenUP](https://www2.htw-dresden.de/~anke/openup/index.htm) unter "Work Products" nachzulesen was gemacht werden muss.
+Ist dies nicht der Fall sind die Dokumente zu dem Themengebiet durchzugehen und zu prüfen wo sich Änderungen in den Dokumenten ergeben könnten oder es ist im [OpenUP](https://www2.htw-dresden.de/~anke/openup/index.htm) unter "Work Products" nachzulesen was gemacht werden muss.
 
-Die Dokumente sind spätestens zum Ende einer Arbeitsphase (nach abschluss der Aufgabe) zu updaten.
+Die Dokumente sind spätestens zum Ende einer Arbeitsphase (nach Abschluss der Aufgabe) upzudaten.
 
 ## Iteration
 * eine Iteration dauert 1 Wochen (erstmal nur Vorschlag)
     * Grund: Regelmäßiges Treffen am Montag zu dem alle können, bessere Planbarkeit, kleinere Meilensteine zu jedem nächsten Montag
-    * Dadurch kann Retropsektive jede Woche statt finden und sich die benötigte Zeit dafür insgesamt Verkürzen.
+    * Dadurch kann Retrospektive jede Woche statt finden und sich die benötigte Zeit dafür insgesamt Verkürzen.
 
 * Aufgaben für die jeweilige Iteration sind als Issue formuliert oder in project_management/Iterationen.xlsx notiert
 
 ## Kritik an der Arbeitsorganisation
 Die hier verfassten Punkte können sich je nach der praktischen Erprobung ändern.
-Dafür ist in der Retrospektive unter dem Punkt "Was hat uns zurück gehalten" eine Begründete Kritik anzubringen, welche dann diskutiert werden kann.
+Dafür ist in der Retrospektive unter dem Punkt "Was hat uns zurückgehalten" eine begründete Kritik anzubringen, welche dann diskutiert werden kann.
 Falls akuter Änderungsbedarf besteht, ist eine einstimmige Abstimmung, von nöten oder ich werde von der Sinnlosigkeit der Regeln überzeugt.
 
 
@@ -121,7 +121,7 @@ docs
 Wenn unklar ist wie man sich einer Aufgabe nähern soll gibt es hier ein paar Hinweise:
 * wurde das Thema in der Vorlesung behandelt? (Vorlesungsscripte mit Schlagwort oder das Inhaltsverzeichnis durch suchen)
 * gibt es Hinweise im [OpenUP](https://www2.htw-dresden.de/~anke/openup/index.htm) ?
-* schon mal den Aufgabengegenstand gegooglet?
+* schon mal den Aufgabengegenstand gegoogelt?
 * Teammitglieder fragen oder Personen aus anderen Teams mit gleicher Rolle fragen
 * Herrn Ringel, Herrn Anke oder Herrn Zirkelbach fragen
 
@@ -141,7 +141,7 @@ Die Datei _default-attributes.inc.adoc_ im **docs/\_includes** Verzeichnis enth�
 
 ### Projektnamen definieren
 
-In der _default-attributes.inc.adoc_ Datei ist am Anfang der **Projektname** definiert, welcher in jedem Dokument im Title verwendet wird. Ersetzen Sie hier bitte `<Projektname (T00)>` mit Ihrem Belegthema:
+In der _default-attributes.inc.adoc_ Datei ist am Anfang der **Projektname** definiert, welcher in jedem Dokument im Titel verwendet wird. Ersetzen Sie hier bitte `<Projektname (T00)>` mit Ihrem Belegthema:
 
 ```
 // Meta
