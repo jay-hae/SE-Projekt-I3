@@ -1,0 +1,25 @@
+Meeting Protokoll 01.04.2022
+
+Protokollverantwortlicher: Jakob
+Anwesende: Nico(nur TOP1), Pascal, Jens, Ha
+
+TOP 1 Was wurde gemacht:
+- Pascal hat Jens+Ha was übern Code erzählt
+- Jens+Ha hat Protokolle nach FA's durchforstet und Pascal geschickt
+- Entwicklerdouk erarbeitet  (fas fertig)
+- C4 heut 
+
+- Code verbessert (sauberer gemacht)
+- Nico wegen zeitlichen Gründen keine updats am repo
+- Jakob Arbeitsweisen erarbeitet (noch nicht gelesen)
+- Jakob mit Ringel geschrieben: geht zum Retro Workshop, 
+
+- Anmerkung von Pascal: warum ist keiner in den Meetings bei den Zeit wo man sich eigentlich frei gemeldet hat
+
+TOP 2 Testlauf Retro Tool:
+- voting, hid cards, anonyms cards, login without login; 
+- hat alles gut geklappt
+
+ToDos:
+- README lesen (bis Montag)
+

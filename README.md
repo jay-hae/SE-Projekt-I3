@@ -34,7 +34,7 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
 * Gesprächswunsch template: \[Meeting Art(zB. Teammeeting)\] \[Datum (falls bekannt, siehe Chat "termine")\] TOP: (zB. Planung nächstes SI Meeting) 
 * Vom Protokollverantwortlichen sind die Punkte aus dem Chat als TOP's (Topics) in das Protokoll zu übernehmen
     * von allen ist während des Meetings darauf zu achten, dass die Reihenfolge der TOP's eingehlaten wird bzw. eine Idee zu einem späteren TOP schriftlich (ohne Diskussion) festgehalten wird
-    * neue, in dem Gespräch aufkommende TOP's sind  
+    * neue, in dem Gespräch aufkommende TOP's sind zu notieren und in den Chat "offene-fragen-und-agenda" zu posten
 
 ### Teammeeting
 Es folgt der generelle Ablauf eines Teammeetings:
