@@ -1,18 +1,37 @@
-$(document).ready(function (){
+$(document).on('DOMContentLoaded', function (){
     $.get('/loader/mentor', function (data){
        insertMentor(data);
+       cacheMentors(data);
        sortMentor("firstname");
     });
 
 });
 
+function cacheMentors(mentorArray) {    //mentoren lokal auf rechner im browser zwischenspeichern für einen einfacheren Zugriff
+    $.each(mentorArray, (index) =>{
+        let cur = mentorArray[index];
+        let obj = {
+            faculty_ID: cur['faculty_ID'],
+            active: cur['active'],
+            title: cur['title'],
+            firstname: cur['firstname'],
+            lastname: cur['lastname'],
+            gender_ID: cur['gender_ID'],
+            homepage: cur['homepage'],
+            email: cur['email'],
+            agreements: cur['agreements']
+        }
+        sessionStorage.setItem(cur['ID'], JSON.stringify(obj));
+    });
+}
 
 function insertMentor(mentors) {
     $('#mnt_body').empty();
     $.each(mentors, function (index){
         let mentor = mentors[index];
-        $('#mnt_body').append("<tr id='mentor"+ mentor['ID'] + "'><th style='display: none'>" + mentor['ID'] + "</th><th class='firstname_m'>" + mentor['f_name'] + "</th><th class='lastname_m'>"+ mentor['l_name'] + "</th><th>" + mentor['act'] + "</th><th>" + mentor['amount'] + "</th><th><button type='button' class='btn'>Edit</button></th></tr>");
+        $('#mnt_body').append("<tr id='"+ mentor['ID'] + "'><th class='firstname_m'>" + mentor['firstname'] + "</th><th class='lastname_m'>"+ mentor['lastname'] + "</th><th>" + mentor['active'] + "</th><th>" + mentor['agreements'] + "</th><th><button type='button' class='btn modal_edit_mentor'>Edit</button></th></tr>");
     });
+    editButton();
 }
 
 function searchMentor() {

@@ -31,7 +31,7 @@ function loadModal(inst_id){
             $('#edit_mod_nn').val(chosen_inst['lastname']);
             $('#edit_mod_ap_tel').val(chosen_inst['pers_tel']);
             $('#edit_mod_ap_mail').val(chosen_inst['pers_mail']);
-            $('#exampleModalToggle').toggle();
+            $('#modal_edit').toggle();
         });
 }
 
@@ -47,11 +47,10 @@ function loadAgreements(inst_id) {
             //einfügen der Daten auf zweiter Seite des Modals
             const add = $('#addAgreements');
             data.forEach((obj) => {
-                allAgreements.push(obj);
-                add.append("<tr><th style=\"display:none;\">" + obj['agreement_ID'] + "</th><th >" + obj['faculty'] + "</th><th >" + obj['agreement_inactive'] + "</th><th >" + obj['mentor_ID'] + "</th><th>" + obj['note'] + "</th></tr>");
+                //nur für Tabelle, alle agreements + restrictions als objekte auf client ablegen
+                console.log(obj);
+                console.log("\n")
+                add.append("<tr><th style=\"display:none;\">" + obj['agreement_ID'] + "</th><th >" + obj['faculty'] + "</th><th >" + obj['agreement_inactive'] + "</th><th >" + obj['title'] + obj['firstname'] + obj['lastname'] +"</th><th>" + obj['notes'] + "</th></tr>");
             });
         });
-    return allAgreements;
 }
-//store all mobility agreement objects
-const allAgreements = [];
