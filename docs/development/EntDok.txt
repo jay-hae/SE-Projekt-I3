@@ -1,0 +1,285 @@
+1. Partnerhochschulen 
+	- zugehörige Dateien: 
+		- institutes.html
+		- institutes_html_manager.js
+		- institutes_loader.js
+		- button _functionality.js
+		- filter_functionality.js
+		- filter_values_loader.js
+		- navbar_functionality.js
+		- alle Files welche mit "modal" beginnen
+
+	institutes_html_manager.js: 
+		- wird nach Laden der HTML File institutes.html automatisch durchgeführt
+		- ruft alle Funktionen auf welche für die normale Anwendung benötigt werden 
+		- diese Funktionen sind verteilt auf die einzelnen Javascript Files -> Einzelheiten im Quellcode der institutes_html_manager.js Datei
+
+
+	institues_loader.js:
+		- beinhaltet eine Funktion welche "Partnerhochschulobjekte" enthält, diese werden dann ausgewertet und entsprechend der Tabellenstruktur in institues.html in die Tabelle eingefügt
+
+	button_functionality.js: 
+		- Datei welche Funktionen für die Vergabe von Buttonfunktionalitäten beinhaltet -> jede Funktion ist für bestimmte Funktionalität zuständig
+
+	filter_functionality.js:
+		- sorgt dafür dass, dem Filter entsprechende, Ergebnisse angezeigt werden
+		- regelt was passiert sobald sich ein Wert eines Filters vom User bestimmt wird 
+		- jeder einzelne Unterpunkt des Filters (zB Land, Fakultät) besteht aus mehreren Optionen, diese enthalten als Wert jeweils ein Indiz welches in der Datenbank darauf hinweist
+		- sendet einen POST Request an '/filterInstitute' , der Payload lautet wie folgt: 
+			[
+				filter_country: , //beinhaltet none oder ID des Landes
+				filter_fac: ,	  //none oder FakultätsID
+				filter_shown: ,   //Anzeige extern? enthält none, n (Nein)oder y(Ja)
+				filter_activity: , //Vertrag aktiv? none, y(Ja), n(Nein)
+				filter_agreetype: , //ID des Partnerschaftstyps
+				sortby: 			//Sortierung auf-/absteigend? "a" für A-Z "d" für Z-A
+			]
+		- Funktionalität für Resetbutton
+
+	filter_values_loader.js:
+		- dynamisches Laden der Select optionen für die Filterelemente:
+			- Land
+			- Fakultät
+			- Vertragstyp
+		- fügt diese in jede einzelne Select Möglichkeit auf der HTML-Seite ein -> innerhalb beider Modalboxen gibt es noch die Möglichkeit zwischen Ländern und Partnerschaftstypen zu unterscheiden, in beide Elemente werden die Werte automatisch mit eingefügt
+		-> Referenz dazu: HTML <Select> 
+
+	navbar_functionality.js:
+		- großteil der Funktionalität der Navigationsleiste schon in den HTML-Dateien erledigt, kleine Randfunktionen welche dort nicht umsetzbar waren, werden übernommen 
+		- Funktion Logoutbutton
+
+	modal_add_form_validation.js: 
+		- Bereitstellen zur Clientseitigen Prävention der Eingabe von fehlerhaften Daten beim anlegen einer neuen Hochschule 
+
+	modal_edit_functionality.js:
+		- Funktionen welche die Benutzung der Modalbox zum editieren einer bestehenden Hochschulpartnerschaft bereitstellen
+			- werden aufgerufen wenn innerhalb der institutes.html Datei der Button "Edit" betätigt wird -> es werden die Funktionen aufgerufen, zusätzlich wird die Institute_ID als parameter übergeben 
+
+			loadModal(instID): 
+				- holt sich alle "persönlichen" Informationen zu der Hochschule, alle Daten unabhängig von Verträgen, lädt sie in einen vorgefertigten Bereich im Modal
+
+			loadAgreements(instID):
+				- lädt alle mobility_agreements welche zu einer Partnerschaft bestehen 
+
+	modal_functionality_general.js:
+		- Übermitteln der Daten beim anlegen einer neues HS / bearbeiten bestehenden Partnerschaft an den Server, dabei werden die Formen des jeweiligen Modals per POST-Request übermittelt 
+
+		--! Screenshot POST-Request beim hinzufügen einer Partnerhochschule einfügen !-- 
+
+		- Realisieren einzelner Buttonfunktionalitäten -> was passiert wenn Speichern / Abbrechen gedrückt wird 
+
+	zuzgehörige Funktionen aus der Querries.py Datei:
+		for_modal():
+			input: ID Partnerhochschule (institute ID)
+				- aufrufen einer vorgefertigten stored procedure welche als input die übergebene ID bekommt
+				- lädt alle Informationen welche es in der "tbl_institute" tabelle in der DB zu einer Partnerhochschule gibt
+			output: JSON Objekt mit keys welche den einzelnen Spalten der Tabelle entsprechen -> Values sind die jeweiligen Werte zB {'eng' : 'Testuniversität'}
+
+		get_ma():
+			input: ID Partnerhochschule
+				- call stored procedure
+				- abrufen aller mobility agreements welche zu einer Partnerhochschule existieren (alle Partnerschaften)
+			output: JSON Objekt welches einzelne Objekte beinhaltet -> jedes Objekt in JSON repräsentiert ein mobility agreement 
+
+		get_ma_x_course():
+			input: ID des mobility agreements
+				- Filtern aller Beschränkungen die zu einem mobility agreement existieren > z.B. Agreement A darf von 10 Studierenden pro Semester in Anspruch genommen werden, davon dürfen aber nur 3 Studierende aus Studiengang XY stammen 
+				- aufrufen stored procedure
+			output: JSON Objekt welche jede Beschränkung beinhaltet
+
+		institutes_ret(): 
+			input: /
+				- stored procedure welche die Werte für die einzelnen Tabellenzeilen beinhaltet
+			output: JSON Objekt welches alle Partnerhochschulen enthält
+
+		ag_type_ret():
+			input: /
+				- laden der aller möglichen Partnerschaftstypen aus DB
+			output: JSON Obj. welches alle Typen enthält
+
+		all_countries(): 
+			input: /
+				- laden aller Länder aus DB (Namen + ID)
+			output: JSON Obj. 
+
+		faculty():
+			input: /
+				- laden Fakultäten + ihre ID's
+			output: JSON Obj.
+
+		filter_institutes():
+			input: Liste mit Werten zu den einzelnen Filterelementen -> entweder wirklicher Wert oder % 
+			% -> wichtig für die procedure, denn dann wird nach allen Einträgen zu diesem Filterelement gesucht 
+			Beispiel: der Filter wird für eine Fakultät ausgewählt mit der ID: 7100, das Land wird aber nicht spezifiziert 
+			Dann lautet der Payload [faculty: 7100, country: none] -> none = %
+			Abfrage in der DB: SELECT ... FROM .... WHERE country = % AND facultyID = 7100 -> bedeutet es wird nach allen Elementen bei denen die FakultätsID zutrifft, das Land ist aber beliebig. 
+
+		new_Institute(): 
+			input: Liste mit allen ausgefüllten Formelementen und ihren Werten zB {Hochschulname: "Uni xy", Land: 12, } Land -> es wird nur die ID des entsprechenden Landes übergeben, diese ist im Frontend vorhanden, da beim Laden der Institutes die ID mit aus der Datenbank übernommen wird
+				- zusammensetzen des INSERT Befehls mit den übergebenen Werten; aufsplitten der key und values in 2 Listen
+				- zB INSERT INTO (Hochschulname, Land) VALUES ("Uni xy", "12")
+			output: JSON Objekt mit Statuscode -> success: (true/false)
+
+
+2. Mentoren
+	- zugehörige Dateien:
+		- mentor.html
+		- mentor_loader.js
+		- navbar_functionality.js
+		
+	mentor_loader.js: 
+		- aufrufen der Route '/loader/mentor'
+		- zurückgeben des JSON Objektes aus return_mentor()
+
+	return_mentor():
+		input: /
+			- Datenbankabfrage um alle Mentoren + ihren aktuellen Aktivitätsstand an der HTW anzuzeigen
+		output: JSON Objekt welches alle Mentoren enthält + ihre Informationen -> zB JSON = [Objekt: {Name: "Mentor xy", Aktivitätsstatus: 0, Geschlecht: "Weiblich"}]
+
+
+
+3. Länder
+	- zug. Dateien: 
+		- country.html
+		- country_loader.js
+		- navbar_functionality.js
+
+	country_loader.js:
+		- Route '/loader/country'
+		- gleiche Funktionsweise wie mentor_loader nur mit Ländern
+
+	return_countries():
+		input: /
+			- selbe Funktionsweise wie return_mentor()
+		output: - JSON mit Ländern 
+				- Deutsche + Englische Bez. + Auskunft ob Erasmusberechtigt
+
+
+4. Studiengänge
+	- zug. Dateien: 
+		- courses.html
+		- courses_loader.js
+		- navbar_functionality.js
+
+	courses_loader.js:
+		- '/loader/course'
+		- Funktionsweise wie mentor_loader mit Studiengängen
+
+
+	return_courses()
+		input: /
+		output: - JSON 
+				- Deutsche + Englische Studiengangbezeichnung
+
+
+5. Fakultäten
+	- zug. Dateien: 
+		- faculty.html
+		- faculty_loader.js
+		- navbar_functionality.js
+
+ 	faculty_loader.js:
+
+ 	return_faculties():
+ 		input: /
+ 		output: - JSON
+ 				- Deutsche + Englische Bezeichnung & Anzahl aller mobility Agreements je Fakultät
+
+
+Architektur: 
+
+Schichtenarchitektur: 
+
+GUI: HTML5, Javascript (jQuery (Framework)), Bootstrap, lokales CSS (eigene CSS Datei)
+-> Wie bekommt das Frontend die JS/CSS Dateien vom Server? 
+Route von <filename> -> einfache URL-Parameterübergabe welche serverseitig ausgewertet wird
+-> Funktion send_from_directory schaut dann in Verzeichnis für Frontend-Dateien (templates), und gibt die Datei mit dem übergebenem Namen aus <
+
+
+Applikationslogik: Python3 + Flask Framework 
+- app.py
+- Querries.py //Beinhaltet alle Datenbankabfragen
+- Login.py //Authentifizierung & Autorisierung (Nutzerunterscheidung)
+
+Datenbankschicht: MariaDB gehostet Rechenzentrum
+- Anmeldedaten: 
+	username: aaapartnerhs
+	password: ...
+
+
+
+
+
+
+
+
+Interaktionsübersicht: 
+
+Aufruf der Ziel URL mit der Endung: 
+
+Client sendet GET Request an '/homepage/mentor', diese URL returned mentor.html; in der HTML Datei werden mentor_loader.js & navbar_functionality.js beide "importiert" (einbinden durch <script src="mentor_loader.js">
+	mentor_loader.js führt, sobald HTML-File vollständig geladen, den Code aus. Dieser sendet einen GET Request an '/loader/mentor', in der Route wird die Funktion return_mentor innerhalb der Querries.py Datei aufgerufen
+
+DIESE FUNKTIONSWEISE ist 1 zu 1 übertragbar auf die die anderen Routen: "/homepage/countries", "/homepage/courses", "/homepage/faculties", nur mit den im nächsten Abschnitt genannten Funktionen
+
+GET Request -> '/homepage/countries' -> country.html -> calls country_loader.js & navbar_functionality.js; country_loader.js -> GET Req. an '/loader/country' -> return_countries Funktion in Querries.py
+
+GET Request -> '/homepage/courses' -> course.html -> calls courses_loader.js & navbar_functionality.js; courses_loader.js -> GET Req. an '/loader/course' -> return_courses 
+
+GET Request -> '/homepage/faculties' -> faculty.html -> calls faculty_loader.js & navbar_functionality.js; faculty_loader.js -> GET Req. an '/loader/faculty' -> return_faculties 
+
+Client sendet GET Request an '/homepage/institutes', URL liefert HTML File zurück: institutes.html 
+alle imports welche in HTML File getätigt werden (Javascript Dateien)
+	-> institutes_html_manager.js
+	-> institutes_loader.js
+	-> filter_values_functionality.js
+	-> button_functionality.js
+	-> navbar_functionality.js
+	-> 
+
+Aufrufe bei Handlungen innerhalb der institutes.html Datei
+	Betätigen EDIT-Button: Event wurde in folgender Datei deklariert: modal_edit_functionality.js 
+		Beim triggern der Funktion wird ein POST Req. an '/openModal' [1] und '/loader/mobAgreements' [2] und 'loader/mobAgreements' [3] gesendet 
+		[1] -> aufrufen der for_modal Funktion in Querries.py, diese führt die "institute_information" stored procedure aus
+		[2] -> aufrufen der get_ma Funktion in Querries.py, dises führt die "get_ma" stored procedure aus
+		[3] -> aufrufen der get_ma_x_course Funktion in Querries.py, diese führt die "get_ma_x_course" stored procedure aus
+
+	Betätigen Zurücksetzen-Button: Event in filter_functionality.js deklariert
+		Funktion aus "institutes_html_manager.js" ausführen, diese sendet GET Request an '/get/institutes';
+		daraufhin wird institutes_ret aufgerufen aus Querries.py
+
+
+	Benutzern der Filterfunktion: Eventdeklaration in filter_functionality.js 
+		Beim triggern Funktion addFilterChangeEvents ausführen, diese sendet einen POST Req. an '/filterInstitutes'
+		Daraufhin wird die Funktion filter_institutes aus Querries.py aufgerufen welche die "count_agreements_filter" stored procedure ausführt
+
+	Betätigen "Partnerhochschule anlegen"-Button: 
+		Modalfunktion in mehreren Dateien deklariert: 
+			modal_add_form_validation.js, diese Datei ist nur dafür zuständig das Clientseitig fehlende Angaben verhindert werden. Due Funktion validateForm ist für das freischalten des Speichern-Buttons, wenn alle Pflichtfelder in der Modalbox ausgefüllt sind, zuständig
+		Betätigen Speichern-Button ist in modal_functionality_general.js definiert, wird bemim klicken des Buttons getriggert. Ist dafür Zuständig zum Zusammenfassen aller Einträge in der Eingabemaske für das Anlegen neuer Partnerhochschulen. Die zusammengefassten Daten werden daraufhin per POST Req. an die '/addInstitute' Route gesendet. Diese leitet die Daten an die Funktion new_Institue in Querries.py weiter. In dieser wird daraufhin dynamisch ein INSERT-Befehl zusammengesetzt.
+
+
+	Automatisches ausführen bei Aufruf der '/homepage/institutes' Route:
+		filter_values_functionality.js, diese Datei hat den Nutzen alle Werte für den Filter aus der Datenbank zu laden
+		wenn Datei ausgeführt wird, sendet sie verschiedene GET Requests and die Route mit dem Präfix '/get/<name>' , wobei <name> die Werte institues, agreements, countries und faculties annehmen kann 
+
+		GET Request an '/get/agreements', ruft ag_type_ret in Querries.py auf, diese Funktion führt eine einfache DB Querry aus
+		GET Request an '/get/countries', ruft all_countries in Querries.py auf, diese Funktion führt eine einfache DB Querry aus
+		GET Request an '/get/faculties', ruft faculty in Querries.py auf, diese Funktion führt eine einfache DB Querry aus
+		GET Request an '/get/institutes', ruft institutes_ret in Querries.py auf, diese Funktion führt die stored procedure "count_agreements" aus 
+
+
+
+ALLE Funktionen in Querries.py geben ihre Ergebnisse im JSON Format zurück an die Funktionen, durch welche sie in app.py aufgerufen wurden
+
+Funktionen in app.py, welche mit Querries.py interagieren geben die return Werte 1zu1 weiter, das heißt, der Client erhält alle Ergebnisse immer im JSON Format
+
+
+
+
+
+
+
+
+
+
