@@ -10,3 +10,4 @@ Dazu ist ggf. der Grund einer Änderung zu schildern und/oder zu benennen was di
 
 * von Jakob am 31.03: es wurde eine Log-Datei für den Fortschritt angelegt, damit sich jeder vor den Teammeetings auf den aktuellen Projektstand bringen kann und dieser in den Meetings nicht mehr besprochen werden muss
 * von Jakob am 31.03: in der README.md wurden Informationen zum Iterations-Ablauf, zur Meeting-Kultur, zu Protokollregelen, zu Dokumentationsregeln verfasst
+* Luca, Jakob 5.04: Luca Deployment Verantwortlicher

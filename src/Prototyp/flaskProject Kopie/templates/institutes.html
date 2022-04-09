@@ -24,18 +24,18 @@
 
 <!-- Modal zum Bearbeiten -->
 <!-- Toggle Between Modals -->
-<div class="modal" id="exampleModalToggle">
+<div class="modal" id="modal_edit">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalToggleLabel">Hochschule Bearbeiten</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close close_modal_edit" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div id="first_slide">
-                    <form class="modal_form d-flex" id="form_edit">
-                        <div class="col-sm-4 p-3">
-                            <h4>Hochschule</h4>
+                    <div class="col-sm-4 p-3">
+                        <form class="modal_form" id="edit_left_col">
+                        <h4>Hochschule</h4>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_country">Land</label>
                                 <select class="filter_country form-select" id="edit_mod_country" name="edit_fil_country">
@@ -43,42 +43,44 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_modal_eng">Englische Bezeichnung</label>
-                                <input class="form-control" type="text" id="edit_modal_eng">
+                                <input class="form-control" type="text" id="edit_modal_eng" name="eng">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_modal_local">Lokale Bezeichnung</label>
-                                <input class="form-control" type="text" id="edit_modal_local">
+                                <input class="form-control" type="text" id="edit_modal_local" name="local">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_modal_adr">Adresse</label>
-                                <input class="form-control" type="text" id="edit_modal_adr">
+                                <input class="form-control" type="text" id="edit_modal_adr" name="adress">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_modal_ws">Website</label>
-                                <input class="form-control" type="text" id="edit_modal_ws">
+                                <input class="form-control" type="text" id="edit_modal_ws" name="website">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_modal_ntzn">Notizen</label>
-                                <input class="form-control" type="text" id="edit_modal_ntzn">
+                                <input class="form-control" type="text" id="edit_modal_ntzn" name="notes">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_modal_ec">Erasmus-Code</label>
-                                <input class="form-control" type="text" id="edit_modal_ec">
+                                <input class="form-control" type="text" id="edit_modal_ec" name="erasmus">
                             </div>
                             <div class="mb-3">
-                                <input class="my_check form-control-check" type="checkbox" id="edit_modal_anz">
+                                <input class="my_check form-control-check" type="checkbox" id="edit_modal_anz" name="visibility">
                                 <label class="form-label" for="edit_modal_anz">Öffentlich anzeigen?</label>
                             </div>
+                        </form>
                         </div>
-                        <div class="col-sm-4 p-3">
-                            <h4>Ansprechperson</h4>
+                    <div class="col-sm-4 p-3">
+                        <h4>Ansprechperson</h4>
+                        <form class="modal_form" id="edit_mid_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_func">Funktion</label>
-                                <input class="form-control" type="text" id="edit_mod_func">
+                                <input class="form-control" type="text" id="edit_mod_func" name="function">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_gender">Geschlecht</label>
-                                <select class="form-select" id="edit_mod_gender">
+                                <select class="form-select" id="edit_mod_gender" name="gender">
                                     <option value="1">Männlich</option>
                                     <option value="2">Weiblich</option>
                                     <option value="3">Divers</option>
@@ -86,45 +88,47 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_title">Titel</label>
-                                <input class="form-control" type="text" id="edit_mod_title">
+                                <input class="form-control" type="text" id="edit_mod_title" name="title">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_vn">Vorname</label>
-                                <input class="form-control" type="text" id="edit_mod_vn">
+                                <input class="form-control" type="text" id="edit_mod_vn" name="firstname">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_nn">Nachname</label>
-                                <input class="form-control" type="text" id="edit_mod_nn">
+                                <input class="form-control" type="text" id="edit_mod_nn" name="lastname">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_ap_tel">Telefon</label>
-                                <input class="form-control" type="text" id="edit_mod_ap_tel">
+                                <input class="form-control" type="text" id="edit_mod_ap_tel" name="telephone">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_ap_mail">Email</label>
-                                <input class="form-control" type="text" id="edit_mod_ap_mail">
+                                <input class="form-control" type="text" id="edit_mod_ap_mail" name="email">
                             </div>
-                        </div>
-                        <div class="col-sm-4 p-3">
-                            <h4>International Office</h4>
+                        </form>
+                    </div>
+                    <div class="col-sm-4 p-3">
+                        <h4>International Office</h4>
+                        <form class="modal_form" id="edit_right_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_dep">Abteilung</label>
-                                <input class="form-control" type="text" id="edit_mod_dep">
+                                <input class="form-control" type="text" id="edit_mod_dep" name="department">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_tel">Telefon</label>
-                                <input class="form-control" type="text" id="edit_mod_tel">
+                                <input class="form-control" type="text" id="edit_mod_tel" name="tel_office">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_mail">Email</label>
-                                <input class="form-control" type="text" id="edit_mod_mail">
+                                <input class="form-control" type="text" id="edit_mod_mail" name="mail_office">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_int_off_ws">Website International Office</label>
-                                <input class="form-control" type="text" id="edit_mod_int_off_ws">
+                                <input class="form-control" type="text" id="edit_mod_int_off_ws" name="website_office">
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                     <button id="next"></button>
                 </div>
                 <div id="second_slide" style="display: none">
@@ -145,8 +149,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary id='closeModal">Abbrechen</button>
-                <button type="button" class="btn btn-primary">Speichern</button>
+                <button type="button" class="btn btn-secondary close_modal_edit">Abbrechen</button>
+                <button type="button" id="mod_edit" class="btn btn-primary">Speichern</button>
             </div>
         </div>
     </div>
@@ -274,14 +278,6 @@
 </div>
 <div id="Page_one" > <!-- class container -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand me-0 ms-3" href="#">
-        <img src="htw-logo.png" height="30" width="auto" class="d-inline-block align-top"
-            alt="">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link" href="/homepage/faculties">Fakultäten</a></li>

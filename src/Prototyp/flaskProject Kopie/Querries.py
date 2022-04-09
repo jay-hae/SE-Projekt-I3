@@ -13,18 +13,7 @@ def institutes_ret():
     payload = []
     # with result create an object that iterates through cur.stored_results() -> only one stored result
     for result in cur.stored_results():
-        # get all results from sp call by reference it to 'x'
-        x = result.fetchall()
-        # iterate through all results in x and create a dict content in every loop
-        # append it to payload, where all objects created out of result list x are stored
-        for i in x:
-            content = {
-                'id': i[0],
-                'name': i[1],
-                'agreements': i[2],
-                'display': i[3]
-            }
-            payload.append(content)
+        payload = return_institutes(result.fetchall())
     cur.close()
     cnxn.close()
     # convert payload to json format and send it back to server
@@ -96,7 +85,6 @@ def for_modal(institute_id):
     for result in cur.stored_results():
         rows = result.fetchall()
         for row in rows:
-            print(row)
             content = {
                 'country': row[0],
                 'eng': row[1],
@@ -116,7 +104,8 @@ def for_modal(institute_id):
                 'firstname': row[15],
                 'lastname': row[16],
                 'pers_tel': row[17],
-                'pers_mail': row[18]
+                'pers_mail': row[18],
+                'id': institute_id
             }
             payload.append(content)
     cur.close()
@@ -124,8 +113,8 @@ def for_modal(institute_id):
     return jsonify(payload)
 
 
-# get mobility agreements referring to institute / partnership
-def get_ma(institute):
+# get mobility agreements referring to institute / partnership and all course restrictions
+def get_ma_and_courses(institute):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     param_list = (institute,)
@@ -136,44 +125,34 @@ def get_ma(institute):
         for row in rows:
             content = {
                 'agreement_ID': row[0],
-                'faculty': row[1],
-                'mentor_ID': row[2],
-                'gender_ID': row[3],
-                'mentor_active': row[4],
-                'from_valid': row[5],
-                'until_valid': row[6],
-                'agreement_inactive': row[7],
-                'number_incoming': row[8],
-                'months_incoming': row[9],
-                'number_outgoing': row[10],
-                'months_outgoing': row[11],
-                'note': row[12]
-            }
-            payload.append(content)
-    cur.close()
-    cnxn.close()
-    return jsonify(payload)
-
-
-#  get all courses related to single mobility agreement
-def get_ma_x_course(agreement):
-    cnxn = Login.newConnection()
-    cur = cnxn.cursor()
-    param_list = (agreement,)
-    cur.callproc('get_ma_x_course', param_list)
-    payload = []
-    for result in cur.stored_results():
-        rows = result.fetchall()
-        for row in rows:
-            content = {
-                'ag_x_course_id': row[0],
-                'course': row[1],
+                'partnership_ID': row[1],
                 'faculty': row[2],
-                'sac': row[3], #subject area code
-                'num_incoming': row[4],
-                'subnum_mob': row[5],
-                'subnum_months': row[6]
+                'mentor_title': row[3],
+                'mentor_firstname': row[4],
+                'mentor_lastname': row[5],
+                'date_signature': row[6],
+                'valid_since': row[7],
+                'valid_until': row[8],
+                'agreement_inactive': row[9],
+                'in_num_mob': row[10],
+                'in_num_months': row[11],
+                'out_num_mob': row[12],
+                'out_num_moths': row[13],
+                'notes': row[14],
+                'course_restrictions': []
             }
+            agreement = (content['agreement_ID'],)
+            cur.callproc('get_ma_restrictions', agreement)
+            for results in cur.stored_results():
+                for restriction in results:
+                    content['course_restrictions'].append({
+                        'restriction_ID': restriction[0],
+                        'course': restriction[1],
+                        'subject_area_code': restriction[2],
+                        'incoming': restriction[3],
+                        'sub_num_mobility': restriction[4],
+                        'sub_num_months': restriction[5]
+                    })
             payload.append(content)
     cur.close()
     cnxn.close()
@@ -186,43 +165,27 @@ def filter_institutes(parameters):
     payload = []
     parameter_list = (parameters[0], parameters[1], parameters[2], parameters[3], parameters[4])
     cur.callproc('count_agreements_filter', parameter_list, )
-    x = cur.fetchall()
     for result in cur.stored_results():
-        x = result.fetchall()
-        for i in x:
-            content = {
-                'id': i[0],
-                'name': i[1],
-                'agreements': i[2],
-                'display': i[3]
-            }
-            payload.append(content)
+        payload = return_institutes(result.fetchall())
     cur.close()
     cnxn.close()
     return jsonify(payload, {'sorting': parameters[5]})
 
 
-    # insert new institute into table
+# insert new institute into table
 def new_Institute(tuple_col_inst, tuple_val_inst, name, val):
-    params = (name, val)
+    all_parameters = (name, val)
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    x = "%s, "
-    x = x*len(tuple_val_inst)
-    a = ""
-    for columns in tuple_col_inst:
-        a += ", "+columns
-    print(a[2:])
-    print(x[:-2])
-    print(tuple_val_inst)
-    query = "INSERT INTO tbl_institute (" + a[2:] + ") VALUES (" + x[:-2] + ")"
+    query_parameter = dynamic_querries(tuple_col_inst)
+    query = "INSERT INTO tbl_institute (" + query_parameter[0] + ") VALUES (" + query_parameter[1] + ")"
     try:
-        newL = tuple(tuple_val_inst)
+        insert_parameter = tuple(tuple_val_inst)
         # insert into tbl_institute
-        cur.execute(query, newL)
+        cur.execute(query, insert_parameter)
         cnxn.commit()
         # query for insert into tbl_partnership
-        cur.callproc('insert_partnership', params,)
+        cur.callproc('insert_partnership', all_parameters, )
         cnxn.commit()
         for result in cur.stored_results():
             x = result.fetchall()
@@ -236,11 +199,26 @@ def new_Institute(tuple_col_inst, tuple_val_inst, name, val):
         cnxn.close()
 
 
+def new_mentor(columns, values):
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    query_parameter = dynamic_querries(columns)
+    query = "INSERT INTO tbl_mentor (" + query_parameter[0] + ") VALUES(" + query_parameter[1] + ")"
+    try:
+        insert = tuple(values)
+        cur.execute(query, insert, )
+        cnxn.commit()
+        return jsonify({'success': 'true'})
+    finally:
+        cur.close()
+        cnxn.close()
+
+
 def return_countries():
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     cur.execute('SELECT de, en, erasmus FROM tbl_country')
-    rows = cur.fetchall() # zusammenfassen aller Objekte der Datenbankanfrage
+    rows = cur.fetchall()  # zusammenfassen aller Objekte der Datenbankanfrage
     payload = []
     for row in rows:
         content = {
@@ -271,10 +249,11 @@ def return_courses():
     return jsonify(payload)
 
 
-def return_mentor():
+def return_mentor():  # get all mentor information and store on client storage
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    query = """SELECT m.ID, m.firstname, m.lastname, m.active, count(mentor_ID) 
+    query = """SELECT m.ID, m.faculty_ID, m.active, m.title, m.firstname, m.lastname, m.gender_ID,
+                m.homepage, m.email,count(mentor_ID) 
                 FROM tbl_mobility_agreement ma 
                 JOIN tbl_mentor m  
                 ON ma.mentor_ID = m.ID 
@@ -284,16 +263,20 @@ def return_mentor():
     all_mentors = cur.fetchall()
     payload = []
     for mentor in all_mentors:
-        if mentor[3] == 1:
+        display = "Nein"
+        if mentor[2] == 1:
             display = "Ja"
-        else:
-            display = "Nein"
         content = {
             'ID': mentor[0],
-            'f_name': mentor[1],
-            'l_name': mentor[2],
-            'act': display,
-            'amount': mentor[4]
+            'faculty_ID': mentor[1],
+            'active': display,
+            'title': mentor[3],
+            'firstname': mentor[4],
+            'lastname': mentor[5],
+            'gender_ID': mentor[6],
+            'homepage': mentor[7],
+            'email': mentor[8],
+            'agreements': mentor[9]
         }
         payload.append(content)
     cnxn.close()
@@ -322,3 +305,24 @@ def return_faculties():
     cnxn.close()
     cur.close()
     return jsonify(payload)
+
+
+def dynamic_querries(col):
+    all_vals = "%s," * len(col)
+    all_cols = ""
+    for column in col:
+        all_cols += ", " + column
+    return [all_cols[2:], all_vals[:-1]]
+
+
+def return_institutes(result_set):
+    payload = []
+    for result in result_set:
+        content = {
+            'id': result[0],
+            'name': result[1],
+            'agreements': result[2],
+            'display': result[3]
+        }
+        payload.append(content)
+    return payload

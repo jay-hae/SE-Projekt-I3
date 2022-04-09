@@ -52,10 +52,7 @@ def load_filter(name):
 # filtered institute id from website
 @app.route('/openModal', methods=['POST'])
 def exec_sp():
-    if "usr" in session:
-        return Querries.for_modal(request.form['id'])
-    else:
-        redirect(url_for('LoginPage'))
+    return Querries.for_modal(request.form['id'])
 
 
 # give browser all files that are needed (js files,...)
@@ -96,6 +93,25 @@ def new_institute():
     return redirect(url_for('LoginPage'))
 
 
+@app.route('/addMentor', methods=['POST'])
+def newMentor():
+    if request.method == 'POST':
+        active = 0
+        req = request.form.to_dict()
+        columns = []
+        values = []
+        for key in req:
+            if key == 'active':
+                active = 1
+                break
+            # key = dict key, req[key] = value
+            columns.append(key)
+            values.append(req[key])
+        columns.append('active')
+        values.append(active)
+        Querries.new_mentor(columns, values)
+
+
 @app.route('/filterInstitute', methods=['POST'])
 def handle_filter():
     if request.method == 'POST':
@@ -106,7 +122,7 @@ def handle_filter():
 
 @app.route('/editInstitute', methods=['POST'])
 def edit_inst():
-    return 'HI'
+    return jsonify({"success": "JO"})
 
 
 """"@app.route('changeData/<name>', methods=['POST'])
@@ -145,7 +161,7 @@ def ret_js(name):
     elif name == 'faculty':
         return Querries.return_faculties()
     elif name == 'mobAgreements':
-        return Querries.get_ma(request.form['id'])
+        return Querries.get_ma_and_courses(request.form['id'])
     else:
         return jsonify('answer: Unexpected Request')
 
