@@ -3,6 +3,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Hochschulpartnerschaften</title>
+   
+    <!-- Styling -->
+    <link href="../style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Funktionalität -->
     <script src="../ajax.js"></script>
     <script src="../button_functionality.js"></script>
     <script src="../institutes_html_manager.js"></script>
@@ -13,17 +20,105 @@
     <script src="../filter_values_loader.js"></script>
     <script src="../institutes_loader.js"></script>
     <script src="../navbar_functionality.js"></script>
-    <link href="../style.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<!-- Navbar hier einfügen -->
+
+<!-- Main Page -->
+<div id="Page_one" >
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="/homepage/faculties">Fakultäten</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/homepage/institutes">Hochschulen</a></li>
+            <li class="nav-item"><a class="nav-link" href="/homepage/countries">Länder</a></li>
+            <li class="nav-item"><a class="nav-link" href="/homepage/mentor">Mentoren</a></li>
+            <li class="nav-item"><a class="nav-link" href="/homepage/courses">Studiengänge</a></li>
+        </ul>
+        <ul class="navbar-nav me-2">
+        <li class="nav-item m-1">
+            <div class="in-navbar" id="handbuch">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">...</a></li>
+                        <li><a class="dropdown-item" href="#">...</a></li>
+                        <li><a class="dropdown-item" href="#">...</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item m-1">
+            <div class="in-navbar" id="Logout">
+                <button class="btn btn-sm btn-outline-danger btn-logout" type="button">Logout</button>
+            </div>
+        </li>
+        </ul>
+    </div>
+    </nav>
+
+    <div class="my-content">
+        <!-- Filter Buttons -->
+        <div id="fil">
+            <div id="FilterAll">
+                <!-- filter_values_loader.js lädt Dropdown Inhalte -->
+                <!-- filter_values_loader.js - app.py (Z.37) - Querries.py (Z.7-75) -->
+
+                <!-- filter_functionality.js passt die Tabelle entsprechende gewählte Filter an -->
+                <!-- filter_functionality.js - (POST /filterInstitutes) - app.py (Z.115) - (filter_institutes) - Querries (Z.162) -->
+                <form id="filter_form" action="">
+                    <select id='fc' class="filter filter_country" name="filter_country">
+                        <option value="none">-Land-</option>
+                    </select>
+                    <select id='fil_fac' name="filter_fac" class="filter">
+                        <option value="none">-Fakultät-</option>
+                    </select>
+                    <select id="fil_shown" name="filter_shown" class="filter">
+                        <option value="none">-Anzeige extern-</option>
+                        <option value="y">Ja</option>
+                        <option value="n">Nein</option>
+                    </select>
+                    <select id="fil_act" name="filter_activity" class="filter">
+                        <option value="none">-Aktiv-</option>
+                        <option value="y">Ja</option>
+                        <option value="n">Nein</option>
+                    </select>
+                    <select id="fil_agree" name="filter_agreetype" class="filter fil_agree">
+                        <option value="none">-Vertragstyp-</option>
+                    </select>
+                    <select id='sorting' name="sortby" class="filter"> <!-- implement sorting filter -->
+                        <option id="desc" value="a">Sortierung absteigend</option>
+                        <option id="asc" value="d">Sortierung aufsteigend</option>
+                    </select>
+                </form>
+                <button class="btn" id="fil_reset">Zurücksetzen</button>
+            </div>
+        </div>
+        <br>
+        <!-- Tabelle für die Partnerhochschulen -->
+        <div id="tbl">
+            <div class="add-hs">
+                <button type="button" class="btn" id="btn_hs_add">Partnerhochschule anlegen</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Hochschule</th>
+                        <th>Anzeige</th>
+                        <th>Verträge</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody id="addItems">
+                <!-- institutes_loader.js -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 <!-- Modal zum Bearbeiten -->
-<!-- Toggle Between Modals -->
 <div class="modal" id="modal_edit">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
@@ -156,8 +251,8 @@
     </div>
 </div>
 
-<!-- modal to add institute -->
-<div id="modal_add" class="modal">
+<!-- Modal zum Anlegen -->
+<div class="modal" id="modal_add" >
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -269,6 +364,7 @@
                             </div>
                             <button type="button" class="btn btn-secondary">Abbrechen</button>
                             <button type="button" id="mod_add_institute" class="btn btn-primary">Speichern</button>
+                            <!-- modal_functionality_general.js (Z.2) - app.py (Z.66) POST /addInstitute - Querries.py (Z.176) new_Institute -->
                         </form>
                     </div>
                 </div>
@@ -276,89 +372,6 @@
         </div>
     </div>
 </div>
-<div id="Page_one" > <!-- class container -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="/homepage/faculties">Fakultäten</a></li>
-            <li class="nav-item active"><a class="nav-link" href="/homepage/institutes">Hochschulen</a></li>
-            <li class="nav-item"><a class="nav-link" href="/homepage/countries">Länder</a></li>
-            <li class="nav-item"><a class="nav-link" href="/homepage/mentor">Mentoren</a></li>
-            <li class="nav-item"><a class="nav-link" href="/homepage/courses">Studiengänge</a></li>
-        </ul>
-        <ul class="navbar-nav me-2">
-        <li class="nav-item m-1">
-            <div class="in-navbar" id="handbuch">
-                <div class="dropdown">
-                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">...</a></li>
-                        <li><a class="dropdown-item" href="#">...</a></li>
-                        <li><a class="dropdown-item" href="#">...</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li class="nav-item m-1">
-            <div class="in-navbar" id="Logout">
-                <button class="btn btn-sm btn-outline-danger btn-logout" type="button">Logout</button>
-            </div>
-        </li>
-        </ul>
-    </div>
-    </nav>
-    <div class="my-content">
-        <div id="fil"> <!-- container mt-4-->
-            <div id="FilterAll">        <!-- div for every filter needed -->
-                <form id="filter_form" action="">
-                    <select id='fc' class="filter filter_country" name="filter_country">
-                        <option value="none">-Land-</option>
-                    </select>
-                    <select id='fil_fac' name="filter_fac" class="filter">
-                        <option value="none">-Fakultät-</option>
-                    </select>
-                    <select id="fil_shown" name="filter_shown" class="filter">
-                        <option value="none">-Anzeige extern-</option>
-                        <option value="y">Ja</option>
-                        <option value="n">Nein</option>
-                    </select>
-                    <select id="fil_act" name="filter_activity" class="filter">
-                        <option value="none">-Aktiv-</option>
-                        <option value="y">Ja</option>
-                        <option value="n">Nein</option>
-                    </select>
-                    <select id="fil_agree" name="filter_agreetype" class="filter fil_agree">
-                        <option value="none">-Vertragstyp-</option>
-                    </select>
-                    <select id='sorting' name="sortby" class="filter"> <!-- implement sorting filter -->
-                        <option id="desc" value="a">Sortierung absteigend</option>
-                        <option id="asc" value="d">Sortierung aufsteigend</option>
-                    </select>
-                </form>
-                <button class="btn" id="fil_reset">Zurücksetzen</button>
-            </div>
-        </div>
-        <br>
-        <!-- Tabelle für die Partnerhochschulen -->
-        <div id="tbl"> <!-- container mt-4-->
-            <div class="add-hs">
-                <button type="button" class="btn" id="btn_hs_add">Partnerhochschule anlegen</button>
-            </div>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Hochschule</th>
-                        <th>Anzeige</th>
-                        <th>Verträge</th>
-                        <th>Edit</th>
-                    </tr>
-                </thead>
-                <tbody id="addItems">
 
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
 </body>
 </html>

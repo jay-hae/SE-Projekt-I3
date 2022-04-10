@@ -3,7 +3,7 @@
 		- institutes.html
 		- institutes_html_manager.js
 		- institutes_loader.js
-		- button _functionality.js
+		- button_functionality.js
 		- filter_functionality.js
 		- filter_values_loader.js
 		- navbar_functionality.js
@@ -13,7 +13,6 @@
 		- wird nach Laden der HTML File institutes.html automatisch durchgeführt
 		- ruft alle Funktionen auf welche für die normale Anwendung benötigt werden 
 		- diese Funktionen sind verteilt auf die einzelnen Javascript Files -> Einzelheiten im Quellcode der institutes_html_manager.js Datei
-
 
 	institues_loader.js:
 		- beinhaltet eine Funktion welche "Partnerhochschulobjekte" enthält, diese werden dann ausgewertet und entsprechend der Tabellenstruktur in institues.html in die Tabelle eingefügt
@@ -49,7 +48,8 @@
 		- Funktion Logoutbutton
 
 	modal_add_form_validation.js: 
-		- Bereitstellen zur Clientseitigen Prävention der Eingabe von fehlerhaften Daten beim anlegen einer neuen Hochschule 
+		- Bereitstellen zur Clientseitigen Prävention der Eingabe von fehlerhaften Daten beim anlegen einer neuen Hochschule
+		- Verhindert Speichern bei fehlenden Eingabe (fehlt die Englische Bezeichung wird Speichern Button nicht freigegeben)
 
 	modal_edit_functionality.js:
 		- Funktionen welche die Benutzung der Modalbox zum editieren einer bestehenden Hochschulpartnerschaft bereitstellen

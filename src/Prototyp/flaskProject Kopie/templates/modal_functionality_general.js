@@ -8,7 +8,7 @@ function modal_events(){
             data: all
         })
             .done(() => {
-                //wenn einfügen erfolgreich war
+                //wenn einfügen erfolgreich war, Modal wieder ausgeblendet
                $('#modal_add').toggle();
                //sonst Fehlermeldung in Modal anzeigen
             });
@@ -24,10 +24,11 @@ function modal_events(){
     });
     $(' .modal').on('close', function(event, modal) {
         //$(' .my_check').prop('checked', false);
-        $(' .modal_form').trigger('reset'); //clear modal after closing it
+        $(' .modal_form').trigger('reset'); // clear modal of user input after closing it
         $('#mod_add_institute').attr('disabled', "true")
     });
-    //Funktion Buttons zum wechsel der Ansicht in Popup welches erscheint, sobald man den editieren-Button betätigt
+    // Funktionalität des Buttons erlaubt Wechseln zwischen den
+    // Bearbeiten der Hochschule und der dazugehörige Partnerschaften
     $('#next').on('click', () => {
         $('#first_slide').hide();
         $('#second_slide').show();
