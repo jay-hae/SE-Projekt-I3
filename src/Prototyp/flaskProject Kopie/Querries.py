@@ -164,9 +164,11 @@ def filter_institutes(parameters):
     cur = cnxn.cursor()
     payload = []
     parameter_list = (parameters[0], parameters[1], parameters[2], parameters[3], parameters[4])
+    print(parameter_list)
     cur.callproc('count_agreements_filter', parameter_list, )
     for result in cur.stored_results():
         payload = return_institutes(result.fetchall())
+    print(payload)
     cur.close()
     cnxn.close()
     return jsonify(payload, {'sorting': parameters[5]})

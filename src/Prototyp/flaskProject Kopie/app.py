@@ -115,14 +115,22 @@ def newMentor():
 @app.route('/filterInstitute', methods=['POST'])
 def handle_filter():
     if request.method == 'POST':
-        my_list = request.form.values()
-        var = ['%' if i == 'none' else i for i in my_list]
+        my_list = request.form.to_dict()
+        if my_list['filter_shown'] == 'y':
+            my_list['filter_shown'] = "1"
+        elif my_list['filter_shown'] == 'n':
+            my_list['filter_shown'] = "0"
+        if my_list['filter_activity'] == 'y':
+            my_list['filter_shown'] = "0" #in DB -> 0 = aktiv, 1 = inaktiv
+        elif my_list['filter_shown'] == 'n':
+            my_list['filter_shown'] = "1"
+        var = ['%' if i == 'none' else i for i in my_list.values()]
         return Querries.filter_institutes(var)
 
 
 @app.route('/editInstitute', methods=['POST'])
 def edit_inst():
-    return jsonify({"success": "JO"})
+    return jsonify({'success'})
 
 
 """"@app.route('changeData/<name>', methods=['POST'])

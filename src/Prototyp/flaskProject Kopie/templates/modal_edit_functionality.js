@@ -36,21 +36,19 @@ function loadModal(inst_id){
 }
 
 function loadAgreements(inst_id) {
+    //einfügen der Daten auf zweiter Seite des Modals
     $.ajax({
+        method: 'POST',
+        url: '/loader/mobAgreements',
         data: {
             id: inst_id
-        },
-        type: 'POST',
-        url: '/loader/mobAgreements'
+        }
     })
-        .done((data) => {
-            //einfügen der Daten auf zweiter Seite des Modals
-            const add = $('#addAgreements');
-            data.forEach((obj) => {
-                //nur für Tabelle, alle agreements + restrictions als objekte auf client ablegen
-                console.log(obj);
-                console.log("\n")
-                add.append("<tr><th style=\"display:none;\">" + obj['agreement_ID'] + "</th><th >" + obj['faculty'] + "</th><th >" + obj['agreement_inactive'] + "</th><th >" + obj['title'] + obj['firstname'] + obj['lastname'] +"</th><th>" + obj['notes'] + "</th></tr>");
+        .done((responseData) => {
+            const data = responseData[0];
+            const addField = $('#addAgreements');
+            $.each(data, (index, val) => {
+                let newRow = "<tr id='" + data['agreement_ID'] + "'><th> " + data['faculty'] + "</th><th>" + data['agreement_inactive'] + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th></tr>"
             });
         });
 }
