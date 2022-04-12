@@ -1,14 +1,5 @@
-$(document).on('DOMContentLoaded', function (){
-    $.get('/loader/mentor', function (data){
-       insertMentor(data);
-       cacheMentors(data);
-       sortMentor("firstname");
-    });
-
-});
-
 function cacheMentors(mentorArray) {    //mentoren lokal auf rechner im browser zwischenspeichern für einen einfacheren Zugriff
-    $.each(mentorArray, (index) =>{
+    $.each(mentorArray, (index) => {
         let cur = mentorArray[index];
         let obj = {
             faculty_ID: cur['faculty_ID'],
@@ -25,7 +16,8 @@ function cacheMentors(mentorArray) {    //mentoren lokal auf rechner im browser 
     });
 }
 
-function insertMentor(mentors) {
+
+function mentorInsert(mentors) {
     $('#mnt_body').empty();
     $.each(mentors, function (index){
         let mentor = mentors[index];
@@ -35,6 +27,7 @@ function insertMentor(mentors) {
 }
 
 function searchMentor() {
+    alert('hi');
     let element = $('#mnt_body');
     let children = element.children();
     let search_for = $('#tbl_search').val().toLowerCase();
@@ -66,4 +59,16 @@ function sortMentor(attribute) {
 
     }
 }
+
+$(document).on('DOMContentLoaded', function (){
+    $.ajax({
+        type: 'GET',
+        url: '/loader/mentor'
+    })
+        .done((data) => {
+            mentorInsert(data);
+        });
+});
+
+
 
