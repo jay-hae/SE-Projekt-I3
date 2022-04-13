@@ -10,12 +10,14 @@
     <link href="../style.css" rel="stylesheet">
     <script src="../ajax.js"></script>
     <script src="../mentor_loader.js"></script>
+    <script src="../mentor_load_dropdowns.js"></script>
+    <script src="../mentor_modal_add.js"></script>
+    <script src="../mentor_modal_edit.js"></script>
     <script src="../navbar_functionality.js"></script>
-    <script src="../mentor_button_functionality.js"></script>
 </head>
 <body>
 <!-- Modal bearbeiten Mentoren -->
-<div id="modal_edit_mentor" class="modal" style="display: none">
+<div id="modal_edit_mentor" class="modal">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -26,28 +28,28 @@
                 <div class="row">
                     <div class="col-sm p-3 m-3 pt-1">
                         <form>
-                            <label for="edit_mentor_title" class="form-label"></label>
-                            <input type="text" id="edit_mentor_title">
-                            <label for="edit_mentor_firstname" class="form-label"></label>
-                            <input type="text" id="edit_mentor_firstname">
-                            <label for="edit_mentor_lastname" class="form-label"></label>
-                            <input type="text" id="edit_mentor_lastname">
-                            <label for="" class="form-label"></label>
-                            <select class="">
+                            <label for="edit_mentor_title" class="form-label"></label><br>
+                            <input class="form-control" type="text" id="edit_mentor_title"><br>
+                            <label for="edit_mentor_firstname" class="form-label"></label><br>
+                            <input class="form-control" type="text" id="edit_mentor_firstname"><br>
+                            <label for="edit_mentor_lastname" class="form-label"></label><br>
+                            <input class="form-control" type="text" id="edit_mentor_lastname" name="edit_mentor_lastname"><br>
+                            <label for="edit_men_fac" class="form-label"></label><br>
+                            <select class="edit_mentor_fac" id="edit_men_fac" name="edit_mentor_faculty">
                                 <!-- Add options for faculties (dropdown) -->
-                            </select>
-                            <label for="edit_mentor_active" class="form-label"></label>
-                            <input type="checkbox" id="edit_mentor_active">
+                            </select><br>
+                            <label for="edit_mentor_active" class="form-label"></label><br>
+                            <input class="form-control" type="checkbox" id="edit_mentor_active"><br>
                             <select id="edit_mentor_gender">
                                 <option> -Geschlecht wählen- </option>
                                 <option value="1">Männlich</option>
                                 <option value="2">Weiblich</option>
                                 <option value="3">Divers</option>
-                            </select>
-                            <label for="edit_mentor_homepage" class="form-label"></label>
-                            <input type="text" id="edit_mentor_homepage">
-                            <label for="edit_mentor_email" class="form-label"></label>
-                            <input type="text" id="edit_mentor_email">
+                            </select><br>
+                            <label for="edit_mentor_homepage" class="form-label"></label><br>
+                            <input class="form-control" type="text" id="edit_mentor_homepage"><br>
+                            <label for="edit_mentor_email" class="form-label"></label><br>
+                            <input class="form-control" type="text" id="edit_mentor_email"><br>
                         </form>
                     </div>
                 </div>
@@ -57,7 +59,7 @@
 </div>
 
 <!-- Modal anlegen neuer Mentoren -->
-<div id="modal_add_mentor" style="display: none">
+<div id="modal_add_mentor" class="modal">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -66,14 +68,14 @@
             </div>
             <div class="modal-body">
                 <form id="add_mentor_form">
-                    <label for="mentor_add_title">Titel</label><br>
-                    <input type="text" id="mentor_add_title" name="title"><br>
-                    <label for="mentor_add_firstname">Vorname</label><br>
-                    <input type="text" id="mentor_add_firstname" name="firstname"><br>
-                    <label for="mentor_add_lastname">Nachname</label><br>
-                    <input type="text" id="mentor_add_lastname" name="lastname"><br>
-                    <label for="mentor_fac">Fakultät</label><br>
-                    <select id="mentor_fac" name="faculty_ID">
+                    <label class="form-label" for="mentor_add_title">Titel</label><br>
+                    <input class="form-control" type="text" id="mentor_add_title" name="title"><br>
+                    <label class="form-label" for="mentor_add_firstname">Vorname</label><br>
+                    <input class="form-control" type="text" id="mentor_add_firstname" name="firstname"><br>
+                    <label class="form-label" for="mentor_add_lastname">Nachname</label><br>
+                    <input class="form-control" type="text" id="mentor_add_lastname" name="lastname"><br>
+                    <label class="form-label" for="mentor_fac">Fakultät</label><br>
+                    <select id="mentor_fac" class="edit_mentor_fac" name="faculty_ID">
 
                     </select><br>
                     <select id="mentor_gender" name="gender_ID">
@@ -81,12 +83,12 @@
                         <option value="2">Weiblich</option>
                         <option value="3">Divers</option>
                     </select><br>
-                    <label for="mentor_add_homepage">Homepage</label><br>
-                    <input type="text" id="mentor_add_homepage" name="homepage"><br>
-                    <label for="mentor_add_mail">Email</label><br>
-                    <input type="text" id="mentor_add_mail" name="email"><br>
-                    <label for="mentor_add_active">An HTW aktiv?</label>
-                    <input type="checkbox" id="mentor_add_active" name="active">
+                    <label class="form-label" for="mentor_add_homepage">Homepage</label><br>
+                    <input class="form-control" type="text" id="mentor_add_homepage" name="homepage"><br>
+                    <label class="form-label" for="mentor_add_mail">Email</label><br>
+                    <input class="form-control" type="text" id="mentor_add_mail" name="email"><br>
+                    <label class="form-label" for="mentor_add_active">An HTW aktiv?</label>
+                    <input class="form-control" type="checkbox" id="mentor_add_active" name="active">
                 </form>
             </div>
             <div class="modal-footer">
@@ -140,7 +142,7 @@
         <!-- Tabelle für die Partnerhochschulen -->
         <div id="tbl"> <!-- container mt-4-->
             <div class="add-mentor">
-                <button type="button" class="btn" id="btn_mentor">Mentor hinzufügen</button>
+                <button type="button" class="btn" id="btn_mentor" onclick="$('#modal_add_mentor').toggle()">Mentor hinzufügen</button>
             </div>
             <div class="search_mentor">
                 <input id="tbl_search" onkeyup="searchMentor()" type="text" placeholder="Mentor suchen">

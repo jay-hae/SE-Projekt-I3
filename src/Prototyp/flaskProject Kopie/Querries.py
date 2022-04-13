@@ -207,10 +207,13 @@ def new_mentor(columns, values):
     query_parameter = dynamic_querries(columns)
     query = "INSERT INTO tbl_mentor (" + query_parameter[0] + ") VALUES(" + query_parameter[1] + ")"
     try:
+        print(query)
+        print(values)
+        """
         insert = tuple(values)
-        cur.execute(query, insert, )
+        cur.execute(query, values,)
         cnxn.commit()
-        return jsonify({'success': 'true'})
+        return jsonify({'success': 'true'})"""
     finally:
         cur.close()
         cnxn.close()

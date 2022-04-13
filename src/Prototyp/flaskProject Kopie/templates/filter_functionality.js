@@ -13,7 +13,6 @@ function addFilterChangeEvents(){
         });
     });
     //clear filter after reset
-    //immplement to check if reset really changes anything; if not then prevent action
     $('#fil_reset').on('click', function (event){
         event.preventDefault();
         //kill all child elements created by loadInstitutes to clear page for reload child

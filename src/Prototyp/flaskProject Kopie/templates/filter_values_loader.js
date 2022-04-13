@@ -14,6 +14,8 @@ function setupFilter() {
     });
     $.get('/get/faculties', function (data3) {
         //add to filter on main page
+        const arr = Array.from(data3)
+        console.log(arr);
         $.each(data3, function (index3) {
             let faculty = data3[index3];
             $('#fil_fac').append($('<option>', {

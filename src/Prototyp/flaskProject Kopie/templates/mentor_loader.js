@@ -67,6 +67,7 @@ $(document).on('DOMContentLoaded', function (){
     })
         .done((data) => {
             mentorInsert(data);
+            cacheMentors(data);
         });
 });
 
