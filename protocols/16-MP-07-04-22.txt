@@ -1,0 +1,46 @@
+Meeting Protokoll 07.04
+
+Protokollverantwortlicher: Jakob
+Anwesende: Ha, Pascal bis (18:00), Luca , Jakob, Jens, Nico, Herr Ringel ab 18:00
+
+TOP Vorbereitung
+
+TOP Stand aus Perspektive der Alphas
+
+Essence Navigator abhaken
+-Opportunities 
+-Requirements
+-Way of Working (besprechen und einigen)
+
+TOP Vorstellung C4 und Entwicklerdoku
+- Ha Vorstellung von C4 Modell (2 von 4 Schichten):
+- Fragen von Herr Ringel:
+     --> Was heißt C4 Modell?
+     --> Welches Ziel hat das C4 Modell für das Projekt/für jede einzelne Rolle?
+     --> alle Teammitglieder müssen das Modell verstanden haben und müssen darauf ableiten können
+     --> Schnittstelle zu Maria DB?
+
+- Jens Vorstellung der Entwicklerdoku:
+  - C4 Modelll in Systemarchitektur referenzieren zum Punkt Schichtenarchitektur
+  - mögliche Überschrift für die Seiten-Ansicht: Funktionallitätsbezogene Userschnittstellen
+  - Workexample eines ganz einfachen Falls für die Flask Anwendung in die Entwicklerdokumentation aufnehmen. Zum besseren Verständnis.
+  - Interaktionsübersicht mittles UML- Diagram erstellen (Sequenzdiagram) 
+
+TOP Fragen von Luca an Ringel (Deployment)
+- Hauptaufgabe: dem Kunden Zugang zum Produkt geben
+- Auf produktivserver Installieren
+- Prototyp installieren (Zwischenstände zur Evalluierung durch Kunde hochladen)
+- Bis zum 1. Mai Prototyp (getestet) der SI zur Verfügung stellen (mind. 20% des Produktes)
+
+TOP Fragen zu Retroperspektie:
+    - Diskussion zum Präsenztreffen 
+    - man muss nicht unbedingt alle 14 Tage Retrospektive - Termin machen --> 3mal in Semester reicht aus, wenn es ergebnisreich ist und man die richtigen Schlüsse zieht
+
+
+Fragen für das nächste Meeting:
+-  jeder muss vom C4 Modell seine Rolle ableiten können(Test, Implm., etc.)
+- Interaktionsübersicht mittles UML- Diagram erstellen (Sequenzdiagram)
+- Workexample eines ganz einfachen Falls für die Flask Anwendung in die Entwicklerdokumentation aufnehmen. Zum besseren Verständnis 
+- nächstes Teammeeting mit Herr Ringel --> Camera an KAMERA AN FÜR Herrn Ringel
+- Retrospektive om präsenz
+- bei Fertigstellung der Entwicklerdoku --> Herr Ringel schicken zur Kontrolle

@@ -1,0 +1,88 @@
+Meeting Protokoll 11.04
+Protokollvera.: Jakob
+Anwesende: Jens, Luca, Patrick, Ha
+    
+###TOP 1 Was wurde gemacht
+Ha + Jens: C4 Modell (es wird langsam, dank Ha!)
+Level 1-3 sind so gut wie fertig, Hauptfunktionalität (Hochschulen, Fakultäten) sind so gut wie fertig
+Luca: nicht weiter gearbeitet u. noch nicht mit Pascal gesprochen
+Patrick: nicht viel sichtbares, Infomaterial zum Testen von Flask liegt vor. Flask infos für Test, das nächste wäre mit Roman zu treffen und das vervollständigen der Planung der Test Cases
+
+Jakob: leider nicht viel gemacht ;)
+Pascal: aktueller Fortschritt Implementierung: 
+- aktuelle Version kann: 
+- Einfügen von Hochschulen
+- Wahl zw. verschiedenen Ansichten (Übersichten Länder, ...)
+- Mentoren suchen
+- Laden der aktuellen Daten einer bestehenden Partnerschaft + ihre Agreements + alle mob_agreements_x_course (alle Restriktionen) -> Informationen zur Hochschule werden schon im Interface angezeigt, die Agreements wurden bisher nur auf der Seite des Backends berücksichtigt
+- Entwicklerdokumentation so weit es bisher möglich ausgearbeitet
+- viele Anpassungen User Interface
+-> Implementierung nicht wirklich viel passiert aufgrund der EntwicklerDoku
+
+- aktueller Stand auf der VM -> Replikation der Live-Datenbank aufgespielt, aktuellste Version muss ich heute abend noch ins Github stellen und auf VM aufspielen. 
+(Ich schick dir heute Abend des Link den die SI nutzen kann, ab Morgen früh um 6 schalt ich die VM ein hoffe sie bleibt dauerhaft online :D)
+
+###TOP 2 Way of Working (-> Ziel jeder kennts, jeder ist einverstanden)
+- REAME akzepitert
+- GitHubZen Issues 
+
+###TOP 3 Was muss gemacht werden (sammeln von Aufgaben)
+- 1. Jens + Ha: C4 Model weiter ausarbeiten, von Pascal, dann von Hernn Ringel absegenen lassen
+- 2. Jens: Code kommentieren, welches Zeile macht was
+- 3. Jens + Ha: Entwicklerdoku schreiben (C4 Model einfügen etc. )
+- 4. Patrick + Roman: Test Cases vervollständigen
+- 5. Patrick + Roman: Tests durchführen
+- 6. Patrick + Roman: Testdokumentation schreiben
+- 7. Pascal: übernehmen der Änderungen an Hochschulen/ Mob Agreement in DB
+- 8. Pascal: Einsehen der Mob Agreements 
+
+- aktueller Stand auf der VM -> Replikation der Live-Datenbank aufgespielt, aktuellste Version muss ich heute abend noch ins Github stellen und auf VM aufspielen. 
+(Ich schick dir heute Abend des Link den die SI nutzen kann, ab Morgen früh um 6 schalt ich die VM ein hoffe sie bleibt dauerhaft online :D)
+- 9. Pascal: Anlegen /Ändern Mentoren
+- 10. Luca: Anwenderdokumentation schreiben- Nico + Jakob: Uscases korrigeerne
+- 11. Luca: Useraccounts in Datenbank (mit Rechenzentrum auseinandersetzen ob wir selbst DB Logins anlegen können für die Mitarbeiter der SI?) 
+- 12. Luca:  Views für Verwaltungsfrontend -> wie müssen die Views von uns aussehen um den Abfragen des Verwaltunsfrontends gerecht zu werden? ggf. mit Verantwortlichem der Website auseinandersetzen 
+
+- 13. aufspielen des aktuellen Stands des Prototypen auf die VM, mit SI auseinandersetzen und ihnen zu beliebigem Termin den Prototypen zur Verfügung stellen + Feedback einholen zu user interface 
+
+-14 Jakob: Termin mit SI finden
+
+###TOP 4 Priorisierung
+
+1) 9
+2) 3 (fübis zur abgabe wäre es super
+3) 5
+4) 9
+5) erst später (6)
+6) immer parallel (4)
+7-9) 8 (ohne Pascal ermitellte Priorität)
+10) 3
+11-12) 10 (ohne Pascal priorisiert)
+13) 10
+14) 8
+
+TOP 5 Iterationsziel formulieren
+1) aktueller Stand des C4 Modell an Herrn Ringel
+4) möglichst alle Test Cases vollständig planen (Dokumentation/nicht Code)
+11) alle fragen klären
+- GitZen etablieren, Prototyp an Si, Way of Working 
+
+TOP 6 Fragen an SI
+siehe TOP7
+
+TOP 7 SI Agenda
+- Prototypen besprechen. Was ist gut, was ist schlecht?
+- Umgang mit Partnerhs bei denen kein aktiver Vertrag besteht? (Anzeige Ja/Nein)
+
+TOP 8 Sonsitges / Probleme
+- Issues Problem (GitHub Zen)(Jens) Wundere dich nicht lieber Jakob, wir können Issues nicht abhaken, wenn es Aufgaben sind, die das ganze Semester lang dauern.
+- Jede Woche Treffen? (mal in Teams rein hören und stand abfragen
+- Teile der Andwenderdoku übernehmen?
+
+
+TODO:
+    - TOP Zen Hub vorstellen
+    - TOP Jakob stellt vor welche Dokumente genau abgegeben werden müssen
+    -  Fragen an Pascal:
+    - welche Funktionen fehlen noch in der Software?
+    Login, Statistiken, Daten löschen (mittels speziellem Account o.ä)? Wo hakt es? Wie können wir dich unterstützen?
