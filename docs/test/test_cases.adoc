@@ -22,7 +22,62 @@
 - die Arbeitskraft erhält Zugang zur Verwaltungsanwendung
 |===
 
-=== Test Case 02: 
+=== Test Case 02: Anlegen von Hochschulpartnerschaften
+
+|===
+| Beschreibung | Die Arbeitskraft wählt die Funktion zum Anlegen einer neuen Hochschulpartnerschaft, trägt alle notwendigen Daten ein und speichert diese selbstständig.
+| Vorbedingungen und benötigte Daten a| - die Arbeitskraft hat sich erfolgreich angemeldet
+- Attribute gemäß Eingabemaske werden vollständig eingetragen
+| Nachbedingung a| 
+- Der Datenbank wurde eine valide Hochschule in der richtigen Tabelle hinzugefügt
+|===
+
+=== Test Case 03: Bearbeiten von Hochschulpartnerschaften
+
+|===
+| Beschreibung | Die Arbeitskraft wählt die Bearbeitungsfunktion an einer bereits vorhandenen Partnerhochschule, um einzelne Attribute zu verändern.
+| Vorbedingungen und benötigte Daten a| - Die Arbeitskraft hat sich erfolgreich angemeldet
+- Die zu bearbeitende Hochschulpartnerschaft stellt einen bereits existenten Datensatz dar
+| Nachbedingung a| - Attribute des Datensatzes der Hochschulpartnerschaft wurden erfolgreich sowie fehlerfrei aktualisiert. 
+|===
+
+=== Test Case 04: Löschen von fehlerhaften Datensätzen
+
+|===
+| Beschreibung | Eine leitende Arbeitskraft mit erweiterten Befugnissen nutzt diese um fehlerhafte Datensätze aus dem System zu löschen.
+| Vorbedingungen und benötigte Daten a| - Die Arbeitskraft hat sich erfolgreich mit den vorgesehenen Admin Zugangsdaten eingeloggt 
+- Reguläre Arbeitskräfte haben keinen Zugriff auf das Löschen der Datensätze
+- Ruhende Partnerschaften dürfen nicht gelöscht werden
+| Nachbedingung a| - Der fehlerhafte Datensatz wurde aus der entsprechenden Datenbankrelation entfernt
+|===
+
+=== Test Case 05: Mentoren editieren
+
+|===
+| Beschreibung | Eine Arbeitskraft will Änderungen am Datensatz der Mentoren vornehmen
+| Vorbedingungen und benötigte Daten a| - Die Daten wurden korrekt und vollständig übertragen
+-  Datenänderungen werden unverzüglich in das System übernommen
+- direkter Datenbankzugriff um Änderungen vorzunehmen
+| Nachbedingung a| - Bei erfolgreicher Änderung werden die Daten aus dem Datensatz ersetzt und bei Abfrage erfolgreich angezeigt
+|===
+
+=== Test Case 06: Erstellen von Berichten über Erasmusvereinbarungen
+
+|===
+| Beschreibung | Eine Arbeitskraft will einen Bericht über die bestehenden Erasmusvereinbarungen erstellen
+| Vorbedingungen und benötigte Daten | 
+| Nachbedingung | 
+|===
+
+=== Test Case 07: Erstellen von Berichten über Mentoren
+
+|===
+| Beschreibung | 
+| Vorbedingungen und benötigte Daten | 
+| Nachbedingung | 
+|===
+
+=== Test Case 08: Erstellen von Berichten über Hochschulvereinbarungen
 
 |===
 | Beschreibung | 
