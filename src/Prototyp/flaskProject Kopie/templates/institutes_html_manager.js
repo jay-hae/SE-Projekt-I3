@@ -15,6 +15,7 @@ $(document).on('DOMContentLoaded', function () {
     addFilterChangeEvents();
     // load countries, faculties and partnerships and add to filter
     setupFilter();
+    clearSessionStorage();
 }
 );
 

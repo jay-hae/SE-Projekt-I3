@@ -18,7 +18,7 @@ function setupFilter() {
         console.log(arr);
         $.each(data3, function (index3) {
             let faculty = data3[index3];
-            $('#fil_fac').append($('<option>', {
+            $(' .select_faculty').append($('<option>', {
                 value: faculty['id'],
                 text: faculty['fac']
             })); //Name of option = faculty['fac'] == Name; value = faculty['id'] == Fac_ID

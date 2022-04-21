@@ -1,4 +1,4 @@
-import time
+import time, helper
 
 import Login
 from flask import jsonify
@@ -179,7 +179,7 @@ def new_Institute(tuple_col_inst, tuple_val_inst, name, val):
     all_parameters = (name, val)
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    query_parameter = dynamic_querries(tuple_col_inst)
+    query_parameter = helper.dynamic_querries(tuple_col_inst)
     query = "INSERT INTO tbl_institute (" + query_parameter[0] + ") VALUES (" + query_parameter[1] + ")"
     try:
         insert_parameter = tuple(tuple_val_inst)
@@ -204,7 +204,7 @@ def new_Institute(tuple_col_inst, tuple_val_inst, name, val):
 def new_mentor(columns, values):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    query_parameter = dynamic_querries(columns)
+    query_parameter = helper.dynamic_querries(columns)
     query = "INSERT INTO tbl_mentor (" + query_parameter[0] + ") VALUES(" + query_parameter[1] + ")"
     try:
         print(query)
@@ -312,14 +312,6 @@ def return_faculties():
     return jsonify(payload)
 
 
-def dynamic_querries(col):
-    all_vals = "%s," * len(col)
-    all_cols = ""
-    for column in col:
-        all_cols += ", " + column
-    return [all_cols[2:], all_vals[:-1]]
-
-
 def return_institutes(result_set):
     payload = []
     for result in result_set:
@@ -331,3 +323,14 @@ def return_institutes(result_set):
         }
         payload.append(content)
     return payload
+
+
+def edit_institute(keys, values, institute):  # institute = institute ID
+    parameter = helper.dynamic_querries(keys)
+    query_string = helper.create_update_string(keys)
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    query = "UPDATE tbl_institute SET " + query_string[:-1] + " WHERE ID = " + institute
+    #cur.execute(query, tuple(values),)
+    return jsonify({'status': 'success'})
+

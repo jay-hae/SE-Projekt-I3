@@ -1,8 +1,10 @@
 function cacheMentors(mentorArray) {    //mentoren lokal auf rechner im browser zwischenspeichern für einen einfacheren Zugriff
+    const mentArr = [];
     $.each(mentorArray, (index) => {
         let cur = mentorArray[index];
         let obj = {
             faculty_ID: cur['faculty_ID'],
+            mentor_ID: cur['ID'],
             active: cur['active'],
             title: cur['title'],
             firstname: cur['firstname'],
@@ -12,8 +14,9 @@ function cacheMentors(mentorArray) {    //mentoren lokal auf rechner im browser 
             email: cur['email'],
             agreements: cur['agreements']
         }
-        sessionStorage.setItem(cur['ID'], JSON.stringify(obj));
+        mentArr.push(cur['ID'], obj)
     });
+    sessionStorage.setItem('mentor', JSON.stringify(mentArr));
 }
 
 
@@ -27,7 +30,6 @@ function mentorInsert(mentors) {
 }
 
 function searchMentor() {
-    alert('hi');
     let element = $('#mnt_body');
     let children = element.children();
     let search_for = $('#tbl_search').val().toLowerCase();
@@ -59,6 +61,17 @@ function sortMentor(attribute) {
 
     }
 }
+
+/*function mentorSelect(mentors, selectID) {
+    const selectObj = document.getElementById(selectID);
+    $.each(mentors, function(index) {
+        const cur = mentors[index];
+        selectObj.append($('<option>'), {
+            value: cur['ID'],
+            text: cur['title'] + " " + cur['firstname'] + " " + cur['lastname']
+        });
+    });
+}*/
 
 $(document).on('DOMContentLoaded', function (){
     $.ajax({

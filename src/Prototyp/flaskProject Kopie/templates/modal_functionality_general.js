@@ -15,12 +15,7 @@ function modal_events(){
     });
     $('#mod_edit').on('click', function (event){
         event.preventDefault();
-        let all = $('#edit_left_col').serialize();
-        $.ajax({
-            type: 'POST',
-            url: '/editInstitute',
-            data: all,
-        });
+        checkIfUpdated();
     });
     $(' .modal').on('close', function(event, modal) {
         //$(' .my_check').prop('checked', false);
@@ -48,6 +43,10 @@ function modal_button_events() {
         $('#modal_add').toggle();
     });
     $(' .close_modal_edit').on('click', function (){
+        $('#first_slide').show();
+        $('#second_slide').hide();
+        $('#addAgreements').empty();
         $('#modal_edit').toggle();
+        clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
     });
 }

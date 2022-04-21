@@ -1,4 +1,5 @@
-import os, Login, Querries
+import json
+import os, Login, Querries, helper
 #### os : When Python starts, it loads many modules into sys. module.os module is also loaded when Python starts. It assigns its path to the os specific module attribute.
 #### Login : imports Login.py File
 
@@ -130,18 +131,20 @@ def handle_filter():
 
 @app.route('/editInstitute', methods=['POST'])
 def edit_inst():
-    return jsonify({'success'})
+    print(request.form.to_dict())
+    return jsonify({'success': 'true'})
 
 
-""""@app.route('changeData/<name>', methods=['POST'])
+@app.route('/changeData/<name>', methods=['POST'])
 def changes(name):
-    if name == 'add':
-
-    elif name == '':
-
-    else:
+    if name == 'addInstitute':
+        print(request.form.to_dict())
+    elif name == 'updateInstitute':
+        x = request.form.to_dict()
+        inst = x['ID']
+        x.pop('ID')
+        Querries.edit_institute(x.keys(), x.values(), inst)
     return redirect(url_for('LoginPage'))
-"""
 
 
 @app.route('/homepage/<name>', methods=['GET', 'POST'])

@@ -8,7 +8,7 @@ function loadModal(inst_id){
         url: '/openModal'
     })
         //open modal after information got inserted into form
-        .done(function (data){ //put data into modal
+        .done(function (data) { //put data into modal
             let chosen_inst = data[0];
             $('#edit_mod_country').val(chosen_inst['country']);
             $('#edit_modal_eng').val(chosen_inst['eng']);
@@ -32,6 +32,9 @@ function loadModal(inst_id){
             $('#edit_mod_ap_tel').val(chosen_inst['pers_tel']);
             $('#edit_mod_ap_mail').val(chosen_inst['pers_mail']);
             $('#modal_edit').toggle();
+            chosen_inst = createObjectInstitute(chosen_inst);
+            chosen_inst = checkInput(chosen_inst);
+            sessionStorage.setItem('currentInstitute', JSON.stringify(chosen_inst));
         });
 }
 
@@ -44,11 +47,118 @@ function loadAgreements(inst_id) {
             id: inst_id
         }
     })
-        .done((responseData) => {
-            const data = responseData[0];
+        .done((data) => {
+            console.log(data);
             const addField = $('#addAgreements');
             $.each(data, (index, val) => {
-                let newRow = "<tr id='" + data['agreement_ID'] + "'><th> " + data['faculty'] + "</th><th>" + data['agreement_inactive'] + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th></tr>"
+                let newRow = "<tr id='" + (data[index])['agreement_ID'] + "'><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
+                addField.append(newRow);
             });
+        });
+}
+
+function createObjectInstitute(institute) {
+    return {
+        ID: Number(institute['id']),
+        country_ID: Number(institute['country']),
+        eng: String(institute['eng']),
+        local: String(institute['local']),
+        address: String(institute['adr']),
+        homepage: String(institute['website']),
+        display: Number(institute['display']),
+        erasmus_code: String(institute['ec']),
+        note: String(institute['notes']),
+        department: String(institute['dep']),
+        phone: String(institute['tel']),
+        email: String(institute['mail']),
+        int_office_homepage: String(institute['off_website']),
+        function: String(institute['function']),
+        title: String(institute['title']),
+        gender_ID: Number(institute['gender']),
+        firstname: String(institute['firstname']),
+        lastname: String(institute['lastname']),
+        person_phone: String(institute['pers_tel']),
+        person_email: String(institute['pers_mail'])
+    }
+}
+
+function clearSessionStorage() {
+    try {
+        sessionStorage.removeItem('currentInstitute');
+        sessionStorage.removeItem('updatedInstitute');
+        //remove mob agreements (information und neu angelegte ag's)
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
+
+function instituteObjectUpdated() {
+    const update = {
+        id: (JSON.parse(sessionStorage.getItem('currentInstitute'))).ID,
+        country: $('#edit_mod_country').val(),
+        eng: $('#edit_modal_eng').val(),
+        local: $('#edit_modal_local').val(),
+        adr: $('#edit_modal_adr').val(),
+        website: $('#edit_modal_ws').val(),
+        display: $('#edit_modal_anz').prop('checked'),
+        ec: $('#edit_modal_ec').val(),
+        notes: $('#edit_modal_ntzn').val(),
+        dep: $('#edit_mod_dep').val(),
+        tel: $('#edit_mod_tel').val(),
+        mail: $('#edit_mod_mail').val(),
+        off_website: $('#edit_mod_int_off_ws').val(),
+        function: $('#edit_mod_func').val(),
+        title: $('#edit_mod_title').val(),
+        gender: $('#edit_mod_gender').val(),
+        firstname: $('#edit_mod_vn').val(),
+        lastname: $('#edit_mod_nn').val(),
+        pers_tel: $('#edit_mod_ap_tel').val(),
+        pers_mail: $('#edit_mod_ap_mail').val()
+    }
+    let newObj = createObjectInstitute(update);
+    newObj = checkInput(newObj);
+    sessionStorage.setItem('updatedInstitute', JSON.stringify(newObj));
+}
+
+function checkInput(object) {
+    let keys = Object.keys(object);
+    keys.forEach(key => {
+        if (object[key] === "null") {
+            object[key] = "";
+        }
+    });
+    return object;
+}
+
+function checkIfUpdated() {
+    let old = JSON.parse(sessionStorage.getItem('currentInstitute'));
+    let newest = JSON.parse(sessionStorage.getItem('updatedInstitute'));
+    if (old === newest) {
+        return false;
+    }
+    postData(createDifferenceArray(old, newest), '/changeData/updateInstitute');
+}
+
+function createDifferenceArray(oldInst, newInst) {
+    let keys = Object.keys(oldInst);
+    let newestAttr = {}
+    keys.forEach(key => {
+        if (oldInst[key] !== newInst[key]) {
+            newestAttr[key] = newInst[key];
+        }
+    });
+    newestAttr['ID'] = oldInst['ID'];
+    return newestAttr;
+}
+
+function postData(data, url) {
+    $.ajax({
+        data: data,
+        method: 'POST',
+        url: url
+    })
+        .done(answer => {
+            return answer;
         });
 }

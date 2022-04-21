@@ -3,7 +3,7 @@
 $(document).on('DOMContentLoaded', () => {
     $.ajax({
         type: 'GET',
-        'url': '/get/faculties'
+        url: '/get/faculties'
     })
         .done((data) => {
             $.each(data, (index, obj) => {

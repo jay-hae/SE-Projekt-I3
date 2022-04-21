@@ -71,7 +71,7 @@
                     <select id='fc' class="filter filter_country" name="filter_country">
                         <option value="none">-Land-</option>
                     </select>
-                    <select id='fil_fac' name="filter_fac" class="filter">
+                    <select id='fil_fac' name="filter_fac" class="filter select_faculty">
                         <option value="none">-Fakultät-</option>
                     </select>
                     <select id="fil_shown" name="filter_shown" class="filter">
@@ -127,7 +127,7 @@
                 <button type="button" class="btn-close close_modal_edit" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div id="first_slide">
+                <div id="first_slide" onchange="instituteObjectUpdated()">
                     <div class="col-sm-4 p-3">
                         <form class="modal_form" id="edit_left_col">
                         <h4>Hochschule</h4>
@@ -226,20 +226,54 @@
                     </div>
                     <button id="next"></button>
                 </div>
-                <div id="second_slide" style="display: none">
-                <table class="table table-hover">
-                    <thead>
-                     <tr>
-                        <th>Fakultät</th>
-                        <th>Aktiv</th>
-                        <th>Mentor</th>
-                        <th>Bemerkungen</th>
-                    </tr>
-                    </thead>
-                    <tbody id="addAgreements">
+                <div id="second_slide" style="display: none; height: 100%">
+                  <div id="space_table" style="height: 33%">
+                    <table class="table table-hover">
+                        <thead>
+                         <tr>
+                            <th>Fakultät</th>
+                            <th>Aktiv</th>
+                            <th>Mentor</th>
+                            <th>Bemerkungen</th>
+                        </tr>
+                        </thead>
+                        <tbody id="addAgreements">
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                  </div>
+                  <div id="space_edit_agreement" style="height: 66%">
+                    <label for="mntr_dropdown">Mentor</label><br>
+                    <select class="loadMentor" id="mntr_dropdown">
+                        <!-- hinzufügen der Mentoren in Dropdown-->
+                    </select><br>
+                    <label for="fclt_dropdown">Fakultät</label><br>
+                    <select class="select_faculty" id="fclt_dropdown">
+                        <!-- einfügen aller Fakultäten-->
+                    </select><br>
+                    <label for="date_signed">Datum der Unterzeichnung</label><br>
+                    <input type="text" id="date_signed"><br>
+                    <label for="valid_begin">Gültigkeitsbeginn</label><br>
+                    <input type="text" id="valid_begin"><br>
+                    <label for="valid_until">Gültigkeitsende</label><br>
+                    <input type="text" id="valid_until"><br>
+                    <label for="ag_active">Agreement Aktiv?</label><br>
+                    <input type="checkbox" id="ag_active"><br>
+                    <label for="gender_mentor">Geschlecht</label><br>
+                    <select id="gender_mentor">
+                        <option value="1">Männlich</option>
+                        <option value="2">Weiblich</option>
+                        <option value="3">Divers</option>
+                    </select><br>
+                    <label for="in_num_mob">Anzahl max. eingehender Studenten</label><br>
+                    <input type="text" id="in_num_mob"><br>
+                    <label for="in_num_months">Maximale Dauer</label><br>
+                    <input type="text" id="in_num_months"><br>
+                    <label for="out_num_mob">Anzahl max. ausgehender Studenten</label><br>
+                    <input type="text" id="out_num_mob"><br>
+                    <label for="out_num_months">Maximale Dauer</label><br>
+                    <input type="text" id="out_num_months"><br>
+                  </div>
                     <button id="previous"></button>
                 </div>
             </div>
