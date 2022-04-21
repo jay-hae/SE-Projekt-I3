@@ -15,7 +15,8 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
 
 **Inhaltsverzeichnis**
 - [Meetings](#meetings)
-- [Protokolle](#protokolle)
+    - [Agenda](#agenda)
+    - [Protokolle](#protokolle)
 - [Dokumentierung](#dokumentierung)
 - [Iterationen](#iterationen)
 - [Kritik an der Arbeitsorga](#kritik_an_der_arbeitsorganisation)
@@ -61,8 +62,7 @@ Diese Meetings finden (vorerst) alle 2 Wochen statt.
 
 ### Retrospektive
 Die Retrospektive findet aller 2 Wochen statt und dient der Anpassung unserer Arbeitweise bzw. zum Klären von Problemen oder um eine Gelegenheit zu bieten, "Gut gemacht" zu sagen.
-Es wird das Tool [EasyRetro](https://easyretro.io/) verwendet, bei dem ich mich angemeldet habe.
-Ihr braucht euch stand meines Wissens nicht anzumelden.
+Es wird das Tool [EasyRetro](https://easyretro.io/) verwendet. Eine Anmeldung ist nicht erforderlich.
 
 ## Subteams
 Ein Subteam ist eine Arbeitsgruppe die sich zur Bearbeitung eines Issues / Work Items zusammen gefunden hat.
@@ -75,12 +75,12 @@ Ist dies nicht der Fall sind die Dokumente zu dem Themengebiet durchzugehen und 
 
 Die Dokumente sind spätestens zum Ende einer Arbeitsphase (nach Abschluss der Aufgabe) upzudaten.
 
-## Iteration
-* eine Iteration dauert 1 Wochen (erstmal nur Vorschlag)
-    * Grund: Regelmäßiges Treffen am Montag zu dem alle können, bessere Planbarkeit, kleinere Meilensteine zu jedem nächsten Montag
-    * Dadurch kann Retrospektive jede Woche statt finden und sich die benötigte Zeit dafür insgesamt Verkürzen.
-
-* Aufgaben für die jeweilige Iteration sind als Issue formuliert oder in project_management/Iterationen.xlsx notiert
+## Iteration Planung
+* eine Iteration dauert 2 Wochen 
+* konstituierenden Sitzungen einer Iteration sind am Montag aller 2 Wochen ab dem 25.04
+* Aufgaben für die jeweilige Iteration sind:
+    * als Issue im "Sprint Backlog" formuliert 
+    * project_management/Iterationen.xlsx notiert (abzulösendes Konzept, da umständlich)
 
 ## Kritik an der Arbeitsorganisation
 Die hier verfassten Punkte können sich je nach der praktischen Erprobung ändern.
