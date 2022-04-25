@@ -27,6 +27,7 @@ TOP 4 SI Meeting Agenda + Treffen
 - UserAcc von Frau Terpe vorschlag mit nur einem Admin und rest Mitarbeiter(?)
 - Rückmeldung Prototyp
 - Umgang mit Partnerhs bei denen kein aktiver Vertrag besteht? (Anzeige Ja/Nein)
+- wie viele Mitarbeiter gibt es (ist die anzahl immer gleich siehe Issue #33)?
 
 ToDo: 
 - Termin SI
