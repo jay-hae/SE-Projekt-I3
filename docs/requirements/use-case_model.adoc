@@ -13,7 +13,7 @@
 
 == Allgemeine Informationen
 // ...
-Im folgenden werden die bisher identifizierten Use Cases benannt. Die 3 wichtigsten werden detailiert beschreiben.
+Im folgenden werden die bisher identifizierten Use Cases benannt. Die 5 wichtigsten werden detailiert beschreiben.
 
 == Identifizierte Use Cases
 // Liste aller identifizierten Use Cases (priorisiert)
@@ -30,46 +30,46 @@ Im folgenden werden die bisher identifizierten Use Cases benannt. Die 3 wichtigs
 * <<_uc11_externe_abfragen>>
 
 === für Akteur Mitarbeiter SI
-==== *UC01*: In System einloggen
+==== *UC01*: In System Einloggen
 
 include::use_case_01.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 image::wf_uc01_anmelden.jpg[]
 
-==== *UC02*: Anlegen von Hochschulen
+==== *UC02*: Partnerhochschulen Anlegen
 
 include::use_case_02.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 image::wf_uc02_hochschule_anlegen.jpg[]
 image::wf_uc02_hochschulen_uebersicht.jpg[]
 
-====  *UC03*: Bearbeiten von Hochschulen
+====  *UC03*: Partnerhochschulen Editieren
 
 include::use_case_03.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 image::wf_uc03_hochschule_bearbeiten_1.jpg[]
 image::wf_uc03_hochschule_bearbeiten_2.jpg[]
 
-==== *UC04*: Löschen von fehlerhaften Datensätzen
+==== *UC04*: Fehlerhafte Datensätze Löschen
 include::use_case_04.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC05*: Mentoren editieren
-//include::use_case_05.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+==== *UC05*: Mentoren Editieren
+include::use_case_05.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 === Use Cases für die Berichtsabfragen
-==== *UC06*: Erstellen von Berichten über Erasmusvereinbarungen
+==== *UC06*: Berichte über Erasmusvereinbarungen Erstellen
 //include::use_case_06.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC07*: Erstellen von Berichten über Mentoren
+==== *UC07*: Berichte über Mentoren Erstellen
 //include::use_case_07.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC08*: Erstellen von Berichten über Hochschulvereinbarungen
+==== *UC08*: Berichte über Hochschulvereinbarungen Erstellen
 //include::use_case_08.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC09*: Erstellen von Berichten über Abkommen nach Länder sortiert
+==== *UC09*: Berichte über Abkommen nach nach Länder sortiert Erstellen
 //include::use_case_09.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC10*: Berichte exportieren
+==== *UC10*: Erstellte Berichte Exportieren
 //include::use_case_10.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC11*: Externe Abfragen 
+==== *UC11*: Berichte für Externe Anzeigen 
 //TODO UC11 umbenennen
 //include::use_case_11.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 

@@ -4,18 +4,16 @@ left to right direction
 actor Mitarbeiter
 
 rectangle "Verwaltungsfrontend" {
-usecase "UC01\nIn System einloggen" as uc01
-usecase "UC02\nAnlegen von Hochschulen" as uc02
-usecase "UC03\nBearbeiten von Hochschulen" as uc03
-usecase "UC04\nLöschen von fehlerhaften Datensätzen" as uc04
-usecase "UC05\nAnlegen von Mentoren" as uc05
-usecase "UC06\nBearbeiten von Mentoren" as uc06
-usecase "UC07\nLöschen von Mentoren" as uc07
-usecase "UC08\nErstellen von Berichten \nüber Erasmusvereinbarungen" as uc08
-usecase "UC09\nErstellen von Berichten \nüber Mentoren" as uc09
-usecase "UC10\nErstellen von Berichten \nüber Hochschulvereinbarungen" as uc10
-usecase "UC11\nErstellen von Berichten \nüber Abkommen nach nach Länder sortiert" as uc11
-usecase "UC12\nBerichte Exportieren" as uc12
+usecase "UC01\nIn System Einloggen" as uc01
+usecase "UC02\nPartnerhochschulen Anlegen" as uc02
+usecase "UC03\nPartnerhochschulen Editieren" as uc03
+usecase "UC04\nFehlerhafte Datensätze Löschen" as uc04
+usecase "UC05\nMentoren Editieren" as uc05
+usecase "UC06\nBerichte über Erasmusvereinbarungen \nErstellen" as uc06
+usecase "UC07\nBerichte über Mentoren \nErstellen" as uc07
+usecase "UC08\nBerichte über Hochschulvereinbarungen \nErstellen" as uc08
+usecase "UC09\nBerichte über Abkommen nach \nnach Länder sortiert Erstellen" as uc09
+usecase "UC10\nErstellte Berichte Exportieren" as uc10
 }
 
 Mitarbeiter -- uc01
@@ -27,19 +25,17 @@ Mitarbeiter -- uc06
 Mitarbeiter -- uc07
 Mitarbeiter -- uc08
 Mitarbeiter -- uc09
-Mitarbeiter -- uc10
-Mitarbeiter -- uc11
-uc08 <.down. uc12 : extends
-uc09 <.down. uc12 : extends
-uc10 <.down. uc12 : extends
-uc11 <.down. uc12 : extends
+uc06 <.down. uc10 : extends
+uc07 <.down. uc10 : extends
+uc08 <.down. uc10 : extends
+uc09 <.down. uc10 : extends
 
 actor Nutzer
 
 rectangle "Informationsfrontend" {
 
-usecase "UC13\nExterne Abfragen" as uc13
+usecase "UC11\nBerichte für Externe Anzeigen" as uc11
 }
-Nutzer -- uc13
+Nutzer -- uc11
 
 @enduml
