@@ -61,12 +61,24 @@ def exec_sp():
 def ret_file(filename):
     return send_from_directory('templates', filename)
 
-
-# handle institute that should get added
-# return a value to let js script know if insert was successful
-@app.route('/addInstitute', methods=['POST'])
-def new_institute():
-    if request.method == 'POST':
+@app.route('/add/<name>', methods=['POST'])
+def new_object(name):
+    if name == 'Mentor':
+        active = 0
+        req = request.form.to_dict()
+        columns = []
+        values = []
+        for key in req:
+            if key == 'active':
+                active = 1
+                break
+            # key = dict key, req[key] = value
+            columns.append(key)
+            values.append(req[key])
+        columns.append('active')
+        values.append(active)
+        Querries.new_mentor(columns, values)
+    elif name == 'Institute':
         my_var = request.form.to_dict()
         # for insert into tbl_institute
         col_list_institute = []
@@ -91,26 +103,13 @@ def new_institute():
             else:
                 val = my_var[key]
         return Querries.new_Institute(col_list_institute, val_list_institute, name, val)
-    return redirect(url_for('LoginPage'))
+    elif name == 'Agreement':
+        agreement_obj = request.form.to_dict()
 
-
-@app.route('/addMentor', methods=['POST'])
-def newMentor():
-    if request.method == 'POST':
-        active = 0
-        req = request.form.to_dict()
-        columns = []
-        values = []
-        for key in req:
-            if key == 'active':
-                active = 1
-                break
-            # key = dict key, req[key] = value
-            columns.append(key)
-            values.append(req[key])
-        columns.append('active')
-        values.append(active)
-        Querries.new_mentor(columns, values)
+    elif name == 'Restriction':
+        change_restriction = request.form.to_dict()
+    else:
+        return jsonify({'status': 'unexpected request'})
 
 
 @app.route('/filterInstitute', methods=['POST'])

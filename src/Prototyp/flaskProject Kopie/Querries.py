@@ -137,8 +137,9 @@ def get_ma_and_courses(institute):
                 'in_num_mob': row[10],
                 'in_num_months': row[11],
                 'out_num_mob': row[12],
-                'out_num_moths': row[13],
+                'out_num_months': row[13],
                 'notes': row[14],
+                'mentor_ID': row[15],
                 'course_restrictions': []
             }
             agreement = (content['agreement_ID'],)

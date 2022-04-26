@@ -15,7 +15,9 @@
     <script src="../institutes_html_manager.js"></script>
     <script src="../modal_add_form_validation.js"></script>
     <script src="../modal_edit_functionality.js"></script>
+    <script src="../modal_edit_change_Agreement.js"></script>
     <script src="../modal_functionality_general.js"></script>
+    <script src="../modal_edit_helper.js"></script>
     <script src="../filter_functionality.js"></script>
     <script src="../filter_values_loader.js"></script>
     <script src="../institutes_loader.js"></script>
@@ -228,7 +230,7 @@
                 </div>
                 <div id="second_slide" style="display: none; height: 100%">
                   <div id="space_table" style="height: 33%">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="table_agreements">
                         <thead>
                          <tr>
                             <th>Fakultät</th>
@@ -242,38 +244,34 @@
                         </tbody>
                     </table>
                   </div>
-                  <div id="space_edit_agreement" style="height: 66%">
-                    <label for="mntr_dropdown">Mentor</label><br>
-                    <select class="loadMentor" id="mntr_dropdown">
-                        <!-- hinzufügen der Mentoren in Dropdown-->
-                    </select><br>
-                    <label for="fclt_dropdown">Fakultät</label><br>
-                    <select class="select_faculty" id="fclt_dropdown">
-                        <!-- einfügen aller Fakultäten-->
-                    </select><br>
-                    <label for="date_signed">Datum der Unterzeichnung</label><br>
-                    <input type="text" id="date_signed"><br>
-                    <label for="valid_begin">Gültigkeitsbeginn</label><br>
-                    <input type="text" id="valid_begin"><br>
-                    <label for="valid_until">Gültigkeitsende</label><br>
-                    <input type="text" id="valid_until"><br>
-                    <label for="ag_active">Agreement Aktiv?</label><br>
-                    <input type="checkbox" id="ag_active"><br>
-                    <label for="gender_mentor">Geschlecht</label><br>
-                    <select id="gender_mentor">
-                        <option value="1">Männlich</option>
-                        <option value="2">Weiblich</option>
-                        <option value="3">Divers</option>
-                    </select><br>
-                    <label for="in_num_mob">Anzahl max. eingehender Studenten</label><br>
-                    <input type="text" id="in_num_mob"><br>
-                    <label for="in_num_months">Maximale Dauer</label><br>
-                    <input type="text" id="in_num_months"><br>
-                    <label for="out_num_mob">Anzahl max. ausgehender Studenten</label><br>
-                    <input type="text" id="out_num_mob"><br>
-                    <label for="out_num_months">Maximale Dauer</label><br>
-                    <input type="text" id="out_num_months"><br>
-                  </div>
+                      <div id="space_edit_agreement" style="height: 66%">
+                        <label for="mntr_dropdown">Mentor</label><br>
+                        <select class="loadMentor" id="mntr_dropdown">
+                            <!-- hinzufügen der Mentoren in Dropdown-->
+                        </select><br>
+                        <label for="fclt_dropdown">Fakultät</label><br>
+                        <select class="select_faculty" id="fclt_dropdown">
+                            <!-- einfügen aller Fakultäten-->
+                        </select><br>
+                        <label for="date_signed">Datum der Unterzeichnung</label><br>
+                        <input type="text" id="date_signed"><br>
+                        <label for="valid_begin">Gültigkeitsbeginn</label><br>
+                        <input type="text" id="valid_begin"><br>
+                        <label for="valid_until">Gültigkeitsende</label><br>
+                        <input type="text" id="valid_until"><br>
+                        <label for="ag_active">Agreement Aktiv?</label><br>
+                        <input type="checkbox" id="ag_active"><br>
+                        <label for="in_num_mob">Anzahl max. eingehender Studenten</label><br>
+                        <input type="text" id="in_num_mob"><br>
+                        <label for="in_num_months">Maximale Dauer</label><br>
+                        <input type="text" id="in_num_months"><br>
+                        <label for="out_num_mob">Anzahl max. ausgehender Studenten</label><br>
+                        <input type="text" id="out_num_mob"><br>
+                        <label for="out_num_months">Maximale Dauer</label><br>
+                        <input type="text" id="out_num_months"><br>
+                        <label for="notes">Bemerkungen</label><br>
+                        <input type="text" id="notes">
+                      </div>
                     <button id="previous"></button>
                 </div>
             </div>
@@ -406,6 +404,34 @@
         </div>
     </div>
 </div>
+<!-- Modal für die Anzeige der Restriktionen (mob_ag_x_course) -->
+<div class="modal" id="agreement_restrictions">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Restriktionen</h5>
+                <button type="button" class="btn-close close_modal_add"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <table class="table table-hover" id="table_restrictions">
+                        <thead>
+                            <tr>
+                                <th>Studiengang</th>
+                                <th>Subject Area Code</th>
+                                <th>Art des Austausches</th>
+                                <th>Anteilig Plätze</th>
+                                <th>Anteilig Monate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbl_restriction">
 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
