@@ -15,9 +15,13 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
 
 **Inhaltsverzeichnis**
 - [Meetings](#meetings)
-- [Protokolle](#protokolle)
+    - [Agenda](#agenda)
+    - [Teammeeting](#teammeeting)
+    - [SI Meeting](#si_meeting)
+    - [Protokolle](#protokolle)
+    - [Retrospektive](#retrospektive)
+- [Iterations Planung](#iterations_planung)
 - [Dokumentierung](#dokumentierung)
-- [Iterationen](#iterationen)
 - [Kritik an der Arbeitsorga](#kritik_an_der_arbeitsorganisation)
 - [Dateistruktur](#dateistruktur)
 - [Hilfe](#hilfe)
@@ -34,16 +38,19 @@ Weiter unten stehen die allgemiene Informationen zu dem genutzten Repository-Tem
 * Gesprächswunsch template: \[Meeting Art(zB. Teammeeting)\] \[Datum (falls bekannt, siehe Chat "termine")\] TOP: (zB. Planung nächstes SI Meeting) 
 * Vom Protokollverantwortlichen sind die Punkte aus dem Chat als TOP's (Topics) in das Protokoll zu übernehmen
     * von allen ist während des Meetings darauf zu achten, dass die Reihenfolge der TOP's eingehlaten wird bzw. eine Idee zu einem späteren TOP schriftlich (ohne Diskussion) festgehalten wird
-    * neue, in dem Gespräch aufkommende TOP's sind zu notieren und in den Chat "offene-fragen-und-agenda" zu posten
+    * neue, in dem Gespräch aufkommende TOP's sind zu notieren und je nach Wichtigkeit zu vertagen
 
 ### Teammeeting
 Es folgt der generelle Ablauf eines Teammeetings:
 * Begrüßung / Ankunft
 * Besprechung des aktuellen Arbeitsstandes (Was wurde in den Subteams erreicht, was nicht)
+* Sichtung und Priorisierung der neuen Issues
+* auswahl der bewerteten Issues für die Iteration 
+* Besprechung sonstiger TOP's
+* Zusammenfassung des Meetings
 
 ### SI Meeting
-Diese Meetings finden (vorerst) alle 2 Wochen statt.
-* Grund: war letztes Semester auch so
+Diese Meetings finden (vorerst) alle 2 Wochen statt ab KW 17.
 
 ### Protokolle
 * Zu jedem Meeting ist ein Protokoll zu führen.
@@ -61,26 +68,34 @@ Diese Meetings finden (vorerst) alle 2 Wochen statt.
 
 ### Retrospektive
 Die Retrospektive findet aller 2 Wochen statt und dient der Anpassung unserer Arbeitweise bzw. zum Klären von Problemen oder um eine Gelegenheit zu bieten, "Gut gemacht" zu sagen.
-Es wird das Tool [EasyRetro](https://easyretro.io/) verwendet, bei dem ich mich angemeldet habe.
-Ihr braucht euch stand meines Wissens nicht anzumelden.
+Es wird das Tool [EasyRetro](https://easyretro.io/) verwendet. Eine Anmeldung ist nicht erforderlich.
 
 ## Subteams
+(je nach Etablierung von ZenHub hinfällig)
 Ein Subteam ist eine Arbeitsgruppe die sich zur Bearbeitung eines Issues / Work Items zusammen gefunden hat.
 Jedes Subteam macht sich einen Verantwortlichen aus, der dafür sorgt, dass der Fortschritt/Rückschlag/Änderung in der Datei fortschritt.adoc (im Root Verzeichnis des Projekts auf Git) festgehalten wird.
 Beispiele finden sich in der Datei.
 
+## Iterations Planung
+Die komplette Planung und Überwachung findet nun über das AddOn ZenHub statt.
+* eine Iteration dauert 2 Wochen 
+* konstituierenden Sitzungen einer Iteration sind am Montag aller 2 Wochen ab dem 25.04
+* Aufgaben/Issues für die jeweilige Iteration sind:
+    * im "Sprint Backlog" definiert 
+    * wenn sie gerade bearbeitet werden in die "In Progress"-Pipeline zu schieben
+    * wenn sie bearbeitet wurden in "Done" oder "Review/QA" zu verschieben
+    * project_management/Iterationen.xlsx notiert (abzulösendes Konzept, da umständlich)
+* Aufgaben für die jeweilige Iteration müssen:
+    * prioriesiert sein
+    * zugewiesen sein
+    * zugewiesene und prioriesierte Issues die nicht in der aktuellen Iteration behandelt werden müssen sind in die Pipeline "Product Backlog" zu schieben 
+
+* Iterations und Issue übergreifende Aufgaben wie (zB das korriegieren des Beleges aus SE1) werden als Epic angelegt (siehe ZenHub) die Issues die zur Fertigstellung des Epics nötig sind werden diesen Zugeordnet (das soll die Überwachung der Aufgaben erleichtern)
 ## Dokumentierung
 Jeder muss sich bewusst sein, welche Dokumente in der [Dateistruktur](#dateistruktur), von seiner gerade zu erledigenden Aufgabe beeinflusst werden.
 Ist dies nicht der Fall sind die Dokumente zu dem Themengebiet durchzugehen und zu prüfen wo sich Änderungen in den Dokumenten ergeben könnten oder es ist im [OpenUP](https://www2.htw-dresden.de/~anke/openup/index.htm) unter "Work Products" nachzulesen was gemacht werden muss.
 
 Die Dokumente sind spätestens zum Ende einer Arbeitsphase (nach Abschluss der Aufgabe) upzudaten.
-
-## Iteration
-* eine Iteration dauert 1 Wochen (erstmal nur Vorschlag)
-    * Grund: Regelmäßiges Treffen am Montag zu dem alle können, bessere Planbarkeit, kleinere Meilensteine zu jedem nächsten Montag
-    * Dadurch kann Retrospektive jede Woche statt finden und sich die benötigte Zeit dafür insgesamt Verkürzen.
-
-* Aufgaben für die jeweilige Iteration sind als Issue formuliert oder in project_management/Iterationen.xlsx notiert
 
 ## Kritik an der Arbeitsorganisation
 Die hier verfassten Punkte können sich je nach der praktischen Erprobung ändern.

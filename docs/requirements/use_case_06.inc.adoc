@@ -1,1 +1,1 @@
-== Use-Case: Erstellen von Berichten über Erasmusvereinbarungen (UC06)
+== Use-Case: Berichte über Erasmusvereinbarungen Erstellen (UC06)

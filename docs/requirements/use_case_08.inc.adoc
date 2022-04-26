@@ -1,2 +1,2 @@
-== Use-Case: Erstellen von Berichten über Hochschulvereinbarungen (UC08)
+== Use-Case: Berichte über Hochschulvereinbarungen Erstellen (UC08)
 

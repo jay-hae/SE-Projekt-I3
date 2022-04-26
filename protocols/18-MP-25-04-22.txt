@@ -1,0 +1,35 @@
+Meeting Protokoll 25.04
+Protokollvera.: Jakob, Luca
+Anwesende: Nico, Roman, Ha, Pascal
+    
+TOP 1 Was wurde gemacht
+    - Luca rückmeldung von RZ (UserAcc von Terpe), Anwender Doku
+- Pascal anzeigen und änderen von Daten aber nicht in die Datenbank übertragbar
+- Nico UC aktuell
+- Ha Jens C4-Modell (levl 3,4 hinzugefügt)
+
+TOP 1.1 ZenHub kleine Einführung (10min)
+- das wichtigste steht in der README, sonst Jakob Fragen
+
+TOP 1.2 Abzugebene Dokumente
+- Entwickelerdoku, Anwenderdoku, Betriebsdoku für Admins
+- Projekt bericht:
+- Reflexion übereigene Rolle 
+- zusammenarbeit mit anderen Kompetenzerwerb
+
+TOP 2 Neue Issues bewerten und Zuweisen (in Product Backlog schieben)
+- siehe ZenHub
+
+TOP 3 Auswahl der Issues für die Iteration (in Sprint Backlog schieben)
+- siehe ZenHub
+
+TOP 4 SI Meeting Agenda + Treffen
+- UserAcc von Frau Terpe vorschlag mit nur einem Admin und rest Mitarbeiter(?)
+- Rückmeldung Prototyp
+- Umgang mit Partnerhs bei denen kein aktiver Vertrag besteht? (Anzeige Ja/Nein)
+- wie viele Mitarbeiter gibt es (ist die anzahl immer gleich siehe Issue #33)?
+
+ToDo: 
+- Termin SI
+- verfügbarkeiten in Verfügbarkeiten.xlsx aktuallieseiern
+

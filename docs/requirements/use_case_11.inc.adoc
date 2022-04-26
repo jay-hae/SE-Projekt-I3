@@ -1,1 +1,1 @@
-== Use-Case: Externe Abfragen (UC11)
+== Use-Case: Berichte für Externe Anzeigen (UC11)

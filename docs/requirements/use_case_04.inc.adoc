@@ -1,6 +1,6 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
 
-== Use-Case: Löschen von fehlerhaften Datensätzen (UC04)
+== Use-Case: Fehlerhafte Datensätze Löschen (UC04)
 
 === Kurzbeschreibung
 Bei diesem Use Case soll die Leitung der Stabsstelle Internationales ein Hochschulattribut löschen.
