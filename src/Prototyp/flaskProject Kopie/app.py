@@ -184,4 +184,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) # bei Fehlern in der VM debug=True durch host='0.0.0.0' ersetzen
