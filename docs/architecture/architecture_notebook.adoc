@@ -60,12 +60,22 @@ Zur Unterstützung einer effizienten Bedienbarkeit wurde sich beim Design des In
 == Architektur-relevante Anforderungen
 
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
-* SWFA-1 bis SWFA-3
-* NFAU-1
-* NFAU-2
-* NFAR-1 bis NAFAR-3
-* NFAP-1
-* NFAP-2
+
+*Funktional*
+
+* SWFA-1: Das System muss alle Hochschulpartnerschaften und Statistiken persistent speichern.
+* SWFA-2: Nur autorisierte Mitarbeiter des Akademischen Auslandsamtes dürfen Zugriff auf das Verwaltungsfrontend haben.
+
+*Zuverlässigkeit*
+
+* NFAR-1: Bei einer Wiederherstellung der Datenbank auf einen Vorzustand muss das Verwaltungsfrontend weiterhin funktionieren.
+* NFAR-2: Das Verwaltungsfrontend und das Informationsfrontend müssen parallel auf Daten zugreifen können.
+* NFAR-3: Das System muss paralleles Lesen und Schreiben im Verwaltungsfrontend unterstützen. (Multi-User-System)
+
+*Effizienz (Performance)*
+
+* NFAP-1: Der Wechsel zwischen Seiten des Verwaltungsfrontends sollte maximal 3 Sekunden dauern (innerhalb der Hochschule mit funktionierendem Netz)
+* NFAP-2: In 90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein.
 * Erweiterbarkeit der Systemfunktionalität
 
 == Entscheidungen, Nebenbedingungen und Begründungen
@@ -136,13 +146,10 @@ Die Entscheidung wurde von Vorgängern getroffen, somit verwenden wir eine Maria
 
 === Interface
 
-Während der Analyse wurde mit NFAU-1, NFAU-2 festgehlaten, dass die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist.
+Während der Analyse wurde mit NFAU-1, NFAU-2 festgehalten, dass die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist.
 Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen.
 Der Fakt, dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis, dass die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen besitzen.
 Unsere Webanwendung soll später in der Lage sein, sich den jeweiligen Endgeräten der Nutzer anzupassen.
-
-=== Datenbankkommunikation
-// TODO
 
 == Wesentliche Abstraktionen
 
@@ -186,28 +193,30 @@ Folgende Sichten auf die Architektur werden empfohlen:
 Das nachfolgende C4 Modell (siehe untere Abbildungen) beschreibt die logische Verknüpfung von
 Komponenten in unserem System.
 
-// image::images/C4_lvl1.png[]
+.C4 Modell Legende
+image::images/C4_model_legende.png[]
 .C4 Modell Level 1: System Context Diagramm
 image::images/C4_model_level_1_v1.png[]
 .C4 Modell Level 2: Container Diagramm
 image::images/C4_model_level_2.png[]
-.C4 Modell Legende
-image::images/C4_model_legende.png[]
-
+.C4 Modell Level 3: Components Diagramm
+image::images/C4_model_level_3.png[]
+.C4 Modell Level 4: Code
+image::images/C4_model_level_4_facultaet.jpg[]
+image::images/C4_model_level_4_hochschule.jpg[]
 
 
 === Physische Sicht (Betriebssicht)
 
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
-Das Verwaltungsfrontend wird im Browser des Nutzers ausgeführt.
-Das Backend wird auf dem www2-Server des Rechenzentrums bereitgestellt.
-Die Datenbank läuft auf einem MariaDB-Server des Rechenzentrums.
+* Das Verwaltungsfrontend wird im Browser des Nutzers ausgeführt.
+* Das Backend wird auf dem www2-Server des Rechenzentrums bereitgestellt.
+* Die Datenbank läuft auf einem MariaDB-Server des Rechenzentrums.
 
 === Use Cases
 
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungen enthalten.
-Architektur relvante Use Cases sind:
+Im Vergleich zum vollständigen Use-Case-Diagramm fallen hier einige Use-Cases weg, die nicht zur Architektur des Systems beitragen. 
 
-* UC01
-
-* UC12
+* UC01: In System einloggen / ausloggen
+* UC10: Berichte exportieren
