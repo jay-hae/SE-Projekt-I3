@@ -24,6 +24,7 @@ In folgendem Diagramm wurden Spalten ohne Beziehungen weggelassen, um eine besse
 .physisches Entity-Relationship-Diagram
 image::physical_erm.SVG[]
 
+
 ==== Tabellen
 
 Untenstehend werden alle Tabellen erläutert und aufgezeigt, was innerhalb des Verwaltungsfrontends ermöglicht wird:
@@ -60,47 +61,53 @@ _tbl_mobility_agreement_x_course_ und der Statistik | Anlegen, Bearbeiten, Deakt
 |tbl_exchange| anonymisierte Daten von Incoming / Outgoing Studenten | Import von Excel Datei zum Hinzufügen von Datensätzen
 |===
 
+TIP: Für eine detaillierte Anzeige der Tabellen betrachten Sie bitte die mitgelieferte SQL Backup Datei. Diese ist als Text lesbar und bildet die gesamte Struktur mitsamt Kommentaren ab.
+
 NOTE: Um Probleme mit Modifikationen zu vermeiden, ist allein dem Super-User das Löschen fehlerhafter Datensätze erlaubt. Der Nutzen dieser Funktion sollte jedoch die Ausnahme bilden und nicht die Regel.
 
 ==== Views
 
-Für das Informationsfrontend müssen entsprechende Views den Anforderungen entsprechend für fast jede Tabelle eingerichtet werden. Ausgenommen: tbl_exchange und tbl_exchange_type
-
-Dabei dürfen nur aktive Verträge berücksichtigt werden.
+Für das Informationsfrontend müssen entsprechende Views für jede Tabelle (ausgenommen: `tbl_exchange` und `tbl_exchange_type`) eingerichtet werden. Dabei dürfen nur aktive Verträge angezeigt werden.
 
 
 ==== Verwaltung der Datenbank
 
-Die administrativen Rechte liegen derzeit noch bei einem Mitarbeiter aus dem Rechenzentrum. Abhängig von der Nutzerauthentifizierung wird dies bei Bedarf geändert.
+Die administrativen Rechte liegen derzeit noch bei einem Mitarbeiter aus dem Rechenzentrum.
 
 === Webserver
 
 ==== Aufbau
 
-Als Webserver dient eine virtuelle Maschine, welche vom Rechenzentrum bereitgestellt wird. Diese ist im Webspace eines Funktionsaccounts aufrufbar. Dort läuft das Backend in Python und das Frontend mithilfe von HTML und Javascript.
+Als Webserver dient eine virtuelle Maschine, welche vom Rechenzentrum bereitgestellt wird. Diese ist im Webspace eines Funktionsaccounts aufrufbar. Dort läuft das Backend in Python und das Frontend mithilfe von HTML, CSS und Javascript.
 
-==== Authentifizierung im Browser
+// ==== Authentifizierung im Browser
 
-Der Punkt Authentifizierung kann noch nicht vollständig berücksichtigt werden, denn es gibt noch keinen konkreten Plan wie mit der Nutzerunterscheidung innerhalb des Softwaresystems umgegangen wird. Man kann aber mit einer Clientseitigen authentifizierung rechnen, das heißt der Nutzer bekommt z.B. einen Cookie gesetzt welcher bei Aufrufen einer Seite mitgeschickt wird.
+// Der Punkt Authentifizierung kann noch nicht vollständig berücksichtigt werden, denn es gibt noch keinen konkreten Plan wie mit der Nutzerunterscheidung innerhalb des Softwaresystems umgegangen wird. Man kann aber mit einer Clientseitigen authentifizierung rechnen, das heißt der Nutzer bekommt z.B. einen Cookie gesetzt welcher bei Aufrufen einer Seite mitgeschickt wird.
 
 ==== Darstellung
-Beim Entwickeln unseres Prototyps haben wir diesen Aspekt noch nicht berücksichtigt, aufgrund der existierenden Vorarbeit werden wir uns aber an der Darstellung der Vorgruppe orientieren.
 
-Das User-Interface hat das Ziel intuitiv nutzbar zu sein. Daher ist dieses einfach gestaltet: Nutzung einer Navigationsleiste mit den wichtigsten Links, in der Tabellenansicht weisen Icons auf die Funktion der Buttons hin - Plus bspw. hinzufügen, Stift bspw. bearbeiten...
+Das User-Interface hat das Ziel intuitiv nutzbar zu sein. Daher ist dieses einfach gestaltet.
 
-Die Formularansicht wurde mit Eingabefelder und Labels versehen, um die einfache Zuordnung durch einen Nutzer zu garantieren. Der Speichern-Button ist auch hier Grün hinterlegt, um die Funktion zu verdeutlichen.
+Auf jeder Seite
 
+* Nutzung einer Navigationsleiste mit den wichtigsten Links (zu Hochschulen-, Mentorenübersicht)
+* Ein Button zum Anlegen neue Daten (Hochschule, Mentor)
+* Tabellenansicht zum Anzeigen der Daten
+* Ein Button zum Bearbeiten für jeden Datensatz
+
+Die Formularansicht wurde mit Eingabefelder und Labels versehen, um die einfache Zuordnung durch einen Nutzer zu garantieren. Der Speichern-Button ist auch hier Blau hinterlegt, um die Funktion zu verdeutlichen.
 
 //==== Validierung der Daten
 
 //Da eine bloße Validierung von Daten im Frontend unsicher ist, werden eingegebene Daten im Backend validiert. Prinzipiell geschieht das über if-Abfragen im Code, es wird z.B. überprüft, ob der übergebene POST-Parameter existiert, ob er numerisch oder ein leerer String ist.
 
 //Die letzte Instanz der Validierung stellt die Datenbank dar, da nicht valide Formate in einer SQL-Query abgewiesen werden.
+
 === Synchronisation
 
-Es ist nicht notwendig Daten in einer anderen Datenbank zwischenzuspeichern, weshalb die Website und Datenbank zum Zeitpunkt des Aufrufs immer auf den aktuellen Stand ist.
+Es ist nicht notwendig Daten in einer anderen Datenbank zwischenzuspeichern, weshalb die Website und Datenbank zum Zeitpunkt des Aufrufs immer auf dem aktuellen Stand ist.
 
-Auf der anderen Seite werden Änderungen direkt an die Datenbank gesendet, daher ist kein Synchronisationsmechanismus nötig.
+Änderungen werden direkt an die Datenbank gesendet, daher ist kein Synchronisationsmechanismus nötig.
 
 === Schnittstelle zwischen Front- und Backend
 
@@ -108,7 +115,6 @@ Das Übergeben von Daten aus dem Frontend ins Backend wird durch POST-Anfragen g
 Geht es um die reine Darstellung der Webseiten, so nutzt der Client, GET-Anfragen um die entsprechende Website vom Server zurückgeliefert zu bekommen.
 
 Um eine einfache Verarbeitung der, vom Server geschickten Daten, im Frontend vornehmen zu können, haben wir uns für eine übermittlung per JSON-Datei entschieden. Es gibt eine einfache Möglichkeit Pythoneigene Datentypen in eine JSON-Datei zu packen, somit ist der Clientseitige Zugriff auf die Daten ähnlich wie auf dem Server.
-
 
 
 == Grafische Designaspekte
@@ -119,9 +125,9 @@ Da der Kunde bereits vorher mit Microsoft Access und einem Prototyp gearbeitet h
 
 === Verwaltungsfrontend
 
-Für die Darstellung wird generell eine Mischung aus HTML, CSS und Javascript genutzt.
+Generell wird für die Darstellung eine Mischung aus Bootstrap und lokalem CSS benutzt.
 
-Die Liste von Hochschulen, Ländern, Vertragstypen etc. werden beim Laden der Seite durch Javascript-Skripte geladen.
+Die Liste von Hochschulen, Ländern, Vertragstypen etc. werden beim Laden der Seite durch Javascript-Skripte geladen zusätzlich bei der Auswahl eines Filters aktualisiert. Sie sind in einer Tabelle angeordnet.
 
-Das Bearbeitungsformular wird als neues Fenster über dem Inhalt der Seite dargestellt. Dieses ist am Anfang des Seitenaufrufs versteckt und wird nur angezeigt, wenn der Bearbeiten- oder Erstellen-Button betätigt wurde.
+Das Bearbeitungsformular wird als (Popup-)Modal über dem Inhalt der Seite dargestellt. Dieses ist am Anfang des Seitenaufrufs versteckt und wird nur angezeigt, wenn der Bearbeiten- oder Erstellen-Button betätigt wurde.
 
