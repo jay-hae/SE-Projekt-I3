@@ -69,16 +69,16 @@
 
 #fil_reset {
   float: right;
-  border: 1px solid lightgray;
   padding: 0.4rem 0.6rem;
   border-radius: 0.4rem;
   margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 #filter_form {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 32% 32% 32%;
   column-gap: 0.7rem;
   grid-template-rows: auto auto;
   row-gap: 0.3rem;
@@ -93,7 +93,6 @@
 }
 
 .add-hs button {
-  border: 1px solid lightgray;
   padding: 0.4rem 0.6rem;
   border-radius: 0.4rem;
 }
