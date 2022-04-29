@@ -71,38 +71,38 @@
                 <!-- filter_functionality.js passt die Tabelle entsprechende gewählte Filter an -->
                 <!-- filter_functionality.js - (POST /filterInstitutes) - app.py (Z.115) - (filter_institutes) - Querries (Z.162) -->
                 <form id="filter_form" action="">
-                    <select id='fc' class="filter filter_country" name="filter_country">
+                    <select id='fc' class="filter filter_country form-select" name="filter_country">
                         <option value="none">-Land-</option>
                     </select>
-                    <select id='fil_fac' name="filter_fac" class="filter select_faculty">
+                    <select id='fil_fac' name="filter_fac" class="filter select_faculty form-select">
                         <option value="none">-Fakultät-</option>
                     </select>
-                    <select id="fil_shown" name="filter_shown" class="filter">
+                    <select id="fil_shown" name="filter_shown" class="filter form-select">
                         <option value="none">-Anzeige auf HTW-Seite-</option>
                         <option value="y">Ja</option>
                         <option value="n">Nein</option>
                     </select>
-                    <select id="fil_act" name="filter_activity" class="filter">
+                    <select id="fil_act" name="filter_activity" class="filter form-select">
                         <option value="none">-Aktive Verträge-</option>
                         <option value="y">Ja</option>
                         <option value="n">Nein</option>
                     </select>
-                    <select id="fil_agree" name="filter_agreetype" class="filter fil_agree">
+                    <select id="fil_agree" name="filter_agreetype" class="filter fil_agree form-select">
                         <option value="none">-Vertragstyp-</option>
                     </select>
-                    <select id='sorting' name="sortby" class="filter"> <!-- implement sorting filter -->
+                    <select id='sorting' name="sortby" class="filter form-select"> <!-- implement sorting filter -->
                         <option id="desc" value="a">Sortierung absteigend</option>
                         <option id="asc" value="d">Sortierung aufsteigend</option>
                     </select>
                 </form>
-                <button class="btn btn-sm btn-outline-primary" id="fil_reset">Zurücksetzen</button>
+                <button class="btn btn-sm btn-outline-secondary" id="fil_reset">Zurücksetzen</button>
             </div>
         </div>
         <br>
         <!-- Tabelle für die Partnerhochschulen -->
         <div id="tbl">
-            <div class="add-hs">
-                <button type="button" class="btn btn-outline-primary" id="btn_hs_add"> Partnerhochschule anlegen </button>
+            <div class="add-hs text-center">
+                <button type="button" class="btn btn-lg btn-outline-dark" id="btn_hs_add"> Partnerhochschule anlegen </button>
             </div>
             <table class="table table-hover">
                 <thead>
@@ -131,9 +131,11 @@
             </div>
             <div class="modal-body">
                 <div id="first_slide" onchange="instituteObjectUpdated()">
+                    <div class="text-center p-3">
+                        <button id="next" class="btn btn-lg btn-outline-dark w-100"> Hochschulpartnerschaften anzeigen </button>
+                    </div>
                     <div class="row">
                         <!-- Button for Vertrag -->
-                        <button id="next" class="btn btn-outline-primary"> Partnerschaftsverträge </button>
                         <div class="col-sm p-3 m-3 pt-1">
                         <form class="modal_form" id="edit_left_col">
                         <h4>Hochschule</h4>
@@ -233,50 +235,61 @@
                     </div>
                 </div>
                 <div id="second_slide" style="display: none; height: 100%">
-                  <div id="space_table" style="height: 33%">
-                    <table class="table table-hover" id="table_agreements">
-                        <thead>
-                         <tr>
-                            <th>Fakultät</th>
-                            <th>Aktiv</th>
-                            <th>Mentor</th>
-                            <th>Bemerkungen</th>
-                        </tr>
-                        </thead>
-                        <tbody id="addAgreements">
+                    <div class="text-center p-3">
+                        <button id="previous" class="btn btn-lg btn-outline-dark w-100"> Hochschulinformation anzeigen</button>
+                    </div>
+                    <div id="space_table" class="p-3" style="height: 33%">
+                        <table class="table table-hover" id="table_agreements">
+                            <thead>
+                             <tr>
+                                <th>Fakultät</th>
+                                <th>Aktiv</th>
+                                <th>Mentor</th>
+                                <th>Bemerkungen</th>
+                            </tr>
+                            </thead>
+                            <tbody id="addAgreements">
 
-                        </tbody>
-                    </table>
-                  </div>
-                      <div id="space_edit_agreement" style="height: 66%">
-                        <label for="mntr_dropdown">Mentor</label><br>
-                        <select class="loadMentor" id="mntr_dropdown">
-                            <!-- hinzufügen der Mentoren in Dropdown-->
-                        </select><br>
-                        <label for="fclt_dropdown">Fakultät</label><br>
-                        <select class="select_faculty" id="fclt_dropdown">
-                            <!-- einfügen aller Fakultäten-->
-                        </select><br>
-                        <label for="date_signed">Datum der Unterzeichnung</label><br>
-                        <input type="text" id="date_signed"><br>
-                        <label for="valid_begin">Gültigkeitsbeginn</label><br>
-                        <input type="text" id="valid_begin"><br>
-                        <label for="valid_until">Gültigkeitsende</label><br>
-                        <input type="text" id="valid_until"><br>
-                        <label for="ag_active">Agreement Aktiv?</label><br>
-                        <input type="checkbox" id="ag_active"><br>
-                        <label for="in_num_mob">Anzahl max. eingehender Studenten</label><br>
-                        <input type="text" id="in_num_mob"><br>
-                        <label for="in_num_months">Maximale Dauer</label><br>
-                        <input type="text" id="in_num_months"><br>
-                        <label for="out_num_mob">Anzahl max. ausgehender Studenten</label><br>
-                        <input type="text" id="out_num_mob"><br>
-                        <label for="out_num_months">Maximale Dauer</label><br>
-                        <input type="text" id="out_num_months"><br>
-                        <label for="notes">Bemerkungen</label><br>
-                        <input type="text" id="notes">
+                            </tbody>
+                        </table>
+                    </div>
+                      <div id="space_edit_agreement" class="row" style="height: 66%">
+                            <div class="col-sm p-3 m-3 pt-1">
+                                <label for="mntr_dropdown" class="form-label">Mentor</label>
+                                <select class="loadMentor form-select" id="mntr_dropdown">
+                                    <!-- hinzufügen der Mentoren in Dropdown-->
+                                </select><br>
+                                <label for="fclt_dropdown" class="form-label">Fakultät</label>
+                                <select class="select_faculty form-select" id="fclt_dropdown" >
+                                    <!-- einfügen aller Fakultäten-->
+                                </select><br>
+                                <label for="date_signed" class="form-label">Datum der Unterzeichnung</label>
+                                <input type="text" id="date_signed" class="form-control"><br>
+                                <label for="valid_begin" class="form-label">Gültigkeitsbeginn</label>
+                                <input type="text" id="valid_begin" class="form-control"><br>
+                                <label for="valid_until" class="form-label">Gültigkeitsende</label>
+                                <input type="text" id="valid_until" class="form-control"><br>
+                            </div>
+                            <div class="col-sm p-3 m-3 pt-1">
+                                <label for="in_num_mob" class="form-label">Anzahl max. eingehender Studenten</label>
+                                <input type="text" id="in_num_mob" class="form-control"><br>
+                                <label for="in_num_months" class="form-label">Maximale Dauer</label>
+                                <input type="text" id="in_num_months" class="form-control"><br>
+                                <label for="out_num_mob" class="form-label">Anzahl max. ausgehender Studenten</label>
+                                <input type="text" id="out_num_mob" class="form-control"><br>
+                                <label for="out_num_months" class="form-label">Maximale Dauer</label>
+                                <input type="text" id="out_num_months" class="form-control"><br>
+                                <div class="form-check">
+                                    <input type="checkbox" id="ag_active" class="form-check-input">
+                                    <label for="ag_active" class="form-check-label">Agreement Aktiv?</label>
+                                </div>
+                            </div>
+                            <div class="col-sm p-3 m-3 pt-1">
+                                <label for="notes" class="form-label">Bemerkungen</label>
+                                <textarea type="text" id="notes" class="form-control h-75"></textarea>
+                            </div>
+
                       </div>
-                    <button id="previous"></button>
                 </div>
             </div>
             <div class="modal-footer">

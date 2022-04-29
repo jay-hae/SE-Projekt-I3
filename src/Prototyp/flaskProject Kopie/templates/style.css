@@ -89,12 +89,10 @@
 .add-hs {
   align-items: center;
   margin: auto;
-  text-align: center;
 }
 
 .add-hs button {
-  padding: 0.4rem 0.6rem;
-  border-radius: 0.4rem;
+  margin-left: 7.5rem;
 }
 
 /* Buttons */
