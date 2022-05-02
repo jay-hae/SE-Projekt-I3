@@ -100,3 +100,8 @@
 #btn_mentor {
   padding-left: 0px;
 }
+
+.table-wrap {
+  height: 200px;
+  overflow-y: auto;
+}
