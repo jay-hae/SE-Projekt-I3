@@ -1,0 +1,71 @@
+Meeting mit SI 29.04.2022
+Protokollvera.: Jakob
+Anwesende
+Frau Terpe, Frau Wunderlich, Jakob, Nico, Patrick, Ha, Nico, Raphael
+
+
+Unsere Agenda:
+1) Besprechung des Prototypens
+- evtl alte Verträge (ohne Befristungsdatum) -> wird dann von SI auf inaktivgesetzt
+- Verträge mit Zeitbeschränkung (hier Notification Achtung der Vertrag läuft aus)
+- Bejing Research Uni. --> Datenbank = Vertrag abgelaufen (inaktiv) --> Protoype aber zeigt aktiv
+( - ist in der DB bei Beijing Research alles sinvoll und nur falsch in Frontend od falsch in DB?)
+- man kann noch keine neuen Verträge anlegen (!= anlegen einer PartnerHS)
+- Mentoren nicht änderbar (!) und anzeigbar (?)
+- Verknüpfung zwischen Vertragstypen(FIlter) und den Hochschule herstellen 
+--> soll in Hohschule bearbeiten angezeigt werden, wie Datenbank 
+- China nicht alphabetisch bei C --> letzte Hochschule (zeigt nicht sofort alle Verträge)
+- wenig Umsetzung mit dem besprochenen Wireframe 
+- klare Begriff (Bezeichnung) für die Suchleisten (auf Eindeutigkeit und intuitiv ersichtliche Bedeutung achten)
+- "Aktiv"-Auswahl zu "Verträge aktiv" oder ähnlich ändern
+- "Anzeige extern" zu "Anzeige auf HTW-Webseite" ändern
+- bei "neue Partnerhochschule anlegen": unklar ob Ansprechperson der Partnerhochschule oder der HTW
+- Alle Verträge sofort in Überblick ohne noch runter scrollen
+- in Übersicht von Hochschulen soll angezeigt werden wenn Vertrag abgelaufen ist (zB mit rot makieren)
+- Button zum Aufrufen der Verträge in der Universitätsliste (bisher "Bearbeiten"-Button -> fast nicht sichtbares Symbol unten)
+- Sortierung der Länder nicht alphabetisch?
+
+- Erasmus heißt Verträge zwischen einzelnen Fakultäten 
+- jeder Zeit kann man mit HS in Kontakt treten und neuen Erasmus anlegen können
+- Hochschulvereinbarung heißt Vertrag für alle Fakultäten (ohne nähere Fakultäts Infos)
+- diese Unterscheidung ist noch nicht möglich (!)
+- Vertragstypen (nicht als Dropdown) siehe Accsess Formular
+-Workflow SI: -> E-Mail -> zB China -> sofort alles einsehbar
+- Hochschule auswählen -> Verträge der Hochschule -> Veträge auflisten
+- Partner HS kann alle Vertragsarten beinhalten die sich auf Fakultäten beziehen können
+- Erasmus berechtigt bei Land zu ändern möglich?
+
+TODO: 
+- Filtername ändern (Anzeige, Aktiv)
+- Fehler mit Datenbank behoben (aktiv/inaktiv, Ablaufsdatum)
+- Sortierungsfehler behoben
+- Partnerschaftsoberfläche überarbeiten
+- Partnerschaftübersicht gleich angezeigen
+- Partnerschaftsfiltern in Hochschule implementiert
+- Wie viele Plätze für welchen Kurs implementiert
+- (Vertragstypen in die tabellarische Auflistung der Fakultäten)
+- Kompakteres Design (Scrollen reduzieren, kleiner Schriftgröße, Nutzung der ganzen Fläche in Menüs)
+- Fakultäten / Studiengänge bearbeiten oder anlegen
+- Trennung zwischen Hochschule und Partnerschaft anlegen
+- anlegen von Hochschulen soll unabhägig vom anlegen von Partnerschaften sein
+--> erst Hochschule anlegen --> dann nach Hochschule suchen und "bearbeiten" und Partnerschaft dort anlegen
+- kennzeichnen was Optional ist und was nicht
+- Mentoren suche funktioniert nicht (soll Vor- oder Nachnahme eingeben werden?)
+- bei Ländern: Erassmus berichtigt änderbar machen (?)
+- Stammdatenänderung der Studiengänge änderbar machen 
+Niedrig Priorität:
+- (weniger ansträngende -> es gibt noch keine Farben außer schwarz weiß) Farben für das Design (Dark-Mode?, allgemien Farben reinbringen)
+
+**Hochschule -> Vertragstyp (Erasmus, Hochschulvereinabrung, etc.) -> zeigt jeweilge Verträge an -> Verträge können noch bearbeitet weden**
+
+2) Wie viele Mitarbeiter gibt es? 
+
+- aktuell: 7/8 (ändert sich regelmäßig, Obergrenze: ca. 10 nicht unbedingt mehr als 20)
+- Multiusersystem (sinnvoll?)
+
+3) Reicht ein Admin-Account?
+
+ - Ja und normale Mitarbeiter teilen sich einen User-Account
+
+
+- Raphael: Link zur Doodle-Liste oder Terminvereinbarung für die Teilnahme an Gruppenmeetings
