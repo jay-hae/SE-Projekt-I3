@@ -1,22 +1,17 @@
-import json
-import os, Login, Querries, helper
-#### os : When Python starts, it loads many modules into sys. module.os module is also loaded when Python starts. It assigns its path to the os specific module attribute.
-#### Login : imports Login.py File
-
-#### Erklärung Flask: https://flask.palletsprojects.com/en/2.0.x/quickstart/
-from flask import Flask, render_template, request, session, url_for, jsonify, send_from_directory
+from flask import Flask, render_template, request, session, url_for, jsonify, send_from_directory # Flask: https://flask.palletsprojects.com/en/2.0.x/quickstart/
 from flask_wtf import CSRFProtect
 from werkzeug.utils import redirect
+import json
+import os # OS module in Python: https://www.geeksforgeeks.org/os-module-python-examples/
+import Login, Querries, helper
 
-#### Spezialvariable "__name__" =  https://www.pythontutorial.net/python-basics/python-__name__/#:~:text=The%20__name__%20is,file%20associated%20with%20the%20module.
-app = Flask(__name__)
+app = Flask(__name__) # Spezialvariable "__name__": https://www.pythontutorial.net/python-basics/python-__name__/#:~:text=The%20__name__%20is,file%20associated%20with%20the%20module.
 app.secret_key = os.urandom(24)
 
+#### app.route = We use the route() decorator to tell Flask what URL should trigger our function.
 
 # Login Page, atm login with db credentials
 # redirect user to homepage if he is already logged in
-
-#### app.route = We use the route() decorator to tell Flask what URL should trigger our function.
 @app.route('/', methods=['GET', 'POST'])
 def LoginPage():
     if request.method == 'GET':
@@ -31,8 +26,20 @@ def LoginPage():
     else:
         session["usr"] = Login.LoginDB(request.form["usr"], request.form["pwd"])
         return redirect(url_for('sql'))
-"""
+    """
 
+@app.route('/homepage/<name>', methods=['GET', 'POST'])
+def hp_file(name):
+    if name == 'mentor':
+        return render_template('mentor.html')
+    elif name == 'countries':
+        return render_template('country.html')
+    elif name == 'courses':
+        return render_template('course.html')
+    elif name == 'faculties':
+        return render_template('faculty.html')
+    elif name == 'institutes':
+        return render_template('institutes.html')
 
 # return of filter objects
 @app.route('/get/<name>', methods=['GET'])
@@ -55,11 +62,6 @@ def load_filter(name):
 def exec_sp():
     return Querries.for_modal(request.form['id'])
 
-
-# give browser all files that are needed (js files,...)
-@app.route('/<string:filename>', methods=['GET'])
-def ret_file(filename):
-    return send_from_directory('templates', filename)
 
 @app.route('/add/<name>', methods=['POST'])
 def new_object(name):
@@ -146,20 +148,6 @@ def changes(name):
     return redirect(url_for('LoginPage'))
 
 
-@app.route('/homepage/<name>', methods=['GET', 'POST'])
-def hp_file(name):
-    if name == 'mentor':
-        return render_template('mentor.html')
-    elif name == 'countries':
-        return render_template('country.html')
-    elif name == 'courses':
-        return render_template('course.html')
-    elif name == 'faculties':
-        return render_template('faculty.html')
-    elif name == 'institutes':
-        return render_template('institutes.html')
-
-
 @app.route('/loader/<name>', methods=['GET', 'POST']) # <name> : URL-Parameter kann übergeben
 def ret_js(name):
     if name == 'mentor':
@@ -181,6 +169,11 @@ def logout():
     if "usr" in session:
         session.pop(session["usr"], None)
     return redirect(url_for('LoginPage'))
+
+# give browser all files that are needed (js files,...)
+@app.route('/<string:filename>', methods=['GET'])
+def ret_file(filename):
+    return send_from_directory('templates', filename)
 
 
 if __name__ == '__main__':

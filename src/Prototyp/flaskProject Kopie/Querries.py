@@ -19,11 +19,11 @@ def institutes_ret():
     # convert payload to json format and send it back to server
     return jsonify(payload, {'sorting': 'a'})
 
-
+# Laden des Vertragstyp in den Filter Dropdown
 def ag_type_ret():
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    cur.execute('SELECT ID, deu FROM tbl_partnership_type')
+    cur.execute('SELECT ID, deu FROM tbl_partnership_type ORDER BY deu')
     x = cur.fetchall()
     payload = []
     for i in x:
@@ -39,10 +39,11 @@ def ag_type_ret():
 
 # get all country names + ID's from country table
 # same logic as in institutes_ret() func
+# Laden der Länderliste in den Filter Länder
 def all_countries():
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    cur.execute("SELECT de, id FROM tbl_country")
+    cur.execute("SELECT de, id FROM tbl_country ORDER BY de")
     x = cur.fetchall()
     payload = []
     for i in x:
@@ -58,10 +59,11 @@ def all_countries():
 
 # get all faculties existing in htw
 # same logic as in institutes_ret() func
+# Laden der Fakultäten in den Filter Fakultäten
 def faculty():
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    cur.execute("SELECT ID, deu FROM tbl_faculty")
+    cur.execute("SELECT ID, deu FROM tbl_faculty ORDER BY deu")
     x = cur.fetchall()
     payload = []
     for i in x:
@@ -219,11 +221,11 @@ def new_mentor(columns, values):
         cur.close()
         cnxn.close()
 
-
+# Laden der Länder in die Tabelle auf der Seite Länderübersicht
 def return_countries():
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    cur.execute('SELECT de, en, erasmus FROM tbl_country')
+    cur.execute('SELECT de, en, erasmus FROM tbl_country ORDER BY de')
     rows = cur.fetchall()  # zusammenfassen aller Objekte der Datenbankanfrage
     payload = []
     for row in rows:
@@ -237,11 +239,11 @@ def return_countries():
     cur.close()
     return jsonify(payload)
 
-
+# Laden der Studiengänge in die Tabelle auf der Seite Studiengänge
 def return_courses():
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    cur.execute('SELECT deu, eng FROM tbl_course')
+    cur.execute('SELECT deu, eng FROM tbl_course ORDER BY deu')
     x = cur.fetchall()
     payload = []
     for row in x:
@@ -254,7 +256,7 @@ def return_courses():
     cur.close()
     return jsonify(payload)
 
-
+# Laden der Mentoren in die Tabelle auf der Seite Mentoren
 def return_mentor():  # get all mentor information and store on client storage
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
@@ -264,7 +266,7 @@ def return_mentor():  # get all mentor information and store on client storage
                 JOIN tbl_mentor m  
                 ON ma.mentor_ID = m.ID 
                 GROUP BY mentor_ID
-                ORDER BY m.firstname"""
+                ORDER BY m.lastname"""
     cur.execute(query)
     all_mentors = cur.fetchall()
     payload = []
@@ -297,7 +299,8 @@ def return_faculties():
                 FROM tbl_mobility_agreement m
                 JOIN tbl_faculty f 
                 ON f.ID = m.faculty_ID
-                GROUP BY m.faculty_ID"""
+                GROUP BY m.faculty_ID
+                ORDER BY f.deu"""
     cur.execute(query)
     faculties = cur.fetchall()
     payload = []

@@ -24,7 +24,12 @@ function mentorInsert(mentors) {
     $('#mnt_body').empty();
     $.each(mentors, function (index){
         let mentor = mentors[index];
-        $('#mnt_body').append("<tr id='"+ mentor['ID'] + "'><th class='firstname_m'>" + mentor['firstname'] + "</th><th class='lastname_m'>"+ mentor['lastname'] + "</th><th>" + mentor['active'] + "</th><th>" + mentor['agreements'] + "</th><th><button type='button' class='btn modal_edit_mentor'>Bearbeiten</button></th></tr>");
+        $('#mnt_body').append("<tr id='"+ mentor['ID'] + "'>" +
+                                "<th class='lastname_m'>" + mentor['lastname'] + "</th>" +
+                                "<th class='firstname_m'>"+ mentor['firstname'] + "</th>" +
+                                "<th>" + mentor['active'] + "</th>" +
+                                "<th>" + mentor['agreements'] + "</th>" +
+                                "<th><button type='button' class='btn modal_edit_mentor'>Bearbeiten</button></th></tr>");
     });
     editButton();
 }
