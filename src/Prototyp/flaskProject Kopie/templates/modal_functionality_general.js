@@ -41,6 +41,7 @@ function modal_button_events() {
     });
     $(' .close_modal_add').on('click', function (){
         $('#modal_add').toggle();
+        $('#modal_add_mentor').toggle();
     });
     $(' .close_modal_edit').on('click', function (){
         $('#first_slide').show();

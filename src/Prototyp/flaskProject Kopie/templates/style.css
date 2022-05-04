@@ -5,7 +5,6 @@
 
 .btn:hover {
   cursor: pointer;
-  background-color: lightgrey;
 }
 
 /* Navigation Bar */
@@ -67,14 +66,6 @@
   padding: 0.4rem 0.6rem;
 }
 
-#fil_reset {
-  float: right;
-  padding: 0.4rem 0.6rem;
-  border-radius: 0.4rem;
-  margin-top: 1rem;
-  margin-right: 1rem;
-}
-
 #filter_form {
   width: 100%;
   display: grid;
@@ -91,17 +82,13 @@
   margin: auto;
 }
 
-.add-hs button {
-  margin-left: 7.5rem;
-}
-
 /* Buttons */
-
-#btn_mentor {
-  padding-left: 0px;
-}
 
 .table-wrap {
   height: 200px;
   overflow-y: auto;
+}
+
+.rounded-border {
+  border-radius: 10px;
 }

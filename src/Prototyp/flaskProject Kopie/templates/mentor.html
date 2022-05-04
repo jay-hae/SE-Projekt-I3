@@ -14,9 +14,10 @@
     <script src="../mentor_modal_add.js"></script>
     <script src="../mentor_modal_edit.js"></script>
     <script src="../navbar_functionality.js"></script>
+    <script src="../modal_functionality_general.js"></script>
 </head>
 <body>
-<!-- Modal bearbeiten Mentoren -->
+<!-- MODAL: bearbeiten Mentoren -->
 <div id="modal_edit_mentor" class="modal">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -58,13 +59,13 @@
     </div>
 </div>
 
-<!-- Modal anlegen neuer Mentoren -->
+<!-- MODAL: anlegen neuer Mentoren -->
 <div id="modal_add_mentor" class="modal">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Mentor anlegen</h5>
-                <button type="button" class="btn-close close_modal_add"></button>
+                <button type="button" class="btn-close close_modal_add" onclick="$('#modal_add_mentor').hide()"></button>
             </div>
             <div class="modal-body">
                 <form id="add_mentor_form">
@@ -98,6 +99,8 @@
         </div>
     </div>
 </div>
+
+<!-- HAUPTANSICHT -->
 <div id="Page_one" > <!-- class container -->
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
@@ -135,11 +138,12 @@
         <br>
         <!-- Tabelle für die Partnerhochschulen -->
         <div id="tbl"> <!-- container mt-4-->
-            <div class="add-mentor">
-                <button type="button" class="btn" id="btn_mentor" onclick="$('#modal_add_mentor').toggle()">Mentor hinzufügen</button>
-            </div>
-            <div class="search_mentor">
-                <input id="tbl_search" onkeyup="searchMentor()" type="text" placeholder="Mentor suchen">
+            <div class="search_mentor text-center mt-2 mb-2 ps-3 navbar navbar-light bg-light rounded-border">
+                  <form class="form-inline d-flex">
+                    <input id="tbl_search" onkeyup="searchMentor()" type="text" placeholder="Mentor suchen" class="form-control">
+<!--                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+                  </form>
+                <button type="button" class="btn btn-outline-primary me-3" id="btn_mentor" onclick="$('#modal_add_mentor').toggle()">Mentor hinzufügen</button>
             </div>
             <table class="table table-hover">
                 <thead>
