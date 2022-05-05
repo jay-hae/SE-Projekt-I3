@@ -239,6 +239,7 @@ def return_countries():
     cur.close()
     return jsonify(payload)
 
+
 # Laden der Studiengänge in die Tabelle auf der Seite Studiengänge
 def return_courses():
     cnxn = Login.newConnection()

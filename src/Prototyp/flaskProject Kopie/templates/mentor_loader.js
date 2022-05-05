@@ -41,15 +41,14 @@ function searchMentor() {
     $.each(children, function (index){
         let row = children[index];
         let cells = row.children;
-        let id = cells[0].innerHTML;
-        let rowid = "#mentor" + id;
+        let id = row['id'];
         let firstname = cells[1].innerHTML;
-        let lastname = cells[2].innerHTML;
+        let lastname = cells[0].innerHTML;
         if (!(firstname.toLowerCase().includes(search_for) || lastname.toLowerCase().includes(search_for))) {
-            $('#mentor'+id).attr("style", "display: none");
+            $('#'+id).attr("style", "display: none");
         }
         else {
-            $('#mentor'+id).attr("style", "display: ");
+            $('#'+id).attr("style", "display: ");
         }
     });
 }
