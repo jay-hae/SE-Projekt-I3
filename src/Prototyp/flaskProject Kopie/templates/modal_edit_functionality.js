@@ -132,7 +132,10 @@ function clearSessionStorage() {
         sessionStorage.removeItem('currentInstitute');
         sessionStorage.removeItem('updatedInstitute');
         sessionStorage.removeItem('currentAgreements');
+        sessionStorage.removeItem('updatedAgreements');
         sessionStorage.removeItem('currentAgID');
+        sessionStorage.removeItem('agArray');
+
         //remove mob agreements (information und neu angelegte ag's)
     }
 

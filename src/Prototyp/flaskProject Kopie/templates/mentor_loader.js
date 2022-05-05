@@ -53,19 +53,6 @@ function searchMentor() {
     });
 }
 
-function sortMentor(attribute) {
-    let all_rows = $('#mnt_body').children();
-
-    if (attribute === "firstname") {
-        //sort table after firstname; after first click z-a; a-z; ...;
-
-    }
-    else if (attribute === "lastname") {
-        //sort lastname after first click: a-z; z-a; ...;
-
-    }
-}
-
 /*function mentorSelect(mentors, selectID) {
     const selectObj = document.getElementById(selectID);
     $.each(mentors, function(index) {
