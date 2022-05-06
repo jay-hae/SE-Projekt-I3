@@ -34,4 +34,17 @@ function setupFilter() {
             })); //Name of option = faculty['fac'] == Name; value = faculty['id'] == Fac_ID
         });
     });
+    loadMentorDropdown();
+}
+
+function loadMentorDropdown() {
+    $.get('/loader/mentor', (data) => {
+       $.each(data, (index) => {
+           let mentor = data[index];
+           $(' .loadMentor').append($('<option>', {
+               value: `${mentor['ID']}`,
+               text: `${mentor['title']} ${mentor['firstname']} ${mentor['lastname']}`
+            }));
+       });
+    });
 }

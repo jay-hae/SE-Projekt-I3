@@ -10,6 +10,7 @@ app.secret_key = os.urandom(24)
 
 #### app.route = We use the route() decorator to tell Flask what URL should trigger our function.
 
+
 # Login Page, atm login with db credentials
 # redirect user to homepage if he is already logged in
 @app.route('/', methods=['GET', 'POST'])
@@ -27,6 +28,7 @@ def LoginPage():
         session["usr"] = Login.LoginDB(request.form["usr"], request.form["pwd"])
         return redirect(url_for('sql'))
     """
+
 
 @app.route('/homepage/<name>', methods=['GET', 'POST'])
 def hp_file(name):
