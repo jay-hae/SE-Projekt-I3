@@ -1,6 +1,2 @@
-== Use-Case: Berichte über Mentoren Erstellen (UC07)
-//nicht aktive verträge mit inaktiven Mentoren
-// 1) aktive Mentoren nach Vertragstyp und Ländern
-// 2) aktive Mentoren nach Vertragstyp (E-Mail-Adressen)
-// 3) aktive Mentoren nach Vertragstyp 
-// 1,2,3 zusammen fassbar?
+== Use-Case: Erstellte Berichte Exportieren (UC07)
+

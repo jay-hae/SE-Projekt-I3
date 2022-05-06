@@ -13,21 +13,18 @@
 
 == Allgemeine Informationen
 // ...
-Im folgenden werden die bisher identifizierten Use Cases benannt. Die 5 wichtigsten werden detailiert beschreiben.
+Im folgenden werden die bisher identifizierten Use Cases benannt. Die 6 wichtigsten werden detailiert beschreiben.
 
 == Identifizierte Use Cases
 // Liste aller identifizierten Use Cases (priorisiert)
 * <<_uc01_in_system_einloggen>>
-* <<_uc02_anlegen_von_hochschulen>>
-* <<_uc03_bearbeiten_von_hochschulen>>
-* <<_uc04_löschen_von_fehlerhaften_datensätzen>>
+* <<_uc02_partnerhochschulen_anlegen>>
+* <<_uc03_partnerhochschulen_editieren>>
+* <<_uc04_fehlerhafte_datensätze_löschen>>
 * <<_uc05_mentoren_editieren>>
-* <<_uc06_erstellen_von_berichten_über_erasmusvereinbarungen>>
-* <<_uc07_erstellen_von_berichten_über_mentoren>>
-* <<_uc08_erstellen_von_berichten_über_hochschulvereinbarungen>>
-* <<_uc09_erstellen_von_berichten_über_abkommen_nach_länder_sortiert>>
-* <<_uc10_berichte_exportieren>>
-* <<_uc11_externe_abfragen>>
+* <<_uc06_berichte_erstellen>>
+* <<_uc07_erstellte_berichte_exportieren>>
+* <<_uc08_berichte_für_externe_anzeigen>>
 
 === für Akteur Mitarbeiter SI
 ==== *UC01*: In System Einloggen
@@ -53,25 +50,15 @@ include::use_case_04.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 ==== *UC05*: Mentoren Editieren
 include::use_case_05.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-=== Use Cases für die Berichtsabfragen
-==== *UC06*: Berichte über Erasmusvereinbarungen Erstellen
-//include::use_case_06.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+==== *UC06*: Berichte Erstellen
+include::use_case_06.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC07*: Berichte über Mentoren Erstellen
-//include::use_case_07.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+==== *UC07*: Erstellte Berichte Exportieren
+include::use_case_07.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC08*: Berichte über Hochschulvereinbarungen Erstellen
-//include::use_case_08.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
+==== *UC08*: Berichte für Externe Anzeigen
+include::use_case_08.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC09*: Berichte über Abkommen nach nach Länder sortiert Erstellen
-//include::use_case_09.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
-
-==== *UC10*: Erstellte Berichte Exportieren
-//include::use_case_10.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
-
-==== *UC11*: Berichte für Externe Anzeigen 
-//TODO UC11 umbenennen
-//include::use_case_11.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 //= für Akteur HTW-Website 
 //* *UC07*: Einsicht auf Informationen über Partnerschaften  
@@ -90,7 +77,12 @@ include::use_case_05.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 == Use Case Diagramm
 // ...
-
+.Use Case Diagramm
+[#diagram_use_case_diagram]
+[plantuml, "{diagramsdir}/use_case_diagram", svg]
+....
+include::{plantumlsdir}/use_case_diagram.puml[]
+....
 //Fügen Sie nachfolgend alle detailierten Use-Cases per Include ein.
 //Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem use_case_01.inc.adoc Template basiert.
 //<<<
@@ -109,5 +101,4 @@ include::use_case_05.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 // include::{plantumlsdir}/use_case_diagram.PUML[]
 // ....
 
-image::use_case_diagram.png[]
 

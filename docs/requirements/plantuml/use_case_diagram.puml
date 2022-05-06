@@ -9,11 +9,8 @@ usecase "UC02\nPartnerhochschulen Anlegen" as uc02
 usecase "UC03\nPartnerhochschulen Editieren" as uc03
 usecase "UC04\nFehlerhafte Datensätze Löschen" as uc04
 usecase "UC05\nMentoren Editieren" as uc05
-usecase "UC06\nBerichte über Erasmusvereinbarungen \nErstellen" as uc06
-usecase "UC07\nBerichte über Mentoren \nErstellen" as uc07
-usecase "UC08\nBerichte über Hochschulvereinbarungen \nErstellen" as uc08
-usecase "UC09\nBerichte über Abkommen nach \nnach Länder sortiert Erstellen" as uc09
-usecase "UC10\nErstellte Berichte Exportieren" as uc10
+usecase "UC06\nBerichte Erstellen" as uc06
+usecase "UC07\nErstellte Berichte Exportieren" as uc07
 }
 
 Mitarbeiter -- uc01
@@ -22,20 +19,15 @@ Mitarbeiter -- uc03
 Mitarbeiter -- uc04
 Mitarbeiter -- uc05
 Mitarbeiter -- uc06
-Mitarbeiter -- uc07
-Mitarbeiter -- uc08
-Mitarbeiter -- uc09
-uc06 <.down. uc10 : extends
-uc07 <.down. uc10 : extends
-uc08 <.down. uc10 : extends
-uc09 <.down. uc10 : extends
+uc06 .down.> uc07 : include
+
 
 actor Nutzer
 
 rectangle "Informationsfrontend" {
 
-usecase "UC11\nBerichte für Externe Anzeigen" as uc11
+usecase "UC08\nBerichte für Externe Anzeigen" as uc08
 }
-Nutzer -- uc11
+Nutzer -- uc08
 
 @enduml
