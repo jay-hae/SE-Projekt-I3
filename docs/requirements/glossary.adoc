@@ -7,7 +7,7 @@
 
 == Einführung
 In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fachdomäne) der {project-name} definiert. Zur besseren Übersichtlichkeit sind Begriffe, Abkürzungen und Datendefinitionen gesondert aufgeführt.
-Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen sich auch auf andere Geschlechter beziehen!
+Es ist anzumerken, dass alle verwendeten maskulinen Wörter in Bezug auf Personen sich auch auf andere Geschlechter beziehen!
 
 == Begriffe
 [%header]
@@ -131,11 +131,11 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 
 | DB | Datenbank | genutztes System zur langfristigen Speicherung von Datenbeständen 
 
-| FURPS+ a| - Functionality (Funktionalität)
-- Usability (Benutzbarkeit)
-- Reliability (Zuverlässigkeit)
-- Performance (Effizienz)
-- Supportability (Änderbarkeit/Wartbarkeit) | Fasst Qualitätsmerkmale von Software zusammen
+//| FURPS+ a| - Functionality (Funktionalität)
+//- Usability (Benutzbarkeit)
+//- Reliability (Zuverlässigkeit)
+//- Performance (Effizienz)
+//- Supportability (Änderbarkeit/Wartbarkeit) | Fasst Qualitätsmerkmale von Software zusammen
 
 | HTML | Hypertext Markup Language | textbasierte Auszeichnungssprache zur Strukturierung elektronischer Dokumente
 
