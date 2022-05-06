@@ -19,20 +19,20 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 | Austauschprogramm | Verschiedene Arten von Programmen, wie Erasmus oder Freemover | Exchange
 
 
-| Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Serverseitig
+//| Backend | Softwareteil, der im Hintergrund die Funktionalität bereitstellt | Serverseitig
 
 | Bestandsdaten | Daten Über Hochschulen und Partnerschaften, die bereits in die Datenbank eingepflegt wurden| -- 
 
-| Client | Computer eines Nutzers, welcher Serveranfragen stellt | --
+//| Client | Computer eines Nutzers, welcher Serveranfragen stellt | --
 
-| Datenbank| System zur elektronischen Datenverwaltung, welches einen Mehrbenutzerzugriff erlaubt | --
+//| Datenbank| System zur elektronischen Datenverwaltung, welches einen Mehrbenutzerzugriff erlaubt | --
 
-| Datenbankaccount | Der von der Datenbank bereitgestellte Account | Datenbankbenutzerkonto
+//| Datenbankaccount | Der von der Datenbank bereitgestellte Account | Datenbankbenutzerkonto
 
 | Erasmus _+_ | EU-Programm zur Förderung von allgemeiner und beruflicher Bildung, Jugend und Sport in Europa. Ermöglicht den Austausch von sowohl Lehrenden als auch Studierenden.
 | Erasmus
 
-|Essence Navigator | Onlineanwendung zur Überprüfung der Projektfortschritte | --
+//|Essence Navigator | Onlineanwendung zur Überprüfung der Projektfortschritte | --
 
 | Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interessierte Personen
 
@@ -40,10 +40,9 @@ Es ist anzumerken, dass alle verwendeten maskulinen Worter in Bezug auf Personen
 
 | Fakultät | eine Gruppe zusammengehörender Wissenschaften oder Wissenschaftsgebiete umfassende Abteilung als Lehr- und Verwaltungseinheit einer Universität oder Hochschule | --
 
-| Flask | Eine Erweiterung zur Dokumentation für Programmierung in Python | --
+//| Flask | Python Web Framework | --
 
-| Frontend | Schnittstelle des Systems, die
-vom Nutzer bedient wird | Clientseitig
+//| Frontend | Schnittstelle des Systems, die vom Nutzer bedient wird | Clientseitig
 
 | Hochschulattribute | Alle möglichen Attribute einer Hochschule (siehe Verzeichnis Datenstrukturen) | Attribute, Hochschuleigenschaften
 
@@ -54,70 +53,70 @@ vom Nutzer bedient wird | Clientseitig
 
 | International Office | Abteilung einer ausländischen Hochschule, die für die Kommunikation in Angelegenheiten von Austauschstudierenden und Partnerschaftsverttägen zuständig ist. | --
 
-| Issue | Probleme, die während des Projekts unerwartet auftreten | Probleme
+//| Issue | Probleme, die während des Projekts unerwartet auftreten | Probleme
 
-| Javascript | eine Skriptsprache um HTML- Inhalte zu erweitern | --
+//| Javascript | eine Skriptsprache um HTML- Inhalte zu erweitern | --
 
-| jQuery |  eine freie JavaScript-Bibliothek | -- 
+//| jQuery |  eine freie JavaScript-Bibliothek | -- 
 
-| Kontaktperson | Person über die eine ausländische Hochschule kontaktiert werden kann | --
+| Kontaktperson | Person über die eine ausländische Hochschule kontaktiert werden kann | -- 
 
 | Leitung | Leitung der Stabsstelle Internationales, welche volle Berechtigung über das System besitzten | Superuser
 
-| MariaDB | Open-Source, relationeles Datenbankverwaltungssystem | Maria-Datenbank
+//| MariaDB | Open-Source, relationeles Datenbankverwaltungssystem | Maria-Datenbank
 
 | Mentor | Ansprechpartner an der jeweiligen Hochschule. Betreut das Austauschprogramm im Auftrag der Fakultät | Kontaktperson, Ansprechpartner
 
 | Mitarbeiter | Person oder Grupper, welche bei der Stabsstelle Internationales arbeitet | normaler User, SI Mitarbeiter, SHK
 
-| Nicht-funktionale Anforderung | beschreiben Beschränkungen der vom System angebotenen Funktionalität. Sie beziehen sich eher auf das ganze System als auf einzelne Funktionen.| --
+//| Nicht-funktionale Anforderung | beschreiben Beschränkungen der vom System angebotenen Funktionalität. Sie beziehen sich eher auf das ganze System als auf einzelne Funktionen.| --
 
-| Online-Datenbank | Eine Datenbank, die über Intraoder Internet zugänglich ist und auf welche mehrere Nutzer parallel zugreifen können | Web-Datenbank
+//| Online-Datenbank | Eine Datenbank, die über Intraoder Internet zugänglich ist und auf welche mehrere Nutzer parallel zugreifen können | Web-Datenbank
 
-| Open Unified Process a| - Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: 
-* iterative Softwareentwicklung
-* Anwendungsfälle
-* szenarienbasierte Entwicklung
-* Risikomanagement
-* architekturzentrierte Vorgehen | OpenUP
-| Open Unified Process | Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: iterative Softwareentwicklung, Anwendungsfälle, szenarienbasierte Entwicklung, Risikomanagement, architekturzentrierte Vorgehen | OpenUP
+//| Open Unified Process a| - Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: 
+//* iterative Softwareentwicklung
+//* Anwendungsfälle
+//* szenarienbasierte Entwicklung
+//* Risikomanagement
+//* architekturzentrierte Vorgehen | OpenUP
+//| Open Unified Process | Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: iterative Softwareentwicklung, Anwendungsfälle, szenarienbasierte Entwicklung, Risikomanagement, architekturzentrierte Vorgehen | OpenUP
 
 | Outgoing | Studierende der HTW, die an einem Austauschprogramm zu einer ausländischen Hochschule teilnehmen | Von der Hochschule gehende Auslandsstudierende
 
 | Partnerschaftsvertrag | Vertrag zwischen HTW und ausländischen Hochschulen über ein Austauschprogramm | --
 
-| Personenbezogene Daten | Alle Informationen, die sich auf eine identifizierbare lebende Person beziehen | --
+//| Personenbezogene Daten | Alle Informationen, die sich auf eine identifizierbare lebende Person beziehen | --
 
-| Prototype | Nicht voll funktionsfähige erste Version der Software | erste Bildung, Urbild
+//| Prototype | Nicht voll funktionsfähige erste Version der Software | erste Bildung, Urbild
 
-| Python | eine höhere Programmiersprache | --
+//| Python | eine höhere Programmiersprache | --
 
-| Stakeholder | Personen oder Gruppe, die Interesse am positiven Verlauf des Projektes haben und es beeinflussen können oder durch dieses beeinflusst werden. | Anspruchsberechtigter
+//| Stakeholder | Personen oder Gruppe, die Interesse am positiven Verlauf des Projektes haben und es beeinflussen können oder durch dieses beeinflusst werden. | Anspruchsberechtigter
 
-| SQL-Query | Abfrage in einer Datenbank | SQL Abfrage
+//| SQL-Query | Abfrage in einer Datenbank | SQL Abfrage
 
-| Systemweite, funktionale Anforderungen | Anforderungen, die das System erfüllen muss | System-Wide functional requirements
+//| Systemweite, funktionale Anforderungen | Anforderungen, die das System erfüllen muss | System-Wide functional requirements
 
-| Responsive Webdesign | 
-Beim Responsive Webdesign wird nur eine einzige Version einer Website erstellt. Diese passt sich selbstständig der verfügbaren Umgebung an. | reagierendes Webdesign
+//| Responsive Webdesign | 
+//Beim Responsive Webdesign wird nur eine einzige Version einer Website erstellt. Diese passt sich selbstständig der verfügbaren Umgebung an. | reagierendes Webdesign
 
-| Test Cases | Die Eingaben, Konditionen und erwarteten Ergebnisse beim Test von Systemfunktionen | Testfall
+//| Test Cases | Die Eingaben, Konditionen und erwarteten Ergebnisse beim Test von Systemfunktionen | Testfall
 
-| Use Cases | Die funktionalen Anforderungen an das System aus der Sicht des Anwenders | Anwendungsfall
+//| Use Cases | Die funktionalen Anforderungen an das System aus der Sicht des Anwenders | Anwendungsfall
 
-| User | Personen oder Gruppen, welche das fertige Produkt nutzen | Nutzer, Benutzer
+//| User | Personen oder Gruppen, welche das fertige Produkt nutzen | Nutzer, Benutzer
 
-| User Interface | Bereich der Software mit der eine Person mit dem Programm in Interaktion tritt | Benutzerschnittstelle
+//| User Interface | Bereich der Software mit der eine Person mit dem Programm in Interaktion tritt | Benutzerschnittstelle
 
-| Verwaltungsfrontend | Für den Nutzer sichtbarerer Teil der Software, der von der Stabstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabstelle Internationales (Verwaltungsanwendung)
+//| Verwaltungsfrontend | Für den Nutzer sichtbarerer Teil der Software, der von der Stabstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabstelle Internationales (Verwaltungsanwendung)
 
-| Wireframe | Früher konzeptioneller Entwurf einer Webseite oder eines Softwarefrontends | Drahtmodell
+//| Wireframe | Früher konzeptioneller Entwurf einer Webseite oder eines Softwarefrontends | Drahtmodell
 
-| Webanwendung | Anwendungsprogramm, welches nicht auf dem Computer des Users installiert wird, sondern mittels Browser über eine Internetverbindung auf einem Server bedient wird | Online-Anwendung, Webapplikation
+//| Webanwendung | Anwendungsprogramm, welches nicht auf dem Computer des Users installiert wird, sondern mittels Browser über eine Internetverbindung auf einem Server bedient wird | Online-Anwendung, Webapplikation
 
-| Webspace | Speicherplatz für Dateien auf einem Server, auf den über das Internet dauerhaft zugegriffen werden kann | --
+//| Webspace | Speicherplatz für Dateien auf einem Server, auf den über das Internet dauerhaft zugegriffen werden kann | --
 
-| Workflow | Reihenfolge von Arbeitsvorgängen | Arbeitsablauf
+//| Workflow | Reihenfolge von Arbeitsvorgängen | Arbeitsablauf
 |===
 
 
