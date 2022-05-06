@@ -1,3 +1,0 @@
-== Use-Case: Berichte über Abkommen Erstellen (UC09)
-
-// hier soll es eine Option geben um das Abfrage ergebnis nach länder und einmal  nach Fakultät zu sortieren um dann in UC 10 mit der jeweiligen sortierung exportiert werden zu können
