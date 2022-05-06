@@ -19,7 +19,7 @@ Mitarbeiter -- uc03
 Mitarbeiter -- uc04
 Mitarbeiter -- uc05
 Mitarbeiter -- uc06
-uc06 .down.> uc07 : include
+uc06 <.down. uc07 : extends
 
 
 actor Nutzer
