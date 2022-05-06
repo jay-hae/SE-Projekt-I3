@@ -1,0 +1,47 @@
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Teammeeting mit Raphael 02.05.2022
+
+Anwesende: Jens, Luca, Nico, Ha, Jakob, Raphael
+    
+
+Raphael:
+
+Reihenfolge:
+1. Kleinere Fehler fixen (Buttons, Filter)
+2. fehlende Funktionen
+3. Berichte
+
+- suchen funktioniert nicht, schließen von Fenstern, Filteroptionen flasch oder gar nicht implementiert
+- Filter nicht alphabetisch sortiert
+
+-!!!!!!!! Universität muss unterschiedliche Partnerschaften bzw. Vertäge haben/anzeigen können, unterschiedliche Partnerschaften anlegen können (In der BEarbeiten Ansicht muss klar sein, um welche Partnerschaft es sich handelt) Hochschulpartnerschaft, Swiss-Mobility, Erasmus ==> Auswahl über Buttons.zB "Nur Erasmuss-Partnerschaften einer Hochschule anzeigen"
++ extra Restriktionen: Differenzierung welche Art von Studierenden akzeptiert werden, Bsp.: von 10 erlaubten Studierenden, 2 reine Informatiker, 4 WI's, 4 Verwaltungsinformatiker ODER Vertrag erlaubt nur Teilnehmer us bestimmten Studiengängen ==> Sonst nicht nutzbar. Im Bearbeitenmodus unterpunkt "Anzahl maximal. ausgehender Studenten"+davon 10 Studenten BWL, 2 Studenten Informatik
+
+- Design soll sich stärker an Access orientieren (HA hat schon geändert)
+- In Beabeiten Ansicht der Hochschule sollen Verträge sichtbar sein
+
+-Login nicht im Quelltext sondern direkt die normalen Dtenbank logins als Login verwenden. So müssen diese Daten nicht gepspeichert werden!!
+
+-Dropdown-Menü Mentoren funktioniert nicht
+
+-Nice to Have: Admin Acoount mit sonderrechten zum löschen von Daten.
+
+-DRINGEND: Statistik: Wie kommen die Daten auf unsere Webseite wenn wir Studentendaten nicht verarbeiten. zB Exceltabelle mittels ODBC via SQL Befehlen abfragen. ZB nur die Anzahl der Studenten
+Raphael hat alle erforderlichen Berichte in seiner Gruppe erklärt. Wobei diee Art von Berichten nicht gefordert wurden.
+Fragestellung: Kommen von einer Universität viele Studierende es geht aber keiner der eigenen Studierenden an die entsprechenden Universitäten. => In welchem Zeitraum sind wie viel Studierenden rein und wie viel Raus.
+
+=Beim Nächsten Meeting mit dem Auslandsamt fragen welche Berichte genau sie benötigen. Brauchen sie den Bericht über die Anzahl der Studenten von und nach XY?
+
+==> Nice to Have: Dynamische Abfrage von Berichten/Statistiken (also nicht Hardcoden)
+
+
+Speichern, Suchen, Falsche Filter, eine Uni kann mehrere Partnerschaften haben, übersichtlichkeit FILTERN 
+
+Unterschiedliche Partnerschaften anlegen, zusätzliche einschränkungen zu partnerschaften wie zb wie viele studenten raus und rein, wie viele davon dürfen von welchen studiengängen kommen 
+
+
+
+TODO:
+- Beschreibung von Raphael über die Access Berichte finden
+

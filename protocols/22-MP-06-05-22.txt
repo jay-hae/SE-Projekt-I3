@@ -1,0 +1,7 @@
+Nico + Jakob korekktur Beleg 06.05.2022
+UC:
+UC 7: - soll jeder Bericht einzeln Exportiert werden können oder speichert man die und exportiert man
+dann alle auf einmal?
+- davon ist extends /include im UC-Modell abhängig
+ToDo:
+- Nico über WE: UC Spezifikation für UC 6-8 (am Montag vorstellen für Raphael)

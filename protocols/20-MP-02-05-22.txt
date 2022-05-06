@@ -1,0 +1,12 @@
+Nico + Jakob korekktur Beleg 02.05.2022
+UC:
+- Berichte:
+-Berichte über Mentoren:
+1) aktive Mentoren nach Vertragstyp und Ländern
+2) aktive Mentoren nach Vertragstyp (E-Mail-Adressen)
+3) aktive Mentoren nach Vertragstyp 
+1,2,3 zusammen fassbar?
+
+- Abkommen nach Fakultät; Abkommen nach Länder als ein UC aber mit der option das umzustellen 
+- was soll in Austauschstudenten-Bericht rein? da wir ja keine Namen speichern brauchten  reicht da wirklich nur die Anzahl der Studenten pro Fakultät?
+- was ist der Sinn des Berichts Internationale Tag (outgoing) ist der für uns relevant?

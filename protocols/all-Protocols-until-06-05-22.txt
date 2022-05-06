@@ -1,0 +1,1263 @@
+ 
+Meeting Protokoll 30.11.2021: 
+
+- sammlung von Fragen:
+-Frage nach Stakeholder:
+- extra Benutzergruppe für Lehrer? Wenn ja was muss er sehen können? Unterschied Lehrer HTW / außsländische Uni
+- gibt es personenbezogene Daten? Wenn ja welche?
+
+
+-Frage nach Use Cases:
+-
+
+- sonstieges 
+- wie viel muss gecodet, was muss gecoded werden
+
+
+Agenda:
+- Vorstellung
+- welche expliziten Ansprechpartner gibt es für uns aus der SI
+- Briefing aktuelle Lage Datenbank und Frontend
+- verwendetes Datenmodell
+- welche Funktionen sind schon implementiert (php prototyp)
+- Access oder MySQL? Stand der Dinge
+- Anforderungen aus Nutzersicht
+- Besprechung Stakeholder
+- Mitarbeiter SI
+- Studierende (HTW/außenstehende?)
+- Rechenzentrum
+- Gesetzt, wenn ja welche?
+- Hochschuhllehrer
+- Hochschule (Welche Organe?)
+- Partnerhochschulen / Studierende aus dem Ausland?
+- Use Cases
+- ...
+- nächsten Termin vereinbaren bzw. regelmäßige Termine
+
+Fragen an Raphael:
+- DB Abfragen im Front-/Backend
+- Access oder MySQL? Stand der Dinge
+---------------------------------------------------------------------------------------------------------------------------------
+
+AGENDA:
+
+1. Vorstellungsrunde
+2. Ist-Zustand: Darum bitten den bisherigen Stand zu sehen. 
+3. 
+
+
+STAKEHOLDER:
+- Studierende
+
+
+USE Cases:
+
+
+
+ZWECK:
+
+- wissenschaftliche Zusammenarbeit in Lehre und Forschung
+- Austausch von Studierenden
+- Austausch von Hochschullehrern
+
+
+NUTZER/AKTEURE:
+
+Mitarbeiterinnen der Stabsstelle Internationales 
+
+Studierende
+
+Hochschullehrer:(F1)
+
+
+AUFGABEN/REQUIREMENTS:
+
++Mitarbeiter*Innen der Stabsstelle Internationales: 
+- Verwaltung Studierende, 
+- Verwaltung Verträge,
+- Verwaltung von Informationen zu Hochschulpartnerschaften 
+(Institut, Art der Vereinbarung, Kontakte, Mentoren, Anzahl Plätze an Austauschstudierende, Informationen zu Studiengebühren usw.)
+- Erstellung von Statistiken 
+- Berichten zu den Partnerschaften pro Fakultät bzw. für die Gesamte Hochschule
+
++Studierende:
+werden relevante Informationen (Anzahl Plätze, Fachrichtung, Betreuer)(F3) zu den Hochschulpartnerschaften 
+aus der Datenbank im Backend auf unserer Webseite angezeigt. (F2)
+
+- Erstellung von Statistiken und Berichten
+- Informationsbereitstellung für Studierende auf der HTW Dresden Webseite
+
+- Falls möglich die Verwaltung der Austauschstudierenden 
+(Zwei Kategorien: Aus- und Einreisende, die durch diverse Datenkategorien charakterisiert werden)
+
+
+FRAGEN:
+-F1 Werden Hochschullehrer der HTW, die einen Austausch planen, auch Nutzer der Anwendung sein und Informationen wie Studierende abfragen?
+-Sollen ausländische Hochschullehrer Informationen abfragen?
+-F2 Werden den Studierenden außer: Anzahl Plätze, Fachrichtung, Betreuer weitere Informationen bereitgestellt?
+-F3 welche Informationen sind für Studierende relevant und sollen auf der Webseite angezeigt werden.
+-
+
+Technische Anforderungen:
+-Webanwendugn: Verwaltung der Hochschulpartnerschaften als Webanwendung
+- Basierend auf der MS SQL Datenbank
+
+
+
+Meeting Protokoll 2.12.2021: 
+1) Vorstellung
+2) Anforderungen aus Nutzersicht (schwer Punkt)
+3) Briefing aktuelle Lage Datenbank und Fronten (evtl. im extra Treffen mit Ihrer SHK)
+4) nächsten Termin vereinbaren bzw. regelmäßige Termine finden
+
+1)
+- nächstes mal bbb
+
+2)
+- zuerst Acces, jetzt soll in Web Datenbank
+- verwaltung 
+- auch für statistiken-> bericht erstellen (Software, extra riter, wo parametriesierte abfragen möglich)
+- 
+
+-aktuell Probleme:
+- Daten nicht lösch bar -> keine konsitenz, integrität möglich
+- momentan wegen referentieller integrität nicht löschber
+- intuitiv nutzbar, eindeutige benenung
+- vertrag für Fakultät aber bei manchen Unis können nur bestimmte Studiengänge 
+-Fkt:
+- export view auf HTW seite kann genutzt werden (schnittstelle anpassen)
+- zugang hinter login (-> bis jetzt nur HTW VPN)
+- schnittestelle zu web front end für anmeldeformular
+- Wunsch: anlegen von Studenten (-> Datenschutz?), import vonPersonen  Excel Daten (?)
+- daten auf HTW Webs. schon in MySQL/MarieaDB
+- 1 ansprechperson ist in DB muss aber nicht implementiert werden (Fraen)
+- Mentoren erstellen (kein Zugriif auf Mentoren DB)
+- Haken für Anzeigen auf HTW Seite
+- akktueller Login, ist Datenbank Login
+
+3)
+- phpmyadmin
+-  git repo (durcharbeiten)
+- wird auf www2 Server gehosted
+- Code nicht als keine Code basis nehmen (nochmal neu bauen
+- model view presenter , model view ...
+- länder nicht löschen, ändern(niedirg priorisiert) genauso Fakultäten
+
+Tipps:
+-prioriseren, Bauen, Testen
+
+
+4)
+-Termine: mit Raphael und Lisa, fester Termin aller 2 Wochen
+- Montag Termin aller 2 Wochen
+
+
+
+
+Meeting Protokoll 08.12.21
+
+
+
+Fragen an Stabstelle:
+
+- Wie viele Mitarbeiter:Innen und Studentische Hilfskräfte (SHK), insgesamt sollen mit der Datenbank gleichzeitig arbeiten können? Vorjahr 10. Hat sich etwas geändert?
+Für Vision!
+
+- Use Cases abnehmen lassen
+
+------------------------------------------------------------
+Fragen an Herrn Ringel:
+
+- Was wird in KW 50/51 präsentiert?
+Wie weit fortgeschritten sollte das Projekt sein?   
+Was soll abgegeben werden? 
+
+- Wird das Projekt benotet oder ist das nur eine Prüfungsvorleistung?
+
+---------------------------------------------------------------------------------
+
+Welche Programmiersprache
+-Da wir alle keine Programmier sind und keiner von uns PHP gelernt hat, brauchen wir eine Empfehlung, ob wir mit PHP arbeiten sollten oder dem intuitiveren Python?
+
+Zwei Möglichkeiten alles neu machen mit Python oder Aufbauen auf PHP
+
+PHO
+Pro: 
+- PHP-Skripte laufen auf dem bereitgestellten Webspace
+- Einbindung der Datenbank einfach möglich durch mysqli (typischerweise bei PHP dabei) 
+- Es existiert bereits Code auf den aufgebaut werden kann.
+- Nur Jakob hat ein bisschen Erfahrung mit Python
+
+
+Con: 
+- Keiner von uns hat Erfahrung mit PHP
+
+
+Aufgabenzuteilung: 
+    
+FÜR ALLE !!!!:ja
+    Repository auf Rechner klonen
+    Unterlagen der Vorgruppe studieren
+    
+Vision ausarbeiten:
+Nico Rosenkranz
+
+Use Cases:
+Pascal Thielemann & Luca Meißner 
+
+Risikoanalyse:
+Roman Patzig  (Hinweis von Nico Rosenkranz)
+
+
+Jens Rosenkranz Projektplan  
+
+Fragen an Herrn Ringel: (siehe oben)
+Luca 
+
+neues Terminfindungstool finden:
+Luca 
+
+Patrick Matthes Aufgabe zuteilen:
+Luca
+
+Glossar: (siehe Vorlage)
+Patrick Matthes
+
+Raphael Zwecks Code kontaktieren:
+Meeting ausmachen: Jens
+Meeting-Teilnehmer: Jakob Häcker & Jens Rosenkranz & Ha Khuong (&Luca)
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Protokoll 12.12.2021
+
+Anwesend:
+Jakob Häcker
+Jens Rosenkranz
+Pascal Thielemann
+Thanh Ha Khuong
+
+
+Welche IDE soll verwendet werden?
+
+IDE's: Jetbrains (PyCharm CE, Webstorm)
+Programmiersprachen: 
+Backend (Python)
+Frontend (HTML, CSS, Javascript (optionale Frameworks z.B. jQuery))
+
+Hinweis:
+Entwicklungsumgebung mit Repository verknüpfen.
+
+ToDo: 
+
+- Herrn Ringel kontaktieren. Fragen, ob HTW-WebServer Python-Skript ausführen kann bzw. 
+auf Python umgestellt werden kann und wir
+somit Python zur Entwicklung des Backends überhaupt verwenden können.
+(Zuständig Jackob Häcker)
+
+- Teammitglieder mit Rolle: Implementierung/Test legen sich einen education account unter jetbrains.com 
+an und richten IDE Pycharm ein.
+
+- Für nächste Besprechung mit Stabstelle Interface des Prototyps des Vorgängerjahrgangs mitbringen und klären, was bleiben und was geändert werden soll.
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+Meeting Protokoll 14.12.2021
+
+für heutiges Meeting: Wollen wir Work Items List in Google anlegen? Aufgabe, Beauftragter, Deadline, Hinweis, etc. Wenn nein, wie wollen wir unsere Aufgabenverteilung sonst organisieren?
+
+Agenda für Meetin mit SI
+- erste 4 use cases abnehmen lassen -> Pascal / Luca
+- Wireframe Vorstellen -> Ha / Jakob
+---------------------------------------------------------------------
+Fragen an Herrn Ringel: (erledigt)
+- RiskList in AsciiDoc einbinden oder reicht Excel?
+- wie kleinteilig muss Glossary sein (zB definieren von "Programmiersprache","Use Case", etc.)
+
+Aufgabenverteilung:
+- GitHub Iterationsplanung -> Jens
+- Wireframe Prototyp -> Ha
+- Speichern im EssenceNavigator -> Jakob
+- Excel für EssenceNavigator/Iterationen -> Luca
+- Vision weiter bearbeiten -> Nico 
+- Prototyp erarbeiten -> Roman Nico (Pascal Jakob)
+- Terminvorschläge für nächste Woche mit Herrn Ringel -> Luca
+- Herrn Ringel Kontaktieren -> Jakob
+- was haben wir schon im  EssenceNavigator (checkboxen anklicken) -> Luca
+
+Aufgaben für jeden:
+- ssh verbindung einrichten
+- Discord meetings immer öffentlich bekannt geben (nicht per privat chat)
+- Essence Navigator ansehen und verstehen
+- Git Hub Issues anlegen commit porbieren (falls noch nicht geschen)
+- nach Aufgaben suchen, wer keine Aufgabe hat ;-)
+
+Nächstes Meeting Donnerstag oder Freitag nach Gespräch mit SI
+
+Studiengang:
+    Bachelor WINFO
+    - Luca
+    - Jens
+    - Nico
+    - Roman
+    - Ha
+    
+    Bachelor Informatik
+    - Patrick 
+    - Jakob
+    
+    Verwaltungsinormatik
+    - Pascal
+-------------------------------------------------------------------
+Done:
+    - Python genehmigt (-> nutzen von Flask)
+
+
+
+Meeting SI 
+
+Rückfrage an Raphael Login mit HS Login statt DB Login
+
+
+Meeting Protokoll 16.12.2021 Meeting mit SI
+Jakob/Luca:
+    
+Änderungs Wünsche:
+    - Login zur Software über HTW-Login?
+    - für einzelne Mitarbeiter Sonderrechte(z.B. Löschen + anzeigen der Abhängigkeiten) -> Benutzerkonten?
+    - nach Programmbeauftrage filtern
+    - Filtermöglichkeit Anzeige (-> öffentliches Anzeigen auf Webseite)
+    
+Wie Arbeitet Nutzer:
+    1) Mail -> Landfiltern -> zB 5 Hochshulen -> dann Hochschule wählen
+    2) -> Land -> Hochschulart -> Verträge ->  ... (siehe Aufzeichnung)  
+
+
+Studierend:
+    - egtl. keine Daten von Ihnen
+    - Schnittstelle für Daten von Studierenden -> was benötigt man für geeignete Schnittstelle
+
+
+- 1 Vertrag pro Hochschule
+- wenn Fak. dazu kommt muss Mentor
+- Vertragstyp Kontakt-> Hochschule ohne Vertrag
+
+Nutzerverwaltung: - über DB nutzer mit rechten?
+
+Jens:
+    
+Teilnehmer:Innen Team I3:
+Pascal Thielemann
+Luca Meißner
+Thanh Ha Khuong
+Nico Rosenkranz
+Jakob Häcker
+
+
+Teilnehmer:Innen SI:
+Juliane Terpe
+Lisa Wunderlich
+Raphael Rezaii
+
+
+Themen:
++ Vorstellung der bisherigen Use Cases
+wurden durch Stabstelle Internationales abgenommen
+
++ Rückfrage zum Löschen von Objekten:
+Sollen Objekte gelöscht werden können oder nur deaktiviert werden?
+Antwort SI: 
+    Es gibt zwei Fälle:
+-Es sollen ruhende Hochschulpartnerschaften nicht gelöscht werden können.
+
+-Bisher konnten Redundante und falsche nicht gelöscht werden. 
+Es wäre wünschenswert Löschungen nur für besonders berechtigte Mitarbeiter möglich zu machen.(zB Datenbank User mit bestimmten Rechten anlegen oder ein extra Webtool getrennt von sonstiger Webanwendung nur fürs löschen einrichten oder auf Website ein Usersystem implementieren was zw. Usern entscheidet)
+- Anregung: möglicherweise direkt vor dem erfolgreichen Löschen der Mitarbeiter:In alle davon betroffenen Datensätze als Zusammenfassung anzeigen (zB. :Wie viele Verträge, wie viele sind davon aktiv/passive, wie viele Studenten sind betroffen)
+
++,Verträge zum Beispiel auf Inaktiv setzen (auch automatische nach Vertragslaufzeit)
+und sollen wieder aktiv gesetzt werden sobald Vertrag wieder aufgenommen werden.
+aktivitätsstatus entscheidet über Sichtbarkeit von Studenten (Außensicht; nicht aktiv = nicht sichtbar)
+
+Hinweis: Ein Vertrag wird immer für einer Universität zugeordnet
+
++ Vorstellung des Wireframes zur Übersicht vor dem wählen des Objektes
+- Vorgehen Mitarbeiterin Terre: Filterschritte sind Land->Hochschulart->Fakultät->
+- Alle Funktionen können über das Hauptmenü des Prototyps abgerufen werden (Hochschulen anlegen, erfordert Vertrag anlegen etc.)
+
+Zusätzliche Filtermöglichketien auf Hauptseite:
+- in Interface fehlt die Filtermöglichkeit Programmbeauftragte:R. 
+Es wäre interessant nach allen Partnerschaften filtern zu können die von einer bestimmten Person betreut wurden
+- Spalten "Anzahl Verträge" sollte nie 0 sein. Anzeige von Anzahl aktiver und inaktiver Verträge. Mglw. Extraspalte aktive Verträge Verträge insgesamt (aktiv + inaktiv).
+
+Sollen pro Fakultät mehrere Mentoren möglich sein?
++ Manche Fakultäten haben mehrere (2-3) Mentoren, soll das bestehen bleiben? Ja, denn Mentoren haben versch. Fachbereiche. Die sich gggf. besser eignen.
+
+Umgang mit Freemovern
++Universität grundsätzlich sollen nur angelegt werden können, wenn auch ein Vertrag angelegt wird. Allerdings gibt es Freemover. Austauschstudenten, die ohne Hochschulparternschaft an einem Austauschprogramm teilnehmen. Um diese zu erfassen, ist es nötig auch Universitäten ohne Vertrag hinzuzufügen.
+Im Bearbeitungsmodus der Universität Option Freemover hinzufügen (Checkbox)
+damit man sieht, warum die Universität keinen Vertrag hat.
+
++Use Case Berichte:
+neuen Bericht hinzufügen soll möglich sein für Mitarbeiter 
+-Team muss Entscheidung treffen zwischen: Bericht-Funktion in die Anwendung direkt einzubindende Standardberichte (hardcoding) und andererseits extra Tool programmieren, welches dynamische immer neue Berichte ermöglicht (auch nur für SQL-fähigen shK) und dafür einfach erweiterbar ist
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+
+17.12.21 Kurz-Meeting bezgl. der Verwendung von Ajax/jQuery
+
+Teilnehmer:
+    Pascal Thielemnn
+    Thanh Ha Khuong
+    Jens Rosenkranz
+    
+    Themen:
+        -Pascal Thielemann stellt seine Ideen zur Umsetzung der Webanwendung vor.
+        Vorschlag: Verwendung von ajax zur Verbesserung der Performance der Webanwendung und zum dynamische Seitenmanagement.
+        -dazu hat Pascal auch YouTube Tutorials für die anderen Team-Mitglieder bereitgestellt.
+        
+    Vorschlag wurde angenommen
+
+-------------------------------------------------------------------------------------------------------------
+
+
+Protokoll Meeting mit Herrn Ringel am 20.12.2021
+
+Vorstellung des Projekts
+
+Teilnehmer:
+
+Team: Luca Meißner, Jakob Häcker, Matthes Patrick, Nico Rosenkranz, Pascal Thielemans, Roman Patzig, Than Ha Khuong, Jens Rosenkranz
+
+Betreuer: Herr Ringel
+
+
+Abstrakte Zusammenfassung der Projektaufgabe: Webanwendung über Datenbank, die es Nutzern ohne SQL-Kenntnisse ermöglichen soll die Daten der Datenbank zu pflegen und Statistiken aus ihr zu beziehen.
+
+Frage: Selbst Userverwaltung anlegen oder in Datenbank Gruppen/Rollen Funktion nutzen.
+==> über Analyse der verschiedenen Aufgaben mit SI klären, ob die Rollen (zB Leserolle, Schreiberolle) über Datenbank geregelt werden können oder ob spezifische Nutzer gebraucht werden. Ist vorerst noch nicht ganz so relevant.
+
+Vorstellung Use Cases durch Roman Patzig:
+
+Frage von Herrn Ringel: Wie würde eine Schnittstelle für ein mögliches Folgeprojekt aussehen, das es ermöglicht sich für Studierende einzuloggen und sich für ein Austauschprogramm zu erwerben? ==>  vorerst nicht relevant, es soll nur das Datenmodell erweitert werden.
+
+Frage von Herrn Ringel: was ist mit Objekten gemeint und kennen Sie das Datenmodell? 
+Empfehlung: 
+Datenmodell ansehen und verstehen und überprüfen, ob der Aufbau verbessert werden könnte.
+
+Wirframehinweis:
+Hinweis Herr Ringel zum erstellen guter Wireframes: Mehrere (1-2er)Teams stellen für den gleichen Use Case getrennt von einander Wire Frames her und gleich ab. Dabei stellen sich möglicherweise Unsicherheiten bgl. des Use Cases heraus, die mit der Stabstelle besprochen werden können.
+
+
+Pascal Thielemann über technische Umsetzung:
+- Backend wird mit Python neugeschrieben
+- Basis ist eine MaridDB Datenbank
+
+Herr Ringel zum Thema was noch im Januar funktionieren soll:
+Backup von Datenbank auf Rechner auspielen um zu Testen. Flask über MariaDB stöpseln.
+Architekturprototyp so weit bekommen, dass Flask über MariaDB funktioniert.
+
+Herr Ringel zu Essende Navigator:
+- ist wichtigstes Tool zur Ermittlung des aktuellen Projektzustands
+- "Blume" soll möglichst gleichmäßig blühen.
+
+Frage an Herrn Ringel über RiskList:
+-dürfen wir die Risklist als Screenshot der Excel verwenden oder muss die CSV AsciDoc vorlage genutzt werden?
+Herr Ringel: Frage im Praktikum stellen
+
+
+ToDo: 
+akut: E-Mail an Herrn Ringel mit dem (Jakob) (closed)
+
+-Use Cases aktualisieren und konkretisieren (sind zu generell)! (Roman und Nico)
+-Use Case Diagramm fertig machen/updaten (Roman und Nico)
+-Datenmodell verstehen und auf Verbesserungsmöglichkeit prüfen. (Analyse: Ha, Matthes)
+-Wireframes von Use Cases anfertigen (siehe Hinweis oben von Herrn Ringel)
+-Technologie Erprobung (Es soll möglich sein mittels Flask auf dem Backup der MariaDB überhaupt zu nutzen)
+(Pascal, Luca, Jens )
+==>Wenn die Kombination aus MariaDB, Flask und Python auf lokalem Rechner funktioniert, sollen wir uns eine Arbeitsumgebung vom Rechenzentrum einrichten lassen.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+03.01.2022 Meeting USE CASE:
+
+Anwesend:
+    Jakob Häcker, Nico Rosenkranz, Roman Patzig
+
+USE CASE - Spezifizieren (Ideen):
+
+    USE CASE 1 In System einloggen bleibt
+    USE CASE 2 Anlegen von Partnerhochschulen.                    (zuvor Objekte -> zu unspezifisch)
+    - wie ist das Mit den FreeMovern gemeint, wie ist mit diesen umzugehen?
+    USE CASE 3 Bearbeiten von Partnerhochschulen
+    USE CASE 4 (Löschen von fehlerhaften Datensätzen) ????
+    USE CASE 5 Berichtsabfragen von Partnerschulen
+    USE CASE 6 Berichtsabfragen von Mentoren
+    USE CASE 7 Berichtsabfragen von Verträgen zu den Hochschulpartnerschaften
+    USE CASE 8 externe Abfragen für öffentliche Webseite (Anzeigen der Infos auf HTW webseite)
+    
+
+Was ist konkret passiert?
+
+- USE CASE 1 - 4 wurden von allen Anwesenden bearbeitet und spezifiziert
+- Gedanken zu weiteren USE CASES wurden geteilt und mit der Dokumentation der Vorgruppe abgeglichen
+- Glossar wurde den Updates entsprechend erweitert
+- Fragen für SI überlegt
+- wie ist das Mit den FreeMovern gemeint, wie ist mit diesen umzugehen?
+- welche Berichte werden  benötigt / wie sollen sie aussehen
+- ist Protokollierung gewünscht (Systemweiteanforderungen (F))?
+- NFAS-2 (system-wide_requir.) noch nötig?
+- zu unterstützende Plattformen / Betriebssysteme? (welche OS / Browser werden verwendet)(Zusätzliche Anforderungen)
+- rechtliche Anforderungen (sollen Personenbezogene Dataen erfasst werden abgesehen der Mentoren)
+- (geplant) Das System sollte den Import von Excel-Tabellen mit statistischen Daten von Incomings und Outgoings nur einmal pro Semester ermöglichen. Noch mal genauer
+To-Do:
+
+- Weitere USE CASES in der Gruppe besprechen, gegebenenfalls abändern und vervollständigen
+- UC Diagramme erstellen nach Dienstag für Donnerstag
+-
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+Meeting 4.1. 
+
+Teilenhmer:
+    Jakob, Jens, Luca, Nico, Pascal, Ha
+
+
+Fragen an SI
+-Mehrbenutzter: Wie hoch ist die WK das mehrere Mitarbieter die selbe Hochschule/Vertrag editieren? 
+- falls WK > 0 -> Unser Vorschlag: schreibsperre für Hochschule 
+- Was für berichte? Form der Ausgabe(Excel, CSV, etc...)
+- WF Fakultätenübersicht/Länderübersicht/Mentorenübersicht benötigt oder nicht -> Art des WF als Idee für Bericht
+- Sollen Mentoren anlegbar, löschbar und anzeigbar sein?  -> Wie oft wechseln Mentoren
+- Soll es Studenten als Tabelle geben oder nicht (zB  KlarName ,Semster, wo der Student ist) oder ob nur erfasst werden soll wo wie viele Studenten sind?
+-> rechtliche Anforderungen (sollen Personenbezogene Dataen erfasst werden abgesehen der Mentoren)
+- NFAU-1 Webredaktions zeug auch für Mitarbeiter Frontend oder nur für Studierenden Frontend
+- (geplant) Das System sollte den Import von Excel-Tabellen mit statistischen Daten von Incomings und Outgoings nur einmal pro Semester ermöglichen. Noch mal genauer
+
+Vorstellung SI 
+ - Wireframes (Ha)
+ - wenn fertig Domänenmodell (Ha)
+ - UseCases (Jakob)
+
+Frage an Ringel:
+    - Wie soll man den Entwurf/Architektur des Systems aufschreiben (zB Aktivitätsdiagramm)
+    
+TODO
+- Use Case mit Ringel besprechen (sind sie noch zu allgemein)
+- Wireframes zu Use Caese zuordnern
+- Free Mover in Use Case 2,3 aufnehmen (eventuell mit Checkbox die dann Vertragsabschnitt ausgraut)
+- treffen mit Raühael für ER Diagramm und Domänenmodell
+- Wie kriegen Wir es hin das auf dem Funktions ACC Python läuft (Luca)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting mit SI 6.1
+
+Anwesende
+Luca, Frau Terpe, Jakob, Jens, Frau Wunderlich, Nico, Pascal, Ha
+
+
+Agenda
+
+Unsere Agenda:
+1) Vorstellung von Layout Skizzen (Wireframes), welche werden gebraucht welche nicht.
+
+-Generell Rechtschreibung Wireframes
+- 1.Use Case Anmeldung durch User. 
+abgenommen
+- 2.Hauptseite übersicht Hochschulen (es fehlt noch Spalte wie in letzem Meeting besprochen)
+Zusätzliche Filtermöglichketien auf Hauptseite:
+- in Interface fehlt die Filtermöglichkeit Programmbeauftragte:R. 
+Es wäre interessant nach allen Partnerschaften filtern zu können die von einer bestimmten Person betreut wurden
+- Spalten "Anzahl Verträge" sollte nie 0 sein. Anzeige von Anzahl aktiver und inaktiver Verträge. Mglw. Extraspalte aktive Verträge Verträge insgesamt (aktiv + inaktiv).
+
+- 3. Bearbeitungsfenster: Notizenfeld muss größer sein. Spalte für Mentorename soll größer sein.
+-Bevorzugte Studienrichtung fehlt für Incoming und Outgoing  (Studiengang) . Insebsondere bei Outgoing Studierenden soll bevorzugter Studienganng zu sehen sein.
+- Bei erstellung einer neuen Hochschule MUSS Vertragstyp angegeben werden
+- Hochschuleanlegen vertragstyp angeben ist Pflicht! 
+Vertragstyp Kein Vertrag: FreeMover; Kontakt
+
+
+
+
+2) Besprechung von Fragen:
+- Welche Bericht sind zu erstellen. Was soll deren Inhalt sein. In welchem Format sollen sie erscheinen (Excel, PDF,...)
+Kein Access Datenbank. Frau Terbe bittet ShK alte anfragen an uns zu schicken oder wir Fragen Raphael nach den alten Abfragen.
+Bzw Raphael selbst fragen wenn innerhalb einer halben woche nichts kommt
+
+
+- Wie genau sollen Studentendaten Aufgenommen werden, da dies Rechtliche Einschränkungen nach sich zieht.
+Mit Raphael besprechen für Relevanz: Am ende Studiernend als Zahl in best Studiengeang in Fak. xy bei Partnerhochschule
+
+- Sollen Mentoren anlegbar, löschbar und anzeigbar sein?  -> Wie oft wechseln Mentoren. (wird evtl schon bei (1) besprochen)
+Ja, sollen anlegbar und löschbar sein. Falls Mentor in Ruhestand geht oder Hochschule wechselt, wird alter Mentor durch neuen Mentor ersetzt. Alter Mentor kann gelöscht werden. (relativ hohe Prio)
+Auch mehrer Mentoren pro Vertrag
+
+
+3) evtl Verifzierung von Use Cases
+
+
+4) Lost updates verhindern (im Multiuser mode). 
+Es kommt gar nicht vor, dass zwei Mitarbeiter gleichzeitig Unis bearbeiten. Es kann also die Datenbank blockiert werden, wenn eine Mitarbeiter:Inn im Berarbeitungsmodus ist
+
+
+Wunsch:
+    
+TODO 
+- Eineitliche Rechtschreibung in Wireframes
+Mit Raphael:
+- AccesDaten Bank Copie
+- Berichte
+- Details Outgoing welche Studiengänge
+
+- (sehr niedrige Prio)Studienplätze mit Studien oder ohne Studiengebühren Anzeigen und erfassen (wenn ja wie hoch)
+- In Zukunft zu präsentierende Unterlagen vorher an SI schicken.
+
+
+-------------------------------------------------------------------------------------------------------
+Meeting Protokoll 11.01.2022
+Teilnehmer:
+Luca, Jakob, Jens, Nico, Ha, 
+
+
+Was heißt Qualitätsgesichert bei der Übertragung von Ascii Doc zu PDF
+
+
+ToDo
+- Domänenmodell Prüfen -> GitHub/docs/requirements/diagrams (Jens/Ha)
+- Korrektur lesen der Technischen Anforderungen 
+- Vision korrekturlesen (Nico, Jakob)
+- Use Cases + Use Cases Modell (Nico, Jakob -> treffen)
+- Systemweiteanforderungen korrektur (Jakob, Abnahe von der SI) 
+
+- Projekplan (Jens, Roman (evtl))
+- Iterations Plan (Luca)
+- 
+- 4. KW Repo korrektur lesen
+- 4. KW Einheitliche Modelle?
+
+- jeder muss sich die Datenbankstruktur von der Vorgruppe angucken!!!!
+- Issiues in Discord  nicht vergessen zu schließen oder Anzulegen!!!
+
+----------------------------------------------------------------------------------------------
+Meeting Protokoll 18.01.2022
+
+Teilnehmer:
+    Jens, Luca, Nico, Pascal, Ha
+    
+    
+- Durch gehen des 3. Itreationsplanes:
+    - UC mit ringel auf agenda für 19.01 setzten
+    - Funktionssaccount mit Python? -> nicht geschafft wird nach dem Meeting bearbeitet
+    -
+    
+- Agenda für Herrn Ringel (es geht ums Feedback)
+- Use Cases für den Beleg durch gehen (-> haben wir zu viel gemacht was fehlt etc)
+- Domänenmodell vorstellen 
+- WF (ist das so gewollt)
+
+- Agenda für SI
+- Es soll nur die Anzhal der Studierenden aufgenommen die in einem bestimmten Studiengang von der Fakultät x an Hochschule y (keine Klare Meinung)
+-  Eingaben validierung?
+
+
+- To Do
+- Daten auf Funktions Acc (-> wie Daten auf dadrauf?)
+- Screen shots Acces Berichte an Ha (macht Nico im anschluss)
+- Esscens Navigator durchgehen in kleinerer Gruppe
+- ggf. 
+- Ideen für Nutzerverwaltung(Accounts etc)
+- Wir benötigen Rechte Accounts zu erstellen
+- Wer hat die Website der HTW gemacht? Was laufen dort für Abfragen? 
+
+------------------------------------------------------------------------------------------------------------------------------
+Meeting Protokoll 25.01.2022     
+
+
+ToDo (vor dem Meeting Jakob im Meeting teils verworfen):
+     - Domänenmodell an SI
+     - Vision an SI
+     - Wireframes an SI ?
+     - evtl. Use Cases an SI
+     - Welche Dokument sollten noch die SI sehen?
+     
+
+Anwesende:
+- Luca , Nico, Pascal, Ha, Jens, Jakob
+
+
+Was wurde besprochen:
+- Briefing wer welche Aufgaben aus letztem Meeting gemacht hat
+- 
+
+Agenda für SI:
+- Fragen:
+- Gibt es sensible Daten, die besonderen Schutz verlangen?
+- Sollen Daten von Studierenden erfasst werden bzw. die Datenbank dahingehend erweitert werden?
+- Besprechung des Layouts für Formular von Studenten austausch (wir schildern unsere Probleme mit letzter Soft Ware) für unterverträge bzw  in welchen Studiengang 
+- Hot Keys ja nein wenn ja welche?
+
+- Material:
+- Vision
+- Domainmodell (Lengende)
+- nur mal drüber gucken
+
+     - Wortwahl konsistenz mit Glossar prüfen.
+     - Herr Ringel wegen SI Meeting 
+     
+     Samstag 12:00 Beleg Abgabe
+     
+--------------------------------------------------------------------------------------------------------------------------
+
+Meeting Protokoll 27.01.2022
+
+Anwesende:
+    - Jens,Nico, Pascal,Ha, Jakob, Frau Terpe, Frau Wunderlich, Raphael
+    
+
+Meeting:
+    1. Domänenmodell 
+    - Kontaktperson zur jeweiligen Hochschule (!= Mentor zum Speziellen Studiengang(?) im Glossar?) / Ansprechperson
+- International Office -  URL+ Link
+- Fakultät -> Komposition impliziert das es mehrere Fak. an HTW gibt
+- Mobilty Agreement -> Austauschprogramm ist ehrer Vertrags typ
+- Free Mover als Objekt einbauen
+-Datenschutz-> Prof Westfeld
+
+2. Vision
+-Prios: 
+- Syslogin: genauso hohe wie Anlegen von Hochschulen
+- Mentoren ebenfalls
+- Priorisierung der Use Case Funktionen eventuell ändern
+- Wertebereich verkleinert 
+- Rechtschreibung Seite 5 etc
+-Funktionalität:
+- HTW Seiten Infos aus MariaDB bei PHP admin(bis her nur lesenend) -> kompatibilität zu unsere DB Prüfen  (für Funktionalität oder in Systemweiten anforderungen)
+--> Use Case erstellen 
+
+3. Prototyp
+- Für Nutzertests(!):
+- Prototyp in Hände der Mitarbeiter geben 
+- Aufgaben dem Nutzer geben Protokollieren was der Nutzer Denkt (-> zum Test des GUI)
+
+4. Unsere Fragen
+- keine Tastenkombinationen
+- Senible daten werden schon von Syslogin abgedeckt (solang keine Studenten Daten geführt)
+- 
+5. Pascals Frage:
+- mobility_agree_x_cours: Mobi Abkommen gilt für Fak.
+- aber andere Hochshule will nicht jeden Studiengang aus der Fak zum austausch zulassen
+-> das wird in der Tabelle abgebildet
+-Spezifizierung der Mobilitätsabkommen auf Studienfächer
+- Wo soll das eingeben werden?
+- bei Anz studentenauch art des Kurses
+- genau wie in Acces  umsetzten
+- ISCED muss angegeben werden und in DB
+- ISCED(mobi agree abhängig(mit in Agreement als Member?)): number für Studiengang weil EU das will (nicht auf Infofornt veröffentlicht)
+- Kurs muss ebenfalls angegeben werden
+- jedes Abkomm hat einen; Kurse haben keinen eindeutigen, da viele unterschiedliche Bezeichnungen
+- Für studierende nur passender Studiengang (keine Nummer) für Verträge und interne Verwaltung Codes
+
+- nach vertrag wird aufenthlats dauer bestimmt (gesamt Summe) darin dürfen so viele wie Studenten wie angegeben wurden raus
+- Plätze sollen angeziegt werden
+
+Exchange_tab:
+- import von Excel? für Berichte (-> niedrigere Priorität
+
+ToDo:
+    - Vision Studentendaten raus nehemen
+    - FreeMover und International Office in Domänenmodell
+    - Rechtschreibung Vision
+    - Priorisierung Vision
+    - Datenschutz -> Prof. Westfeld
+    - Use Case Kompatibilität der Datenbanken überprüfen
+    
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Prototypvorstellung 04.02.2022
+
+- unbedingt entstandenes Wissen dokumentieren für die Anwendung (wir haben OpenUP gehackt -> vonhinten angefangen, ist legetim aber spätestens jetzt aufzuarbeiten)
+-> das muss so gut sein das Pascal niemandem was erklären muss sonder jeder sich die Doku durch ließt und anfangen kann zu arbeiten
+- es entstand das Bild das momentan bei uns recht losgelöst gearbeitet wird ("nur da gelöscht wo es brennt")
+- Testbeckup? ist ja eigentlich vorhanden oder? (da ich zur Präsentation keine Daten ändern konnte um den Datenbestand nicht zu gefähreden)
+
+To Do:
+    - evtl Deployment engeneer besetezten...
+    Herr Ringel möchte folgendes sehen:
+    - Software Stack (C4 Modell auf deteil ebene des Prototypens)
+        - Schichten aus arbeiten, deteilreich beschreiben, wie kommunizieren Schichten, welche Funktionen haben die
+        - wo ist was wie zu finden? (auf VM oder auf lokalen Rechner, DB (welche DB's gibt es wie kann man die erreichen...)
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+Meeting Protokoll 22.03.2022
+Protokverantwortliche: Jakob
+Anwesende: Jakob, Jens, Nico, Pascal, Patrick, Ha
+
+
+1. Arbeitsorganisation
+- Alle Dokumente ins Repo
+- Verfügbarkeit werden über Doodle bestimmt
+- Teammeeting immer online 
+- Protokollverantwortlichen vor dem Meeting festlegen
+-> archiviert werden Protokolle auf GitHub Dateiname: Datum_Thema
+-> dieser sorgt dafür das die Protokolle für Lesende Verständliche
+-> ToDos als Issue formulieren (mit Wichtung der Issues versehen)
+- Jede Aufgabe soll in GitHub als Issue angelegt werden und bei Project unter To Do geschoben werden, so dass sie in Progress gezogen werden können
+
+
+2. Jakob stellt Reflexionstool Mirror vor
+
+3. Benötigte Dokumente
+- Entwickler Dokumentation verfeinert
+- Architecture Notebook detaillierter schreiben
+- Work Item List
+
+4. Termin
+- KW 13 Termin mit Ringel
+- Doodle Termin für Teammeting
+- Verfügbarkeits liste
+- Iterations länge 2 Wochen
+
+To Do:
+
+- Jens kreiert Doodle liste für wöchentliches Meeting
+- Präsenz mit Ringel oder SI?
+- Protokollordner im Repo  für alle zukünftigen Protokolle anlegen 
+- Index Datei anlegen (dort ist beschrieben wo welches Dokument zu finden ist, also Name und Speicherort im Repo)
+- Esscense Navigator ausfüllen (Jakob, Luca)
+- Regelwerk anlegen (Jakob)
+
+- Usersystem (mit Rechenzentrum auseinandersetzen ob wir selbst DB Logins anlegen können für die Mitarbeiter der SI?) Wir sollen ein Login System für die Mitarbeiter der SI umsetzen. Wie soll das mit der Datenbank umgesetzt werden? 
+- Views für Verwaltungsfrontend -> wie müssen die Views von uns aussehen um den Abfragen des Verwaltunsfrontends gerecht zu werden? ggf. mit Verantwortlichem der Website auseinandersetzen (Raphael fragen -> Pascal)
+- aufspielen des aktuellen Stands des Prototypen auf die VM, mit SI auseinandersetzen und ihnen zu beliebigem Termin den Prototypen zur Verfügung stellen + Feedback einholen zu user interface (Jakob)
+
+- wie teste man was  (Patrick, Roman)
+- was muss getestet werden (Patrick, Roman)
+
+- Belegarbeit korrektur Issues anlgen und evtl schon zu weisen
+
+-----------------------------------------------------------------------------------------------------------
+
+Meeting Protokoll 28.03
+
+Protokollverantwortlicher: Jakob
+Anwesende: Luca, Jens, Ha, Jakob
+
+1) Stand Entwicklerdoku
+- Pascal will code überarbeiten
+- Pascal hat Jens Code erklärt
+- Ha und Jens wollen Entwicklerdoku mit der Doku des vorjahres befüllen
+
+2) Arbeitsorga
+- Iterations ende 11.4
+- Ende der Woche Prototyp an SI
+- Ende der Woche muss sich jeder mit der Datenbank-Struktur beschäftigt haben
+, jeder muss die Prä-Entwicklerdoku-Doku von Pascal gelesen haben
+- ende der Woche sollen grobe informationen für das vorgehen beim testen vorhanden sein (nächste Iteration)
+
+
+3) wichtige benötigte Dokumente
+- Entwicklerdoku
+- Architekturenotebook
+
+4) Meetings
+4.1)Ringel
+Es wurd von Ihnen und Herrn Anke von Anfang an vermittelt, dass wir Probleme ansprechen sollen.
+Wir meinen folgendes  Problem erkannt zu haben aber gehen nicht davon aus dass dafür eine Lösung für uns parat haben.
+- Problem: es sieht sich keiner außer Pascal (und Ha) etwas sinnvolles zur Implementierung bei zu tragen; Grund: Als letztes Semesters  Pascal mit der Implementierung begann waren alle anderen Teammitglieder mit anderen Aufgaben ausgelastet, wodurch niemand anderes so gut mit dem Code vertraut ist wie er. Außerdem waren Pascals Programmierkentnisse (vorallem in Sachen Python und Flask) denen des reslichen Teams schon sehr weit vorraus. 
+- teammitglieder bereit und motiviert sich in code einzuarbeiten halten es aktuell aber für unrealistisch an einen Punkt zu kommen an dem wir ihm eine Hilfe sein können (stand 28.3)
+- Unsere Einarbeitung in den Code würde einen massiven Mehraufwand für Pascal bedeuten der eh schon viel zu viel macht
+- Daraus ergibt sich leider noch ein weiteres Problem: alle Aufgaben für dieses Semsters basieren auf dem Verständnis Code den nur Pascal hat (Entwicklerdoku, Test etc.).
+
+4.2) SI
+
+Probleme:
+- Pascal macht alles für den Code
+- abstand von Pascal technischen Stand und technischer Stand anderer
+- allgemeine Übervorderung (-> Ohnmachtsgefühl)
+- Ziel des Projektes (das Konzept Iterativer entwicklung zu lernen und zu erproben) wird nicht von allen Team mitglidern geteilt, das primäre ziel der Studenten ist aber einfach durch zukommen. Anwenden der Iterativen entwicklung stellt sich als sehr schwer dar da hoher Zeitdruck und es fühlt sich jetzt etwas zu spät an
+-> man sollte erst bei einem Projekt mit Profis mit machen und es dann selbst ausprobieren
+
+- es hat keiner eine übersicht was seine Pflichten sind (Vorschlag von Jakob -> README.md soll arbeitsinformationen zur arbeitweise erhalten 
+
+
+-----------------------------------------------------------------------------------------------------------
+
+Gespräch zur Arbeitsweise 31.03 (kein wirkliches Protokoll)
+
+Protokollverantwortlicher: Jakob
+Anwesende: Jakob, Pascal
+
+- gucken auf Prototyp guckt was nicht funktioniert nzw entnimmt aus Protokolle was fehlt oder lässt es sich zu arbeiten was fehlt
+- jetzt Dokumentierung, "Doku" in Implementierungs Chat 
+- danke für die Erklärung
+
+
+-----------------------------------------------------------------------------------------------------------
+
+Meeting Protokoll 01.04.2022
+
+Protokollverantwortlicher: Jakob
+Anwesende: Nico, Pascal, Jens, Ha
+
+TOP 1 Was wurde gemacht:
+- Pascal hat Jens+Ha was übern Code erzählt
+- Jens+Ha hat Protokolle nach FA's durchforstet und Pascal geschickt
+- Entwicklerdouk erarbeitet  (fas fertig)
+- C4 heut 
+
+- Code verbessert (sauberer gemacht)
+- Nico wegen zeitlichen Gründen keine updats am repo
+- Jakob Arbeitsweisen erarbeitet (noch nicht gelesen)
+- Jakob mit Ringel geschrieben: geht zum Retro Workshop, 
+
+- Anmerkung von Pascal: warum ist keiner in den Meetings bei den Zeit wo man sich eigentlich frei gemeldet hat
+
+TOP 2 Testlauf Retro Tool:
+- voting, hid cards, anonyms cards, login without login; 
+- hat alles gut geklappt
+
+ToDos:
+- README lesen (bis Montag)
+
+-----------------------------------------------------------------------------------------------------------
+
+Meeting Protokoll 07.04
+
+Protokollverantwortlicher: Jakob
+Anwesende: Ha, Pascal bis (18:00), Luca , Jakob, Jens, Nico, Herr Ringel ab 18:00
+
+TOP Vorbereitung
+
+TOP Stand aus Perspektive der Alphas
+
+Essence Navigator abhaken
+-Opportunities 
+-Requirements
+-Way of Working (besprechen und einigen)
+
+TOP Vorstellung C4 und Entwicklerdoku
+- Ha Vorstellung von C4 Modell (2 von 4 Schichten):
+- Fragen von Herr Ringel:
+     --> Was heißt C4 Modell?
+     --> Welches Ziel hat das C4 Modell für das Projekt/für jede einzelne Rolle?
+     --> alle Teammitglieder müssen das Modell verstanden haben und müssen darauf ableiten können
+     --> Schnittstelle zu Maria DB?
+
+- Jens Vorstellung der Entwicklerdoku:
+  - C4 Modelll in Systemarchitektur referenzieren zum Punkt Schichtenarchitektur
+  - mögliche Überschrift für die Seiten-Ansicht: Funktionallitätsbezogene Userschnittstellen
+  - Workexample eines ganz einfachen Falls für die Flask Anwendung in die Entwicklerdokumentation aufnehmen. Zum besseren Verständnis.
+  - Interaktionsübersicht mittles UML- Diagram erstellen (Sequenzdiagram) 
+
+TOP Fragen von Luca an Ringel (Deployment)
+- Hauptaufgabe: dem Kunden Zugang zum Produkt geben
+- Auf produktivserver Installieren
+- Prototyp installieren (Zwischenstände zur Evalluierung durch Kunde hochladen)
+- Bis zum 1. Mai Prototyp (getestet) der SI zur Verfügung stellen (mind. 20% des Produktes)
+
+TOP Fragen zu Retroperspektie:
+    - Diskussion zum Präsenztreffen 
+    - man muss nicht unbedingt alle 14 Tage Retrospektive - Termin machen --> 3mal in Semester reicht aus, wenn es ergebnisreich ist und man die richtigen Schlüsse zieht
+
+
+Fragen für das nächste Meeting:
+-  jeder muss vom C4 Modell seine Rolle ableiten können(Test, Implm., etc.)
+- Interaktionsübersicht mittles UML- Diagram erstellen (Sequenzdiagram)
+- Workexample eines ganz einfachen Falls für die Flask Anwendung in die Entwicklerdokumentation aufnehmen. Zum besseren Verständnis 
+- nächstes Teammeeting mit Herr Ringel --> Camera an KAMERA AN FÜR Herrn Ringel
+- Retrospektive om präsenz
+- bei Fertigstellung der Entwicklerdoku --> Herr Ringel schicken zur Kontrolle
+
+-----------------------------------------------------------------------------------------------------------
+
+Meeting Protokoll 11.04
+Protokollvera.: Jakob
+Anwesende: Jens, Luca, Patrick, Ha
+    
+TOP 1 Was wurde gemacht
+Ha + Jens: C4 Modell (es wird langsam, dank Ha!)
+Level 1-3 sind so gut wie fertig, Hauptfunktionalität (Hochschulen, Fakultäten) sind so gut wie fertig
+Luca: nicht weiter gearbeitet u. noch nicht mit Pascal gesprochen
+Patrick: nicht viel sichtbares, Infomaterial zum Testen von Flask liegt vor. Flask infos für Test, das nächste wäre mit Roman zu treffen und das vervollständigen der Planung der Test Cases
+
+Jakob: leider nicht viel gemacht ;)
+
+Pascal: aktueller Fortschritt Implementierung: 
+- aktuelle Version kann: 
+- Einfügen von Hochschulen
+- Wahl zw. verschiedenen Ansichten (Übersichten Länder, ...)
+- Mentoren suchen
+- Laden der aktuellen Daten einer bestehenden Partnerschaft + ihre Agreements + alle mob_agreements_x_course (alle Restriktionen) -> Informationen zur Hochschule werden schon im Interface angezeigt, die Agreements wurden bisher nur auf der Seite des Backends berücksichtigt
+- Entwicklerdokumentation so weit es bisher möglich ausgearbeitet
+- viele Anpassungen User Interface
+-> Implementierung nicht wirklich viel passiert aufgrund der EntwicklerDoku
+
+- aktueller Stand auf der VM -> Replikation der Live-Datenbank aufgespielt, aktuellste Version muss ich heute abend noch ins Github stellen und auf VM aufspielen. 
+(Ich schick dir heute Abend des Link den die SI nutzen kann, ab Morgen früh um 6 schalt ich die VM ein hoffe sie bleibt dauerhaft online :D)
+
+TOP 2 Way of Working (-> Ziel jeder kennts, jeder ist einverstanden)
+- REAME akzepitert
+- GitHubZen Issues 
+
+TOP 3 Was muss gemacht werden (sammeln von Aufgaben)
+- 1. Jens + Ha: C4 Model weiter ausarbeiten, von Pascal, dann von Hernn Ringel absegenen lassen
+- 2. Jens: Code kommentieren, welches Zeile macht was
+- 3. Jens + Ha: Entwicklerdoku schreiben (C4 Model einfügen etc. )
+- 4. Patrick + Roman: Test Cases vervollständigen
+- 5. Patrick + Roman: Tests durchführen
+- 6. Patrick + Roman: Testdokumentation schreiben
+- 7. Pascal: übernehmen der Änderungen an Hochschulen/ Mob Agreement in DB
+- 8. Pascal: Einsehen der Mob Agreements 
+- 9. Pascal: Anlegen /Ändern Mentoren
+- 10. Luca: Anwenderdokumentation schreiben- Nico + Jakob: Uscases korrigeerne
+- 11. Luca: Useraccounts in Datenbank (mit Rechenzentrum auseinandersetzen ob wir selbst DB Logins anlegen können für die Mitarbeiter der SI?) 
+- 12. Luca:  Views für Verwaltungsfrontend -> wie müssen die Views von uns aussehen um den Abfragen des Verwaltunsfrontends gerecht zu werden? ggf. mit Verantwortlichem der Website auseinandersetzen 
+
+- 13. aufspielen des aktuellen Stands des Prototypen auf die VM, mit SI auseinandersetzen und ihnen zu beliebigem Termin den Prototypen zur Verfügung stellen + Feedback einholen zu user interface 
+
+-14 Jakob: Termin mit SI finden
+
+TOP 4 Priorisierung
+
+1) 9
+2) 3 (fübis zur abgabe wäre es super
+3) 5
+4) 9
+5) erst später (6)
+6) immer parallel (4)
+7-9) 8 (ohne Pascal ermitellte Priorität)
+10) 3
+11-12) 10 (ohne Pascal priorisiert)
+13) 10
+14) 8
+
+TOP 5 Iterationsziel formulieren
+1) aktueller Stand des C4 Modell an Herrn Ringel
+4) möglichst alle Test Cases vollständig planen (Dokumentation/nicht Code)
+11-12) alle fragen klären
+- GitZen etablieren, Prototyp an Si, Way of Working 
+
+TOP 6 Fragen an SI
+siehe TOP7
+
+TOP 7 SI Agenda
+- Prototypen besprechen. Was ist gut, was ist schlecht?
+- Umgang mit Partnerhs bei denen kein aktiver Vertrag besteht? (Anzeige Ja/Nein)
+
+TOP 8 Sonsitges / Probleme
+- Issues Problem (GitHub Zen)(Jens) Wundere dich nicht lieber Jakob, wir können Issues nicht abhaken, wenn es Aufgaben sind, die das ganze Semester lang dauern.
+- Jede Woche Treffen? (mal in Teams rein hören und stand abfragen
+- Teile der Andwenderdoku übernehmen?
+
+
+TODO:
+    - TOP Zen Hub vorstellen
+    - TOP Jakob stellt vor welche Dokumente genau abgegeben werden müssen
+    -  Fragen an Pascal:
+    - welche Funktionen fehlen noch in der Software?
+    Login, Statistiken, Daten löschen (mittels speziellem Account o.ä)? Wo hakt es? Wie können wir dich unterstützen?
+    
+
+-----------------------------------------------------------------------------------------------------------
+
+Meeting Protokoll 25.04
+Protokollvera.: Jakob, Luca
+Anwesende: Nico, Roman, Ha, Pascal
+    
+    TOP 1 Was wurde gemacht
+    - Luca rückmeldung von RZ (UserAcc von Terpe), Anwender Doku
+- Pascal anzeigen und änderen von Daten aber nicht in die Datenbank übertragbar
+- Nico UC aktuell
+- Ha Jens C4-Modell (levl 3,4 hinzugefügt)
+
+    TOP 1.1 ZenHub kleine Einführung (10min)
+- das wichtigste steht in der README, sonst Jakob Fragen
+
+TOP 1.2 Abzugebene Dokumente
+- Entwickelerdoku, Anwenderdoku, Betriebsdoku für Admins
+- Projekt bericht:
+- Reflexion übereigene Rolle 
+- zusammenarbeit mit anderen Kompetenzerwerb
+
+TOP 2 Neue Issues bewerten und Zuweisen (in Product Backlog schieben)
+- siehe ZenHub
+
+TOP 3 Auswahl der Issues für die Iteration (in Sprint Backlog schieben)
+- siehe ZenHub
+
+TOP 4 SI Meeting Agenda + Treffen
+- UserAcc von Frau Terpe vorschlag mit nur einem Admin und rest Mitarbeiter(?)
+- Rückmeldung Prototyp
+(- Umgang mit Partnerhs bei denen kein aktiver Vertrag besteht? (Anzeige Ja/Nein))
+- wie viele Mitarbeiter gibt es (ist die anzahl immer gleich siehe Issue #33)?
+
+ToDo: Termin SI
+- verfügbarkeiten in Verfügbarkeiten.xlsx aktuallieseiern
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting mit SI 29.04.2022
+Protokollvera.: Jakob
+Anwesende
+Frau Terpe, Frau Wunderlich, Jakob, Nico, Patrick, Ha, Nico, Raphael
+
+
+Unsere Agenda:
+1) Besprechung des Prototypens
+- evtl alte Verträge (ohne Befristungsdatum) -> wird dann von SI auf inaktivgesetzt
+- Verträge mit Zeitbeschränkung (hier Notification Achtung der Vertrag läuft aus)
+- Bejing Research Uni. --> Datenbank = Vertrag abgelaufen (inaktiv) --> Protoype aber zeigt aktiv
+( - ist in der DB bei Beijing Research alles sinvoll und nur falsch in Frontend od falsch in DB?)
+- man kann noch keine neuen Verträge anlegen (!= anlegen einer PartnerHS)
+- Mentoren nicht änderbar (!) und anzeigbar (?)
+- Verknüpfung zwischen Vertragstypen(FIlter) und den Hochschule herstellen 
+--> soll in Hohschule bearbeiten angezeigt werden, wie Datenbank 
+- China nicht alphabetisch bei C --> letzte Hochschule (zeigt nicht sofort alle Verträge)
+- wenig Umsetzung mit dem besprochenen Wireframe 
+- klare Begriff (Bezeichnung) für die Suchleisten (auf Eindeutigkeit und intuitiv ersichtliche Bedeutung achten)
+- "Aktiv"-Auswahl zu "Verträge aktiv" oder ähnlich ändern
+- "Anzeige extern" zu "Anzeige auf HTW-Webseite" ändern
+- bei "neue Partnerhochschule anlegen": unklar ob Ansprechperson der Partnerhochschule oder der HTW
+- Alle Verträge sofort in Überblick ohne noch runter scrollen
+- in Übersicht von Hochschulen soll angezeigt werden wenn Vertrag abgelaufen ist (zB mit rot makieren)
+- Button zum Aufrufen der Verträge in der Universitätsliste (bisher "Bearbeiten"-Button -> fast nicht sichtbares Symbol unten)
+- Sortierung der Länder nicht alphabetisch?
+
+- Erasmus heißt Verträge zwischen einzelnen Fakultäten 
+- jeder Zeit kann man mit HS in Kontakt treten und neuen Erasmus anlegen können
+- Hochschulvereinbarung heißt Vertrag für alle Fakultäten (ohne nähere Fakultäts Infos)
+- diese Unterscheidung ist noch nicht möglich (!)
+- Vertragstypen (nicht als Dropdown) siehe Accsess Formular
+-Workflow SI: -> E-Mail -> zB China -> sofort alles einsehbar
+- Hochschule auswählen -> Verträge der Hochschule -> Veträge auflisten
+- Partner HS kann alle Vertragsarten beinhalten die sich auf Fakultäten beziehen können
+- Erasmus berechtigt bei Land zu ändern möglich?
+
+TODO: 
+- Filtername ändern (Anzeige, Aktiv)
+- Fehler mit Datenbank behoben (aktiv/inaktiv, Ablaufsdatum)
+- Sortierungsfehler behoben
+- Partnerschaftsoberfläche überarbeiten
+- Partnerschaftübersicht gleich angezeigen
+- Partnerschaftsfiltern in Hochschule implementiert
+- Wie viele Plätze für welchen Kurs implementiert
+- (Vertragstypen in die tabellarische Auflistung der Fakultäten)
+- Kompakteres Design (Scrollen reduzieren, kleiner Schriftgröße, Nutzung der ganzen Fläche in Menüs)
+- Fakultäten / Studiengänge bearbeiten oder anlegen
+- Trennung zwischen Hochschule und Partnerschaft anlegen
+- anlegen von Hochschulen soll unabhägig vom anlegen von Partnerschaften sein
+--> erst Hochschule anlegen --> dann nach Hochschule suchen und "bearbeiten" und Partnerschaft dort anlegen
+- kennzeichnen was Optional ist und was nicht
+- Mentoren suche funktioniert nicht (soll Vor- oder Nachnahme eingeben werden?)
+- bei Ländern: Erassmus berichtigt änderbar machen (?)
+- Stammdatenänderung der Studiengänge änderbar machen 
+Niedrig Priorität:
+- (weniger ansträngende -> es gibt noch keine Farben außer schwarz weiß) Farben für das Design (Dark-Mode?, allgemien Farben reinbringen)
+
+**Hochschule -> Vertragstyp (Erasmus, Hochschulvereinabrung, etc.) -> zeigt jeweilge Verträge an -> Verträge können noch bearbeitet weden**
+
+2) Wie viele Mitarbeiter gibt es? 
+
+- aktuell: 7/8 (ändert sich regelmäßig, Obergrenze: ca. 10 nicht unbedingt mehr als 20)
+- Multiusersystem (sinnvoll?)
+
+3) Reicht ein Admin-Account?
+
+ - Ja und normale Mitarbeiter teilen sich einen User-Account
+
+
+- Raphael: Link zur Doodle-Liste oder Terminvereinbarung für die Teilnahme an Gruppenmeetings
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Nico + Jakob korekktur Beleg 02.05.2022
+UC:
+- Berichte:
+-Berichte über Mentoren:
+1) aktive Mentoren nach Vertragstyp und Ländern
+2) aktive Mentoren nach Vertragstyp (E-Mail-Adressen)
+3) aktive Mentoren nach Vertragstyp 
+1,2,3 zusammen fassbar?
+
+- Abkommen nach Fakultät; Abkommen nach Länder als ein UC aber mit der option das umzustellen 
+- was soll in Austauschstudenten-Bericht rein? da wir ja keine Namen speichern brauchten  reicht da wirklich nur die Anzahl der Studenten pro Fakultät?
+- was ist der Sinn des Berichts Internationale Tag (outgoing) ist der für uns relevant?
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Teammeeting mit Raphael 02.05.2022
+
+Anwesende: Jens, Luca, Nico, Ha, Jakob, Raphael
+    
+
+Raphael:
+
+Reihenfolge:
+1. Kleinere Fehler fixen (Buttons, Filter)
+2. fehlende Funktionen
+3. Berichte
+
+- suchen funktioniert nicht, schließen von Fenstern, Filteroptionen flasch oder gar nicht implementiert
+- Filter nicht alphabetisch sortiert
+
+-!!!!!!!! Universität muss unterschiedliche Partnerschaften bzw. Vertäge haben/anzeigen können, unterschiedliche Partnerschaften anlegen können (In der BEarbeiten Ansicht muss klar sein, um welche Partnerschaft es sich handelt) Hochschulpartnerschaft, Swiss-Mobility, Erasmus ==> Auswahl über Buttons.zB "Nur Erasmuss-Partnerschaften einer Hochschule anzeigen"
++ extra Restriktionen: Differenzierung welche Art von Studierenden akzeptiert werden, Bsp.: von 10 erlaubten Studierenden, 2 reine Informatiker, 4 WI's, 4 Verwaltungsinformatiker ODER Vertrag erlaubt nur Teilnehmer us bestimmten Studiengängen ==> Sonst nicht nutzbar. Im Bearbeitenmodus unterpunkt "Anzahl maximal. ausgehender Studenten"+davon 10 Studenten BWL, 2 Studenten Informatik
+
+- Design soll sich stärker an Access orientieren (HA hat schon geändert)
+- In Beabeiten Ansicht der Hochschule sollen Verträge sichtbar sein
+
+-Login nicht im Quelltext sondern direkt die normalen Dtenbank logins als Login verwenden. So müssen diese Daten nicht gepspeichert werden!!
+
+-Dropdown-Menü Mentoren funktioniert nicht
+
+-Nice to Have: Admin Acoount mit sonderrechten zum löschen von Daten.
+
+-DRINGEND: Statistik: Wie kommen die Daten auf unsere Webseite wenn wir Studentendaten nicht verarbeiten. zB Exceltabelle mittels ODBC via SQL Befehlen abfragen. ZB nur die Anzahl der Studenten
+Raphael hat alle erforderlichen Berichte in seiner Gruppe erklärt. Wobei diee Art von Berichten nicht gefordert wurden.
+Fragestellung: Kommen von einer Universität viele Studierende es geht aber keiner der eigenen Studierenden an die entsprechenden Universitäten. => In welchem Zeitraum sind wie viel Studierenden rein und wie viel Raus.
+
+=Beim Nächsten Meeting mit dem Auslandsamt fragen welche Berichte genau sie benötigen. Brauchen sie den Bericht über die Anzahl der Studenten von und nach XY?
+
+==> Nice to Have: Dynamische Abfrage von Berichten/Statistiken (also nicht Hardcoden)
+
+
+Speichern, Suchen, Falsche Filter, eine Uni kann mehrere Partnerschaften haben, übersichtlichkeit FILTERN 
+
+Unterschiedliche Partnerschaften anlegen, zusätzliche einschränkungen zu partnerschaften wie zb wie viele studenten raus und rein, wie viele davon dürfen von welchen studiengängen kommen 
+
+
+
+TODO:
+- Beschreibung von Raphael über die Access Berichte finden
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Nico + Jakob korekktur Beleg 06.05.2022
+UC:
+UC 7: - soll jeder Bericht einzeln Exportiert werden können oder speichert man die und exportiert man
+dann alle auf einmal?
+- davon ist extends /include im UC-Modell abhängig
+ToDo:
+- Nico über WE: UC Spezifikation für UC 6-8 (am Montag vorstellen für Raphael)
+
+
+
+g
