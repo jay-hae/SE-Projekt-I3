@@ -167,8 +167,8 @@ Seit dem 2. Semster wurde eine Handlungs Richtline für die wichtigsten Team int
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
 
-Das Produkt wird dem Kunden als Link per E-Mail zur Verfügung gestellt werden. 
-//TODO hier ist ein Update notwendig, da wir eine VM nutzen
+Das Produkt läuft auf einer VM als System Unit. Damit ist die Webseite im HTW-Netz erreichbar ohne das der Server Prozess für die Webseite von einem User der VM ausgeführt werden muss.
+Somit wird die Software nach dem Releas vom Laborbereich der Informatik administriert.
 
 
 == Erkenntnisse (Lessons learned)
