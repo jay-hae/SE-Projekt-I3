@@ -52,7 +52,13 @@ function loadAgreements(inst_id) {
             let agreementObjects = [];
             const addField = $('#addAgreements');
             console.log(data)
+
+
             $.each(data, (index, val) => {
+                if((data[index])['agreement_inactive'] == 0){
+                (data[index])['agreement_inactive'] = 'Ja'
+                 }else (data[index])['agreement_inactive'] = 'Nein'
+
                 let newRow = "<tr id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
                 addField.append(newRow);
                 let agreementObj = createAgreementObject(data[index]);

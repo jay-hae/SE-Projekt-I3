@@ -165,7 +165,8 @@ def get_ma_and_courses(institute):
 def filter_institutes(parameters):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    payload = []
+    payload = [] # empty payload to put data in later
+    # 0 - country, 1 - faculty, 2 - extern, 3 - active, 4 - agreement type
     parameter_list = (parameters[0], parameters[1], parameters[2], parameters[3], parameters[4])
     print(parameter_list)
     cur.callproc('count_agreements_filter', parameter_list, )
