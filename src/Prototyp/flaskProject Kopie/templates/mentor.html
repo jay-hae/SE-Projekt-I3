@@ -23,7 +23,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Mentor bearbeiten</h5>
-                <button type="button" class="btn-close close_modal_add"></button>
+                <button type="button" class="btn-close close_modal_add" onclick="$('#modal_edit_mentor').hide()"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -36,21 +36,21 @@
                             <label for="edit_mentor_lastname" class="form-label">Nachname</label><br>
                             <input class="form-control" type="text" id="edit_mentor_lastname" name="edit_mentor_lastname"><br>
                             <label for="edit_men_fac" class="form-label">Fakultät</label><br>
-                            <select class="edit_mentor_fac" id="edit_men_fac" name="edit_mentor_faculty">
+                            <select class="edit_mentor_fac form-select" id="edit_men_fac" name="edit_mentor_faculty">
                                 <!-- Add options for faculties (dropdown) -->
                             </select><br>
-                            <label for="edit_mentor_active" class="form-label">Inaktiv?</label><br>
-                            <input type="checkbox" id="edit_mentor_active"><br>
-                            <select id="edit_mentor_gender">
-                                <option> -Geschlecht wählen- </option>
+                            <label for="edit_mentor_gender" class="form-label">Geschlecht</label><br>
+                            <select id="edit_mentor_gender" class="form-select">
+                                <option value="3">Divers</option>
                                 <option value="1">Männlich</option>
                                 <option value="2">Weiblich</option>
-                                <option value="3">Divers</option>
                             </select><br>
                             <label for="edit_mentor_homepage" class="form-label">Webseite</label><br>
                             <input class="form-control" type="text" id="edit_mentor_homepage"><br>
                             <label for="edit_mentor_email" class="form-label">Email</label><br>
                             <input class="form-control" type="text" id="edit_mentor_email"><br>
+                            <input type="checkbox" id="edit_mentor_active" class="form-check-input">
+                            <label for="edit_mentor_active" class="form-check-label">Inaktiv?</label><br>
                         </form>
                     </div>
                 </div>
