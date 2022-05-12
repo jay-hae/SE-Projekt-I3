@@ -120,14 +120,16 @@ def new_object(name):
 def handle_filter():
     if request.method == 'POST':
         my_list = request.form.to_dict()
+        # Filter Anzeige auf HTW Seite
         if my_list['filter_shown'] == 'y':
             my_list['filter_shown'] = "1"
         elif my_list['filter_shown'] == 'n':
             my_list['filter_shown'] = "0"
+        # Filter Verträge Aktiv
         if my_list['filter_activity'] == 'y':
-            my_list['filter_shown'] = "0" #in DB -> 0 = aktiv, 1 = inaktiv
-        elif my_list['filter_shown'] == 'n':
-            my_list['filter_shown'] = "1"
+            my_list['filter_activity'] = "0" #in DB -> 0 = aktiv, 1 = inaktiv
+        elif my_list['filter_activity'] == 'n':
+            my_list['filter_activity'] = "1"
         var = ['%' if i == 'none' else i for i in my_list.values()]
         return Querries.filter_institutes(var)
 
