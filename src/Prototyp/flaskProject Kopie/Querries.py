@@ -376,7 +376,18 @@ def edit_institute(keys, values, institute):  # institute = institute ID
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     query = "UPDATE tbl_institute SET " + query_string[:-1] + " WHERE ID = " + institute
+    print(query, tuple(values))
     #cur.execute(query, tuple(values),)
     return jsonify({'status': 'success'})
 
-#def edit_mob_agreement(keys, values, agreements): #agreements = list of mob agreement ID's
+
+def edit_mob_agreement(keys, values, agreement):
+    parameter = helper.dynamic_querries(keys)
+    query = helper.create_update_string(keys)
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    query = "UPDATE tbl_mobility_agreement SET" + query[:-1] + "WHERE ID = " + agreement
+    cur.execute(query, tuple(values))
+    print(query, tuple(values))
+    cnxn.close()
+    cur.close()

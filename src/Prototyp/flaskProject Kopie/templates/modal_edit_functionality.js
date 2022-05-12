@@ -224,7 +224,9 @@ function checkIfUpdated() {
         postData(updatedInst, '/changeData/updateInstitute');
     }
     if (agreeCheck) {
-        postData(JSON.stringify(updatedAgs.filter(obj => obj !== undefined)), '/changeData/updateAgreement');
+        let sendData = Array.from(updatedAgs.filter(obj => obj !== undefined));
+        sendData.forEach(obj => postData(obj, '/changeData/updateAgreement'));
+
     }
 }
 
