@@ -1,7 +1,6 @@
 function insertAgreementInformation(agreement) {
     let setAgreement = returnAgreement(agreement);
     setAgreement = setAgreement[0];
-    console.log(setAgreement);
     sessionStorage.setItem('currentAgID',setAgreement['ID']);
     $('#mntr_dropdown').val(setAgreement.mentor_ID);
     $('#fclt_dropdown').val(setAgreement.faculty_ID);
@@ -38,4 +37,21 @@ function clearAgreementSpace() {
 
 function onSave() {
 
+}
+
+function insertRestriction() {
+    let restrictions = getRestrictions();
+    let tbl = document.getElementById('tbl_restriction');
+    tbl.innerHTML = "";
+    restrictions.forEach(restriction => {
+        restriction = restriction[1];
+        let row = "<tr> id='" + restriction['restriction_ID'] + "' <th> +" + restriction['course'] + "</th><th>" + restriction['subject_area_code'] + "</th><th>" + restriction['incoming'] + "</th><th>"+ restriction['sub_num_mobility'] +"</th><th>"+restriction['sub_num_months']+"</th></tr>";
+        tbl.append(row);
+    })
+}
+
+function getRestrictions() {
+    let matchingAgreement = JSON.parse(sessionStorage.getItem('currentAgID'));
+    let allRestrictions = JSON.parse(sessionStorage.getItem('currentRestrictions'));
+    return allRestrictions.filter(obj => obj[0] === matchingAgreement);
 }

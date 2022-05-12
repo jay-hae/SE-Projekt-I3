@@ -1,3 +1,5 @@
+let restrict = [];
+
 function loadModal(inst_id){
     // $('#edit_modal_anz').prop('checked', true); set checkbox true manually
     $.ajax({
@@ -40,6 +42,7 @@ function loadModal(inst_id){
 }
 
 function loadAgreements(inst_id) {
+    restrict = [];
     //einfügen der Daten auf zweiter Seite des Modals
     $.ajax({
         method: 'POST',
@@ -52,28 +55,23 @@ function loadAgreements(inst_id) {
             let agreementObjects = [];
             const addField = $('#addAgreements');
             console.log(data)
-
-
             $.each(data, (index, val) => {
-                if((data[index])['agreement_inactive'] == 0){
-                (data[index])['agreement_inactive'] = 'Ja'
-                 }else (data[index])['agreement_inactive'] = 'Nein'
-
+                if ((data[index])['agreement_inactive'] == 0) {
+                    (data[index])['agreement_inactive'] = 'Ja'
+                } else (data[index])['agreement_inactive'] = 'Nein'
                 let newRow = "<tr id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
                 addField.append(newRow);
                 let agreementObj = createAgreementObject(data[index]);
+                createRestriction((data[index])['agreement_ID'], (data[index])['course_restrictions']);
                 agreementObj = checkInput(agreementObj);
                 agreementObjects.push(agreementObj);
             });
             sessionStorage.setItem('currentAgreements', JSON.stringify(agreementObjects));
             sessionStorage.setItem('updatedAgreements', JSON.stringify(agreementObjects));
+            sessionStorage.setItem('currentRestrictions', JSON.stringify(restrict));
+            sessionStorage.setItem('updatedRestrictions', JSON.stringify(restrict));
             makeRowClickable('agreement_rows', 'agreement');
         });
-
-}
-
-function setRestrictions(agreementID, restrictions) { //called when trying to open restriction to one mob_ag
-
 }
 
 function makeRowClickable(rowClass, type) {
@@ -82,6 +80,7 @@ function makeRowClickable(rowClass, type) {
             let row = e.target.parentElement;
             let rowID = row['id']; //get ID of mob_agreement that was clicked
             insertAgreementInformation(rowID);
+            insertRestriction();
         });
     }
     else if (type === 'restriction') {
@@ -133,6 +132,12 @@ function createAgreementObject(agreement) {
     }
 }
 
+function createRestriction(ag_ID, restrictions) {
+    if (restrictions.length > 0) {
+        restrictions.forEach(obj => restrict.push([ag_ID, obj]));
+    }
+}
+
 function clearSessionStorage() {
     try {
         sessionStorage.removeItem('currentInstitute');
@@ -141,7 +146,8 @@ function clearSessionStorage() {
         sessionStorage.removeItem('updatedAgreements');
         sessionStorage.removeItem('currentAgID');
         sessionStorage.removeItem('agArray');
-
+        sessionStorage.removeItem('updatedRestrictions');
+        sessionStorage.removeItem('currentRestrictions');
         //remove mob agreements (information und neu angelegte ag's)
     }
 
@@ -191,7 +197,6 @@ function checkInput(object) {
 function checkIfUpdated() {
     let oldArr = ['currentInstitute', 'currentAgreements'];
     let newArr = ['updatedInstitute', 'updatedAgreements'];
-    let routes = ['updateInstitute', 'updateAgreement'];
     let types = ['institute', 'agreement'];
     let updatedAgs = [];
     let updatedInst;
