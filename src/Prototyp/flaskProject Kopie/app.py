@@ -144,9 +144,14 @@ def changes(name):
         print(request.form.to_dict())
     elif name == 'updateInstitute':
         x = request.form.to_dict()
+        print(x)
         inst = x['ID']
         x.pop('ID')
         Querries.edit_institute(x.keys(), x.values(), inst)
+    elif name == 'updateAgreement':
+        x = request.form.to_dict()
+        for obj in x:
+            print(obj)
     return redirect(url_for('LoginPage'))
 
 

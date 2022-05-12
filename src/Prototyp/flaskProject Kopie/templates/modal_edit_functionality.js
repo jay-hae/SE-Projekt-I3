@@ -183,24 +183,59 @@ function checkInput(object) {
 }
 
 function checkIfUpdated() {
-    let old = JSON.parse(sessionStorage.getItem('currentInstitute'));
-    let newest = JSON.parse(sessionStorage.getItem('updatedInstitute'));
-    if (old === newest) {
-        return false;
+    let oldArr = ['currentInstitute', 'currentAgreements'];
+    let newArr = ['updatedInstitute', 'updatedAgreements'];
+    let routes = ['updateInstitute', 'updateAgreement'];
+    let types = ['institute', 'agreement'];
+    let updatedAgs = [];
+    let updatedInst;
+    let instCheck = false;
+    let agreeCheck = false;
+    for (let i=0; i < oldArr.length; i++) {
+        let skip = false;
+        let old = JSON.parse(sessionStorage.getItem(oldArr[i]));
+        let newest = JSON.parse(sessionStorage.getItem(newArr[i]));
+        if (newest == null) {
+            skip = true;
+        }
+        if (old === newest) {
+            skip = true;
+        }
+        if (!skip) {
+            if (types[i] === 'institute'){
+                updatedInst = createDifferenceArray(old, newest);
+                instCheck = true;
+            }
+            else {
+                for (let j = 0; j < old.length; j++) {
+                    updatedAgs.push(createDifferenceArray(old[j], newest[j]));
+                }
+                agreeCheck = true;
+            }
+        }
     }
-    postData(createDifferenceArray(old, newest), '/changeData/updateInstitute');
+    if(instCheck) {
+        postData(updatedInst, '/changeData/updateInstitute');
+    }
+    if (agreeCheck) {
+        postData(JSON.stringify(updatedAgs.filter(obj => obj !== undefined)), '/changeData/updateAgreement');
+    }
 }
 
-function createDifferenceArray(oldInst, newInst) {
-    let keys = Object.keys(oldInst);
-    let newestAttr = {}
+function createDifferenceArray(oldObj, newObj) {
+    let keys = Object.keys(oldObj);
+    let newestAttr = {};
+    let changed = false;
     keys.forEach(key => {
-        if (oldInst[key] !== newInst[key]) {
-            newestAttr[key] = newInst[key];
+        if (oldObj[key] !== newObj[key]) {
+            newestAttr[key] = newObj[key];
+            changed = true;
         }
     });
-    newestAttr['ID'] = oldInst['ID'];
-    return newestAttr;
+    if (changed) {
+        newestAttr['ID'] = oldObj['ID'];
+        return newestAttr;
+    }
 }
 
 function postData(data, url) {

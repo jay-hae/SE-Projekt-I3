@@ -16,16 +16,26 @@ function insertAgreementInformation(agreement) {
     $('#notes').val(setAgreement.note);
 }
 
-function returnAgreement(id) {
+function returnAgreement(id) {  //get updated information if updated, otherwise use the data taken from database
     if ("agArray" in sessionStorage) {
         let arr = JSON.parse(sessionStorage.getItem("agArray"));
         console.log(arr);
         if (arr.includes(id)) {
-            alert('hi');
             let updatedAg = JSON.parse(sessionStorage.getItem("updatedAgreements"));
             return updatedAg.filter(obj => Number(obj.ID) === Number(id));
         }
     }
     const allAgreements = JSON.parse(sessionStorage.getItem('currentAgreements'));
     return allAgreements.filter(obj => Number(obj.ID) === Number(id));
+}
+
+function clearAgreementSpace() {
+    let kids = Array.from(document.getElementsByClassName('agreementInformation'));
+    kids.forEach(kid => {
+       $(kid).val("");
+    });
+}
+
+function onSave() {
+
 }

@@ -23,3 +23,9 @@ function setCheckbox(value) {
    return value === "Nein";
 }
 
+function buttonFunctionality() {
+   $(' .close-modal').on('click', (e) => {
+
+   });
+}
+

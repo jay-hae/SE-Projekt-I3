@@ -130,7 +130,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalToggleLabel">Hochschule Bearbeitungsansicht</h5>
-                <button type="button" class="btn-close close_modal_edit" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close close_modal_edit" id="close_edit_trigger" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <!-- Hochschulinfo anzeigen -->
@@ -272,37 +272,39 @@
                       <div id="space_edit_agreement" class="row">
                             <div class="col-sm p-3 m-3 pt-1">
                                 <label for="mntr_dropdown" class="form-label">Mentor</label>
-                                <select class="loadMentor form-select" id="mntr_dropdown">
+                                <select class="loadMentor form-select agreementInformation" id="mntr_dropdown">
+                                    <option value="reset"> - Keine Auswahl - </option>
                                     <!-- hinzufügen der Mentoren in Dropdown-->
                                 </select><br>
                                 <label for="fclt_dropdown" class="form-label">Fakultät</label>
-                                <select class="select_faculty form-select" id="fclt_dropdown" >
+                                <select class="select_faculty form-select agreementInformation" id="fclt_dropdown">
+                                    <option value="reset"> - Keine Auswahl - </option>
                                     <!-- einfügen aller Fakultäten-->
                                 </select><br>
                                 <label for="date_signature" class="form-label">Datum der Unterzeichnung</label>
-                                <input type="text" id="date_signature" class="form-control"><br>
+                                <input type="text" id="date_signature" class="form-control agreementInformation"><br>
                                 <label for="from_date" class="form-label">Gültigkeitsbeginn</label>
-                                <input type="text" id="from_date" class="form-control"><br>
+                                <input type="text" id="from_date" class="form-control agreementInformation"><br>
                                 <label for="until_date" class="form-label">Gültigkeitsende</label>
-                                <input type="text" id="until_date" class="form-control"><br>
+                                <input type="text" id="until_date" class="form-control agreementInformation"><br>
                             </div>
                             <div class="col-sm p-3 m-3 pt-1">
                                 <label for="in_num_mob" class="form-label">Anzahl max. eingehender Studenten</label>
-                                <input type="text" id="in_num_mobility" class="form-control"><br>
+                                <input type="text" id="in_num_mobility" class="form-control agreementInformation"><br>
                                 <label for="in_num_months" class="form-label">Maximale Dauer</label>
-                                <input type="text" id="in_num_months" class="form-control"><br>
+                                <input type="text" id="in_num_months" class="form-control agreementInformation"><br>
                                 <label for="out_num_mob" class="form-label">Anzahl max. ausgehender Studenten</label>
-                                <input type="text" id="out_num_mobility" class="form-control"><br>
+                                <input type="text" id="out_num_mobility" class="form-control agreementInformation"><br>
                                 <label for="out_num_months" class="form-label">Maximale Dauer</label>
-                                <input type="text" id="out_num_months" class="form-control"><br>
+                                <input type="text" id="out_num_months" class="form-control agreementInformation"><br>
                                 <div class="form-check">
-                                    <input type="checkbox" id="inactive" class="form-check-input">
+                                    <input type="checkbox" id="inactive" class="form-check-input agreementInformation">
                                     <label for="inactive" class="form-check-label">Agreement Aktiv?</label>
                                 </div>
                             </div>
                             <div class="col-sm p-3 m-3 pt-1">
                                 <label for="notes" class="form-label">Bemerkungen</label>
-                                <textarea id="notes" class="form-control h-75"></textarea>
+                                <textarea id="notes" class="form-control h-75 agreementInformation"></textarea>
                             </div>
 
                       </div>

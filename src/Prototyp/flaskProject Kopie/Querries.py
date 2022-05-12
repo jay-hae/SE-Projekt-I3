@@ -339,3 +339,4 @@ def edit_institute(keys, values, institute):  # institute = institute ID
     #cur.execute(query, tuple(values),)
     return jsonify({'status': 'success'})
 
+#def edit_mob_agreement(keys, values, agreements): #agreements = list of mob agreement ID's

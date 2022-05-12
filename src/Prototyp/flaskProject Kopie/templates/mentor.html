@@ -23,7 +23,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Mentor bearbeiten</h5>
-                <button type="button" class="btn-close close_modal_add"></button>
+                <button type="button" class="btn-close close-modal"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -55,6 +55,10 @@
                     </div>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button class="cancel close-modal">Abbrechen</button>
+                <button id="new_mentor save-modal">Speichern</button>
+            </div>
         </div>
     </div>
 </div>
@@ -65,7 +69,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Mentor anlegen</h5>
-                <button type="button" class="btn-close close_modal_add" onclick="$('#modal_add_mentor').hide()"></button>
+                <button type="button" class="btn-close close-modal" onclick="$('#modal_add_mentor').hide()"></button>
             </div>
             <div class="modal-body">
                 <form id="add_mentor_form">
@@ -93,8 +97,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="cancel">Abbrechen</button>
-                <button id="new_mentor">Speichern</button>
+                <button class="cancel close-modal" onclick="$('#modal_add_mentor').hide()">Abbrechen</button>
+                <button id="new_mentor save-modal">Speichern</button>
             </div>
         </div>
     </div>
