@@ -39,5 +39,9 @@ function loadMentor(mentor_id) {
         console.log(data);
         });
 
+function buttonFunctionality() {
+   $(' .close-modal').on('click', (e) => {
+
+   });
 }
 

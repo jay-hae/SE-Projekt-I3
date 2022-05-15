@@ -16,6 +16,7 @@ function modal_events(){
     $('#mod_edit').on('click', function (event){
         event.preventDefault();
         checkIfUpdated();
+        $('#close_edit_trigger').trigger('click');
     });
     $(' .modal').on('close', function(event, modal) {
         //$(' .my_check').prop('checked', false);
@@ -49,5 +50,6 @@ function modal_button_events() {
         $('#addAgreements').empty();
         $('#modal_edit').toggle();
         clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
+        clearAgreementSpace();
     });
 }

@@ -1,7 +1,6 @@
 function insertAgreementInformation(agreement) {
     let setAgreement = returnAgreement(agreement);
     setAgreement = setAgreement[0];
-    console.log(setAgreement);
     sessionStorage.setItem('currentAgID',setAgreement['ID']);
     $('#mntr_dropdown').val(setAgreement.mentor_ID);
     $('#fclt_dropdown').val(setAgreement.faculty_ID);
@@ -16,16 +15,43 @@ function insertAgreementInformation(agreement) {
     $('#notes').val(setAgreement.note);
 }
 
-function returnAgreement(id) {
+function returnAgreement(id) {  //get updated information if updated, otherwise use the data taken from database
     if ("agArray" in sessionStorage) {
         let arr = JSON.parse(sessionStorage.getItem("agArray"));
         console.log(arr);
         if (arr.includes(id)) {
-            alert('hi');
             let updatedAg = JSON.parse(sessionStorage.getItem("updatedAgreements"));
             return updatedAg.filter(obj => Number(obj.ID) === Number(id));
         }
     }
     const allAgreements = JSON.parse(sessionStorage.getItem('currentAgreements'));
     return allAgreements.filter(obj => Number(obj.ID) === Number(id));
+}
+
+function clearAgreementSpace() {
+    let kids = Array.from(document.getElementsByClassName('agreementInformation'));
+    kids.forEach(kid => {
+       $(kid).val("");
+    });
+}
+
+function onSave() {
+
+}
+
+function insertRestriction() {
+    let restrictions = getRestrictions();
+    let tbl = document.getElementById('tbl_restriction');
+    tbl.innerHTML = "";
+    restrictions.forEach(restriction => {
+        restriction = restriction[1];
+        let row = "<tr> id='" + restriction['restriction_ID'] + "' <th> +" + restriction['course'] + "</th><th>" + restriction['subject_area_code'] + "</th><th>" + restriction['incoming'] + "</th><th>"+ restriction['sub_num_mobility'] +"</th><th>"+restriction['sub_num_months']+"</th></tr>";
+        tbl.append(row);
+    })
+}
+
+function getRestrictions() {
+    let matchingAgreement = JSON.parse(sessionStorage.getItem('currentAgID'));
+    let allRestrictions = JSON.parse(sessionStorage.getItem('currentRestrictions'));
+    return allRestrictions.filter(obj => obj[0] === matchingAgreement);
 }

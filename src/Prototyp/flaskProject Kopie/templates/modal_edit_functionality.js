@@ -1,3 +1,5 @@
+let restrict = [];
+
 function loadModal(inst_id){
     // $('#edit_modal_anz').prop('checked', true); set checkbox true manually
     $.ajax({
@@ -40,6 +42,7 @@ function loadModal(inst_id){
 }
 
 function loadAgreements(inst_id) {
+    restrict = [];
     //einfügen der Daten auf zweiter Seite des Modals
     $.ajax({
         method: 'POST',
@@ -52,28 +55,23 @@ function loadAgreements(inst_id) {
             let agreementObjects = [];
             const addField = $('#addAgreements');
             console.log(data)
-
-
             $.each(data, (index, val) => {
-                if((data[index])['agreement_inactive'] == 0){
-                (data[index])['agreement_inactive'] = 'Ja'
-                 }else (data[index])['agreement_inactive'] = 'Nein'
-
+                if ((data[index])['agreement_inactive'] == 0) {
+                    (data[index])['agreement_inactive'] = 'Ja'
+                } else (data[index])['agreement_inactive'] = 'Nein'
                 let newRow = "<tr id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
                 addField.append(newRow);
                 let agreementObj = createAgreementObject(data[index]);
+                createRestriction((data[index])['agreement_ID'], (data[index])['course_restrictions']);
                 agreementObj = checkInput(agreementObj);
                 agreementObjects.push(agreementObj);
             });
             sessionStorage.setItem('currentAgreements', JSON.stringify(agreementObjects));
             sessionStorage.setItem('updatedAgreements', JSON.stringify(agreementObjects));
+            sessionStorage.setItem('currentRestrictions', JSON.stringify(restrict));
+            sessionStorage.setItem('updatedRestrictions', JSON.stringify(restrict));
             makeRowClickable('agreement_rows', 'agreement');
         });
-
-}
-
-function setRestrictions(agreementID, restrictions) { //called when trying to open restriction to one mob_ag
-
 }
 
 function makeRowClickable(rowClass, type) {
@@ -82,6 +80,7 @@ function makeRowClickable(rowClass, type) {
             let row = e.target.parentElement;
             let rowID = row['id']; //get ID of mob_agreement that was clicked
             insertAgreementInformation(rowID);
+            insertRestriction();
         });
     }
     else if (type === 'restriction') {
@@ -133,6 +132,12 @@ function createAgreementObject(agreement) {
     }
 }
 
+function createRestriction(ag_ID, restrictions) {
+    if (restrictions.length > 0) {
+        restrictions.forEach(obj => restrict.push([ag_ID, obj]));
+    }
+}
+
 function clearSessionStorage() {
     try {
         sessionStorage.removeItem('currentInstitute');
@@ -141,7 +146,8 @@ function clearSessionStorage() {
         sessionStorage.removeItem('updatedAgreements');
         sessionStorage.removeItem('currentAgID');
         sessionStorage.removeItem('agArray');
-
+        sessionStorage.removeItem('updatedRestrictions');
+        sessionStorage.removeItem('currentRestrictions');
         //remove mob agreements (information und neu angelegte ag's)
     }
 
@@ -189,24 +195,60 @@ function checkInput(object) {
 }
 
 function checkIfUpdated() {
-    let old = JSON.parse(sessionStorage.getItem('currentInstitute'));
-    let newest = JSON.parse(sessionStorage.getItem('updatedInstitute'));
-    if (old === newest) {
-        return false;
+    let oldArr = ['currentInstitute', 'currentAgreements'];
+    let newArr = ['updatedInstitute', 'updatedAgreements'];
+    let types = ['institute', 'agreement'];
+    let updatedAgs = [];
+    let updatedInst;
+    let instCheck = false;
+    let agreeCheck = false;
+    for (let i=0; i < oldArr.length; i++) {
+        let skip = false;
+        let old = JSON.parse(sessionStorage.getItem(oldArr[i]));
+        let newest = JSON.parse(sessionStorage.getItem(newArr[i]));
+        if (newest == null) {
+            skip = true;
+        }
+        if (old === newest) {
+            skip = true;
+        }
+        if (!skip) {
+            if (types[i] === 'institute'){
+                updatedInst = createDifferenceArray(old, newest);
+                instCheck = true;
+            }
+            else {
+                for (let j = 0; j < old.length; j++) {
+                    updatedAgs.push(createDifferenceArray(old[j], newest[j]));
+                }
+                agreeCheck = true;
+            }
+        }
     }
-    postData(createDifferenceArray(old, newest), '/changeData/updateInstitute');
+    if(instCheck) {
+        postData(updatedInst, '/changeData/updateInstitute');
+    }
+    if (agreeCheck) {
+        let sendData = Array.from(updatedAgs.filter(obj => obj !== undefined));
+        sendData.forEach(obj => postData(obj, '/changeData/updateAgreement'));
+
+    }
 }
 
-function createDifferenceArray(oldInst, newInst) {
-    let keys = Object.keys(oldInst);
-    let newestAttr = {}
+function createDifferenceArray(oldObj, newObj) {
+    let keys = Object.keys(oldObj);
+    let newestAttr = {};
+    let changed = false;
     keys.forEach(key => {
-        if (oldInst[key] !== newInst[key]) {
-            newestAttr[key] = newInst[key];
+        if (oldObj[key] !== newObj[key]) {
+            newestAttr[key] = newObj[key];
+            changed = true;
         }
     });
-    newestAttr['ID'] = oldInst['ID'];
-    return newestAttr;
+    if (changed) {
+        newestAttr['ID'] = oldObj['ID'];
+        return newestAttr;
+    }
 }
 
 function postData(data, url) {

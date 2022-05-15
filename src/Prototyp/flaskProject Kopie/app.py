@@ -147,13 +147,17 @@ def edit_inst():
 
 @app.route('/changeData/<name>', methods=['POST'])
 def changes(name):
+    x = request.form.to_dict()
     if name == 'addInstitute':
-        print(request.form.to_dict())
+        pass
     elif name == 'updateInstitute':
-        x = request.form.to_dict()
         inst = x['ID']
         x.pop('ID')
         Querries.edit_institute(x.keys(), x.values(), inst)
+    elif name == 'updateAgreement':
+        agreement = x['ID']
+        x.pop('ID')
+        Querries.edit_mob_agreement(x.keys(), x.values(), agreement)
     return redirect(url_for('LoginPage'))
 
 
@@ -178,6 +182,7 @@ def logout():
     if "usr" in session:
         session.pop(session["usr"], None)
     return redirect(url_for('LoginPage'))
+
 
 # give browser all files that are needed (js files,...)
 @app.route('/<string:filename>', methods=['GET'])
