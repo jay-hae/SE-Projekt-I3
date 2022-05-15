@@ -4,8 +4,9 @@ function editButton() {
        //get id
        let column = $(this).parent(); //Spalte <th> in der, der Button liegt
        let row = column.parent(); //ganze Zeile
-       console.log(row.attr('id'));
-       let obj = JSON.parse(sessionStorage.getItem(row.attr('id')));
+        let id = row.attr('id');
+       loadMentor(id);
+       // let obj = JSON.parse(sessionStorage.getItem(row.attr('id')));
        //richtiges Item aus Clientspeicher holen und in Javascript Objekt parsen
        //  console.log(obj);
        // console.log(obj.active);
@@ -23,5 +24,20 @@ function editButton() {
 
 function setCheckbox(value) {
    return value === "Nein";
+}
+
+function loadMentor(mentor_id) {
+    console.log(mentor_id);
+    $.ajax({
+        data: {
+            id: mentor_id
+        },
+        type: 'POST',
+        url: '/openMentorModal'
+    })
+        .done(function (data) { //put data into modal
+        console.log(data);
+        });
+
 }
 

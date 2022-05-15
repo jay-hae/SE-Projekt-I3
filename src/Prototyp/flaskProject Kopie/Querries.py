@@ -78,7 +78,7 @@ def faculty():
 
 
 # get all data needed for institut modal box; specified inst by ID given from html site
-def for_modal(institute_id):
+def for_institute_modal(institute_id):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     param_list = (institute_id,)
@@ -115,43 +115,30 @@ def for_modal(institute_id):
     return jsonify(payload)
 
 ## Hier muss für das Modal Mentoren Bearbeiten eine Datenbankabfrage erstellt werden
-# der Code hier darunter ist nur von for_modal (lädt Daten für Institutes Modal) kopiert.
+# der Code hier darunter ist nur von for_modal (lädt Daten für Mentor Modal) kopiert.
 # get all data needed for mentor modal box; specified mentor by ID given from html site
-# def for_modal(institute_id):
-#     cnxn = Login.newConnection()
-#     cur = cnxn.cursor()
-#     param_list = (institute_id,)
-#     cur.callproc('institute_information', param_list)
-#     payload = []
-#     for result in cur.stored_results():
-#         rows = result.fetchall()
-#         for row in rows:
-#             content = {
-#                 'country': row[0],
-#                 'eng': row[1],
-#                 'local': row[2],
-#                 'adr': row[3],
-#                 'website': row[4],
-#                 'notes': row[5],
-#                 'display': row[6],
-#                 'ec': row[7],
-#                 'dep': row[8],
-#                 'tel': row[9],
-#                 'mail': row[10],
-#                 'off_website': row[11],
-#                 'function': row[12],
-#                 'gender': row[13],
-#                 'title': row[14],
-#                 'firstname': row[15],
-#                 'lastname': row[16],
-#                 'pers_tel': row[17],
-#                 'pers_mail': row[18],
-#                 'id': institute_id
-#             }
-#             payload.append(content)
-#     cur.close()
-#     cnxn.close()
-#     return jsonify(payload)
+def for_mentor_modal(mentor_id):
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    param_list = (mentor_id,)
+    cur.callproc('get_mentor', param_list)
+    payload = []
+    for result in cur.stored_results():
+        rows = result.fetchall()
+        for row in rows:
+            content = {
+                'title': row[0],
+                'firstname': row[1],
+                'lastname': row[2],
+                'gender': row[3],
+                'website': row[4],
+                'mail': row[5],
+                'id': mentor_id
+            }
+            payload.append(content)
+    cur.close()
+    cnxn.close()
+    return jsonify(payload)
 
 
 # get mobility agreements referring to institute / partnership and all course restrictions
