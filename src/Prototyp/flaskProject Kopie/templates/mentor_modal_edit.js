@@ -35,9 +35,19 @@ function loadMentor(mentor_id) {
         type: 'POST',
         url: '/openMentorModal'
     })
-        .done(function (data) { //put data into modal
+    .done(function (data) { //put data into modal
         console.log(data);
-        });
+        let chosen_mentor = data[0];
+        $('#edit_mentor_title').val(chosen_mentor['title']);
+        $('#edit_mentor_firstname').val(chosen_mentor['firstname'])
+        $('#edit_mentor_lastname').val(chosen_mentor['lastname']);
+        $('#edit_mentor_homepage').val(chosen_mentor['website']);
+        $('#edit_mentor_email').val(chosen_mentor['mail']);
+        $('#edit_mentor_gender').val(chosen_mentor['gender']);
+        $('#edit_mentor_active').prop('checked', setCheckbox(chosen_mentor['active']));
+        $('#edit_men_fac').val(chosen_mentor['faculty']);
+    });
+}
 
 function buttonFunctionality() {
    $(' .close-modal').on('click', (e) => {

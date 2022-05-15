@@ -133,6 +133,8 @@ def for_mentor_modal(mentor_id):
                 'gender': row[3],
                 'website': row[4],
                 'mail': row[5],
+                'faculty': row[6],
+                'active': row[7],
                 'id': mentor_id
             }
             payload.append(content)
