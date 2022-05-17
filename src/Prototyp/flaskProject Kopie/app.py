@@ -58,12 +58,17 @@ def load_filter(name):
         return None
 
 
-# get data needed for modal
+# get data needed for institute modal
 # filtered institute id from website
 @app.route('/openModal', methods=['POST'])
-def exec_sp():
-    return Querries.for_modal(request.form['id'])
+def load_institute_modal_data():
+    return Querries.for_institute_modal(request.form['id'])
 
+# get data needed for mentor modal
+# filtered institute id from website
+@app.route('/openMentorModal', methods=['POST'])
+def load_mentor_modal_data():
+    return Querries.for_mentor_modal(request.form['id'])
 
 @app.route('/add/<name>', methods=['POST'])
 def new_object(name):
