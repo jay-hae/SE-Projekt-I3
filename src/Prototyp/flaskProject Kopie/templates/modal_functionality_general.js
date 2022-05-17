@@ -52,4 +52,8 @@ function modal_button_events() {
         clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
         clearAgreementSpace();
     });
+    $('#show_restrictions').on('click', () => {
+        $('#modal_edit').toggle();
+        $('#agreement_restrictions').toggle();
+    });
 }

@@ -40,13 +40,13 @@ function onSave() {
 }
 
 function insertRestriction() {
+    $('#tbl_restriction').innerHTML = "";
     let restrictions = getRestrictions();
-    let tbl = document.getElementById('tbl_restriction');
-    tbl.innerHTML = "";
     restrictions.forEach(restriction => {
         restriction = restriction[1];
-        let row = "<tr> id='" + restriction['restriction_ID'] + "' <th> +" + restriction['course'] + "</th><th>" + restriction['subject_area_code'] + "</th><th>" + restriction['incoming'] + "</th><th>"+ restriction['sub_num_mobility'] +"</th><th>"+restriction['sub_num_months']+"</th></tr>";
-        tbl.append(row);
+        //let row = "<tr> id='" + restriction['restriction_ID'] + "' <th><textarea id='course' onchange='trackRestrictionChange(this.parentElement, this.value)'> "+ restriction['course'] + "</textarea></th><th><textarea id='subject_area_code' onchange='trackRestrictionChange(this.parentElement, this.value, this.ID)'>" + restriction['subject_area_code'] + "</textarea></th><th><textarea id='incoming' onchange='trackRestrictionChange(this.parentElement, this.value, this.ID)'>" + restriction['incoming'] + "</textarea></th><th><textarea id='sub_num_mobility' onchange='trackRestrictionChange(this.parentElement, this.value, this.ID)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th><textarea id='sub_num_months' onchange='trackRestrictionChange(this.parentElement, this.value, this.ID)'>"+restriction['sub_num_months']+"</textarea></th></tr>";
+        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'> "+ restriction['course'] + "</textarea></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th id='incoming'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['incoming'] + "</textarea></th><th id='sub_num_mobility'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th></tr>";
+        $('#tbl_restriction').append(row);
     })
 }
 

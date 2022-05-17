@@ -16,6 +16,7 @@
     <script src="../modal_add_form_validation.js"></script>
     <script src="../modal_edit_functionality.js"></script>
     <script src="../modal_edit_change_Agreement.js"></script>
+    <script src="../modal_edit_change_restriction.js"></script>
     <script src="../modal_functionality_general.js"></script>
     <script src="../modal_edit_helper.js"></script>
     <script src="../filter_functionality.js"></script>
@@ -306,7 +307,9 @@
                                 <label for="notes" class="form-label">Bemerkungen</label>
                                 <textarea id="notes" class="form-control h-75 agreementInformation"></textarea>
                             </div>
-
+                            <div>
+                                <button id="show_restrictions">Restriktionen</button>
+                            </div>
                       </div>
                 </div>
             </div>
@@ -445,7 +448,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Restriktionen</h5>
-                <button type="button" class="btn-close close_modal_add"></button>
+                <button type="button" class="btn-close"></button>
             </div>
             <div class="modal-body">
                 <div>
