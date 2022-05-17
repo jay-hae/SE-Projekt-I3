@@ -73,6 +73,7 @@ $(document).on('DOMContentLoaded', function (){
             mentorInsert(data);
             cacheMentors(data);
         });
+    addButtonFunctionality();
 });
 
 
