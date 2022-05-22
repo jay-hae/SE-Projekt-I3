@@ -200,10 +200,10 @@ image::images/C4_model_level_1_v1.png[]
 .C4 Modell Level 2: Container Diagramm
 image::images/C4_model_level_2.png[]
 .C4 Modell Level 3: Components Diagramm
-image::images/C4_model_level_3.png[]
+image::images/C4_model_level_3_neu.png[]
 .C4 Modell Level 4: Code
 image::images/C4_model_level_4_facultaet.jpg[]
-image::images/C4_model_level_4_hochschule.jpg[]
+image::images/C4_model_level_4_hochschule.png[]
 
 
 === Physische Sicht (Betriebssicht)
