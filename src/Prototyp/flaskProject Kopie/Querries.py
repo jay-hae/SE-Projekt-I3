@@ -19,6 +19,7 @@ def institutes_ret():
     # convert payload to json format and send it back to server
     return jsonify(payload, {'sorting': 'a'})
 
+
 # Laden des Vertragstyp in den Filter Dropdown
 def ag_type_ret():
     cnxn = Login.newConnection()
@@ -114,6 +115,7 @@ def for_institute_modal(institute_id):
     cnxn.close()
     return jsonify(payload)
 
+
 ## Hier muss für das Modal Mentoren Bearbeiten eine Datenbankabfrage erstellt werden
 # der Code hier darunter ist nur von for_modal (lädt Daten für Mentor Modal) kopiert.
 # get all data needed for mentor modal box; specified mentor by ID given from html site
@@ -193,7 +195,7 @@ def get_ma_and_courses(institute):
 def filter_institutes(parameters):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    payload = [] # empty payload to put data in later
+    payload = []  # empty payload to put data in later
     # 0 - country, 1 - faculty, 2 - extern, 3 - active, 4 - agreement type
     parameter_list = (parameters[0], parameters[1], parameters[2], parameters[3], parameters[4])
     print(parameter_list)
@@ -239,16 +241,15 @@ def new_mentor(columns, values):
     query_parameter = helper.dynamic_querries(columns)
     query = "INSERT INTO tbl_mentor (" + query_parameter[0] + ") VALUES(" + query_parameter[1] + ")"
     try:
-        print(query)
-        print(values)
-        """
         insert = tuple(values)
-        cur.execute(query, values,)
-        cnxn.commit()
-        return jsonify({'success': 'true'})"""
+        print(insert)
+        #cur.execute(query, insert,)
+        #cnxn.commit()
+        return jsonify({'success': 'true'})
     finally:
         cur.close()
         cnxn.close()
+
 
 # Laden der Länder in die Tabelle auf der Seite Länderübersicht
 def return_countries():
@@ -285,6 +286,7 @@ def return_courses():
     cnxn.close()
     cur.close()
     return jsonify(payload)
+
 
 # Laden der Mentoren in die Tabelle auf der Seite Mentoren
 def return_mentor():  # get all mentor information and store on client storage
@@ -365,8 +367,8 @@ def edit_institute(keys, values, institute):  # institute = institute ID
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     query = "UPDATE tbl_institute SET " + query_string[:-1] + " WHERE ID = " + institute
-    print(query, tuple(values))
-    #cur.execute(query, tuple(values),)
+    cur.execute(query, tuple(values),)
+    cnxn.commit()
     return jsonify({'status': 'success'})
 
 
@@ -375,8 +377,9 @@ def edit_mob_agreement(keys, values, agreement):
     query = helper.create_update_string(keys)
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    query = "UPDATE tbl_mobility_agreement SET" + query[:-1] + "WHERE ID = " + agreement
+    query = "UPDATE tbl_mobility_agreement SET" + query[:-1] + " WHERE ID = " + agreement
     cur.execute(query, tuple(values))
     print(query, tuple(values))
+    cnxn.commit()
     cnxn.close()
     cur.close()
