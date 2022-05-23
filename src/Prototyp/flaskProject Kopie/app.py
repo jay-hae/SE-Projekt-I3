@@ -139,12 +139,6 @@ def handle_filter():
         return Querries.filter_institutes(var)
 
 
-@app.route('/editInstitute', methods=['POST'])
-def edit_inst():
-    print(request.form.to_dict())
-    return jsonify({'success': 'true'})
-
-
 @app.route('/changeData/<name>', methods=['POST'])
 def changes(name):
     x = request.form.to_dict()

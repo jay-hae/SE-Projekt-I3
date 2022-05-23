@@ -368,8 +368,8 @@ def edit(keys, values, change_id, change_type):  # institute = institute ID
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     query = "UPDATE " + tbl_names[change_type] + " SET " + query_string[:-1] + " WHERE ID = " + change_id
-    #cur.execute(query, tuple(values),)
-    #cnxn.commit()
+    cur.execute(query, tuple(values),)
+    cnxn.commit()
     cnxn.close()
     cur.close()
     return jsonify({'status': 'success'})
