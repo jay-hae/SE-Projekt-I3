@@ -1,0 +1,47 @@
+Meeting mit Raphael 09.05.22
+Protokollverantwortliche: Jakob
+Anwesende: Jakob, Raphael,  Nico, Jens, Ha, Patrick
+
+TOP 1 Was wurde gemacht/Was müssen wir uns als Team ansehen?
+
+- Mentoren hinzufügen - An HTW aktiv soll checkbox sein (boolean)
+-Hochschule -> bearbeiten Modal -> Partnerschaften -> Vertragstyp eher kein Dropdown sondern eher wie verschieden Reiter, da ohnehin nie kein Vertragstyp ausgewählt sein darf (Defaultwert: Hochschulvertrag)
+- Falls wir die Bearbeitenansicht Verträge und Hochschulinformationen NICHT auf eine Seite bringen sondern so belassen wie bisher (wechsel zwischen den Ansichten) Dann muss im Modal der Name der Hochschule zu sehen sein.
+- Jakob hat Glossar gekürzt
+
+- Nico 
+
+- Tests:
+- 1. Test diese Woche, einarbeit mit Selenium (wichtige UC an dem das Testen getestet wird)
+
+TOP 2 UC Spezifikation von Nico
+- UC für Berichte erstellt und überarbeitet
+- UC von SI abnehmen lassen
+- kann Bericht bild mit in die UC spezifikation
+
+TOP 3 Was wollen wir die Iteration erreichen?
+(was ist übrig?, Berichte od Login?, Issue #27,47,54,26)
+- Berichte: erste Bugs fixen, dann WF (Nico) für Berichte und dann
+- Test: Ansatz: 3 UC Test + evtl anfang nicht funktionale Anforderungen (eher Planung)
+
+TOP 4 Was müssen wir dafür machen (Issues in Sprint Backlog)
+- Bug1: Modal (popup) Mentorenhinzufügen -> An HTW aktiv zu checkbox 
+- Bug2: Filter "Aktive verträge" ändern 
+- Bug3: Hochschule -> bearbeiten Modal -> Partnerschaften -> Vertragstyp eher kein Dropdown sondern eher wie verschieden Reiter, da ohnehin nie kein Vertragstyp ausgewählt sein darf (Defaultwert: Hochschulvertrag)
+- Bug4: Button Mentoren => bearbeiten funktioniert nicht
+- Bug 5: Unter Mentoren => anlegen => abbrechen und speichern Button funktionieren nicht 
+- Bug 6:  Generell Speichern von verändernden Daten noch nicht persitent.
+
+- WF anlegen für Berichte (UC 6-7)
+- Anke wegen abgabe termin fragen
+- Test C1 + Doku -> Epic Testen
+- Test C2 + Doku
+- Test C3 + Doku
+- 
+TOP 5 SI Meeting:
+- UC's 6-8 abnehhmen lassen (diese Woche)
+- WF für die Berichte (diese Woche) am an Freitag (Luca, Nico, Jakob)
+- Hochschule -> bearbeiten Modal -> Partnerschaften -> Vertragstyp. In Zukunft wird ein Vertragstyp als defaultwert ausgewählt und die Daten dementsprechend gefiltert. Frage: Welcher Vertragstyp sollte standard sein?
+
+Tipps von Raphael:
+- https://www.figma.com/ für WF 

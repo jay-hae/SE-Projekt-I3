@@ -91,6 +91,7 @@ Die komplette Planung und Überwachung findet nun über das AddOn ZenHub statt.
     * zugewiesene und prioriesierte Issues die nicht in der aktuellen Iteration behandelt werden müssen sind in die Pipeline "Product Backlog" zu schieben 
 
 * Iterations und Issue übergreifende Aufgaben wie (zB das korriegieren des Beleges aus SE1) werden als Epic angelegt (siehe ZenHub) die Issues die zur Fertigstellung des Epics nötig sind werden diesen Zugeordnet (das soll die Überwachung der Aufgaben erleichtern)
+
 ## Dokumentierung
 Jeder muss sich bewusst sein, welche Dokumente in der [Dateistruktur](#dateistruktur), von seiner gerade zu erledigenden Aufgabe beeinflusst werden.
 Ist dies nicht der Fall sind die Dokumente zu dem Themengebiet durchzugehen und zu prüfen wo sich Änderungen in den Dokumenten ergeben könnten oder es ist im [OpenUP](https://www2.htw-dresden.de/~anke/openup/index.htm) unter "Work Products" nachzulesen was gemacht werden muss.

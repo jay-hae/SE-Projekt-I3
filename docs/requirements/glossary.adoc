@@ -158,6 +158,8 @@ Es ist anzumerken, dass alle verwendeten maskulinen Wörter in Bezug auf Persone
 | UC | Use Case | Die funktionalen Anforderungen an das System aus der Sicht des Anwenders
 
 | UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
+
+| VM | Virtuelle Maschine | eine rein softwaretechnisch nachgebildeter Computer betrieben vom Laborbereich Informatik der HTW 
 |===
 
 == Verzeichnis der Datenstrukturen

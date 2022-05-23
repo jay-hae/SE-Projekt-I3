@@ -1,0 +1,29 @@
+Meeting mit SI 17.05.22
+Protokollverantwortliche:
+Anwesende: Jens, Nico, Patrick, Lisa Wunderlich, Juliane Terpe, Raphael, später Jakob
+
+TOP 1: Welche Berichte müssen erstellt werden?
+Die von Nico gesammelten Berichte sind so erstmal vollständig.
+- Anpassung der Kästchengröße (alle gleich groß)
+- Berichte müssen filterbar sein. Also zB nur die Werte einer Hochschule anzeigen.
+
+TOP2: Desgin WF (falls vorhanden) 
+- (Was ist WF? -> WireFrame ist in TOP1 behandelt wurden) 
+
+TOP3: PDF exportformat (?)
+- PDF und Excel wären gut.
+In erster Linie Excel da damit auch PDF erstellt werden können.
+Wenn möglich beides. Über ODBC Driver.
+
+
+TOP4: Welcher Vertragstyp sollte Standard sein? 
+- es gibt keinen expliziten Standardvertrag. Einfach so wie es jetzt ist. Erster Vertrag in der Liste ist ausgewählt. Niemals kein Vertrag
+- Erstmal keine Auswahl und dementsprechend nichts anzeigen und dann Auswahl über Drop-Down-Menü welcher Vertragstyp. Also User zwingen einen Vertragstyp auszuwählen bevor etwas angezeigt wird.
+
+TOP5: Sonstiges 
+- Termine in Vorlauf von 5 Tagen
+- erst Termine, dann Themen und eher kurzfristig Absagen als kurzfristig Ansagen
+
+
+TOP6: Hochschule bearbeiten Modal
+- im Modal anzeigen welche Hochschule aktuell bearbeitet wird. So könnte man vermeiden die Seite Hochschule und Partnerschaften auf einer Seite anzeigen zu müssen
