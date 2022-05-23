@@ -36,6 +36,10 @@ function modal_events(){
 }
 
 function modal_button_events() {
+    $('#rtn-agreement').on('click', function () {
+        $('#agreement_restrictions').toggle();
+        $('#modal_edit').toggle();
+    });
     $('#btn_hs_add').on('click', function (){
         $(' .modal_form_add').trigger("reset");
         $('#modal_add').toggle();

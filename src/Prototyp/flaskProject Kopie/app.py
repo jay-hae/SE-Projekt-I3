@@ -148,16 +148,23 @@ def edit_inst():
 @app.route('/changeData/<name>', methods=['POST'])
 def changes(name):
     x = request.form.to_dict()
+    change_id = 0
+    change_type = ''
     if name == 'addInstitute':
         pass
     elif name == 'updateInstitute':
-        inst = x['ID']
+        change_id = x['ID']
         x.pop('ID')
-        Querries.edit_institute(x.keys(), x.values(), inst)
+        change_type = 'institute'
     elif name == 'updateAgreement':
-        agreement = x['ID']
+        change_id = x['ID']
         x.pop('ID')
-        Querries.edit_mob_agreement(x.keys(), x.values(), agreement)
+        change_type = 'agreement'
+    elif name == 'updateRestriction':
+        change_id = x['ID']
+        x.pop('ID')
+        change_type = 'restriction'
+    Querries.edit(x.keys(), x.values(), change_id, change_type)
     return redirect(url_for('LoginPage'))
 
 

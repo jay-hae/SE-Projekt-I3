@@ -1,5 +1,3 @@
-let restrict = [];
-
 function loadModal(inst_id){
     // $('#edit_modal_anz').prop('checked', true); set checkbox true manually
     $.ajax({
@@ -195,14 +193,19 @@ function checkInput(object) {
 }
 
 function checkIfUpdated() {
-    let oldArr = ['currentInstitute', 'currentAgreements'];
-    let newArr = ['updatedInstitute', 'updatedAgreements'];
-    let types = ['institute', 'agreement'];
+    let oldArr = ['currentInstitute', 'currentAgreements', 'currentRestrictions'];
+    let newArr = ['updatedInstitute', 'updatedAgreements', 'updatedRestrictions'];
+    let types = ['institute', 'agreement', 'restriction'];
     let updatedAgs = [];
+    let updatedRestrictions = [];
     let updatedInst;
     let instCheck = false;
     let agreeCheck = false;
+    let restrictionCheck = false;
     for (let i=0; i < oldArr.length; i++) {
+        instCheck = false;
+        agreeCheck = false;
+        restrictionCheck = false;
         let skip = false;
         let old = JSON.parse(sessionStorage.getItem(oldArr[i]));
         let newest = JSON.parse(sessionStorage.getItem(newArr[i]));
@@ -217,21 +220,35 @@ function checkIfUpdated() {
                 updatedInst = createDifferenceArray(old, newest);
                 instCheck = true;
             }
-            else {
-                for (let j = 0; j < old.length; j++) {
-                    updatedAgs.push(createDifferenceArray(old[j], newest[j]));
+            else{
+                if (types[i] === 'agreement') {
+                    for (let j = 0; j < old.length; j++) {
+                        updatedAgs.push(createDifferenceArray(old[j], newest[j]));
                 }
-                agreeCheck = true;
+                    agreeCheck = true;
+                }
+                else {
+                    for (let j = 0; j < old.length; j++) {
+                        console.log(old[j]);
+                        updatedRestrictions.push(createDifferenceArray(old[j][1], newest[j][1]));
+                }
+                    restrictionCheck = true;
+                }
             }
         }
-    }
-    if(instCheck) {
+        if(instCheck) {
         postData(updatedInst, '/changeData/updateInstitute');
-    }
-    if (agreeCheck) {
-        let sendData = Array.from(updatedAgs.filter(obj => obj !== undefined));
-        sendData.forEach(obj => postData(obj, '/changeData/updateAgreement'));
-
+        }
+        if (agreeCheck) {
+            let sendData = Array.from(updatedAgs.filter(obj => obj !== undefined));
+            console.log(sendData);
+            sendData.forEach(obj => postData(obj, '/changeData/updateAgreement'));
+        }
+        if (restrictionCheck) {
+            let sendData = Array.from(updatedRestrictions.filter(obj => obj !== undefined));
+            console.log(sendData);
+            sendData.forEach(obj => postData(obj, '/changeData/updateRestriction'));
+        }
     }
 }
 
@@ -246,7 +263,12 @@ function createDifferenceArray(oldObj, newObj) {
         }
     });
     if (changed) {
-        newestAttr['ID'] = oldObj['ID'];
+        if (oldObj.hasOwnProperty('ID')) {
+            newestAttr['ID'] = oldObj['ID'];
+        }
+        else {
+            newestAttr['ID'] = oldObj['restriction_ID'];
+        }
         return newestAttr;
     }
 }

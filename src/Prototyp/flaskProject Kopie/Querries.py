@@ -361,25 +361,15 @@ def return_institutes(result_set):
     return payload
 
 
-def edit_institute(keys, values, institute):  # institute = institute ID
+def edit(keys, values, change_id, change_type):  # institute = institute ID
+    tbl_names = {'institute': "tbl_institute", 'agreement': "tbl_mobility_agreement", 'restriction': "tbl_mobility_agreement_x_course"}
     parameter = helper.dynamic_querries(keys)
     query_string = helper.create_update_string(keys)
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    query = "UPDATE tbl_institute SET " + query_string[:-1] + " WHERE ID = " + institute
-    cur.execute(query, tuple(values),)
-    cnxn.commit()
-    return jsonify({'status': 'success'})
-
-
-def edit_mob_agreement(keys, values, agreement):
-    parameter = helper.dynamic_querries(keys)
-    query = helper.create_update_string(keys)
-    cnxn = Login.newConnection()
-    cur = cnxn.cursor()
-    query = "UPDATE tbl_mobility_agreement SET" + query[:-1] + " WHERE ID = " + agreement
-    cur.execute(query, tuple(values))
-    print(query, tuple(values))
-    cnxn.commit()
+    query = "UPDATE " + tbl_names[change_type] + " SET " + query_string[:-1] + " WHERE ID = " + change_id
+    #cur.execute(query, tuple(values),)
+    #cnxn.commit()
     cnxn.close()
     cur.close()
+    return jsonify({'status': 'success'})
