@@ -90,7 +90,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm p-3 m-3 pt-1">
-                        <form id="mentor_edit_form" class="mentor_slide">
+                        <form id="mentor_edit_form" class="mentor_slide modal_form">
                             <label for="edit_mentor_title" class="form-label">Titel</label><br>
                             <input class="form-control" type="text" id="edit_mentor_title"><br>
                             <label for="edit_mentor_firstname" class="form-label">Vorname</label><br>
@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary close-modal" onclick="$('#modal_edit_mentor').hide()">Abbrechen</button>
+                <button class="btn btn-secondary close-modal" onclick="$('#modal_edit_mentor').toggle()">Abbrechen</button>
                 <button class="btn btn-primary save-modal">Speichern</button>
             </div>
         </div>
@@ -134,7 +134,7 @@
                 <button type="button" class="btn-close close-modal cancel" onclick="$('#modal_add_mentor').toggle()"></button>
             </div>
             <div class="modal-body">
-                <form id="add_mentor_form" class="mentor_slide">
+                <form id="add_mentor_form" class="mentor_slide modal_form">
                     <label class="form-label" for="mentor_add_title">Titel</label><br>
                     <input class="form-control" type="text" id="mentor_add_title" name="title"><br>
                     <label class="form-label" for="mentor_add_firstname">Vorname</label><br>

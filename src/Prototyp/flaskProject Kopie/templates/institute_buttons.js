@@ -58,15 +58,20 @@ function modal_button_events() {
         $('#agreement_restrictions').toggle();
         $('#modal_edit').toggle();
     });
+    $('#show_restrictions').on('click', () => {
+        $('#modal_edit').toggle();
+        $('#agreement_restrictions').toggle();
+    });
     // HAUPTANSICHT: HOCHSCHULE -> HOCHSCHULE ANLEGEN BUTTON
     $('#add_institute').on('click', function (){
         $('.modal_form_add').trigger("reset");
         $('#modal_add_inst').toggle();
     });
-
+    // MODAL: HOCHSCHULE ANLEGEN -> ABBRECHEN / X BUTTON
     $(' .close_modal_add').on('click', function (){
         $('#modal_add_inst').toggle();
     });
+    // MODAL: HOCHSCHULE BEARBEITEN -> ABBRECHEN / X BUTTON
     $(' .close_modal_edit').on('click', function (){
         $('#first_slide').show();
         $('#second_slide').hide();
@@ -75,8 +80,5 @@ function modal_button_events() {
         clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
         clearAgreementSpace();
     });
-    $('#show_restrictions').on('click', () => {
-        $('#modal_edit').toggle();
-        $('#agreement_restrictions').toggle();
-    });
+
 }

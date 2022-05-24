@@ -14,12 +14,14 @@
     <script src="../navbar_functionality.js"></script>
     <script src="../institutes_html_manager.js"></script>
     <script src="../institutes_loader.js"></script>
-    <script src="../institute_modal_edit.js"></script>
     <script src="../institute_buttons.js"></script>
-    <script src="../modal_add_form_validation.js"></script>
-    <script src="../modal_edit_change_Agreement.js"></script>
-    <script src="../modal_edit_change_restriction.js"></script>
-    <script src="../modal_edit_helper.js"></script>
+
+    <script src="../institute_modal_add.js"></script>
+    <script src="../institute_modal_edit_general.js"></script>
+    <script src="../institute_modal_edit_helper.js"></script>
+    <script src="../institute_modal_edit_agreement.js"></script>
+    <script src="../institute_modal_edit_restriction.js"></script>
+
     <script src="../filter_functionality.js"></script>
     <script src="../filter_values_loader.js"></script>
 </head>
@@ -311,7 +313,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close_modal_edit" onclick="$('#modal_edit').hide()">Abbrechen</button>
+                <button type="button" class="btn btn-secondary close_modal_edit">Abbrechen</button>
                 <button type="button" id="mod_edit_inst_save_btn" class="btn btn-primary">Speichern</button>
             </div>
         </div>
@@ -429,7 +431,7 @@
                                 <select id="add-partnership_type_ID" class="fil_agree form-select"
                                     name="partnership_type_ID"></select>
                             </div>
-                            <button type="button" class="btn btn-secondary" onclick="$('#modal_add_inst').hide()">Abbrechen</button>
+                            <button type="button" class="btn btn-secondary" onclick="$('#modal_add_inst').toggle()">Abbrechen</button>
                             <button type="button" id="mod_add_inst_save_btn" class="btn btn-primary">Speichern</button>
                             <!-- institute_buttons.js (Z.2) - app.py (Z.66) POST /addInstitute - Querries.py (Z.176) new_Institute -->
                         </form>

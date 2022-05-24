@@ -1,6 +1,6 @@
 // do everything below as soon as document is ready (document loaded)
 $(document).on('DOMContentLoaded', function () {
-    //file modal_add_form_validation.js
+    //file institute_modal_add.js
     validateForm();
     //file institute_buttons
     modal_button_events();

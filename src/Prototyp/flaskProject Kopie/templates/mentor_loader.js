@@ -63,6 +63,13 @@ function searchMentor() {
     });
 }*/
 
+function cancelButtonFunctionality() {
+    //set functionality for all abbrechen/X Buttons
+    $(' .cancel').on('click', t => {
+       let parent = t['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
+       parent.style.display = "none";
+    });
+}
 
 $(document).on('DOMContentLoaded', function (){
     $.ajax({
@@ -90,6 +97,10 @@ $(document).on('DOMContentLoaded', function (){
                 }));
             })
         });
+
+    $('.modal').on('close', function(event, modal) {
+        $('.modal_form').trigger('reset');
+    });
 });
 
 

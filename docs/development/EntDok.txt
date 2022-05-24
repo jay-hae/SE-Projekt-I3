@@ -47,11 +47,11 @@
 		- großteil der Funktionalität der Navigationsleiste schon in den HTML-Dateien erledigt, kleine Randfunktionen welche dort nicht umsetzbar waren, werden übernommen 
 		- Funktion Logoutbutton
 
-	modal_add_form_validation.js: 
+	institute_modal_add.js: 
 		- Bereitstellen zur Clientseitigen Prävention der Eingabe von fehlerhaften Daten beim anlegen einer neuen Hochschule
 		- Verhindert Speichern bei fehlenden Eingabe (fehlt die Englische Bezeichung wird Speichern Button nicht freigegeben)
 
-	institute_modal_edit.js:
+	institute_modal_edit_general.js:
 		- Funktionen welche die Benutzung der Modalbox zum editieren einer bestehenden Hochschulpartnerschaft bereitstellen
 			- werden aufgerufen wenn innerhalb der institutes.html Datei der Button "Edit" betätigt wird -> es werden die Funktionen aufgerufen, zusätzlich wird die Institute_ID als parameter übergeben 
 
@@ -238,7 +238,7 @@ alle imports welche in HTML File getätigt werden (Javascript Dateien)
 	-> 
 
 Aufrufe bei Handlungen innerhalb der institutes.html Datei
-	Betätigen EDIT-Button: Event wurde in folgender Datei deklariert: institute_modal_edit.js 
+	Betätigen EDIT-Button: Event wurde in folgender Datei deklariert: institute_modal_edit_general.js 
 		Beim triggern der Funktion wird ein POST Req. an '/openModal' [1] und '/loader/mobAgreements' [2] und 'loader/mobAgreements' [3] gesendet 
 		[1] -> aufrufen der for_modal Funktion in Querries.py, diese führt die "institute_information" stored procedure aus
 		[2] -> aufrufen der get_ma Funktion in Querries.py, dises führt die "get_ma" stored procedure aus
@@ -255,7 +255,7 @@ Aufrufe bei Handlungen innerhalb der institutes.html Datei
 
 	Betätigen "Partnerhochschule anlegen"-Button: 
 		Modalfunktion in mehreren Dateien deklariert: 
-			modal_add_form_validation.js, diese Datei ist nur dafür zuständig das Clientseitig fehlende Angaben verhindert werden. Due Funktion validateForm ist für das freischalten des Speichern-Buttons, wenn alle Pflichtfelder in der Modalbox ausgefüllt sind, zuständig
+			institute_modal_add.js, diese Datei ist nur dafür zuständig das Clientseitig fehlende Angaben verhindert werden. Due Funktion validateForm ist für das freischalten des Speichern-Buttons, wenn alle Pflichtfelder in der Modalbox ausgefüllt sind, zuständig
 		Betätigen Speichern-Button ist in institute_buttons.js definiert, wird bemim klicken des Buttons getriggert. Ist dafür Zuständig zum Zusammenfassen aller Einträge in der Eingabemaske für das Anlegen neuer Partnerhochschulen. Die zusammengefassten Daten werden daraufhin per POST Req. an die '/addInstitute' Route gesendet. Diese leitet die Daten an die Funktion new_Institue in Querries.py weiter. In dieser wird daraufhin dynamisch ein INSERT-Befehl zusammengesetzt.
 
 
