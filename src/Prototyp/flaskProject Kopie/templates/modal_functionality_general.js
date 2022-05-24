@@ -1,27 +1,36 @@
 function modal_events(){
-    $('#mod_add_institute').on('click', function (event){
-        //Eingaben der Mitarbeiter werden zusammengefasst und an den Server gesendet (per POST Request an '/addInstitute')
-        let all = $('#form_left_col, #form_mid_col, #form_right_col').serialize();  //mehrere Formen parallel auswerten; aneinanderhängen der Forminhalte
-        $.ajax({ //Daten im Hintergrund an die aufgeführte URL schicken
+    // MODAL: HOCHSCHULE ANLEGEN -> SPEICHERN BUTTON
+    $('#mod_add_inst_save_btn').on('click', function (event) {
+        
+        // Eingaben der Mitarbeiter werden zusammengefasst und an den Server gesendet (per POST Request an '/addInstitute')
+        // mehrere Formen parallel auswerten; aneinanderhängen der Forminhalte
+        let all = $('#form_left_col, #form_mid_col, #form_right_col').serialize();  
+
+        $.ajax({
+            // Daten im Hintergrund an die aufgeführte URL schicken
+            // app.route('/addInstitute) in der Datei app.py
             type: 'POST',
-            url: '/addInstitute', //app.route('/addInstitute) in der Datei app.py
+            url: '/addInstitute', 
             data: all
         })
             .done(() => {
-                //wenn einfügen erfolgreich war, Modal wieder ausgeblendet
-               $('#modal_add').toggle();
-               //sonst Fehlermeldung in Modal anzeigen
+                // wenn einfügen erfolgreich war, Modal wieder ausgeblendet
+                // sonst Fehlermeldung in Modal anzeigen
+               $('#modal_add_inst').toggle();
             });
     });
-    $('#mod_edit').on('click', function (event){
+
+    // MODAL: HOCHSCHULE BEARBEITEN  -> SPEICHERN BUTTON
+    $('#mod_edit_inst_save_btn').on('click', function (event){
         event.preventDefault();
         checkIfUpdated();
         $('#close_edit_trigger').trigger('click');
     });
+
     $(' .modal').on('close', function(event, modal) {
         //$(' .my_check').prop('checked', false);
         $(' .modal_form').trigger('reset'); // clear modal of user input after closing it
-        $('#mod_add_institute').attr('disabled', "true")
+        $('#mod_add_inst_save_btn').attr('disabled', "true")
     });
     // Funktionalität des Buttons erlaubt Wechseln zwischen den
     // Bearbeiten der Hochschule und der dazugehörige Partnerschaften
@@ -45,20 +54,20 @@ function modal_button_events() {
     });
     $('#btn_hs_add').on('click', function (){
         $(' .modal_form_add').trigger("reset");
-        $('#modal_add').toggle();
+        $('#modal_add_inst').toggle();
     });
-    $(' .close_modal_add').on('click', function (){
-        $('#modal_add').toggle();
+    $(' .close_modal_add_inst').on('click', function (){
+        $('#modal_add_inst').toggle();
         $('#modal_add_mentor').toggle();
     });
-    $(' .close_modal_edit').on('click', function (){
-        $('#first_slide').show();
-        $('#second_slide').hide();
-        $('#addAgreements').empty();
-        $('#modal_edit').toggle();
-        clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
-        clearAgreementSpace();
-    });
+    // $(' .close_modal_edit').on('click', function (){
+    //     $('#first_slide').show();
+    //     $('#second_slide').hide();
+    //     $('#addAgreements').empty();
+    //     $('#modal_edit').toggle();
+    //     clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
+    //     clearAgreementSpace();
+    // });
     $('#show_restrictions').on('click', () => {
         $('#modal_edit').toggle();
         $('#agreement_restrictions').toggle();

@@ -19,7 +19,6 @@ function cacheMentors(mentorArray) {    //mentoren lokal auf rechner im browser 
     sessionStorage.setItem('mentor', JSON.stringify(mentArr));
 }
 
-
 function mentorInsert(mentors) {
     $('#mnt_body').empty();
     $.each(mentors, function (index){
@@ -64,6 +63,15 @@ function searchMentor() {
     });
 }*/
 
+function cancelButtonFunctionality() {
+    //set functionality for all abbrechen/X Buttons
+    $(' .cancel').on('click', t => {
+        //get modal of clicked button
+       let parent = t['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
+       parent.style.display = "none";
+    });
+}
+
 $(document).on('DOMContentLoaded', function (){
     $.ajax({
         type: 'GET',
@@ -73,7 +81,23 @@ $(document).on('DOMContentLoaded', function (){
             mentorInsert(data);
             cacheMentors(data);
         });
-    addButtonFunctionality();
+
+    cancelButtonFunctionality();
+
+    // Laden aller Werte für Dropdowns in der Mentoren übersicht -> gleiche funktionsweise wie das Laden der Filterelemente in der Hochschulübersicht
+
+    $.ajax({
+        type: 'GET',
+        url: '/get/faculties'
+    })
+        .done((data) => {
+            $.each(data, (index, obj) => {
+                $(' .edit_mentor_fac').append($('<option>', {
+                    value: obj['id'],
+                    text: obj['fac']
+                }));
+            })
+        });
 });
 
 

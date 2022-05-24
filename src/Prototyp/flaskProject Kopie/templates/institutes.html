@@ -313,20 +313,20 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close_modal_edit">Abbrechen</button>
-                <button type="button" id="mod_edit" class="btn btn-primary">Speichern</button>
+                <button type="button" class="btn btn-secondary close_modal_edit" onclick="$('#modal_edit').hide()">Abbrechen</button>
+                <button type="button" id="mod_edit_inst_save_btn" class="btn btn-primary">Speichern</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal zum Anlegen -->
-<div class="modal" id="modal_add" >
+<!-- MODAL ZUM HOCHSCHULE ANLEGEN -->
+<div class="modal" id="modal_add_inst" >
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"> Partnerhochschule anlegen</h5>
-                <button type="button" class="btn-close close_modal_add"></button>
+                <button type="button" class="btn-close close_modal_add_inst"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -431,8 +431,8 @@
                                 <select id="add-partnership_type_ID" class="fil_agree form-select"
                                     name="partnership_type_ID"></select>
                             </div>
-                            <button type="button" class="btn btn-secondary">Abbrechen</button>
-                            <button type="button" id="mod_add_institute" class="btn btn-primary">Speichern</button>
+                            <button type="button" class="btn btn-secondary" onclick="$('#modal_add_inst').hide()">Abbrechen</button>
+                            <button type="button" id="mod_add_inst_save_btn" class="btn btn-primary">Speichern</button>
                             <!-- modal_functionality_general.js (Z.2) - app.py (Z.66) POST /addInstitute - Querries.py (Z.176) new_Institute -->
                         </form>
                     </div>
