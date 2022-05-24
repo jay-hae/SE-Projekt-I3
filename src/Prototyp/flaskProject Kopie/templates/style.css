@@ -92,3 +92,7 @@
 .rounded-border {
   border-radius: 10px;
 }
+
+#table_restrictions {
+  min-height: 250px;
+}

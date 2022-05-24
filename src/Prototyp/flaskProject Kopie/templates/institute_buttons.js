@@ -55,12 +55,12 @@ function modal_button_events() {
     });
     // MODAL: HOCHSCHULE BEARBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> RESTRIKTION BUTTON
     $('#rtn-agreement').on('click', function () {
-        $('#agreement_restrictions').toggle();
+        $('#modal_agreement_restrictions').toggle();
         $('#modal_edit').toggle();
     });
     $('#show_restrictions').on('click', () => {
         $('#modal_edit').toggle();
-        $('#agreement_restrictions').toggle();
+        $('#modal_agreement_restrictions').toggle();
     });
     // HAUPTANSICHT: HOCHSCHULE -> HOCHSCHULE ANLEGEN BUTTON
     $('#add_institute').on('click', function (){
@@ -70,6 +70,9 @@ function modal_button_events() {
     // MODAL: HOCHSCHULE ANLEGEN -> ABBRECHEN / X BUTTON
     $(' .close_modal_add').on('click', function (){
         $('#modal_add_inst').toggle();
+    });
+    $('.close_modal_restriction').on('click', function (){
+        $('#modal_agreement_restrictions').toggle();
     });
     // MODAL: HOCHSCHULE BEARBEITEN -> ABBRECHEN / X BUTTON
     $(' .close_modal_edit').on('click', function (){
