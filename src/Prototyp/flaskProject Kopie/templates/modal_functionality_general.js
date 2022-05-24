@@ -27,11 +27,7 @@ function modal_events(){
         $('#close_edit_trigger').trigger('click');
     });
 
-    $(' .modal').on('close', function(event, modal) {
-        //$(' .my_check').prop('checked', false);
-        $(' .modal_form').trigger('reset'); // clear modal of user input after closing it
-        $('#mod_add_inst_save_btn').attr('disabled', "true")
-    });
+    // MODAL: HOCHSCHULE BEARBEITEN -> ANSICHT WECHSELN BUTTONS
     // Funktionalität des Buttons erlaubt Wechseln zwischen den
     // Bearbeiten der Hochschule und der dazugehörige Partnerschaften
     $('#next').on('click', () => {
@@ -42,34 +38,55 @@ function modal_events(){
          $('#first_slide').show();
          $('#second_slide').hide();
     });
+
+    // CLEAR INPUT WHEN CLOSING MODAL
+    $('.modal').on('close', function(event, modal) {
+        //$(' .my_check').prop('checked', false);
+        // clear modal of user input after closing it
+        $('.modal_form').trigger('reset'); 
+        $('#mod_add_inst_save_btn').attr('disabled', "true")
+    });
 }
 
 function modal_button_events() {
-    $('#add-mob-agreement').on('click', function () {
+    // MODAL: HOCHSCHULE BEARBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> VERTRAG ANLEGEN BUTTON
+    $('#add_mob_agreement').on('click', function () {
 
     });
+    // MODAL: HOCHSCHULE BEARBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> RESTRIKTION BUTTON
     $('#rtn-agreement').on('click', function () {
         $('#agreement_restrictions').toggle();
         $('#modal_edit').toggle();
     });
-    $('#btn_hs_add').on('click', function (){
-        $(' .modal_form_add').trigger("reset");
+    // HAUPTANSICHT: HOCHSCHULE -> HOCHSCHULE ANLEGEN BUTTON
+    $('#add_institute').on('click', function (){
+        $('.modal_form_add').trigger("reset");
         $('#modal_add_inst').toggle();
     });
-    $(' .close_modal_add_inst').on('click', function (){
+
+    $(' .close_modal_add').on('click', function (){
         $('#modal_add_inst').toggle();
         $('#modal_add_mentor').toggle();
     });
-    // $(' .close_modal_edit').on('click', function (){
-    //     $('#first_slide').show();
-    //     $('#second_slide').hide();
-    //     $('#addAgreements').empty();
-    //     $('#modal_edit').toggle();
-    //     clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
-    //     clearAgreementSpace();
-    // });
+    $(' .close_modal_edit').on('click', function (){
+        $('#first_slide').show();
+        $('#second_slide').hide();
+        $('#addAgreements').empty();
+        $('#modal_edit').toggle();
+        clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
+        clearAgreementSpace();
+    });
     $('#show_restrictions').on('click', () => {
         $('#modal_edit').toggle();
         $('#agreement_restrictions').toggle();
+    });
+}
+
+function cancelButtonFunctionality() {
+    //set functionality for all abbrechen/X Buttons
+    $(' .cancel').on('click', t => {
+        //get modal of clicked button
+       let parent = t['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
+       parent.style.display = "none";
     });
 }
