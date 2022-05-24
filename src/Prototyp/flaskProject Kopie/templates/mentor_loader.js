@@ -30,7 +30,7 @@ function mentorInsert(mentors) {
                                 "<th>" + mentor['agreements'] + "</th>" +
                                 "<th><button type='button' class='btn modal_edit_mentor'>Bearbeiten</button></th></tr>");
     });
-    editButton();
+    editMentorButton();
 }
 
 function searchMentor() {

@@ -2,12 +2,12 @@
 $(document).on('DOMContentLoaded', function () {
     //file modal_add_form_validation.js
     validateForm();
-    //file modal_functionality_general
+    //file institute_buttons
     modal_button_events();
     //load institutes
     loadAll();
     //add events to modal; submit form & add button events
-    // in file "modal_functionality_general.js"
+    // in file "institute_buttons.js"
     modal_events();
     //main page; declare change events
     // trigger events after select filter

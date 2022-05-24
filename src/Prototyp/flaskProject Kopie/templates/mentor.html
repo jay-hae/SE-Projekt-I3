@@ -14,7 +14,6 @@
     <script src="../mentor_loader.js"></script>
     <script src="../mentor_modal_add.js"></script>
     <script src="../mentor_modal_edit.js"></script>
-    <script src="../modal_functionality_general.js"></script>
 </head>
 <body>
 <!-- HAUPTANSICHT -->
@@ -86,7 +85,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Mentor bearbeiten</h5>
-                <button type="button" class="btn-close close_modal_add cancel"></button>
+                <button type="button" class="btn-close close_modal_add cancel" onclick="$('#modal_edit_mentor').toggle()"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -132,7 +131,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Mentor anlegen</h5>
-                <button type="button" class="btn-close close-modal cancel"></button>
+                <button type="button" class="btn-close close-modal cancel" onclick="$('#modal_add_mentor').toggle()"></button>
             </div>
             <div class="modal-body">
                 <form id="add_mentor_form" class="mentor_slide">
@@ -161,7 +160,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary cancel close-modal" onclick="$('#modal_add_mentor').hide();">Abbrechen</button>
+                <button class="btn btn-secondary cancel close-modal" onclick="$('#modal_add_mentor').toggle();">Abbrechen</button>
                 <button class="btn btn-primary new_mentor save-modal">Speichern</button>
             </div>
         </div>

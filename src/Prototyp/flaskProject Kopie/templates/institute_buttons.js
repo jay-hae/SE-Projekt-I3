@@ -66,7 +66,6 @@ function modal_button_events() {
 
     $(' .close_modal_add').on('click', function (){
         $('#modal_add_inst').toggle();
-        $('#modal_add_mentor').toggle();
     });
     $(' .close_modal_edit').on('click', function (){
         $('#first_slide').show();
@@ -79,14 +78,5 @@ function modal_button_events() {
     $('#show_restrictions').on('click', () => {
         $('#modal_edit').toggle();
         $('#agreement_restrictions').toggle();
-    });
-}
-
-function cancelButtonFunctionality() {
-    //set functionality for all abbrechen/X Buttons
-    $(' .cancel').on('click', t => {
-        //get modal of clicked button
-       let parent = t['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
-       parent.style.display = "none";
     });
 }
