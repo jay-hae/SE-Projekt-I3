@@ -23,7 +23,7 @@ function editButton() {
 }
 
 function setCheckbox(value) {
-   return value === "Nein";
+   return value !== 1;
 }
 
 function loadMentor(mentor_id) {
