@@ -4,7 +4,7 @@ function editButton() {
        //get id
        let column = $(this).parent(); //Spalte <th> in der, der Button liegt
        let row = column.parent(); //ganze Zeile
-        let id = row.attr('id');
+       let id = row.attr('id');
        loadMentor(id);
        // let obj = JSON.parse(sessionStorage.getItem(row.attr('id')));
        //richtiges Item aus Clientspeicher holen und in Javascript Objekt parsen

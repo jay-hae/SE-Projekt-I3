@@ -1,5 +1,6 @@
 function loadModal(inst_id){
     // $('#edit_modal_anz').prop('checked', true); set checkbox true manually
+    $('#vertragstyp-filter').val("1");
     $.ajax({
         data: {
             id: inst_id
@@ -10,6 +11,7 @@ function loadModal(inst_id){
         //open modal after information got inserted into form
         .done(function (data) { //put data into modal
             let chosen_inst = data[0];
+            $('#exampleModalToggleLabel')[0].textContent = chosen_inst['eng'];
             $('#edit_mod_country').val(chosen_inst['country']);
             $('#edit_modal_eng').val(chosen_inst['eng']);
             $('#edit_modal_local').val(chosen_inst['local']);
@@ -52,12 +54,11 @@ function loadAgreements(inst_id) {
         .done((data) => {
             let agreementObjects = [];
             const addField = $('#addAgreements');
-            console.log(data)
             $.each(data, (index, val) => {
                 if ((data[index])['agreement_inactive'] == 0) {
                     (data[index])['agreement_inactive'] = 'Ja'
                 } else (data[index])['agreement_inactive'] = 'Nein'
-                let newRow = "<tr id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
+                let newRow = "<tr id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + (data[index])['partnership_type'] + "</th><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
                 addField.append(newRow);
                 let agreementObj = createAgreementObject(data[index]);
                 createRestriction((data[index])['agreement_ID'], (data[index])['course_restrictions']);
@@ -70,6 +71,10 @@ function loadAgreements(inst_id) {
             sessionStorage.setItem('updatedRestrictions', JSON.stringify(restrict));
             makeRowClickable('agreement_rows', 'agreement');
         });
+}
+
+function filterAgreements() {
+
 }
 
 function makeRowClickable(rowClass, type) {
@@ -112,7 +117,6 @@ function createObjectInstitute(institute) {
 }
 
 function createAgreementObject(agreement) {
-    console.log(agreement['course_restrictions'].length); // if > 0, pass all restrictions to new function to create restrictions that refer to our mobility agreement ID
     return {
         ID: Number(agreement['agreement_ID']),
         partnership_ID: Number(agreement['partnership_ID']),

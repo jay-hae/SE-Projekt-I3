@@ -36,6 +36,9 @@ function modal_events(){
 }
 
 function modal_button_events() {
+    $('#add-mob-agreement').on('click', function () {
+
+    });
     $('#rtn-agreement').on('click', function () {
         $('#agreement_restrictions').toggle();
         $('#modal_edit').toggle();
