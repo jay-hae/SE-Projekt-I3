@@ -70,7 +70,7 @@ function loadAgreements(inst_id) {
                 if ((data[index])['agreement_inactive'] == 0) {
                     (data[index])['agreement_inactive'] = 'Ja'
                 } else (data[index])['agreement_inactive'] = 'Nein'
-                let newRow = "<tr id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + (data[index])['partnership_type'] + "</th><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
+                let newRow = "<tr style='display: none' id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + (data[index])['partnership_type'] + "</th><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
                 addField.append(newRow);
                 let agreementObj = createAgreementObject(data[index]);
                 createRestriction((data[index])['agreement_ID'], (data[index])['course_restrictions']);
@@ -85,8 +85,10 @@ function loadAgreements(inst_id) {
         });
 }
 
-function filterAgreements() {
-
+function functionalityAgreementFilter() {
+    $('#vertragstyp-filter').on('change', (e) => {
+         agreementFilter(e.target.selectedOptions[0].innerText); //extract agreement type from chosen value
+    });
 }
 
 function makeRowClickable(rowClass, type) {

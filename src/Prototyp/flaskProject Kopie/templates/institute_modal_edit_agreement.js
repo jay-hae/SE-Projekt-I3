@@ -40,3 +40,19 @@ function setChanged(agreementID) {
     }
     sessionStorage.setItem('agArray', JSON.stringify([agreementID]));
 }
+
+function agreementFilter(agreementType) {
+    let children = $('#addAgreements').children();
+    for (let index = 0; index < children.length; index++) {
+        if (children[index].children[0].innerText === agreementType) {
+            children[index].style.display = '';
+        }
+        else {
+            children[index].style.display = 'none';
+        }
+        /*let col = children[index].children();
+        if (col[0]['ID'] === agreementType) {
+            children[index].style.display = "block";
+        }*/
+    }
+}

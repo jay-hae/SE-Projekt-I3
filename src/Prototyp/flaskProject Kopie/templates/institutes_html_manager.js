@@ -16,6 +16,7 @@ $(document).on('DOMContentLoaded', function () {
     // load countries, faculties and partnerships and add to filter
     setupFilter();
     clearSessionStorage();
+    functionalityAgreementFilter();
 }
 );
 
