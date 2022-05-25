@@ -20,8 +20,7 @@ def login_required(f):
         if 'usr' in session:
             return f(*args, **kwargs)
         else:
-
-        return redirect('/')
+            return redirect('/')
         #return f(*args, **kwargs)
     return wrap
 
