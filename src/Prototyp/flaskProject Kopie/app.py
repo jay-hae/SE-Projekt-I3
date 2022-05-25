@@ -1,4 +1,7 @@
-from flask import Flask, render_template, request, session, url_for, jsonify, send_from_directory # Flask: https://flask.palletsprojects.com/en/2.0.x/quickstart/
+from functools import wraps
+
+from flask import Flask, render_template, request, session, url_for, jsonify, send_from_directory, \
+    flash  # Flask: https://flask.palletsprojects.com/en/2.0.x/quickstart/
 from flask_wtf import CSRFProtect
 from werkzeug.utils import redirect
 import json
@@ -11,26 +14,35 @@ app.secret_key = os.urandom(24)
 #### app.route = We use the route() decorator to tell Flask what URL should trigger our function.
 
 
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'usr' in session:
+            return f(*args, **kwargs)
+        else:
+            return redirect('/')
+    return wrap
+
+
 # Login Page, atm login with db credentials
 # redirect user to homepage if he is already logged in
 @app.route('/', methods=['GET', 'POST'])
 def LoginPage():
     if request.method == 'GET':
-        session["usr"] = 'yes'
-        return redirect('/homepage/institutes')
-    """
-    if request.method == 'GET':
         if "usr" in session:
-            return redirect(url_for('sql'))
+            return redirect('/homepage/institutes')
         else:
             return render_template('login.html')
     else:
-        session["usr"] = Login.LoginDB(request.form["usr"], request.form["pwd"])
-        return redirect(url_for('sql'))
-    """
+        if Login.LoginDB(request.form['usr'], request.form['pwd']):
+            session['usr'] = "logged"
+            return redirect('/homepage/institutes')
+        else:
+            return redirect('/')
 
 
 @app.route('/homepage/<name>', methods=['GET', 'POST'])
+@login_required
 def hp_file(name):
     if name == 'mentor':
         return render_template('mentor.html')
@@ -45,6 +57,7 @@ def hp_file(name):
 
 # return of filter objects
 @app.route('/get/<name>', methods=['GET'])
+@login_required
 def load_filter(name):
     if name == 'institutes':
         return Querries.institutes_ret()
@@ -61,16 +74,19 @@ def load_filter(name):
 # get data needed for institute modal
 # filtered institute id from website
 @app.route('/openModal', methods=['POST'])
+@login_required
 def load_institute_modal_data():
     return Querries.for_institute_modal(request.form['id'])
 
 # get data needed for mentor modal
 # filtered institute id from website
 @app.route('/openMentorModal', methods=['POST'])
+@login_required
 def load_mentor_modal_data():
     return Querries.for_mentor_modal(request.form['id'])
 
 @app.route('/add/<name>', methods=['POST'])
+@login_required
 def new_object(name):
     if name == 'Mentor':
         active = 0
@@ -122,6 +138,7 @@ def new_object(name):
 
 
 @app.route('/filterInstitute', methods=['POST'])
+@login_required
 def handle_filter():
     if request.method == 'POST':
         my_list = request.form.to_dict()
@@ -140,6 +157,7 @@ def handle_filter():
 
 
 @app.route('/changeData/<name>', methods=['POST'])
+@login_required
 def changes(name):
     x = request.form.to_dict()
     change_id = 0
@@ -163,6 +181,7 @@ def changes(name):
 
 
 @app.route('/loader/<name>', methods=['GET', 'POST']) # <name> : URL-Parameter kann übergeben
+@login_required
 def ret_js(name):
     if name == 'mentor':
         return Querries.return_mentor()
@@ -187,6 +206,7 @@ def logout():
 
 # give browser all files that are needed (js files,...)
 @app.route('/<string:filename>', methods=['GET'])
+@login_required
 def ret_file(filename):
     return send_from_directory('templates', filename)
 
