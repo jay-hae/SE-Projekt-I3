@@ -5,28 +5,43 @@ function trackAgreementChange() {
 }
 
 function updateChangedAgreement (agreementID, changedVal, value) {
-    console.log(value, changedVal);
-    let agreements = JSON.parse(sessionStorage.getItem('updatedAgreements')); //get duplicated array of all agreements, no matter if updated or not
-    for (let iterator = 0; iterator < agreements.length; iterator++) {
-        let agreement = agreements[iterator];
-        if (Number(agreement.ID) === Number(agreementID)) {
-            agreement[changedVal] = value;
-            if (changedVal === "inactive") {
-                let x = $('#inactive').prop('checked');
-                if (x === true) {
-                    agreement[changedVal] = "1";
-                    // what to do when clicked on checkbox to set it
+    if (agreementID) {
+        let agreements = JSON.parse(sessionStorage.getItem('updatedAgreements')); //get duplicated array of all agreements, no matter if updated or not
+        for (let iterator = 0; iterator < agreements.length; iterator++) {
+            let agreement = agreements[iterator];
+            if (Number(agreement.ID) === Number(agreementID)) {
+                agreement[changedVal] = value;
+                if (changedVal === "inactive") {
+                    checkProp(agreement, changedVal)
                 }
-                else {
-                    // what to do when clicked to "uncheck" it
-                    agreement[changedVal] = "0";
-                }
+                break;
             }
-            break;
+        }
+        sessionStorage.setItem('updatedAgreements', JSON.stringify(agreements));
+        setChanged(agreementID);
+    }
+    else {
+        let agreement = JSON.parse(sessionStorage.getItem('createAg'));
+        if (changedVal === "inactive") {
+            alert('test')
+            checkProp(agreement, changedVal);
+        }
+        else {
+            agreement[changedVal] = value;
+            sessionStorage.setItem('createAg', JSON.stringify(agreement));
         }
     }
-    sessionStorage.setItem('updatedAgreements', JSON.stringify(agreements));
-    setChanged(agreementID);
+}
+
+function checkProp(agreement, changedVal) {
+    let x = $('#inactive').prop('checked');
+    if (x === true) {
+        agreement[changedVal] = "1";
+        // what to do when clicked on checkbox to set it
+    } else {
+        // what to do when clicked to "uncheck" it
+        agreement[changedVal] = "0";
+    }
 }
 
 function setChanged(agreementID) {
@@ -38,7 +53,9 @@ function setChanged(agreementID) {
         }
         return;
     }
-    sessionStorage.setItem('agArray', JSON.stringify([agreementID]));
+    if (agreementID) {
+        sessionStorage.setItem('agArray', JSON.stringify([agreementID]));
+    }
 }
 
 function agreementFilter(agreementType) {
@@ -51,4 +68,9 @@ function agreementFilter(agreementType) {
             children[index].style.display = 'none';
         }
     }
+}
+
+function sendNewData() {
+    let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
+    newAgreements.forEach(ag => console.log(ag));
 }

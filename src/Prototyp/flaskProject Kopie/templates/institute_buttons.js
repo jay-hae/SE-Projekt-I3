@@ -24,6 +24,7 @@ function modal_events(){
     $('#mod_edit_inst_save_btn').on('click', function (event){
         event.preventDefault();
         checkIfUpdated();
+        sendNewData();
         $('#close_edit_trigger').trigger('click');
     });
 
@@ -51,7 +52,9 @@ function modal_events(){
 function modal_button_events() {
     // MODAL: HOCHSCHULE BEARBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> VERTRAG ANLEGEN BUTTON
     $('#add_mob_agreement').on('click', function () {
-
+        clearAgreementSpace();
+        sessionStorage.removeItem('currentAgID');
+        createNewAgreementObj();
     });
     // MODAL: HOCHSCHULE BEARBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> RESTRIKTION BUTTON
     $('#rtn-agreement').on('click', function () {

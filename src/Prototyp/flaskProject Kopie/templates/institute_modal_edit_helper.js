@@ -51,3 +51,30 @@ function getRestrictions() {
     let allRestrictions = JSON.parse(sessionStorage.getItem('currentRestrictions'));
     return allRestrictions.filter(obj => obj[0] === matchingAgreement);
 }
+
+function createNewAgreementObj() {
+    let ag_val = $('#vertragstyp-filter').val();
+    let inst_id = JSON.parse(sessionStorage.getItem('currentInstitute'));
+    let agreement = {};
+    agreement['partnership_type_ID'] = ag_val;
+    agreement['institute_ID'] = inst_id['ID'];
+    console.log(agreement);
+    sessionStorage.setItem('createAg', JSON.stringify(agreement));
+}
+
+function addNewAgreement(){
+    if (sessionStorage.getItem('createAg')) {
+        let newAG = JSON.parse(sessionStorage.getItem('createAg'));
+        if (sessionStorage.getItem('newAgreements')) {
+            let agreements = JSON.parse(sessionStorage.getItem('newAgreements'));
+            agreements.push(newAG);
+            sessionStorage.setItem('newAgreements', JSON.stringify(agreements));
+        }
+        else {
+            let agreements = [];
+            agreements.push(newAG);
+            sessionStorage.setItem('newAgreements', JSON.stringify(agreements));
+        }
+        sessionStorage.removeItem('createAg');
+    }
+}

@@ -11,6 +11,7 @@ function add_button_event(){
 }
 
 function loadModal(inst_id) {
+    sessionStorage.setItem('currentInstitute', JSON.stringify(inst_id));
     // $('#edit_modal_anz').prop('checked', true); set checkbox true manually
     $('#vertragstyp-filter').val("1");
     $.ajax({
@@ -101,10 +102,8 @@ function makeRowClickable(rowClass, type) {
             let rowID = row['id']; //get ID of mob_agreement that was clicked
             insertAgreementInformation(rowID);
             insertRestriction();
+            addNewAgreement();
         });
-    }
-    else if (type === 'restriction') {
-
     }
 }
 
@@ -167,6 +166,9 @@ function clearSessionStorage() {
         sessionStorage.removeItem('agArray');
         sessionStorage.removeItem('updatedRestrictions');
         sessionStorage.removeItem('currentRestrictions');
+        sessionStorage.removeItem('agreement_type');
+        sessionStorage.removeItem('createAg');
+        sessionStorage.removeItem('newAgreements');
         //remove mob agreements (information und neu angelegte ag's)
     }
 
