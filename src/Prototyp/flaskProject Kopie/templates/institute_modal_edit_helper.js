@@ -35,10 +35,6 @@ function clearAgreementSpace() {
     });
 }
 
-function onSave() {
-
-}
-
 function insertRestriction() {
     $('#tbl_restriction').innerHTML = "";
     let restrictions = getRestrictions();

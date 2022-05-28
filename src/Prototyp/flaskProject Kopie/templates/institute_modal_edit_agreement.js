@@ -50,9 +50,5 @@ function agreementFilter(agreementType) {
         else {
             children[index].style.display = 'none';
         }
-        /*let col = children[index].children();
-        if (col[0]['ID'] === agreementType) {
-            children[index].style.display = "block";
-        }*/
     }
 }

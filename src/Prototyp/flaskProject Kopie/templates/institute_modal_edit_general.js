@@ -82,12 +82,15 @@ function loadAgreements(inst_id) {
             sessionStorage.setItem('currentRestrictions', JSON.stringify(restrict));
             sessionStorage.setItem('updatedRestrictions', JSON.stringify(restrict));
             makeRowClickable('agreement_rows', 'agreement');
+            agreementFilter("Hochschulvereinbarung");
         });
 }
 
 function functionalityAgreementFilter() {
     $('#vertragstyp-filter').on('change', (e) => {
-         agreementFilter(e.target.selectedOptions[0].innerText); //extract agreement type from chosen value
+         let ag = e.target.selectedOptions[0].innerText; //extract agreement type from chosen value
+        agreementFilter(ag);
+        sessionStorage.setItem('agreement_type', JSON.stringify(ag));
     });
 }
 
