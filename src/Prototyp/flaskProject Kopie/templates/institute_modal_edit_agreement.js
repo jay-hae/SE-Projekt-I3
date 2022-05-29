@@ -12,7 +12,7 @@ function updateChangedAgreement (agreementID, changedVal, value) {
             if (Number(agreement.ID) === Number(agreementID)) {
                 agreement[changedVal] = value;
                 if (changedVal === "inactive") {
-                    checkProp(agreement, changedVal)
+                    agreement[changedVal] = checkProp();
                 }
                 break;
             }
@@ -23,24 +23,23 @@ function updateChangedAgreement (agreementID, changedVal, value) {
     else {
         let agreement = JSON.parse(sessionStorage.getItem('createAg'));
         if (changedVal === "inactive") {
-            alert('test')
-            checkProp(agreement, changedVal);
+            agreement[changedVal] = checkProp();
         }
         else {
             agreement[changedVal] = value;
-            sessionStorage.setItem('createAg', JSON.stringify(agreement));
         }
+        sessionStorage.setItem('createAg', JSON.stringify(agreement));
     }
 }
 
-function checkProp(agreement, changedVal) {
+function checkProp() {
     let x = $('#inactive').prop('checked');
     if (x === true) {
-        agreement[changedVal] = "1";
+        return "1";
         // what to do when clicked on checkbox to set it
     } else {
         // what to do when clicked to "uncheck" it
-        agreement[changedVal] = "0";
+        return "0";
     }
 }
 

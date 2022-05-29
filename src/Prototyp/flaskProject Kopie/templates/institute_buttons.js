@@ -62,8 +62,10 @@ function modal_button_events() {
         $('#modal_edit').toggle();
     });
     $('#show_restrictions').on('click', () => {
-        $('#modal_edit').toggle();
-        $('#modal_agreement_restrictions').toggle();
+        if ('currentAgID' in sessionStorage) {
+            $('#modal_edit').toggle();
+            $('#modal_agreement_restrictions').toggle();
+        }
     });
     // HAUPTANSICHT: HOCHSCHULE -> HOCHSCHULE ANLEGEN BUTTON
     $('#add_institute').on('click', function (){
