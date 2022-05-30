@@ -2,8 +2,8 @@ function insertAgreementInformation(agreement) {
     let setAgreement = returnAgreement(agreement);
     setAgreement = setAgreement[0];
     sessionStorage.setItem('currentAgID',setAgreement['ID']);
-    $('#mntr_dropdown').val(setAgreement.mentor_ID);
-    $('#fclt_dropdown').val(setAgreement.faculty_ID);
+    $('#mentor_ID').val(setAgreement.mentor_ID);
+    $('#faculty_ID').val(setAgreement.faculty_ID);
     $('#date_signature').val(setAgreement.date_signature);
     $('#from_date').val(setAgreement.from_date); //möglicher Vorschlag -> alle leeren Felder mit "keine Angabe füllen" setAgreement.from_data.length > 0 ? setAgreement.from_data : "keine Angabe"
     $('#until_date').val(setAgreement.until_date);
@@ -12,7 +12,7 @@ function insertAgreementInformation(agreement) {
     $('#in_num_months').val(setAgreement.in_num_months);
     $('#out_num_mobility').val(setAgreement.out_num_mobility);
     $('#out_num_months').val(setAgreement.out_num_months);
-    $('#notes').val(setAgreement.note);
+    $('#notes').innerText = setAgreement.notes;
 }
 
 function returnAgreement(id) {  //get updated information if updated, otherwise use the data taken from database

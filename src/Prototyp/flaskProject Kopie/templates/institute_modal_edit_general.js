@@ -68,9 +68,6 @@ function loadAgreements(inst_id) {
             let agreementObjects = [];
             const addField = $('#addAgreements');
             $.each(data, (index, val) => {
-                if ((data[index])['agreement_inactive'] == 0) {
-                    (data[index])['agreement_inactive'] = 'Ja'
-                } else (data[index])['agreement_inactive'] = 'Nein'
                 let newRow = "<tr style='display: none' id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + (data[index])['partnership_type'] + "</th><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
                 addField.append(newRow);
                 let agreementObj = createAgreementObject(data[index]);
@@ -92,6 +89,8 @@ function functionalityAgreementFilter() {
          let ag = e.target.selectedOptions[0].innerText; //extract agreement type from chosen value
         agreementFilter(ag);
         sessionStorage.setItem('agreement_type', JSON.stringify(ag));
+        //clearAgreementSpace();
+        //sessionStorage.removeItem('currentAgID');
     });
 }
 

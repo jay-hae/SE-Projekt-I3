@@ -66,6 +66,9 @@ function modal_button_events() {
             $('#modal_edit').toggle();
             $('#modal_agreement_restrictions').toggle();
         }
+        else {
+            alert('Bitte erst ein Agreement auswählen!');
+        }
     });
     // HAUPTANSICHT: HOCHSCHULE -> HOCHSCHULE ANLEGEN BUTTON
     $('#add_institute').on('click', function (){
