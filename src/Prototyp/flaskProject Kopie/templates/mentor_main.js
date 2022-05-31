@@ -24,12 +24,6 @@ $(document).on('DOMContentLoaded', function (){
             })
         });
 
-    // HAUPTANSICHT: MENTOR -> MENTOR ANLEGEN BUTTON
-    $('#add_mentor_btn').on('click', function (){
-        // reset the form / clear input before open the modal
-        $('.modal_form_mentor').trigger("reset");
-        $('#modal_add_mentor').toggle();
-    });
 
 });
 
@@ -99,9 +93,18 @@ function searchMentor() {
 }*/
 
 function buttonFunctionality() {
-   $('.close-modal-edit-mentor').on('click', function (){
+
+    // HAUPTANSICHT: MENTOR -> MENTOR ANLEGEN BUTTON
+    $('#add_mentor_btn').on('click', function (){
+        // reset the form / clear input before open the modal
+        $('.modal_form_mentor').trigger("reset");
+        $('#modal_add_mentor').toggle();
+    });
+    
+   $('.close_modal_edit_mentor').on('click', function (){
         $('#modal_edit_mentor').toggle();
     });
+   
    //set functionality for all abbrechen/X Buttons
     $(' .cancel').on('click', t => {
        let parent = t['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
