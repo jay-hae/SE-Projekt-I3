@@ -77,3 +77,7 @@ function addNewAgreement(){
         sessionStorage.removeItem('createAg');
     }
 }
+
+function getMentorData(mentor_ID) {
+    return (JSON.parse(sessionStorage.getItem('mentors')))[mentor_ID];
+}

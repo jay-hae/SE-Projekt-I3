@@ -50,8 +50,15 @@ function modal_events(){
 }
 
 function modal_button_events() {
+    $('#add-new-agreement').on('click', () => {
+        insertAgreementInTable(JSON.parse(sessionStorage.getItem('createAg')), $('#addAgreements'));
+        addNewAgreement();
+        clearAgreementSpace();
+        $('#add-new-agreement-container').attr('style', 'display: "none"');
+    });
     // MODAL: HOCHSCHULE BEARBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> VERTRAG ANLEGEN BUTTON
     $('#add_mob_agreement').on('click', function () {
+        $('#add-new-agreement-container').attr('style', 'display: ""');
         clearAgreementSpace();
         sessionStorage.removeItem('currentAgID');
         createNewAgreementObj();
@@ -91,5 +98,4 @@ function modal_button_events() {
         clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
         clearAgreementSpace();
     });
-
 }

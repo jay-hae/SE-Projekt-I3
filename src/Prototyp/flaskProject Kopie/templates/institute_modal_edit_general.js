@@ -55,7 +55,6 @@ function loadModal(inst_id) {
 }
 
 function loadAgreements(inst_id) {
-    restrict = [];
     //einfügen der Daten auf zweiter Seite des Modals
     $.ajax({
         method: 'POST',
@@ -65,15 +64,12 @@ function loadAgreements(inst_id) {
         }
     })
         .done((data) => {
+            restrict = [];
             let agreementObjects = [];
             const addField = $('#addAgreements');
             $.each(data, (index, val) => {
-                let newRow = "<tr style='display: none' id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + (data[index])['partnership_type'] + "</th><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
-                addField.append(newRow);
-                let agreementObj = createAgreementObject(data[index]);
-                createRestriction((data[index])['agreement_ID'], (data[index])['course_restrictions']);
-                agreementObj = checkInput(agreementObj);
-                agreementObjects.push(agreementObj);
+                let cur_data = data[index];
+                agreementObjects.push(insertAgreementInTable(cur_data, addField));
             });
             sessionStorage.setItem('currentAgreements', JSON.stringify(agreementObjects));
             sessionStorage.setItem('updatedAgreements', JSON.stringify(agreementObjects));
@@ -84,6 +80,20 @@ function loadAgreements(inst_id) {
         });
 }
 
+function insertAgreementInTable(data, addField, addType) {
+    let newRow = '';
+    if (addType === 'fromDatabase') {
+        createRestriction(data['agreement_ID'], data['course_restrictions']);
+        newRow = "<tr style='display: none' id='" + data['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty'] + "</th><th>" + data['agreement_inactive'] + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th></tr>";
+    }
+    else {
+        let mentor_data = getMentorData(data['mentor_ID']); //provide mentor data to insert in new row
+    }
+    addField.append(newRow);
+    let agreementObj = createAgreementObject(data);
+    agreementObj = checkInput(agreementObj);
+    return agreementObj;
+}
 function functionalityAgreementFilter() {
     $('#vertragstyp-filter').on('change', (e) => {
          let ag = e.target.selectedOptions[0].innerText; //extract agreement type from chosen value
@@ -101,7 +111,8 @@ function makeRowClickable(rowClass, type) {
             let rowID = row['id']; //get ID of mob_agreement that was clicked
             insertAgreementInformation(rowID);
             insertRestriction();
-            addNewAgreement();
+            $('#add-new-agreement-container').attr('style', 'display: none');
+            sessionStorage.removeItem('createAg');
         });
     }
 }
