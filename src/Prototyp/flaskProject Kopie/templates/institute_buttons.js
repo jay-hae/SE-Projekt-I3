@@ -44,7 +44,8 @@ function modal_events(){
     $('.modal').on('close', function(event, modal) {
         //$(' .my_check').prop('checked', false);
         // clear modal of user input after closing it
-        $('.modal_form').trigger('reset'); 
+        console.log("institute_button.js Z.47");
+        $('.modal_form_inst').trigger('reset');
         $('#mod_add_inst_save_btn').attr('disabled', "true")
     });
 }
@@ -71,7 +72,8 @@ function modal_button_events() {
         }
     });
     // HAUPTANSICHT: HOCHSCHULE -> HOCHSCHULE ANLEGEN BUTTON
-    $('#add_institute').on('click', function (){
+    $('#add_institute_btn').on('click', function (){
+        console.log("institute_button.js Z.76");
         $('.modal_form_add').trigger("reset");
         $('#modal_add_inst').toggle();
     });
@@ -88,6 +90,7 @@ function modal_button_events() {
         $('#second_slide').hide();
         $('#addAgreements').empty();
         $('#modal_edit').toggle();
+        console.log("institute_button.js Z.92");
         clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
         clearAgreementSpace();
     });

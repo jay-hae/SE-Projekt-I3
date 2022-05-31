@@ -27,10 +27,8 @@
 </head>
 <body>
 
-<!-- Main Page -->
+<!-- HAUPTANSICHT -->
 <div id="Page_one" >
-
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
         <a class="navbar-brand ms-3" href="#">HTW Dresden</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +63,6 @@
         </ul>
     </div>
     </nav>
-    <!-- Main Content -->
     <div class="my-content">
         <!-- Filter Buttons -->
         <div id="fil">
@@ -105,7 +102,7 @@
 
         <div class="add-hs mt-2 mb-2 ps-3 bg-light d-flex navbar text-center rounded-border">
             <button class="btn btn-outline-secondary" id="fil_reset">Zurücksetzen</button>
-            <button type="button" class="btn btn-outline-primary me-3" id="add_institute"> Partnerhochschule hinzufügen </button>
+            <button type="button" class="btn btn-outline-primary me-3" id="add_institute_btn"> Partnerhochschule hinzufügen </button>
         </div>
         <!-- Tabelle für die Partnerhochschulen -->
         <div id="tbl">
@@ -126,7 +123,7 @@
     </div>
 </div>
 
-<!-- Modal zum Bearbeiten -->
+<!-- MODAL ZUM HOCHSCHULE BEARBEITEN -->
 <div class="modal" id="modal_edit">
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
         <div class="modal-content">
@@ -143,7 +140,7 @@
                     <div class="row p-3">
                         <h1>Hochschule</h1>
                         <div class="col-sm pt-1">
-                        <form class="modal_form" id="edit_left_col">
+                        <form class="modal_form_inst" id="edit_left_col">
                             <h4>Allgemeine Information</h4>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_country">Land</label>
@@ -182,7 +179,7 @@
                     </div>
                         <div class="col-sm ms-3 pt-1">
                         <h4>Ansprechperson</h4>
-                        <form class="modal_form" id="edit_mid_col">
+                        <form class="modal_form_inst" id="edit_mid_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_func">Funktion</label>
                                 <input class="form-control" type="text" id="edit_mod_func" name="function">
@@ -219,7 +216,7 @@
                     </div>
                         <div class="col-sm ms-3 pt-1">
                         <h4>International Office</h4>
-                        <form class="modal_form" id="edit_right_col">
+                        <form class="modal_form_inst" id="edit_right_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_dep">Abteilung</label>
                                 <input class="form-control" type="text" id="edit_mod_dep" name="department">
@@ -332,7 +329,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm p-3 m-3 pt-1">
-                        <form class="modal_form modal_form_add" id="form_left_col">
+                        <form class="modal_form_inst modal_form_add" id="form_left_col">
                             <h2>Hochschule</h2>
                             <div class="mb-3">
                                 <label for="add-eng" class="form-label">Englische Bezeichnung</label>
@@ -371,7 +368,7 @@
                         </form>
                     </div>
                     <div class="col-sm p-3 m-3 pt-1">
-                        <form class="modal_form modal_form_add" id="form_mid_col">
+                        <form class="modal_form_inst modal_form_add" id="form_mid_col">
                             <h2>Ansprechperson</h2>
                             <div class="mb-3">
                                 <label for="add-title" class="form-label">Titel</label>
@@ -408,7 +405,7 @@
                         </form>
                     </div>
                     <div class="col-sm p-3 m-3 pt-1">
-                        <form class="modal_form modal_form_add" id="form_right_col">
+                        <form class="modal_form_inst modal_form_add" id="form_right_col">
                             <h2>International Office</h2>
                             <div class="mb-3">
                                 <label for="add-department" class="form-label">Abteilung</label>
@@ -432,7 +429,7 @@
                                 <select id="add-partnership_type_ID" class="fil_agree form-select"
                                     name="partnership_type_ID"></select>
                             </div>
-                            <button type="button" class="btn btn-secondary" onclick="$('#modal_add_inst').toggle()">Abbrechen</button>
+                            <button type="button" class="btn btn-secondary close_modal_add">Abbrechen</button>
                             <button type="button" id="mod_add_inst_save_btn" class="btn btn-primary">Speichern</button>
                             <!-- institute_buttons.js (Z.2) - app.py (Z.66) POST /addInstitute - Querries.py (Z.176) new_Institute -->
                         </form>
