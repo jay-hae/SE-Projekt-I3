@@ -1,3 +1,73 @@
+function loadAgreements(inst_id) {
+    restrict = [];
+    //einfügen der Daten auf zweiter Seite des Modals
+    $.ajax({
+        method: 'POST',
+        url: '/loader/mobAgreements',
+        data: {
+            id: inst_id
+        }
+    })
+        .done((data) => {
+            let agreementObjects = [];
+            const addField = $('#addAgreements');
+            $.each(data, (index, val) => {
+                let newRow = "<tr style='display: none' id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + (data[index])['partnership_type'] + "</th><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
+                addField.append(newRow);
+                let agreementObj = createAgreementObject(data[index]);
+                createRestriction((data[index])['agreement_ID'], (data[index])['course_restrictions']);
+                agreementObj = checkInput(agreementObj);
+                agreementObjects.push(agreementObj);
+            });
+            sessionStorage.setItem('currentAgreements', JSON.stringify(agreementObjects));
+            sessionStorage.setItem('updatedAgreements', JSON.stringify(agreementObjects));
+            sessionStorage.setItem('currentRestrictions', JSON.stringify(restrict));
+            sessionStorage.setItem('updatedRestrictions', JSON.stringify(restrict));
+            makeRowClickable('agreement_rows', 'agreement');
+            agreementFilter("Hochschulvereinbarung");
+        });
+}
+
+function functionalityAgreementFilter() {
+    $('#vertragstyp-filter').on('change', (e) => {
+         let ag = e.target.selectedOptions[0].innerText; //extract agreement type from chosen value
+        agreementFilter(ag);
+        sessionStorage.setItem('agreement_type', JSON.stringify(ag));
+        //clearAgreementSpace();
+        //sessionStorage.removeItem('currentAgID');
+    });
+}
+
+function makeRowClickable(rowClass, type) {
+    if (type === 'agreement') {
+        $(' .'+rowClass).on('click', (e) => {
+            let row = e.target.parentElement;
+            let rowID = row['id']; //get ID of mob_agreement that was clicked
+            insertAgreementInformation(rowID);
+            insertRestriction();
+            addNewAgreement();
+        });
+    }
+}
+
+function createAgreementObject(agreement) {
+    return {
+        ID: Number(agreement['agreement_ID']),
+        partnership_ID: Number(agreement['partnership_ID']),
+        faculty_ID: Number(agreement['faculty']),
+        mentor_ID: Number(agreement['mentor_ID']),
+        date_signature: String(agreement['date_signature']),
+        from_date: String(agreement['valid_since']),
+        until_date: String(agreement['valid_until']),
+        inactive: String(agreement['agreement_inactive']),
+        in_num_mobility: String(agreement['in_num_mob']),
+        in_num_months: String(agreement['in_num_months']),
+        out_num_mobility: String(agreement['out_num_mob']),
+        out_num_months: String(agreement['out_num_months']),
+        notes: String(agreement['notes'])
+    }
+}
+
 function trackAgreementChange() {
     $('#space_edit_agreement').on('change', (e) => { //create new sessionStorage object that contains all agreements where the input was changed
         updateChangedAgreement(sessionStorage.getItem('currentAgID'), e.target['id'], e.target.value);

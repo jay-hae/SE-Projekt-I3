@@ -11,7 +11,7 @@
 
     <script src="../ajax.js"></script>
     <script src="../navbar_functionality.js"></script>
-    <script src="../mentor_loader.js"></script>
+    <script src="../mentor_main.js"></script>
     <script src="../mentor_modal_add.js"></script>
     <script src="../mentor_modal_edit.js"></script>
 </head>
@@ -53,13 +53,12 @@
      <div class="my-content">
         <br>
         <!-- Tabelle für die Partnerhochschulen -->
-        <div id="tbl"> <!-- container mt-4-->
+        <div id="tbl">
             <div class="search_mentor text-center mt-2 mb-2 ps-3 navbar navbar-light bg-light rounded-border">
                   <form class="form-inline d-flex">
                     <input id="tbl_search" onkeyup="searchMentor()" type="text" placeholder="Mentor suchen" class="form-control">
-<!--                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
                   </form>
-                <button type="button" class="btn btn-outline-primary me-3" id="btn_mentor" onclick="$('#modal_add_mentor').toggle()">Mentor hinzufügen</button>
+                <button type="button" class="btn btn-outline-primary me-3" id="add_mentor_btn">Mentor hinzufügen</button>
             </div>
             <table class="table table-hover">
                 <thead>
@@ -85,12 +84,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Mentor bearbeiten</h5>
-                <button type="button" class="btn-close close_modal_add cancel" onclick="$('#modal_edit_mentor').toggle()"></button>
+                <button type="button" class="btn-close close_modal_edit_mentor"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm p-3 m-3 pt-1">
-                        <form id="mentor_edit_form" class="mentor_slide modal_form">
+                        <form class="mentor_slide modal_form_mentor" id="mentor_edit_form" >
                             <label for="edit_mentor_title" class="form-label">Titel</label><br>
                             <input class="form-control" type="text" id="edit_mentor_title"><br>
                             <label for="edit_mentor_firstname" class="form-label">Vorname</label><br>
@@ -118,14 +117,14 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary close-modal" onclick="$('#modal_edit_mentor').toggle()">Abbrechen</button>
+                <button class="btn btn-secondary close_modal_edit_mentor">Abbrechen</button>
                 <button class="btn btn-primary save-modal">Speichern</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- MODAL: anlegen neuer Mentoren -->
+<!-- MODAL: MENTOR ANLEGEN -->
 <div id="modal_add_mentor" class="modal">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -134,7 +133,7 @@
                 <button type="button" class="btn-close close-modal cancel" onclick="$('#modal_add_mentor').toggle()"></button>
             </div>
             <div class="modal-body">
-                <form id="add_mentor_form" class="mentor_slide modal_form">
+                <form class="mentor_slide modal_form_mentor" id="mentor_add_form" >
                     <label class="form-label" for="mentor_add_title">Titel</label><br>
                     <input class="form-control" type="text" id="mentor_add_title" name="title"><br>
                     <label class="form-label" for="mentor_add_firstname">Vorname</label><br>

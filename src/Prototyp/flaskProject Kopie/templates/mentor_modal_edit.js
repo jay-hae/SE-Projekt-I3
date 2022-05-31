@@ -40,11 +40,7 @@ function loadMentor(mentor_id) {
     });
 }
 
-function buttonFunctionality() {
-   $(' .close-modal').on('click', (e) => {
 
-   });
-}
 
 
 

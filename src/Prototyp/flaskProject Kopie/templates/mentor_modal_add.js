@@ -3,7 +3,7 @@ function insertMentor() {
     $.ajax({
         method: 'POST',
         url: '/addMentor',
-        data: $('#add_mentor_form').serialize()
+        data: $('#mentor_add_form').serialize()
     })
         .done((data) => {
             console.log(data);

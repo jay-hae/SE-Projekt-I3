@@ -1,3 +1,32 @@
+$(document).on('DOMContentLoaded', function (){
+    $.ajax({
+        type: 'GET',
+        url: '/loader/mentor'
+    })
+        .done((data) => {
+            mentorInsert(data);
+            cacheMentors(data);
+        });
+
+    buttonFunctionality();
+
+    // Laden aller Werte für Dropdowns in der Mentoren übersicht -> gleiche funktionsweise wie das Laden der Filterelemente in der Hochschulübersicht
+    $.ajax({
+        type: 'GET',
+        url: '/get/faculties'
+    })
+        .done((data) => {
+            $.each(data, (index, obj) => {
+                $(' .edit_mentor_fac').append($('<option>', {
+                    value: obj['id'],
+                    text: obj['fac']
+                }));
+            })
+        });
+
+
+});
+
 function cacheMentors(mentorArray) {    //mentoren lokal auf rechner im browser zwischenspeichern für einen einfacheren Zugriff
     const mentArr = [];
     $.each(mentorArray, (index) => {
@@ -63,45 +92,22 @@ function searchMentor() {
     });
 }*/
 
-function cancelButtonFunctionality() {
-    //set functionality for all abbrechen/X Buttons
+function buttonFunctionality() {
+
+    // HAUPTANSICHT: MENTOR -> MENTOR ANLEGEN BUTTON
+    $('#add_mentor_btn').on('click', function (){
+        // reset the form / clear input before open the modal
+        $('.modal_form_mentor').trigger("reset");
+        $('#modal_add_mentor').toggle();
+    });
+    
+   $('.close_modal_edit_mentor').on('click', function (){
+        $('#modal_edit_mentor').toggle();
+    });
+   
+   //set functionality for all abbrechen/X Buttons
     $(' .cancel').on('click', t => {
        let parent = t['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
        parent.style.display = "none";
     });
 }
-
-$(document).on('DOMContentLoaded', function (){
-    $.ajax({
-        type: 'GET',
-        url: '/loader/mentor'
-    })
-        .done((data) => {
-            mentorInsert(data);
-            cacheMentors(data);
-        });
-
-    cancelButtonFunctionality();
-
-    // Laden aller Werte für Dropdowns in der Mentoren übersicht -> gleiche funktionsweise wie das Laden der Filterelemente in der Hochschulübersicht
-
-    $.ajax({
-        type: 'GET',
-        url: '/get/faculties'
-    })
-        .done((data) => {
-            $.each(data, (index, obj) => {
-                $(' .edit_mentor_fac').append($('<option>', {
-                    value: obj['id'],
-                    text: obj['fac']
-                }));
-            })
-        });
-
-    $('.modal').on('close', function(event, modal) {
-        $('.modal_form').trigger('reset');
-    });
-});
-
-
-

@@ -1,7 +1,7 @@
 1. Partnerhochschulen 
 	- zugehörige Dateien: 
 		- institutes.html
-		- institutes_html_manager.js
+		- institutes_main.js
 		- institutes_loader.js
 		- button_functionality.js
 		- filter_functionality.js
@@ -9,10 +9,10 @@
 		- navbar_functionality.js
 		- alle Files welche mit "modal" beginnen
 
-	institutes_html_manager.js: 
+	institutes_main.js:
 		- wird nach Laden der HTML File institutes.html automatisch durchgeführt
 		- ruft alle Funktionen auf welche für die normale Anwendung benötigt werden 
-		- diese Funktionen sind verteilt auf die einzelnen Javascript Files -> Einzelheiten im Quellcode der institutes_html_manager.js Datei
+		- diese Funktionen sind verteilt auf die einzelnen Javascript Files -> Einzelheiten im Quellcode der institutes_main.js Datei
 
 	institues_loader.js:
 		- beinhaltet eine Funktion welche "Partnerhochschulobjekte" enthält, diese werden dann ausgewertet und entsprechend der Tabellenstruktur in institues.html in die Tabelle eingefügt
@@ -124,10 +124,10 @@
 2. Mentoren
 	- zugehörige Dateien:
 		- mentor.html
-		- mentor_loader.js
+		- mentor_main.js
 		- navbar_functionality.js
 		
-	mentor_loader.js: 
+	mentor_main.js:
 		- aufrufen der Route '/loader/mentor'
 		- zurückgeben des JSON Objektes aus return_mentor()
 
@@ -146,7 +146,7 @@
 
 	country_loader.js:
 		- Route '/loader/country'
-		- gleiche Funktionsweise wie mentor_loader nur mit Ländern
+		- gleiche Funktionsweise wie mentor_main nur mit Ländern
 
 	return_countries():
 		input: /
@@ -163,7 +163,7 @@
 
 	courses_loader.js:
 		- '/loader/course'
-		- Funktionsweise wie mentor_loader mit Studiengängen
+		- Funktionsweise wie mentor_main mit Studiengängen
 
 
 	return_courses()
@@ -217,8 +217,8 @@ Interaktionsübersicht:
 
 Aufruf der Ziel URL mit der Endung: 
 
-Client sendet GET Request an '/homepage/mentor', diese URL returned mentor.html; in der HTML Datei werden mentor_loader.js & navbar_functionality.js beide "importiert" (einbinden durch <script src="mentor_loader.js">
-	mentor_loader.js führt, sobald HTML-File vollständig geladen, den Code aus. Dieser sendet einen GET Request an '/loader/mentor', in der Route wird die Funktion return_mentor innerhalb der Querries.py Datei aufgerufen
+Client sendet GET Request an '/homepage/mentor', diese URL returned mentor.html; in der HTML Datei werden mentor_main.js & navbar_functionality.js beide "importiert" (einbinden durch <script src="mentor_main.js">
+	mentor_main.js führt, sobald HTML-File vollständig geladen, den Code aus. Dieser sendet einen GET Request an '/loader/mentor', in der Route wird die Funktion return_mentor innerhalb der Querries.py Datei aufgerufen
 
 DIESE FUNKTIONSWEISE ist 1 zu 1 übertragbar auf die die anderen Routen: "/homepage/countries", "/homepage/courses", "/homepage/faculties", nur mit den im nächsten Abschnitt genannten Funktionen
 
@@ -230,7 +230,7 @@ GET Request -> '/homepage/faculties' -> faculty.html -> calls faculty_loader.js 
 
 Client sendet GET Request an '/homepage/institutes', URL liefert HTML File zurück: institutes.html 
 alle imports welche in HTML File getätigt werden (Javascript Dateien)
-	-> institutes_html_manager.js
+	-> institutes_main.js
 	-> institutes_loader.js
 	-> filter_values_functionality.js
 	-> button_functionality.js
@@ -245,7 +245,7 @@ Aufrufe bei Handlungen innerhalb der institutes.html Datei
 		[3] -> aufrufen der get_ma_x_course Funktion in Querries.py, diese führt die "get_ma_x_course" stored procedure aus
 
 	Betätigen Zurücksetzen-Button: Event in filter_functionality.js deklariert
-		Funktion aus "institutes_html_manager.js" ausführen, diese sendet GET Request an '/get/institutes';
+		Funktion aus "institutes_main.js" ausführen, diese sendet GET Request an '/get/institutes';
 		daraufhin wird institutes_ret aufgerufen aus Querries.py
 
 

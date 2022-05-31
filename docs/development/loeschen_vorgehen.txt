@@ -1,0 +1,39 @@
+Vorgehen zum löschen von:
+1) Hoschulen in tbl_institute
+    1) ID der zulöschen den Hochschule herrausfinden um den zugehörgen Datensatz (DS) in den anderen Tabellen zu finden.
+    2) DS in tbl_exchange löschen (lö)
+    3) DS in tbl_mobility_agreement_x_course lö
+    4) DS in tbl_mobility_agreement lö
+    5) DS in tbl_partnership lö
+    6) DS in tbl_institute lö
+
+SQL Code:
+
+SET @hsid = XXX; --Hoschul ID angeben
+START TRANSACTION;
+-- Statisitik löschen
+DELETE FROM tbl_exchange WHERE institute_ID = @hsid;
+
+-- Studiengangsbeschränkung löschen
+DELETE FROM tbl_mobility_agreement_x_course WHERE mobility_agreement_ID IN (
+    SELECT ma.ID
+    FROM tbl_mobility_agreement ma
+    JOIN tbl_partnership p ON ma.partnership_ID = p.ID
+    WHERE p.institute_ID = @hsid);
+
+--Partnerverträge löschen
+DELETE FROM tbl_mobility_agreement WHERE partnership_ID IN(
+    SELECT p.ID
+    FROM tbl_partnership p
+    WHERE p.institute_ID = @hsid);
+
+--Partnerschaftsart löschen
+DELETE FROM tbl_partnership WHERE ID = @hsid;
+
+--Hochschule löschen
+DELETE FROM tbl_institute WHERE ID = @hsid; 
+
+2) löschen von DS aus tbl_exchange, tbl_mobility_agreement_x_course,  tbl_mobility_agreement, tbl_partnership
+    ergibt sich dadurch das die Lösch-Reinfolge bis zur jeweiligen Tabelle beginnend mit tbl_exchange
+
+
