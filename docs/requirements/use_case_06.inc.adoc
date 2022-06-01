@@ -14,8 +14,8 @@ Der Mitarbeiter hat sich erfolgreich eingeloggt. (UC01)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 . Das Use Case beginnt, wenn MSI die Funktion zum Erstellen eines Berichtes ausgewählt hat. 
-. System öffnet ein externes Fenster zum Erstellen eines Berichtes.
-.. Der MSI hat die Möglichkeit per Drag&Drop- Menü einen Bericht zu Erstellen:
+. System öffnet ein externes Fenster zum Erstellen eines Berichtes, in welchem alle möglichen Berichte angezeigt werden.
+.. Der MSI hat die Möglichkeit einen Bericht zu Erstellen:
 
 ... Abkommen nach Fakultät sortiert
 ... Abkommen nach Länder sortiert
@@ -31,7 +31,7 @@ Der Mitarbeiter hat sich erfolgreich eingeloggt. (UC01)
 
 .. System überprüft Eingabe auf Gültigkeit
 . MSI wählt Option zum Erstellen eines Berichtes
-. System erstellt einen Bericht und zeigt ihn an
+. System öffnen Microsoft Access und erstellt den gewünschten Bericht.
 . Übergang in Use Case 07
 
 === Wesentliche Szenarios
