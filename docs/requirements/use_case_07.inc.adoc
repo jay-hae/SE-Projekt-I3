@@ -13,7 +13,7 @@ Der Mitarbeiter hat sich erfolgreich eingeloggt (UC01) und lässt einen erstellt
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Das Use Case beginnt, wenn MSI den Use Case 06 erfolgreich abgeschossen hat. 
+. Das Use Case beginnt, wenn MSI den Use Case 06 erfolgreich abgeschossen hat
 .. Der MSI hat die Möglichkeit den zuvor erstellten Bericht zu exportieren
 .. System überprüft Eingabe auf Gültigkeit
 . MSI wählt Option zum Exportieren eines Berichtes
