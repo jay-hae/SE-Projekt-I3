@@ -19,15 +19,16 @@ function loadAgreements(inst_id) {
             sessionStorage.setItem('updatedAgreements', JSON.stringify(agreementObjects));
             sessionStorage.setItem('currentRestrictions', JSON.stringify(restrict));
             sessionStorage.setItem('updatedRestrictions', JSON.stringify(restrict));
-            makeRowClickable('agreement_rows', 'agreement');
             agreementFilter("Hochschulvereinbarung");
         });
 }
 
 function insertAgreementInTable(data, addField, addType) {
     let newRow = '';
+    let id = ''
     if (addType === 'fromDatabase') {
         createRestriction(data['agreement_ID'], data['course_restrictions']);
+        id = data['agreement_ID'];
         newRow = "<tr style='display: none' id='" + data['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty'] + "</th><th>" + data['agreement_inactive'] + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th></tr>";
     }
     else {
@@ -42,9 +43,12 @@ function insertAgreementInTable(data, addField, addType) {
         let mentor_data = getStorageData("mentors", data['mentor_ID']); //provide mentor data to insert in new row; keys = firstname, lastname, title
         let faculty_data = getStorageData("faculties", data['faculty_ID']);
         //first + lastname for mentor and faculty name
-        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + faculty_data + "</th><th>" + data['inactive'] + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + data['notes'] + "</th></tr>";
+        let status = data['inactive'] ? data['inactive'] : '0';
+        id = 'new_' + index;
+        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + faculty_data + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + data['notes'] + "</th></tr>";
     }
     addField.append(newRow);
+    makeRowClickable(id, "agreement");
     let agreementObj = createAgreementObject(data);
     agreementObj = checkInput(agreementObj);
     return agreementObj;
@@ -60,9 +64,10 @@ function functionalityAgreementFilter() {
     });
 }
 
-function makeRowClickable(rowClass, type) {
+function makeRowClickable(rowID, type) {    //for every single row, easier to create eventListener for new added agreement
     if (type === 'agreement') {
-        $(' .'+rowClass).on('click', (e) => {
+        $(' #'+rowID).on('click', (e) => {
+            alert();
             let row = e.target.parentElement;
             let rowID = row['id']; //get ID of mob_agreement that was clicked
             insertAgreementInformation(rowID);
@@ -92,16 +97,19 @@ function createAgreementObject(agreement) {
 
 function trackAgreementChange() {
     $('#space_edit_agreement').on('change', (e) => { //create new sessionStorage object that contains all agreements where the input was changed
-        updateChangedAgreement(sessionStorage.getItem('currentAgID'), e.target['id'], e.target.value);
+        let agreement_ID = sessionStorage.getItem('currentAgID');
+        updateChangedAgreement(agreement_ID, e.target['id'], e.target.value);
     });
 }
 
 function updateChangedAgreement (agreementID, changedVal, value) {
     if (agreementID) {
-        let agreements = JSON.parse(sessionStorage.getItem('updatedAgreements')); //get duplicated array of all agreements, no matter if updated or not
+        alert(changedVal + value);
+        let agreements = agreementID.includes('new') ? JSON.parse(sessionStorage.getItem('newAgreements')): JSON.parse(sessionStorage.getItem('updatedAgreements')); //get duplicated array of all agreements, no matter if updated or not
         for (let iterator = 0; iterator < agreements.length; iterator++) {
             let agreement = agreements[iterator];
-            if (Number(agreement.ID) === Number(agreementID)) {
+            console.log(agreement.ID, agreementID)
+            if (agreement.ID == agreementID) {
                 agreement[changedVal] = value;
                 if (changedVal === "inactive") {
                     agreement[changedVal] = checkProp();
@@ -109,7 +117,7 @@ function updateChangedAgreement (agreementID, changedVal, value) {
                 break;
             }
         }
-        sessionStorage.setItem('updatedAgreements', JSON.stringify(agreements));
+        agreementID.includes('new') ? sessionStorage.setItem('newAgreements', JSON.stringify(agreements)) : sessionStorage.setItem('updatedAgreements', JSON.stringify(agreements));
         setChanged(agreementID);
     }
     else {
@@ -122,6 +130,12 @@ function updateChangedAgreement (agreementID, changedVal, value) {
         }
         sessionStorage.setItem('createAg', JSON.stringify(agreement));
     }
+}
+
+function changeNewAgreement(ID, val, key) {
+    let split = ID.split('_');
+    alert('we did it ');
+
 }
 
 function checkProp() {

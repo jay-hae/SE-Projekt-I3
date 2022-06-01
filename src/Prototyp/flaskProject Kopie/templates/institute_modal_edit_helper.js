@@ -1,6 +1,6 @@
 function insertAgreementInformation(agreement) {
     let setAgreement = returnAgreement(agreement);
-    setAgreement = setAgreement[0];
+    setAgreement = (setAgreement['object'])[setAgreement['index']];
     sessionStorage.setItem('currentAgID',setAgreement['ID']);
     $('#mentor_ID').val(setAgreement.mentor_ID);
     $('#faculty_ID').val(setAgreement.faculty_ID);
@@ -21,11 +21,19 @@ function returnAgreement(id) {  //get updated information if updated, otherwise 
         console.log(arr);
         if (arr.includes(id)) {
             let updatedAg = JSON.parse(sessionStorage.getItem("updatedAgreements"));
-            return updatedAg.filter(obj => Number(obj.ID) === Number(id));
+            return {'object': updatedAg.filter(obj => Number(obj.ID) === Number(id)), 'index': 0};
         }
     }
-    const allAgreements = JSON.parse(sessionStorage.getItem('currentAgreements'));
-    return allAgreements.filter(obj => Number(obj.ID) === Number(id));
+    if (id.includes("new")) {
+        let extract = (id.split('_'))[1]; //get "index" of new agreement of current institute -> get agreement data from sessionStorage
+        let newAgreement = JSON.parse(sessionStorage.getItem('newAgreements'));
+        console.log(extract);
+        return {'object': newAgreement, 'index': extract};
+    }
+    else {
+        const allAgreements = JSON.parse(sessionStorage.getItem('currentAgreements'));
+        return {'object': allAgreements.filter(obj => Number(obj.ID) === Number(id)), 'index': 0};
+    }
 }
 
 function clearAgreementSpace() {
@@ -46,7 +54,8 @@ function insertRestriction() {
 }
 
 function getRestrictions() {
-    let matchingAgreement = JSON.parse(sessionStorage.getItem('currentAgID'));
+    let matchingAgreement = sessionStorage.getItem('currentAgID');
+    console.log(matchingAgreement);
     let allRestrictions = JSON.parse(sessionStorage.getItem('currentRestrictions'));
     return allRestrictions.filter(obj => obj[0] === matchingAgreement);
 }
@@ -57,15 +66,15 @@ function createNewAgreementObj() {
     let agreement = {};
     agreement['partnership_type_ID'] = ag_val;
     agreement['institute_ID'] = inst_id['ID'];
-    console.log(agreement);
     sessionStorage.setItem('createAg', JSON.stringify(agreement));
 }
 
 function addNewAgreement(){
     if (sessionStorage.getItem('createAg')) {
         let newAG = JSON.parse(sessionStorage.getItem('createAg'));
+        newAG['ID'] = 'new_' + JSON.parse(sessionStorage.getItem('agreement_Index'));
         if (!newAG['inactive']) {
-            newAG['inactive'] = 0;
+            newAG['inactive'] = "0";
         }
         if (sessionStorage.getItem('newAgreements')) {
             let agreements = JSON.parse(sessionStorage.getItem('newAgreements'));

@@ -55,7 +55,7 @@ function modal_button_events() {
         insertAgreementInTable(JSON.parse(sessionStorage.getItem('createAg')), $('#addAgreements'), "newAgreement");
         addNewAgreement();
         clearAgreementSpace();
-        $('#add-new-agreement-container').attr('style', 'display: "none"');
+        $('#add-new-agreement-container').attr('style', 'display: none');
     });
     // MODAL: HOCHSCHULE BEARBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> VERTRAG ANLEGEN BUTTON
     $('#add_mob_agreement').on('click', function () {

@@ -98,6 +98,7 @@ function clearSessionStorage() {
         sessionStorage.removeItem('agreement_type');
         sessionStorage.removeItem('createAg');
         sessionStorage.removeItem('newAgreements');
+        sessionStorage.removeItem('agreement_Index');
         //remove mob agreements (information und neu angelegte ag's)
     }
 
