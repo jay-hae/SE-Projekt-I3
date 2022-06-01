@@ -44,6 +44,7 @@ include::use_case_03.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 image::wf_uc03_hochschule_bearbeiten_1.jpg[]
 image::wf_uc03_hochschule_bearbeiten_2.jpg[]
 
+
 ==== *UC04*: Fehlerhafte Datensätze Löschen
 include::use_case_04.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
@@ -52,7 +53,7 @@ include::use_case_05.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 ==== *UC06*: Berichte Erstellen
 include::use_case_06.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
-image::wf_uc06_Bericht_Uebersicht.pgn[]
+image::wf_uc06_Bericht_Uebersicht.jpg[]
 
 ==== *UC07*: Erstellte Berichte Exportieren
 include::use_case_07.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
