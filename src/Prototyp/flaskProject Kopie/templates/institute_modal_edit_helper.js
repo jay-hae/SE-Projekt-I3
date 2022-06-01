@@ -64,6 +64,9 @@ function createNewAgreementObj() {
 function addNewAgreement(){
     if (sessionStorage.getItem('createAg')) {
         let newAG = JSON.parse(sessionStorage.getItem('createAg'));
+        if (!newAG['inactive']) {
+            newAG['inactive'] = 0;
+        }
         if (sessionStorage.getItem('newAgreements')) {
             let agreements = JSON.parse(sessionStorage.getItem('newAgreements'));
             agreements.push(newAG);
@@ -78,6 +81,6 @@ function addNewAgreement(){
     }
 }
 
-function getMentorData(mentor_ID) {
-    return (JSON.parse(sessionStorage.getItem('mentors')))[mentor_ID];
+function getStorageData(storage_key, object_id) {
+    return (JSON.parse(sessionStorage.getItem(storage_key)))[object_id];
 }

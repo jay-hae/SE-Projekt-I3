@@ -52,7 +52,7 @@ function modal_events(){
 
 function modal_button_events() {
     $('#add-new-agreement').on('click', () => {
-        insertAgreementInTable(JSON.parse(sessionStorage.getItem('createAg')), $('#addAgreements'));
+        insertAgreementInTable(JSON.parse(sessionStorage.getItem('createAg')), $('#addAgreements'), "newAgreement");
         addNewAgreement();
         clearAgreementSpace();
         $('#add-new-agreement-container').attr('style', 'display: "none"');

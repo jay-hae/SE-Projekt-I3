@@ -1,5 +1,4 @@
 function loadAgreements(inst_id) {
-    restrict = [];
     //einfügen der Daten auf zweiter Seite des Modals
     $.ajax({
         method: 'POST',
@@ -9,15 +8,12 @@ function loadAgreements(inst_id) {
         }
     })
         .done((data) => {
+            restrict = [];
             let agreementObjects = [];
             const addField = $('#addAgreements');
             $.each(data, (index, val) => {
-                let newRow = "<tr style='display: none' id='" + (data[index])['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + (data[index])['partnership_type'] + "</th><th> " + (data[index])['faculty'] + "</th><th>" + (data[index])['agreement_inactive'] + "</th><th> " + (data[index])['mentor_firstname'] + " " + (data[index])['mentor_lastname'] + "</th><th>" + (data[index])['notes'] + "</th></tr>";
-                addField.append(newRow);
-                let agreementObj = createAgreementObject(data[index]);
-                createRestriction((data[index])['agreement_ID'], (data[index])['course_restrictions']);
-                agreementObj = checkInput(agreementObj);
-                agreementObjects.push(agreementObj);
+                let cur_data = data[index];
+                agreementObjects.push(insertAgreementInTable(cur_data, addField, "fromDatabase"));
             });
             sessionStorage.setItem('currentAgreements', JSON.stringify(agreementObjects));
             sessionStorage.setItem('updatedAgreements', JSON.stringify(agreementObjects));
@@ -26,6 +22,32 @@ function loadAgreements(inst_id) {
             makeRowClickable('agreement_rows', 'agreement');
             agreementFilter("Hochschulvereinbarung");
         });
+}
+
+function insertAgreementInTable(data, addField, addType) {
+    let newRow = '';
+    if (addType === 'fromDatabase') {
+        createRestriction(data['agreement_ID'], data['course_restrictions']);
+        newRow = "<tr style='display: none' id='" + data['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty'] + "</th><th>" + data['agreement_inactive'] + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th></tr>";
+    }
+    else {
+        let index = 0;
+        if ('agreement_Index' in sessionStorage) {
+            let index = JSON.parse(sessionStorage.getItem('agreement_Index')) + 1;
+            sessionStorage.setItem('agreement_Index', JSON.stringify(index));
+        }
+        else {
+            sessionStorage.setItem('agreement_Index', JSON.stringify(0));
+        }
+        let mentor_data = getStorageData("mentors", data['mentor_ID']); //provide mentor data to insert in new row; keys = firstname, lastname, title
+        let faculty_data = getStorageData("faculties", data['faculty_ID']);
+        //first + lastname for mentor and faculty name
+        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + faculty_data + "</th><th>" + data['inactive'] + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + data['notes'] + "</th></tr>";
+    }
+    addField.append(newRow);
+    let agreementObj = createAgreementObject(data);
+    agreementObj = checkInput(agreementObj);
+    return agreementObj;
 }
 
 function functionalityAgreementFilter() {
