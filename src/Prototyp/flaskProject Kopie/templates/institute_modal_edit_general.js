@@ -205,6 +205,13 @@ function checkIfUpdated() {
     }
 }
 
+function checkIfNew() {
+    if ('newAgreements' in sessionStorage) {
+        let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
+        newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
+    }
+}
+
 function createDifferenceArray(oldObj, newObj) {
     let keys = Object.keys(oldObj);
     let newestAttr = {};

@@ -131,7 +131,10 @@ def new_object(name):
         return Querries.new_Institute(col_list_institute, val_list_institute, name, val)
     elif name == 'Agreement':
         agreement_obj = request.form.to_dict()
-
+        agreement_obj.pop('ID')  # delete because it's not necessary for further workflow
+        print(agreement_obj)
+        helper.checkValidPartnership(agreement_obj['partnership_type_ID'], agreement_obj['institute_ID'])
+        return ""
     elif name == 'Restriction':
         change_restriction = request.form.to_dict()
     else:

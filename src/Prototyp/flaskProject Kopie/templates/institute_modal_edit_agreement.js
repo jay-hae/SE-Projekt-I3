@@ -104,7 +104,6 @@ function trackAgreementChange() {
 
 function updateChangedAgreement (agreementID, changedVal, value) {
     if (agreementID) {
-        alert(changedVal + value);
         let agreements = agreementID.includes('new') ? JSON.parse(sessionStorage.getItem('newAgreements')): JSON.parse(sessionStorage.getItem('updatedAgreements')); //get duplicated array of all agreements, no matter if updated or not
         for (let iterator = 0; iterator < agreements.length; iterator++) {
             let agreement = agreements[iterator];
@@ -130,12 +129,6 @@ function updateChangedAgreement (agreementID, changedVal, value) {
         }
         sessionStorage.setItem('createAg', JSON.stringify(agreement));
     }
-}
-
-function changeNewAgreement(ID, val, key) {
-    let split = ID.split('_');
-    alert('we did it ');
-
 }
 
 function checkProp() {
@@ -173,9 +166,4 @@ function agreementFilter(agreementType) {
             children[index].style.display = 'none';
         }
     }
-}
-
-function sendNewData() {
-    let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
-    newAgreements.forEach(ag => console.log(ag));
 }
