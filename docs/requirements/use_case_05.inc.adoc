@@ -13,34 +13,34 @@ Die Arbeitskraft hat sich erfolgreich eingeloggt (UC01) und hat uneingeschränkt
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-1. Der Use Case beginnt, wenn MSI die Funktion zum Bearbeiten eines Mentoren ausgewählt hat  
-2. System öffnet eine externe Eingabemaske in der alle Attribute der Mentoren angezeigt und geändert werden können
-3. MSI ändert Attribute eines Mentoren
-3.1 WHILE Eingabe nicht validiert
-3.1.1 Ausgeben einer Fehlermeldung
-3.1.2 Löschen der letzten Eingabe
-3.1.3 MSI wiederholt Eingabe
-4. MSI wählt Option zum Speichern der Änderungen aus
-5. System überschreibt Bestandsdaten des Mentoren
+. Der Use Case beginnt, wenn MSI die Funktion zum Bearbeiten eines Mentoren ausgewählt hat  
+. System öffnet eine externe Eingabemaske in der alle Attribute der Mentoren angezeigt und geändert werden können
+. MSI ändert Attribute eines Mentoren
+.. WHILE Eingabe nicht validiert
+... Ausgeben einer Fehlermeldung
+... Löschen der letzten Eingabe
+... MSI wiederholt Eingabe
+. MSI wählt Option zum Speichern der Änderungen aus
+. System überschreibt Bestandsdaten des Mentoren
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
 ==== Erfolreiche Änderung der Daten
-. <Szenario 1.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.>
-. <Szenario 1.2, Die Funktion zum Ändern eines bestehenden Mentoren wird gewählt.>
-. <Szenario 1.3, Das System öffnet eine externe Eingabemaske>
-. <Szenario 1.4, Die Arbeitskraft bekommt eine Übersicht der Bestandsdaten der Mentoren und kann diese verändern>
-. <Szenario 1.5, Das System hat die Änderungen validiert.>
-. <Szenario 1.6, Die Arbeitskraft wählt die Option zum speichern aus, die Bestandsdaten der Mentoren werden Datenbankseitig überschrieben.>
+* Szenario 1.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.
+* Szenario 1.2, Die Funktion zum Ändern eines bestehenden Mentoren wird gewählt.
+* Szenario 1.3, Das System öffnet eine externe Eingabemaske
+* Szenario 1.4, Die Arbeitskraft bekommt eine Übersicht der Bestandsdaten der Mentoren und kann diese verändern
+* Szenario 1.5, Das System hat die Änderungen validiert.
+* Szenario 1.6, Die Arbeitskraft wählt die Option zum speichern aus, die Bestandsdaten der Mentoren werden Datenbankseitig überschrieben.
 
 === Ändern der Daten ist gescheitert, Arbeitskraft bricht den Vorgang ab
-. <Szenario 1.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.>
-. <Szenario 1.2, Die Funktion zum Ändern eines bestehenden Mentoren wird gewählt.>
-. <Szenario 1.3, Das System öffnet eine externe Eingabemaske>
-. <Szenario 1.4, Die Arbeitskraft bekommt eine Übersicht der Bestandsdaten der Mentoren und kann diese verändern>
-. <Szenario 1.5, Die geplanten Änderungen konnten nicht validiert werden>
-. <Szenario 1.6, Das System gibt eine Fehlermeldung aus, daraufhin beendet die Arbeitskraft den Vorgang selbstständig.>
+* Szenario 1.1: Die Arbeitskraft ist erfolreich in die Anwendung eingeloggt.
+* Szenario 1.2, Die Funktion zum Ändern eines bestehenden Mentoren wird gewählt.
+* Szenario 1.3, Das System öffnet eine externe Eingabemaske
+* Szenario 1.4, Die Arbeitskraft bekommt eine Übersicht der Bestandsdaten der Mentoren und kann diese verändern
+* Szenario 1.5, Die geplanten Änderungen konnten nicht validiert werden
+* Szenario 1.6, Das System gibt eine Fehlermeldung aus, daraufhin beendet die Arbeitskraft den Vorgang selbstständig.
 
 === Nachbedingungen
 Nach erfolgreichem Abschluss des Use Cases lautet der Ist-Zustand wie folgt:
