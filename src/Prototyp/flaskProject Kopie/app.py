@@ -8,7 +8,7 @@ import json
 import os # OS module in Python: https://www.geeksforgeeks.org/os-module-python-examples/
 import Login, Querries, helper
 
-app = Flask(__name__) # Spezialvariable "__name__": https://www.pythontutorial.net/python-basics/python-__name__/#:~:text=The%20__name__%20is,file%20associated%20with%20the%20module.
+app = Flask(__name__) # Spezialvariable '__name__': https://www.pythontutorial.net/python-basics/python-__name__/#:~:text=The%20__name__%20is,file%20associated%20with%20the%20module.
 app.secret_key = os.urandom(24)
 
 #### app.route = We use the route() decorator to tell Flask what URL should trigger our function.
@@ -30,13 +30,13 @@ def login_required(f):
 @app.route('/', methods=['GET', 'POST'])
 def LoginPage():
     if request.method == 'GET':
-        if "usr" in session:
+        if 'usr' in session:
             return redirect('/homepage/institutes')
         else:
             return render_template('login.html')
     else:
         if Login.LoginDB(request.form['usr'], request.form['pwd']):
-            session['usr'] = "logged"
+            session['usr'] = 'logged'
             return redirect('/homepage/institutes')
         else:
             return redirect('/')
@@ -86,7 +86,8 @@ def load_institute_modal_data():
 def load_mentor_modal_data():
     return Querries.for_mentor_modal(request.form['id'])
 
-@app.route('/add/<name>', methods=['POST'])
+
+@app.route('/add/<name>', methods=['POST', 'GET'])
 @login_required
 def new_object(name):
     if name == 'Mentor':
@@ -103,14 +104,14 @@ def new_object(name):
             values.append(req[key])
         columns.append('active')
         values.append(active)
-        Querries.new_mentor(columns, values)
+        Querries.new_object('mentor', columns, values)
     elif name == 'Institute':
         my_var = request.form.to_dict()
         # for insert into tbl_institute
         col_list_institute = []
         val_list_institute = []
-        if "display" not in request.form:
-            col_list_institute.append("display")
+        if 'display' not in request.form:
+            col_list_institute.append('display')
             val_list_institute.append(0)
         for key in my_var:
             if key != 'partnership_type_ID':
@@ -128,15 +129,24 @@ def new_object(name):
                         col_list_institute.append(key)
             else:
                 val = my_var[key]
-        return Querries.new_Institute(col_list_institute, val_list_institute, name, val)
+        return Querries.new_object('institute', col_list_institute, val_list_institute, name, val)
     elif name == 'Agreement':
         agreement_obj = request.form.to_dict()
         agreement_obj.pop('ID')  # delete because it's not necessary for further workflow
-        print(agreement_obj)
-        helper.checkValidPartnership(agreement_obj['partnership_type_ID'], agreement_obj['institute_ID'])
-        return ""
+        ps_id = helper.checkValidPartnership(agreement_obj['partnership_type_ID'], agreement_obj['institute_ID'])
+        columns = []
+        values = []
+        columns.append('partnership_ID')
+        values.append(ps_id)
+        if 'inactive' not in agreement_obj:
+            columns.append('inactive')
+            values.append('1')
+        for key in agreement_obj:
+            columns.append(key)
+            values.append(agreement_obj[key])
+        print(columns, values)
     elif name == 'Restriction':
-        change_restriction = request.form.to_dict()
+        add_restriction = request.form.to_dict()
     else:
         return jsonify({'status': 'unexpected request'})
 
@@ -148,14 +158,14 @@ def handle_filter():
         my_list = request.form.to_dict()
         # Filter Anzeige auf HTW Seite
         if my_list['filter_shown'] == 'y':
-            my_list['filter_shown'] = "1"
+            my_list['filter_shown'] = '1'
         elif my_list['filter_shown'] == 'n':
-            my_list['filter_shown'] = "0"
+            my_list['filter_shown'] = '0'
         # Filter Verträge Aktiv
         if my_list['filter_activity'] == 'y':
-            my_list['filter_activity'] = "0" #in DB -> 0 = aktiv, 1 = inaktiv
+            my_list['filter_activity'] = '0' #in DB -> 0 = aktiv, 1 = inaktiv
         elif my_list['filter_activity'] == 'n':
-            my_list['filter_activity'] = "1"
+            my_list['filter_activity'] = '1'
         var = ['%' if i == 'none' else i for i in my_list.values()]
         return Querries.filter_institutes(var)
 
@@ -203,8 +213,8 @@ def ret_js(name):
 
 @app.route('/logout', methods=['GET'])
 def logout():
-    if "usr" in session:
-        session.pop(session["usr"], None)
+    if 'usr' in session:
+        session.pop(session['usr'], None)
     return redirect(url_for('LoginPage'))
 
 

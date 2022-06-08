@@ -8,7 +8,7 @@ function modal_events(){
             // Daten im Hintergrund an die aufgeführte URL schicken
             // app.route('/addInstitute) in der Datei app.py
             type: 'POST',
-            url: '/addInstitute', 
+            url: '/add/Institute',
             data: all
         })
             .done(() => {

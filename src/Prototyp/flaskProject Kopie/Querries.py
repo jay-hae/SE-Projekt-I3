@@ -209,33 +209,6 @@ def filter_institutes(parameters):
     return jsonify(payload, {'sorting': parameters[5]})
 
 
-# insert new institute into table
-def new_Institute(tuple_col_inst, tuple_val_inst, name, val):
-    all_parameters = (name, val)
-    cnxn = Login.newConnection()
-    cur = cnxn.cursor()
-    query_parameter = helper.dynamic_querries(tuple_col_inst)
-    query = "INSERT INTO tbl_institute (" + query_parameter[0] + ") VALUES (" + query_parameter[1] + ")"
-    try:
-        insert_parameter = tuple(tuple_val_inst)
-        # insert into tbl_institute
-        cur.execute(query, insert_parameter)
-        cnxn.commit()
-        # query for insert into tbl_partnership
-        cur.callproc('insert_partnership', all_parameters, )
-        cnxn.commit()
-        for result in cur.stored_results():
-            x = result.fetchall()
-            for i in x:
-                print(x)
-        cur.close()
-        cnxn.close()
-        return jsonify({'success': 'True'})
-    finally:
-        cur.close()
-        cnxn.close()
-
-
 def new_mentor(columns, values):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
@@ -250,6 +223,38 @@ def new_mentor(columns, values):
     finally:
         cur.close()
         cnxn.close()
+
+
+def new_object(object_type, tuple_columns, tuple_values, inst_name=None, inst_ps_type=None):
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    state = "failed" # set initial status that is returned when it failed to set changes in db
+    query_parameter = helper.dynamic_querries(tuple_columns)
+    type_dict = {
+        'mentor': 'tbl_mentor',
+        'institute': 'tbl_institute',
+        'agreement': 'tbl_mobility_agreement'
+    } # define all possible tables where a new object could be created
+    # create dynamic insert query
+    query = f"INSERT INTO {type_dict[object_type]} ({query_parameter[0]}) VALUES ({query_parameter[1]})"
+    # define tuple for parameters that need to be inserted
+    parameters = tuple(tuple_values)
+    try:
+        parameters = tuple(tuple_values)
+        print(query, parameters)
+        # insert into tbl_institute
+        cur.execute(query, parameters)
+        cnxn.commit()
+        # query for insert into tbl_partnership
+        if object_type == 'institute':
+            all_parameters = (inst_name, inst_ps_type)
+            cur.callproc('insert_partnership', all_parameters,)
+            cnxn.commit()
+        state = "successful"
+    finally:
+        cur.close()
+        cnxn.close()
+        return jsonify({'result': state})
 
 
 # Laden der Länder in die Tabelle auf der Seite Länderübersicht

@@ -23,15 +23,18 @@ def checkValidPartnership(partnership_id, institute_id):
     cur.execute(query)
     result_set = cur.fetchall()
     if len(result_set) > 0:
-        return (result_set[0])[1:-2]
+        result_set = str(result_set[0])
+        return result_set[1:-2]
     return createPartnership(partnership_id, institute_id)
 
 
 def createPartnership(partnership_id, institute_id):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    query = f"INSERT INTO tbl_partnership (institute_ID, partnership_type_ID) VALUES({institute_id}, {partnership_id}); SELECT LAST_INSERT_ID();"
-    cur.execute(query)
+    params = (institute_id, partnership_id,)
+    cur.callproc('create_partnership', params)
     cnxn.commit()
+    result_set = cur.fetchall()
+    print(result_set)
 
 
