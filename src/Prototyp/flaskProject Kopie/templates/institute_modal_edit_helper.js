@@ -45,19 +45,31 @@ function clearAgreementSpace() {
 
 function insertRestriction() {
     $('#tbl_restriction').innerHTML = "";
+    const dropdown = $('<select>');
+    dropdown.attr('id', 'exchange-type-dropdown');
+    //maybe flip values -> wait for raphaels answer
+    dropdown.append($('<option>', {
+        value: '0',
+        text: 'Incoming'
+    }));
+    dropdown.append($('<option>', {
+        value: '1',
+        text: 'Outgoing'
+    }));
     let restrictions = getRestrictions();
-    restrictions.forEach(restriction => {
+    restrictions.forEach((restriction, index) => {
         restriction = restriction[1];
-        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'> "+ restriction['course'] + "</textarea></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th id='incoming'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['incoming'] + "</textarea></th><th id='sub_num_mobility'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th></tr>";
+        dropdown[0].id = dropdown[0].id + "-" + index;
+        dropdown[0].value = String(restriction['incoming']);
+        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ restriction['course'] + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th></tr>";
         $('#tbl_restriction').append(row);
     })
 }
 
 function getRestrictions() {
     let matchingAgreement = sessionStorage.getItem('currentAgID');
-    console.log(matchingAgreement);
     let allRestrictions = JSON.parse(sessionStorage.getItem('currentRestrictions'));
-    return allRestrictions.filter(obj => obj[0] === matchingAgreement);
+    return allRestrictions.filter(obj => Number(obj[0]) === Number(matchingAgreement));
 }
 
 function createNewAgreementObj() {
