@@ -34,7 +34,9 @@ def createPartnership(partnership_id, institute_id):
     params = (institute_id, partnership_id,)
     cur.callproc('create_partnership', params)
     cnxn.commit()
-    result_set = cur.fetchall()
-    print(result_set)
+    for result in cur.stored_results():
+        id_created = str(result.fetchone())
+        id_created = id_created[1:-2]
+    return id_created
 
 

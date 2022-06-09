@@ -240,10 +240,9 @@ def new_object(object_type, tuple_columns, tuple_values, inst_name=None, inst_ps
     # define tuple for parameters that need to be inserted
     parameters = tuple(tuple_values)
     try:
-        parameters = tuple(tuple_values)
-        print(query, parameters)
         # insert into tbl_institute
-        cur.execute(query, parameters)
+        print(query, parameters)
+        cur.execute(query, parameters,)
         cnxn.commit()
         # query for insert into tbl_partnership
         if object_type == 'institute':
@@ -251,6 +250,8 @@ def new_object(object_type, tuple_columns, tuple_values, inst_name=None, inst_ps
             cur.callproc('insert_partnership', all_parameters,)
             cnxn.commit()
         state = "successful"
+    except Exception as e:
+        print(e)
     finally:
         cur.close()
         cnxn.close()

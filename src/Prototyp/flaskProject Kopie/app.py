@@ -134,17 +134,22 @@ def new_object(name):
         agreement_obj = request.form.to_dict()
         agreement_obj.pop('ID')  # delete because it's not necessary for further workflow
         ps_id = helper.checkValidPartnership(agreement_obj['partnership_type_ID'], agreement_obj['institute_ID'])
+        agreement_obj.pop('partnership_type_ID')
+        agreement_obj.pop('institute_ID')
         columns = []
         values = []
         columns.append('partnership_ID')
         values.append(ps_id)
+        for key in agreement_obj:
+            if key == 'inactive':
+                values.append(int(agreement_obj[key]))
+            else:
+                values.append(agreement_obj[key])
+            columns.append(key)
         if 'inactive' not in agreement_obj:
             columns.append('inactive')
-            values.append('1')
-        for key in agreement_obj:
-            columns.append(key)
-            values.append(agreement_obj[key])
-        print(columns, values)
+            values.append(0)
+        return Querries.new_object('agreement', columns, values)
     elif name == 'Restriction':
         add_restriction = request.form.to_dict()
     else:
