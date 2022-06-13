@@ -454,7 +454,7 @@
                     <div class="p-3">
                         <button class="btn btn-outline-secondary w-100" id="rtn-agreement">Partnerschaftsverträge</button>
                     </div>
-                    <div class="p-3 ">
+                    <div class="p-3">
                         <table class="table table-hover" id="table_restrictions">
                         <thead>
                             <tr>
@@ -465,10 +465,25 @@
                                 <th>Anteilig Monate</th>
                             </tr>
                         </thead>
+                        <button id="add-new-restriction">Neue Restriktion anlegen</button>
                         <tbody id="tbl_restriction">
 
                         </tbody>
                     </table>
+                    </div>
+                    <div class="p-3" style="display: none;" id="input-new-restriction">
+                        <label for="restriction-course">Studiengang auswählen</label>
+                        <select id="restriction-course" name="course_ID"></select>
+                        <label for="restriction-isced">ISCED Code</label>
+                        <input type="text" id="restriction-isced" name="subject_area_code">
+                        <label for="restriction-type">Incoming?</label>
+                        <input type="checkbox" id="restriction-type" name="incoming">
+                        <label for="restriction-mobility">Anzahl der Plätze</label>
+                        <input type="text" id="restriction-mobility" name="subnum_mobility">
+                        <label for="restriction-months">Anzahl der Monate</label>
+                        <input type="text" id="restriction-months" name="subnum_months">
+                        <br>
+                        <button id="save-new-restriction">Restriktion speichern</button>
                     </div>
                 </div>
             </div>

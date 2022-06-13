@@ -17,6 +17,7 @@ $(document).on('DOMContentLoaded', function () {
     setupFilter();
     clearSessionStorage();
     functionalityAgreementFilter();
+    loadCourse();
 }
 );
 
@@ -25,6 +26,18 @@ function loadAll() {
     $.get('/get/institutes', function (data) {
         // load institutes from database
         insertData(data);
+    });
+}
+
+function loadCourse() {
+    $.get('/loader/course', data => {
+        const courses = [];
+        const myTbl = $('#addCourses');
+        data.forEach(entity => {
+           myTbl.append("<tr><th>" + entity['de'] + "</th><th>" + entity['eng'] + "</th></tr>");
+           courses.push(data);
+        });
+        sessionStorage.setItem('courses', JSON.stringify(courses));
     });
 }
 

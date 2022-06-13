@@ -5,13 +5,55 @@ function trackRestrictionChange(parent, value) {
 }
 
 function setRestrictionChange(key, value, id) {
-    console.log(id);
-    let updatedRestrictions = JSON.parse(sessionStorage.getItem('updatedRestrictions'));
-    let filtered = [];
-    updatedRestrictions.forEach(obj => {
-        if (obj[1]['restriction_ID'] == id) {
-            obj[1][key] = value;
+    let updatedRestrictions;
+    let sessionKey;
+    if (id.includes('new') === true) {
+        updatedRestrictions = JSON.parse(sessionStorage.getItem('newRestrictions'));
+        sessionKey = 'newRestrictions';
+        updatedRestrictions.forEach(obj => {
+            console.log(obj['restriction_ID']);
+            if (obj['restriction_ID'] == id) {
+                obj[key] = value;
+            }
+        });
+    }
+    else {
+        updatedRestrictions = JSON.parse(sessionStorage.getItem('updatedRestrictions'));
+        sessionKey = 'updatedRestrictions';
+        updatedRestrictions.forEach(obj => {
+            if (obj[1]['restriction_ID'] == id) {
+                obj[1][key] = value;
+            }
+        });
+    }
+    console.log(updatedRestrictions);
+    sessionStorage.setItem(sessionKey, JSON.stringify(updatedRestrictions));
+}
+
+function newRestriction() {
+    let restCounter = 0;
+    if (!('newRestrictCounter' in sessionStorage)) {
+        sessionStorage.setItem('newRestrictCounter', JSON.stringify(restCounter));
+    }
+    else {
+        restCounter = JSON.parse(sessionStorage.getItem('newRestrictCounter'));
+    }
+    const new_rest = {};
+    new_rest['mobility_agreement_ID'] = JSON.parse(sessionStorage.getItem('currentAgID'));
+    const input = Array.from($('#input-new-restriction').children('input, select'));
+    input.forEach(child => {
+        if (child.name === 'incoming') {
+            alert();
+            new_rest[child.name] = $('#'+child.id).prop('checked') ? 1 : 0;
+        }
+        else {
+            new_rest[child.name] = child.value;
         }
     });
-    sessionStorage.setItem('updatedRestrictions', JSON.stringify(updatedRestrictions));
+    new_rest['restriction_ID'] = `new_${restCounter}`;
+    const restrictions = 'newRestrictions' in sessionStorage ? JSON.parse(sessionStorage.getItem('newRestrictions')) : [];
+    sessionStorage.setItem('newRestrictCounter', JSON.stringify(Number(restCounter)+1));
+    restrictions.push(new_rest);
+    insertRestriction([JSON.parse(sessionStorage.getItem('currentAgID')), new_rest]);
+    sessionStorage.setItem('newRestrictions', JSON.stringify(restrictions));
 }

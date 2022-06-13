@@ -49,6 +49,12 @@ function modal_events(){
 }
 
 function modal_button_events() {
+    $('#add-new-restriction').on('click', () =>{
+       $('#input-new-restriction').attr('style', 'display: block;');
+    });
+    $('#save-new-restriction').on('click', () => {
+        newRestriction();
+    });
     $('#add-new-agreement').on('click', () => {
         insertAgreementInTable(JSON.parse(sessionStorage.getItem('createAg')), $('#addAgreements'), "newAgreement");
         addNewAgreement();

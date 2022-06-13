@@ -210,6 +210,10 @@ function checkIfNew() {
         let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
         newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
     }
+    if ('newRestrictions' in sessionStorage) {
+        let newRest = JSON.parse(sessionStorage.getItem('newRestrictions'));
+
+    }
 }
 
 function createDifferenceArray(oldObj, newObj) {

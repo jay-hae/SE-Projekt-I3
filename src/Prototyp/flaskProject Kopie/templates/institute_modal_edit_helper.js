@@ -43,26 +43,32 @@ function clearAgreementSpace() {
     });
 }
 
-function insertRestriction() {
-    $('#tbl_restriction').innerHTML = "";
-    const dropdown = $('<select>');
+function insertRestriction(object=false) {
+    let restrictions = [];
+    if (!object) {
+        $('#tbl_restriction').innerHTML = "";
+        restrictions = getRestrictions();
+    }
+    else
+        restrictions.push(object);
+    const dropdown = $('<select onchange="trackRestrictionChange(this.parentElement, this.value)">');
     dropdown.attr('id', 'exchange-type-dropdown');
     //maybe flip values -> wait for raphaels answer
     dropdown.append($('<option>', {
         value: '0',
-        text: 'Incoming'
+        text: 'Outgoing'
     }));
     dropdown.append($('<option>', {
         value: '1',
-        text: 'Outgoing'
+        text: 'Incoming'
     }));
-    let restrictions = getRestrictions();
+    console.log(restrictions);
     restrictions.forEach((restriction, index) => {
         restriction = restriction[1];
-        dropdown[0].id = dropdown[0].id + "-" + index;
-        dropdown[0].value = String(restriction['incoming']);
-        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ restriction['course'] + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th></tr>";
+        dropdown[0].id = `exchange-type-dropdown-${index}`;
+        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ restriction['course'] + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th id='incoming'>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th></tr>";
         $('#tbl_restriction').append(row);
+        document.getElementById(`exchange-type-dropdown-${index}`).value = restriction['incoming'];
     })
 }
 
