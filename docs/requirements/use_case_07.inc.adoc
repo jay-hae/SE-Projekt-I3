@@ -31,7 +31,7 @@ anzeigen lassen.
 * Szenario 1.4: Es handelt sich um valide Daten, somit wird der Bericht exportiert. 
 * Szenario 1.5: System kehrt zum Use Case 06 zurück.
 
-=== Daten konnten nicht validiert werden, MSI beendet den Vorgang
+==== Daten konnten nicht validiert werden, MSI beendet den Vorgang
 * Szenario 2.1: Der Mitarbeiter hat erfolgreich einen Bericht erstellt und diesen über Microsoft Access 
 anzeigen lassen.
 * Szenario 2.2: Die Funktion zum Exportieren eines neuen Berichtes wird gewählt.

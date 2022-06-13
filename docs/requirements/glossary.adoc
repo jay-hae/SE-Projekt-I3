@@ -34,7 +34,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Wörter in Bezug auf Persone
 
 //|Essence Navigator | Onlineanwendung zur Überprüfung der Projektfortschritte | --
 
-| Externe | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interessierte Personen
+| Externe (Nutzer) | Besucher des Informationsfrontends | Studierende, Mitarbeiter, Interessierte Personen
 
 | Department | Auslandsbüro an einer Hochschule | Abteilung
 

@@ -1,2 +1,27 @@
-== Use-Case: Berichte für Externe Anzeigen (UC08)
+== Use-Case: bereitstellen von Informationen für Externe (UC08) 
+
+=== Kurzbeschreibung
+Externe sollen die Möglichkeithaben bestehende Hochschulpartnerschaften auf der HTW-Webseite einzusehen und nach verschiedenen Kriterien zu filtern
+
+=== Kurzbeschreibung der Akteure
+==== Externe (Nutzer)
+siehe Glossar
+
+=== Vorbedingungen
+Die gesuchte Hochschulpartnerschaft muss mit sämtlichen Informationen zuvor angelegt worden sein. (UC02)
+
+=== Standardablauf (Basic Flow)
+. Externe besuchen die Webseite der HTW unter der Hubrik: International/Internationales Profil/Partnerschaften.
+. Externe haben die Möglichkeit die Ergebnisse nach Land, Vertragstyp, Fakultäten und Studiengängen zu filtern.
+. Externe bekommen Informationen zu Partnerschaft, Fakultäten, Ansprechpartnern, verfügbaren Plätzen pro Fakultät und die mögliche Aufenthaltsdauer angezeigt.
+. Externe haben die Möglichkeit über einen Weltkugel-Button die Webseite der jeweiligen Partnerhochschule aufzurufen.
+. Externe hat die Möglichkeit ausgewählten Filter zurückzusetzen.
+ 
+=== Nachbedingungen
+==== Erfolgreiche Filterung
+Der gewählte Vertrag wurde wie gewünscht durch Filtereingabe gefunden und die Informationen der externen Person zugänglich gemacht.
+
+=== Besondere Anforderungen
+* Die Einträge der Webseite müssen aktuell sein.
+* Die Buttons müssen Verknüpfungen zu Links beinhalten.
 
