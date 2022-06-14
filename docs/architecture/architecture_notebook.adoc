@@ -1,4 +1,4 @@
-= Architecture Notebook: {project-name}
+= Architecture Notebook
 // Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 // {localdatetime}
 // include::../_includes/default-attributes.inc.adoc[]
@@ -18,23 +18,20 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 
 //Hinweise: Beschreiben Sie die Philosophie der Architektur, d.h. den zentralen Ansatz für ihre Architektur. 
 
-Der Zweck des Systems ist das Bereitstellen einer Webanwendung zum Verwalten von Hochschulpartnerschaften und dem Austausch von Studierenden. 
-Benutzer sollten die Anwendung auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rechner), außer mobile Endgeräte (Smartphones), im Browser benutzen können.
-
-Die unabdingbare Erreichbarkeit des Systems ist an die Arbeitszeiten der Stabsstelle Internationales gebunden, welche sich auf 8 Stunden, 7-15 Uhr, werktags beschränkt. Außerhalb dieser Zeit besteht keine Verpflichtung für die Erreichbarkeit.
-
-// Identifizieren Sie alle Aspekte, die die Philosophie beeinflussen, z.B. komplexe Auslieferung Aspekte, Anpassung von Altsystemen oder besondere Geschwindigkeitsanforderungen. Muss es besonders robust sein, um eine langfristige Wartung und Pflege zu ermöglichen?
-Als Datenbank wird eine bereits bestehende MariaDB genutzt, die vom Rechnerzentrum bereit gestellt wird.
-
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. 
 
 // Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung). Daraus resultierenen Vorschriften bezüglich der Performance. 
 
-Da der Datenbestand mit der Zeit kontinuierlich wächst und die Daten in der Regel nicht gelöscht werden sollen, liegt der Schwerpunkt auf langer Wartbarkeit und Verwendung. Diese Aspekte werden unter anderem mit der Datenbank realisiert.
+Der Zweck des Systems ist das Bereitstellen einer Webanwendung zum Verwalten von Hochschulpartnerschaften und dem Austausch von Studierenden. Benutzer sollten die Anwendung auf Rechnern jeglicher Art (Laptop, Notebook, Desktop-Rechner), außer mobile Endgeräte (Smartphones), im Browser benutzen können.
+
+Die Erreichbarkeit des Systems ist an die Arbeitszeiten der Stabsstelle Internationales gebunden, welche sich auf 8 Stunden, 7-15 Uhr, werktags beschränkt. Außerhalb dieser Zeit besteht keine Verpflichtung für die Erreichbarkeit.
+
+Als Datenbank wird eine bereits bestehende MariaDB genutzt, die vom Rechnerzentrum bereitgestellt wird. Die Software muss also auf der Datenbank aufsetzen und ihre Inhalte an das Frontend kommunizieren.
 
 Das Backend stellt Abfragen an die Datenbank, um Statistiken über die Auslandsaktivitäten zu erstellen, die dann vom Verwaltungsfrontend angezeigt werden.
 
-Zur Unterstützung einer effizienten Bedienbarkeit wurde sich beim Design des Interfaces stark an einem bereits vorhandendem Prototyp und dem Arbeitsablauf der SI orientiert. Intuitives Arbeiten wird so ermöglicht. 
+
+Das Ziel beim Entwickeln der Architektur war es, eine Brücke zwischen der Webandwendung und der schon bestehenden Datenbank zu schaffen, die sich möglichst gut warten und erweitern lässt. Voraussetzung für die Wartbarkeit und Erweiterbarkeit ist es die Architektur so zu gestalten, dass sie für Menschen möglichst einfach zu verstehen ist und sich gleichzeitig harmonisch in die technischen Bedingungen einfügt. 
 
 == Annahmen und Abhängigkeiten
 
@@ -43,8 +40,10 @@ Zur Unterstützung einer effizienten Bedienbarkeit wurde sich beim Design des In
 === Annahmen
 
 . Nutzer sind Mitarbeiter der Stabsstelle Internationales
-. Nutzer befinden sich, mit einer stabilen Internetverbindung und einem modernen Browser, im Netz der HTW
-. Jeder Nutzer erlaubt das Ausführen von Javascript-Skripten innerhalb seines Browsers
+. Nutzer befinden sich, mit einer stabilen Internetverbindung mit genügend Bandbreite und einem modernen Browser, im Netz der HTW Dresden
+. Jeder Nutzer benutzt einen HTML5-fähigen Browser und erlaubt JavaScript.
+. Unsere eingesetzten Frameworks werden auch in Zukunft unterstützt.
+. Wir gehen davon aus, dass die Server der Informatik Fakultät stabil laufen, um sicherzustellen, dass unser Online-Tool stets erreichbar ist.
 
 === Abhängigkeiten 
 
@@ -52,7 +51,7 @@ Zur Unterstützung einer effizienten Bedienbarkeit wurde sich beim Design des In
 .. Unser Server läuft über eine, vom Rechenzentrum bereitgestellte, virtuelle Maschine und muss wochentags von 7-15 Uhr erreichbar sein
 .. Die Administration unserer Datenbank erfolgt über das Rechenzentrum, somit muss ein verantwortlicher Mitarbeiter die Verwaltung der Logins übernehmen
 . Abhängigkeit von Vorkenntnissen der Teammitglieder
-.. Ein Teammitglied hat Vorkenntnisse in der Webentwicklung mittles Python und JavaScript (jQuery)
+.. Ein Teammitglied hat Vorkenntnisse in der Webentwicklung mittels Python und JavaScript (jQuery)
 .. Ein Teammitglied hat Vorkenntnisse in der Webentwicklung mittles HTML, CSS (Bootstrap)
 . Abhängigkeit von Funktionsfähigkeit und Pflege der eingesetzten Frameworks und externen Komponenten
 .. Die genutzten Frameworks (Flask, jQuery) müssen von Hersteller regelmäßig gepflegt werden.
@@ -63,7 +62,7 @@ Zur Unterstützung einer effizienten Bedienbarkeit wurde sich beim Design des In
 
 *Funktional*
 
-* SWFA-1: Das System muss alle Hochschulpartnerschaften und Statistiken persistent speichern.
+* SWFA-1: Das System muss alle Informationen zu den Hochschulpartnerschaften speichern.
 * SWFA-2: Nur autorisierte Mitarbeiter des Akademischen Auslandsamtes dürfen Zugriff auf das Verwaltungsfrontend haben.
 
 *Zuverlässigkeit*
@@ -78,13 +77,25 @@ Zur Unterstützung einer effizienten Bedienbarkeit wurde sich beim Design des In
 * NFAP-2: In 90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein.
 * Erweiterbarkeit der Systemfunktionalität
 
+*Benutzbarkeit*
+
+* NFAU-1: Das System sollte sowohl auf großen PC-Monitoren sowie auf kleinen Laptop Bildschirmen bedienbar sein.
+* NFAU-2: Das Verwaltungsfrontend sollte auf verschiedenen Betriebssystemen mit unterschiedlichen Browsern laufen.
+
 == Entscheidungen, Nebenbedingungen und Begründungen
 
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
-* Nutzung einer Schichtenarchitektur um eine einfache Trennung zwischen Datenverarbeitung, -darstellung und -speicherung zu erhalten
+* Nutzung einer Schichtenarchitektur 
+** um eine einfache Trennung zwischen Datenverarbeitung, -darstellung und -speicherung zu erhalten
+* Verwendung von kostenlosen Bibliotheken (Open Source) und Lizenzen 
+=> Grund: dringende Vermeidung von Kosten
 
-=== Webtechnologien
+//=== Webtechnologien
+
+* Verwendung einer REST-API
+** Server und Client Separation => große Flexibilität und individuellen Skalierbarket
+** Einfache Implementation, da es sich um ein vereinfachtes standardisiertes Format handelt kann die Implementierungen stark vereinfacht und beschleunigt werden
 
 Durch das Verwenden der aufgeführten Webtechnologien, möchten wir eine Nutzung ohne Installation bestimmter Tools auf etablierten Browsern ermöglichen. Des Weiteren soll es späteren Arbeitsgruppen möglich sein, das bestehende System problemlos weiterzuentwickeln.
 
@@ -95,35 +106,41 @@ Durch das Verwenden der aufgeführten Webtechnologien, möchten wir eine Nutzung
 ** Leichte Erlernbarkeit und Modularität
 ** Kein Technologierisiko → wird voraussichtlich lange ein Standard bleiben
 
-=== Serverseitige Programmierung mit Python
+//=== Serverseitige Programmierung mit Python
 
-Es wurde sich in diesem Fall für Python entschieden, da durch das Framework 'Flask' die Serverseitige Programmierung sehr übersichtlich gehalten wird. Es ist sehr einfach möglich, die aufrufbaren Seiten innerhalb des Systems zu erweitern. Des Weiteren bestand in Bezug auf Flask innerhalb des Teams vereinzelt Vorerfahrung.
+Das Team hat sich für die Programmiersprache Python entschieden, da durch das Framework 'Flask' die serverseitige Programmierung sehr übersichtlich gehalten werden kann. Es ist sehr einfach möglich, die aufrufbaren Seiten innerhalb des Systems zu erweitern. Des weiteren bestand in Bezug auf Flask innerhalb des Teams vereinzelt Vorerfahrung.
 
-* Erstellung des Backends mit serverseitiger Skriptsprache Python
+* Verwendung von Python 
+** Weniger komplex; für alle Entwickler in gegebener Zeit erlernbar sofern Kompetenz noch
+nicht ausreichend
 ** Python-Skripte laufen auf dem bereitgestellten Webspace
+** einfache Kommunikation mit MariaDB
 ** Einbindung der Datenbank einfach möglich durch mysql.connector
-** Vorkenntnisse in der Gruppe vorhanden
 
-=== Datenbank MariaDB 
-** Einfache Bereitstellung durch das Rechenzentrum der HTW Dresden
-** Guter Zugriffsschutz und Backups auf deren Servern
+
+// === Datenbank MariaDB 
+
+Die Datenbank musste nicht durch das Team bereitgestellt werden. Das Rechenzentrum der HTW Dresden hat diese bereits für die Vorgruppe innerhalb einer MariaDB bereitgestellt. 
+
+* Verwendung von MariaDB
+** Diese bietet einen guten Zugriffsschutz und Backups auf den Servern des Rechenzentrums
 ** MySQL ähnlich zu MS SQL, mit dem einige Gruppenmitglieder schon Erfahrung haben
 ** Administration mithilfe von phpMyAdmin
-*** Erstellung von Datenbankobjekten
-*** Ändern von Datensätzen außerhalb des Verwaltungsfrontends
+** Erstellung von Datenbankobjekten
+** Ändern von Datensätzen außerhalb des Verwaltungsfrontends
 // ** Das bestehende Informationsfrontend für die Studierenden läuft ebenfalls auf einer MariaDB Datenbank → einfache Migration
 
-=== Frameworks
+//=== Frameworks
 
 Das Verwenden von Frameworks ist gerade in Gruppen mit wenig Vorerfahrung sehr von Vorteil. Der Code bleibt übersichtlich und die Webentwicklung wird erheblich vereinfacht.
 
-. jQuery (Javascript)
-. Flask (Python)
+* jQuery (Javascript)
+* Flask (Python)
 
 
 == Architekturmechanismen
 
-https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/concepts/arch_mechanism_2932DFB6.html[Doku "Concept: Architectural Mechanism"]
+// https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/concepts/arch_mechanism_2932DFB6.html[Doku "Concept: Architectural Mechanism"]
 //[List the architectural mechanisms and describe the current state of each one. Initially, each mechanism may be only name and a brief description. They will evolve until the mechanism is a collaboration or pattern that can be directly applied to some aspect of the design.]
 
 //Beispiele: relationales DBMS, Messaging-Dienste, Transaktionsserver, Webserver, Publish-Subscribe Mechanismus
@@ -132,53 +149,55 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 === Sicherheit
 
-Durch den Bereich der Analyse und die Betrachtung des bereits vorhandenen Prototyps haben wir die Entscheidung getroffen die komplette Anwendung, durch die einzige Möglichkeit der Erreichbarkeit innerhalb des HTW Netzes, zu schützen.
+Basierend auf dem Prototyp und den Erkenntnissen der Vorgruppe und in Absprache mit dem Rechenzentrum sowie der Stabstelle Internationales, hat das Team die Etnscheidung getroffen den Zugriff auf die Webanwenung dadurch zu schützen, dass sie ausschließlich innerhalb des HTW-Netzwerks zu erreichen ist. 
+
 Des Weiteren darf es nur Mitarbeitern der Stabsstelle Internationales möglich sein, sich im Verwaltungsfrontend anzumelden (SWFA-2).
-Derzeit wird noch die Logik der Vorgruppe verfolgt den Zugriffschutz über einen Datenbankaccount zu ermöglichen.
-Durch die Anforderung SWFA-3 reicht es jedoch nicht, jedem Mitarbeiter mit demselben Account Zugriff zu gewähren.
-Es wird eine Serverseitige Unterscheidung zwischen den Mitarbeitern benötigt.
+
+Der Zugriffschutz auf die Daten der Datenbank wird duch zwei Datenbankaccounts mit jeweils unterschiedlichen Zugriffsrechten gewährleistet. So kann nur einer der beiden Accounts Daten löschen und bearbeiten. Die Unterscheidung der Accounts findet beim Login statt. 
 
 === Persistente Daten
 
-Die Anforderung (SWFA-1) machte uns darauf aufmerksam, dass unsere Daten persistent zu speichern sind. 
-Uns blieb, aufgrund einiger Vorgaben, nichts anderes übrig als das bestehende Datenbankmodell zu übernehmen. 
-Die Entscheidung wurde von Vorgängern getroffen, somit verwenden wir eine MariaDB welche vom Rechenzentrum gehostet wird.
+Die Anforderung SWFA-1 fordert, dass unsere Daten persistent zu speichern sind. Da das Datenbankmodell unverändert bleiben soll, hat das Team dieses übernommen.
+Die Entscheidung eine MariaDB zu verwenden wurde ebenfalls von einer der Vorgängergruppen getroffen.
+Die Daten werden bei einer validen Anmeldung persistent in der MariaDB gespeichert.
+
 
 === Interface
 
 Während der Analyse wurde mit NFAU-1, NFAU-2 festgehalten, dass die unterschiedliche Darstellung der Webseite je nach Nutzer, ein wesentlicher Bestandteil des Projektes ist.
 Durch diesen Punkt sind wir auch zu dem Entschluss gekommen, unser Frontend nach dem Schema des responsive Webdesign zu entwerfen.
-Der Fakt, dass es unterschiedliche Nutzer gibt, brachte die Analyse zu der Erkenntnis, dass die Endgeräte der jeweiligen Nutzer nicht den gleichen Voraussetzungen besitzen.
-Unsere Webanwendung soll später in der Lage sein, sich den jeweiligen Endgeräten der Nutzer anzupassen.
+Die jeweiligen Nutzer verwenden im Laufe der Zeit voraussichtlich unterschiedliche Endgeräte und Bildschirme.
+Unsere Webanwendung ist in der Lage, sich den jeweiligen Endgeräten der Nutzer anzupassen.
 
 == Wesentliche Abstraktionen
 
 //[List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.]
 
-* Fakultät: enthält Fakultätsinformationen
+Objekte sind die bereitgestellten Daten. Für eine ausführlichere Auflistung, siehe das Glossar.
 
-* Studiengang: enthält Studiengang und 1:n Beziehungen zu einer Fakultät
-
-* Hochschule: enthält Kontaktinformationen der Hochschule und ggf einen Erasmuscode
-
-* Ausländische Hochschule: enthält Kontaktinformationen der Hochschule 
-
-* Mentor: enthält Kontaktinformationen der betreuenden Person des Austauschprogramms
-
-* Hochschulvereinbarung: enthält die Art der Vereinbarung, Länge, Anzahl der Incomings/Outgoings pro Studienfach und deren maximale Aufenthaltszeit
+• Land: enthält Länderinformationen und die Erasmusverfügbarkeit
+• Fakultät: enthält Informationen zu den Fakultäten der Universitäten, die an den Austauschprogrammen teilnehmen, bzw, zu denen eine Partnerschaft mit der HTW Dresden besteht.
+• Studienfach: enthält Informationen zu den Studienfächern für die ein Austausch angeboten wird und 1:n Beziehungen zu einer Fakultät
+• Hochschule: enthält Kontaktinformationen der Hochschule und ggf einen Erasmuscode
+• Mentor: enthält Kontaktinformationen der betreuenden Person des Austauschprogramms
+• Hochschulvereinbarung: enthält die Art der Vereinbarung, Länge, Anzahl der
+Incomings/Outgoings pro Studienfach und deren maximale Aufenthaltszeit
+Dienste verarbeiten die bereitgestellten Daten: Anzeige und Änderung.
+Workflows geben die Reihenfolge der Abarbeitung der Dienste an.
+Für die Beziehungen zwischen den einzelnen Objekten siehe das Domänenmodel.
 
 == Schichten oder Architektur-Framework
 
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
 === Schichtenarchitektur
 
-Dadurch ist es möglich dem Softwaresystem und den dazugehörigen Bestandteilen feste Aufgabenbereiche zuzuordnen.
+Durch die Schichtenarchitektur ist es möglich dem Softwaresystem und den dazugehörigen Bestandteilen feste Aufgabenbereiche zuzuordnen.
 Das System wird in logische Schichten aufgeteilt.
 Diese sind die Datenbank, das Backend und das Frontend.
 Die Datenbank wird den Aspekt des speicherns, bereitstellen und ändern der Daten übernehmen.
 Das Frontend wird die Schnittstelle zwischen User und Systemlogik sein, welche sich im Backend befindet.
 Dort werden Nutzeranfragen verarbeitet, also die Kommunikation mit der Datenbank vorgenommen.
-Dem Frontend werden aber auch, abhängig der Anfrage, die richtigen Dateien zum Abbilden der HTML-Seiten bereitgestellt.
+Dem Frontend werden aber auch, abhängig von der Anfrage, die richtigen Dateien zum Abbilden der HTML-Seiten bereitgestellt.
 
 
 == Architektursichten (Views)
@@ -193,18 +212,51 @@ Folgende Sichten auf die Architektur werden empfohlen:
 Das nachfolgende C4 Modell (siehe untere Abbildungen) beschreibt die logische Verknüpfung von
 Komponenten in unserem System.
 
-.C4 Modell Legende
-image::images/C4_model_legende.png[]
-.C4 Modell Level 1: System Context Diagramm
-image::images/C4_model_level_1_v1.png[]
-.C4 Modell Level 2: Container Diagramm
-image::images/C4_model_level_2.png[]
-.C4 Modell Level 3: Components Diagramm
-image::images/C4_model_level_3_neu.png[]
-.C4 Modell Level 4: Code
-image::images/C4_model_level_4_facultaet.jpg[]
-image::images/C4_model_level_4_hochschule.png[]
+==== C4 Modell Legende
 
+.C4 Modell Legende
+image::../../docs/architecture/images/C4_model_legende.png[]
+
+{nbsp} +
+
+'''
+
+==== C4 Modell Level 1: Kontext
+
+.C4 Modell Level 1: System Context Diagramm
+image::../../docs/architecture/images/C4_model_level_1_v1.png[]
+
+{nbsp} +
+
+'''
+==== C4 Modell Level 2: Container Diagramm
+
+.C4 Modell Level 2: Container Diagramm
+image::../../docs/architecture/images/C4_model_level_2.png[]
+
+{nbsp} +
+
+'''
+==== C4 Modell Level 3: Components Diagramm
+
+.C4 Modell Level 3: Components Diagramm
+image::../../docs/architecture/images/C4_model_level_3_neu.png[]
+
+{nbsp} +
+
+'''
+==== C4 Modell Level 4: Code (Fakultät)
+
+.C4 Modell Level 4: Code
+image::../../docs/architecture/images/C4_model_level_4_facultaet.jpg[]
+
+{nbsp} +
+
+==== C4 Modell Level 4: Code (Hochschule)
+
+image::../../docs/architecture/images/C4_model_level_4_hochschule.png[]
+
+{nbsp} +
 
 === Physische Sicht (Betriebssicht)
 

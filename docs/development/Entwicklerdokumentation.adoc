@@ -1,39 +1,59 @@
 = Entwicklerdokumentation zu: {project-name}
-include::../_includes/default-attributes.inc.adoc[]
+:project-name: Webanwendung zur Verwaltung von Hochschulpartnerschaften
 :doctype: book
 :toc:
-:toclevels: 4
+:toclevels: 3
 :toc-title: Inhaltsverzeichnis
 :sectnums:
 :icons: font
-:imagesdir: images
+
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:experimental:
+:chapter-label:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:listing-caption: Listing
+:!example-caption:
+:experimental:
+
+
+<<<
+
+
+//:docs-architecture: ../docs/architecture
 
 //TODO maybe change back tocleve to 3?
 
-== Einführung
+=== Einführung
 
 Dieses Dokument beinhaltet alle wichtigen Informationen über den Aufbau, die Wirkungsweise und den Inhalt des Quellcodes für das Projekt Webanwendung zur Verwaltung von Hochschulpartnerschaften. Diese Informationen dienen dazu, die Software zu warten, zu modifizieren oder gegebenenfalls weiterzuentwickeln.
 
-== Architektur
+//== Architektur
 
 :leveloffset: +1
-:imagesdir: ../architecture/images
-include::../architecture/architecture_notebook.adoc[tags=include_development]
+
+//:imagesdir:../../docs/architecture/images
+
+include::../../docs/architecture/architecture_notebook.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 :leveloffset: -1
 
-== Design
+
+//== Design
 
 :leveloffset: +1
-:imagesdir: ../development/images
-include::./design.adoc[tags=include_development]
+:imagesdir: ../../docs/development/images
+include::../../docs/development/design.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 :leveloffset: -1
 
-== Software Dokumentation
+//== Software Dokumentation
 
 :leveloffset: +1
-include::./Softwaredokumentation.adoc[tags=include_development]
+:imagesdir: ../../docs/development/images
+include::../../docs/development/Softwaredokumentation.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 :leveloffset: -1
 
