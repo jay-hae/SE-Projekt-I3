@@ -76,35 +76,3 @@
 | Vorbedingungen und benötigte Daten | 
 | Nachbedingung | 
 |===
-
-=== Test Case 08: Erstellen von Berichten über Hochschulvereinbarungen
-
-|===
-| Beschreibung | 
-| Vorbedingungen und benötigte Daten | 
-| Nachbedingung | 
-|===
-
-=== Test Case 09: Erstellen von Berichten über Abkommen nach Länder sortiert
-
-|===
-| Beschreibung | 
-| Vorbedingungen und benötigte Daten | 
-| Nachbedingung | 
-|===
-
-=== Test Case 10: Berichte exportieren
-
-|===
-| Beschreibung | 
-| Vorbedingungen und benötigte Daten | 
-| Nachbedingung | 
-|===
-
-=== Test Case 11: Externe abfragen
-
-|===
-| Beschreibung | 
-| Vorbedingungen und benötigte Daten | 
-| Nachbedingung | 
-|===
