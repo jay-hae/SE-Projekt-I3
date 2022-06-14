@@ -67,7 +67,6 @@ function functionalityAgreementFilter() {
 function makeRowClickable(rowID, type) {    //for every single row, easier to create eventListener for new added agreement
     if (type === 'agreement') {
         $(' #'+rowID).on('click', (e) => {
-            alert();
             let row = e.target.parentElement;
             let rowID = row['id']; //get ID of mob_agreement that was clicked
             insertAgreementInformation(rowID);
