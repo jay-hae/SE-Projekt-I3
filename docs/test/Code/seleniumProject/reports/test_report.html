@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) { // eslint-disable-line no-redeclare
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function findAll(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sortColumn(elem) {
+    toggleSortStates(elem);
+    const colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    let key;
+    if (elem.classList.contains('result')) {
+        key = keyResult;
+    } else if (elem.classList.contains('links')) {
+        key = keyLink;
+    } else {
+        key = keyAlpha;
+    }
+    sortTable(elem, key(colIndex));
+}
+
+function showAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(showExtras);
+}
+
+function hideAllExtras() { // eslint-disable-line no-unused-vars
+    findAll('.col-result').forEach(hideExtras);
+}
+
+function showExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.remove('collapsed');
+    expandcollapse.classList.remove('expander');
+    expandcollapse.classList.add('collapser');
+}
+
+function hideExtras(colresultElem) {
+    const extras = colresultElem.parentNode.nextElementSibling;
+    const expandcollapse = colresultElem.firstElementChild;
+    extras.classList.add('collapsed');
+    expandcollapse.classList.remove('collapser');
+    expandcollapse.classList.add('expander');
+}
+
+function showFilters() {
+    const filterItems = document.getElementsByClassName('filter');
+    for (let i = 0; i < filterItems.length; i++)
+        filterItems[i].hidden = false;
+}
+
+function addCollapse() {
+    // Add links for show/hide all
+    const resulttable = find('table#results-table');
+    const showhideall = document.createElement('p');
+    showhideall.innerHTML = '<a href="javascript:showAllExtras()">Show all details</a> / ' +
+                            '<a href="javascript:hideAllExtras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    findAll('.col-result').forEach(function(elem) {
+        const collapsed = getQueryParameter('collapsed') || 'Passed';
+        const extras = elem.parentNode.nextElementSibling;
+        const expandcollapse = document.createElement('span');
+        if (extras.classList.contains('collapsed')) {
+            expandcollapse.classList.add('expander');
+        } else if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add('collapsed');
+            expandcollapse.classList.add('expander');
+        } else {
+            expandcollapse.classList.add('collapser');
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener('click', function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains('collapsed')) {
+                showExtras(event.currentTarget);
+            } else {
+                hideExtras(event.currentTarget);
+            }
+        });
+    });
+}
+
+function getQueryParameter(name) {
+    const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () { // eslint-disable-line no-unused-vars
+    resetSortHeaders();
+
+    addCollapse();
+
+    showFilters();
+
+    sortColumn(find('.initial-sort'));
+
+    findAll('.sortable').forEach(function(elem) {
+        elem.addEventListener('click',
+            function() {
+                sortColumn(elem);
+            }, false);
+    });
+}
+
+function sortTable(clicked, keyFunc) {
+    const rows = findAll('.results-table-row');
+    const reversed = !clicked.classList.contains('asc');
+    const sortedRows = sort(rows, keyFunc, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    const thead = document.getElementById('results-table-head');
+    document.getElementById('results-table').remove();
+    const parent = document.createElement('table');
+    parent.id = 'results-table';
+    parent.appendChild(thead);
+    sortedRows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName('BODY')[0].appendChild(parent);
+}
+
+function sort(items, keyFunc, reversed) {
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
+    });
+
+    sortArray.sort(function(a, b) {
+        const keyA = a[0];
+        const keyB = b[0];
+
+        if (keyA == keyB) return 0;
+
+        if (reversed) {
+            return keyA < keyB ? 1 : -1;
+        } else {
+            return keyA > keyB ? 1 : -1;
+        }
+    });
+
+    return sortArray.map(function(item) {
+        const index = item[1];
+        return items[index];
+    });
+}
+
+function keyAlpha(colIndex) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[colIndex].firstChild.data.toLowerCase();
+    };
+}
+
+function keyLink(colIndex) {
+    return function(elem) {
+        const dataCell = elem.childNodes[1].childNodes[colIndex].firstChild;
+        return dataCell == null ? '' : dataCell.innerText.toLowerCase();
+    };
+}
+
+function keyResult(colIndex) {
+    return function(elem) {
+        const strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+            'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[colIndex].firstChild.data);
+    };
+}
+
+function resetSortHeaders() {
+    findAll('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    findAll('.sortable').forEach(function(elem) {
+        const icon = document.createElement('div');
+        icon.className = 'sort-icon';
+        icon.textContent = 'vvv';
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove('desc', 'active');
+        elem.classList.add('asc', 'inactive');
+    });
+}
+
+function toggleSortStates(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        resetSortHeaders();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function isAllRowsHidden(value) {
+    return value.hidden == false;
+}
+
+function filterTable(elem) { // eslint-disable-line no-unused-vars
+    const outcomeAtt = 'data-test-result';
+    const outcome = elem.getAttribute(outcomeAtt);
+    const classOutcome = outcome + ' results-table-row';
+    const outcomeRows = document.getElementsByClassName(classOutcome);
+
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
+    }
+
+    const rows = findAll('.results-table-row').filter(isAllRowsHidden);
+    const allRowsHidden = rows.length == 0 ? true : false;
+    const notFoundMessage = document.getElementById('not-found-message');
+    notFoundMessage.hidden = !allRowsHidden;
+}
+</script>
+    <h1>test_report.html</h1>
+    <p>Report generated on 16-May-2022 at 11:40:50 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>Base URL</td>
+        <td></td></tr>
+      <tr>
+        <td>Capabilities</td>
+        <td>{}</td></tr>
+      <tr>
+        <td>Driver</td>
+        <td>None</td></tr>
+      <tr>
+        <td>Packages</td>
+        <td>{"pluggy": "1.0.0", "py": "1.11.0", "pytest": "6.2.5"}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>macOS-12.3.1-arm64-arm-64bit</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{"base-url": "1.4.2", "html": "3.1.1", "metadata": "2.0.1", "selenium": "3.0.0", "variables": "1.9.0"}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>3.8.9</td></tr></table>
+    <h2>Summary</h2>
+    <p>1 tests ran in 0.06 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable" col="duration">Duration</th>
+          <th class="sortable links" col="links">Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test.py::MyTest::test_login</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;selenium.webdriver.chrome.service.Service object at 0x1048b1be0&gt;<br/><br/>    def start(self):<br/>        &quot;&quot;&quot;<br/>        Starts the Service.<br/>    <br/>        :Exceptions:<br/>         - WebDriverException : Raised either when it can&#x27;t start the service<br/>           or when it can&#x27;t connect to the service<br/>        &quot;&quot;&quot;<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>&gt;           self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != &#x27;Windows&#x27;,<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/><br/>venv/lib/python3.8/site-packages/selenium/webdriver/common/service.py:72: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;subprocess.Popen object at 0x1048b1640&gt;<br/>args = [&#x27;chromedriver&#x27;, &#x27;--port=62546&#x27;], bufsize = -1, executable = None<br/>stdin = -1, stdout = -3, stderr = -3, preexec_fn = None, close_fds = True<br/>shell = False, cwd = None<br/>env = environ({&#x27;PATH&#x27;: &#x27;/Users/roman/PycharmProjects/seleniumProject/venv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/loca...oman&#x27;, &#x27;TEAMCITY_VERSION&#x27;: &#x27;LOCAL&#x27;, &#x27;_JB_REPR_DIFF&#x27;: &#x27;1&#x27;, &#x27;PYTEST_CURRENT_TEST&#x27;: &#x27;test.py::MyTest::test_login (call)&#x27;})<br/>universal_newlines = None, startupinfo = None, creationflags = 0<br/>restore_signals = True, start_new_session = False, pass_fds = ()<br/><br/>    def __init__(self, args, bufsize=-1, executable=None,<br/>                 stdin=None, stdout=None, stderr=None,<br/>                 preexec_fn=None, close_fds=True,<br/>                 shell=False, cwd=None, env=None, universal_newlines=None,<br/>                 startupinfo=None, creationflags=0,<br/>                 restore_signals=True, start_new_session=False,<br/>                 pass_fds=(), *, encoding=None, errors=None, text=None):<br/>        &quot;&quot;&quot;Create new Popen instance.&quot;&quot;&quot;<br/>        _cleanup()<br/>        # Held while anything is calling waitpid before returncode has been<br/>        # updated to prevent clobbering returncode if wait() or poll() are<br/>        # called from multiple threads at once.  After acquiring the lock,<br/>        # code must re-check self.returncode to see if another thread just<br/>        # finished a waitpid() call.<br/>        self._waitpid_lock = threading.Lock()<br/>    <br/>        self._input = None<br/>        self._communication_started = False<br/>        if bufsize is None:<br/>            bufsize = -1  # Restore default<br/>        if not isinstance(bufsize, int):<br/>            raise TypeError(&quot;bufsize must be an integer&quot;)<br/>    <br/>        if _mswindows:<br/>            if preexec_fn is not None:<br/>                raise ValueError(&quot;preexec_fn is not supported on Windows &quot;<br/>                                 &quot;platforms&quot;)<br/>        else:<br/>            # POSIX<br/>            if pass_fds and not close_fds:<br/>                warnings.warn(&quot;pass_fds overriding close_fds.&quot;, RuntimeWarning)<br/>                close_fds = True<br/>            if startupinfo is not None:<br/>                raise ValueError(&quot;startupinfo is only supported on Windows &quot;<br/>                                 &quot;platforms&quot;)<br/>            if creationflags != 0:<br/>                raise ValueError(&quot;creationflags is only supported on Windows &quot;<br/>                                 &quot;platforms&quot;)<br/>    <br/>        self.args = args<br/>        self.stdin = None<br/>        self.stdout = None<br/>        self.stderr = None<br/>        self.pid = None<br/>        self.returncode = None<br/>        self.encoding = encoding<br/>        self.errors = errors<br/>    <br/>        # Validate the combinations of text and universal_newlines<br/>        if (text is not None and universal_newlines is not None<br/>            and bool(universal_newlines) != bool(text)):<br/>            raise SubprocessError(&#x27;Cannot disambiguate when both text &#x27;<br/>                                  &#x27;and universal_newlines are supplied but &#x27;<br/>                                  &#x27;different. Pass one or the other.&#x27;)<br/>    <br/>        # Input and output objects. The general principle is like<br/>        # this:<br/>        #<br/>        # Parent                   Child<br/>        # ------                   -----<br/>        # p2cwrite   ---stdin---&gt;  p2cread<br/>        # c2pread    &lt;--stdout---  c2pwrite<br/>        # errread    &lt;--stderr---  errwrite<br/>        #<br/>        # On POSIX, the child objects are file descriptors.  On<br/>        # Windows, these are Windows file handles.  The parent objects<br/>        # are file descriptors on both platforms.  The parent objects<br/>        # are -1 when not using PIPEs. The child objects are -1<br/>        # when not redirecting.<br/>    <br/>        (p2cread, p2cwrite,<br/>         c2pread, c2pwrite,<br/>         errread, errwrite) = self._get_handles(stdin, stdout, stderr)<br/>    <br/>        # We wrap OS handles *before* launching the child, otherwise a<br/>        # quickly terminating child could make our fds unwrappable<br/>        # (see #8458).<br/>    <br/>        if _mswindows:<br/>            if p2cwrite != -1:<br/>                p2cwrite = msvcrt.open_osfhandle(p2cwrite.Detach(), 0)<br/>            if c2pread != -1:<br/>                c2pread = msvcrt.open_osfhandle(c2pread.Detach(), 0)<br/>            if errread != -1:<br/>                errread = msvcrt.open_osfhandle(errread.Detach(), 0)<br/>    <br/>        self.text_mode = encoding or errors or text or universal_newlines<br/>    <br/>        # How long to resume waiting on a child after the first ^C.<br/>        # There is no right value for this.  The purpose is to be polite<br/>        # yet remain good for interactive users trying to exit a tool.<br/>        self._sigint_wait_secs = 0.25  # 1/xkcd221.getRandomNumber()<br/>    <br/>        self._closed_child_pipe_fds = False<br/>    <br/>        if self.text_mode:<br/>            if bufsize == 1:<br/>                line_buffering = True<br/>                # Use the default buffer size for the underlying binary streams<br/>                # since they don&#x27;t support line buffering.<br/>                bufsize = -1<br/>            else:<br/>                line_buffering = False<br/>    <br/>        try:<br/>            if p2cwrite != -1:<br/>                self.stdin = io.open(p2cwrite, &#x27;wb&#x27;, bufsize)<br/>                if self.text_mode:<br/>                    self.stdin = io.TextIOWrapper(self.stdin, write_through=True,<br/>                            line_buffering=line_buffering,<br/>                            encoding=encoding, errors=errors)<br/>            if c2pread != -1:<br/>                self.stdout = io.open(c2pread, &#x27;rb&#x27;, bufsize)<br/>                if self.text_mode:<br/>                    self.stdout = io.TextIOWrapper(self.stdout,<br/>                            encoding=encoding, errors=errors)<br/>            if errread != -1:<br/>                self.stderr = io.open(errread, &#x27;rb&#x27;, bufsize)<br/>                if self.text_mode:<br/>                    self.stderr = io.TextIOWrapper(self.stderr,<br/>                            encoding=encoding, errors=errors)<br/>    <br/>&gt;           self._execute_child(args, executable, preexec_fn, close_fds,<br/>                                pass_fds, cwd, env,<br/>                                startupinfo, creationflags, shell,<br/>                                p2cread, p2cwrite,<br/>                                c2pread, c2pwrite,<br/>                                errread, errwrite,<br/>                                restore_signals, start_new_session)<br/><br/>/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/subprocess.py:858: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;subprocess.Popen object at 0x1048b1640&gt;<br/>args = [&#x27;chromedriver&#x27;, &#x27;--port=62546&#x27;], executable = b&#x27;chromedriver&#x27;<br/>preexec_fn = None, close_fds = True, pass_fds = (), cwd = None<br/>env = environ({&#x27;PATH&#x27;: &#x27;/Users/roman/PycharmProjects/seleniumProject/venv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/loca...oman&#x27;, &#x27;TEAMCITY_VERSION&#x27;: &#x27;LOCAL&#x27;, &#x27;_JB_REPR_DIFF&#x27;: &#x27;1&#x27;, &#x27;PYTEST_CURRENT_TEST&#x27;: &#x27;test.py::MyTest::test_login (call)&#x27;})<br/>startupinfo = None, creationflags = 0, shell = False, p2cread = 12<br/>p2cwrite = 13, c2pread = -1, c2pwrite = 14, errread = -1, errwrite = 14<br/>restore_signals = True, start_new_session = False<br/><br/>    def _execute_child(self, args, executable, preexec_fn, close_fds,<br/>                       pass_fds, cwd, env,<br/>                       startupinfo, creationflags, shell,<br/>                       p2cread, p2cwrite,<br/>                       c2pread, c2pwrite,<br/>                       errread, errwrite,<br/>                       restore_signals, start_new_session):<br/>        &quot;&quot;&quot;Execute program (POSIX version)&quot;&quot;&quot;<br/>    <br/>        if isinstance(args, (str, bytes)):<br/>            args = [args]<br/>        elif isinstance(args, os.PathLike):<br/>            if shell:<br/>                raise TypeError(&#x27;path-like args is not allowed when &#x27;<br/>                                &#x27;shell is true&#x27;)<br/>            args = [args]<br/>        else:<br/>            args = list(args)<br/>    <br/>        if shell:<br/>            # On Android the default shell is at &#x27;/system/bin/sh&#x27;.<br/>            unix_shell = (&#x27;/system/bin/sh&#x27; if<br/>                      hasattr(sys, &#x27;getandroidapilevel&#x27;) else &#x27;/bin/sh&#x27;)<br/>            args = [unix_shell, &quot;-c&quot;] + args<br/>            if executable:<br/>                args[0] = executable<br/>    <br/>        if executable is None:<br/>            executable = args[0]<br/>    <br/>        sys.audit(&quot;subprocess.Popen&quot;, executable, args, cwd, env)<br/>    <br/>        if (_USE_POSIX_SPAWN<br/>                and os.path.dirname(executable)<br/>                and preexec_fn is None<br/>                and not close_fds<br/>                and not pass_fds<br/>                and cwd is None<br/>                and (p2cread == -1 or p2cread &gt; 2)<br/>                and (c2pwrite == -1 or c2pwrite &gt; 2)<br/>                and (errwrite == -1 or errwrite &gt; 2)<br/>                and not start_new_session):<br/>            self._posix_spawn(args, executable, env, restore_signals,<br/>                              p2cread, p2cwrite,<br/>                              c2pread, c2pwrite,<br/>                              errread, errwrite)<br/>            return<br/>    <br/>        orig_executable = executable<br/>    <br/>        # For transferring possible exec failure from child to parent.<br/>        # Data format: &quot;exception name:hex errno:description&quot;<br/>        # Pickle is not used; it is complex and involves memory allocation.<br/>        errpipe_read, errpipe_write = os.pipe()<br/>        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.<br/>        low_fds_to_close = []<br/>        while errpipe_write &lt; 3:<br/>            low_fds_to_close.append(errpipe_write)<br/>            errpipe_write = os.dup(errpipe_write)<br/>        for low_fd in low_fds_to_close:<br/>            os.close(low_fd)<br/>        try:<br/>            try:<br/>                # We must avoid complex work that could involve<br/>                # malloc or free in the child process to avoid<br/>                # potential deadlocks, thus we do all this here.<br/>                # and pass it to fork_exec()<br/>    <br/>                if env is not None:<br/>                    env_list = []<br/>                    for k, v in env.items():<br/>                        k = os.fsencode(k)<br/>                        if b&#x27;=&#x27; in k:<br/>                            raise ValueError(&quot;illegal environment variable name&quot;)<br/>                        env_list.append(k + b&#x27;=&#x27; + os.fsencode(v))<br/>                else:<br/>                    env_list = None  # Use execv instead of execve.<br/>                executable = os.fsencode(executable)<br/>                if os.path.dirname(executable):<br/>                    executable_list = (executable,)<br/>                else:<br/>                    # This matches the behavior of os._execvpe().<br/>                    executable_list = tuple(<br/>                        os.path.join(os.fsencode(dir), executable)<br/>                        for dir in os.get_exec_path(env))<br/>                fds_to_keep = set(pass_fds)<br/>                fds_to_keep.add(errpipe_write)<br/>                self.pid = _posixsubprocess.fork_exec(<br/>                        args, executable_list,<br/>                        close_fds, tuple(sorted(map(int, fds_to_keep))),<br/>                        cwd, env_list,<br/>                        p2cread, p2cwrite, c2pread, c2pwrite,<br/>                        errread, errwrite,<br/>                        errpipe_read, errpipe_write,<br/>                        restore_signals, start_new_session, preexec_fn)<br/>                self._child_created = True<br/>            finally:<br/>                # be sure the FD is closed no matter what<br/>                os.close(errpipe_write)<br/>    <br/>            self._close_pipe_fds(p2cread, p2cwrite,<br/>                                 c2pread, c2pwrite,<br/>                                 errread, errwrite)<br/>    <br/>            # Wait for exec to fail or succeed; possibly raising an<br/>            # exception (limited in size)<br/>            errpipe_data = bytearray()<br/>            while True:<br/>                part = os.read(errpipe_read, 50000)<br/>                errpipe_data += part<br/>                if not part or len(errpipe_data) &gt; 50000:<br/>                    break<br/>        finally:<br/>            # be sure the FD is closed no matter what<br/>            os.close(errpipe_read)<br/>    <br/>        if errpipe_data:<br/>            try:<br/>                pid, sts = os.waitpid(self.pid, 0)<br/>                if pid == self.pid:<br/>                    self._handle_exitstatus(sts)<br/>                else:<br/>                    self.returncode = sys.maxsize<br/>            except ChildProcessError:<br/>                pass<br/>    <br/>            try:<br/>                exception_name, hex_errno, err_msg = (<br/>                        errpipe_data.split(b&#x27;:&#x27;, 2))<br/>                # The encoding here should match the encoding<br/>                # written in by the subprocess implementations<br/>                # like _posixsubprocess<br/>                err_msg = err_msg.decode()<br/>            except ValueError:<br/>                exception_name = b&#x27;SubprocessError&#x27;<br/>                hex_errno = b&#x27;0&#x27;<br/>                err_msg = &#x27;Bad exception data from child: {!r}&#x27;.format(<br/>                              bytes(errpipe_data))<br/>            child_exception_type = getattr(<br/>                    builtins, exception_name.decode(&#x27;ascii&#x27;),<br/>                    SubprocessError)<br/>            if issubclass(child_exception_type, OSError) and hex_errno:<br/>                errno_num = int(hex_errno, 16)<br/>                child_exec_never_called = (err_msg == &quot;noexec&quot;)<br/>                if child_exec_never_called:<br/>                    err_msg = &quot;&quot;<br/>                    # The error must be from chdir(cwd).<br/>                    err_filename = cwd<br/>                else:<br/>                    err_filename = orig_executable<br/>                if errno_num != 0:<br/>                    err_msg = os.strerror(errno_num)<br/>&gt;               raise child_exception_type(errno_num, err_msg, err_filename)<br/><span class="error">E               FileNotFoundError: [Errno 2] No such file or directory: &#x27;chromedriver&#x27;</span><br/><br/>/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/subprocess.py:1704: FileNotFoundError<br/><br/>During handling of the above exception, another exception occurred:<br/><br/>self = &lt;test.MyTest testMethod=test_login&gt;<br/><br/>    def setUp(self):<br/>&gt;       self.driver = webdriver.Chrome()<br/><br/>test.py:11: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>venv/lib/python3.8/site-packages/selenium/webdriver/chrome/webdriver.py:73: in __init__<br/>    self.service.start()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.chrome.service.Service object at 0x1048b1be0&gt;<br/><br/>    def start(self):<br/>        &quot;&quot;&quot;<br/>        Starts the Service.<br/>    <br/>        :Exceptions:<br/>         - WebDriverException : Raised either when it can&#x27;t start the service<br/>           or when it can&#x27;t connect to the service<br/>        &quot;&quot;&quot;<br/>        try:<br/>            cmd = [self.path]<br/>            cmd.extend(self.command_line_args())<br/>            self.process = subprocess.Popen(cmd, env=self.env,<br/>                                            close_fds=platform.system() != &#x27;Windows&#x27;,<br/>                                            stdout=self.log_file,<br/>                                            stderr=self.log_file,<br/>                                            stdin=PIPE)<br/>        except TypeError:<br/>            raise<br/>        except OSError as err:<br/>            if err.errno == errno.ENOENT:<br/>&gt;               raise WebDriverException(<br/>                    &quot;&#x27;%s&#x27; executable needs to be in PATH. %s&quot; % (<br/>                        os.path.basename(self.path), self.start_error_message)<br/><span class="error">E                       selenium.common.exceptions.WebDriverException: Message: &#x27;chromedriver&#x27; executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br/><br/>venv/lib/python3.8/site-packages/selenium/webdriver/common/service.py:81: WebDriverException<br/></div></td></tr></tbody></table></body></html>
