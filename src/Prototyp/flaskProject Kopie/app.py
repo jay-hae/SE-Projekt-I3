@@ -133,6 +133,9 @@ def new_object(name):
     elif name == 'Agreement':
         agreement_obj = request.form.to_dict()
         agreement_obj.pop('ID')  # delete because it's not necessary for further workflow
+        if agreement_obj['restrictions']:
+            new_restrictions = agreement_obj['restrictions']
+            agreement_obj.pop('restrictions')
         ps_id = helper.checkValidPartnership(agreement_obj['partnership_type_ID'], agreement_obj['institute_ID'])
         agreement_obj.pop('partnership_type_ID')
         agreement_obj.pop('institute_ID')
@@ -149,9 +152,30 @@ def new_object(name):
         if 'inactive' not in agreement_obj:
             columns.append('inactive')
             values.append(0)
-        return Querries.new_object('agreement', columns, values)
+        print('agreement: ', columns, values)
+        #return_val = Querries.new_object('agreement', columns, values)
+        if 'new_restrictions' in locals():
+            for new_restriction in new_restrictions:
+                restriction_columns = []
+                restriction_values = []
+                for key in new_restriction:
+                    restriction_columns.append(key)
+                    restriction_values.append(new_restriction[key])
+                    print('new restriction in new Ag: ', restriction_values, restriction_columns)
+                #Querries.new_object('restriction', restriction_columns, restriction_values)
+            return jsonify({'state': 'successful'})
+        else:
+            #return return_val
+            return ""
     elif name == 'Restriction':
         add_restriction = request.form.to_dict()
+        restriction_columns = []
+        restriction_values = []
+        for key in add_restriction:
+            restriction_columns.append(key)
+            restriction_values.append(add_restriction[key])
+        print('new restriction: ', restriction_values, restriction_columns)
+        #return Querries.new_object('restriction', restriction_columns, restriction_values)
     else:
         return jsonify({'status': 'unexpected request'})
 

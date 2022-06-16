@@ -45,8 +45,10 @@ function clearAgreementSpace() {
 
 function insertRestriction(object=false) {
     let restrictions = [];
-    if (!object) {
-        $('#tbl_restriction').innerHTML = "";
+    if (object === false) {
+        let tbl_rest = document.getElementById('tbl_restriction');
+        tbl_rest.innerHTML = "";
+        console.log('hey');
         restrictions = getRestrictions();
     }
     else
@@ -114,6 +116,7 @@ function getStorageData(storage_key, object_id) {
 
 function loadCourseDropdown() {
     const element = $('#restriction-course');
+    console.log(element);
     const dropdownElements = JSON.parse(sessionStorage.getItem('courses'));
     for (let index = 0; index < dropdownElements.length; index++) {
         let cur = dropdownElements[index];

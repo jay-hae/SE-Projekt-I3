@@ -233,7 +233,8 @@ def new_object(object_type, tuple_columns, tuple_values, inst_name=None, inst_ps
     type_dict = {
         'mentor': 'tbl_mentor',
         'institute': 'tbl_institute',
-        'agreement': 'tbl_mobility_agreement'
+        'agreement': 'tbl_mobility_agreement',
+        'restriction': 'tbl_mobility_agreement_x_course'
     } # define all possible tables where a new object could be created
     # create dynamic insert query
     query = f"INSERT INTO {type_dict[object_type]} ({query_parameter[0]}) VALUES ({query_parameter[1]})"

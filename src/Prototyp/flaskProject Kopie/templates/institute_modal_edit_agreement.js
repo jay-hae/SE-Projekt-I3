@@ -34,7 +34,7 @@ function insertAgreementInTable(data, addField, addType) {
     else {
         let index = 0;
         if ('agreement_Index' in sessionStorage) {
-            let index = JSON.parse(sessionStorage.getItem('agreement_Index')) + 1;
+            index = JSON.parse(sessionStorage.getItem('agreement_Index')) + 1;
             sessionStorage.setItem('agreement_Index', JSON.stringify(index));
         }
         else {

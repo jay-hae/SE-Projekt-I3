@@ -99,6 +99,8 @@ function clearSessionStorage() {
         sessionStorage.removeItem('createAg');
         sessionStorage.removeItem('newAgreements');
         sessionStorage.removeItem('agreement_Index');
+        sessionStorage.removeItem('newRestrictCounter');
+        sessionStorage.removeItem('newRestrictions');
         //remove mob agreements (information und neu angelegte ag's)
     }
 
@@ -182,7 +184,6 @@ function checkIfUpdated() {
                 }
                 else {
                     for (let j = 0; j < old.length; j++) {
-                        console.log(old[j]);
                         updatedRestrictions.push(createDifferenceArray(old[j][1], newest[j][1]));
                 }
                     restrictionCheck = true;
@@ -194,12 +195,10 @@ function checkIfUpdated() {
         }
         if (agreeCheck) {
             let sendData = Array.from(updatedAgs.filter(obj => obj !== undefined));
-            console.log(sendData);
             sendData.forEach(obj => postData(obj, '/changeData/updateAgreement'));
         }
         if (restrictionCheck) {
             let sendData = Array.from(updatedRestrictions.filter(obj => obj !== undefined));
-            console.log(sendData);
             sendData.forEach(obj => postData(obj, '/changeData/updateRestriction'));
         }
     }
@@ -207,13 +206,62 @@ function checkIfUpdated() {
 
 function checkIfNew() {
     if ('newAgreements' in sessionStorage) {
-        let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
-        newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
+        if ('newRestrictions' in sessionStorage) {
+            alert('new ag & r');
+            checkNewRestForNewAgreement();
+            console.log('123');
+            let newRestrictions = JSON.parse(sessionStorage.getItem('newRestrictions'));
+            let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
+            //newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
+            //newRestrictions.forEach(obj => postData(obj, '/add/Restriction'));
+            console.log("R's mit bestehendem Vertrag: ", newRestrictions);
+            console.log("Neue Ags + ihre Restriktionen: ", newAgreements);
+        }
+        else {
+            alert('new ag')
+            let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
+            //newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
+            console.log('neues Agreement', newAgreements);
+        }
     }
-    if ('newRestrictions' in sessionStorage) {
-        let newRest = JSON.parse(sessionStorage.getItem('newRestrictions'));
+    else if ('newRestrictions' in sessionStorage) {
+        alert('new r');
+        let rest = JSON.parse(sessionStorage.getItem('newRestrictions'));
+        console.log("Neue R's bestehender Vertrag: ", rest);
+    }
+}
 
-    }
+function checkNewRestForNewAgreement() {
+    let newRest = JSON.parse(sessionStorage.getItem('newRestrictions'));
+    console.log('checkNewRestForAg:' ,newRest);
+    let filteredRest = [];
+    newRest.forEach(restriction => {
+        if  ((restriction['mobility_agreement_ID']).includes('new')) {
+            alert();
+            addRestrictionKey(restriction);
+        }
+        else {
+            filteredRest.push(restriction);
+        }
+    });
+    console.log('filtered rest:', filteredRest);
+    sessionStorage.setItem('newRestrictions', JSON.stringify(filteredRest));
+}
+
+function addRestrictionKey(restrictionObj) {
+    let agreements = JSON.parse(sessionStorage.getItem('newAgreements'));
+    agreements.forEach(ag => {
+        if (ag.ID === restrictionObj.mobility_agreement_ID) {
+            alert();
+            if (ag['restrictions']) {
+                ag['restrictions'].push(restrictionObj);
+            }
+            else {
+                ag['restrictions'] = [restrictionObj];
+            }
+        }
+    });
+    sessionStorage.setItem('newAgreements', JSON.stringify(agreements));
 }
 
 function createDifferenceArray(oldObj, newObj) {

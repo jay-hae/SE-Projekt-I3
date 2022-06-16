@@ -18,7 +18,6 @@ $(document).on('DOMContentLoaded', function () {
     clearSessionStorage();
     functionalityAgreementFilter();
     loadCourse();
-    loadCourseDropdown();
 });
 
 // ######### INSTITUTES LOADER #######
@@ -39,7 +38,10 @@ function loadCourse() {
            courses.push(entity);
         });
         sessionStorage.setItem('courses', JSON.stringify(courses));
-    });
+    })
+        .then(() => {
+            loadCourseDropdown();
+        });
 }
 
 function insertData(data) {

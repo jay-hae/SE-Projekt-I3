@@ -39,11 +39,10 @@ function newRestriction() {
         restCounter = JSON.parse(sessionStorage.getItem('newRestrictCounter'));
     }
     const new_rest = {};
-    new_rest['mobility_agreement_ID'] = JSON.parse(sessionStorage.getItem('currentAgID'));
+    new_rest['mobility_agreement_ID'] = sessionStorage.getItem('currentAgID');
     const input = Array.from($('#input-new-restriction').children('input, select'));
     input.forEach(child => {
         if (child.name === 'incoming') {
-            alert();
             new_rest[child.name] = $('#'+child.id).prop('checked') ? 1 : 0;
         }
         else {
@@ -54,6 +53,6 @@ function newRestriction() {
     const restrictions = 'newRestrictions' in sessionStorage ? JSON.parse(sessionStorage.getItem('newRestrictions')) : [];
     sessionStorage.setItem('newRestrictCounter', JSON.stringify(Number(restCounter)+1));
     restrictions.push(new_rest);
-    insertRestriction([JSON.parse(sessionStorage.getItem('currentAgID')), new_rest]);
+    insertRestriction([sessionStorage.getItem('currentAgID'), new_rest]);
     sessionStorage.setItem('newRestrictions', JSON.stringify(restrictions));
 }
