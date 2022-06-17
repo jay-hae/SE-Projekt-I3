@@ -1,3 +1,13 @@
+
+/** Wird im Modal 'Partnerhochschule hinzufügen' der Button 'Speichern' gedrückt, werden die Eingaben der Nutzer zusammengefasst 
+ * und an den Server gesendet (per POST Request an '/addInstitute')
+ * Wird im Modal 'Hochschule Bearbeiten' der Button 'Speichern' gedrückt, werden die Eingaben der Nutzer zusammengefasst 
+ * und an den Server gesendet
+ * Wird im Modal 'Hochschule Bearbeiten' der Button 'zu Partnerschaftsverträgeansicht wechseln' gedürckt, wird die Ansicht 
+ * mit den Daten zur Hochschule versteckt und dei Seite mit den Daten zu den Partnerschaftsvertägen angezeigt.
+ * Wird im Modal 'Partnerhochschule hinzufügen' oder im Modal 'Hochschule Bearbeiten' der 'X' bzw. 'Abbrechen' Button gedrückt
+ * werden die getätigten aber nicht gespeicherten eingaben des Nutzers aus dem Formular gelöscht.
+ */
 function modal_events(){
     // MODAL: HOCHSCHULE ANLEGEN -> SPEICHERN BUTTON
     $('#mod_add_inst_save_btn').on('click', function (event) {
@@ -48,6 +58,13 @@ function modal_events(){
     });
 }
 
+/**add-new-restriction = Wird im Modal 'Hochschule Bearbeiten' in der Ansicht zu Partnerschaftsverträgeansicht wechseln' der Button 'Restriktionen' gedrückt, 
+ * öffnet sich ein Formular zur Eingabe der Daten für die neue Restriktion.
+ * save-new-restriction = 'Speichern' Button ruft newRestricion() Funktion zum Anlegen und Speichern einer neuen Restriktion auf.
+ * add-new-agreement = 
+ * add_mob_agreement = 'Neuen Vertrag anlegen'-Button im Modal 'Hochschule Bearbeiten' und 'zu Partnerschaftsverträgeansicht wechseln'
+ * 
+ * */
 function modal_button_events() {
     $('#add-new-restriction').on('click', () =>{
        $('#input-new-restriction').attr('style', 'display: block;');

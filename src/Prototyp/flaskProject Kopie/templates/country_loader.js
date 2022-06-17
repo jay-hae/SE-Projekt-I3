@@ -1,5 +1,10 @@
 //dient
 
+
+/** Wenn die Seite Country.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um
+ * Länderdaten aus der Datenbank abzufragen. Wenn die Daten geladen wurde, werden diese an die Funktion
+ * insertCountries übergeben.
+*/
 $(document).on('DOMContentLoaded', function() {
    $.ajax({
        method: "GET",
@@ -8,6 +13,9 @@ $(document).on('DOMContentLoaded', function() {
        .done((data) => insertCountries(data));
 });
 
+/** Wenn der GET-Request die Länder-Informationen aus der Datenbank geladen hat, wird per HTML eine Tabelle mit den Inhalten erzeugt.
+ *  
+ * */
 function insertCountries(allCountries) {
     const countryTbl = $('#addCountries');
     allCountries.forEach(country => {

@@ -1,3 +1,9 @@
+
+/** Auswahlmöglichkeiten für die Dropdowns der Filter 'Land', 'Fakultät' und 'Vertragstyp' in der Hauptansicht
+ * institutes.html aus Datenbank laden.
+ * Ebenso in den Dropdowns der Filter in den Modalen 'Bearbeiten' und 'Anlegen'. Im Modal 'Bearbeiten' in der Ansicht
+ * 'Partnerschaftsverträgeansicht' findet sich zusätzlich das Dropdown 'Mentor', welches ebenfalls beladen wird.
+ */
 function setupFilter() {
     $.get('/get/countries', function (data2) {
         $.each(data2, function (index2) {
@@ -40,6 +46,7 @@ function setupFilter() {
     loadMentorDropdown();
 }
 
+/** Belädt das Dropdown 'Mentor' mit den Inhalten aus der Datenbank*/
 function loadMentorDropdown() {
     $.get('/loader/mentor', (data) => {
         let mentors = {};
