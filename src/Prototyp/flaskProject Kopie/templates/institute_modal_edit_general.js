@@ -1,4 +1,7 @@
-/* load data of the chosen institute from the database into the modal */
+/** Button Event für den Button 'Bearbeiten' für die Hochschulen.
+ *  Wird der Button gedrückt merkt sich die Funktion die ID der Zeile in der sich die Hochschule in der Tabelle befindet
+ *  und ruft die Funktionenn loadAgreements() und loadModal() mit dieser ID auf.
+ */
 function addButtonEvent() {
     $(".edit_inst_btn").on('click', function () {
         let institute_row = $(this).parent().parent(); // speichere die Zeile in der sich der gedrückte Button befindet
@@ -9,6 +12,9 @@ function addButtonEvent() {
     });
 }
 
+/** Wird der Bearbeiten Button in der Zeile einer Hochschule gedrückt, werden die Daten des ausgewählten Instituts 
+ * aus der Datenbank in das Modal 'Hochschule bearbeiten' geladen und angezeigt
+ */ 
 function loadModal(inst_id) {
     sessionStorage.setItem('currentInstitute', JSON.stringify(inst_id));
     // $('#edit_modal_anz').prop('checked', true); set checkbox true manually
@@ -53,6 +59,9 @@ function loadModal(inst_id) {
         });
 }
 
+/** Funktion erzeugt ein JSON-Object einer Hochschule mit den übergebenen Daten
+ * 
+*/
 // HOCHSCHULINFO ANSICHT
 function createObjectInstitute(institute) {
     return {
@@ -79,12 +88,7 @@ function createObjectInstitute(institute) {
     }
 }
 
-function createRestriction(ag_ID, restrictions) {
-    if (restrictions.length > 0) {
-        restrictions.forEach(obj => restrict.push([ag_ID, obj]));
-    }
-}
-
+/** Funktion löscht alle Einträge aus der aktuellen sessionStorage */
 function clearSessionStorage() {
     try {
         sessionStorage.removeItem('currentInstitute');
@@ -109,6 +113,9 @@ function clearSessionStorage() {
     }
 }
 
+/** Funktion aktualisiert die Hochschul-Daten entsprechend der Einträge in der sessionStorage wenn die Daten 
+ * im Modal 'Hochschule bearbeiten' verändert wurden.
+*/
 function instituteObjectUpdated() {
     const update = {
         id: (JSON.parse(sessionStorage.getItem('currentInstitute'))).ID,
@@ -137,6 +144,10 @@ function instituteObjectUpdated() {
     sessionStorage.setItem('updatedInstitute', JSON.stringify(newObj));
 }
 
+
+/**  Prüft alle Einträge eines veränderten/neuen Hochschulobjektes auf 'null'-Werte und ändert diese
+ * gegebenenfalls auf einen leeren String ''.
+*/
 function checkInput(object) {
     let keys = Object.keys(object);
     keys.forEach(key => {
@@ -146,6 +157,11 @@ function checkInput(object) {
     });
     return object;
 }
+
+/** 
+ * 
+*/
+
 
 function checkIfUpdated() {
     let oldArr = ['currentInstitute', 'currentAgreements', 'currentRestrictions'];

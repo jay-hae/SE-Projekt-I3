@@ -1,3 +1,7 @@
+
+/** Funktion sendet einen Post-Request an app.py welcher die Mobility-Agreements aus der Datenbank,
+ * welche zu einer bestimmten Partnerhochschule (inst_id) gehören.
+*/
 function loadAgreements(inst_id) {
     //einfügen der Daten auf zweiter Seite des Modals
     $.ajax({
@@ -23,6 +27,11 @@ function loadAgreements(inst_id) {
         });
 }
 
+
+/** Die in loadAgreements aus der Datenbank geladenen Mobility Agreements werden innerhalb der Tabelle 
+ * im Modal 'Hochschule bearbeiten' bereitgestellt.
+ * 
+*/
 function insertAgreementInTable(data, addField, addType) {
     let newRow = '';
     let id = ''
@@ -54,27 +63,8 @@ function insertAgreementInTable(data, addField, addType) {
     return agreementObj;
 }
 
-function functionalityAgreementFilter() {
-    $('#vertragstyp-filter').on('change', (e) => {
-         let ag = e.target.selectedOptions[0].innerText; //extract agreement type from chosen value
-        agreementFilter(ag);
-        sessionStorage.setItem('agreement_type', JSON.stringify(ag));
-        //clearAgreementSpace();
-        //sessionStorage.removeItem('currentAgID');
-    });
-}
-
-function makeRowClickable(rowID, type) {    //for every single row, easier to create eventListener for new added agreement
-    if (type === 'agreement') {
-        $(' #'+rowID).on('click', (e) => {
-            let row = e.target.parentElement;
-            let rowID = row['id']; //get ID of mob_agreement that was clicked
-            insertAgreementInformation(rowID);
-            insertRestriction();
-            addNewAgreement();
-        });
-    }
-}
+/** Funktion wird in Funktion insertAgreementInTable() aufgerufen und erzeugt ein Vertragstyp entsprechend der übergebenen Daten
+*/
 
 function createAgreementObject(agreement) {
     return {
@@ -94,6 +84,64 @@ function createAgreementObject(agreement) {
     }
 }
 
+/** Erzeugen einer Restriktion für ein bestimmtes Agreement/Vertragstyp (ag_ID) anhand der übergebenen restrictions.
+*/
+function createRestriction(ag_ID, restrictions) {
+    if (restrictions.length > 0) {
+        restrictions.forEach(obj => restrict.push([ag_ID, obj]));
+    }
+}
+
+/** Speichert die Auswahl des Nutzers im Filter-Dropdown der Verträge im Modal 'Hochschule bearbeiten' und
+ * ruft die Funktion agreementFilter mit diesem Wert auf. 
+ */
+function functionalityAgreementFilter() {
+    $('#vertragstyp-filter').on('change', (e) => {
+         let ag = e.target.selectedOptions[0].innerText; //extract agreement type from chosen value
+        agreementFilter(ag);
+        sessionStorage.setItem('agreement_type', JSON.stringify(ag));
+        //clearAgreementSpace();
+        //sessionStorage.removeItem('currentAgID');
+    });
+}
+
+/** Funktion wird die Auswahl des Nutzers aus dem Filter Vertragstyp im Modal 'Hochschule bearbeiten' übergeben.
+ * Die Verträge in der Tabelle werden nur dann angezeigt wenn sie der Auswahl im Filter 'Vertragstyp' entsprechen.
+*/
+function agreementFilter(agreementType) {
+    let children = $('#addAgreements').children();
+    for (let index = 0; index < children.length; index++) {
+        if (children[index].children[0].innerText === agreementType) {
+            children[index].style.display = '';
+        }
+        else {
+            children[index].style.display = 'none';
+        }
+    }
+}
+
+/** Jede Zeile in der Tabelle der Vertragstypen im Modal 'Partnerhochschulen bearbeiten' wird mit einem Event-Listener versehen,
+ * sodass diese angeklickt werden können. Klickt der Nutzer eine Zeile an wird die ID an die Funktion 
+ * insertAgreementInformation() übergeben sowie die Funktionen insertRestriction() und addNewAgreement() aufgerufen.
+ * 
+*/
+function makeRowClickable(rowID, type) {    //for every single row, easier to create eventListener for new added agreement
+    if (type === 'agreement') {
+        $(' #'+rowID).on('click', (e) => {
+            let row = e.target.parentElement;
+            let rowID = row['id']; //get ID of mob_agreement that was clicked
+            insertAgreementInformation(rowID);
+            insertRestriction();
+            addNewAgreement();
+        });
+    }
+}
+
+
+/** Erzeugt ein neues Session Storage Objekt sobald im Formular unter dem Button 'Agreement speichern' etwas geändert wird.
+ * Funktion ruft außerdem updateChangedAgreement() auf und übergibt dieser die ID des aktuellen Agreements und die ID des Textfeldes welches verändert wurde (Bsp. Mentor, Fakutltät,etc.) sowie den Wert der eingegeben wurde.
+ */
+
 function trackAgreementChange() {
     $('#space_edit_agreement').on('change', (e) => { //create new sessionStorage object that contains all agreements where the input was changed
         let agreement_ID = sessionStorage.getItem('currentAgID');
@@ -101,6 +149,10 @@ function trackAgreementChange() {
     });
 }
 
+/** Wird durch trackAgreementChange aufgerufen und erhält die ID des aktuellen Agreements und die ID des Textfeldes welches verändert wurde (Bsp. Mentor, Fakutltät,etc.) sowie den Wert der eingegeben wurde.
+ * Wenn es eine agreementID gibt, werden die Werte dieser entsprechend der Nutzereingabe verändert
+ * anderfalls wird eine neue Session Storage erzeugt.
+*/
 function updateChangedAgreement (agreementID, changedVal, value) {
     if (agreementID) {
         let agreements = agreementID.includes('new') ? JSON.parse(sessionStorage.getItem('newAgreements')): JSON.parse(sessionStorage.getItem('updatedAgreements')); //get duplicated array of all agreements, no matter if updated or not
@@ -130,6 +182,10 @@ function updateChangedAgreement (agreementID, changedVal, value) {
     }
 }
 
+/** Funktion prüft, ob Checkbox 'Agreement Inaktiv?' ausgewählt wurde oder nicht.
+ * Gibt dementsprechend 1 oder 0 zurück.
+ * 
+ */
 function checkProp() {
     let x = $('#inactive').prop('checked');
     if (x === true) {
@@ -141,6 +197,11 @@ function checkProp() {
     }
 }
 
+/** Funktion wird durch updateChangedAgreement() aufgerufen. Ihr wird die ID des aktuell durch den Nutzer bearbeiteten Agreements übergeben.
+ * Wenn es 'agArray' bereits im sessionStorage existiert wird überprüft, ob die Agreement ID bereits in sessionStorage vorhanden ist
+ * Falls die ID noch nicht existiert, wird sie der sessionStorage hinzugefügt.
+ * Wenn es kein 'agArray' in der sessionStorage gibt wird dieses mit der Agreement ID erzeugt.
+*/
 function setChanged(agreementID) {
     if ('agArray' in sessionStorage) {
         let allAgreements = JSON.parse(sessionStorage.getItem('agArray'));
@@ -155,14 +216,3 @@ function setChanged(agreementID) {
     }
 }
 
-function agreementFilter(agreementType) {
-    let children = $('#addAgreements').children();
-    for (let index = 0; index < children.length; index++) {
-        if (children[index].children[0].innerText === agreementType) {
-            children[index].style.display = '';
-        }
-        else {
-            children[index].style.display = 'none';
-        }
-    }
-}
