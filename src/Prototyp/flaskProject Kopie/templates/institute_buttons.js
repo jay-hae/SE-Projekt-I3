@@ -61,9 +61,17 @@ function modal_events(){
 /**add-new-restriction = Wird im Modal 'Hochschule Bearbeiten' in der Ansicht zu Partnerschaftsverträgeansicht wechseln' der Button 'Restriktionen' gedrückt, 
  * öffnet sich ein Formular zur Eingabe der Daten für die neue Restriktion.
  * save-new-restriction = 'Speichern' Button ruft newRestricion() Funktion zum Anlegen und Speichern einer neuen Restriktion auf.
- * add-new-agreement = 
- * add_mob_agreement = 'Neuen Vertrag anlegen'-Button im Modal 'Hochschule Bearbeiten' und 'zu Partnerschaftsverträgeansicht wechseln'
- * 
+ * add-new-agreement = Wurde der Button 'Neuen Vertrag anlegen' gedrückt erscheint der Button 'Agreement' speichern. Wird dieser vom Nutzer gedrückt,
+ * wird ein neues Agreement in die Tabelle gespeichert.
+ * add_mob_agreement = 'Neuen Vertrag anlegen'-Button im Modal 'Hochschule Bearbeiten' und 'zu Partnerschaftsverträgeansicht wechseln' öffnet das Formular 
+ * zur Eingabe neuer Agreement-Informationen.
+ * rtn-agreement = im Modal 'Partnerhochschule bearbeiten' im Formular 'Restriktionen' kann über den Button 'Partnerschaftverträge'
+ * zu der Ansicht 'Partnerschaftsvertäge' zurückgekehrt werden.
+ * show_restrictions = Anzeige der Restriktionen.
+ * add_institute_btn = Anlegen eines neues Institutes
+ * close_modal_add = Schließen des Modals 'Partnerschaften hinzufügen' über 'X' bzw. 'Abbrechen'-Button
+ * close_modal_restriction = Schließen des Modal 'Restrikionen' über 'X' -Button
+ * close_modal_edit = Schließen des Modals 'Bearbeiten'
  * */
 function modal_button_events() {
     $('#add-new-restriction').on('click', () =>{

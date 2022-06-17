@@ -1,3 +1,6 @@
+
+/** Im Modal 'Partnerhochschule anlegen' den Speichern Button auf 'disable' setzen solange keine englische Bezeichnung eingetragen wurde
+ */
 function validateForm() {
     // MODAL: HOCHSCHULE ANLEGEN -> disable Speichern Button solange keine Englische Bezeichnung eingetragen wurde
     $('#add-eng').on('blur', function (){
