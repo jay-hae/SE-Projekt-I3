@@ -1,0 +1,26 @@
+{
+  "name": "se-projekt-i3",
+  "version": "1.0.0",
+  "description": "<!-- # Vorlage Projektstruktur & OpenUP-Templates Das Repository enthält die Vorlage einer Projektstruktur und Template-Dokumente im AsciiDoc-Format. Dies wird für die Bearbeitung der Belegarbeit in Software Engineering I und II benötigt. Im Detail wären dies:",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs/development/jsdocFiles"
+  },
+  "scripts": {
+    "doc": "jsdoc -c jsdoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jay-hae/SE-Projekt-I3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jay-hae/SE-Projekt-I3/issues"
+  },
+  "homepage": "https://github.com/jay-hae/SE-Projekt-I3#readme",
+  "devDependencies": {
+    "jsdoc": "^3.6.10"
+  }
+}

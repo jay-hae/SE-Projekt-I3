@@ -1,9 +1,12 @@
 //dient
 
 
-/** Wenn die Seite Country.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um
+/** 
+ * Wenn die Seite Country.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um
  * Länderdaten aus der Datenbank abzufragen. Wenn die Daten geladen wurde, werden diese an die Funktion
  * insertCountries übergeben.
+ * @type {{method: string, url: string}}
+ * @return {void}
 */
 $(document).on('DOMContentLoaded', function() {
    $.ajax({
@@ -13,9 +16,12 @@ $(document).on('DOMContentLoaded', function() {
        .done((data) => insertCountries(data));
 });
 
-/** Wenn der GET-Request die Länder-Informationen aus der Datenbank geladen hat, wird per HTML eine Tabelle mit den Inhalten erzeugt.
- *  
- * */
+
+/**
+ * Wenn der GET-Request die Länder-Informationen aus der Datenbank geladen hat, wird per HTML eine Tabelle mit den Inhalten erzeugt.
+ * @param {{de: string, en: string, erasmus: int}} allCountries --enthält jeweils die deutsche und englische Bezeichnung der Länder sowie die Information ob das Land zur Ersasmusvereinbarung gehört (1) oder nicht (0)
+ * @return {void}
+ */
 function insertCountries(allCountries) {
     const countryTbl = $('#addCountries');
     allCountries.forEach(country => {
