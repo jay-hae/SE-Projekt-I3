@@ -13,7 +13,7 @@ function addButtonEvent() {
     $('.del-institute').on('click', (e) => {
         let tgt = e.currentTarget;
         const id = tgt.parentElement.parentElement.children[0].innerHTML;
-        de(id, "institute");
+        deletion(id, "institute");
     });
 }
 

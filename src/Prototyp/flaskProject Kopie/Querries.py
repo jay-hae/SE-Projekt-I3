@@ -397,7 +397,9 @@ def edit(keys, values, change_id, change_type):  # institute = institute ID
 
 
 def checkLength(key, object_id):
-    object_id = (object_id)
+    strip = object_id
+    object_id = (object_id,)
+    print(key, object_id)
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     dict = {
@@ -405,9 +407,16 @@ def checkLength(key, object_id):
         'agreement': 'restriction_for_agreement'
     }
     procedure_name = dict[key]
-    cur.callproc(procedure_name, object_id,)
+    cur.callproc(procedure_name, object_id)
     for result in cur.stored_results():
-        results = result.fetchall
-        for x in results:
-            print(x)
+        results = result.fetchall()
+        # delete institute if there are no agreements linked to it
+        if len(results) <= 0:
+            delete('tbl_institute', strip)
+            return {'state': 'successful'}
+        return {'state': 'failed'}
 
+
+def delete(tbl, row_id):
+    query = f"DELETE FROM {tbl} WHERE ID = {row_id}"
+    print(query)

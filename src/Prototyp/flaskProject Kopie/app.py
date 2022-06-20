@@ -22,7 +22,6 @@ def login_required(f):
             return f(*args, **kwargs)
         else:
             return redirect('/')
-        #return f(*args, **kwargs)
     return wrap
 
 
@@ -74,12 +73,10 @@ def load_filter(name):
         return None
 
 
-@app.route('/delete/<type>', methods=['POST'])
+@app.route('/delete/<object_type>', methods=['POST'])
 @login_required
 def delete_object(object_type):
-    print(object_type)
-    #return Querries.checkLength(object_type, request.form.to_dict()['id'])
-
+    return Querries.checkLength(object_type, request.form.to_dict()['id'])
 
 
 # get data needed for institute modal
