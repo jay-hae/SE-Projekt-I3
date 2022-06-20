@@ -12,9 +12,11 @@ $(document).on('DOMContentLoaded', () => {
         });
 });
 
+
 /** Wenn der GET-Request die Fakultäts-Informationen aus der Datenbank geladen hat, wird per HTML eine Tabelle mit den Inhalten erzeugt.
- *  
- * */
+  * 
+  * @param {{de: string, en: string, agreements: int}} allFaculties --enthält die Namen der Fakultät in Deutsch und Englisch sowie die Anzahl der mit dieser Fakultät bestehenden Verträge
+  */
 function insertFac(allFaculties) {
     const myTbl = $('#addFaculty');
     allFaculties.forEach(entity => {

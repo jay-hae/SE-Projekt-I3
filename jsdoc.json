@@ -1,0 +1,17 @@
+{
+    "source": { //where JSDOC is going to look
+        "include": ["src/Prototyp/flaskProject Kopie/templates"], //Array of Folder where JSDOC is going to look
+        "includePattern": ".js$",  //all Files ending with js$
+        "excludePattern": "(node_module/|docs)" 
+    },
+    "plugins": ["plugins/markdown"],
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": true
+    },
+    "opts": {
+        "recurse": true,
+        "destination": "./docs/development/jsdocFiles", //where the documentation is going to be saved
+        "template": "jsDoc-custom-template"
+    }
+}

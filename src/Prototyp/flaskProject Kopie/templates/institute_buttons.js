@@ -8,7 +8,7 @@
  * Wird im Modal 'Partnerhochschule hinzufügen' oder im Modal 'Hochschule Bearbeiten' der 'X' bzw. 'Abbrechen' Button gedrückt
  * werden die getätigten aber nicht gespeicherten eingaben des Nutzers aus dem Formular gelöscht.
  */
-function modal_events(){
+function modalEvents(){
     // MODAL: HOCHSCHULE ANLEGEN -> SPEICHERN BUTTON
     $('#mod_add_inst_save_btn').on('click', function (event) {
         // Eingaben der Mitarbeiter werden zusammengefasst und an den Server gesendet (per POST Request an '/addInstitute')
@@ -73,7 +73,7 @@ function modal_events(){
  * close_modal_restriction = Schließen des Modal 'Restrikionen' über 'X' -Button
  * close_modal_edit = Schließen des Modals 'Bearbeiten'
  * */
-function modal_button_events() {
+function modalButtonEvents() {
     $('#add-new-restriction').on('click', () =>{
        $('#input-new-restriction').attr('style', 'display: block;');
     });
