@@ -14,3 +14,5 @@ def LoginDB(user, pwd):
 # function to reconnect to db after user is stored in session
 def newConnection():
     return mariadb.connect(user='aaapartnerhs', password='a6D6d2c5X0', host='rdbs.rz.htw-dresden.de', database='aaapartnerhs')
+
+

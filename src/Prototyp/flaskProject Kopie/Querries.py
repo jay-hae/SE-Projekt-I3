@@ -1,5 +1,5 @@
 import time, helper
-
+import app
 import Login
 from flask import jsonify
 
@@ -17,7 +17,7 @@ def institutes_ret():
     cur.close()
     cnxn.close()
     # convert payload to json format and send it back to server
-    return jsonify(payload, {'sorting': 'a'})
+    return jsonify(payload, {'sorting': 'a'}, {'admin': app.return_session()})
 
 
 # Laden des Vertragstyp in den Filter Dropdown
@@ -310,6 +310,7 @@ def return_courses():
 
 # Laden der Mentoren in die Tabelle auf der Seite Mentoren
 def return_mentor():  # get all mentor information and store on client storage
+
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     query = """SELECT m.ID, m.faculty_ID, m.active, m.title, m.firstname, m.lastname, m.gender_ID,
@@ -393,3 +394,20 @@ def edit(keys, values, change_id, change_type):  # institute = institute ID
     cnxn.close()
     cur.close()
     return jsonify({'status': 'success'})
+
+
+def checkLength(key, object_id):
+    object_id = (object_id)
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
+    dict = {
+        'institute': 'agreements_for_institute',
+        'agreement': 'restriction_for_agreement'
+    }
+    procedure_name = dict[key]
+    cur.callproc(procedure_name, object_id,)
+    for result in cur.stored_results():
+        results = result.fetchall
+        for x in results:
+            print(x)
+

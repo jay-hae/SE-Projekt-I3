@@ -10,6 +10,11 @@ function addButtonEvent() {
         loadAgreements(id);
         loadModal(id);
     });
+    $('.del-institute').on('click', (e) => {
+        let tgt = e.currentTarget;
+        const id = tgt.parentElement.parentElement.children[0].innerHTML;
+        de(id, "institute");
+    });
 }
 
 /** Wird der Bearbeiten Button in der Zeile einer Hochschule gedrückt, werden die Daten des ausgewählten Instituts 

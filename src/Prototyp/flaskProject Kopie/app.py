@@ -1,3 +1,4 @@
+
 from functools import wraps
 
 from flask import Flask, render_template, request, session, url_for, jsonify, send_from_directory, \
@@ -17,11 +18,11 @@ app.secret_key = os.urandom(24)
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
-        """if 'usr' in session:
+        if 'usr' in session:
             return f(*args, **kwargs)
         else:
-            return redirect('/')"""
-        return f(*args, **kwargs)
+            return redirect('/')
+        #return f(*args, **kwargs)
     return wrap
 
 
@@ -36,7 +37,7 @@ def LoginPage():
             return render_template('login.html')
     else:
         if Login.LoginDB(request.form['usr'], request.form['pwd']):
-            session['usr'] = 'logged'
+            session['usr'] = 'true'
             return redirect('/homepage/institutes')
         else:
             return redirect('/')
@@ -56,6 +57,7 @@ def hp_file(name):
     elif name == 'institutes':
         return render_template('institutes.html')
 
+
 # return of filter objects
 @app.route('/get/<name>', methods=['GET'])
 @login_required
@@ -70,6 +72,14 @@ def load_filter(name):
         return Querries.faculty()
     else:
         return None
+
+
+@app.route('/delete/<type>', methods=['POST'])
+@login_required
+def delete_object(object_type):
+    print(object_type)
+    #return Querries.checkLength(object_type, request.form.to_dict()['id'])
+
 
 
 # get data needed for institute modal
@@ -252,6 +262,10 @@ def logout():
 @login_required
 def ret_file(filename):
     return send_from_directory('templates', filename)
+
+
+def return_session():
+    return session['usr']
 
 
 if __name__ == '__main__':
