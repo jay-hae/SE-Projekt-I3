@@ -6,6 +6,8 @@ function editMentorButton() {
        let row = column.parent(); //ganze Zeile
        let id = row.attr('id');
        loadMentor(id);
+       const guided_agreements = document.getElementById('guided-agreements');
+       guided_agreements.innerHTML = "";
        // let obj = JSON.parse(sessionStorage.getItem(row.attr('id')));
        // richtiges Item aus Clientspeicher holen und in Javascript Objekt parsen
        // console.log(obj);
@@ -18,7 +20,6 @@ function setCheckbox(value) {
 }
 
 function loadMentor(mentor_id) {
-    console.log(mentor_id);
     $.ajax({
         data: {
             id: mentor_id
@@ -27,8 +28,8 @@ function loadMentor(mentor_id) {
         url: '/openMentorModal'
     })
     .done(function (data) { //put data into modal
-        console.log(data);
-        let chosen_mentor = data[0];
+        const agreements = data['agreements'];
+        const chosen_mentor = (data['modal'])[0];
         $('#edit_mentor_title').val(chosen_mentor['title']);
         $('#edit_mentor_firstname').val(chosen_mentor['firstname'])
         $('#edit_mentor_lastname').val(chosen_mentor['lastname']);
@@ -37,9 +38,16 @@ function loadMentor(mentor_id) {
         $('#edit_mentor_gender').val(chosen_mentor['gender']);
         $('#edit_mentor_active').prop('checked', setCheckbox(chosen_mentor['active']));
         $('#edit_men_fac').val(chosen_mentor['faculty']);
+        agreements.forEach(agreement => {
+            insertAgreement(agreement);
+        });
     });
 }
 
+function insertAgreement(agreement){
+    let object = `${agreement['faculty_ID']} | ${agreement['institute']} | ${agreement['partnership']}<br>`
+    $('#guided-agreements').append(object);
+}
 
 
 

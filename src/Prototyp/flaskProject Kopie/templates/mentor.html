@@ -66,6 +66,7 @@
                         <th class="tbl_mentor_head" id="tbl_mentor_last">Nachname</th>
                         <th class="tbl_mentor_head" id="tbl_mentor_first">Vorname</th>
                         <th>Aktiv</th>
+                        <th>Fakultät</th>
                         <th>Betreute Agreements</th>
                         <th></th>
                     </tr>
@@ -88,27 +89,36 @@
             </div>
             <div class="modal-body">
                 <div class="row">
+                    <div>
+                        <div>
+                            <header>Betreute Agreements</header>
+                            <p>Fakultät | Partnerhochschule | Vertragstyp</p>
+                        </div>
+                        <div id="guided-agreements">
+
+                        </div>
+                    </div>
                     <div class="col-sm p-3 m-3 pt-1">
                         <form class="mentor_slide modal_form_mentor" id="mentor_edit_form" >
-                            <label for="edit_mentor_title" class="form-label">Titel</label><br>
+                            <label for="edit_mentor_title" class="form-label">Titel</label>
                             <input class="form-control" type="text" id="edit_mentor_title"><br>
-                            <label for="edit_mentor_firstname" class="form-label">Vorname</label><br>
+                            <label for="edit_mentor_firstname" class="form-label">Vorname</label>
                             <input class="form-control" type="text" id="edit_mentor_firstname"><br>
-                            <label for="edit_mentor_lastname" class="form-label">Nachname</label><br>
+                            <label for="edit_mentor_lastname" class="form-label">Nachname</label>
                             <input class="form-control" type="text" id="edit_mentor_lastname" name="edit_mentor_lastname"><br>
-                            <label class="form-label" for="edit_men_fac">Fakultät</label><br>
+                            <label class="form-label" for="edit_men_fac">Fakultät</label>
                             <select class="edit_mentor_fac form-select" id="edit_men_fac" name="edit_mentor_faculty">
                                 <!-- Add options for faculties (dropdown) -->
                             </select><br>
-                            <label for="edit_mentor_gender" class="form-label">Geschlecht</label><br>
+                            <label for="edit_mentor_gender" class="form-label">Geschlecht</label>
                             <select id="edit_mentor_gender" class="form-select">
                                 <option value="3">Divers</option>
                                 <option value="1">Männlich</option>
                                 <option value="2">Weiblich</option>
                             </select><br>
-                            <label for="edit_mentor_homepage" class="form-label">Webseite</label><br>
+                            <label for="edit_mentor_homepage" class="form-label">Webseite</label>
                             <input class="form-control" type="text" id="edit_mentor_homepage"><br>
-                            <label for="edit_mentor_email" class="form-label">Email</label><br>
+                            <label for="edit_mentor_email" class="form-label">Email</label>
                             <input class="form-control" type="text" id="edit_mentor_email"><br>
                             <input type="checkbox" id="edit_mentor_active" class="form-check-input">
                             <label for="edit_mentor_active" class="form-check-label">Inaktiv?</label><br>

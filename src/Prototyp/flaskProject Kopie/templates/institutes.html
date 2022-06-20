@@ -242,6 +242,9 @@
                     </div>
                     <div id="space_table" class="p-3">
                         <h1>Verträge</h1>
+                        <div id="show-all-ps-types">
+
+                        </div>
                         <div class="d-flex mb-3 mt-3">
                             <select name="vertragstyp-filter" id="vertragstyp-filter" class="fil_agree form-select w-75 m-1">
                             </select>
@@ -264,11 +267,8 @@
                         </div>
 
                     </div>
-                    <div class="p-3">
-                        <button class="btn btn-outline-secondary w-100" id="show_restrictions">Restriktionen</button>
-                    </div>
                     <div style="display: none" id="add-new-agreement-container"class="p-3">
-                        <button class="btn btn-outline-secondary w-30" id="add-new-agreement">Agreement speichern</button>
+                        <button class="btn btn-outline-secondary w-30" id="add-new-agreement">Vertrag speichern</button>
                     </div>
                       <div id="space_edit_agreement" class="row">
                             <div class="col-sm p-3 m-3 pt-1">
@@ -308,6 +308,9 @@
                                 <textarea id="notes" class="form-control h-75 agreementInformation"></textarea>
                             </div>
 
+                      </div>
+                      <div class="p-3">
+                          <button class="btn btn-outline-secondary w-100" id="show_restrictions">Studiengänge</button>
                       </div>
                 </div>
             </div>
@@ -465,7 +468,7 @@
                                 <th>Anteilig Monate</th>
                             </tr>
                         </thead>
-                        <button id="add-new-restriction">Neue Restriktion anlegen</button>
+                        <button id="add-new-restriction">Neuen Studiengang anlegen</button>
                         <tbody id="tbl_restriction">
 
                         </tbody>
@@ -483,7 +486,7 @@
                         <label for="restriction-months">Anzahl der Monate</label>
                         <input type="text" id="restriction-months" name="subnum_months">
                         <br>
-                        <button id="save-new-restriction">Restriktion speichern</button>
+                        <button id="save-new-restriction">Studiengang speichern</button>
                     </div>
                 </div>
             </div>

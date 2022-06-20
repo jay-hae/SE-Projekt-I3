@@ -140,9 +140,20 @@ def for_mentor_modal(mentor_id):
                 'id': mentor_id
             }
             payload.append(content)
+    cur.callproc('guided_agreements', param_list)
+    payload2 = []
+    for result in cur.stored_results():
+        rows = result.fetchall()
+        for row in rows:
+            content = {
+                'faculty_ID': row[0],
+                'institute': row[1],
+                'partnership': row[2]
+            }
+            payload2.append(content)
     cur.close()
     cnxn.close()
-    return jsonify(payload)
+    return jsonify({'modal': payload, 'agreements': payload2})
 
 
 # get mobility agreements referring to institute / partnership and all course restrictions

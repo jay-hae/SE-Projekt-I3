@@ -13,20 +13,42 @@ function loadAgreements(inst_id) {
     })
         .done((data) => {
             restrict = [];
+            ps_types = {};
             let agreementObjects = [];
             const addField = $('#addAgreements');
             $.each(data, (index, val) => {
+                trackPartnershipType((data[index])['partnership_type']);
                 let cur_data = data[index];
                 agreementObjects.push(insertAgreementInTable(cur_data, addField, "fromDatabase"));
             });
+            showGuidedAgreements(ps_types);
             sessionStorage.setItem('currentAgreements', JSON.stringify(agreementObjects));
             sessionStorage.setItem('updatedAgreements', JSON.stringify(agreementObjects));
             sessionStorage.setItem('currentRestrictions', JSON.stringify(restrict));
             sessionStorage.setItem('updatedRestrictions', JSON.stringify(restrict));
             agreementFilter("Hochschulvereinbarung");
+            console.log(ps_types);
         });
 }
 
+function trackPartnershipType(ps_type) {
+    if (ps_types[ps_type]) {
+        ps_types[ps_type] += 1;
+        return null;
+    }
+    ps_types[ps_type] = 1;
+}
+
+function showGuidedAgreements(agreements_object) {
+    const div_types = document.getElementById('show-all-ps-types');
+    div_types.innerHTML = "";
+    for (const type in agreements_object) {
+        $('#show-all-ps-types').append($('<div>', {
+            text: `${type}: ${agreements_object[type]}`,
+            border: 'solid 1px black'
+        }));
+    }
+}
 
 /** Die in loadAgreements aus der Datenbank geladenen Mobility Agreements werden innerhalb der Tabelle 
  * im Modal 'Hochschule bearbeiten' bereitgestellt.

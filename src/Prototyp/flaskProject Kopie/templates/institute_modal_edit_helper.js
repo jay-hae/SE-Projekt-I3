@@ -48,7 +48,6 @@ function insertRestriction(object=false) {
     if (object === false) {
         let tbl_rest = document.getElementById('tbl_restriction');
         tbl_rest.innerHTML = "";
-        console.log('hey');
         restrictions = getRestrictions();
     }
     else

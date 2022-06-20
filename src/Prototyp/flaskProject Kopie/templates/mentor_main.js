@@ -56,6 +56,7 @@ function mentorInsert(mentors) {
                                 "<th class='lastname_m'>" + mentor['lastname'] + "</th>" +
                                 "<th class='firstname_m'>"+ mentor['firstname'] + "</th>" +
                                 "<th>" + mentor['active'] + "</th>" +
+                                "<th>" + mentor['faculty_ID'] + "</th>" +
                                 "<th>" + mentor['agreements'] + "</th>" +
                                 "<th><button type='button' class='btn modal_edit_mentor'>Bearbeiten</button></th></tr>");
     });
@@ -93,7 +94,6 @@ function searchMentor() {
 }*/
 
 function buttonFunctionality() {
-
     // HAUPTANSICHT: MENTOR -> MENTOR ANLEGEN BUTTON
     $('#add_mentor_btn').on('click', function (){
         // reset the form / clear input before open the modal
@@ -106,8 +106,8 @@ function buttonFunctionality() {
     });
    
    //set functionality for all abbrechen/X Buttons
-    $(' .cancel').on('click', t => {
-       let parent = t['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
+    $(' .cancel').on('click', event => {
+       let parent = event['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
        parent.style.display = "none";
     });
 }
