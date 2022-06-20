@@ -26,28 +26,40 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>//dient
+            <pre class="prettyprint source linenums"><code>
+
+// $(document).on('DOMContentLoaded', function() {
+//    $.ajax({
+//        method: "GET",
+//        url: "/loader/country"
+//    })
+//        .done((data) => insertCountries(data));
+// });
+
+$(document).on('DOMContentLoaded', getCountries());
 
 
 /** 
  * Wenn die Seite Country.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um
  * Länderdaten aus der Datenbank abzufragen. Wenn die Daten geladen wurde, werden diese an die Funktion
- * insertCountries übergeben.
+ * insertCountries() übergeben.
+ * See {@link insertCountries }
  * @type {{method: string, url: string}}
  * @return {void}
 */
-$(document).on('DOMContentLoaded', function() {
-   $.ajax({
-       method: "GET",
-       url: "/loader/country"
-   })
-       .done((data) => insertCountries(data));
-});
+function getCountries(){
+    $.ajax({
+        method: "GET",
+        url: "/loader/country"
+    })
+        .done((data) => insertCountries(data));
+ }
+
 
 
 /**
  * Wenn der GET-Request die Länder-Informationen aus der Datenbank geladen hat, wird per HTML eine Tabelle mit den Inhalten erzeugt.
- * @param {{de: string, en: string, erasmus: int}} allCountries --enthält jeweils die deutsche und englische Bezeichnung der Länder sowie die Information ob das Land zur Ersasmusvereinbarung gehört (1) oder nicht (0)
+ * @param {{de: string, en: string, erasmus: int}} allCountries -- enthält jeweils die deutsche und englische Bezeichnung der Länder sowie die Information ob das Land zur Ersasmusvereinbarung gehört (1) oder nicht (0)
  * @return {void}
  */
 function insertCountries(allCountries) {
@@ -71,13 +83,13 @@ function insertCountries(allCountries) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addButtonEvent">addButtonEvent</a></li><li><a href="global.html#addFilterChangeEvents">addFilterChangeEvents</a></li><li><a href="global.html#agreementFilter">agreementFilter</a></li><li><a href="global.html#checkIfUpdated">checkIfUpdated</a></li><li><a href="global.html#checkInput">checkInput</a></li><li><a href="global.html#checkProp">checkProp</a></li><li><a href="global.html#clearSessionStorage">clearSessionStorage</a></li><li><a href="global.html#createAgreementObject">createAgreementObject</a></li><li><a href="global.html#createObjectInstitute">createObjectInstitute</a></li><li><a href="global.html#createRestriction">createRestriction</a></li><li><a href="global.html#functionalityAgreementFilter">functionalityAgreementFilter</a></li><li><a href="global.html#insertAgreementInTable">insertAgreementInTable</a></li><li><a href="global.html#insertCountries">insertCountries</a></li><li><a href="global.html#insertFac">insertFac</a></li><li><a href="global.html#instituteObjectUpdated">instituteObjectUpdated</a></li><li><a href="global.html#loadAgreements">loadAgreements</a></li><li><a href="global.html#loadMentorDropdown">loadMentorDropdown</a></li><li><a href="global.html#loadModal">loadModal</a></li><li><a href="global.html#makeRowClickable">makeRowClickable</a></li><li><a href="global.html#modal_button_events">modal_button_events</a></li><li><a href="global.html#modal_events">modal_events</a></li><li><a href="global.html#setChanged">setChanged</a></li><li><a href="global.html#setupFilter">setupFilter</a></li><li><a href="global.html#trackAgreementChange">trackAgreementChange</a></li><li><a href="global.html#updateChangedAgreement">updateChangedAgreement</a></li><li><a href="global.html#validateForm">validateForm</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addButtonEvent">addButtonEvent</a></li><li><a href="global.html#addFilterChangeEvents">addFilterChangeEvents</a></li><li><a href="global.html#addNewRestToNewAg">addNewRestToNewAg</a></li><li><a href="global.html#agreementFilter">agreementFilter</a></li><li><a href="global.html#checkIfNew">checkIfNew</a></li><li><a href="global.html#checkIfUpdated">checkIfUpdated</a></li><li><a href="global.html#checkInput">checkInput</a></li><li><a href="global.html#checkNewRestForNewAgreement">checkNewRestForNewAgreement</a></li><li><a href="global.html#checkProp">checkProp</a></li><li><a href="global.html#clearSessionStorage">clearSessionStorage</a></li><li><a href="global.html#createAgreementObject">createAgreementObject</a></li><li><a href="global.html#createDifferenceArray">createDifferenceArray</a></li><li><a href="global.html#createObjectInstitute">createObjectInstitute</a></li><li><a href="global.html#createRestriction">createRestriction</a></li><li><a href="global.html#functionalityAgreementFilter">functionalityAgreementFilter</a></li><li><a href="global.html#getCountries">getCountries</a></li><li><a href="global.html#insertAgreementInTable">insertAgreementInTable</a></li><li><a href="global.html#insertCountries">insertCountries</a></li><li><a href="global.html#insertFac">insertFac</a></li><li><a href="global.html#instituteObjectUpdated">instituteObjectUpdated</a></li><li><a href="global.html#loadAgreements">loadAgreements</a></li><li><a href="global.html#loadMentorDropdown">loadMentorDropdown</a></li><li><a href="global.html#loadModal">loadModal</a></li><li><a href="global.html#makeRowClickable">makeRowClickable</a></li><li><a href="global.html#modalButtonEvents">modalButtonEvents</a></li><li><a href="global.html#modalEvents">modalEvents</a></li><li><a href="global.html#postData">postData</a></li><li><a href="global.html#setChanged">setChanged</a></li><li><a href="global.html#setupFilter">setupFilter</a></li><li><a href="global.html#trackAgreementChange">trackAgreementChange</a></li><li><a href="global.html#updateChangedAgreement">updateChangedAgreement</a></li><li><a href="global.html#validateForm">validateForm</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Jun 20 2022 16:57:23 GMT+0200 (Mitteleuropäische Sommerzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Jun 20 2022 18:31:33 GMT+0200 (Mitteleuropäische Sommerzeit)
 </footer>
 
 <script> prettyPrint(); </script>

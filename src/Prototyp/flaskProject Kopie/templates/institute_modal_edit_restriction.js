@@ -1,3 +1,7 @@
+
+/**
+ * 
+ */
 function trackRestrictionChange(parent, value) {
     let key = parent['id'];
     let restriction_id = parent['parentElement'];
@@ -29,6 +33,7 @@ function setRestrictionChange(key, value, id) {
     console.log(updatedRestrictions);
     sessionStorage.setItem(sessionKey, JSON.stringify(updatedRestrictions));
 }
+
 
 function newRestriction() {
     let restCounter = 0;

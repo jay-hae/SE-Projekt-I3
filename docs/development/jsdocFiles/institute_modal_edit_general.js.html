@@ -186,11 +186,17 @@ function checkInput(object) {
     return object;
 }
 
-/** 
- * 
-*/
 
 
+/**
+ * Wenn im "Bearbeiten"-Modal der "Speichern"-Button gedrückt wird, wird diese Funktion ausgeführt.
+ * Sie prüft, ob neue Einträge bezüglich Hochschule, Agreement oder Restriktion getätigt wurden. 
+ * Falls dem so ist, werden die geänderten Daten über app.py an die Datenbank gesendet.
+ * Für jede der drei Daten wird eine eigene URL in app.py angesteuert:
+ * /changeData/updateInstitute = für geänderte Hochschulen
+ * /changeData/updateAgreement = für geänderte Hochschulvereinabrungen
+ * /changeData/updateRestriction = fßr geänderte Restriktionen
+ */
 function checkIfUpdated() {
     let oldArr = ['currentInstitute', 'currentAgreements', 'currentRestrictions'];
     let newArr = ['updatedInstitute', 'updatedAgreements', 'updatedRestrictions'];
@@ -248,10 +254,15 @@ function checkIfUpdated() {
     }
 }
 
+/**
+ *  Wenn im "Bearbeiten"-Modal der "Speichern"-Button gedrückt wird, wird diese Funktion ausgeführt.
+ *  Sie überprüft, ob es sich bei den eingegebenen Daten um neue Agreements und/oder Restriktions handelt.
+ *  Falls ja, wird jeweils ein Alert und die Daten in der console ausgegeben.
+ */
 function checkIfNew() {
     if ('newAgreements' in sessionStorage) {
         if ('newRestrictions' in sessionStorage) {
-            alert('new ag &amp; r');
+            alert('new agreement &amp; restriction was created');
             checkNewRestForNewAgreement();
             console.log('123');
             let newRestrictions = JSON.parse(sessionStorage.getItem('newRestrictions'));
@@ -262,19 +273,27 @@ function checkIfNew() {
             console.log("Neue Ags + ihre Restriktionen: ", newAgreements);
         }
         else {
-            alert('new ag')
+            alert('new agreement was created')
             let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
             //newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
             console.log('neues Agreement', newAgreements);
         }
     }
     else if ('newRestrictions' in sessionStorage) {
-        alert('new r');
+        alert('new restriction was created');
         let rest = JSON.parse(sessionStorage.getItem('newRestrictions'));
         console.log("Neue R's bestehender Vertrag: ", rest);
     }
 }
 
+/**
+ *  Falls innerhalb der Funktion checkIfNew() festgestellt wird, dass für ein neu angelegtes Agreement
+ *  eine neue Restriktion angelegt werden soll, wird diese Funktion ausgeführt.
+ *  Es werden alle Restriktionen in der aktuellen SessionStorage überprüft.
+ *  Falls eine Restriktion zu einem neuen Mobilityagreement gehört, füge diese Restriktion dem Agreement hinzu (Aufruf: adddNewRestToNewAg() Funktion)
+ *  Falls eine Restriktion nicht zu einem neuen Mobilityagreement gehören verbleiben sie in der SessionStorage
+ *  gehören alle neuen Restriktion zu einem neuen Agreement wird das SessionStorage Item "newRestrictions" geleert
+ */
 function checkNewRestForNewAgreement() {
     let newRest = JSON.parse(sessionStorage.getItem('newRestrictions'));
     console.log('checkNewRestForAg:' ,newRest);
@@ -282,7 +301,7 @@ function checkNewRestForNewAgreement() {
     newRest.forEach(restriction => {
         if  ((restriction['mobility_agreement_ID']).includes('new')) {
             alert();
-            addRestrictionKey(restriction);
+            addNewRestToNewAg(restriction);
         }
         else {
             filteredRest.push(restriction);
@@ -292,7 +311,14 @@ function checkNewRestForNewAgreement() {
     sessionStorage.setItem('newRestrictions', JSON.stringify(filteredRest));
 }
 
-function addRestrictionKey(restrictionObj) {
+/**
+ * Diese Funktion wird aufgerufen, wenn eine neue Restriktion zu einem neuen Agreement hinzugefügt werden soll
+ * Die übergebene Restriktion wird zu dem zugehörigen Mobilityagreement zugeordnet.
+ * Es werden alle Agreements in der aktuellen SessioStorage überprüft.
+ * Falls es bereits Restriktions für das Agreement gibt, wird die neue Restriktion hinzugefügt (push)
+ * anderfalls ist die Restriktion das erste Objekt für diesen Parameter
+ */
+function addNewRestToNewAg(restrictionObj) {
     let agreements = JSON.parse(sessionStorage.getItem('newAgreements'));
     agreements.forEach(ag => {
         if (ag.ID === restrictionObj.mobility_agreement_ID) {
@@ -308,6 +334,13 @@ function addRestrictionKey(restrictionObj) {
     sessionStorage.setItem('newAgreements', JSON.stringify(agreements));
 }
 
+
+/**
+ * Diese Funktion wird innerhalb der Funktion checkIfUpdated() aufgerufen.
+ * Sie überprüft alle Keys der übergebenen Objekte auf unterschiede.
+ * Falls mindestens einer der Keys des neuen Objekts sich von dem alten Objekt unterscheidet
+ * werden dieses neuen Keys im Objekt newestAttr gespeichert und returned.
+ */
 function createDifferenceArray(oldObj, newObj) {
     let keys = Object.keys(oldObj);
     let newestAttr = {};
@@ -329,6 +362,11 @@ function createDifferenceArray(oldObj, newObj) {
     }
 }
 
+/**
+ * Diese Funktion wird durch die Funktion checkIfUpdated() aufgerufen.
+ * Ihr werden JSON Objekte und eine URL übergeben
+ * Per Post-Request werden über app.py die neuen bzw. geänderten Daten an dei Datenbank gesendet.
+ */
 function postData(data, url) {
     $.ajax({
         data: data,
@@ -348,13 +386,13 @@ function postData(data, url) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addButtonEvent">addButtonEvent</a></li><li><a href="global.html#addFilterChangeEvents">addFilterChangeEvents</a></li><li><a href="global.html#agreementFilter">agreementFilter</a></li><li><a href="global.html#checkIfUpdated">checkIfUpdated</a></li><li><a href="global.html#checkInput">checkInput</a></li><li><a href="global.html#checkProp">checkProp</a></li><li><a href="global.html#clearSessionStorage">clearSessionStorage</a></li><li><a href="global.html#createAgreementObject">createAgreementObject</a></li><li><a href="global.html#createObjectInstitute">createObjectInstitute</a></li><li><a href="global.html#createRestriction">createRestriction</a></li><li><a href="global.html#functionalityAgreementFilter">functionalityAgreementFilter</a></li><li><a href="global.html#insertAgreementInTable">insertAgreementInTable</a></li><li><a href="global.html#insertCountries">insertCountries</a></li><li><a href="global.html#insertFac">insertFac</a></li><li><a href="global.html#instituteObjectUpdated">instituteObjectUpdated</a></li><li><a href="global.html#loadAgreements">loadAgreements</a></li><li><a href="global.html#loadMentorDropdown">loadMentorDropdown</a></li><li><a href="global.html#loadModal">loadModal</a></li><li><a href="global.html#makeRowClickable">makeRowClickable</a></li><li><a href="global.html#modal_button_events">modal_button_events</a></li><li><a href="global.html#modal_events">modal_events</a></li><li><a href="global.html#setChanged">setChanged</a></li><li><a href="global.html#setupFilter">setupFilter</a></li><li><a href="global.html#trackAgreementChange">trackAgreementChange</a></li><li><a href="global.html#updateChangedAgreement">updateChangedAgreement</a></li><li><a href="global.html#validateForm">validateForm</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addButtonEvent">addButtonEvent</a></li><li><a href="global.html#addFilterChangeEvents">addFilterChangeEvents</a></li><li><a href="global.html#addNewRestToNewAg">addNewRestToNewAg</a></li><li><a href="global.html#agreementFilter">agreementFilter</a></li><li><a href="global.html#checkIfNew">checkIfNew</a></li><li><a href="global.html#checkIfUpdated">checkIfUpdated</a></li><li><a href="global.html#checkInput">checkInput</a></li><li><a href="global.html#checkNewRestForNewAgreement">checkNewRestForNewAgreement</a></li><li><a href="global.html#checkProp">checkProp</a></li><li><a href="global.html#clearSessionStorage">clearSessionStorage</a></li><li><a href="global.html#createAgreementObject">createAgreementObject</a></li><li><a href="global.html#createDifferenceArray">createDifferenceArray</a></li><li><a href="global.html#createObjectInstitute">createObjectInstitute</a></li><li><a href="global.html#createRestriction">createRestriction</a></li><li><a href="global.html#functionalityAgreementFilter">functionalityAgreementFilter</a></li><li><a href="global.html#getCountries">getCountries</a></li><li><a href="global.html#insertAgreementInTable">insertAgreementInTable</a></li><li><a href="global.html#insertCountries">insertCountries</a></li><li><a href="global.html#insertFac">insertFac</a></li><li><a href="global.html#instituteObjectUpdated">instituteObjectUpdated</a></li><li><a href="global.html#loadAgreements">loadAgreements</a></li><li><a href="global.html#loadMentorDropdown">loadMentorDropdown</a></li><li><a href="global.html#loadModal">loadModal</a></li><li><a href="global.html#makeRowClickable">makeRowClickable</a></li><li><a href="global.html#modalButtonEvents">modalButtonEvents</a></li><li><a href="global.html#modalEvents">modalEvents</a></li><li><a href="global.html#postData">postData</a></li><li><a href="global.html#setChanged">setChanged</a></li><li><a href="global.html#setupFilter">setupFilter</a></li><li><a href="global.html#trackAgreementChange">trackAgreementChange</a></li><li><a href="global.html#updateChangedAgreement">updateChangedAgreement</a></li><li><a href="global.html#validateForm">validateForm</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Jun 20 2022 16:57:23 GMT+0200 (Mitteleuropäische Sommerzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Jun 20 2022 18:31:33 GMT+0200 (Mitteleuropäische Sommerzeit)
 </footer>
 
 <script> prettyPrint(); </script>
