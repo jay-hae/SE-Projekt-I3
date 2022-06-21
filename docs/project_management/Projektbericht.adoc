@@ -1,0 +1,75 @@
+// ---- 1. Projektbericht -----
+= SE II - Projektbericht: {project-name} 
+
+// --- 2. Teammitglieder -----------------------
+Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
+
+// --- 3. Abgabedatum --------------------------
+08. Juli 2022
+
+:docs: ../docs
+include::{docs}/_includes/default-attributes.inc.adoc[]
+// ---
+:doctype: book
+:toc:
+:toclevels: 2
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+//:source-highlighter: highlightjs
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:experimental:
+:chapter-label:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:listing-caption: Listing
+:!example-caption:
+:experimental:
+// Folders
+:imagesdir-reset: {imagesdir}
+
+
+
+:docs-test2: {docs}/test2
+:docs-requirements: {docs}/requirements
+:docs-project-management: {docs}/project_management
+:docs-architecture: {docs}/architecture
+:docs-test: {docs}/test
+:docs-development: {docs}/development
+
+== Planung
+=== Aufgabenstellung & Auftraggeber
+
+=== Situation zum Semesterbeginn
+
+=== Projektorganisation
+==== Team & Rollen
+
+==== Kommunikation 
+
+==== Tools für die Projektorganisation
+
+== Durchführung 
+// oder besser nur Iterationen beschreiben?
+// bzw beschreiben warum Iterationen eher schwammig waren (kein vorhandenes Inkrement bei manchen)
+=== Inception
+=== Elaboration
+=== Construction
+=== Transition
+
+
+== Ergebnisse
+=== Softwaresystem
+==== Lizenz
+
+=== Refelxtion der Teammitglieder
+==== Jakob Häcker
+==== Thanh Ha Khuong
+==== Patrick Matthes
+==== Meißner Luca
+==== Roman Patzig
+==== Jens Rosenkranz
+==== Nico Rosenkranz
+==== Pascal Thielemann
