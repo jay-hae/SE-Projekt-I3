@@ -131,3 +131,18 @@ function modalButtonEvents() {
         clearAgreementSpace();
     });
 }
+
+function activeDeleteButton() {
+    const delButtons = Array.from($('.delete-agreement'));
+    delButtons.forEach(button => {
+        button['onclick'] = (e) => {
+            clickEvent(e);
+        }
+    });
+}
+
+function clickEvent(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    deletion(e.target.parentElement.parentElement.id, "agreement");
+}
