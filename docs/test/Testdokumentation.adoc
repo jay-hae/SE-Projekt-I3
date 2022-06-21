@@ -22,18 +22,23 @@
 <<<
 
 
-//:docs-architecture: ../docs/test
+== Testkonzept
 
-=== Einführung
+=== Testobjekte
 
-Dieses Dokument beinhaltet alle wichtigen Informationen über den Aufbau, die Wirkungsweise und den Inhalt des Quellcodes für das Projekt Webanwendung zur Verwaltung von Hochschulpartnerschaften. Diese Informationen dienen dazu, die Software zu warten, zu modifizieren oder gegebenenfalls weiterzuentwickeln.
+=== Testmethoden
 
-//== Test Cases
+=== Testdurchführungsplanung
+
+
+
+== Test Cases
 
 :leveloffset: +1
-
-//:imagesdir:../../docs/architecture/images
 
 include::../../docs/test/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 :leveloffset: -1
+
+== Testergebnisse
+
