@@ -1,0 +1,39 @@
+= Testdokumentation zu: {project-name}
+:project-name: Webanwendung zur Verwaltung von Hochschulpartnerschaften
+:doctype: book
+:toc:
+:toclevels: 3
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:experimental:
+:chapter-label:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:listing-caption: Listing
+:!example-caption:
+:experimental:
+
+
+<<<
+
+
+//:docs-architecture: ../docs/test
+
+=== Einführung
+
+Dieses Dokument beinhaltet alle wichtigen Informationen über den Aufbau, die Wirkungsweise und den Inhalt des Quellcodes für das Projekt Webanwendung zur Verwaltung von Hochschulpartnerschaften. Diese Informationen dienen dazu, die Software zu warten, zu modifizieren oder gegebenenfalls weiterzuentwickeln.
+
+//== Test Cases
+
+:leveloffset: +1
+
+//:imagesdir:../../docs/architecture/images
+
+include::../../docs/test/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
+
+:leveloffset: -1
