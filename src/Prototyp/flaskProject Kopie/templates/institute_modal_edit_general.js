@@ -167,7 +167,7 @@ function checkInput(object) {
  * Für jede der drei Daten wird eine eigene URL in app.py angesteuert:
  * /changeData/updateInstitute = für geänderte Hochschulen
  * /changeData/updateAgreement = für geänderte Hochschulvereinabrungen
- * /changeData/updateRestriction = fßr geänderte Restriktionen
+ * /changeData/updateRestriction = für geänderte Restriktionen
  */
 function checkIfUpdated() {
     let oldArr = ['currentInstitute', 'currentAgreements', 'currentRestrictions'];

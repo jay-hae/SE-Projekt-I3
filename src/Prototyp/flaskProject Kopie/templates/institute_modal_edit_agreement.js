@@ -1,6 +1,8 @@
 
-/** Funktion sendet einen Post-Request an app.py welcher die Mobility-Agreements aus der Datenbank,
- * welche zu einer bestimmten Partnerhochschule (inst_id) gehören.
+/** 
+ * Diese Funktion wird aufgerufen, wenn der "Bearbeiten"-Button der Hochschulen gedrückt wurde
+ * Funktion sendet einen Post-Request an app.py mit der ID der gewünschte Hochschule.
+ * Die Funktion erhält dann aus der Datenbank die Mobilityagreements zurück
 */
 function loadAgreements(inst_id) {
     //einfügen der Daten auf zweiter Seite des Modals
@@ -31,6 +33,10 @@ function loadAgreements(inst_id) {
         });
 }
 
+/**
+ * Diese Funktion wird in der Funktion loadAgreements() aufgerufen
+ * Es wird mitgezählt wie viele Vertragstypen es für die jeweils aufgerufene Hochschule bereits gibt
+ */
 function trackPartnershipType(ps_type) {
     if (ps_types[ps_type]) {
         ps_types[ps_type] += 1;
@@ -39,6 +45,11 @@ function trackPartnershipType(ps_type) {
     ps_types[ps_type] = 1;
 }
 
+/**
+ *  Diese Funktion wird in der Funktion loadAgreements() aufgerufen
+ *  Ihr wird die Anzahl der für die Hochschule bereits vorhandenen Agreement Types übergeben
+ *  Im Modal "Bearbeiten" der Hochschulen wird direkt unter der Überschrift "Verträge" die Anzahl der Verträge als "Hochschulpartnerschaften: " angezeigt
+ */
 function showGuidedAgreements(agreements_object) {
     const div_types = document.getElementById('show-all-ps-types');
     div_types.innerHTML = "";
@@ -87,7 +98,6 @@ function insertAgreementInTable(data, addField, addType) {
 
 /** Funktion wird in Funktion insertAgreementInTable() aufgerufen und erzeugt ein Vertragstyp entsprechend der übergebenen Daten
 */
-
 function createAgreementObject(agreement) {
     return {
         ID: Number(agreement['agreement_ID']),

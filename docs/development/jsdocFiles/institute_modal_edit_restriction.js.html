@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: filter_functionality.js</title>
+    <title>JSDoc: Source: institute_modal_edit_restriction.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: filter_functionality.js</h1>
+    <h1 class="page-title">Source: institute_modal_edit_restriction.js</h1>
 
     
 
@@ -27,34 +27,67 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>
-/** Immer wenn einer der Filter der Seite Institute.html durch den Nutzer verändert wurde, 
- * sendet die Funktion einen Post-Request mit den aktuell gewählten Filtern an app.py
- * und erhält die so gefilterten Hochschul-Daten aus der Datenbank zurück. +
- * Außerdem werden alle Filter auf den ursprungszustand zurückgesetzt, wenn der Nutzer
- * den Zurücksetzen-Button drückt.
+/**
+ * 
  */
-function addFilterChangeEvents(){
-    $(' .filter').on('change', function (){
-        //beim Auswählen eines Filters werden alle Select optionen mit jeweiligen Werten an das Backend geschickt
-        let fil_form = $('#filter_form');
-        $.ajax({
-            type: 'POST',
-            url: '/filterInstitute',
-            data: fil_form.serialize(), // serializes the form's elements.
-            success: function(data)
-            {
-                insertData(data);
+function trackRestrictionChange(parent, value) {
+    let key = parent['id'];
+    let restriction_id = parent['parentElement'];
+    setRestrictionChange(key, value, restriction_id['id']);
+}
+
+function setRestrictionChange(key, value, id) {
+    let updatedRestrictions;
+    let sessionKey;
+    if (id.includes('new') === true) {
+        updatedRestrictions = JSON.parse(sessionStorage.getItem('newRestrictions'));
+        sessionKey = 'newRestrictions';
+        updatedRestrictions.forEach(obj => {
+            console.log(obj['restriction_ID']);
+            if (obj['restriction_ID'] == id) {
+                obj[key] = value;
             }
         });
+    }
+    else {
+        updatedRestrictions = JSON.parse(sessionStorage.getItem('updatedRestrictions'));
+        sessionKey = 'updatedRestrictions';
+        updatedRestrictions.forEach(obj => {
+            if (obj[1]['restriction_ID'] == id) {
+                obj[1][key] = value;
+            }
+        });
+    }
+    console.log(updatedRestrictions);
+    sessionStorage.setItem(sessionKey, JSON.stringify(updatedRestrictions));
+}
+
+
+function newRestriction() {
+    let restCounter = 0;
+    if (!('newRestrictCounter' in sessionStorage)) {
+        sessionStorage.setItem('newRestrictCounter', JSON.stringify(restCounter));
+    }
+    else {
+        restCounter = JSON.parse(sessionStorage.getItem('newRestrictCounter'));
+    }
+    const new_rest = {};
+    new_rest['mobility_agreement_ID'] = sessionStorage.getItem('currentAgID');
+    const input = Array.from($('#input-new-restriction').children('input, select'));
+    input.forEach(child => {
+        if (child.name === 'incoming') {
+            new_rest[child.name] = $('#'+child.id).prop('checked') ? 1 : 0;
+        }
+        else {
+            new_rest[child.name] = child.value;
+        }
     });
-    //clear filter after reset
-    $('#fil_reset').on('click', function (event){
-        event.preventDefault();
-        //kill all child elements created by loadInstitutes to clear page for reload child
-        $('#addItems').empty();
-        loadAll();
-        $('#filter_form').trigger('reset');
-    });
+    new_rest['restriction_ID'] = `new_${restCounter}`;
+    const restrictions = 'newRestrictions' in sessionStorage ? JSON.parse(sessionStorage.getItem('newRestrictions')) : [];
+    sessionStorage.setItem('newRestrictCounter', JSON.stringify(Number(restCounter)+1));
+    restrictions.push(new_rest);
+    insertRestriction([sessionStorage.getItem('currentAgID'), new_rest]);
+    sessionStorage.setItem('newRestrictions', JSON.stringify(restrictions));
 }</code></pre>
         </article>
     </section>
