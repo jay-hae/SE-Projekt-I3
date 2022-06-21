@@ -94,8 +94,8 @@ Das Ziel beim Entwickeln der Architektur war es, eine Brücke zwischen der Weban
 //=== Webtechnologien
 
 * Verwendung einer REST-API
-** Server und Client Separation => große Flexibilität und individuellen Skalierbarket
-** Einfache Implementation, da es sich um ein vereinfachtes standardisiertes Format handelt kann die Implementierungen stark vereinfacht und beschleunigt werden
+** Server und Client Separation => große Flexibilität und individuellen Skalierbarkeit
+** Einfache Implementation, da es sich um ein vereinfachtes standardisiertes Format handelt kann die Implementierung stark vereinfacht und beschleunigt werden
 
 Durch das Verwenden der aufgeführten Webtechnologien, möchten wir eine Nutzung ohne Installation bestimmter Tools auf etablierten Browsern ermöglichen. Des Weiteren soll es späteren Arbeitsgruppen möglich sein, das bestehende System problemlos weiterzuentwickeln.
 
@@ -108,19 +108,19 @@ Durch das Verwenden der aufgeführten Webtechnologien, möchten wir eine Nutzung
 
 //=== Serverseitige Programmierung mit Python
 
-Das Team hat sich für die Programmiersprache Python entschieden, da durch das Framework 'Flask' die serverseitige Programmierung sehr übersichtlich gehalten werden kann. Es ist sehr einfach möglich, die aufrufbaren Seiten innerhalb des Systems zu erweitern. Des weiteren bestand in Bezug auf Flask innerhalb des Teams vereinzelt Vorerfahrung.
+Das Team hat sich für die Programmiersprache Python entschieden, da durch das Framework 'Flask' die serverseitige Programmierung sehr übersichtlich gehalten werden kann. Es ist sehr einfach möglich, die aufrufbaren Seiten innerhalb des Systems zu erweitern. Des Weiteren bestand in Bezug auf Flask innerhalb des Teams vereinzelt Vorerfahrung.
 
 * Verwendung von Python 
 ** Weniger komplex; für alle Entwickler in gegebener Zeit erlernbar sofern Kompetenz noch
 nicht ausreichend
-** Python-Skripte laufen auf dem bereitgestellten Webspace
+** Python-Skripte laufen auf der bereitgestellten virtuellen Maschiene
 ** einfache Kommunikation mit MariaDB
 ** Einbindung der Datenbank einfach möglich durch mysql.connector
 
 
 // === Datenbank MariaDB 
 
-Die Datenbank musste nicht durch das Team bereitgestellt werden. Das Rechenzentrum der HTW Dresden hat diese bereits für die Vorgruppe innerhalb einer MariaDB bereitgestellt. 
+Die Datenbank musste nicht durch das Team erstellt werden. Das Rechenzentrum der HTW Dresden hat diese bereits für die Vorgruppe innerhalb einer MariaDB bereitgestellt. 
 
 * Verwendung von MariaDB
 ** Diese bietet einen guten Zugriffsschutz und Backups auf den Servern des Rechenzentrums
