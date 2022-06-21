@@ -67,7 +67,7 @@ function insertRestriction(object=false) {
     restrictions.forEach((restriction, index) => {
         restriction = restriction[1];
         dropdown[0].id = `exchange-type-dropdown-${index}`;
-        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ restriction['course'] + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th id='incoming'>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th></tr>";
+        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ restriction['course'] + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th id='incoming'>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea style='width: 2rem' onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th><th><button onclick='deletion((this).parentElement.parentElement.id, `restriction`)'>Del</button></th></tr>";
         $('#tbl_restriction').append(row);
         document.getElementById(`exchange-type-dropdown-${index}`).value = restriction['incoming'];
     })

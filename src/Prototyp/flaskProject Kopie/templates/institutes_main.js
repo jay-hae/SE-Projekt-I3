@@ -24,7 +24,8 @@ $(document).on('DOMContentLoaded', function () {
 function loadAll() {
     $.get('/get/institutes', function (data) {
         // load institutes from database
-        insertData(data);
+        sessionStorage.setItem('admin', JSON.stringify(data[2]['admin']));
+        insertData(data, JSON.parse(sessionStorage.getItem('admin')));
     });
 }
 
@@ -33,7 +34,6 @@ function loadCourse() {
         const courses = [];
         const myTbl = $('#addCourses');
         data.forEach(entity => {
-           console.log(entity);
            myTbl.append("<tr><th>" + entity['de'] + "</th><th>" + entity['eng'] + "</th></tr>");
            courses.push(entity);
         });
@@ -44,7 +44,11 @@ function loadCourse() {
         });
 }
 
-function insertData(data) {
+function insertData(data, admin) {
+    let isAdmin = false;
+    if (admin == 'true') {
+        isAdmin = true;
+    }
     $('#addItems').empty();
     let order_clause = data[1];
     let sort = order_clause['sorting'];
@@ -60,10 +64,10 @@ function insertData(data) {
             x = 'Ja'
         }
         if (sort === "a") {
-            $('#addItems').append("<tr><th style=\"display:none;\">" + now['id'] + "</th><th >" + now['name'] + "</th><th >" + x + "</th><th >" + now['agreements'] + "</th><th ><button type=\"button\" class=\"btn edit_inst_btn btn-sm\" >Bearbeiten</button></th></tr>");
+            $('#addItems').append("<tr><th style=\"display:none;\">" + now['id'] + "</th><th >" + now['name'] + "</th><th >" + x + "</th><th >" + now['agreements'] + "</th><th ><button type=\"button\" class=\"btn edit_inst_btn btn-sm\" >Bearbeiten</button></th><th><button class='del-institute'>Del</button></th></tr>");
         }
         else {
-            $('#addItems').prepend("<tr><th style=\"display:none;\">" + now['id'] + "</th><th class='tbl_column_huge'>" + now['name'] + "</th><th class='tbl_column_small'>" + x + "</th><th class='tbl_column_small'>" + now['agreements'] + "</th><th class='tbl_column_small' ><button type=\"button\" class=\"btn edit_inst_btn\" >Bearbeiten</button></th></tr>");
+            $('#addItems').prepend("<tr><th style=\"display:none;\">" + now['id'] + "</th><th class='tbl_column_huge'>" + now['name'] + "</th><th class='tbl_column_small'>" + x + "</th><th class='tbl_column_small'>" + now['agreements'] + "</th><th class='tbl_column_small' ><button type=\"button\" class=\"btn edit_inst_btn\" >Bearbeiten</button></th><th><button class='del-institute'>Del</button></th></tr>");
         }
     });
     addButtonEvent();
