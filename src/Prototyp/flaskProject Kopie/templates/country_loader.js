@@ -1,13 +1,3 @@
-
-
-// $(document).on('DOMContentLoaded', function() {
-//    $.ajax({
-//        method: "GET",
-//        url: "/loader/country"
-//    })
-//        .done((data) => insertCountries(data));
-// });
-
 $(document).on('DOMContentLoaded', getCountries());
 
 

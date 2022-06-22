@@ -15,7 +15,7 @@ function addFilterChangeEvents(){
             data: fil_form.serialize(), // serializes the form's elements.
             success: function(data)
             {
-                insertData(data);
+                insertInstitutes(data);
             }
         });
     });

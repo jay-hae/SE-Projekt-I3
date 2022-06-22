@@ -78,7 +78,7 @@ Die administrativen Rechte liegen derzeit noch bei einem Mitarbeiter aus dem Rec
 
 ==== Aufbau
 
-Als Webserver dient eine virtuelle Maschine, welche vom Rechenzentrum bereitgestellt wird. Diese ist im Webspace eines Funktionsaccounts aufrufbar. Dort läuft das Backend in Python und das Frontend mithilfe von HTML, CSS und Javascript.
+Als Webserver dient eine virtuelle Maschine, welche vom Rechenzentrum bereitgestellt wird. Dort läuft das Backend in Python und das Frontend mithilfe von HTML, CSS und Javascript.
 
 // ==== Authentifizierung im Browser
 

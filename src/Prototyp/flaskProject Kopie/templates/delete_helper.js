@@ -13,6 +13,9 @@ function deletion(id, type) {
         });
 }
 
+/**
+ * Funktion prüft welcher Nutzer die Anwendung gerade ausführt (normaler Nutzer oder Admin mit Löschrechten)
+ */
 function checkAdmin() {
     const adminState = JSON.parse(sessionStorage.getItem('admin'));
     if (adminState !== 'true') {

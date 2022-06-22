@@ -20,31 +20,44 @@ $(document).on('DOMContentLoaded', function () {
     loadCourse();
 });
 
-// ######### INSTITUTES LOADER #######
+/**
+ * Wenn die Seite institute.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um
+ * Hochschuledaten aus der Datenbank abzufragen. 
+ * Wenn der Nutzer auf den 'Zurücksetzen'-Button gedrückt hat, dann wird der Filter aufgehoben 
+ * und wieder alle Hochschulen in die Tabelle geladen.
+ * Funktion sendet dazu über app.py eine Abfrage an die Datenbank.
+ */
 function loadAll() {
     $.get('/get/institutes', function (data) {
         // load institutes from database
         sessionStorage.setItem('admin', JSON.stringify(data[2]['admin']));
-        insertData(data, JSON.parse(sessionStorage.getItem('admin')));
+        insertInstitutes(data, JSON.parse(sessionStorage.getItem('admin')));
     });
 }
 
-function loadCourse() {
-    $.get('/loader/course', data => {
-        const courses = [];
-        const myTbl = $('#addCourses');
-        data.forEach(entity => {
-           myTbl.append("<tr><th>" + entity['de'] + "</th><th>" + entity['eng'] + "</th></tr>");
-           courses.push(entity);
-        });
-        sessionStorage.setItem('courses', JSON.stringify(courses));
-    })
-        .then(() => {
-            loadCourseDropdown();
-        });
-}
 
-function insertData(data, admin) {
+
+// function loadCourse() {
+//     $.get('/loader/course', data => {
+//         const courses = [];
+//         const myTbl = $('#addCourses');
+//         data.forEach(entity => {
+//            myTbl.append("<tr><th>" + entity['de'] + "</th><th>" + entity['eng'] + "</th></tr>");
+//            courses.push(entity);
+//         });
+//         sessionStorage.setItem('courses', JSON.stringify(courses));
+//     })
+//         .then(() => {
+//             loadCourseDropdown();
+//         });
+// }
+
+/** Funktion wird durch addFilterChangeEvents() und loadAll() aufgerufen
+ * Wenn der GET-Request die Hochschulen-Informationen aus der Datenbank geladen hat, wird per HTML eine Tabelle mit den Inhalten erzeugt.
+ * Dabei wird zwischen einem normalen Nutzer und einem Admin mit Löschrechten unterschieden
+ * Handelt es sich beim Nutzer um den Admin werden in der Tabelle außerdem für jede Hochschule ein Lösch-Button sichtbar.
+ */
+function insertInstitutes(data, admin) {
     let isAdmin = false;
     if (admin == 'true') {
         isAdmin = true;
