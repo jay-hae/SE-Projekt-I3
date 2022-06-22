@@ -298,7 +298,7 @@ function returnAgreement(id) {  //get updated information if updated, otherwise 
     }
 }
 
-/** Wird durch modalButtonEvents() ausgelöst.
+/** Wird durch instituteButtonEvents() ausgelöst.
  * Leert das Formular im Modal 'Partnerhochschulen bearbeiten' Ansicht 'Partnerschaftsverträge'
 */
 function clearAgreementSpace() {
@@ -308,7 +308,7 @@ function clearAgreementSpace() {
     });
 }
 
-/** Wird durch modalButtonEvents() (Button 'Vertrag Speichern') und makeRowClickable() aufgerufen
+/** Wird durch instituteButtonEvents() (Button 'Vertrag Speichern') und makeRowClickable() aufgerufen
  *  Speichern der durch den Nutzer ins Formular eingetragenen Daten eines neuen Vertrags in SessionStorage.
  *  Formular: 'Hochschule bearbeiten' > 'Partnerschaftsverträgeansicht' > 'neuen Vertrag anlegen'
  */

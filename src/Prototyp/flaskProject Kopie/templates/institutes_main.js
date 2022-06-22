@@ -1,9 +1,16 @@
 // do everything below as soon as document is ready (document loaded)
-$(document).on('DOMContentLoaded', function () {
+$(document).on('DOMContentLoaded', startUp);
+
+/**
+ * Die Funktion wird aufgerufen sobald institutes.html vollstädnig geladen wurde
+ * Dieser Funktion bildet den Startpunkt der Anwendung.
+ * Es werden die Filter bereitgesteltt und die Tabelle mit den Informationen zu den Hochschulen aus der Datenbank geladen
+ */
+function startUp() {
     //file institute_modal_add.js
     validateForm();
     //file institute_buttons
-    modalButtonEvents();
+    instituteButtonEvents();
     // load institutes
     loadAll();
     // add events to modal; submit form & add button events
@@ -18,8 +25,7 @@ $(document).on('DOMContentLoaded', function () {
     clearSessionStorage();
     functionalityAgreementFilter();
     loadCourse();
-});
-
+}
 /**
  * Wenn die Seite institute.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um
  * Hochschuledaten aus der Datenbank abzufragen. 

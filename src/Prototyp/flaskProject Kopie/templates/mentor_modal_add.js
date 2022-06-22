@@ -1,8 +1,12 @@
+/** Funktion wird durch loadMentor() aufgerufen
+ *  Die Daten aus dem Formular 'Mentor hinzufügen' werden sobald der Nutzer den 'Speichern'-Button drückt
+ *  über app.py an die Datenbank gesendet und persistiert.
+ */
 function insertMentor() {
-    $('#new_mentor').on('click', () => {
+    $('.new_mentor').on('click', () => {
     $.ajax({
         method: 'POST',
-        url: '/addMentor',
+        url: '/add/Mentor',
         data: $('#mentor_add_form').serialize()
     })
         .done((data) => {
@@ -11,3 +15,4 @@ function insertMentor() {
 
     });
 }
+

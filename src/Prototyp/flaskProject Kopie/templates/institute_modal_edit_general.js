@@ -365,7 +365,8 @@ function getStorageData(storage_key, object_id) {
 }
 
 /** Wird durch loadCourse() aufgerufen
- *  
+ *  Stellt dem Dropdown im Formular 'Studiengänge' die verfügbaren Studiengänge bereit
+ * Formular: 'Hochschule bearbeiten' > 'Zu Partnerschaftverträge wechseln' > einen Vertrag auswählen > 'Studiengänge'-Button > 'Neuen Studiengang auswäheln > 'Dropdown 'Studiengang auswählen'
  */
 function loadCourseDropdown() {
     const element = $('#restriction-course');

@@ -1,5 +1,5 @@
 
-/** Wird durch den Speichernbutton bzw. modalButtonEvents() aufgerufen
+/** Wird durch den Speichernbutton bzw. instituteButtonEvents() aufgerufen
  *  Funktion speichert die durch den Nutzer in das Formular eingegebenen Restriktion-Informationen in der SessionStorage
  */
 function newRestriction() {
