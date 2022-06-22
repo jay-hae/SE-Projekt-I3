@@ -32,8 +32,7 @@
     <!-- HAUPTANSICHT -->
     <div id="Page_one">
       <nav
-        class="navbar navbar-expand-lg navbar-light"
-        style="background-color: #e3f2fd"
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
       >
         <a class="navbar-brand ms-3" href="#">HTW Dresden</a>
         <button
@@ -52,8 +51,8 @@
             <li class="nav-item">
               <a class="nav-link" href="/homepage/faculties">Fakultäten</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/homepage/institutes">Hochschulen</a>
+            <li class="nav-item">
+              <a class="nav-link active" href="/homepage/institutes">Hochschulen</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/homepage/countries">Länder</a>
@@ -70,7 +69,7 @@
               <div class="in-navbar" id="handbuch">
                 <div class="dropdown">
                   <button
-                    class="btn btn-sm btn-outline-primary dropdown-toggle"
+                    class="btn btn-sm btn-outline-light dropdown-toggle"
                     type="button"
                     data-bs-toggle="dropdown"
                   >
@@ -98,6 +97,7 @@
         </div>
       </nav>
       <div class="my-content">
+        <h1 class="text-center m-4">Hochschulen</h1>
         <!-- Filter Buttons -->
         <div id="fil">
           <div id="FilterAll">
@@ -163,7 +163,7 @@
           </button>
           <button
             type="button"
-            class="btn btn-outline-primary me-3"
+            class="btn btn-success me-3"
             id="add_institute_btn"
           >
             Partnerhochschule hinzufügen
@@ -177,7 +177,8 @@
                 <th>Hochschule</th>
                 <th>Anzeige</th>
                 <th>Verträge</th>
-                <th>Bearbeiten</th>
+                <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody id="addItems"></tbody>
@@ -208,12 +209,12 @@
             <!-- Hochschulinfo anzeigen -->
             <div id="first_slide" onchange="instituteObjectUpdated()">
               <div class="text-center p-3">
-                <button id="next" class="btn btn-outline-dark w-100">
+                <button id="next" class="btn btn-secondary w-100">
                   Zu Partnerschaftsverträgesansicht wechseln
                 </button>
               </div>
               <div class="row p-3">
-                <h1>Hochschule</h1>
+                <h2 class="m-2">Hochschule</h2>
                 <div class="col-sm pt-1">
                   <form class="modal_form_inst" id="edit_left_col">
                     <h4>Allgemeine Information</h4>
@@ -445,13 +446,13 @@
             <!-- Vertrag anzeigen -->
             <div id="second_slide" style="display: none">
               <div class="text-center p-3">
-                <button id="previous" class="btn btn-outline-dark w-100">
+                <button id="previous" class="btn btn-secondary w-100">
                   Zu Hochschulinformationsansicht wechseln
                 </button>
               </div>
               <div id="space_table" class="p-3">
-                <h1>Verträge</h1>
-                <div id="show-all-ps-types"></div>
+                <h2 class="m-2">Verträge</h2>
+                <div class="ms-2" id="show-all-ps-types"></div>
                 <div class="d-flex mb-3 mt-3">
                   <select
                     name="vertragstyp-filter"
@@ -460,7 +461,7 @@
                   ></select>
                   <button
                     id="add_mob_agreement"
-                    class="btn btn-outline-primary w-25 m-1"
+                    class="btn btn-success w-25 m-1"
                   >
                     Neuen Vertrag anlegen
                   </button>
@@ -486,7 +487,7 @@
                 class="p-3"
               >
                 <button
-                  class="btn btn-outline-secondary w-30"
+                  class="btn btn-outline-success"
                   id="add-new-agreement"
                 >
                   Vertrag speichern
@@ -587,9 +588,9 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="p-3">
+              <div class="p-3 pt-0">
                 <button
-                  class="btn btn-outline-secondary w-100"
+                  class="btn btn-outline-dark w-100"
                   id="show_restrictions"
                 >
                   Studiengänge
@@ -889,10 +890,10 @@
             <div>
               <div class="p-3">
                 <button
-                  class="btn btn-outline-secondary w-100"
+                  class="btn btn-outline-dark w-100"
                   id="rtn-agreement"
                 >
-                  Partnerschaftsverträge
+                Partnerschaftsverträge
                 </button>
               </div>
               <div class="p-3">
@@ -906,37 +907,42 @@
                       <th>Anteilig Monate</th>
                     </tr>
                   </thead>
-                  <button id="add-new-restriction">
+                  <button class="btn btn-success" id="add-new-restriction">
                     Neuen Studiengang anlegen
                   </button>
                   <tbody id="tbl_restriction"></tbody>
                 </table>
               </div>
               <div class="p-3" style="display: none" id="input-new-restriction">
-                <label for="restriction-course">Studiengang auswählen</label>
-                <select id="restriction-course" name="course_ID"></select>
-                <label for="restriction-isced">ISCED Code</label>
+                <label class="form-label" for="restriction-course">Studiengang auswählen</label>
+                <select class="form-select" id="restriction-course" name="course_ID"></select>
+                <label class="form-label" for="restriction-isced">ISCED Code</label>
                 <input
                   type="text"
                   id="restriction-isced"
                   name="subject_area_code"
+                  class="form-control"
                 />
-                <label for="restriction-type">Incoming?</label>
-                <input type="checkbox" id="restriction-type" name="incoming" />
-                <label for="restriction-mobility">Anzahl der Plätze</label>
+                <div class="form-check mt-2 mb-2">
+                  <input class="form-check-input" type="checkbox" id="restriction-type" name="incoming" />
+                  <label class="form-check-label" for="restriction-type">Incoming?</label>
+                </div>
+                <label class="form-label" for="restriction-mobility">Anzahl der Plätze</label>
                 <input
                   type="text"
                   id="restriction-mobility"
                   name="subnum_mobility"
+                  class="form-control"
                 />
-                <label for="restriction-months">Anzahl der Monate</label>
+                <label class="form-label" for="restriction-months">Anzahl der Monate</label>
                 <input
                   type="text"
                   id="restriction-months"
                   name="subnum_months"
+                  class="form-control"
                 />
                 <br />
-                <button id="save-new-restriction">Studiengang speichern</button>
+                <button class="btn btn-outline-success" id="save-new-restriction">Studiengang speichern</button>
               </div>
             </div>
           </div>

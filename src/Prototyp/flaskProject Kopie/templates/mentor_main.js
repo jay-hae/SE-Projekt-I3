@@ -72,7 +72,7 @@ function mentorInsert(mentors) {
                                 "<th>" + mentor['active'] + "</th>" +
                                 "<th>" + mentor['faculty_ID'] + "</th>" +
                                 "<th>" + mentor['agreements'] + "</th>" +
-                                "<th><button type='button' class='btn modal_edit_mentor'>Bearbeiten</button></th></tr>");
+                                "<th><button type='button' class='btn btn-sm btn-light modal_edit_mentor'>Bearbeiten</button></th></tr>");
     });
     editMentorButton();
 }
