@@ -30,6 +30,7 @@ function loadMentor(mentor_id) {
     .done(function (data) { //put data into modal
         const agreements = data['agreements'];
         const chosen_mentor = (data['modal'])[0];
+        $('#edit_mentor_id').val(chosen_mentor['id']);
         $('#edit_mentor_title').val(chosen_mentor['title']);
         $('#edit_mentor_firstname').val(chosen_mentor['firstname'])
         $('#edit_mentor_lastname').val(chosen_mentor['lastname']);
@@ -49,6 +50,21 @@ function insertAgreement(agreement){
     $('#guided-agreements').append(object);
 }
 
-
+function trackMentorChange() {
+    $('#mentor_edit_form').on('change', (e) => {
+        //extract name of input field and value that's now in there
+        const field = e.target.id;
+        const value = e.target.value;
+        let trackProgress = {};
+        if ('changedMentor' in sessionStorage) {
+            trackProgress = JSON.parse(sessionStorage.getItem('changedMentor'));
+            trackProgress[field] = value;
+        }
+        else {
+            trackProgress[field] = value;
+        }
+        sessionStorage.setItem('changedMentor', JSON.stringify(trackProgress));
+    });
+}
 
 

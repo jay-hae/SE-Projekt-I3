@@ -226,6 +226,8 @@ def changes(name):
         change_id = x['ID']
         x.pop('ID')
         change_type = 'restriction'
+    elif name == 'mentor':
+        change_type = 'mentor'
     Querries.edit(x.keys(), x.values(), change_id, change_type)
     return redirect(url_for('LoginPage'))
 
