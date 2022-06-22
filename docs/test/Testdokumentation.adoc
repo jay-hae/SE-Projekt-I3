@@ -1,0 +1,44 @@
+= Testdokumentation zu: {project-name}
+:project-name: Webanwendung zur Verwaltung von Hochschulpartnerschaften
+:doctype: book
+:toc:
+:toclevels: 3
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:experimental:
+:chapter-label:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:listing-caption: Listing
+:!example-caption:
+:experimental:
+
+
+<<<
+
+
+== Testkonzept
+
+=== Testobjekte
+
+=== Testmethoden
+
+=== Testdurchführungsplanung
+
+
+
+== Test Cases
+
+:leveloffset: +1
+
+include::../../docs/test/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
+
+:leveloffset: -1
+
+== Testergebnisse
+

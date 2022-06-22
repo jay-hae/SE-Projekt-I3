@@ -27,8 +27,10 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>
-/** Funktion sendet einen Post-Request an app.py welcher die Mobility-Agreements aus der Datenbank,
- * welche zu einer bestimmten Partnerhochschule (inst_id) gehören.
+/** 
+ * Diese Funktion wird aufgerufen, wenn der "Bearbeiten"-Button der Hochschulen gedrückt wurde
+ * Funktion sendet einen Post-Request an app.py mit der ID der gewünschte Hochschule.
+ * Die Funktion erhält dann aus der Datenbank die Mobilityagreements zurück
 */
 function loadAgreements(inst_id) {
     //einfügen der Daten auf zweiter Seite des Modals
@@ -59,6 +61,10 @@ function loadAgreements(inst_id) {
         });
 }
 
+/**
+ * Diese Funktion wird in der Funktion loadAgreements() aufgerufen
+ * Es wird mitgezählt wie viele Vertragstypen es für die jeweils aufgerufene Hochschule bereits gibt
+ */
 function trackPartnershipType(ps_type) {
     if (ps_types[ps_type]) {
         ps_types[ps_type] += 1;
@@ -67,6 +73,11 @@ function trackPartnershipType(ps_type) {
     ps_types[ps_type] = 1;
 }
 
+/**
+ *  Diese Funktion wird in der Funktion loadAgreements() aufgerufen
+ *  Ihr wird die Anzahl der für die Hochschule bereits vorhandenen Agreement Types übergeben
+ *  Im Modal "Bearbeiten" der Hochschulen wird direkt unter der Überschrift "Verträge" die Anzahl der Verträge als "Hochschulpartnerschaften: " angezeigt
+ */
 function showGuidedAgreements(agreements_object) {
     const div_types = document.getElementById('show-all-ps-types');
     div_types.innerHTML = "";
@@ -115,7 +126,6 @@ function insertAgreementInTable(data, addField, addType) {
 
 /** Funktion wird in Funktion insertAgreementInTable() aufgerufen und erzeugt ein Vertragstyp entsprechend der übergebenen Daten
 */
-
 function createAgreementObject(agreement) {
     return {
         ID: Number(agreement['agreement_ID']),
@@ -276,13 +286,13 @@ function setChanged(agreementID) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addButtonEvent">addButtonEvent</a></li><li><a href="global.html#addFilterChangeEvents">addFilterChangeEvents</a></li><li><a href="global.html#addNewRestToNewAg">addNewRestToNewAg</a></li><li><a href="global.html#agreementFilter">agreementFilter</a></li><li><a href="global.html#checkIfNew">checkIfNew</a></li><li><a href="global.html#checkIfUpdated">checkIfUpdated</a></li><li><a href="global.html#checkInput">checkInput</a></li><li><a href="global.html#checkNewRestForNewAgreement">checkNewRestForNewAgreement</a></li><li><a href="global.html#checkProp">checkProp</a></li><li><a href="global.html#clearSessionStorage">clearSessionStorage</a></li><li><a href="global.html#createAgreementObject">createAgreementObject</a></li><li><a href="global.html#createDifferenceArray">createDifferenceArray</a></li><li><a href="global.html#createObjectInstitute">createObjectInstitute</a></li><li><a href="global.html#createRestriction">createRestriction</a></li><li><a href="global.html#functionalityAgreementFilter">functionalityAgreementFilter</a></li><li><a href="global.html#getCountries">getCountries</a></li><li><a href="global.html#insertAgreementInTable">insertAgreementInTable</a></li><li><a href="global.html#insertCountries">insertCountries</a></li><li><a href="global.html#insertFac">insertFac</a></li><li><a href="global.html#instituteObjectUpdated">instituteObjectUpdated</a></li><li><a href="global.html#loadAgreements">loadAgreements</a></li><li><a href="global.html#loadMentorDropdown">loadMentorDropdown</a></li><li><a href="global.html#loadModal">loadModal</a></li><li><a href="global.html#makeRowClickable">makeRowClickable</a></li><li><a href="global.html#modalButtonEvents">modalButtonEvents</a></li><li><a href="global.html#modalEvents">modalEvents</a></li><li><a href="global.html#postData">postData</a></li><li><a href="global.html#setChanged">setChanged</a></li><li><a href="global.html#setupFilter">setupFilter</a></li><li><a href="global.html#trackAgreementChange">trackAgreementChange</a></li><li><a href="global.html#updateChangedAgreement">updateChangedAgreement</a></li><li><a href="global.html#validateForm">validateForm</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addButtonEvent">addButtonEvent</a></li><li><a href="global.html#addFilterChangeEvents">addFilterChangeEvents</a></li><li><a href="global.html#addNewRestToNewAg">addNewRestToNewAg</a></li><li><a href="global.html#agreementFilter">agreementFilter</a></li><li><a href="global.html#checkIfNew">checkIfNew</a></li><li><a href="global.html#checkIfUpdated">checkIfUpdated</a></li><li><a href="global.html#checkInput">checkInput</a></li><li><a href="global.html#checkNewRestForNewAgreement">checkNewRestForNewAgreement</a></li><li><a href="global.html#checkProp">checkProp</a></li><li><a href="global.html#clearSessionStorage">clearSessionStorage</a></li><li><a href="global.html#createAgreementObject">createAgreementObject</a></li><li><a href="global.html#createDifferenceArray">createDifferenceArray</a></li><li><a href="global.html#createObjectInstitute">createObjectInstitute</a></li><li><a href="global.html#createRestriction">createRestriction</a></li><li><a href="global.html#functionalityAgreementFilter">functionalityAgreementFilter</a></li><li><a href="global.html#getCountries">getCountries</a></li><li><a href="global.html#insertAgreementInTable">insertAgreementInTable</a></li><li><a href="global.html#insertCountries">insertCountries</a></li><li><a href="global.html#insertFac">insertFac</a></li><li><a href="global.html#instituteObjectUpdated">instituteObjectUpdated</a></li><li><a href="global.html#loadAgreements">loadAgreements</a></li><li><a href="global.html#loadMentorDropdown">loadMentorDropdown</a></li><li><a href="global.html#loadModal">loadModal</a></li><li><a href="global.html#makeRowClickable">makeRowClickable</a></li><li><a href="global.html#modalButtonEvents">modalButtonEvents</a></li><li><a href="global.html#modalEvents">modalEvents</a></li><li><a href="global.html#postData">postData</a></li><li><a href="global.html#setChanged">setChanged</a></li><li><a href="global.html#setupFilter">setupFilter</a></li><li><a href="global.html#showGuidedAgreements">showGuidedAgreements</a></li><li><a href="global.html#trackAgreementChange">trackAgreementChange</a></li><li><a href="global.html#trackPartnershipType">trackPartnershipType</a></li><li><a href="global.html#trackRestrictionChange">trackRestrictionChange</a></li><li><a href="global.html#updateChangedAgreement">updateChangedAgreement</a></li><li><a href="global.html#validateForm">validateForm</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Jun 20 2022 18:31:33 GMT+0200 (Mitteleuropäische Sommerzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Jun 20 2022 18:57:30 GMT+0200 (Mitteleuropäische Sommerzeit)
 </footer>
 
 <script> prettyPrint(); </script>

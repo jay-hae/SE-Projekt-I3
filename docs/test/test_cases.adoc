@@ -38,7 +38,7 @@
 | Beschreibung | Die Arbeitskraft wählt die Bearbeitungsfunktion an einer bereits vorhandenen Partnerhochschule, um einzelne Attribute zu verändern.
 | Vorbedingungen und benötigte Daten a| - Die Arbeitskraft hat sich erfolgreich angemeldet
 - Die zu bearbeitende Hochschulpartnerschaft stellt einen bereits existenten Datensatz dar
-| Nachbedingung a| - Attribute des Datensatzes der Hochschulpartnerschaft wurden erfolgreich sowie fehlerfrei aktualisiert. 
+| Nachbedingung a| Attribute des Datensatzes der Hochschulpartnerschaft wurden erfolgreich sowie fehlerfrei aktualisiert. 
 |===
 
 === Test Case 04: Löschen von fehlerhaften Datensätzen
@@ -48,7 +48,7 @@
 | Vorbedingungen und benötigte Daten a| - Die Arbeitskraft hat sich erfolgreich mit den vorgesehenen Admin Zugangsdaten eingeloggt 
 - Reguläre Arbeitskräfte haben keinen Zugriff auf das Löschen der Datensätze
 - Ruhende Partnerschaften dürfen nicht gelöscht werden
-| Nachbedingung a| - Der fehlerhafte Datensatz wurde aus der entsprechenden Datenbankrelation entfernt
+| Nachbedingung a| Der fehlerhafte Datensatz wurde aus der entsprechenden Datenbankrelation entfernt
 |===
 
 === Test Case 05: Mentoren editieren
@@ -58,7 +58,7 @@
 | Vorbedingungen und benötigte Daten a| - Die Daten wurden korrekt und vollständig übertragen
 -  Datenänderungen werden unverzüglich in das System übernommen
 - direkter Datenbankzugriff um Änderungen vorzunehmen
-| Nachbedingung a| - Bei erfolgreicher Änderung werden die Daten aus dem Datensatz ersetzt und bei Abfrage erfolgreich angezeigt
+| Nachbedingung a| Bei erfolgreicher Änderung werden die Daten aus dem Datensatz ersetzt und bei Abfrage erfolgreich angezeigt
 |===
 
 === Test Case 06: Erstellen von Berichten über Erasmusvereinbarungen
@@ -75,4 +75,15 @@
 | Beschreibung | 
 | Vorbedingungen und benötigte Daten | 
 | Nachbedingung | 
+|===
+
+=== Test Case 08: Gleichzeitiges Bearbeiten von Datensätzen durch mehrere Personen
+
+|===
+| Beschreibung | Mindestens zwei Arbeitskräfte wollen Datensätze im System bearbeiten
+| Vorbedingungen und benötigte Daten | - alle Arbeitskräfte sind erfolgreichg angemeldet
+- Die Daten wurden korrekt und vollständig übertragen
+- Datenänderungen werden unverzüglich in das System übernommen
+- direkter Datenbankzugriff um Änderungen vorzunehmen
+| Nachbedingung | Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
 |===
