@@ -93,7 +93,7 @@ function modalButtonEvents() {
         sessionStorage.removeItem('currentAgID');
         createNewAgreementObj();
     });
-    // MODAL: HOCHSCHULE BEARBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> RESTRIKTION BUTTON
+    // MODAL: HOCHSCHULE BEA RBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> RESTRIKTION BUTTON
     $('#rtn-agreement').on('click', function () {
         $('#modal_agreement_restrictions').toggle();
         $('#modal_edit').toggle();

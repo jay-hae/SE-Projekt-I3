@@ -383,12 +383,13 @@ def return_institutes(result_set):
 
 
 def edit(keys, values, change_id, change_type):  # institute = institute ID
-    tbl_names = {'institute': "tbl_institute", 'agreement': "tbl_mobility_agreement", 'restriction': "tbl_mobility_agreement_x_course"}
+    tbl_names = {'institute': "tbl_institute", 'agreement': "tbl_mobility_agreement", 'restriction': "tbl_mobility_agreement_x_course", 'mentor': 'tbl_mentor'}
     parameter = helper.dynamic_querries(keys)
     query_string = helper.create_update_string(keys)
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    query = "UPDATE " + tbl_names[change_type] + " SET " + query_string[:-1] + " WHERE ID = " + change_id
+    query = "UPDATE " + tbl_names[change_type] + " SET " + query_string[:-1] + " WHERE ID = " + str(change_id)
+    print(query, values)
     cur.execute(query, tuple(values),)
     cnxn.commit()
     cnxn.close()
