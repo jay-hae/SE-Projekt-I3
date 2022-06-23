@@ -12,7 +12,7 @@ function newRestriction() {
     }
     const new_rest = {};
     new_rest['mobility_agreement_ID'] = sessionStorage.getItem('currentAgID');
-    const input = Array.from($('#input-new-restriction').children('input, select'));
+    const input = Array.from($('#form-add-rest').children('input, select'));
     input.forEach(child => {
         if (child.name === 'incoming') {
             new_rest[child.name] = $('#'+child.id).prop('checked') ? 1 : 0;

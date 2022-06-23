@@ -77,6 +77,8 @@ function instituteButtonEvents() {
     });
     $('#save-new-restriction').on('click', () => {
         newRestriction();
+        $('#input-new-restriction').attr('style', 'display: none;');
+        $('.clear-form').trigger('reset');
     });
     $('#add-new-agreement').on('click', () => {
         insertAgreementInTable(JSON.parse(sessionStorage.getItem('createAg')), $('#addAgreements'), "newAgreement");
@@ -91,10 +93,11 @@ function instituteButtonEvents() {
         sessionStorage.removeItem('currentAgID');
         createNewAgreementObj();
     });
-    // MODAL: HOCHSCHULE BEA RBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> RESTRIKTION BUTTON
+    // MODAL: HOCHSCHULE BEARBEITEN - PARTNERSCHAFTSVERTRAEGEANSICHT -> RESTRIKTION BUTTON
     $('#rtn-agreement').on('click', function () {
         $('#modal_agreement_restrictions').toggle();
         $('#modal_edit').toggle();
+        $('#input-new-restriction').attr('style', 'display: none;');
     });
     $('#show_restrictions').on('click', () => {
         if ('currentAgID' in sessionStorage) {
@@ -124,6 +127,7 @@ function instituteButtonEvents() {
         $('#second_slide').hide();
         $('#addAgreements').empty();
         $('#modal_edit').toggle();
+        $('#input-new-restriction').attr('style', 'display: none;');
         console.log("institute_button.js Z.92");
         clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
         clearAgreementSpace();
