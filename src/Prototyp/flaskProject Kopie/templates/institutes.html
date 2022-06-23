@@ -270,7 +270,7 @@
                         </div>
 
                     </div>
-                    <div style="display: none" id="add-new-agreement-container"class="p-3">
+                    <div style="display: none" id="add-new-agreement-container" class="p-3">
                         <button class="btn btn-outline-secondary w-30" id="add-new-agreement">Vertrag speichern</button>
                     </div>
                       <div id="space_edit_agreement" class="row">
@@ -340,11 +340,11 @@
                             <h2>Hochschule</h2>
                             <div class="mb-3">
                                 <label for="add-eng" class="form-label">Englische Bezeichnung</label>
-                                <input type="text" id="add-eng" name="eng" class="form-control">
+                                <input type="text" id="add-eng" name="eng" class="form-control mandatory">
                             </div>
                             <div class="mb-3">
                                 <label for="add-country_ID" class="form-label">Land</label>
-                                <select id="add-country_ID" class="filter_country form-select" name="country_ID"></select>
+                                <select id="add-country_ID" class="filter_country form-select mandatory" name="country_ID"></select>
                             </div>
                             <div class="mb-3">
                                 <label for="add-local" class="form-label">Lokale Bezeichnung</label>
@@ -433,7 +433,7 @@
                             <h2>Partnerschaft</h2>
                             <div class="mb-3">
                                 <label for="add-partnership_type_ID" class="form-label">Vertragstyp</label>
-                                <select id="add-partnership_type_ID" class="fil_agree form-select"
+                                <select id="add-partnership_type_ID" class="fil_agree form-select mandatory"
                                     name="partnership_type_ID"></select>
                             </div>
                             <button type="button" class="btn btn-secondary close_modal_add">Abbrechen</button>
@@ -479,11 +479,11 @@
                     </div>
                     <div class="p-3" style="display: none;" id="input-new-restriction">
                         <label for="restriction-course">Studiengang auswählen</label>
-                        <select id="restriction-course" name="course_ID"></select>
+                        <select id="restriction-course" name="course_ID" class="mandatory"></select>
                         <label for="restriction-isced">ISCED Code</label>
                         <input type="text" id="restriction-isced" name="subject_area_code">
                         <label for="restriction-type">Incoming?</label>
-                        <input type="checkbox" id="restriction-type" name="incoming">
+                        <input type="checkbox" id="restriction-type" class="mandatory" name="incoming">
                         <label for="restriction-mobility">Anzahl der Plätze</label>
                         <input type="text" id="restriction-mobility" name="subnum_mobility">
                         <label for="restriction-months">Anzahl der Monate</label>

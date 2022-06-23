@@ -108,3 +108,8 @@
 .rounded-border {
   border-radius: 10px;
 }
+
+.mandatory {
+  border-color: red;
+  border-width: 0.2rem;
+}
