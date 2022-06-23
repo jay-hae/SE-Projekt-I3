@@ -49,12 +49,10 @@ function modalEvents(){
     });
 
     // CLEAR INPUT WHEN CLOSING MODAL
-    $('.modal').on('close', function(event, modal) {
-        //$(' .my_check').prop('checked', false);
-        // clear modal of user input after closing it
+    $('.close_modal_edit').on('click', function(event, modal) {
         console.log("institute_button.js Z.47");
-        $('.modal_form_inst').trigger('reset');
-        $('#mod_add_inst_save_btn').attr('disabled', "true")
+        $('.clear-form').trigger('reset');
+        $('#mod_add_inst_save_btn').attr('disabled', "true");
     });
 }
 

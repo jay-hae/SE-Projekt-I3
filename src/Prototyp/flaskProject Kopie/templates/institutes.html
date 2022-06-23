@@ -129,18 +129,18 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalToggleLabel">Hochschule Bearbeitungsansicht</h5>
-                <button type="button" class="btn-close close_modal_edit" id="close_edit_trigger" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close close_modal_edit" id="close_edit_trigger" ></button>
             </div>
             <div class="modal-body">
                 <!-- Hochschulinfo anzeigen -->
                 <div id="first_slide" onchange="instituteObjectUpdated()">
                     <div class="text-center p-3">
-                        <button id="next" class="btn btn-outline-dark w-100"> Zu Partnerschaftsverträgesansicht wechseln </button>
+                        <button id="next" class="btn btn-outline-dark w-100"> Partnerschaften </button>
                     </div>
                     <div class="row p-3">
                         <h1>Hochschule</h1>
                         <div class="col-sm pt-1">
-                        <form class="modal_form_inst" id="edit_left_col">
+                        <form class="clear-form" id="edit_left_col">
                             <h4>Allgemeine Information</h4>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_country">Land</label>
@@ -179,7 +179,7 @@
                     </div>
                         <div class="col-sm ms-3 pt-1">
                         <h4>Ansprechperson</h4>
-                        <form class="modal_form_inst" id="edit_mid_col">
+                        <form class="clear-form" id="edit_mid_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_func">Funktion</label>
                                 <input class="form-control" type="text" id="edit_mod_func" name="function">
@@ -216,7 +216,7 @@
                     </div>
                         <div class="col-sm ms-3 pt-1">
                         <h4>International Office</h4>
-                        <form class="modal_form_inst" id="edit_right_col">
+                        <form class="clear-form" id="edit_right_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_dep">Abteilung</label>
                                 <input class="form-control" type="text" id="edit_mod_dep" name="department">
@@ -336,7 +336,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm p-3 m-3 pt-1">
-                        <form class="modal_form_inst modal_form_add" id="form_left_col">
+                        <form class="clear-inst modal_form_add" id="form_left_col">
                             <h2>Hochschule</h2>
                             <div class="mb-3">
                                 <label for="add-eng" class="form-label">Englische Bezeichnung</label>
@@ -375,7 +375,7 @@
                         </form>
                     </div>
                     <div class="col-sm p-3 m-3 pt-1">
-                        <form class="modal_form_inst modal_form_add" id="form_mid_col">
+                        <form class="clear-form modal_form_add" id="form_mid_col">
                             <h2>Ansprechperson</h2>
                             <div class="mb-3">
                                 <label for="add-title" class="form-label">Titel</label>
@@ -412,7 +412,7 @@
                         </form>
                     </div>
                     <div class="col-sm p-3 m-3 pt-1">
-                        <form class="modal_form_inst modal_form_add" id="form_right_col">
+                        <form class="clear-form modal_form_add" id="form_right_col">
                             <h2>International Office</h2>
                             <div class="mb-3">
                                 <label for="add-department" class="form-label">Abteilung</label>
@@ -453,7 +453,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Restriktionen</h5>
-                <button type="button" class="btn-close close_modal_restriction"></button>
+                <button type="button" class="btn-close close_modal_restriction close_modal_edit" onclick="$('#modal_edit').toggle()"></button>
             </div>
             <div class="modal-body">
                 <div>
@@ -478,17 +478,19 @@
                     </table>
                     </div>
                     <div class="p-3" style="display: none;" id="input-new-restriction">
-                        <label for="restriction-course">Studiengang auswählen</label>
-                        <select id="restriction-course" name="course_ID"></select>
-                        <label for="restriction-isced">ISCED Code</label>
-                        <input type="text" id="restriction-isced" name="subject_area_code">
-                        <label for="restriction-type">Incoming?</label>
-                        <input type="checkbox" id="restriction-type" name="incoming">
-                        <label for="restriction-mobility">Anzahl der Plätze</label>
-                        <input type="text" id="restriction-mobility" name="subnum_mobility">
-                        <label for="restriction-months">Anzahl der Monate</label>
-                        <input type="text" id="restriction-months" name="subnum_months">
-                        <br>
+                        <form class="clear-form">
+                            <label for="restriction-course">Studiengang auswählen</label>
+                            <select id="restriction-course" name="course_ID"></select>
+                            <label for="restriction-isced">ISCED Code</label>
+                            <input type="text" id="restriction-isced" name="subject_area_code">
+                            <label for="restriction-type">Incoming?</label>
+                            <input type="checkbox" id="restriction-type" name="incoming">
+                            <label for="restriction-mobility">Anzahl der Plätze</label>
+                            <input type="text" id="restriction-mobility" name="subnum_mobility">
+                            <label for="restriction-months">Anzahl der Monate</label>
+                            <input type="text" id="restriction-months" name="subnum_months">
+                            <br>
+                        </form>
                         <button id="save-new-restriction">Studiengang speichern</button>
                     </div>
                 </div>

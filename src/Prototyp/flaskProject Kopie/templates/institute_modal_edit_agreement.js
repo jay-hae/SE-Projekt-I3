@@ -72,10 +72,11 @@ function insertAgreementInTable(data, addField, addType) {
     if (checkAdmin()) {
         style = 'block;';
     }
+    const activeState = data['agreement_inactive'] == '0' ? 'Ja' : 'Nein';
     if (addType === 'fromDatabase') {
         createRestriction(data['agreement_ID'], data['course_restrictions']);
         id = data['agreement_ID'];
-        newRow = "<tr style='display: none' id='" + data['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty'] + "</th><th>" + data['agreement_inactive'] + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style + "'>Del</button></th></tr>";
+        newRow = "<tr style='display: none' id='" + data['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty'] + "</th><th>" + activeState + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style + "'>Del</button></th></tr>";
     }
     else {
         let index = 0;
@@ -87,11 +88,12 @@ function insertAgreementInTable(data, addField, addType) {
             sessionStorage.setItem('agreement_Index', JSON.stringify(0));
         }
         let mentor_data = getStorageData("mentors", data['mentor_ID']); //provide mentor data to insert in new row; keys = firstname, lastname, title
-        let faculty_data = getStorageData("faculties", data['faculty_ID']);
         //first + lastname for mentor and faculty name
-        let status = data['inactive'] ? data['inactive'] : '0';
+        let status = "";
+        data['inactive'] = data['inactive'] ? data['inactive'] : '0';
+        status = String(data['inactive']) === '0' ? 'Ja' : 'Nein';
         id = 'new_' + index;
-        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + faculty_data + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style +"'>Del</button></th></tr>";
+        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty_ID'] + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style +"'>Del</button></th></tr>";
     }
     addField.append(newRow);
     makeRowClickable(id, "agreement");

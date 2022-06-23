@@ -316,9 +316,9 @@ def return_mentor():  # get all mentor information and store on client storage
     query = """SELECT m.ID, m.faculty_ID, m.active, m.title, m.firstname, m.lastname, m.gender_ID,
                 m.homepage, m.email,count(mentor_ID) 
                 FROM tbl_mobility_agreement ma 
-                JOIN tbl_mentor m  
+                RIGHT JOIN tbl_mentor m  
                 ON ma.mentor_ID = m.ID 
-                GROUP BY mentor_ID
+                GROUP BY m.ID
                 ORDER BY m.lastname"""
     cur.execute(query)
     all_mentors = cur.fetchall()
