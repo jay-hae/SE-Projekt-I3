@@ -73,7 +73,7 @@ function modalEvents(){
  * close_modal_restriction = Schließen des Modal 'Restrikionen' über 'X' -Button
  * close_modal_edit = Schließen des Modals 'Bearbeiten'
  * */
-function modalButtonEvents() {
+function instituteButtonEvents() {
     $('#add-new-restriction').on('click', () =>{
        $('#input-new-restriction').attr('style', 'display: block;');
     });

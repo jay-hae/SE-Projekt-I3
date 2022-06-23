@@ -71,7 +71,7 @@ function insertAgreementInTable(data, addField, addType) {
     if (addType === 'fromDatabase') {
         createRestriction(data['agreement_ID'], data['course_restrictions']);
         id = data['agreement_ID'];
-        newRow = "<tr style='display: none' id='" + data['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty'] + "</th><th>" + data['agreement_inactive'] + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='delete-agreement'>Del</button></th></tr>";
+        newRow = "<tr style='display: none' id='" + data['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty'] + "</th><th>" + data['agreement_inactive'] + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='btn btn-sm btn-light delete-agreement'>Del</button></th></tr>";
     }
     else {
         let index = 0;
@@ -87,7 +87,7 @@ function insertAgreementInTable(data, addField, addType) {
         //first + lastname for mentor and faculty name
         let status = data['inactive'] ? data['inactive'] : '0';
         id = 'new_' + index;
-        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + faculty_data + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='delete-agreement'>Del</button></th></tr>";
+        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + faculty_data + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='btn btn-sm btn-light delete-agreement'>Del</button></th></tr>";
     }
     addField.append(newRow);
     makeRowClickable(id, "agreement");
@@ -230,7 +230,7 @@ function checkProp() {
 }
 
 /** Funktion wird durch updateChangedAgreement() aufgerufen. Ihr wird die ID des aktuell durch den Nutzer bearbeiteten Agreements übergeben.
- * Wenn es 'agArray' bereits im sessionStorage existiert wird überprüft, ob die Agreement ID bereits in sessionStorage vorhanden ist
+ * Wenn 'agArray' bereits im sessionStorage existiert wird überprüft, ob die Agreement ID bereits in sessionStorage vorhanden ist
  * Falls die ID noch nicht existiert, wird sie der sessionStorage hinzugefügt.
  * Wenn es kein 'agArray' in der sessionStorage gibt wird dieses mit der Agreement ID erzeugt.
 */
@@ -246,5 +246,103 @@ function setChanged(agreementID) {
     if (agreementID) {
         sessionStorage.setItem('agArray', JSON.stringify([agreementID]));
     }
+}
+
+/** Wird im Modal 'Partnerhochschulen bearbeiten' Ansicht 'Partnerschaftsverträge' einer der Verträge in der Tabelle
+ *  angeklickt, werden die Daten dieses Vertrages in das Formular geladen.
+ * Die Daten werden über die Funktion returnAgreement() geladen.
+ */
+function insertAgreementInformation(agreement) {
+    let setAgreement = returnAgreement(agreement);
+    setAgreement = (setAgreement['object'])[setAgreement['index']];
+    sessionStorage.setItem('currentAgID',setAgreement['ID']);
+    $('#mentor_ID').val(setAgreement.mentor_ID);
+    $('#faculty_ID').val(setAgreement.faculty_ID);
+    $('#date_signature').val(setAgreement.date_signature);
+    $('#from_date').val(setAgreement.from_date); //möglicher Vorschlag -> alle leeren Felder mit "keine Angabe füllen" setAgreement.from_data.length > 0 ? setAgreement.from_data : "keine Angabe"
+    $('#until_date').val(setAgreement.until_date);
+    $('#inactive').prop('checked', Number(setAgreement.inactive) === Number(1));
+    $('#in_num_mobility').val(setAgreement.in_num_mobility);
+    $('#in_num_months').val(setAgreement.in_num_months);
+    $('#out_num_mobility').val(setAgreement.out_num_mobility);
+    $('#out_num_months').val(setAgreement.out_num_months);
+    $('#notes').innerText = setAgreement.notes;
+}
+
+/** Wird durch die Funktion insertAgreementInformation() aufgerufen
+ *  Dieser Funktion wird die ID des ausgewählten Agreements übergeben.
+ *  Sie stellt der Funktion insertAgreementInformation() die Daten des Agreements bereit. 
+ */
+function returnAgreement(id) {  //get updated information if updated, otherwise use the data taken from database
+    
+    // Falls es sich um ein in dieser Session bearbeitets Agreement handelt
+    if ("agArray" in sessionStorage) {
+        let arr = JSON.parse(sessionStorage.getItem("agArray"));
+        console.log(arr);
+        if (arr.includes(id)) {
+            let updatedAg = JSON.parse(sessionStorage.getItem("updatedAgreements"));
+            return {'object': updatedAg.filter(obj => Number(obj.ID) === Number(id)), 'index': 0};
+        }
+    }
+    //Falls es sich um ein in dieser Session neu angelegtes Agreement handelt
+    if (id.includes("new")) {
+        let extract = (id.split('_'))[1]; //get "index" of new agreement of current institute -> get agreement data from sessionStorage
+        let newAgreement = JSON.parse(sessionStorage.getItem('newAgreements'));
+        console.log(extract);
+        return {'object': newAgreement, 'index': extract};
+    }
+    //Falls es sich um ein bereits existierendes Agreement handelt
+    else {
+        const allAgreements = JSON.parse(sessionStorage.getItem('currentAgreements')); //current Agreements sind alle in der Datenbank existierenden Agreements
+        return {'object': allAgreements.filter(obj => Number(obj.ID) === Number(id)), 'index': 0};
+    }
+}
+
+/** Wird durch instituteButtonEvents() ausgelöst.
+ * Leert das Formular im Modal 'Partnerhochschulen bearbeiten' Ansicht 'Partnerschaftsverträge'
+*/
+function clearAgreementSpace() {
+    let kids = Array.from(document.getElementsByClassName('agreementInformation'));
+    kids.forEach(kid => {
+       $(kid).val("");
+    });
+}
+
+/** Wird durch instituteButtonEvents() (Button 'Vertrag Speichern') und makeRowClickable() aufgerufen
+ *  Speichern der durch den Nutzer ins Formular eingetragenen Daten eines neuen Vertrags in SessionStorage.
+ *  Formular: 'Hochschule bearbeiten' > 'Partnerschaftsverträgeansicht' > 'neuen Vertrag anlegen'
+ */
+function addNewAgreement(){
+    if (sessionStorage.getItem('createAg')) {
+        let newAG = JSON.parse(sessionStorage.getItem('createAg'));
+        newAG['ID'] = 'new_' + JSON.parse(sessionStorage.getItem('agreement_Index'));
+        if (!newAG['inactive']) {
+            newAG['inactive'] = "0";
+        }
+        if (sessionStorage.getItem('newAgreements')) {
+            let agreements = JSON.parse(sessionStorage.getItem('newAgreements'));
+            agreements.push(newAG);
+            sessionStorage.setItem('newAgreements', JSON.stringify(agreements));
+        }
+        else {
+            let agreements = [];
+            agreements.push(newAG);
+            sessionStorage.setItem('newAgreements', JSON.stringify(agreements));
+        }
+        sessionStorage.removeItem('createAg');
+    }
+}
+
+/** Funktion wird durch ButtonEvent ('Neuen Vertrag anlegen'-Button)
+ *  Bereitet das Formular zur Eingabe der Daten des neuen Vertrags vor
+ *  Erzeugt ein JSON-Object für den neu angelegten Vertrag und speichert die Daten in SessionStorage
+ */
+function createNewAgreementObj() {
+    let ag_val = $('#vertragstyp-filter').val();
+    let inst_id = JSON.parse(sessionStorage.getItem('currentInstitute'));
+    let agreement = {};
+    agreement['partnership_type_ID'] = ag_val;
+    agreement['institute_ID'] = inst_id['ID'];
+    sessionStorage.setItem('createAg', JSON.stringify(agreement));
 }
 

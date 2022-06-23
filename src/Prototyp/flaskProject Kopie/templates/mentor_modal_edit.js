@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 function editMentorButton() {
     $(" .modal_edit_mentor").on('click', function() {
        //load stored information out of sessionStorage into edit modal
@@ -50,21 +53,34 @@ function insertAgreement(agreement){
     $('#guided-agreements').append(object);
 }
 
-function trackMentorChange() {
-    $('#mentor_edit_form').on('change', (e) => {
-        //extract name of input field and value that's now in there
-        const field = e.target.id;
-        const value = e.target.value;
-        let trackProgress = {};
-        if ('changedMentor' in sessionStorage) {
-            trackProgress = JSON.parse(sessionStorage.getItem('changedMentor'));
-            trackProgress[field] = value;
-        }
-        else {
-            trackProgress[field] = value;
-        }
-        sessionStorage.setItem('changedMentor', JSON.stringify(trackProgress));
-    });
-}
 
+/**
+ * 
+ */
+function saveMentorButton() {
+    const mentor_id = $('#edit_mentor_id');
+    const data = {};
+    data['id'] = String(mentor_id['0']['value']);
+    if ('changedMentor' in sessionStorage) {
+        const changedData = JSON.parse(sessionStorage.getItem('changedMentor'));
+        delete changedData['edit_mentor_active'];
+        for (let key in changedData) {
+            //extract column name for database from html element id
+            let toSplit = String(key);
+            toSplit = toSplit.split('_')[2];
+            if (toSplit === 'gender' || toSplit === 'faculty') {
+                data[`${toSplit}_ID`] = changedData[key];
+            }
+            else {
+                data[toSplit] = changedData[key];
+            }
+        }
+        data['active'] = $('#edit_mentor_active').prop('checked') ? 0 : 1;
+        $.ajax({
+            type: 'POST',
+            url: '/changeData/mentor',
+            data: data
+        });
+    }
+}
 
