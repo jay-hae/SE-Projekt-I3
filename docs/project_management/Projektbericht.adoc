@@ -46,10 +46,36 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 
 === Projektorganisation
 ==== Team & Rollen
+Das Projekt Team besteht aus 8 Mitgieldern, dessen größe über die Module SE I und SE II konstant blieb. 
+In SE II nahmen wir anfänglich eine Rollenverteilung vor, welche am Anfang des Moduls SE II leicht verändert wurde.
+So hatte Patrick Matthes (allgemeine Informatik) zusammen mit Nico Rosenkranz (Wirtschafts-Informatik) anfänglich die Aufgabe sich mit Testmechanismen zu beschäftigen. 
+Luca Meißner, Roman Patzig, Thanh Ha Khoung, 
 
 ==== Kommunikation 
+Unsere Kommunikations Plattformen wurden in SE I etabliert und bis zum Projektabschluss beibehalten.
 
-==== Tools für die Projektorganisation
+===== Teaminterne Kommunikation
+Wir haben unsere Kommunikation für langfristige Termine, Diskusionen die das gesamte Team betreffen, teaminterne Meetings und Absprachen innerhalb der Subteams (Rollen, siehe oben) über die Plattform Discord vorgenommen. 
+Die Administration unseres Servers auf der Plattform übernahm Luca Meißner.
+Als Erweiterung, für schnelle, spontane Absprachen hatten wir uns eine WhatsApp Gruppe erstellt.
+
+===== Kommunikation mit unserem Coach
+Termine mit unserme Coach, Herrn Ringel, wurden über das HTW E-Mail System abgesprochen und über einen MS Teams abgehalten.
+
+===== Kommunikation mit unseren Themenstellerinnen
+Wie bei unserem Coach wurden Termine und Unterlagen per E-Mail kommuniziert bzw. geteilt.
+Unsere Meetings haben wir über einen, von der SI zuverfügung gestellten, BBB Raum gehalten.
+
+==== Projektaufgabenverwaltung
+Unsere Aufgabenverwaltung haben wir in SE I über GitHub Issues verwaltet und versucht eine Übergeordnete Organisations ebene mit Git Projects zu etablieren.
+Dies hat allerdings nicht wirklich Funktioniert, da der Zugang zu den Git Projects recht umständlich war und somit niemand diese Verwaltungsebene gepflegt hat.
+Weiterhin hatten wir Problem unser Aufgaben auf Issues abzubliden und diese Konstant zupfelegen, da die Issues auch für Problem definiert wurden, die viele kleine Unterissues beinhaltet hätten.
+Dies resultierte in ein Chaos, das keine Übersichtliche Handhabung der Issues möglich machte.
+Des Weiteren bot es keine Möglichkeiten unseren Fortschritt zu veranschaulichen.
+Abhilfe für diese Problem schaffte das in der Mitte des SE II Moduls eingführte Tool ZenHub.
+Damit war es möglich Hirachien, Abhängigkeiten und arbeitsaufwände von Issues zu modellieren. Eine Visualisierung des Projektfortschrittes wurde zu dem ebenfalls ermöglicht, welche aber Aufgrund von inkonsitenter Nutzung dieser Möglichkeit nicht wirklich wirksam wurde.
+Jedoch hat uns diese Tool sehr viel mehr geholfen, als die Issue-Verwaltung vom default GitHub. 
+
 
 == Durchführung 
 // oder besser nur Iterationen beschreiben?
