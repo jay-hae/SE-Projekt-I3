@@ -36,6 +36,10 @@ function newRestriction() {
  */
 function insertRestriction(object=false) {
     let restrictions = [];
+    let style = 'none;';
+    if (checkAdmin()) {
+        style = 'block;';
+    }
     if (object === false) {
         let tbl_rest = document.getElementById('tbl_restriction');
         tbl_rest.innerHTML = "";
@@ -58,7 +62,7 @@ function insertRestriction(object=false) {
     restrictions.forEach((restriction, index) => {
         restriction = restriction[1];
         dropdown[0].id = `exchange-type-dropdown-${index}`;
-        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ restriction['course'] + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th id='incoming'>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea style='width: 2rem' onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th><th><button onclick='deletion((this).parentElement.parentElement.id, `restriction`)'>Del</button></th></tr>";
+        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ restriction['course'] + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th id='incoming'>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea style='width: 2rem' onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th><th><button onclick='deletion((this).parentElement.parentElement.id, `restriction`)' class='btn-delete' style='display: " + style + "'>Del</button></th></tr>";
         $('#tbl_restriction').append(row);
         document.getElementById(`exchange-type-dropdown-${index}`).value = restriction['incoming'];
     })

@@ -127,8 +127,6 @@ function mentorButtonFunctionality() {
         $('.modal_form_mentor').trigger("reset");
         $('#modal_add_mentor').toggle();
     });
-
-    
    $('.close_modal_edit_mentor').on('click', function (){
         $('#modal_edit_mentor').toggle();
         sessionStorage.removeItem('changedMentor');

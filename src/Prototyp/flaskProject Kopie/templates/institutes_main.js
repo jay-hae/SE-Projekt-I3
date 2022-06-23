@@ -37,36 +37,21 @@ function loadAll() {
     $.get('/get/institutes', function (data) {
         // load institutes from database
         sessionStorage.setItem('admin', JSON.stringify(data[2]['admin']));
-        insertInstitutes(data, JSON.parse(sessionStorage.getItem('admin')));
-    });
+        insertInstitutes(data);
+    })
+        .then(checkAdmin());
 }
 
-
-
-// function loadCourse() {
-//     $.get('/loader/course', data => {
-//         const courses = [];
-//         const myTbl = $('#addCourses');
-//         data.forEach(entity => {
-//            myTbl.append("<tr><th>" + entity['de'] + "</th><th>" + entity['eng'] + "</th></tr>");
-//            courses.push(entity);
-//         });
-//         sessionStorage.setItem('courses', JSON.stringify(courses));
-//     })
-//         .then(() => {
-//             loadCourseDropdown();
-//         });
-// }
 
 /** Funktion wird durch addFilterChangeEvents() und loadAll() aufgerufen
  * Wenn der GET-Request die Hochschulen-Informationen aus der Datenbank geladen hat, wird per HTML eine Tabelle mit den Inhalten erzeugt.
  * Dabei wird zwischen einem normalen Nutzer und einem Admin mit Löschrechten unterschieden
  * Handelt es sich beim Nutzer um den Admin werden in der Tabelle außerdem für jede Hochschule ein Lösch-Button sichtbar.
  */
-function insertInstitutes(data, admin) {
-    let isAdmin = false;
-    if (admin == 'true') {
-        isAdmin = true;
+function insertInstitutes(data) {
+    let style = 'none;';
+    if (checkAdmin()) {
+        style = 'block;';
     }
     $('#addItems').empty();
     let order_clause = data[1];
@@ -83,10 +68,10 @@ function insertInstitutes(data, admin) {
             x = 'Ja'
         }
         if (sort === "a") {
-            $('#addItems').append("<tr><th style=\"display:none;\">" + now['id'] + "</th><th >" + now['name'] + "</th><th >" + x + "</th><th >" + now['agreements'] + "</th><th ><button type=\"button\" class=\"btn btn-sm btn-light edit_inst_btn\" >Bearbeiten</button></th><th><button class='btn btn-sm btn-light del-institute'>Del</button></th></tr>");
+            $('#addItems').append("<tr><th style=\"display:none;\">" + now['id'] + "</th><th >" + now['name'] + "</th><th >" + x + "</th><th >" + now['agreements'] + "</th><th ><button type=\"button\" class=\"btn btn-sm btn-light edit_inst_btn\" >Bearbeiten</button></th><th><button class='btn btn-sm btn-light del-institute btn-delete' style='display: " + style + "'>Del</button></th></tr>");
         }
         else {
-            $('#addItems').prepend("<tr><th style=\"display:none;\">" + now['id'] + "</th><th class='tbl_column_huge'>" + now['name'] + "</th><th class='tbl_column_small'>" + x + "</th><th class='tbl_column_small'>" + now['agreements'] + "</th><th class='tbl_column_small' ><button type=\"button\" class=\"btn btn-sm btn-light edit_inst_btn\" >Bearbeiten</button></th><th><button class='btn btn-sm btn-light del-institute'>Del</button></th></tr>");
+            $('#addItems').prepend("<tr><th style=\"display:none;\">" + now['id'] + "</th><th class='tbl_column_huge'>" + now['name'] + "</th><th class='tbl_column_small'>" + x + "</th><th class='tbl_column_small'>" + now['agreements'] + "</th><th class='tbl_column_small' ><button type=\"button\" class=\"btn btn-sm btn-light edit_inst_btn\" >Bearbeiten</button></th><th><button class='btn btn-sm btn-light del-institute btn-delete' style='display: " + style + "'>Del</button></th></tr>");
         }
     });
     addButtonEvent();

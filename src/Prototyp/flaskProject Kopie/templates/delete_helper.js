@@ -18,7 +18,6 @@ function deletion(id, type) {
  */
 function checkAdmin() {
     const adminState = JSON.parse(sessionStorage.getItem('admin'));
-    if (adminState !== 'true') {
-        //set display of all delete buttons to "display: none;"
-    }
+    return adminState === 'true';
+
 }
