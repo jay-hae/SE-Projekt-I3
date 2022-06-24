@@ -427,5 +427,7 @@ def delete(tbl, row_id):
     cur = cnxn.cursor()
     query = f"DELETE FROM {tbl} WHERE ID = {row_id}"
     print(query)
-    #cur.execute(query)
-    #cur.commit()
+    cur.execute(query)
+    cnxn.commit()
+    cnxn.close()
+    cur.close()
