@@ -114,7 +114,13 @@ Jedoch hat uns diese Tool sehr viel mehr geholfen, als die Issue-Verwaltung vom 
 
 === Refelxtion der Teammitglieder
 ==== Jakob Häcker
+Das erstellen von komplexen Software Systemen, war für mich vor dem Modul Software Engineering nicht greifbar und somit hatte ich auch keine Vorstellung was es eigentlich bedeutet komplexe Software in Teamarbeit zu erstellen, geschweige denn was alles dafür nötig ist.
+Eins blieb mir jedoch aus dem Fakultativen Modul von Frau Hauptmann - Soziale Kompetenzen im Projektmanagement - in Erinnerung.
+Nämlich, dass ca. 50% der Softwareprojekte im Team an zwischen Menschlichen kompetenzen scheitern.
+Inspieret von diesem Modul entschied ich mich als Projektleiter vorzuschalgen.
+Was ich nicht wusste war, welche Verantwortung ich mir mit dieser Wahl auferlegte.
 
+Zu beginn des ersten Semesters war zwar die Motivation hoch, allerdings viel es mir sehr schwer die vermittelten Konzepte der Vorlesung auf die Projekt realität zu adaptieren und anzuwenden. Die Hilfestellung OpenUp war für mich zu diesem Zeitpunkt auch eher unverständlich und da alles nur eine Empfehlung war wusste ich nicht viel damit anzufangen.
 ==== Thanh Ha Khuong
 ==== Patrick Matthes
 ==== Meißner Luca
