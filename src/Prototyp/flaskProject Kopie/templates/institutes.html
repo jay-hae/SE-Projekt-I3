@@ -24,6 +24,8 @@
     <script src="../filter_functionality.js"></script>
     <script src="../filter_values_loader.js"></script>
 
+    <script src="../general_helper.js"></script>
+
     <script src="../delete_helper.js"></script>
 </head>
 <body>
@@ -275,12 +277,12 @@
                     </div>
                       <div id="space_edit_agreement" class="row">
                             <div class="col-sm p-3 m-3 pt-1">
-                                <label for="mentor_ID" class="form-label">Mentor</label>
+                                <label for="mentor_ID" class="form-label mandatory">Mentor</label>
                                 <select class="loadMentor form-select agreementInformation" id="mentor_ID">
                                     <option value="reset"> - Keine Auswahl - </option>
                                     <!-- hinzufügen der Mentoren in Dropdown-->
                                 </select><br>
-                                <label for="faculty_ID" class="form-label">Fakultät</label>
+                                <label for="faculty_ID" class="form-label mandatory">Fakultät</label>
                                 <select class="select_faculty form-select agreementInformation" id="faculty_ID">
                                     <option value="reset"> - Keine Auswahl - </option>
                                     <!-- einfügen aller Fakultäten-->
@@ -303,7 +305,7 @@
                                 <input type="text" id="out_num_months" class="form-control agreementInformation"><br>
                                 <div class="form-check">
                                     <input type="checkbox" id="inactive" class="form-check-input agreementInformation">
-                                    <label for="inactive" class="form-check-label">Agreement Inaktiv?</label>
+                                    <label for="inactive" class="form-check-label mandatory">Agreement Inaktiv?</label>
                                 </div>
                             </div>
                             <div class="col-sm p-3 m-3 pt-1">
@@ -339,11 +341,11 @@
                         <form class="clear-inst modal_form_add" id="form_left_col">
                             <h2>Hochschule</h2>
                             <div class="mb-3">
-                                <label for="add-eng" class="form-label">Englische Bezeichnung</label>
+                                <label for="add-eng" class="form-label mandatory">Englische Bezeichnung</label>
                                 <input type="text" id="add-eng" name="eng" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="add-country_ID" class="form-label">Land</label>
+                                <label for="add-country_ID" class="form-label mandatory">Land</label>
                                 <select id="add-country_ID" class="filter_country form-select" name="country_ID"></select>
                             </div>
                             <div class="mb-3">
@@ -432,7 +434,7 @@
                             </div>
                             <h2>Partnerschaft</h2>
                             <div class="mb-3">
-                                <label for="add-partnership_type_ID" class="form-label">Vertragstyp</label>
+                                <label for="add-partnership_type_ID" class="form-label mandatory">Vertragstyp</label>
                                 <select id="add-partnership_type_ID" class="fil_agree form-select"
                                     name="partnership_type_ID"></select>
                             </div>
@@ -479,11 +481,11 @@
                     </div>
                     <div class="p-3" style="display: none;" id="input-new-restriction">
                         <form class="clear-form" id="form-add-rest">
-                            <label for="restriction-course">Studiengang auswählen</label>
+                            <label class="mandatory" for="restriction-course">Studiengang auswählen</label>
                             <select id="restriction-course" name="course_ID"></select>
                             <label for="restriction-isced">ISCED Code</label>
                             <input type="text" id="restriction-isced" name="subject_area_code">
-                            <label for="restriction-type">Incoming?</label>
+                            <label class="mandatory" for="restriction-type">Incoming?</label>
                             <input type="checkbox" id="restriction-type" name="incoming">
                             <label for="restriction-mobility">Anzahl der Plätze</label>
                             <input type="text" id="restriction-mobility" name="subnum_mobility">

@@ -25,6 +25,7 @@ function startUp() {
     clearSessionStorage();
     functionalityAgreementFilter();
     loadCourse();
+    setMandatoryInput();
 }
 /**
  * Wenn die Seite institute.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um

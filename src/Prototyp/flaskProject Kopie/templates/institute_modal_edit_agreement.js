@@ -169,6 +169,7 @@ function makeRowClickable(rowID, type) {    //for every single row, easier to cr
         $(' #'+rowID).on('click', (e) => {
             let row = e.target.parentElement;
             let rowID = row['id']; //get ID of mob_agreement that was clicked
+            alert(rowID);
             insertAgreementInformation(rowID);
             insertRestriction();
             addNewAgreement();
@@ -285,13 +286,14 @@ function returnAgreement(id) {  //get updated information if updated, otherwise 
     // Falls es sich um ein in dieser Session bearbeitets Agreement handelt
     if ("agArray" in sessionStorage) {
         let arr = JSON.parse(sessionStorage.getItem("agArray"));
-        if (arr.includes(id)) {
+        if (arr.includes(id) && !id.includes('new')) {
             let updatedAg = JSON.parse(sessionStorage.getItem("updatedAgreements"));
             return {'object': updatedAg.filter(obj => Number(obj.ID) === Number(id)), 'index': 0};
         }
     }
     //Falls es sich um ein in dieser Session neu angelegtes Agreement handelt
     if (id.includes("new")) {
+        alert('hey');
         let extract = (id.split('_'))[1]; //get "index" of new agreement of current institute -> get agreement data from sessionStorage
         let newAgreement = JSON.parse(sessionStorage.getItem('newAgreements'));
         return {'object': newAgreement, 'index': extract};

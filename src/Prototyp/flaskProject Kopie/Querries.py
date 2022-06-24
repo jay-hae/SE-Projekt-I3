@@ -426,5 +426,6 @@ def delete(tbl, row_id):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     query = f"DELETE FROM {tbl} WHERE ID = {row_id}"
-    cur.execute(query)
-    cur.commit()
+    print(query)
+    #cur.execute(query)
+    #cur.commit()
