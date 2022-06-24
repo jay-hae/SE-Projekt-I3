@@ -316,9 +316,9 @@ def return_mentor():  # get all mentor information and store on client storage
     query = """SELECT m.ID, m.faculty_ID, m.active, m.title, m.firstname, m.lastname, m.gender_ID,
                 m.homepage, m.email,count(mentor_ID) 
                 FROM tbl_mobility_agreement ma 
-                JOIN tbl_mentor m  
+                RIGHT JOIN tbl_mentor m  
                 ON ma.mentor_ID = m.ID 
-                GROUP BY mentor_ID
+                GROUP BY m.ID
                 ORDER BY m.lastname"""
     cur.execute(query)
     all_mentors = cur.fetchall()
@@ -383,12 +383,13 @@ def return_institutes(result_set):
 
 
 def edit(keys, values, change_id, change_type):  # institute = institute ID
-    tbl_names = {'institute': "tbl_institute", 'agreement': "tbl_mobility_agreement", 'restriction': "tbl_mobility_agreement_x_course"}
+    tbl_names = {'institute': "tbl_institute", 'agreement': "tbl_mobility_agreement", 'restriction': "tbl_mobility_agreement_x_course", 'mentor': 'tbl_mentor'}
     parameter = helper.dynamic_querries(keys)
     query_string = helper.create_update_string(keys)
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
-    query = "UPDATE " + tbl_names[change_type] + " SET " + query_string[:-1] + " WHERE ID = " + change_id
+    query = "UPDATE " + tbl_names[change_type] + " SET " + query_string[:-1] + " WHERE ID = " + str(change_id)
+    print(query, values)
     cur.execute(query, tuple(values),)
     cnxn.commit()
     cnxn.close()
@@ -422,5 +423,8 @@ def checkLength(key, object_id):
 
 
 def delete(tbl, row_id):
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
     query = f"DELETE FROM {tbl} WHERE ID = {row_id}"
-    print(query)
+    cur.execute(query)
+    cur.commit()

@@ -354,3 +354,29 @@ function postData(data, url) {
             return answer;
         });
 }
+
+
+/** Funktion wird durch insertAgreementInTable() aufgerufen
+ *  Ihr wird ein bestimmter Key der aktuellen SessionStorage sowie die gewünschte ID übergeben.
+ *  Die Funktion ermöglicht es einen bestimmten Eintrag eines bestimmten Keys aus SessionStorage zu laden.
+ */
+function getStorageData(storage_key, object_id) {
+    return (JSON.parse(sessionStorage.getItem(storage_key)))[object_id];
+}
+
+/** Wird durch loadCourse() aufgerufen
+ *  Stellt dem Dropdown im Formular 'Studiengänge' die verfügbaren Studiengänge bereit
+ * Formular: 'Hochschule bearbeiten' > 'Zu Partnerschaftverträge wechseln' > einen Vertrag auswählen > 'Studiengänge'-Button > 'Neuen Studiengang auswäheln > 'Dropdown 'Studiengang auswählen'
+ */
+function loadCourseDropdown() {
+    const element = $('#restriction-course');
+    console.log(element);
+    const dropdownElements = JSON.parse(sessionStorage.getItem('courses'));
+    for (let index = 0; index < dropdownElements.length; index++) {
+        let cur = dropdownElements[index];
+        element.append($('<option>', {
+           text: cur['de'],
+           value: cur['ID']
+        }));
+    }
+}

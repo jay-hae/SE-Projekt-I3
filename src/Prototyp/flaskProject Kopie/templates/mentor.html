@@ -19,7 +19,7 @@
 <!-- HAUPTANSICHT -->
 <div id="Page_one" > <!-- class container -->
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-dark bg-dark" style="background-color: #e3f2fd;">
         <a class="navbar-brand ms-3" href="#">HTW Dresden</a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -33,7 +33,7 @@
         <li class="nav-item m-1">
             <div class="in-navbar" id="handbuch">
                 <div class="dropdown">
-                    <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
+                    <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">...</a></li>
                         <li><a class="dropdown-item" href="#">...</a></li>
@@ -100,14 +100,15 @@
                     </div>
                     <div class="col-sm p-3 m-3 pt-1">
                         <form class="mentor_slide modal_form_mentor" id="mentor_edit_form" >
+                            <input style="display: none;" type="text" id="edit_mentor_id">
                             <label for="edit_mentor_title" class="form-label">Titel</label>
                             <input class="form-control" type="text" id="edit_mentor_title"><br>
                             <label for="edit_mentor_firstname" class="form-label">Vorname</label>
                             <input class="form-control" type="text" id="edit_mentor_firstname"><br>
                             <label for="edit_mentor_lastname" class="form-label">Nachname</label>
                             <input class="form-control" type="text" id="edit_mentor_lastname" name="edit_mentor_lastname"><br>
-                            <label class="form-label" for="edit_men_fac">Fakultät</label>
-                            <select class="edit_mentor_fac form-select" id="edit_men_fac" name="edit_mentor_faculty">
+                            <label class="form-label" for="edit_men_faculty">Fakultät</label>
+                            <select class="edit_mentor_fac form-select" id="edit_men_faculty" name="edit_mentor_faculty">
                                 <!-- Add options for faculties (dropdown) -->
                             </select><br>
                             <label for="edit_mentor_gender" class="form-label">Geschlecht</label>
@@ -128,7 +129,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary close_modal_edit_mentor">Abbrechen</button>
-                <button class="btn btn-primary save-modal">Speichern</button>
+                <button onclick="saveMentorButton(this)" class="btn btn-primary edit-mentor save-modal">Speichern</button>
             </div>
         </div>
     </div>
@@ -143,7 +144,7 @@
                 <button type="button" class="btn-close close-modal cancel" onclick="$('#modal_add_mentor').toggle()"></button>
             </div>
             <div class="modal-body">
-                <form class="mentor_slide modal_form_mentor" id="mentor_add_form" >
+                <form class="mentor_slide modal_form_mentor" id="mentor_add_form">
                     <label class="form-label" for="mentor_add_title">Titel</label><br>
                     <input class="form-control" type="text" id="mentor_add_title" name="title"><br>
                     <label class="form-label" for="mentor_add_firstname">Vorname</label><br>
@@ -170,7 +171,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary cancel close-modal" onclick="$('#modal_add_mentor').toggle();">Abbrechen</button>
-                <button class="btn btn-primary new_mentor save-modal">Speichern</button>
+                <button class="btn btn-primary new_mentor mentor-add-btn">Speichern</button>
             </div>
         </div>
     </div>

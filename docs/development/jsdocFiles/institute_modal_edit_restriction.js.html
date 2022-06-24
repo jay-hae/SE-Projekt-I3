@@ -27,8 +27,81 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>
-/**
- * 
+/** Wird durch den Speichernbutton bzw. instituteButtonEvents() aufgerufen
+ *  Funktion speichert die durch den Nutzer in das Formular eingegebenen Restriktion-Informationen in der SessionStorage
+ */
+function newRestriction() {
+    let restCounter = 0;
+    if (!('newRestrictCounter' in sessionStorage)) {
+        sessionStorage.setItem('newRestrictCounter', JSON.stringify(restCounter));
+    }
+    else {
+        restCounter = JSON.parse(sessionStorage.getItem('newRestrictCounter'));
+    }
+    const new_rest = {};
+    new_rest['mobility_agreement_ID'] = sessionStorage.getItem('currentAgID');
+    const input = Array.from($('#form-add-rest').children('input, select'));
+    input.forEach(child => {
+        if (child.name === 'incoming') {
+            new_rest[child.name] = $('#'+child.id).prop('checked') ? 1 : 0;
+        }
+        else {
+            new_rest[child.name] = child.value;
+        }
+    });
+    new_rest['restriction_ID'] = `new_${restCounter}`;
+    const restrictions = 'newRestrictions' in sessionStorage ? JSON.parse(sessionStorage.getItem('newRestrictions')) : [];
+    sessionStorage.setItem('newRestrictCounter', JSON.stringify(Number(restCounter)+1));
+    restrictions.push(new_rest);
+    insertRestriction([sessionStorage.getItem('currentAgID'), new_rest], restCounter);
+    sessionStorage.setItem('newRestrictions', JSON.stringify(restrictions));
+}
+
+/** Funktoin wird durch newRestriction() ('Studiengang Speicher'-Button) und makeRowClickable() aufgerufen 
+ * Wird beim Funktionsaufruf kein Parameter übergeben ist das object = false
+ * Restriktions bezüglich des vom Nutzer gewählten Vertrags werden im Formular angezeigt.
+ * Formular: 'Hochschule bearbeiten' > 'Zu Partnerschaftverträge wechseln' > einen Vertrag auswählen > 'Studiengänge'-Button > 'Studiengang speichern'
+ */
+function insertRestriction(object=false, restriction_index) {
+    let restrictions = [];
+    let style = 'none;';
+    if (checkAdmin()) {
+        style = 'block;';
+    }
+    if (object === false) {
+        let tbl_rest = document.getElementById('tbl_restriction');
+        tbl_rest.innerHTML = "";
+        restrictions = getRestrictions();
+    }
+    else
+        restrictions.push(object);
+    const dropdown = $('&lt;select onchange="trackRestrictionChange(this.parentElement, this.value)">');
+    dropdown.attr('id', 'exchange-type-dropdown');
+    //maybe flip values -> wait for raphaels answer
+    dropdown.append($('&lt;option>', {
+        value: '0',
+        text: 'Outgoing'
+    }));
+    dropdown.append($('&lt;option>', {
+        value: '1',
+        text: 'Incoming'
+    }));
+    console.log(restrictions);
+    restrictions.forEach((restriction, index) => {
+        restriction = restriction[1];
+        console.log(restriction);
+        dropdown[0].id = `exchange-type-dropdown-${restriction_index}`;
+        let row = "&lt;tr id='" + restriction['restriction_ID'] + "'>&lt;th id='course'>&lt;p> "+ restriction['course'] + "&lt;/p>&lt;/th>&lt;th id='subject_area_code'>&lt;textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "&lt;/textarea>&lt;/th>&lt;th id='incoming'>" + dropdown[0].outerHTML + "&lt;/th>&lt;th id='sub_num_mobility'>&lt;textarea style='width: 2rem' onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"&lt;/textarea>&lt;/th>&lt;th id='sub_num_months'>&lt;textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"&lt;/textarea>&lt;/th>&lt;th>&lt;button onclick='deletion((this).parentElement.parentElement.id, `restriction`)' class='btn-delete' style='display: " + style + "'>Del&lt;/button>&lt;/th>&lt;/tr>";
+        $('#tbl_restriction').append(row);
+        document.getElementById(`exchange-type-dropdown-${restriction_index}`).value = restriction['incoming'];
+    })
+}
+
+
+
+/** Funktion wird durch insertRestriktion() aufgerufen.
+ * Ihr wird das vom Nutzer veränderte Feld der aktuelle Zeile der Restriktions und deren Inhalt übergeben
+ * Wenn ein Wert einer Restriktion verändert wurde, werden die geänderten Daten an die Funktion setRestrictionChange() gesendet
  */
 function trackRestrictionChange(parent, value) {
     let key = parent['id'];
@@ -36,6 +109,10 @@ function trackRestrictionChange(parent, value) {
     setRestrictionChange(key, value, restriction_id['id']);
 }
 
+/** Funktion wird durch trackRestrictionChange() aufgerufen.
+ *  Ihr werden der key (Bezeichnung) des veränderten Werts, der Wert selbst und die ID der betroffenen Restriktion übergeben.
+ *  Diese Daten werden unter newRestrictions in der SessionStorage gespeichert.
+ */
 function setRestrictionChange(key, value, id) {
     let updatedRestrictions;
     let sessionKey;
@@ -62,33 +139,20 @@ function setRestrictionChange(key, value, id) {
     sessionStorage.setItem(sessionKey, JSON.stringify(updatedRestrictions));
 }
 
+/** Funktion wird durch insertRestriction() aufgerufen
+ *  Sie gibt alle Restriktions aus der sessionStorage zurück, die für das aktuell ausgewählte Agreement hinterlegt sind.
+ */
+function getRestrictions() {
+    let matchingAgreement = sessionStorage.getItem('currentAgID');
+    let allRestrictions = JSON.parse(sessionStorage.getItem('currentRestrictions'));
+    return allRestrictions.filter(obj => Number(obj[0]) === Number(matchingAgreement));
+}
 
-function newRestriction() {
-    let restCounter = 0;
-    if (!('newRestrictCounter' in sessionStorage)) {
-        sessionStorage.setItem('newRestrictCounter', JSON.stringify(restCounter));
-    }
-    else {
-        restCounter = JSON.parse(sessionStorage.getItem('newRestrictCounter'));
-    }
-    const new_rest = {};
-    new_rest['mobility_agreement_ID'] = sessionStorage.getItem('currentAgID');
-    const input = Array.from($('#input-new-restriction').children('input, select'));
-    input.forEach(child => {
-        if (child.name === 'incoming') {
-            new_rest[child.name] = $('#'+child.id).prop('checked') ? 1 : 0;
-        }
-        else {
-            new_rest[child.name] = child.value;
-        }
-    });
-    new_rest['restriction_ID'] = `new_${restCounter}`;
-    const restrictions = 'newRestrictions' in sessionStorage ? JSON.parse(sessionStorage.getItem('newRestrictions')) : [];
-    sessionStorage.setItem('newRestrictCounter', JSON.stringify(Number(restCounter)+1));
-    restrictions.push(new_rest);
-    insertRestriction([sessionStorage.getItem('currentAgID'), new_rest]);
-    sessionStorage.setItem('newRestrictions', JSON.stringify(restrictions));
-}</code></pre>
+function returnCourse(course_ID) {
+    const courses = JSON.parse(sessionStorage.getItem('courses'));
+    return courses.filter(course => Number(course.ID) === Number(course_ID));
+}
+</code></pre>
         </article>
     </section>
 
@@ -98,13 +162,13 @@ function newRestriction() {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addButtonEvent">addButtonEvent</a></li><li><a href="global.html#addFilterChangeEvents">addFilterChangeEvents</a></li><li><a href="global.html#addNewRestToNewAg">addNewRestToNewAg</a></li><li><a href="global.html#agreementFilter">agreementFilter</a></li><li><a href="global.html#checkIfNew">checkIfNew</a></li><li><a href="global.html#checkIfUpdated">checkIfUpdated</a></li><li><a href="global.html#checkInput">checkInput</a></li><li><a href="global.html#checkNewRestForNewAgreement">checkNewRestForNewAgreement</a></li><li><a href="global.html#checkProp">checkProp</a></li><li><a href="global.html#clearSessionStorage">clearSessionStorage</a></li><li><a href="global.html#createAgreementObject">createAgreementObject</a></li><li><a href="global.html#createDifferenceArray">createDifferenceArray</a></li><li><a href="global.html#createObjectInstitute">createObjectInstitute</a></li><li><a href="global.html#createRestriction">createRestriction</a></li><li><a href="global.html#functionalityAgreementFilter">functionalityAgreementFilter</a></li><li><a href="global.html#getCountries">getCountries</a></li><li><a href="global.html#insertAgreementInTable">insertAgreementInTable</a></li><li><a href="global.html#insertCountries">insertCountries</a></li><li><a href="global.html#insertFac">insertFac</a></li><li><a href="global.html#instituteObjectUpdated">instituteObjectUpdated</a></li><li><a href="global.html#loadAgreements">loadAgreements</a></li><li><a href="global.html#loadMentorDropdown">loadMentorDropdown</a></li><li><a href="global.html#loadModal">loadModal</a></li><li><a href="global.html#makeRowClickable">makeRowClickable</a></li><li><a href="global.html#modalButtonEvents">modalButtonEvents</a></li><li><a href="global.html#modalEvents">modalEvents</a></li><li><a href="global.html#postData">postData</a></li><li><a href="global.html#setChanged">setChanged</a></li><li><a href="global.html#setupFilter">setupFilter</a></li><li><a href="global.html#showGuidedAgreements">showGuidedAgreements</a></li><li><a href="global.html#trackAgreementChange">trackAgreementChange</a></li><li><a href="global.html#trackPartnershipType">trackPartnershipType</a></li><li><a href="global.html#trackRestrictionChange">trackRestrictionChange</a></li><li><a href="global.html#updateChangedAgreement">updateChangedAgreement</a></li><li><a href="global.html#validateForm">validateForm</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addButtonEvent">addButtonEvent</a></li><li><a href="global.html#addFilterChangeEvents">addFilterChangeEvents</a></li><li><a href="global.html#addNewAgreement">addNewAgreement</a></li><li><a href="global.html#addNewRestToNewAg">addNewRestToNewAg</a></li><li><a href="global.html#agreementFilter">agreementFilter</a></li><li><a href="global.html#cacheMentors">cacheMentors</a></li><li><a href="global.html#checkAdmin">checkAdmin</a></li><li><a href="global.html#checkIfNew">checkIfNew</a></li><li><a href="global.html#checkIfUpdated">checkIfUpdated</a></li><li><a href="global.html#checkInput">checkInput</a></li><li><a href="global.html#checkNewRestForNewAgreement">checkNewRestForNewAgreement</a></li><li><a href="global.html#checkProp">checkProp</a></li><li><a href="global.html#clearAgreementSpace">clearAgreementSpace</a></li><li><a href="global.html#clearSessionStorage">clearSessionStorage</a></li><li><a href="global.html#createAgreementObject">createAgreementObject</a></li><li><a href="global.html#createDifferenceArray">createDifferenceArray</a></li><li><a href="global.html#createNewAgreementObj">createNewAgreementObj</a></li><li><a href="global.html#createObjectInstitute">createObjectInstitute</a></li><li><a href="global.html#createRestriction">createRestriction</a></li><li><a href="global.html#editMentorButton">editMentorButton</a></li><li><a href="global.html#functionalityAgreementFilter">functionalityAgreementFilter</a></li><li><a href="global.html#getCountries">getCountries</a></li><li><a href="global.html#getRestrictions">getRestrictions</a></li><li><a href="global.html#getStorageData">getStorageData</a></li><li><a href="global.html#insertAgreement">insertAgreement</a></li><li><a href="global.html#insertAgreementInformation">insertAgreementInformation</a></li><li><a href="global.html#insertAgreementInTable">insertAgreementInTable</a></li><li><a href="global.html#insertCountries">insertCountries</a></li><li><a href="global.html#insertFac">insertFac</a></li><li><a href="global.html#insertInstitutes">insertInstitutes</a></li><li><a href="global.html#insertMentor">insertMentor</a></li><li><a href="global.html#insertRestriction">insertRestriction</a></li><li><a href="global.html#instituteButtonEvents">instituteButtonEvents</a></li><li><a href="global.html#instituteObjectUpdated">instituteObjectUpdated</a></li><li><a href="global.html#loadAgreements">loadAgreements</a></li><li><a href="global.html#loadAll">loadAll</a></li><li><a href="global.html#loadCourse">loadCourse</a></li><li><a href="global.html#loadCourseDropdown">loadCourseDropdown</a></li><li><a href="global.html#loadMentor">loadMentor</a></li><li><a href="global.html#loadMentorDropdown">loadMentorDropdown</a></li><li><a href="global.html#loadModal">loadModal</a></li><li><a href="global.html#makeRowClickable">makeRowClickable</a></li><li><a href="global.html#mentorButtonFunctionality">mentorButtonFunctionality</a></li><li><a href="global.html#mentorInsert">mentorInsert</a></li><li><a href="global.html#modalEvents">modalEvents</a></li><li><a href="global.html#newRestriction">newRestriction</a></li><li><a href="global.html#postData">postData</a></li><li><a href="global.html#returnAgreement">returnAgreement</a></li><li><a href="global.html#saveMentorButton">saveMentorButton</a></li><li><a href="global.html#searchMentor">searchMentor</a></li><li><a href="global.html#setChanged">setChanged</a></li><li><a href="global.html#setCheckbox">setCheckbox</a></li><li><a href="global.html#setRestrictionChange">setRestrictionChange</a></li><li><a href="global.html#setupFilter">setupFilter</a></li><li><a href="global.html#showGuidedAgreements">showGuidedAgreements</a></li><li><a href="global.html#startUp">startUp</a></li><li><a href="global.html#trackAgreementChange">trackAgreementChange</a></li><li><a href="global.html#trackMentorChange">trackMentorChange</a></li><li><a href="global.html#trackPartnershipType">trackPartnershipType</a></li><li><a href="global.html#trackRestrictionChange">trackRestrictionChange</a></li><li><a href="global.html#updateChangedAgreement">updateChangedAgreement</a></li><li><a href="global.html#validateForm">validateForm</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Jun 20 2022 18:57:30 GMT+0200 (Mitteleuropäische Sommerzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jun 24 2022 13:33:44 GMT+0200 (Mitteleuropäische Sommerzeit)
 </footer>
 
 <script> prettyPrint(); </script>

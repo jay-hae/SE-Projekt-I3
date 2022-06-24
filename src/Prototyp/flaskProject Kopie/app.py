@@ -111,7 +111,7 @@ def new_object(name):
             values.append(req[key])
         columns.append('active')
         values.append(active)
-        Querries.new_object('mentor', columns, values)
+        return Querries.new_object('mentor', columns, values)
     elif name == 'Institute':
         my_var = request.form.to_dict()
         # for insert into tbl_institute
@@ -226,6 +226,8 @@ def changes(name):
         change_id = x['ID']
         x.pop('ID')
         change_type = 'restriction'
+    elif name == 'mentor':
+        change_type = 'mentor'
     Querries.edit(x.keys(), x.values(), change_id, change_type)
     return redirect(url_for('LoginPage'))
 

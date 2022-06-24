@@ -1,3 +1,4 @@
+/*
 #add-new-agreement {
   color: green;
 }
@@ -5,6 +6,7 @@
   background-color: green;
   color: white;
 }
+*/
 
 #add-new-agreement-container {
   margin-bottom: 0;
@@ -107,4 +109,9 @@
 
 .rounded-border {
   border-radius: 10px;
+}
+
+.mandatory {
+  border-color: red;
+  border-width: 0.2rem;
 }

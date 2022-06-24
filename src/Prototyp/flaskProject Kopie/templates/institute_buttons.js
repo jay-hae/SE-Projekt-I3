@@ -49,12 +49,10 @@ function modalEvents(){
     });
 
     // CLEAR INPUT WHEN CLOSING MODAL
-    $('.modal').on('close', function(event, modal) {
-        //$(' .my_check').prop('checked', false);
-        // clear modal of user input after closing it
+    $('.close_modal_edit').on('click', function(event, modal) {
         console.log("institute_button.js Z.47");
-        $('.modal_form_inst').trigger('reset');
-        $('#mod_add_inst_save_btn').attr('disabled', "true")
+        $('.clear-form').trigger('reset');
+        $('#mod_add_inst_save_btn').attr('disabled', "true");
     });
 }
 
@@ -73,12 +71,14 @@ function modalEvents(){
  * close_modal_restriction = Schließen des Modal 'Restrikionen' über 'X' -Button
  * close_modal_edit = Schließen des Modals 'Bearbeiten'
  * */
-function modalButtonEvents() {
+function instituteButtonEvents() {
     $('#add-new-restriction').on('click', () =>{
        $('#input-new-restriction').attr('style', 'display: block;');
     });
     $('#save-new-restriction').on('click', () => {
         newRestriction();
+        $('#input-new-restriction').attr('style', 'display: none;');
+        $('.clear-form').trigger('reset');
     });
     $('#add-new-agreement').on('click', () => {
         insertAgreementInTable(JSON.parse(sessionStorage.getItem('createAg')), $('#addAgreements'), "newAgreement");
@@ -97,6 +97,7 @@ function modalButtonEvents() {
     $('#rtn-agreement').on('click', function () {
         $('#modal_agreement_restrictions').toggle();
         $('#modal_edit').toggle();
+        $('#input-new-restriction').attr('style', 'display: none;');
     });
     $('#show_restrictions').on('click', () => {
         if ('currentAgID' in sessionStorage) {
@@ -126,6 +127,7 @@ function modalButtonEvents() {
         $('#second_slide').hide();
         $('#addAgreements').empty();
         $('#modal_edit').toggle();
+        $('#input-new-restriction').attr('style', 'display: none;');
         console.log("institute_button.js Z.92");
         clearSessionStorage(); //delete cached data from local storage (important data to keep up edit functionality)
         clearAgreementSpace();

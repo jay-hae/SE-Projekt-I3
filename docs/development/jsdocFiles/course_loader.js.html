@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: filter_values_loader.js</title>
+    <title>JSDoc: Source: course_loader.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: filter_values_loader.js</h1>
+    <h1 class="page-title">Source: course_loader.js</h1>
 
     
 
@@ -26,68 +26,25 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
-/** Auswahlmöglichkeiten für die Dropdowns der Filter 'Land', 'Fakultät' und 'Vertragstyp' in der Hauptansicht
- * institutes.html aus Datenbank laden.
- * Ebenso in den Dropdowns der Filter in den Modalen 'Bearbeiten' und 'Anlegen'. Im Modal 'Bearbeiten' in der Ansicht
- * 'Partnerschaftsverträgeansicht' findet sich zusätzlich das Dropdown 'Mentor', welches ebenfalls beladen wird.
- */
-function setupFilter() {
-    $.get('/get/countries', function (data2) {
-        $.each(data2, function (index2) {
-            let x = data2[index2];
-            //add new option to my dropdown select items
-            //country ID = value
-            //country eng = name (text)
-            $(' .filter_country').append($('&lt;option>', {
-                //add to selected in modal (modal to add new institute)
-                value: x['id'],
-                text: x['country']
-            }));
-        });
-    });
-    $.get('/get/faculties', function (data3) {
-        //add to filter on main page
-        const arr = Array.from(data3)
-        console.log(arr);
-        let faculties = {};
-        $.each(data3, function (index3) {
-            let faculty = data3[index3];
-            $(' .select_faculty').append($('&lt;option>', {
-                value: faculty['id'],
-                text: faculty['fac']
-            })); //Name of option = faculty['fac'] == Name; value = faculty['id'] == Fac_ID
-            faculties[faculty['id']] = faculty['fac'];
-        });
-        sessionStorage.setItem('faculties', JSON.stringify(faculties));
-    });
-    $.get('/get/agreements', function (data3) {
-        //add to filter on main page
-        $.each(data3, function (index3) {
-            let agreement = data3[index3];
-            $(' .fil_agree').append($('&lt;option>', {
-                value: agreement['ID'],
-                text: agreement['ps_type']
-            })); //Name of option = faculty['fac'] == Name; value = faculty['id'] == Fac_ID
-        });
-    });
-    loadMentorDropdown();
-}
+            <pre class="prettyprint source linenums"><code>//get all courses from sessionStorage and add them to table
+$(document).on('DOMContentLoaded',  loadCourse());
 
-/** Belädt das Dropdown 'Mentor' mit den Inhalten aus der Datenbank*/
-function loadMentorDropdown() {
-    $.get('/loader/mentor', (data) => {
-        let mentors = {};
-       $.each(data, (index) => {
-           let mentor = data[index];
-           $(' .loadMentor').append($('&lt;option>', {
-               value: `${mentor['ID']}`,
-               text: `${mentor['title']} ${mentor['firstname']} ${mentor['lastname']}`
-            }));
-           mentors[mentor['ID']] = {'title': mentor['title'], 'firstname': mentor['firstname'], 'lastname': mentor['lastname']};
-       });
-       sessionStorage.setItem('mentors', JSON.stringify(mentors));
-    });
+/** Wenn die Seite course.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um
+ * Studiengängedaten aus der Datenbank abzufragen.
+ */
+function loadCourse() {
+    $.get('/loader/course', data => {
+        const courses = [];
+        const myTbl = $('#addCourses');
+        data.forEach(entity => {
+           myTbl.append("&lt;tr>&lt;th>" + entity['de'] + "&lt;/th>&lt;th>" + entity['eng'] + "&lt;/th>&lt;/tr>");
+           courses.push(entity);
+        });
+        sessionStorage.setItem('courses', JSON.stringify(courses));
+    })
+        .then(() => {
+            loadCourseDropdown();
+        });
 }</code></pre>
         </article>
     </section>
