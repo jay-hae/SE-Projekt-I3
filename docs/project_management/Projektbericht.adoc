@@ -1,5 +1,3 @@
-// ---- 1. Projektbericht -----
-= SE II - Projektbericht: {project-name} 
 
 // --- 2. Teammitglieder -----------------------
 Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
@@ -38,9 +36,17 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 :docs-architecture: {docs}/architecture
 :docs-test: {docs}/test
 :docs-development: {docs}/development
+== Einführung
+Dieses Dokument enthält den Projektbericht zum Aufbau einer Hochschulpartnerschafts-Verwaltungs-Software im Rahmen des SE I und SE II Moduls.
 
 == Planung
 === Aufgabenstellung & Auftraggeber
+Die Auftraggeber unseres Projektes I3_Hochschulpartnerschaften_Stabstelle_Internationales,
+sind wie der Name schon erkennen lässt, die Stabstelle Internationales der HTW Dresden.
+Diese Stabstelle beschäftigt sich mit allen Angelegenheiten, welche mit Beziehungen in das Ausland in Verbindung zubringen sind.
+Auszugsweise fallen darunter, das Verwalten aller Verträge, Kontaktdaten und Informationenvon Austauschstudierenden zu den jeweiligen Partnerhoschulen.
+Um die Verwaltung dieser Daten zu erleichtern, soll die alte Verwaltungssoftware (Microsoft Accsess) nun durch eine Webanwendung mit schon vorgegebener Datenbank ersetzt werden, was unsere Aufgabe für die 2 Semester war.
+
 
 === Situation zum Semesterbeginn
 
@@ -67,10 +73,10 @@ Wie bei unserem Coach wurden Termine und Unterlagen per E-Mail kommuniziert bzw.
 Unsere Meetings haben wir über einen, von der SI zuverfügung gestellten, BBB Raum gehalten.
 
 ==== Projektaufgabenverwaltung
-Unsere Aufgabenverwaltung haben wir in SE I über GitHub Issues verwaltet und versucht eine Übergeordnete Organisations ebene mit Git Projects zu etablieren.
+Unsere Aufgabenverwaltung haben wir in SE I über GitHub Issues organisiert und versucht eine Übergeordnete Organisations ebene mit Git Projects zu etablieren.
 Dies hat allerdings nicht wirklich Funktioniert, da der Zugang zu den Git Projects recht umständlich war und somit niemand diese Verwaltungsebene gepflegt hat.
-Weiterhin hatten wir Problem unser Aufgaben auf Issues abzubliden und diese Konstant zupfelegen, da die Issues auch für Problem definiert wurden, die viele kleine Unterissues beinhaltet hätten.
-Dies resultierte in ein Chaos, das keine Übersichtliche Handhabung der Issues möglich machte.
+Weiterhin hatten wir Problem unser Aufgaben auf Issues abzubliden und diese Konstant zupfelegen. Die Issues wurden auch für Problem definiert, die viele kleine Unterissues beinhaltet hätten.
+Dies resultierte in ein Chaos, das keine übersichtliche Handhabung der Issues möglich machte.
 Des Weiteren bot es keine Möglichkeiten unseren Fortschritt zu veranschaulichen.
 Abhilfe für diese Problem schaffte das in der Mitte des SE II Moduls eingführte Tool ZenHub.
 Damit war es möglich Hirachien, Abhängigkeiten und arbeitsaufwände von Issues zu modellieren. Eine Visualisierung des Projektfortschrittes wurde zu dem ebenfalls ermöglicht, welche aber Aufgrund von inkonsitenter Nutzung dieser Möglichkeit nicht wirklich wirksam wurde.
@@ -81,9 +87,25 @@ Jedoch hat uns diese Tool sehr viel mehr geholfen, als die Issue-Verwaltung vom 
 // oder besser nur Iterationen beschreiben?
 // bzw beschreiben warum Iterationen eher schwammig waren (kein vorhandenes Inkrement bei manchen)
 === Inception
+==== Ziele
+==== Problem 
+==== Ergebnisse
+
 === Elaboration
+==== Ziele
+==== Problem 
+==== Ergebnisse
+
 === Construction
+==== Ziele
+==== Problem 
+==== Ergebnisse
+
 === Transition
+==== Ziele
+==== Problem 
+==== Ergebnisse
+
 
 
 == Ergebnisse
@@ -92,6 +114,7 @@ Jedoch hat uns diese Tool sehr viel mehr geholfen, als die Issue-Verwaltung vom 
 
 === Refelxtion der Teammitglieder
 ==== Jakob Häcker
+
 ==== Thanh Ha Khuong
 ==== Patrick Matthes
 ==== Meißner Luca
