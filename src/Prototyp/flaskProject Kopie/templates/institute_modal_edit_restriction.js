@@ -25,7 +25,7 @@ function newRestriction() {
     const restrictions = 'newRestrictions' in sessionStorage ? JSON.parse(sessionStorage.getItem('newRestrictions')) : [];
     sessionStorage.setItem('newRestrictCounter', JSON.stringify(Number(restCounter)+1));
     restrictions.push(new_rest);
-    insertRestriction([sessionStorage.getItem('currentAgID'), new_rest]);
+    insertRestriction([sessionStorage.getItem('currentAgID'), new_rest], restCounter);
     sessionStorage.setItem('newRestrictions', JSON.stringify(restrictions));
 }
 
@@ -34,7 +34,7 @@ function newRestriction() {
  * Restriktions bezüglich des vom Nutzer gewählten Vertrags werden im Formular angezeigt.
  * Formular: 'Hochschule bearbeiten' > 'Zu Partnerschaftverträge wechseln' > einen Vertrag auswählen > 'Studiengänge'-Button > 'Studiengang speichern'
  */
-function insertRestriction(object=false) {
+function insertRestriction(object=false, restriction_index) {
     let restrictions = [];
     let style = 'none;';
     if (checkAdmin()) {
@@ -61,10 +61,11 @@ function insertRestriction(object=false) {
     console.log(restrictions);
     restrictions.forEach((restriction, index) => {
         restriction = restriction[1];
-        dropdown[0].id = `exchange-type-dropdown-${index}`;
+        console.log(restriction);
+        dropdown[0].id = `exchange-type-dropdown-${restriction_index}`;
         let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ restriction['course'] + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th id='incoming'>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea style='width: 2rem' onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th><th><button onclick='deletion((this).parentElement.parentElement.id, `restriction`)' class='btn-delete' style='display: " + style + "'>Del</button></th></tr>";
         $('#tbl_restriction').append(row);
-        document.getElementById(`exchange-type-dropdown-${index}`).value = restriction['incoming'];
+        document.getElementById(`exchange-type-dropdown-${restriction_index}`).value = restriction['incoming'];
     })
 }
 
@@ -117,4 +118,9 @@ function getRestrictions() {
     let matchingAgreement = sessionStorage.getItem('currentAgID');
     let allRestrictions = JSON.parse(sessionStorage.getItem('currentRestrictions'));
     return allRestrictions.filter(obj => Number(obj[0]) === Number(matchingAgreement));
+}
+
+function returnCourse(course_ID) {
+    const courses = JSON.parse(sessionStorage.getItem('courses'));
+    return courses.filter(course => Number(course.ID) === Number(course_ID));
 }
