@@ -30,7 +30,6 @@ function loadAgreements(inst_id) {
             sessionStorage.setItem('currentRestrictions', JSON.stringify(restrict));
             sessionStorage.setItem('updatedRestrictions', JSON.stringify(restrict));
             agreementFilter("Hochschulvereinbarung");
-            console.log(ps_types);
         });
 }
 
@@ -67,16 +66,17 @@ function showGuidedAgreements(agreements_object) {
 */
 function insertAgreementInTable(data, addField, addType) {
     let newRow = '';
-    let id = ''
+    let id = '';
     let style = 'none;';
     if (checkAdmin()) {
         style = 'block;';
     }
-    const activeState = data['agreement_inactive'] == '0' ? 'Ja' : 'Nein';
+    const activeState = String(data['agreement_inactive']) === '0' ? 'Ja' : 'Nein';
     if (addType === 'fromDatabase') {
         createRestriction(data['agreement_ID'], data['course_restrictions']);
         id = data['agreement_ID'];
-        newRow = "<tr style='display: none' id='" + data['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty'] + "</th><th>" + activeState + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style + "'>Del</button></th></tr>";
+        let notes = data['notes'] !== null ? data['notes'] : '';
+        newRow = "<tr style='display: none' id='" + data['agreement_ID'] + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty'] + "</th><th>" + activeState + "</th><th> " + data['mentor_firstname'] + " " + data['mentor_lastname'] + "</th><th>" + notes + "</th><th><button class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style + "'>Del</button></th></tr>";
     }
     else {
         let index = 0;
@@ -93,7 +93,8 @@ function insertAgreementInTable(data, addField, addType) {
         data['inactive'] = data['inactive'] ? data['inactive'] : '0';
         status = String(data['inactive']) === '0' ? 'Ja' : 'Nein';
         id = 'new_' + index;
-        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty_ID'] + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + data['notes'] + "</th><th><button class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style +"'>Del</button></th></tr>";
+        let notes = data['notes'] ? data['notes'] : '';
+        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty_ID'] + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + notes + "</th><th><button class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style +"'>Del</button></th></tr>";
     }
     addField.append(newRow);
     makeRowClickable(id, "agreement");
@@ -196,7 +197,6 @@ function updateChangedAgreement (agreementID, changedVal, value) {
         let agreements = agreementID.includes('new') ? JSON.parse(sessionStorage.getItem('newAgreements')): JSON.parse(sessionStorage.getItem('updatedAgreements')); //get duplicated array of all agreements, no matter if updated or not
         for (let iterator = 0; iterator < agreements.length; iterator++) {
             let agreement = agreements[iterator];
-            console.log(agreement.ID, agreementID)
             if (agreement.ID == agreementID) {
                 agreement[changedVal] = value;
                 if (changedVal === "inactive") {
@@ -262,6 +262,7 @@ function insertAgreementInformation(agreement) {
     let setAgreement = returnAgreement(agreement);
     setAgreement = (setAgreement['object'])[setAgreement['index']];
     sessionStorage.setItem('currentAgID',setAgreement['ID']);
+    console.log(setAgreement.notes);
     $('#mentor_ID').val(setAgreement.mentor_ID);
     $('#faculty_ID').val(setAgreement.faculty_ID);
     $('#date_signature').val(setAgreement.date_signature);
@@ -272,7 +273,7 @@ function insertAgreementInformation(agreement) {
     $('#in_num_months').val(setAgreement.in_num_months);
     $('#out_num_mobility').val(setAgreement.out_num_mobility);
     $('#out_num_months').val(setAgreement.out_num_months);
-    $('#notes').innerText = setAgreement.notes;
+    $('#notes').val(setAgreement.notes);
 }
 
 /** Wird durch die Funktion insertAgreementInformation() aufgerufen
@@ -284,7 +285,6 @@ function returnAgreement(id) {  //get updated information if updated, otherwise 
     // Falls es sich um ein in dieser Session bearbeitets Agreement handelt
     if ("agArray" in sessionStorage) {
         let arr = JSON.parse(sessionStorage.getItem("agArray"));
-        console.log(arr);
         if (arr.includes(id)) {
             let updatedAg = JSON.parse(sessionStorage.getItem("updatedAgreements"));
             return {'object': updatedAg.filter(obj => Number(obj.ID) === Number(id)), 'index': 0};
@@ -294,7 +294,6 @@ function returnAgreement(id) {  //get updated information if updated, otherwise 
     if (id.includes("new")) {
         let extract = (id.split('_'))[1]; //get "index" of new agreement of current institute -> get agreement data from sessionStorage
         let newAgreement = JSON.parse(sessionStorage.getItem('newAgreements'));
-        console.log(extract);
         return {'object': newAgreement, 'index': extract};
     }
     //Falls es sich um ein bereits existierendes Agreement handelt

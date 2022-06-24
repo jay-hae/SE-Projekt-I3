@@ -423,5 +423,8 @@ def checkLength(key, object_id):
 
 
 def delete(tbl, row_id):
+    cnxn = Login.newConnection()
+    cur = cnxn.cursor()
     query = f"DELETE FROM {tbl} WHERE ID = {row_id}"
-    print(query)
+    cur.execute(query)
+    cur.commit()
