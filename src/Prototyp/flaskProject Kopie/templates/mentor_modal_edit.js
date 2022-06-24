@@ -1,13 +1,15 @@
-/**
- * 
+/** Funktion wird aufgerufen von mentorInsert()
+ *  Dem 'Bearbeiten'-Button wird ein Buttonevent zugewiesen.
+ *  Drückt Nutzer den Button, wird die Funktion loadMentor() mit der ID des gewählten Mentoren aufgerufen.
+ *  Außerdem wird das Modal 'Mentor'-Bearbeiten aufgeklappt
  */
 function editMentorButton() {
     $(" .modal_edit_mentor").on('click', function() {
        //load stored information out of sessionStorage into edit modal
        //get id
        let column = $(this).parent(); //Spalte <th> in der, der Button liegt
-       let row = column.parent(); //ganze Zeile
-       let id = row.attr('id');
+       let row = column.parent(); //ganze Zeile in der der gewählte Mentor steht
+       let id = row.attr('id'); //Id des Mentoren der gewählten Zeile
        loadMentor(id);
        const guided_agreements = document.getElementById('guided-agreements');
        guided_agreements.innerHTML = "";
@@ -18,9 +20,9 @@ function editMentorButton() {
     });
 }
 
-function setCheckbox(value) {
-   return value !== 1;
-}
+/** Funktion wird durch das ButtonEvent editMentorButton() ('Bearbeiten'-Button eines Mentoren) aufgerufen
+ * Ein Post-Reqeuest wird über app.py an die Datenbank gesendet und die Daten des gewünschten Mentoren geladen.
+ */
 
 function loadMentor(mentor_id) {
     $.ajax({
@@ -48,14 +50,25 @@ function loadMentor(mentor_id) {
     });
 }
 
+/** Funktion wird durch loadMentor() aufgerufen
+ *  Falls der Parameter active 1 oder 0 ist wird die Checkbox im Bearbeiten-Modal auf checked oder nicht checked gesetzt
+ */
+function setCheckbox(value) {
+    return value !== 1;
+ }
+
+/** Funktion wird durch loadMentor() aufgerufen
+ *  Die aus der Datenbank geladenen Mentoren-Daten werden in das Bearbeiten-Modal für Mentoren geladen
+ */
 function insertAgreement(agreement){
     let object = `${agreement['faculty_ID']} | ${agreement['institute']} | ${agreement['partnership']}<br>`
     $('#guided-agreements').append(object);
 }
 
 
-/**
- * 
+/** Funktion ist ein Button-Event für den Speichern-Button im Mentoren-Bearbeiten-Modal
+ *  Die bearbeiteten Daten aus dem Bearbeiten-Modal werden zu einem JSON-Object zusammengefasst
+ *  und per Post-Request über app.py an die Datenbankgesendet 
  */
 function saveMentorButton() {
     const mentor_id = $('#edit_mentor_id');

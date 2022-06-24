@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: mentor_main.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: mentor_main.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>$(document).on('DOMContentLoaded', loadMentor);
+
+/** Wenn die Seite mentor.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um
+ * Mentorendaten aus der Datenbank abzufragen.
+ */
+function loadMentor(){
+    $.ajax({
+        type: 'GET',
+        url: '/loader/mentor'
+    })
+        .done((data) => {
+            mentorInsert(data);
+            cacheMentors(data);
+        });
+
+    trackMentorChange(); 
+    mentorButtonFunctionality();
+    insertMentor();
+    // Laden aller Werte für Dropdowns in der Mentoren übersicht -> gleiche funktionsweise wie das Laden der Filterelemente in der Hochschulübersicht
+    $.ajax({
+        type: 'GET',
+        url: '/get/faculties'
+    })
+        .done((data) => {
+            $.each(data, (index, obj) => {
+                $(' .edit_mentor_fac').append($('&lt;option>', {
+                    value: obj['id'],
+                    text: obj['fac']
+                }));
+            })
+        });
+
+}
+
+
+/** Funktion wird durch loadMentor() aufgerufen
+ * Ihr werden die Mentorendaten aus der Datenbank übergeben
+ * Mentorendaten werden lokal auf dem Rechner im Browser zwischengespeichert um einen einfacheren Zugriff zu ermöglichen
+ */
+function cacheMentors(mentorArray) {    
+    const mentArr = [];
+    $.each(mentorArray, (index) => {
+        let cur = mentorArray[index];
+        let obj = {
+            faculty_ID: cur['faculty_ID'],
+            mentor_ID: cur['ID'],
+            active: cur['active'],
+            title: cur['title'],
+            firstname: cur['firstname'],
+            lastname: cur['lastname'],
+            gender_ID: cur['gender_ID'],
+            homepage: cur['homepage'],
+            email: cur['email'],
+            agreements: cur['agreements']
+        }
+        mentArr.push(cur['ID'], obj)
+    });
+    sessionStorage.setItem('mentor', JSON.stringify(mentArr));
+}
+
+/** Funktion wird durch loadMentor() aufgerufen
+ * Wenn der GET-Request die Mentoren-Informationen aus der Datenbank geladen hat, 
+ * wird per HTML eine Tabelle mit den Inhalten erzeugt.
+ */
+function mentorInsert(mentors) {
+    $('#mnt_body').empty();
+    $.each(mentors, function (index){
+        let mentor = mentors[index];
+        $('#mnt_body').append("&lt;tr id='"+ mentor['ID'] + "'>" +
+                                "&lt;th class='lastname_m'>" + mentor['lastname'] + "&lt;/th>" +
+                                "&lt;th class='firstname_m'>"+ mentor['firstname'] + "&lt;/th>" +
+                                "&lt;th>" + mentor['active'] + "&lt;/th>" +
+                                "&lt;th>" + mentor['faculty_ID'] + "&lt;/th>" +
+                                "&lt;th>" + mentor['agreements'] + "&lt;/th>" +
+                                "&lt;th>&lt;button type='button' class='btn btn-sm btn-light modal_edit_mentor'>Bearbeiten&lt;/button>&lt;/th>&lt;/tr>");
+    });
+    editMentorButton();
+}
+
+/** Funktion wird aufgerufen sobald Nutzer im Suchfeld der Mentoren einen oder mehrere Zeichen eingegeben hat und
+ * die Taste wieder loslässt (onkeyup).
+ * Funktion zum Suchen der Mentoren
+ * Funktion vergleicht die im Suchfeld eingetragene Zeichenkette mit allen Einträgen der Tabelle Mentoren
+ * und filtert dementsprechend
+ */
+function searchMentor() {
+    let element = $('#mnt_body');
+    let children = element.children();
+    let search_for = $('#tbl_search').val().toLowerCase();
+    $.each(children, function (index){
+        let row = children[index];
+        let cells = row.children;
+        let id = row['id'];
+        let firstname = cells[1].innerHTML;
+        let lastname = cells[0].innerHTML;
+        if (!(firstname.toLowerCase().includes(search_for) || lastname.toLowerCase().includes(search_for))) {
+            $('#'+id).attr("style", "display: none");
+        }
+        else {
+            $('#'+id).attr("style", "display: ");
+        }
+    });
+}
+
+/*function mentorSelect(mentors, selectID) {
+    const selectObj = document.getElementById(selectID);
+    $.each(mentors, function(index) {
+        const cur = mentors[index];
+        selectObj.append($('&lt;option>'), {
+            value: cur['ID'],
+            text: cur['title'] + " " + cur['firstname'] + " " + cur['lastname']
+        });
+    });
+}*/
+
+/** Funktion wird durch loadMentor() aufgerufen
+ *  Für die Buttons auf der Seite Mentoren und im Mentorenmodal werden verschiedene Funktionalitäten bereitgestellt.
+ *  add_mentor_btn = Öffnet Modal 'Mentor Hinzufügen'
+ *  close_modal_edit_mentor = Schließt das Modal 'Bearbeiten' sowohl für X-Button als auch 'Abbrechen'
+ *  close_modal_add_mentor = Schließt das Modal 'Mentor Hinzufügen' sowohl für X-Button als auch 'Abbrechen'
+ */
+function mentorButtonFunctionality() {
+
+    // HAUPTANSICHT: MENTOR -> MENTOR ANLEGEN BUTTON
+    $('#add_mentor_btn').on('click', function (){
+        // reset the form / clear input before open the modal
+        $('.modal_form_mentor').trigger("reset");
+        $('#modal_add_mentor').toggle();
+    });
+   $('.close_modal_edit_mentor').on('click', function (){
+        $('#modal_edit_mentor').toggle();
+        sessionStorage.removeItem('changedMentor');
+    });
+   
+   //set functionality for all abbrechen/X Buttons
+    $('.close_modal_add_mentor').on('click', event => {
+       let parent = event['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
+       parent.style.display = "none";
+    });
+}
+
+/** Funktion wird durch loadMentor() aufgerufen
+ *  Sie speichert alle Änderungen an den Daten der Mentoren im Formular 'Bearbeiten' der Mentoren im SessionStorage
+ */
+function trackMentorChange() {
+    $('#mentor_edit_form').on('change', (e) => {
+        //extract name of input field and value that's now in there
+        const field = e.target.id;
+        const value = e.target.value;
+        let trackProgress = {};
+        if ('changedMentor' in sessionStorage) {
+            trackProgress = JSON.parse(sessionStorage.getItem('changedMentor'));
+            trackProgress[field] = value;
+        }
+        else {
+            trackProgress[field] = value;
+        }
+        sessionStorage.setItem('changedMentor', JSON.stringify(trackProgress));
+    });
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addButtonEvent">addButtonEvent</a></li><li><a href="global.html#addFilterChangeEvents">addFilterChangeEvents</a></li><li><a href="global.html#addNewAgreement">addNewAgreement</a></li><li><a href="global.html#addNewRestToNewAg">addNewRestToNewAg</a></li><li><a href="global.html#agreementFilter">agreementFilter</a></li><li><a href="global.html#cacheMentors">cacheMentors</a></li><li><a href="global.html#checkAdmin">checkAdmin</a></li><li><a href="global.html#checkIfNew">checkIfNew</a></li><li><a href="global.html#checkIfUpdated">checkIfUpdated</a></li><li><a href="global.html#checkInput">checkInput</a></li><li><a href="global.html#checkNewRestForNewAgreement">checkNewRestForNewAgreement</a></li><li><a href="global.html#checkProp">checkProp</a></li><li><a href="global.html#clearAgreementSpace">clearAgreementSpace</a></li><li><a href="global.html#clearSessionStorage">clearSessionStorage</a></li><li><a href="global.html#createAgreementObject">createAgreementObject</a></li><li><a href="global.html#createDifferenceArray">createDifferenceArray</a></li><li><a href="global.html#createNewAgreementObj">createNewAgreementObj</a></li><li><a href="global.html#createObjectInstitute">createObjectInstitute</a></li><li><a href="global.html#createRestriction">createRestriction</a></li><li><a href="global.html#editMentorButton">editMentorButton</a></li><li><a href="global.html#functionalityAgreementFilter">functionalityAgreementFilter</a></li><li><a href="global.html#getCountries">getCountries</a></li><li><a href="global.html#getRestrictions">getRestrictions</a></li><li><a href="global.html#getStorageData">getStorageData</a></li><li><a href="global.html#insertAgreement">insertAgreement</a></li><li><a href="global.html#insertAgreementInformation">insertAgreementInformation</a></li><li><a href="global.html#insertAgreementInTable">insertAgreementInTable</a></li><li><a href="global.html#insertCountries">insertCountries</a></li><li><a href="global.html#insertFac">insertFac</a></li><li><a href="global.html#insertInstitutes">insertInstitutes</a></li><li><a href="global.html#insertMentor">insertMentor</a></li><li><a href="global.html#insertRestriction">insertRestriction</a></li><li><a href="global.html#instituteButtonEvents">instituteButtonEvents</a></li><li><a href="global.html#instituteObjectUpdated">instituteObjectUpdated</a></li><li><a href="global.html#loadAgreements">loadAgreements</a></li><li><a href="global.html#loadAll">loadAll</a></li><li><a href="global.html#loadCourse">loadCourse</a></li><li><a href="global.html#loadCourseDropdown">loadCourseDropdown</a></li><li><a href="global.html#loadMentor">loadMentor</a></li><li><a href="global.html#loadMentorDropdown">loadMentorDropdown</a></li><li><a href="global.html#loadModal">loadModal</a></li><li><a href="global.html#makeRowClickable">makeRowClickable</a></li><li><a href="global.html#mentorButtonFunctionality">mentorButtonFunctionality</a></li><li><a href="global.html#mentorInsert">mentorInsert</a></li><li><a href="global.html#modalEvents">modalEvents</a></li><li><a href="global.html#newRestriction">newRestriction</a></li><li><a href="global.html#postData">postData</a></li><li><a href="global.html#returnAgreement">returnAgreement</a></li><li><a href="global.html#saveMentorButton">saveMentorButton</a></li><li><a href="global.html#searchMentor">searchMentor</a></li><li><a href="global.html#setChanged">setChanged</a></li><li><a href="global.html#setCheckbox">setCheckbox</a></li><li><a href="global.html#setRestrictionChange">setRestrictionChange</a></li><li><a href="global.html#setupFilter">setupFilter</a></li><li><a href="global.html#showGuidedAgreements">showGuidedAgreements</a></li><li><a href="global.html#startUp">startUp</a></li><li><a href="global.html#trackAgreementChange">trackAgreementChange</a></li><li><a href="global.html#trackMentorChange">trackMentorChange</a></li><li><a href="global.html#trackPartnershipType">trackPartnershipType</a></li><li><a href="global.html#trackRestrictionChange">trackRestrictionChange</a></li><li><a href="global.html#updateChangedAgreement">updateChangedAgreement</a></li><li><a href="global.html#validateForm">validateForm</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jun 24 2022 13:33:44 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
