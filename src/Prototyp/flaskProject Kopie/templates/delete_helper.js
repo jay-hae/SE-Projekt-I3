@@ -21,3 +21,27 @@ function checkAdmin() {
     return adminState === 'true';
 
 }
+
+function clearAgreementStorage(id) {
+    let agArray = JSON.parse(sessionStorage.getItem('agArray'));
+    agArray.splice(agArray.indexOf(id), 1);
+    sessionStorage.setItem('agArray', JSON.stringify(agArray));
+    if (id.includes('new')) {
+        let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
+        newAgreements.filter(ag => {
+
+        });
+    }
+    else {
+
+    }
+}
+
+function clearRestrictionStorage(id) {
+    if (id.includes('new')) {
+
+    }
+    else {
+
+    }
+}

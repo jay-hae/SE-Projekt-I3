@@ -25,6 +25,7 @@ function modalEvents(){
                 // wenn einfügen erfolgreich war, Modal wieder ausgeblendet
                 // sonst Fehlermeldung in Modal anzeigen
                $('#modal_add_inst').toggle();
+               location.reload();
             });
     });
 
@@ -146,5 +147,6 @@ function activeDeleteButton() {
 function clickEvent(e) {
     e.preventDefault();
     e.stopPropagation();
-    deletion(e.target.parentElement.parentElement.id, "agreement");
+    const row_id = e.target.parentElement.parentElement.id;
+    deletion(row_id, "agreement");
 }
