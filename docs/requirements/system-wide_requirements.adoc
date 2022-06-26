@@ -78,8 +78,6 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
 
 
-*NFAS-1: Ein Umzug des Datenbankservers sollte durch technisches Personal in maximal 8h möglich sein.*
-
 == Zusätzliche Anforderungen
 
 === Einschränkungen
