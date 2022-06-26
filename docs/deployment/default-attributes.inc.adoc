@@ -1,0 +1,23 @@
+// Meta
+:project-name: Webanwendung zur Verwaltung von Hochschulpartnerschaften
+// Settings:
+:toc: 1
+:toc-title: Inhaltsverzeichnis
+:toclevels: 2
+:sectnums: 1
+:icons: font
+//:source-highlighter: highlightjs
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:!example-caption:
+:experimental:
+// folders
+ifndef::imagesdir[:imagesdir: images]
+ifndef::diagramsdir[:diagramsdir: diagrams]
+ifndef::plantumlsdir[:plantumlsdir: plantuml]
+// Hyphenation for PDF dokumente
+:lang: DE
+:hyphens:

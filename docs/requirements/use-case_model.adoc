@@ -45,7 +45,7 @@ image::wf_uc03_hochschule_bearbeiten_1.jpg[]
 image::wf_uc03_hochschule_bearbeiten_2.jpg[]
 
 
-==== *UC04*: Fehlerhafte Datensätze Löschen
+==== *UC04*: Datensätze Löschen
 include::use_case_04.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 ==== *UC05*: Mentoren Editieren
