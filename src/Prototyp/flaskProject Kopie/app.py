@@ -1,7 +1,7 @@
 
 from functools import wraps
 
-from flask import Flask, render_template, request, session, url_for, jsonify, send_from_directory, \
+from flask import Flask, make_response, render_template, request, session, url_for, jsonify, send_from_directory, \
     flash  # Flask: https://flask.palletsprojects.com/en/2.0.x/quickstart/
 from flask_wtf import CSRFProtect
 from werkzeug.utils import redirect
@@ -36,7 +36,10 @@ def LoginPage():
             return render_template('login.html')
     else:
         if Login.LoginDB(request.form['usr'], request.form['pwd']):
-            session['usr'] = 'true'
+            session['admin'] = False
+            if request.form['usr'] == 'aaapartnerhs':
+                session['admin'] = True
+                session['usr'] = 'yes'
             return redirect('/homepage/institutes')
         else:
             return redirect('/')
@@ -85,6 +88,7 @@ def delete_object(object_type):
 @login_required
 def load_institute_modal_data():
     return Querries.for_institute_modal(request.form['id'])
+
 
 # get data needed for mentor modal
 # filtered institute id from website
@@ -280,9 +284,12 @@ def ret_js(name):
 
 @app.route('/logout', methods=['GET'])
 def logout():
-    if 'usr' in session:
-        session.pop(session['usr'], None)
-    return redirect(url_for('LoginPage'))
+    print(session.keys())
+    resp = make_response(redirect(url_for('LoginPage')))
+    session.pop('usr', None)
+    session.pop('admin', None)
+    resp.set_cookie('session', 'max-age=0')
+    return resp
 
 
 # give browser all files that are needed (js files,...)
@@ -293,7 +300,7 @@ def ret_file(filename):
 
 
 def return_session():
-    return session['usr']
+    return session['admin']
 
 
 if __name__ == '__main__':
