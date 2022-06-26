@@ -168,8 +168,13 @@ def new_object(name):
                 restriction_columns = []
                 restriction_values = []
                 for key in new_restriction:
-                    restriction_columns.append(key)
-                    restriction_values.append(new_restriction[key])
+                    if key in ('subnum_mobility', 'subnum_months'):
+                        if len(new_restriction[key]) > 0:
+                            restriction_columns.append(key)
+                            restriction_values.append(new_restriction[key])
+                    else:
+                        restriction_columns.append(key)
+                        restriction_values.append(new_restriction[key])
                     print('new restriction in new Ag: ', restriction_values, restriction_columns)
                 Querries.new_object('restriction', restriction_columns, restriction_values)
             return jsonify({'state': 'successful'})
@@ -183,8 +188,13 @@ def new_object(name):
         add_restriction.pop('restriction_ID')
         add_restriction['incoming'] = int(add_restriction['incoming'])
         for key in add_restriction:
-            restriction_columns.append(key)
-            restriction_values.append(add_restriction[key])
+            if key in ('subnum_mobility', 'subnum_months'):
+                if len(add_restriction[key]) > 0:
+                    restriction_columns.append(key)
+                    restriction_values.append(add_restriction[key])
+            else:
+                restriction_columns.append(key)
+                restriction_values.append(add_restriction[key])
         print('new restriction: ', restriction_values, restriction_columns)
         return Querries.new_object('restriction', restriction_columns, restriction_values)
     else:

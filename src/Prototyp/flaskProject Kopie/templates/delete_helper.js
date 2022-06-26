@@ -1,26 +1,28 @@
-function deletion(id, type) {
-    $.ajax({
-        type: 'POST',
-        url: `/delete/${type}`,
-        data: {
-            id: id
-        }
-    })
-        .done((data) => {
-            if (String(data['state']) === 'failed') {
-                alert('Löschen nicht möglich. Bitte vorher alle Verträge/Studiengänge dieser Hochschule entfernen.');
+function deletion(row, type) {
+    let id = row['id'];
+    if (confirm('Bestätigen mit "OK" wenn das Objekt unwiderruflich gelöscht werden soll!')) {
+        $.ajax({
+            type: 'POST',
+            url: `/delete/${type}`,
+            data: {
+                id: id
             }
-            else {
-                if (type === 'agreement') {
-                    clearAgreementStorage(id);
-                }
-                else if (type === 'restriction'){
-                    if ('currentRestrictions' in sessionStorage || 'newRestrictions' in sessionStorage) {
-                        clearRestrictionStorage(id);
+        })
+            .done((data) => {
+                if (String(data['state']) === 'failed') {
+                    alert('Löschen nicht möglich. Bitte vorher alle Verträge/Studiengänge dieser Hochschule entfernen.');
+                } else {
+                    if (String(type) === 'agreement') {
+                        clearAgreementStorage(id);
+                    } else if (String(type) === 'restriction') {
+                        if ('currentRestrictions' in sessionStorage || 'newRestrictions' in sessionStorage) {
+                            clearRestrictionStorage(id);
+                        }
                     }
+                    row.hidden = true;
                 }
-            }
-        });
+            });
+    }
 }
 
 /**
@@ -58,14 +60,17 @@ function clearRestrictionStorage(id) {
     if (id.includes('new')) {
         let newRestrictions = JSON.parse(sessionStorage.getItem('newRestrictions'));
         newRestrictions = newRestrictions.filter(res => res['restriction_ID'] !== id);
+        console.log('new rest', newRestrictions);
         sessionStorage.setItem('newRestrictions', JSON.stringify(newRestrictions));
     }
     else {
         let currentRestrictions = JSON.parse(sessionStorage.getItem('currentRestrictions'));
         currentRestrictions = currentRestrictions.filter(res => res[1]['restriction_ID'] !== id);
+        console.log('rest', currentRestrictions);
         sessionStorage.setItem('currentRestrictions', JSON.stringify(currentRestrictions));
         let updatedRestrictions = JSON.parse(sessionStorage.getItem('updatedRestrictions'));
         updatedRestrictions = updatedRestrictions.filter(res => res[1]['restriction_ID'] !== id);
+        console.log('upd', updatedRestrictions);
         sessionStorage.setItem('updatedRestrictions', JSON.stringify(updatedRestrictions));
     }
 }
