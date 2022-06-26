@@ -43,8 +43,7 @@ function deletion(row, type) {
  */
 function checkAdmin() {
     const adminState = JSON.parse(sessionStorage.getItem('admin'));
-    return adminState === 'true';
-
+    return String(adminState) === 'true';
 }
 
 function clearAgreementStorage(id) {
