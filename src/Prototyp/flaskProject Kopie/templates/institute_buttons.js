@@ -35,6 +35,7 @@ function modalEvents(){
         checkIfUpdated();
         checkIfNew();
         $('#close_edit_trigger').trigger('click');
+        //location.reload();
     });
 
     // MODAL: HOCHSCHULE BEARBEITEN -> ANSICHT WECHSELN BUTTONS

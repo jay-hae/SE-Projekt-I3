@@ -140,7 +140,8 @@ def new_object(name):
     elif name == 'Agreement':
         agreement_obj = request.form.to_dict()
         agreement_obj.pop('ID')  # delete because it's not necessary for further workflow
-        if agreement_obj['restrictions']:
+        print('call', agreement_obj)
+        if hasattr(agreement_obj, 'restrictions'):
             new_restrictions = agreement_obj['restrictions']
             agreement_obj.pop('restrictions')
         ps_id = helper.checkValidPartnership(agreement_obj['partnership_type_ID'], agreement_obj['institute_ID'])
@@ -150,6 +151,7 @@ def new_object(name):
         values = []
         columns.append('partnership_ID')
         values.append(ps_id)
+        print(agreement_obj)
         for key in agreement_obj:
             if key == 'inactive':
                 values.append(int(agreement_obj[key]))
@@ -160,7 +162,7 @@ def new_object(name):
             columns.append('inactive')
             values.append(0)
         print('agreement: ', columns, values)
-        #return_val = Querries.new_object('agreement', columns, values)
+        return_val = Querries.new_object('agreement', columns, values)
         if 'new_restrictions' in locals():
             for new_restriction in new_restrictions:
                 restriction_columns = []
@@ -169,7 +171,7 @@ def new_object(name):
                     restriction_columns.append(key)
                     restriction_values.append(new_restriction[key])
                     print('new restriction in new Ag: ', restriction_values, restriction_columns)
-                #Querries.new_object('restriction', restriction_columns, restriction_values)
+                Querries.new_object('restriction', restriction_columns, restriction_values)
             return jsonify({'state': 'successful'})
         else:
             #return return_val
@@ -178,11 +180,13 @@ def new_object(name):
         add_restriction = request.form.to_dict()
         restriction_columns = []
         restriction_values = []
+        add_restriction.pop('restriction_ID')
+        add_restriction['incoming'] = int(add_restriction['incoming'])
         for key in add_restriction:
             restriction_columns.append(key)
             restriction_values.append(add_restriction[key])
         print('new restriction: ', restriction_values, restriction_columns)
-        #return Querries.new_object('restriction', restriction_columns, restriction_values)
+        return Querries.new_object('restriction', restriction_columns, restriction_values)
     else:
         return jsonify({'status': 'unexpected request'})
 
