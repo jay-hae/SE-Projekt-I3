@@ -72,7 +72,7 @@ Achtung: Die Daten werden erst mit einem Klick auf den „Speichern“ Button ak
 
 *3.4 Use-Case: Datensätze Löschen (UC04)*
 
-[big red yellow-background]*Fehlerhaft komische bezeichnung, löschen nur über admin account*
+[big red yellow-background]*löschen nur über admin account*
 
 *3.5 Use-Case: Use-Case: Mentoren Editieren (UC05)*
 
