@@ -6,7 +6,9 @@ Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.d
 08. Juli 2022
 
 :docs: ../docs
-include::{docs}/_includes/default-attributes.inc.adoc[]
+
+include::../_includes/default-attributes.inc.adoc[]
+
 // ---
 :doctype: book
 :toc:
@@ -113,6 +115,7 @@ Jedoch hat uns diese Tool sehr viel mehr geholfen, als die Issue-Verwaltung vom 
 ==== Lizenz
 
 === Refelxtion der Teammitglieder
+
 ==== Jakob Häcker
 Das erstellen von komplexen Software Systemen, war für mich vor dem Modul Software Engineering nicht greifbar und somit hatte ich auch keine Vorstellung was es eigentlich bedeutet komplexe Software in Teamarbeit zu erstellen, geschweige denn was alles dafür nötig ist.
 Eins blieb mir jedoch aus dem Fakultativen Modul von Frau Hauptmann - Soziale Kompetenzen im Projektmanagement - in Erinnerung.
@@ -122,10 +125,20 @@ Was ich nicht wusste war, welche Verantwortung ich mir mit dieser Wahl auferlegt
 
 Zu beginn des ersten Semesters war zwar die Motivation hoch, allerdings viel es mir sehr schwer die vermittelten Konzepte der Vorlesung auf die Projekt realität zu adaptieren und anzuwenden. Die Hilfestellung OpenUp war für mich zu diesem Zeitpunkt auch eher unverständlich und da alles nur eine Empfehlung war wusste ich nicht viel damit anzufangen.
 ==== Thanh Ha Khuong
+
 ==== Patrick Matthes
+
 ==== Meißner Luca
+
 ==== Roman Patzig
+
 ==== Jens Rosenkranz
+Das Projekt "Verwaltung der Hochschulpartnerschaften" der HTW Dresden war für mich das erste Softwareprojekt dieser Größe und Komplexität. Außerdem hatte ich bis dahin noch nicht mit so vielen Teilnehmern an einem Projekt zusammengearbeitet. Meine Erfahrung in der Softwareentwicklung beschränkte sich zum Anfang des Projekts ausschließlich auf die bisherigen Projekte des Studiums. Insbesondere hatte ich keinerlei Kenntnisse in der Programmierung von Webanwendungen, davon wie man Datenbanken mit einer Programmiersprache wie Python ansteuert oder wie man über ein Repository im Team programmiert. Insofern kann man sagen, dass meine Vorkenntnisse zum Projektbeginn sehr gering waren. Daher wollte ich ursprünglich eher die organisatorischen Aufgaben übernehmen und mich um die Ausgestaltung der Dokumente kümmern. Allerdings hat sich in der ersten Vorstellungsrunde der Teammitglieder herausgestellt, dass auch alle anderen Teammitglieder nahezu keine Vorkenntnisse hatten und ebenfalls eher organisatorische Aufgaben übernehmen wollten. Das hat dazu geführt, dass ich letztendlich die Rolle eines Entwicklers übernommen habe. Es hat sich also schnell abgezeichnet, dass ich mir sehr schnell sehr viel Wissen aneignen werden muss, um das Modul zu bestehen. Insbesondere während des dritten Semesters, also dem Projektbeginn, habe ich es als sehr große Herausforderung empfunden, neben dem Vorlesungsstoff noch zusätzlich selbstständig Programmierung in HTML, CSS und Javascript zu erlernen. Glücklicherweise hatte ein Teammitglied schon genug Vorkenntnisse, um das Projekt entwicklerseitig ins Rollen zu bringen. Im vierten Semester konnte ich mich mehr und mehr in die Entwicklung des Prototyps einbringen, da in diesem Semester die benötigten Kenntnisse innerhalb der verschiedenen Vorlesungen und Praktika vermittelt wurden. Zum Beispiel war Webprogrammierung ein Inhalt der Veranstaltung Internettechnologien und Datenbankprogrammierung Inhalt der Vorlesung Programmieren von Komponentenarchitekturen. 
+Das Projekt war in jedem Fall der beste Beweis dafür, dass es absolut sinnvoll ist die Entwicklung einer komplexeren Anwendung im Team strukturiert anzugehen und sich im Vorfeld darüber klar zu werden, was der Kunde genau will und was man in der Lage ist tatsächlich umzusetzen, wer welche Aufgabe und Verantwortung hat und was man bis zu welchem Zeitpunkt erledigt haben will. Mir hat insbesondere das agile Vorgehen gut gefallen, da wir erst nach und nach durch mehrere Meetings mit dem Kunden verschiedenste Missverständnisse ausräumen konnten. Hätten wir nur vorab die Anforderungen und Wünsche mit den Kunden besproche, wäre am Ende sehr sicher nicht das dabei herausgekommen, was sich der Kunde vorgestellt hat. 
+Die Zusammenarbeit mit unserem Kunden, der Stabstelle Internationales an der HTW, war insgesamt gut, auch wenn wir regelmäßig Erwartungshaltungsmanagement betreiben mussten. Die SI ist uns in vielen Punkten entgegengekommen und hat unserem Team gegenüber viel Geduld und Verständnis gezeigt. Die Zusammenarbeit mit einem echten Kunden, war sehr lehrreich. Es war ein Prozess zu verstehen, was der Kunde genau möchte und ebenso zu vermitteln, was wir zu liefern in der Lage sind. Das in einem realistischen Szenario üben zu können, war eine super Erfahrung. 
+Genauso war es eine herausfordernde und lehrreiche Erfahrung in einem Team von acht Kommilitonen zusammenzuarbeiten. Nachdem anfänglich große Unsicherheit wegen der fehlenden Kenntnisse herrschte, hat sich nach einigen Wochen eine relativ gute Arbeitsteilung zwischen den meisten Teammitgliedern ergeben. Trotz des spürbaren Drucks durch das Projekt und das Studium im allgemeinen, sind nur wenige Konflikte entstanden und diese konnten zur Zufriedenheit aller gelöst werden. Die Teammitglieder waren größtenteils sehr motiviert und haben ihre Rollen und Aufgaben verantwortungsvoll erfüllt. Durch das Projekt "Verwaltung von Hochschulpartnerschaften" konnte ich zum ersten mal die
+unterschiedlichen Phasen einer agilen Software Entwicklung innerhalb eins  Teams erleben. Die Aufteilung eines komplexen Softwareprojekts in Teilbereiche, die Analyse, Modellierung und schließlich die Implementierung im Team mittels GitHub waren neu für mich und haben Spaß gemacht.
+Ich habe durch das Projekt viel gelernt und die erste echte Erfahrung in Softwareentwicklung gemacht. 
 
 
 ==== Nico Rosenkranz
