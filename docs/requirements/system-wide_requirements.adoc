@@ -42,7 +42,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 ** Zur Überprüfung werden unterschiedliche Bildschirmgrößen ausprobiert sowie der Webseitenzoom verändert.
 
-*NFAU-2: Das Verwaltungsfrontend sollte auf verschiedenen Betriebssystemen mit unterschiedlichen Browsern laufen.*
+*NFAU-2: Das Verwaltungsfrontend sollte auf Firefox, Brave, Chrom, Edge funktionsfähig sein.*
 
 ** Zur Überprüfung wird das Verwaltungsfrontend auf den gängigsten Systemen und Browsern aufgerufen.
 
