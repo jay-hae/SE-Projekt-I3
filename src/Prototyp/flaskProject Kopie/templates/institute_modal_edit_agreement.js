@@ -94,7 +94,7 @@ function insertAgreementInTable(data, addField, addType) {
         status = String(data['inactive']) === '0' ? 'Ja' : 'Nein';
         id = 'new_' + index;
         let notes = data['notes'] ? data['notes'] : '';
-        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty_ID'] + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + notes + "</th><th><button class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style +"'>Del</button></th></tr>";
+        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty_ID'] + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + notes + "</th><th><button onclick='deletion((this).parentElement.parentElement, `agreement`)' class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style +"'>Del</button></th></tr>";
     }
     addField.append(newRow);
     makeRowClickable(id, "agreement");

@@ -1,27 +1,40 @@
 function deletion(row, type) {
     let id = row['id'];
     if (confirm('Bestätigen mit "OK" wenn das Objekt unwiderruflich gelöscht werden soll!')) {
-        $.ajax({
-            type: 'POST',
-            url: `/delete/${type}`,
-            data: {
-                id: id
-            }
-        })
-            .done((data) => {
-                if (String(data['state']) === 'failed') {
-                    alert('Löschen nicht möglich. Bitte vorher alle Verträge/Studiengänge dieser Hochschule entfernen.');
-                } else {
-                    if (String(type) === 'agreement') {
-                        clearAgreementStorage(id);
-                    } else if (String(type) === 'restriction') {
-                        if ('currentRestrictions' in sessionStorage || 'newRestrictions' in sessionStorage) {
-                            clearRestrictionStorage(id);
-                        }
-                    }
-                    row.hidden = true;
+        if (!(id.includes('new'))) {
+            $.ajax({
+                type: 'POST',
+                url: `/delete/${type}`,
+                data: {
+                    id: id
                 }
-            });
+            })
+                .done((data) => {
+                    if (String(data['state']) === 'failed') {
+                        alert('Löschen nicht möglich. Bitte vorher alle Verträge/Studiengänge dieser Hochschule entfernen.');
+                    } else {
+                        if (String(type) === 'agreement') {
+                            clearAgreementStorage(id);
+                        } else if (String(type) === 'restriction') {
+                            if ('currentRestrictions' in sessionStorage || 'newRestrictions' in sessionStorage) {
+                                clearRestrictionStorage(id);
+                            }
+                        }
+                        row.hidden = true;
+                    }
+                });
+        }
+        else {
+            if (String(type) === 'agreement') {
+                clearAgreementStorage(id);
+            }
+            else if (String(type) === 'restriction') {
+                if ('currentRestrictions' in sessionStorage || 'newRestrictions' in sessionStorage) {
+                    clearRestrictionStorage(id);
+                }
+            }
+            row.hidden = true;
+        }
     }
 }
 
