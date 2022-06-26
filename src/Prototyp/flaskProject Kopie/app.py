@@ -222,17 +222,32 @@ def changes(name):
         change_id = x['ID']
         x.pop('ID')
         change_type = 'institute'
+        if hasattr(x, 'display'):
+            x['display'] = int(x['display'])
     elif name == 'updateAgreement':
         change_id = x['ID']
         x.pop('ID')
         change_type = 'agreement'
+        if hasattr(x, 'inactive'):
+            x['inactive'] = int(x['inactive'])
     elif name == 'updateRestriction':
         change_id = x['ID']
         x.pop('ID')
         change_type = 'restriction'
     elif name == 'mentor':
         change_type = 'mentor'
-    Querries.edit(x.keys(), x.values(), change_id, change_type)
+        change_id = x['id']
+        x.pop('id')
+        if hasattr(x, 'active'):
+            x['active'] = int(x['active'])
+    values = []
+    for key in x:
+        if key in ('active', 'display', 'inactive'):
+            values.append(int(x[key]))
+        else:
+            values.append(x[key])
+    print(values)
+    Querries.edit(x.keys(), values, change_id, change_type)
     return redirect(url_for('LoginPage'))
 
 

@@ -390,7 +390,7 @@ def edit(keys, values, change_id, change_type):  # institute = institute ID
     cur = cnxn.cursor()
     query = "UPDATE " + tbl_names[change_type] + " SET " + query_string[:-1] + " WHERE ID = " + str(change_id)
     print(query, values)
-    cur.execute(query, tuple(values),)
+    cur.execute(query, values,)
     cnxn.commit()
     cnxn.close()
     cur.close()
