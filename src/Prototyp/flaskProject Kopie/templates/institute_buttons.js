@@ -26,6 +26,7 @@ function modalEvents(){
                 // sonst Fehlermeldung in Modal anzeigen
                $('#modal_add_inst').toggle();
                location.reload();
+               $('#mod_add_inst_save_btn').attr('disabled', 'true');
             });
     });
 
@@ -123,6 +124,7 @@ function instituteButtonEvents() {
     $(' .close_modal_add').on('click', function (){
         $('#modal_add_inst').toggle();
         unsetBlur();
+        $('#mod_add_inst_save_btn').attr('disabled', 'true');
     });
     $('.close_modal_restriction').on('click', function (){
         $('#modal_agreement_restrictions').toggle();
