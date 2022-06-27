@@ -14,6 +14,8 @@
     <script src="../mentor_main.js"></script>
     <script src="../mentor_modal_add.js"></script>
     <script src="../mentor_modal_edit.js"></script>
+
+    <script src="../modal_blur_effect.js"></script>
 </head>
 <body>
 <!-- HAUPTANSICHT -->
@@ -142,7 +144,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Mentor anlegen</h5>
-                <button type="button" class="btn-close close-modal cancel" onclick="$('#modal_add_mentor').toggle()"></button>
+                <button type="button" class="btn-close close-modal cancel close_modal_add_mentor""></button>
             </div>
             <div class="modal-body">
                 <form class="mentor_slide modal_form_mentor" id="mentor_add_form">
@@ -171,7 +173,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary cancel close-modal" onclick="$('#modal_add_mentor').toggle();">Abbrechen</button>
+                <button class="btn btn-secondary cancel close-modal close_modal_add_mentor">Abbrechen</button>
                 <button class="btn btn-primary new_mentor mentor-add-btn">Speichern</button>
             </div>
         </div>

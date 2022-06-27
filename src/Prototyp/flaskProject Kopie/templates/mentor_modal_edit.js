@@ -17,6 +17,7 @@ function editMentorButton() {
        // richtiges Item aus Clientspeicher holen und in Javascript Objekt parsen
        // console.log(obj);
        $('#modal_edit_mentor').toggle();
+       setBlur();
     });
 }
 

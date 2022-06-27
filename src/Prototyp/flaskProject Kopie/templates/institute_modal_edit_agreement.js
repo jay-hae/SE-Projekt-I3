@@ -273,7 +273,7 @@ function insertAgreementInformation(agreement) {
     $('#out_num_mobility').val(setAgreement.out_num_mobility);
     $('#out_num_months').val(setAgreement.out_num_months);
     let x = document.getElementById('notes');
-    x.innerText = setAgreement.notes;
+    x.value = setAgreement.notes;
 }
 
 /** Wird durch die Funktion insertAgreementInformation() aufgerufen

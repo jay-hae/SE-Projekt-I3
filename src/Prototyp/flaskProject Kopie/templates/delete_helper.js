@@ -1,5 +1,15 @@
 function deletion(row, type) {
-    let id = row['id'];
+    alert(type);
+    let id = '';
+    if (type !== 'institute') {
+        id = row['id'];
+        console.log('row', row);
+    }
+    else {
+        id = row.innerHTML;
+        row = row.parentElement;
+    }
+    console.log(row);
     if (confirm('Bestätigen mit "OK" wenn das Objekt unwiderruflich gelöscht werden soll!')) {
         if (!(id.includes('new'))) {
             $.ajax({
