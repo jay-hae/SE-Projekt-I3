@@ -25,6 +25,7 @@ function modalEvents(){
                 // wenn einfügen erfolgreich war, Modal wieder ausgeblendet
                 // sonst Fehlermeldung in Modal anzeigen
                $('#modal_add_inst').toggle();
+               location.reload();
             });
     });
 
@@ -34,6 +35,7 @@ function modalEvents(){
         checkIfUpdated();
         checkIfNew();
         $('#close_edit_trigger').trigger('click');
+        //location.reload();
     });
 
     // MODAL: HOCHSCHULE BEARBEITEN -> ANSICHT WECHSELN BUTTONS
@@ -146,5 +148,6 @@ function activeDeleteButton() {
 function clickEvent(e) {
     e.preventDefault();
     e.stopPropagation();
-    deletion(e.target.parentElement.parentElement.id, "agreement");
+    const row_id = e.target.parentElement.parentElement.id;
+    deletion(row_id, "agreement");
 }

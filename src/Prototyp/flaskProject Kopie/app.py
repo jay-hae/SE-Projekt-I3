@@ -1,7 +1,7 @@
 
 from functools import wraps
 
-from flask import Flask, render_template, request, session, url_for, jsonify, send_from_directory, \
+from flask import Flask, make_response, render_template, request, session, url_for, jsonify, send_from_directory, \
     flash  # Flask: https://flask.palletsprojects.com/en/2.0.x/quickstart/
 from flask_wtf import CSRFProtect
 from werkzeug.utils import redirect
@@ -36,7 +36,10 @@ def LoginPage():
             return render_template('login.html')
     else:
         if Login.LoginDB(request.form['usr'], request.form['pwd']):
-            session['usr'] = 'true'
+            session['admin'] = False
+            if request.form['usr'] == 'aaapartnerhs':
+                session['admin'] = True
+                session['usr'] = 'yes'
             return redirect('/homepage/institutes')
         else:
             return redirect('/')
@@ -85,6 +88,7 @@ def delete_object(object_type):
 @login_required
 def load_institute_modal_data():
     return Querries.for_institute_modal(request.form['id'])
+
 
 # get data needed for mentor modal
 # filtered institute id from website
@@ -140,7 +144,8 @@ def new_object(name):
     elif name == 'Agreement':
         agreement_obj = request.form.to_dict()
         agreement_obj.pop('ID')  # delete because it's not necessary for further workflow
-        if agreement_obj['restrictions']:
+        print('call', agreement_obj)
+        if hasattr(agreement_obj, 'restrictions'):
             new_restrictions = agreement_obj['restrictions']
             agreement_obj.pop('restrictions')
         ps_id = helper.checkValidPartnership(agreement_obj['partnership_type_ID'], agreement_obj['institute_ID'])
@@ -150,6 +155,7 @@ def new_object(name):
         values = []
         columns.append('partnership_ID')
         values.append(ps_id)
+        print(agreement_obj)
         for key in agreement_obj:
             if key == 'inactive':
                 values.append(int(agreement_obj[key]))
@@ -160,16 +166,21 @@ def new_object(name):
             columns.append('inactive')
             values.append(0)
         print('agreement: ', columns, values)
-        #return_val = Querries.new_object('agreement', columns, values)
+        return_val = Querries.new_object('agreement', columns, values)
         if 'new_restrictions' in locals():
             for new_restriction in new_restrictions:
                 restriction_columns = []
                 restriction_values = []
                 for key in new_restriction:
-                    restriction_columns.append(key)
-                    restriction_values.append(new_restriction[key])
+                    if key in ('subnum_mobility', 'subnum_months'):
+                        if len(new_restriction[key]) > 0:
+                            restriction_columns.append(key)
+                            restriction_values.append(new_restriction[key])
+                    else:
+                        restriction_columns.append(key)
+                        restriction_values.append(new_restriction[key])
                     print('new restriction in new Ag: ', restriction_values, restriction_columns)
-                #Querries.new_object('restriction', restriction_columns, restriction_values)
+                Querries.new_object('restriction', restriction_columns, restriction_values)
             return jsonify({'state': 'successful'})
         else:
             #return return_val
@@ -178,11 +189,18 @@ def new_object(name):
         add_restriction = request.form.to_dict()
         restriction_columns = []
         restriction_values = []
+        add_restriction.pop('restriction_ID')
+        add_restriction['incoming'] = int(add_restriction['incoming'])
         for key in add_restriction:
-            restriction_columns.append(key)
-            restriction_values.append(add_restriction[key])
+            if key in ('subnum_mobility', 'subnum_months'):
+                if len(add_restriction[key]) > 0:
+                    restriction_columns.append(key)
+                    restriction_values.append(add_restriction[key])
+            else:
+                restriction_columns.append(key)
+                restriction_values.append(add_restriction[key])
         print('new restriction: ', restriction_values, restriction_columns)
-        #return Querries.new_object('restriction', restriction_columns, restriction_values)
+        return Querries.new_object('restriction', restriction_columns, restriction_values)
     else:
         return jsonify({'status': 'unexpected request'})
 
@@ -218,17 +236,32 @@ def changes(name):
         change_id = x['ID']
         x.pop('ID')
         change_type = 'institute'
+        if hasattr(x, 'display'):
+            x['display'] = int(x['display'])
     elif name == 'updateAgreement':
         change_id = x['ID']
         x.pop('ID')
         change_type = 'agreement'
+        if hasattr(x, 'inactive'):
+            x['inactive'] = int(x['inactive'])
     elif name == 'updateRestriction':
         change_id = x['ID']
         x.pop('ID')
         change_type = 'restriction'
     elif name == 'mentor':
         change_type = 'mentor'
-    Querries.edit(x.keys(), x.values(), change_id, change_type)
+        change_id = x['id']
+        x.pop('id')
+        if hasattr(x, 'active'):
+            x['active'] = int(x['active'])
+    values = []
+    for key in x:
+        if key in ('active', 'display', 'inactive'):
+            values.append(int(x[key]))
+        else:
+            values.append(x[key])
+    print(values)
+    Querries.edit(x.keys(), values, change_id, change_type)
     return redirect(url_for('LoginPage'))
 
 
@@ -251,9 +284,10 @@ def ret_js(name):
 
 @app.route('/logout', methods=['GET'])
 def logout():
-    if 'usr' in session:
-        session.pop(session['usr'], None)
-    return redirect(url_for('LoginPage'))
+    resp = make_response(redirect(url_for('LoginPage')))
+    session.pop('usr', None)
+    session.pop('admin', None)
+    return resp
 
 
 # give browser all files that are needed (js files,...)
@@ -264,7 +298,7 @@ def ret_file(filename):
 
 
 def return_session():
-    return session['usr']
+    return session['admin']
 
 
 if __name__ == '__main__':

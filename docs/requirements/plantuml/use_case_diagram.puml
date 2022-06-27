@@ -7,7 +7,7 @@ rectangle "Verwaltungsfrontend" {
 usecase "UC01\nIn System Einloggen" as uc01
 usecase "UC02\nPartnerhochschulen Anlegen" as uc02
 usecase "UC03\nPartnerhochschulen Editieren" as uc03
-usecase "UC04\nFehlerhafte Datensätze Löschen" as uc04
+usecase "UC04\nDatensätze Löschen" as uc04
 usecase "UC05\nMentoren Editieren" as uc05
 usecase "UC06\nBerichte Erstellen" as uc06
 usecase "UC07\nErstellte Berichte Exportieren" as uc07

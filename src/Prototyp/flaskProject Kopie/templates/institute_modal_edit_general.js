@@ -241,25 +241,22 @@ function checkIfNew() {
         if ('newRestrictions' in sessionStorage) {
             alert('new agreement & restriction was created');
             checkNewRestForNewAgreement();
-            console.log('123');
             let newRestrictions = JSON.parse(sessionStorage.getItem('newRestrictions'));
             let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
-            //newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
-            //newRestrictions.forEach(obj => postData(obj, '/add/Restriction'));
-            console.log("R's mit bestehendem Vertrag: ", newRestrictions);
-            console.log("Neue Ags + ihre Restriktionen: ", newAgreements);
+            newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
+            newRestrictions.forEach(obj => postData(obj, '/add/Restriction'));
         }
         else {
-            alert('new agreement was created')
+            alert('new agreement was created');
             let newAgreements = JSON.parse(sessionStorage.getItem('newAgreements'));
-            //newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
-            console.log('neues Agreement', newAgreements);
+            newAgreements.forEach(obj => postData(obj, '/add/Agreement'));
         }
     }
     else if ('newRestrictions' in sessionStorage) {
         alert('new restriction was created');
         let rest = JSON.parse(sessionStorage.getItem('newRestrictions'));
-        console.log("Neue R's bestehender Vertrag: ", rest);
+        console.log(rest);
+        rest.forEach(obj => postData(obj, '/add/Restriction'));
     }
 }
 
@@ -273,11 +270,9 @@ function checkIfNew() {
  */
 function checkNewRestForNewAgreement() {
     let newRest = JSON.parse(sessionStorage.getItem('newRestrictions'));
-    console.log('checkNewRestForAg:' ,newRest);
     let filteredRest = [];
     newRest.forEach(restriction => {
         if  ((restriction['mobility_agreement_ID']).includes('new')) {
-            alert();
             addNewRestToNewAg(restriction);
         }
         else {
@@ -291,7 +286,7 @@ function checkNewRestForNewAgreement() {
 /**
  * Diese Funktion wird aufgerufen, wenn eine neue Restriktion zu einem neuen Agreement hinzugefügt werden soll
  * Die übergebene Restriktion wird zu dem zugehörigen Mobilityagreement zugeordnet.
- * Es werden alle Agreements in der aktuellen SessioStorage überprüft.
+ * Es werden alle Agreements in der aktuellen SessionStorage überprüft.
  * Falls es bereits Restriktions für das Agreement gibt, wird die neue Restriktion hinzugefügt (push)
  * anderfalls ist die Restriktion das erste Objekt für diesen Parameter
  */
@@ -299,7 +294,6 @@ function addNewRestToNewAg(restrictionObj) {
     let agreements = JSON.parse(sessionStorage.getItem('newAgreements'));
     agreements.forEach(ag => {
         if (ag.ID === restrictionObj.mobility_agreement_ID) {
-            alert();
             if (ag['restrictions']) {
                 ag['restrictions'].push(restrictionObj);
             }

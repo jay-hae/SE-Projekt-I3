@@ -10,7 +10,7 @@ Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einflu
 
 === Datenbankserver
 
-Es wird ein bereits existenter MariaDB Datenbankserver vom Rechenzentrum genutzt. Der Datenbankserver führt täglich automatische Backups aus. Ebenso liegt die Verantwortlichkeit der Nutzerverwaltung bei dem Rechenzentrum. Dadurch besitzt der DB-Server eine exzellente Verfügbarkeit, Skalierung und Wartbarkeit.
+Es wird ein bereits existenter MariaDB Datenbankserver vom Rechenzentrum genutzt. Ebenso liegt die Verantwortlichkeit der Nutzerverwaltung bei dem Rechenzentrum. Dadurch besitzt der DB-Server eine exzellente Verfügbarkeit, Skalierung und Wartbarkeit.
 
 ==== Datenbankmodell
 Aufgrund der geforderten Kompatibilität mit dem Informationsfrontend ist die Datenbankstruktur weitestgehend vorgeschrieben und festgelegt. Bereits in der Vorgruppe wurden zahlreiche Änderungen im Vergleich zur Access Datenbank vorgenommen, um die Komplexität zu senken und Qualität der Datensätze zu steigern. 
@@ -93,7 +93,7 @@ Auf jeder Seite
 * Nutzung einer Navigationsleiste mit den wichtigsten Links (zu Hochschulen-, Mentorenübersicht)
 * Ein Button zum Anlegen neue Daten (Hochschule, Mentor)
 * Tabellenansicht zum Anzeigen der Daten
-* Ein Button zum Bearbeiten für jeden Datensatz
+* Ein Button zum Bearbeiten für jeden Datensatz (ausgenommen Studiengänge, Fakultäten & Länder)
 
 Die Formularansicht wurde mit Eingabefelder und Labels versehen, um die einfache Zuordnung durch einen Nutzer zu garantieren. Der Speichern-Button ist auch hier Blau hinterlegt, um die Funktion zu verdeutlichen.
 

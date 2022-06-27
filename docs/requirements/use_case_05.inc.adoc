@@ -1,7 +1,7 @@
 == Use-Case: Mentoren Editieren (UC05)
 
 === Kurzbeschreibung
-Eine Arbeitskraft der Stabsstelle Internationales verändert Attribute eines Mentoren.
+Eine Arbeitskraft der Stabsstelle Internationales verändert Attribute eines Mentoren oder legt einen neuen Mentor an.
 
 === Kurzbeschreibung der Akteure
 ==== Mitarbeiter*Innen Stabsstelle Internationales

@@ -11,6 +11,10 @@ function insertMentor() {
     })
         .done((data) => {
             console.log(data);
+            // wenn einfügen erfolgreich war, Modal wieder ausgeblendet
+            // sonst Fehlermeldung in Modal anzeigen
+           $('#modal_add_mentor').toggle();
+           location.reload();
         });
 
     });

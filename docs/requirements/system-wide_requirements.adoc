@@ -42,7 +42,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 ** Zur Überprüfung werden unterschiedliche Bildschirmgrößen ausprobiert sowie der Webseitenzoom verändert.
 
-*NFAU-2: Das Verwaltungsfrontend sollte auf verschiedenen Betriebssystemen mit unterschiedlichen Browsern laufen.*
+*NFAU-2: Das Verwaltungsfrontend sollte auf Firefox, Brave, Chrom, Edge funktionsfähig sein.*
 
 ** Zur Überprüfung wird das Verwaltungsfrontend auf den gängigsten Systemen und Browsern aufgerufen.
 
@@ -77,8 +77,6 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 === Wartbarkeit (Supportability)
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
 
-
-*NFAS-1: Ein Umzug des Datenbankservers sollte durch technisches Personal in maximal 8h möglich sein.*
 
 == Zusätzliche Anforderungen
 

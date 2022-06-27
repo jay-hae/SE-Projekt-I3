@@ -390,7 +390,7 @@ def edit(keys, values, change_id, change_type):  # institute = institute ID
     cur = cnxn.cursor()
     query = "UPDATE " + tbl_names[change_type] + " SET " + query_string[:-1] + " WHERE ID = " + str(change_id)
     print(query, values)
-    cur.execute(query, tuple(values),)
+    cur.execute(query, values,)
     cnxn.commit()
     cnxn.close()
     cur.close()
@@ -425,6 +425,13 @@ def checkLength(key, object_id):
 def delete(tbl, row_id):
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
+    if tbl == 'tbl_institute':
+        query = f"DELETE FROM tbl_partnership WHERE institute_ID = {row_id}"
+        cur.execute(query)
+        cnxn.commit()
     query = f"DELETE FROM {tbl} WHERE ID = {row_id}"
+    print(query)
     cur.execute(query)
-    cur.commit()
+    cnxn.commit()
+    cnxn.close()
+    cur.close()

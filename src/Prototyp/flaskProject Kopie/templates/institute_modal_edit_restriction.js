@@ -47,7 +47,7 @@ function insertRestriction(object=false, restriction_index) {
     }
     else
         restrictions.push(object);
-    const dropdown = $('<select onchange="trackRestrictionChange(this.parentElement, this.value)">');
+    const dropdown = $('<select class="form-select-sm" onchange="trackRestrictionChange(this.parentElement, this.value)">');
     dropdown.attr('id', 'exchange-type-dropdown');
     //maybe flip values -> wait for raphaels answer
     dropdown.append($('<option>', {
@@ -58,17 +58,26 @@ function insertRestriction(object=false, restriction_index) {
         value: '1',
         text: 'Incoming'
     }));
-    console.log(restrictions);
     restrictions.forEach((restriction, index) => {
         restriction = restriction[1];
-        console.log(restriction);
+        console.log(restriction)
         dropdown[0].id = `exchange-type-dropdown-${restriction_index}`;
-        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ restriction['course'] + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + restriction['subject_area_code'] + "</textarea></th><th id='incoming'>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea style='width: 2rem' onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ restriction['sub_num_mobility'] +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+restriction['sub_num_months']+"</textarea></th><th><button onclick='deletion((this).parentElement.parentElement.id, `restriction`)' class='btn-delete' style='display: " + style + "'>Del</button></th></tr>";
+        let course = restriction['course'] !== undefined ? restriction['course'] : returnCourse(restriction['course_ID']);
+        let code = sanitizeAttributes(restriction['subject_area_code']);
+        let num_mob = sanitizeAttributes(restriction['sub_num_mobility']);
+        let num_months = sanitizeAttributes(restriction['sub_num_months']);
+        let row = "<tr id='" + restriction['restriction_ID'] + "'><th id='course'><p> "+ course + "</p></th><th id='subject_area_code'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>" + code + "</textarea></th><th id='incoming'>" + dropdown[0].outerHTML + "</th><th id='sub_num_mobility'><textarea style='width: 2rem' onchange='trackRestrictionChange(this.parentElement, this.value)'>"+ num_mob +"</textarea></th><th id='sub_num_months'><textarea onchange='trackRestrictionChange(this.parentElement, this.value)'>"+num_months+"</textarea></th><th><button class='btn btn-sm btn-light' onclick='deletion((this).parentElement.parentElement, `restriction`)' class='btn-delete' style='display: " + style + "'>Del</button></th></tr>";
         $('#tbl_restriction').append(row);
         document.getElementById(`exchange-type-dropdown-${restriction_index}`).value = restriction['incoming'];
     })
 }
 
+function sanitizeAttributes(attribute) {
+    if (String(attribute).includes('undefined') || String(attribute).includes('null')) {
+        return '';
+    }
+    return attribute;
+}
 
 
 /** Funktion wird durch insertRestriktion() aufgerufen.
@@ -107,7 +116,6 @@ function setRestrictionChange(key, value, id) {
             }
         });
     }
-    console.log(updatedRestrictions);
     sessionStorage.setItem(sessionKey, JSON.stringify(updatedRestrictions));
 }
 
@@ -122,5 +130,5 @@ function getRestrictions() {
 
 function returnCourse(course_ID) {
     const courses = JSON.parse(sessionStorage.getItem('courses'));
-    return courses.filter(course => Number(course.ID) === Number(course_ID));
+    return courses.filter(course => Number(course.ID) === Number(course_ID))[0]['de'];
 }

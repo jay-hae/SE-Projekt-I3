@@ -5,7 +5,7 @@
     <title>Hochschulpartnerschaften</title>
    
     <!-- Styling -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link href="../style.css" rel="stylesheet">
 
@@ -24,6 +24,8 @@
     <script src="../filter_functionality.js"></script>
     <script src="../filter_values_loader.js"></script>
 
+    <script src="../general_helper.js"></script>
+
     <script src="../delete_helper.js"></script>
 </head>
 <body>
@@ -38,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link" href="/homepage/faculties">Fakultäten</a></li>
-            <li class="nav-item active"><a class="nav-link" href="/homepage/institutes">Hochschulen</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/homepage/institutes">Hochschulen</a></li>
             <li class="nav-item"><a class="nav-link" href="/homepage/countries">Länder</a></li>
             <li class="nav-item"><a class="nav-link" href="/homepage/mentor">Mentoren</a></li>
             <li class="nav-item"><a class="nav-link" href="/homepage/courses">Studiengänge</a></li>
@@ -49,13 +51,14 @@
                 <div class="dropdown">
                     <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">...</a></li>
-                        <li><a class="dropdown-item" href="#">...</a></li>
-                        <li><a class="dropdown-item" href="#">...</a></li>
+                        <li><a class="dropdown-item" href="#">Anwenderdokumentation</a></li>
+                        <li><a class="dropdown-item" href="#">Betriebsdokumentation</a></li>
+                        <li><a class="dropdown-item" href="#"></a></li>
                     </ul>
                 </div>
             </div>
         </li>
+        
         <li class="nav-item m-1">
             <div class="in-navbar" id="Logout">
                 <button class="btn btn-sm btn-outline-danger btn-logout" type="button">Logout</button>
@@ -65,6 +68,7 @@
     </div>
     </nav>
     <div class="my-content">
+        <h1 class="text-center m-4">Hochschulen</h1>
         <!-- Filter Buttons -->
         <div id="fil">
             <div id="FilterAll">
@@ -107,13 +111,14 @@
         </div>
         <!-- Tabelle für die Partnerhochschulen -->
         <div id="tbl">
-            <table class="table table-hover">
+            <table class="table table-hover font-weight-unset">
                 <thead>
                     <tr>
                         <th>Hochschule</th>
                         <th>Anzeige</th>
                         <th>Verträge</th>
-                        <th>Bearbeiten</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="addItems">
@@ -128,7 +133,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalToggleLabel">Hochschule Bearbeitungsansicht</h5>
+                <h2 class="modal-title" id="exampleModalToggleLabel">Hochschule Bearbeitungsansicht</h2>
                 <button type="button" class="btn-close close_modal_edit" id="close_edit_trigger" ></button>
             </div>
             <div class="modal-body">
@@ -138,10 +143,10 @@
                         <button id="next" class="btn btn-outline-dark w-100"> Partnerschaften </button>
                     </div>
                     <div class="row p-3">
-                        <h1>Hochschule</h1>
+                        <h3>Hochschule</h3>
                         <div class="col-sm pt-1">
                         <form class="clear-form" id="edit_left_col">
-                            <h4>Allgemeine Information</h4>
+                            <h3>Allgemeine Information</h3>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_country">Land</label>
                                 <select class="filter_country form-select" id="edit_mod_country" name="edit_fil_country">
@@ -178,7 +183,7 @@
                         </form>
                     </div>
                         <div class="col-sm ms-3 pt-1">
-                        <h4>Ansprechperson</h4>
+                        <h3>Ansprechperson</h3>
                         <form class="clear-form" id="edit_mid_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_func">Funktion</label>
@@ -215,7 +220,7 @@
                         </form>
                     </div>
                         <div class="col-sm ms-3 pt-1">
-                        <h4>International Office</h4>
+                        <h3>International Office</h3>
                         <form class="clear-form" id="edit_right_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_dep">Abteilung</label>
@@ -240,10 +245,10 @@
                 <!-- Vertrag anzeigen -->
                 <div id="second_slide" style="display: none;">
                     <div class="text-center p-3">
-                        <button id="previous" class="btn btn-outline-dark w-100"> Zu Hochschulinformationsansicht wechseln</button>
+                        <button id="previous" class="btn btn-outline-dark w-100"> Hochschulinformation</button>
                     </div>
                     <div id="space_table" class="p-3">
-                        <h1>Verträge</h1>
+                        <h3>Verträge</h3>
                         <div id="show-all-ps-types">
 
                         </div>
@@ -252,8 +257,8 @@
                             </select>
                             <button id="add_mob_agreement" class="btn btn-outline-primary w-25 m-1">Neuen Vertrag anlegen</button>
                         </div>
-                        <div class="table-wrap">
-                            <table class="table table-hover" id="table_agreements">
+                        <div class="table-wrap font-weight-light">
+                            <table class="table table-hover fw-light" id="table_agreements">
                             <thead>
                              <tr>
                                 <th>Fakultät</th>
@@ -271,16 +276,16 @@
 
                     </div>
                     <div style="display: none" id="add-new-agreement-container"class="p-3">
-                        <button class="btn btn-outline-secondary w-30" id="add-new-agreement">Vertrag speichern</button>
+                        <button class="btn btn-outline-dark w-30" id="add-new-agreement">Vertrag speichern</button>
                     </div>
                       <div id="space_edit_agreement" class="row">
                             <div class="col-sm p-3 m-3 pt-1">
-                                <label for="mentor_ID" class="form-label">Mentor</label>
+                                <label for="mentor_ID" class="form-label mandatory">Mentor</label>
                                 <select class="loadMentor form-select agreementInformation" id="mentor_ID">
                                     <option value="reset"> - Keine Auswahl - </option>
                                     <!-- hinzufügen der Mentoren in Dropdown-->
                                 </select><br>
-                                <label for="faculty_ID" class="form-label">Fakultät</label>
+                                <label for="faculty_ID" class="form-label mandatory">Fakultät</label>
                                 <select class="select_faculty form-select agreementInformation" id="faculty_ID">
                                     <option value="reset"> - Keine Auswahl - </option>
                                     <!-- einfügen aller Fakultäten-->
@@ -301,19 +306,16 @@
                                 <input type="text" id="out_num_mobility" class="form-control agreementInformation"><br>
                                 <label for="out_num_months" class="form-label">Maximale Dauer</label>
                                 <input type="text" id="out_num_months" class="form-control agreementInformation"><br>
-                                <div class="form-check">
-                                    <input type="checkbox" id="inactive" class="form-check-input agreementInformation">
-                                    <label for="inactive" class="form-check-label">Agreement Inaktiv?</label>
-                                </div>
+                                <button class="btn btn-outline-primary w-100 mt-2" id="show_restrictions">Studiengänge</button>
                             </div>
                             <div class="col-sm p-3 m-3 pt-1">
                                 <label for="notes" class="form-label">Bemerkungen</label>
-                                <textarea id="notes" class="form-control h-75 agreementInformation"></textarea>
+                                <textarea id="notes" class="form-control h-50 agreementInformation"></textarea>
+                                <div class="form-check mt-3">
+                                    <input type="checkbox" id="inactive" class="form-check-input agreementInformation">
+                                    <label for="inactive" class="form-check-label mandatory">Agreement Inaktiv?</label>
+                                </div>
                             </div>
-
-                      </div>
-                      <div class="p-3">
-                          <button class="btn btn-outline-secondary w-100" id="show_restrictions">Studiengänge</button>
                       </div>
                 </div>
             </div>
@@ -330,20 +332,20 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"> Partnerhochschule anlegen</h5>
+                <h2 class="modal-title"> Partnerhochschule anlegen</h2>
                 <button type="button" class="btn-close close_modal_add"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm p-3 m-3 pt-1">
                         <form class="clear-inst modal_form_add" id="form_left_col">
-                            <h2>Hochschule</h2>
+                            <h3>Hochschule</h3>
                             <div class="mb-3">
-                                <label for="add-eng" class="form-label">Englische Bezeichnung</label>
+                                <label for="add-eng" class="form-label mandatory">Englische Bezeichnung</label>
                                 <input type="text" id="add-eng" name="eng" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="add-country_ID" class="form-label">Land</label>
+                                <label for="add-country_ID" class="form-label mandatory">Land</label>
                                 <select id="add-country_ID" class="filter_country form-select" name="country_ID"></select>
                             </div>
                             <div class="mb-3">
@@ -376,7 +378,7 @@
                     </div>
                     <div class="col-sm p-3 m-3 pt-1">
                         <form class="clear-form modal_form_add" id="form_mid_col">
-                            <h2>Ansprechperson</h2>
+                            <h3>Ansprechperson</h3>
                             <div class="mb-3">
                                 <label for="add-title" class="form-label">Titel</label>
                                 <input type="text" id="add-title" name="title" class="form-control">
@@ -413,7 +415,7 @@
                     </div>
                     <div class="col-sm p-3 m-3 pt-1">
                         <form class="clear-form modal_form_add" id="form_right_col">
-                            <h2>International Office</h2>
+                            <h3>International Office</h3>
                             <div class="mb-3">
                                 <label for="add-department" class="form-label">Abteilung</label>
                                 <input type="text" id="add-department" name="department" class="form-control">
@@ -430,9 +432,9 @@
                                 <label for="add-int_office_homepage" class="form-label">Homepage</label>
                                 <input type="text" id="add-int_office_homepage" name="int_office_homepage" class="form-control">
                             </div>
-                            <h2>Partnerschaft</h2>
+                            <h3>Partnerschaft</h3>
                             <div class="mb-3">
-                                <label for="add-partnership_type_ID" class="form-label">Vertragstyp</label>
+                                <label for="add-partnership_type_ID" class="form-label mandatory">Vertragstyp</label>
                                 <select id="add-partnership_type_ID" class="fil_agree form-select"
                                     name="partnership_type_ID"></select>
                             </div>
@@ -458,7 +460,7 @@
             <div class="modal-body">
                 <div>
                     <div class="p-3">
-                        <button class="btn btn-outline-secondary w-100" id="rtn-agreement">Partnerschaftsverträge</button>
+                        <button class="btn btn-outline-dark w-100" id="rtn-agreement">Partnerschaftsverträge</button>
                     </div>
                     <div class="p-3">
                         <table class="table table-hover" id="table_restrictions">
@@ -471,7 +473,7 @@
                                 <th>Anteilig Monate</th>
                             </tr>
                         </thead>
-                        <button id="add-new-restriction">Neuen Studiengang anlegen</button>
+                        <button class="btn btn-outline-primary" id="add-new-restriction">Neuen Studiengang anlegen</button>
                         <tbody id="tbl_restriction">
 
                         </tbody>
@@ -479,19 +481,21 @@
                     </div>
                     <div class="p-3" style="display: none;" id="input-new-restriction">
                         <form class="clear-form" id="form-add-rest">
-                            <label for="restriction-course">Studiengang auswählen</label>
-                            <select id="restriction-course" name="course_ID"></select>
-                            <label for="restriction-isced">ISCED Code</label>
-                            <input type="text" id="restriction-isced" name="subject_area_code">
-                            <label for="restriction-type">Incoming?</label>
-                            <input type="checkbox" id="restriction-type" name="incoming">
-                            <label for="restriction-mobility">Anzahl der Plätze</label>
-                            <input type="text" id="restriction-mobility" name="subnum_mobility">
+                            <label class="form-label mandatory" for="restriction-course">Studiengang auswählen</label>
+                            <select class="form-select" id="restriction-course" name="course_ID"></select>
+                            <label class="form-label" for="restriction-isced">ISCED Code</label>
+                            <input class='form-control' type="text" id="restriction-isced" name="subject_area_code">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="restriction-type" name="incoming">
+                                <label class="mandatory form-check-label" for="restriction-type">Incoming?</label>
+                            </div>
+                            <label class="form-label" for="restriction-mobility">Anzahl der Plätze</label>
+                            <input class="form-text form-control" type="text" id="restriction-mobility" name="subnum_mobility">
                             <label for="restriction-months">Anzahl der Monate</label>
-                            <input type="text" id="restriction-months" name="subnum_months">
+                            <input class="form-text form-control" type="text" id="restriction-months" name="subnum_months">
                             <br>
                         </form>
-                        <button id="save-new-restriction">Studiengang speichern</button>
+                        <button class="btn btn-outline-success" id="save-new-restriction">Studiengang speichern</button>
                     </div>
                 </div>
             </div>
