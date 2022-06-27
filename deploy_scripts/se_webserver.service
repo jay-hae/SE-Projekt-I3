@@ -1,0 +1,14 @@
+# Dies ist der Unit Service zum systemgesteuerten starten der Datei app.py 
+[Unit]
+Description=Webserver des SE-Teams I3
+After=network.target
+
+[Service]
+User=seproject
+Type=simple
+WorkingDirectory=/home/seproject/SE-Projekt-I3/src/Prototyp/flaskProject_Kopie/
+ExecStart=/usr/bin/python3.8 /home/seproject/SE-Projekt-I3/src/Prototyp/flaskProject_Kopie/app.py
+
+[Install]
+WantedBy=multi-user.target
+
