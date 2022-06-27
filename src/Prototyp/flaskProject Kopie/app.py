@@ -187,6 +187,7 @@ def new_object(name):
             return ""
     elif name == 'Restriction':
         add_restriction = request.form.to_dict()
+        print(add_restriction)
         restriction_columns = []
         restriction_values = []
         add_restriction.pop('restriction_ID')

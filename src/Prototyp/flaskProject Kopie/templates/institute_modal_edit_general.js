@@ -9,10 +9,11 @@ function addButtonEvent() {
         let id = first_column[0].innerHTML; // get ID of institute
         loadAgreements(id);
         loadModal(id);
+        setBlur();
     });
     $('.del-institute').on('click', (e) => {
         let tgt = e.currentTarget;
-        const id = tgt.parentElement.parentElement.children[0].innerHTML;
+        const id = tgt.parentElement.parentElement.children[0];
         deletion(id, "institute");
     });
 }

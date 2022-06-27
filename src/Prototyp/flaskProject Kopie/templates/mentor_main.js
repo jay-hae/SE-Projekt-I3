@@ -126,16 +126,19 @@ function mentorButtonFunctionality() {
         // reset the form / clear input before open the modal
         $('.modal_form_mentor').trigger("reset");
         $('#modal_add_mentor').toggle();
+        setBlur();
     });
    $('.close_modal_edit_mentor').on('click', function (){
         $('#modal_edit_mentor').toggle();
         sessionStorage.removeItem('changedMentor');
+        unsetBlur();
     });
    
    //set functionality for all abbrechen/X Buttons
     $('.close_modal_add_mentor').on('click', event => {
        let parent = event['currentTarget']['parentElement']['parentElement']['parentElement']['parentElement'];
        parent.style.display = "none";
+       unsetBlur();
     });
 }
 
