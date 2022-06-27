@@ -93,7 +93,7 @@ Auf jeder Seite
 * Nutzung einer Navigationsleiste mit den wichtigsten Links (zu Hochschulen-, Mentorenübersicht)
 * Ein Button zum Anlegen neue Daten (Hochschule, Mentor)
 * Tabellenansicht zum Anzeigen der Daten
-* Ein Button zum Bearbeiten für jeden Datensatz
+* Ein Button zum Bearbeiten für jeden Datensatz (ausgenommen Studiengänge, Fakultäten & Länder)
 
 Die Formularansicht wurde mit Eingabefelder und Labels versehen, um die einfache Zuordnung durch einen Nutzer zu garantieren. Der Speichern-Button ist auch hier Blau hinterlegt, um die Funktion zu verdeutlichen.
 
