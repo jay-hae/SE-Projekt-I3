@@ -144,11 +144,10 @@ def new_object(name):
     elif name == 'Agreement':
         agreement_obj = request.form.to_dict()
         agreement_obj.pop('ID')  # delete because it's not necessary for further workflow
-        print('call', agreement_obj.keys())
-        """for key in agreement_obj:
-            if key.endswith(']'):
-                if '1' in key:
-                    """
+        print('call', agreement_obj)
+        if hasattr(agreement_obj, 'restrictions'):
+            new_restrictions = agreement_obj['restrictions']
+            agreement_obj.pop('restrictions')
         ps_id = helper.checkValidPartnership(agreement_obj['partnership_type_ID'], agreement_obj['institute_ID'])
         agreement_obj.pop('partnership_type_ID')
         agreement_obj.pop('institute_ID')
