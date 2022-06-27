@@ -473,7 +473,7 @@
                                 <th>Anteilig Monate</th>
                             </tr>
                         </thead>
-                        <button id="add-new-restriction">Neuen Studiengang anlegen</button>
+                        <button class="btn btn-outline-secondary" id="add-new-restriction">Neuen Studiengang anlegen</button>
                         <tbody id="tbl_restriction">
 
                         </tbody>
@@ -482,18 +482,18 @@
                     <div class="p-3" style="display: none;" id="input-new-restriction">
                         <form class="clear-form" id="form-add-rest">
                             <label class="mandatory" for="restriction-course">Studiengang auswählen</label>
-                            <select id="restriction-course" name="course_ID"></select>
+                            <select class="form-select" id="restriction-course" name="course_ID"></select>
                             <label for="restriction-isced">ISCED Code</label>
-                            <input type="text" id="restriction-isced" name="subject_area_code">
+                            <input class='form-text' type="text" id="restriction-isced" name="subject_area_code">
                             <label class="mandatory" for="restriction-type">Incoming?</label>
-                            <input type="checkbox" id="restriction-type" name="incoming">
+                            <input class="form-check" type="checkbox" id="restriction-type" name="incoming">
                             <label for="restriction-mobility">Anzahl der Plätze</label>
-                            <input type="text" id="restriction-mobility" name="subnum_mobility">
+                            <input class="form-text" type="text" id="restriction-mobility" name="subnum_mobility">
                             <label for="restriction-months">Anzahl der Monate</label>
-                            <input type="text" id="restriction-months" name="subnum_months">
+                            <input class="form-text" type="text" id="restriction-months" name="subnum_months">
                             <br>
                         </form>
-                        <button id="save-new-restriction">Studiengang speichern</button>
+                        <button class="btn btn-outline-success" id="save-new-restriction">Studiengang speichern</button>
                     </div>
                 </div>
             </div>

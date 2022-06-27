@@ -8,6 +8,14 @@
 }
 */
 
+table {
+  font-weight: lighter; !important;
+}
+
+#addAgreements {
+  font-weight: lighter; !important;
+}
+
 #add-new-agreement-container {
   margin-bottom: 0;
   justify-content: right;

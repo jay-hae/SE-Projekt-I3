@@ -284,11 +284,9 @@ def ret_js(name):
 
 @app.route('/logout', methods=['GET'])
 def logout():
-    print(session.keys())
     resp = make_response(redirect(url_for('LoginPage')))
     session.pop('usr', None)
     session.pop('admin', None)
-    resp.set_cookie('session', 'max-age=0')
     return resp
 
 
