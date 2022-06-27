@@ -10,7 +10,7 @@ Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einflu
 
 === Datenbankserver
 
-Es wird ein bereits existenter MariaDB Datenbankserver vom Rechenzentrum genutzt. Der Datenbankserver führt täglich automatische Backups aus. Ebenso liegt die Verantwortlichkeit der Nutzerverwaltung bei dem Rechenzentrum. Dadurch besitzt der DB-Server eine exzellente Verfügbarkeit, Skalierung und Wartbarkeit.
+Es wird ein bereits existenter MariaDB Datenbankserver vom Rechenzentrum genutzt. Ebenso liegt die Verantwortlichkeit der Nutzerverwaltung bei dem Rechenzentrum. Dadurch besitzt der DB-Server eine exzellente Verfügbarkeit, Skalierung und Wartbarkeit.
 
 ==== Datenbankmodell
 Aufgrund der geforderten Kompatibilität mit dem Informationsfrontend ist die Datenbankstruktur weitestgehend vorgeschrieben und festgelegt. Bereits in der Vorgruppe wurden zahlreiche Änderungen im Vergleich zur Access Datenbank vorgenommen, um die Komplexität zu senken und Qualität der Datensätze zu steigern. 
