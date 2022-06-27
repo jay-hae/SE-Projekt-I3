@@ -270,7 +270,6 @@ function checkIfNew() {
  */
 function checkNewRestForNewAgreement() {
     let newRest = JSON.parse(sessionStorage.getItem('newRestrictions'));
-    console.log('checkNewRestForAg:' ,newRest);
     let filteredRest = [];
     newRest.forEach(restriction => {
         if  ((restriction['mobility_agreement_ID']).includes('new')) {
@@ -287,7 +286,7 @@ function checkNewRestForNewAgreement() {
 /**
  * Diese Funktion wird aufgerufen, wenn eine neue Restriktion zu einem neuen Agreement hinzugefügt werden soll
  * Die übergebene Restriktion wird zu dem zugehörigen Mobilityagreement zugeordnet.
- * Es werden alle Agreements in der aktuellen SessioStorage überprüft.
+ * Es werden alle Agreements in der aktuellen SessionStorage überprüft.
  * Falls es bereits Restriktions für das Agreement gibt, wird die neue Restriktion hinzugefügt (push)
  * anderfalls ist die Restriktion das erste Objekt für diesen Parameter
  */
