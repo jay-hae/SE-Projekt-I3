@@ -94,7 +94,7 @@ function insertAgreementInTable(data, addField, addType) {
         status = String(data['inactive']) === '0' ? 'Ja' : 'Nein';
         id = 'new_' + index;
         let notes = data['notes'] ? data['notes'] : '';
-        newRow = "<tr style='font-weight: lighter' id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty_ID'] + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + notes + "</th><th><button onclick='deletion((this).parentElement.parentElement, `agreement`)' class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style +"'>Del</button></th></tr>";
+        newRow = "<tr id='new_" + index + "' class='agreement_rows'><th style='display: none'>" + data['partnership_type'] + "</th><th> " + data['faculty_ID'] + "</th><th>" + status + "</th><th> " + mentor_data['firstname'] + " " + mentor_data['lastname'] + "</th><th>" + notes + "</th><th><button onclick='deletion((this).parentElement.parentElement, `agreement`)' class='btn btn-sm btn-light delete-agreement btn-delete' style='display: " + style +"'>Del</button></th></tr>";
     }
     addField.append(newRow);
     makeRowClickable(id, "agreement");
@@ -262,7 +262,6 @@ function insertAgreementInformation(agreement) {
     let setAgreement = returnAgreement(agreement);
     setAgreement = (setAgreement['object'])[setAgreement['index']];
     sessionStorage.setItem('currentAgID',setAgreement['ID']);
-    console.log(setAgreement.notes);
     $('#mentor_ID').val(setAgreement.mentor_ID);
     $('#faculty_ID').val(setAgreement.faculty_ID);
     $('#date_signature').val(setAgreement.date_signature);
@@ -273,7 +272,8 @@ function insertAgreementInformation(agreement) {
     $('#in_num_months').val(setAgreement.in_num_months);
     $('#out_num_mobility').val(setAgreement.out_num_mobility);
     $('#out_num_months').val(setAgreement.out_num_months);
-    $('#notes').val(setAgreement.notes);
+    let x = document.getElementById('notes');
+    x.innerText = setAgreement.notes;
 }
 
 /** Wird durch die Funktion insertAgreementInformation() aufgerufen

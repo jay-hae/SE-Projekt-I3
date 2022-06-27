@@ -5,7 +5,7 @@
     <title>Hochschulpartnerschaften</title>
    
     <!-- Styling -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link href="../style.css" rel="stylesheet">
 
@@ -130,7 +130,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalToggleLabel">Hochschule Bearbeitungsansicht</h5>
+                <h2 class="modal-title" id="exampleModalToggleLabel">Hochschule Bearbeitungsansicht</h2>
                 <button type="button" class="btn-close close_modal_edit" id="close_edit_trigger" ></button>
             </div>
             <div class="modal-body">
@@ -140,10 +140,10 @@
                         <button id="next" class="btn btn-outline-dark w-100"> Partnerschaften </button>
                     </div>
                     <div class="row p-3">
-                        <h1>Hochschule</h1>
+                        <h2>Hochschule</h2>
                         <div class="col-sm pt-1">
                         <form class="clear-form" id="edit_left_col">
-                            <h4>Allgemeine Information</h4>
+                            <h3>Allgemeine Information</h3>
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_country">Land</label>
                                 <select class="filter_country form-select" id="edit_mod_country" name="edit_fil_country">
@@ -180,7 +180,7 @@
                         </form>
                     </div>
                         <div class="col-sm ms-3 pt-1">
-                        <h4>Ansprechperson</h4>
+                        <h3>Ansprechperson</h3>
                         <form class="clear-form" id="edit_mid_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_func">Funktion</label>
@@ -217,7 +217,7 @@
                         </form>
                     </div>
                         <div class="col-sm ms-3 pt-1">
-                        <h4>International Office</h4>
+                        <h3>International Office</h3>
                         <form class="clear-form" id="edit_right_col">
                             <div class="mb-3">
                                 <label class="form-label" for="edit_mod_dep">Abteilung</label>
@@ -245,7 +245,7 @@
                         <button id="previous" class="btn btn-outline-dark w-100"> Zu Hochschulinformationsansicht wechseln</button>
                     </div>
                     <div id="space_table" class="p-3">
-                        <h1>Verträge</h1>
+                        <h3>Verträge</h3>
                         <div id="show-all-ps-types">
 
                         </div>
@@ -254,8 +254,8 @@
                             </select>
                             <button id="add_mob_agreement" class="btn btn-outline-primary w-25 m-1">Neuen Vertrag anlegen</button>
                         </div>
-                        <div class="table-wrap">
-                            <table class="table table-hover" id="table_agreements">
+                        <div class="table-wrap font-weight-light">
+                            <table class="table table-hover fw-light" id="table_agreements">
                             <thead>
                              <tr>
                                 <th>Fakultät</th>
@@ -378,7 +378,7 @@
                     </div>
                     <div class="col-sm p-3 m-3 pt-1">
                         <form class="clear-form modal_form_add" id="form_mid_col">
-                            <h2>Ansprechperson</h2>
+                            <h3>Ansprechperson</h3>
                             <div class="mb-3">
                                 <label for="add-title" class="form-label">Titel</label>
                                 <input type="text" id="add-title" name="title" class="form-control">
@@ -415,7 +415,7 @@
                     </div>
                     <div class="col-sm p-3 m-3 pt-1">
                         <form class="clear-form modal_form_add" id="form_right_col">
-                            <h2>International Office</h2>
+                            <h3>International Office</h3>
                             <div class="mb-3">
                                 <label for="add-department" class="form-label">Abteilung</label>
                                 <input type="text" id="add-department" name="department" class="form-control">
