@@ -46,6 +46,18 @@
             <li class="nav-item"><a class="nav-link" href="/homepage/courses">Studiengänge</a></li>
         </ul>
         <ul class="navbar-nav me-2">
+        <li class="nav-item m-1">
+            <div class="in-navbar" id="handbuch">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Anwenderdokumentation</a></li>
+                        <li><a class="dropdown-item" href="#">Betriebsdokumentation</a></li>
+                        <li><a class="dropdown-item" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
         
         <li class="nav-item m-1">
             <div class="in-navbar" id="Logout">
@@ -472,15 +484,15 @@
                             <label class="form-label mandatory" for="restriction-course">Studiengang auswählen</label>
                             <select class="form-select" id="restriction-course" name="course_ID"></select>
                             <label class="form-label" for="restriction-isced">ISCED Code</label>
-                            <input class='form-text form-check' type="text" id="restriction-isced" name="subject_area_code">
+                            <input class='form-control' type="text" id="restriction-isced" name="subject_area_code">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="restriction-type" name="incoming">
                                 <label class="mandatory form-check-label" for="restriction-type">Incoming?</label>
                             </div>
                             <label class="form-label" for="restriction-mobility">Anzahl der Plätze</label>
-                            <input class="form-text form-check" type="text" id="restriction-mobility" name="subnum_mobility">
+                            <input class="form-text form-control" type="text" id="restriction-mobility" name="subnum_mobility">
                             <label for="restriction-months">Anzahl der Monate</label>
-                            <input class="form-text form-check" type="text" id="restriction-months" name="subnum_months">
+                            <input class="form-text form-control" type="text" id="restriction-months" name="subnum_months">
                             <br>
                         </form>
                         <button class="btn btn-outline-success" id="save-new-restriction">Studiengang speichern</button>
