@@ -1,0 +1,128 @@
+// --- 2. Teammitglieder -----------------------
+Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
+
+// --- 3. Abgabedatum --------------------------
+08. Juli 2022
+
+:docs: ../docs
+include::{docs}/_includes/default-attributes.inc.adoc[]
+// ---
+:doctype: book
+:toc:
+:toclevels: 2
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+//:source-highlighter: highlightjs
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:experimental:
+:chapter-label:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:listing-caption: Listing
+:!example-caption:
+:experimental:
+// Folders
+:imagesdir-reset: {imagesdir}
+
+
+
+:docs-test2: {docs}/test2
+:docs-requirements: {docs}/requirements
+:docs-project-management: {docs}/project_management
+:docs-architecture: {docs}/architecture
+:docs-test: {docs}/test
+:docs-development: {docs}/development
+
+= Einführung
+In diesem Dokument werden wichtig Hinweis und Aleitungen zur Installation und Wartung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden bereitgestellt. Das Ziel ist es dem Administrator alle notwendigen Schritte übersichtlich aufzuzeigen.
+
+Das Hauptaugenmerk unseres Projektes ist es ein Webfrontend unter Nutzung einer gegeben Datenbank zu erstellen.
+Von daher werden Datenbank spezifische Erläuterungen nicht vorgenommen.
+Ausführlich Erläuterungen wurden bereits vom letzten Team dieses Projekts erstellt.
+Hier wird lediglich auf dieses Dokument verwiesen.
+Funktionen wie das Löschen können nun jedoch auch im Webfrontend geschehen, weshalb nicht mehr alle Anleitung aus dem "Vorteam" nötig sind.
+
+Detailierte Beschreibungen zu der Bedienung der Software finden sich in der Anwenderdokumentation.
+
+= Systemvoraussetzungen
+Um die Software erfolgreich zu installieren sind folgende Voraussetzungen zu erfüllen:
+* Software-Vorraussetzungen:
+** Verbindung zum Internet/Intranet (der HTW) 
+** mindestens ein Python3.x Interpreter (getestet mit Python3.8)
+** GNU Bash (nur für das Deploy Script)
+
+* innerhalb der HTW:
+** SSH-Programm (für UNIX zB. OpenSSH oder für Windows zB. Putty oder WinSCP)
+** MariaDB bereitgestellt vom Rechenzentrum der HTW
+
+* Hardware-Vorraussetzungen:
+
+[cols="4,3"]
+|===
+| Hardware | Virtuelle Maschiene | Mindestanforderung
+| CPU       | Intel(R) Xeon(R) Gold 6132 CPU @ 2.60GHz | 4 x 1,6 GHz
+| RAM       | 4 GB  | 4 GB |
+| Speicher  (nur für Software) | 37 GB  | 50 MB 
+|===
+
+= Deployment
+Die folgenden Absätze beziehen sich nur noch auf auf das Deployment innerhalb des HTW-Netzes.
+Mit geringfügien Änderungen im Quelltext ist dies aber auch innerhalb anderer Umgebungen möglich.
+
+Wir gehen davon aus, dass das Rechenzentrum eine MariaDB mit der erforderlichen Datenstruktur bereitstellt.
+Wie man das von dem Vorteam verwendete phpMyAdmin benutzt um die Datenbank mit MySQL befehlen zu bearbeiten oder neue Datenbanken zu importieren, verweisen wir wieder auf die Betriebsdokumentation unserers "Vorteams".
+
+== Webserver  
+Um ein Webserver innerhalb des HTW-Netzes, mit den oben genannten mindest Anforderungen, zu erhalten muss man das Rechenzentrum der HTW kontaktieren.
+Eine andere Möglichkeit besteht darin, einen Server selbst einzurichten. Dies wird allerdings nicht in diesem Dokument behandelt.
+Hier wird nur die Funktionsweise und installation auf einer vom Laborbereich der Fakultät Informatik bereitgestellten Virtuellen Maschiene gezeigt.
+Aufgrund dessen, dass die VM nur innerhalb des HTW Netzes errichbar ist, ist keine IP sperre über eine .htaccess Datei nötig. Falls diese doch benötigt wird findet sich eine Anleitung in der Betreibsdokumentation des Vorteams im abschnitt 3.1.3.
+
+=== Verbindung auf die Virtuelle Maschiene
+Unter Windows empfiehlt sich die Nutzung von WinSCP zum Übertragen von Daten per SSH, Linux Nutzer können die Boardmittel nutzen.
+
+Mit folgenden daten kann eine Verbindung zur Virtuellen Mascheiene Aufgebaut werden:
+[cols="5,2"]
+|===
+| Adresse | seproject@iseproject03
+| Passwort| -
+| Bemerkung | nur innerhalb des HTW Intra-Netzes erreichbar 
+|===
+
+Man befindet sich nun im Home-Verzeichnes der VM und kann nun die Installation der Software vornehemen.
+
+=== Installation der Server-Software
+Im folgenden wird vorausgesetzt, dass die Installation in einer Linux Umgebung statt findet.
+Eine Addaption auf Windows ist ohne weiters mögich.
+
+* Clonen des GitHub Repositorys
+[source, bash]
+----
+git clone https://github.com/jay-hae/SE-Projekt-I3.git
+----
+
+==== Anlegen eines Linux System Units
+Eine System Unit ermöglicht es bestimmte Scripte im Hintergrund ausführen zulassen.
+Ein System Unit Script ist im geclonten Reposetory unter deploy_scripts/se_webserver.service
+Genauer Inforamtionen sind bitte aus dem Internet zu entnehmen. Hier eine Empfehlung: https://wiki.ubuntuusers.de/systemd/Units/[]
+
+* System Unit in das Verzeichnes /etc/systemd/system/ kopieren oder dort selbst anlegen.
+[source, bash]
+----
+cp ./SE-Projekt-I3/deploy_scripts/se_webserver.service /etc/systemd/system/ 
+----
+* System Unit regestrieren und starten. Danach ist der Webserver unter 
+[source, bash]
+----
+sudo systemctl enable se_webserver.service
+----
+// Start der Software mit python um link zu erhalten
+// Start von system units
+// stop von system units
+// 
+= Datenbank
+
+= FAQ
