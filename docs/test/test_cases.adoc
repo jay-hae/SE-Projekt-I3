@@ -61,23 +61,29 @@
 | Nachbedingung a| Bei erfolgreicher Änderung werden die Daten aus dem Datensatz ersetzt und bei Abfrage erfolgreich angezeigt
 |===
 
-=== Test Case 06: Erstellen von Berichten über Erasmusvereinbarungen
+=== Test Case 06: Gleichzeitiges Bearbeiten von Datensätzen durch mehrere Personen
 
 |===
-| Beschreibung | Eine Arbeitskraft will einen Bericht über die bestehenden Erasmusvereinbarungen erstellen
-| Vorbedingungen und benötigte Daten | 
-| Nachbedingung | 
+| Beschreibung | Mindestens zwei Arbeitskräfte wollen Datensätze im System bearbeiten
+| Vorbedingungen und benötigte Daten | - alle Arbeitskräfte sind erfolgreichg angemeldet
+- Die Daten wurden korrekt und vollständig übertragen
+- Datenänderungen werden unverzüglich in das System übernommen
+- direkter Datenbankzugriff um Änderungen vorzunehmen
+| Nachbedingung | Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
 |===
 
-=== Test Case 07: Erstellen von Berichten über Mentoren
+=== Test Case 07: Wechseln der Hauptreiter in max. 3s
 
 |===
-| Beschreibung | 
-| Vorbedingungen und benötigte Daten | 
-| Nachbedingung | 
+| Beschreibung | Mindestens zwei Arbeitskräfte wollen Datensätze im System bearbeiten
+| Vorbedingungen und benötigte Daten | - alle Arbeitskräfte sind erfolgreichg angemeldet
+- Die Daten wurden korrekt und vollständig übertragen
+- Datenänderungen werden unverzüglich in das System übernommen
+- direkter Datenbankzugriff um Änderungen vorzunehmen
+| Nachbedingung | Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
 |===
 
-=== Test Case 08: Gleichzeitiges Bearbeiten von Datensätzen durch mehrere Personen
+=== Test Case 08: Ausführen der wichtigsten Aktionen in max. 2s
 
 |===
 | Beschreibung | Mindestens zwei Arbeitskräfte wollen Datensätze im System bearbeiten
