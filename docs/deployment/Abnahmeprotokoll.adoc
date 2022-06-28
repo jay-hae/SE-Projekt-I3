@@ -1,4 +1,6 @@
-= Abnahmeprotokoll: Webanwendung zur Verwaltung von Hochschulpartnerschaften
+include::../_includes/default-attributes.inc.adoc[]
+
+= Abnahmeprotokoll: {project-name}
 
 
 // Dokument wurde am 13.6 von Jakob bearbeitet und spiegelt den ist zustand wieder 
@@ -17,10 +19,10 @@ GitHub Repository: https://github.com/jay-hae/SE-Projekt-I3
 |===
 |UseCase/Szenario | Erfüllt | Anmerkung
 |Use-Case: In System Einloggen (UC01) | Ja | Logout aktualisiert Seite nicht automatisch, muss manuell aktualisiert werden
-|Use-Case: Partnerhochschulen Anlegen (UC02) | Ja | 
-|Use-Case: Partnerhochschulen Editieren (UC03) |Ja |
-|Use-Case: Datensätze Löschen (UC04) | Ja |
-|Use-Case: Mentoren Editieren (UC05) | Ja | 
+|Use-Case: Partnerhochschulen Anlegen (UC02) | Ja | manuelles Speichern notwendig
+|Use-Case: Partnerhochschulen Editieren (UC03) |Ja | manuelles Speichern notwendig
+|Use-Case: Datensätze Löschen (UC04) | Ja | nur für den 
+|Use-Case: Mentoren Editieren (UC05) | Ja | löschen nicht möglich
 |Use-Case: Berichte Erstellen (UC06) | nein | 
 |Use-Case: Erstellte Berichte Exportieren (UC07) | nein |
 |Use-Case: Berichte für Externe Anzeigen (UC08) | nein | 
@@ -34,7 +36,7 @@ GitHub Repository: https://github.com/jay-hae/SE-Projekt-I3
 |SWFA-2: Nur autorisierte Mitarbeiter des Akademischen Auslandsamtes dürfen Zugriff auf das Verwaltungsfrontend haben. | Ja  | 
 |SWFA-3: Das Interface des Systems ist je nach Nutzer unterschiedlich. Einige Funktionen können nur von bestimmten Nutzern durchgeführt werden. | Ja | Lösch-Button nur mit Admin-Login sichtbar
 |NFAU-1: Das System sollte sowohl auf großen PC-Monitoren sowie auf kleinen Laptop Bildschirmen bedienbar sein. | Ja  |
-|NFAU-2: Das Verwaltungsfrontend sollte auf Brave, Chrome und Firefox laufen | Ja  |
+|NFAU-2: Das Verwaltungsfrontend sollte auf Brave, Chrome, Firefox und Edge laufen | Ja |
 |NFAR-1: Bei einer Wiederherstellung der Datenbank auf einen Vorzustand muss das Verwaltungsfrontend weiterhin funktionieren. | Ja | Erfüllt solange sich Tabellenstruktur nicht verändert
 |NFAR-2: Das Verwaltungsfrontend und das Informationsfrontend müssen parallel auf Daten zugreifen können. | Nein | nicht erreichbar siehe Use-Case 8
 |NFAR-3: Das System muss paralleles Lesen und Schreiben im Verwaltungsfrontend unterstützen. | Ja  | Erfüllt aber Gefahr eines "Lost-Update"
