@@ -237,3 +237,12 @@ Folgende Schritte sind für eine Belegabgabe durchzuführen:
 
 ## Lizenz
 Sämtliche Inhalte dieses Repositories unterliegen der [CC-BY-4.0](https://choosealicense.com/licenses/cc-by-4.0/) Lizenz.
+
+Bei dem Web-Tool für die Verwaltung der Hochschulpartnerschaften wurde für die Entwicklung
+ausschließlich die Open Source Programmiersprache und Gestaltungssprachen Javascript, HTML, Python und
+CSS benutzt und zusätzlich eine MariaDB, welche ebenfalls Open-Source ist. Deshalb sind weder
+jetzt noch in Zukunft Lizenzkosten zu entrichten. Aus diesem Grund haben wir uns für die Creative Commons Attribution 4.0 International entschieden. Der Vorteil hierbei ist, dass keine Closed-Source Projekte
+unter Vorlage dieses Projekts veröffentlicht werden können. Die Lizenzen sind öffentlich im
+Internet einsehbar:
+
+https://choosealicense.com/licenses/

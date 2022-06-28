@@ -10,7 +10,7 @@ Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einflu
 
 === Datenbankserver
 
-Es wird ein bereits existenter MariaDB Datenbankserver vom Rechenzentrum genutzt. Der Datenbankserver führt täglich automatische Backups aus. Ebenso liegt die Verantwortlichkeit der Nutzerverwaltung bei dem Rechenzentrum. Dadurch besitzt der DB-Server eine exzellente Verfügbarkeit, Skalierung und Wartbarkeit.
+Es wird ein bereits existenter MariaDB Datenbankserver vom Rechenzentrum genutzt. Ebenso liegt die Verantwortlichkeit der Nutzerverwaltung bei dem Rechenzentrum. Dadurch besitzt der DB-Server eine exzellente Verfügbarkeit, Skalierung und Wartbarkeit.
 
 
 ==== Datenbankmodell

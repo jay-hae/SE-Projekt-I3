@@ -187,6 +187,7 @@ def new_object(name):
             return ""
     elif name == 'Restriction':
         add_restriction = request.form.to_dict()
+        print(add_restriction)
         restriction_columns = []
         restriction_values = []
         add_restriction.pop('restriction_ID')
@@ -284,11 +285,9 @@ def ret_js(name):
 
 @app.route('/logout', methods=['GET'])
 def logout():
-    print(session.keys())
     resp = make_response(redirect(url_for('LoginPage')))
     session.pop('usr', None)
     session.pop('admin', None)
-    resp.set_cookie('session', 'max-age=0')
     return resp
 
 

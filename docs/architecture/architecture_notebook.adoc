@@ -254,7 +254,8 @@ image::../../docs/architecture/images/C4_model_level_4_facultaet.jpg[]
 
 ==== C4 Modell Level 4: Code (Hochschule)
 
-image::../../docs/architecture/images/C4_model_level_4_hochschule.png[]
+.C4 Modell Level 4: Code
+image::../../docs/architecture/images/C4_model_level_4_hochschule.jpg[]
 
 {nbsp} +
 

@@ -9,10 +9,11 @@ function addButtonEvent() {
         let id = first_column[0].innerHTML; // get ID of institute
         loadAgreements(id);
         loadModal(id);
+        setBlur();
     });
     $('.del-institute').on('click', (e) => {
         let tgt = e.currentTarget;
-        const id = tgt.parentElement.parentElement.children[0].innerHTML;
+        const id = tgt.parentElement.parentElement.children[0];
         deletion(id, "institute");
     });
 }
@@ -270,7 +271,6 @@ function checkIfNew() {
  */
 function checkNewRestForNewAgreement() {
     let newRest = JSON.parse(sessionStorage.getItem('newRestrictions'));
-    console.log('checkNewRestForAg:' ,newRest);
     let filteredRest = [];
     newRest.forEach(restriction => {
         if  ((restriction['mobility_agreement_ID']).includes('new')) {
@@ -287,7 +287,7 @@ function checkNewRestForNewAgreement() {
 /**
  * Diese Funktion wird aufgerufen, wenn eine neue Restriktion zu einem neuen Agreement hinzugefügt werden soll
  * Die übergebene Restriktion wird zu dem zugehörigen Mobilityagreement zugeordnet.
- * Es werden alle Agreements in der aktuellen SessioStorage überprüft.
+ * Es werden alle Agreements in der aktuellen SessionStorage überprüft.
  * Falls es bereits Restriktions für das Agreement gibt, wird die neue Restriktion hinzugefügt (push)
  * anderfalls ist die Restriktion das erste Objekt für diesen Parameter
  */

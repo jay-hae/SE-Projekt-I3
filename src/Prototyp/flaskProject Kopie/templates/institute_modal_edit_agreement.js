@@ -262,7 +262,6 @@ function insertAgreementInformation(agreement) {
     let setAgreement = returnAgreement(agreement);
     setAgreement = (setAgreement['object'])[setAgreement['index']];
     sessionStorage.setItem('currentAgID',setAgreement['ID']);
-    console.log(setAgreement.notes);
     $('#mentor_ID').val(setAgreement.mentor_ID);
     $('#faculty_ID').val(setAgreement.faculty_ID);
     $('#date_signature').val(setAgreement.date_signature);
@@ -273,7 +272,8 @@ function insertAgreementInformation(agreement) {
     $('#in_num_months').val(setAgreement.in_num_months);
     $('#out_num_mobility').val(setAgreement.out_num_mobility);
     $('#out_num_months').val(setAgreement.out_num_months);
-    $('#notes').val(setAgreement.notes);
+    let x = document.getElementById('notes');
+    x.value = setAgreement.notes;
 }
 
 /** Wird durch die Funktion insertAgreementInformation() aufgerufen
