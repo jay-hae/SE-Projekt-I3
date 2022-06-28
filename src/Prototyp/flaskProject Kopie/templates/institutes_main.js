@@ -26,6 +26,7 @@ function startUp() {
     functionalityAgreementFilter();
     loadCourse();
     setMandatoryInput();
+    $('#mod_add_inst_save_btn').attr('disabled', 'true');
 }
 /**
  * Wenn die Seite institute.html vollständig geladen wurde, wird ein GET-Request an app.py gesendet, um
