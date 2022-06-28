@@ -12,6 +12,7 @@ Technische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einflu
 
 Es wird ein bereits existenter MariaDB Datenbankserver vom Rechenzentrum genutzt. Ebenso liegt die Verantwortlichkeit der Nutzerverwaltung bei dem Rechenzentrum. Dadurch besitzt der DB-Server eine exzellente Verfügbarkeit, Skalierung und Wartbarkeit.
 
+
 ==== Datenbankmodell
 Aufgrund der geforderten Kompatibilität mit dem Informationsfrontend ist die Datenbankstruktur weitestgehend vorgeschrieben und festgelegt. Bereits in der Vorgruppe wurden zahlreiche Änderungen im Vergleich zur Access Datenbank vorgenommen, um die Komplexität zu senken und Qualität der Datensätze zu steigern. 
 
@@ -29,9 +30,7 @@ image::physical_erm.SVG[]
 
 Untenstehend werden alle Tabellen erläutert und aufgezeigt, was innerhalb des Verwaltungsfrontends ermöglicht wird:
 
-• diese hat generell überall Lese- aber nicht Schreibzugriff
 
-+
 |===
 |Tabelle | Inhalt | Verwaltungsfrontend
 
@@ -69,10 +68,9 @@ NOTE: Um Probleme mit Modifikationen zu vermeiden, ist allein dem Super-User das
 
 Für das Informationsfrontend müssen entsprechende Views für jede Tabelle (ausgenommen: `tbl_exchange` und `tbl_exchange_type`) eingerichtet werden. Dabei dürfen nur aktive Verträge angezeigt werden.
 
-
 ==== Verwaltung der Datenbank
 
-Die administrativen Rechte liegen derzeit noch bei einem Mitarbeiter aus dem Rechenzentrum.
+Die MariaDB wird durch einen Mitarbeiter des Rechenzentrums der HTW betreut.
 
 === Webserver
 
@@ -80,38 +78,46 @@ Die administrativen Rechte liegen derzeit noch bei einem Mitarbeiter aus dem Rec
 
 Als Webserver dient eine virtuelle Maschine, welche vom Rechenzentrum bereitgestellt wird. Dort läuft das Backend in Python und das Frontend mithilfe von HTML, CSS und Javascript.
 
-// ==== Authentifizierung im Browser
+==== Authentifizierung im Browser
 
-// Der Punkt Authentifizierung kann noch nicht vollständig berücksichtigt werden, denn es gibt noch keinen konkreten Plan wie mit der Nutzerunterscheidung innerhalb des Softwaresystems umgegangen wird. Man kann aber mit einer Clientseitigen authentifizierung rechnen, das heißt der Nutzer bekommt z.B. einen Cookie gesetzt welcher bei Aufrufen einer Seite mitgeschickt wird.
+Bevor die Webanwendung genutzt werden kann, muss sich der Nutzer per Login authentifizieren. Es gibt zwei unterschiedliche Logins mit verschiedenen Rechten. Dem Admin-Login ist es dabei erlaubt Datensätze zu löschen, dem normalen Nutzer nicht.
+Die Login-Daten entsprechen den vom Rechenzentrum bereitgestellten Nutzern der Datenbank. Die Lese-/Schreibrechte sind somit über die Datenbank geregelt.
 
 ==== Darstellung
 
 Das User-Interface hat das Ziel intuitiv nutzbar zu sein. Daher ist dieses einfach gestaltet.
 
-Auf jeder Seite
+* Das Farbschema der gesamten Anwendung beschränkt sich auf einen weißen Hintergrund, schwarz für Standardschrift, die Navigationsleiste und die Tabellenlinien, blau und grau für Buttons sowie rot für wichtige Schrift
+* Die Navigationsleiste zeigt die wichtigsten Links zu den Ansichten der Fakultäten, Hochschulen, Länder, Mentoren und Studiengänge und ist schwarz mit weißer bzw grauer Schrift
+* Standardmäßig sind die Reiterüberschriften dunkelgrau und werden erst beim Mouseover hovern heller hervorgehoben
+* Alle Buttons haben abgerundete Ecken
+* Buttons zum Anlegen neuer Datensätze haben keine Hintergrundfüllung, sind blau umrandet und haben eine ebenfalls blaue Schrift
+* Der Zurücksetzenbutton auf der Hauptseite hat keine Hintergrundfüllung und ist grau umrandet mit grauer Schrift
+* Die Daten der verschiedenen Hochschulen etc. werden als Tabelle auf den jeweiligen Seiten dargestellt
+* In den Tabellen der Hochschulen und Mentoren wird für jede Zeile und damit jede Hochschule bzw. jeden Mentoren ein Button zum Bearbeiten für jeden Datensatz von Hoschschulen und Mentoren
+* Für den Admin-Login wird zusätzlich neben dem Bearbeiten-Button ein weiterer Button zum löschen eines Datensatzes angezeigt. Dieser ist nur für den Admin-Login sichtbar
+* Auf der Seite der Hochschulen befinden sich am Seitenanfang Dropdowns zum Filtern der Inhalte nach: Land, Fakultät, Anzeige auf HTW-Seite, Inaktive/aktive/gesamte Vertäge, Vertragstyp sowie der Sortierung aufsteigend oder absteigend alphabetisch
+* Auf der Seite der Mentoren befindet sich am Seitenanfang ein Eingabefeld, welches die Textsuche über den Namen eines Mentoren ermöglicht
+* Über den Bearbeiten- oder Hinzufügen-Button auf den Seiten der Mentoren und Hochschulen öffnet sich jeweils ein Formular mit Eingabemöglichkeiten für die jeweiligen Daten der Datensätze. 
+* Die Formularansicht wurde mit Eingabefelder und Labels versehen, um die einfache Zuordnung durch einen Nutzer zu garantieren. Der Speichern-Button ist auch hier Blau hinterlegt, um die Funktion zu verdeutlichen.
+* Die Pflichtfelder in den Eingabeformularen sind jeweils rot markiert
 
-* Nutzung einer Navigationsleiste mit den wichtigsten Links (zu Hochschulen-, Mentorenübersicht)
-* Ein Button zum Anlegen neue Daten (Hochschule, Mentor)
-* Tabellenansicht zum Anzeigen der Daten
-* Ein Button zum Bearbeiten für jeden Datensatz (ausgenommen Studiengänge, Fakultäten & Länder)
+==== Validierung der Daten
 
-Die Formularansicht wurde mit Eingabefelder und Labels versehen, um die einfache Zuordnung durch einen Nutzer zu garantieren. Der Speichern-Button ist auch hier Blau hinterlegt, um die Funktion zu verdeutlichen.
+* Die Daten im Formular zum anlegen einer Neuen Hoschschule können nur dann gespeichert werden, wenn bereits eine englische Bezeichnung eingetragen wurden. Bis dahin ist der Speichern-Button inaktiv.
 
-//==== Validierung der Daten
-
-//Da eine bloße Validierung von Daten im Frontend unsicher ist, werden eingegebene Daten im Backend validiert. Prinzipiell geschieht das über if-Abfragen im Code, es wird z.B. überprüft, ob der übergebene POST-Parameter existiert, ob er numerisch oder ein leerer String ist.
-
-//Die letzte Instanz der Validierung stellt die Datenbank dar, da nicht valide Formate in einer SQL-Query abgewiesen werden.
+* Eine weitere Instanz der Validierung stellt die Datenbank dar, da nicht valide Formate in einer
+SQL-Query abgewiesen werden.
 
 === Synchronisation
 
-Es ist nicht notwendig Daten in einer anderen Datenbank zwischenzuspeichern, weshalb die Website und Datenbank zum Zeitpunkt des Aufrufs immer auf dem aktuellen Stand ist.
+* Beim öffnen der Webanwendung werden die aktuellen Daten aus der Datenbank geladen und angezeigt
 
-Änderungen werden direkt an die Datenbank gesendet, daher ist kein Synchronisationsmechanismus nötig.
+* Tätigt der Nutzer Eingaben zum Anlegen oder Ändern von Datensätzen werden die Eingaben zunächst Zwischengespeichert und erst beim drücken des Speicherbuttons persistiert
 
 === Schnittstelle zwischen Front- und Backend
 
-Das Übergeben von Daten aus dem Frontend ins Backend wird durch POST-Anfragen geregelt. Verschiedene Javascript-Skripte werten, je nach Anfrage, die Nutzerdaten aus und senden sie an das Backend. Dort werden die einzelnen Parameter der Anfrage ausgewertet und weiterverarbeitet.
+Das Übergeben von Daten aus dem Frontend ins Backend wird durch POST-Requests geregelt. Verschiedene Javascript-Skripte werten, je nach Anfrage, die Nutzerdaten aus und senden sie an das Backend. Dort werden die einzelnen Parameter der Anfrage ausgewertet und weiterverarbeitet.
 Geht es um die reine Darstellung der Webseiten, so nutzt der Client, GET-Anfragen um die entsprechende Website vom Server zurückgeliefert zu bekommen.
 
 Um eine einfache Verarbeitung der, vom Server geschickten Daten, im Frontend vornehmen zu können, haben wir uns für eine übermittlung per JSON-Datei entschieden. Es gibt eine einfache Möglichkeit Pythoneigene Datentypen in eine JSON-Datei zu packen, somit ist der Clientseitige Zugriff auf die Daten ähnlich wie auf dem Server.
@@ -121,11 +127,9 @@ Um eine einfache Verarbeitung der, vom Server geschickten Daten, im Frontend vor
 
 Grafische Designaspekte beschreiben Entwurfsentscheidungen, die direkten Einfluss auf die Darstellungsweise einzelner Systemkomponenten für den Benutzer haben.
 
-Da der Kunde bereits vorher mit Microsoft Access und einem Prototyp gearbeitet hat, wurde bei der Erstellung der Anwendung der Fokus auf eine möglichst nahe Anlehnung der Gestaltung unserer Vorgruppe gelegt.
-
-=== Verwaltungsfrontend
-
-Generell wird für die Darstellung eine Mischung aus Bootstrap und lokalem CSS benutzt.
+Da der Kunde bereits vorher mit Microsoft Access und einem Prototyp gearbeitet hat, wurde bei der Erstellung der Anwendung der Fokus auf eine möglichst nahe Anlehnung der Gestaltung unserer Vorgruppe gelegt. Die Daten werden größtenteils in Tabellenform dargestellt. Nutzereingaben zum Anlegen oder Ändern von Datensätzen werden als Formular dargestellt.
+Insgesamt sollen immer so wenige Daten wie möglich gleichzeitig angezeigt werden, ohne dass der Nutzer Funktionalität verliert. Daher sind die Abstände zwischen den Inhalten der Tabellen und den Eingabefeldern der Eingabeformulare bewusst großzügig gewählt.
+Die Schriftart ist schnörkellos und hat einen breiten Strich, was sie angenehm zu lesen macht.
 
 Die Liste von Hochschulen, Ländern, Vertragstypen etc. werden beim Laden der Seite durch Javascript-Skripte geladen zusätzlich bei der Auswahl eines Filters aktualisiert. Sie sind in einer Tabelle angeordnet.
 
