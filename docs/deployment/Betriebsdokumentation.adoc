@@ -104,6 +104,18 @@ Eine Addaption auf Windows ist ohne weiters mögich.
 git clone https://github.com/jay-hae/SE-Projekt-I3.git
 ----
 
+Für das Starten des Servers auf einem Linux System gibt es 2 Möglichkeiten:
+* maunelles starten mit Python 
+* das Starten und im Hintergrundlaufen lassen über eine System Unit (empfolen)
+
+==== manuelles starten mit Python
+// TODO Ordnerstruktur überarbeiten
+Dafür ist es nur notwendig in dem Ordner src/ mit folgendem Befehl den Server zu starten:
+[source, bash]
+----
+python3.8 app.py
+----
+
 ==== Anlegen eines Linux System Units
 Eine System Unit ermöglicht es bestimmte Scripte im Hintergrund ausführen zulassen.
 Ein System Unit Script ist im geclonten Reposetory unter deploy_scripts/se_webserver.service
