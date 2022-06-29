@@ -26,6 +26,8 @@
 
     <script src="../general_helper.js"></script>
 
+    <script src="../modal_blur_effect.js"></script>
+
     <script src="../delete_helper.js"></script>
 </head>
 <body>
@@ -67,7 +69,7 @@
         </ul>
     </div>
     </nav>
-    <div class="my-content">
+    <div class="my-content" id="my-content">
         <h1 class="text-center m-4">Hochschulen</h1>
         <!-- Filter Buttons -->
         <div id="fil">
@@ -310,10 +312,10 @@
                             </div>
                             <div class="col-sm p-3 m-3 pt-1">
                                 <label for="notes" class="form-label">Bemerkungen</label>
-                                <textarea id="notes" class="form-control h-50 agreementInformation"></textarea>
+                                <textarea id="notes" class="form-control h-50 agreementInformation" name="textarea-notes"></textarea>
                                 <div class="form-check mt-3">
                                     <input type="checkbox" id="inactive" class="form-check-input agreementInformation">
-                                    <label for="inactive" class="form-check-label mandatory">Agreement Inaktiv?</label>
+                                    <label for="inactive" class="form-check-label">Agreement Inaktiv?</label>
                                 </div>
                             </div>
                       </div>
@@ -485,10 +487,8 @@
                             <select class="form-select" id="restriction-course" name="course_ID"></select>
                             <label class="form-label" for="restriction-isced">ISCED Code</label>
                             <input class='form-control' type="text" id="restriction-isced" name="subject_area_code">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="restriction-type" name="incoming">
-                                <label class="mandatory form-check-label" for="restriction-type">Incoming?</label>
-                            </div>
+                            <input class="form-check-input" type="checkbox" id="restriction-type" name="incoming">
+                            <label class="mandatory form-check-label" for="restriction-type">Incoming?</label><br>
                             <label class="form-label" for="restriction-mobility">Anzahl der Plätze</label>
                             <input class="form-text form-control" type="text" id="restriction-mobility" name="subnum_mobility">
                             <label for="restriction-months">Anzahl der Monate</label>
