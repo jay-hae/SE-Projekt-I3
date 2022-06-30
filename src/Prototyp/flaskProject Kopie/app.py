@@ -16,6 +16,10 @@ app.secret_key = os.urandom(24)
 
 
 def login_required(f):
+    '''
+        This is a sample documentation
+        
+    '''
     @wraps(f)
     def wrap(*args, **kwargs):
         if 'usr' in session:
