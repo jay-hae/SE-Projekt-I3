@@ -40,73 +40,94 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="app.LoginPage">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">LoginPage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.LoginPage" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Nutzer mit DB-Informationen anmelden
+Nutzer zur Homepage umleiten und Login Daten in session speichern,
+wenn er erfolgreich eingeloggt ist</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.changes">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.changes" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Wird aufgerufen, wenn die Speichern Button des Bearbeitungsmodals gedrückt wird
+Die geänderten Werten an Querries.edit() übergeben</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.delete_object">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">delete_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.delete_object" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Das zu löschende Objekt überprüfen</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.handle_filter">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">handle_filter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.handle_filter" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Die Filterwerte (Anzeige auf HTW-Seite und aktive Verträge) formatieren
+Diese Werte an Querries.filter_institutes() übergeben
+Gefilterte Hochschule zurückgeben</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.hp_file">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">hp_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.hp_file" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>HTML Hauptseite rendern</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.load_filter">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">load_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.load_filter" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Filterwerte (Hochschule, Vertragstyp, Länder, Fakultät) für Hochschule laden</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.load_institute_modal_data">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">load_institute_modal_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.load_institute_modal_data" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Erforderliche Daten zum Öffnen des Institut Bearbeitungsmodals abrufen</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.load_mentor_modal_data">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">load_mentor_modal_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.load_mentor_modal_data" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Erforderliche Daten zum Öffnen des Mentor Bearbeitungsmodals abrufen</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.login_required">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">login_required</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.login_required" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>This is a sample documentation</p>
+<dd><p>Andere Funktionen werden nur aufgerufen,
+wenn der Benutzer eingeloggt ist</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.logout">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.logout" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Nutzer abmelden</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.new_object">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">new_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.new_object" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Neu erstellte Objekt (Mentor, Hochschule, Agreement, Restriktion) formatieren
+An der Funktion zum Hinzufügen zur Datenbank übergeben</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.ret_file">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">ret_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.ret_file" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Die benötigten Dateien rendern</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.ret_js">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">ret_js</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.ret_js" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Die gesamte Daten für Mentor, Länder, Kurse, Fakultäten, Vereinbarungen
+von Funktionen in Querries (von Datenbank) zurückgeben</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="app.return_session">
 <span class="sig-prename descclassname"><span class="pre">app.</span></span><span class="sig-name descname"><span class="pre">return_session</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.return_session" title="Link zu dieser Definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Das eingeloggte Nutzerkonto zurückgeben</p>
+</dd></dl>
 
 </section>
 
