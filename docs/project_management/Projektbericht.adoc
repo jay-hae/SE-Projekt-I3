@@ -1,94 +1,128 @@
-
-// --- 2. Teammitglieder -----------------------
-Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
-
-// --- 3. Abgabedatum --------------------------
-08. Juli 2022
-
-:docs: ../docs
-
-include::../_includes/default-attributes.inc.adoc[]
-
-// ---
-:doctype: book
-:toc:
-:toclevels: 2
+= Projektbericht: {project-name} 
+:project-name: Webanwendung zur Verwaltung von Hochschulpartnerschaften
+// Settings:
+:toc: 1
 :toc-title: Inhaltsverzeichnis
-:sectnums:
+:toclevels: 2
+:sectnums: 1
 :icons: font
 //:source-highlighter: highlightjs
 :source-highlighter: rouge
 :rouge-style: github
 :xrefstyle: full
-:experimental:
-:chapter-label:
 :figure-caption: Abbildung
 :table-caption: Tabelle
-:listing-caption: Listing
 :!example-caption:
 :experimental:
-// Folders
-:imagesdir-reset: {imagesdir}
+// folders
+ifndef::imagesdir[:imagesdir: images]
+ifndef::diagramsdir[:diagramsdir: diagrams]
+ifndef::plantumlsdir[:plantumlsdir: plantuml]
+// Hyphenation for PDF dokumente
+:lang: DE
+:hyphens:
 
 
+// :docs: ../../docs
 
-:docs-test2: {docs}/test2
-:docs-requirements: {docs}/requirements
-:docs-project-management: {docs}/project_management
-:docs-architecture: {docs}/architecture
-:docs-test: {docs}/test
-:docs-development: {docs}/development
-== Einführung
-Dieses Dokument enthält den Projektbericht zum Aufbau einer Hochschulpartnerschafts-Verwaltungs-Software im Rahmen des SE I und SE II Moduls.
+// include::{docs}/_includes/default-attributes.inc.adoc[]
 
-== Planung
+
+// :doctype: book
+// :toc:
+// :toclevels: 2
+// :toc-title: Inhaltsverzeichnis
+// :sectnums:
+// :icons: font
+// //:source-highlighter: highlightjs
+// :source-highlighter: rouge
+// :rouge-style: github
+// :xrefstyle: full
+// :experimental:
+// :chapter-label:
+// :figure-caption: Abbildung
+// :table-caption: Tabelle
+// :listing-caption: Listing
+// :!example-caption:
+// :experimental:
+
+// :imagesdir-reset: {imagesdir}
+
+// :docs-test2: {docs}/test2
+// :docs-requirements: {docs}/requirements
+// :docs-project-management: {docs}/project_management
+// :docs-architecture: {docs}/architecture
+// :docs-test: {docs}/test
+// :docs-development: {docs}/development
+
+
+== Einführung (JH + JR)
+Dieses Dokument enthält den Projektbericht zum Aufbau einer Hochschulpartnerschafts-Verwaltungs-Software im Rahmen des SE I und SE II Moduls des Teams I3.
+
+== Planung (JH + JR)
 === Aufgabenstellung & Auftraggeber
-Die Auftraggeber unseres Projektes I3_Hochschulpartnerschaften_Stabstelle_Internationales,
-sind wie der Name schon erkennen lässt, die Stabstelle Internationales der HTW Dresden.
-Diese Stabstelle beschäftigt sich mit allen Angelegenheiten, welche mit Beziehungen in das Ausland in Verbindung zubringen sind.
-Auszugsweise fallen darunter, das Verwalten aller Verträge, Kontaktdaten und Informationenvon Austauschstudierenden zu den jeweiligen Partnerhoschulen.
-Um die Verwaltung dieser Daten zu erleichtern, soll die alte Verwaltungssoftware (Microsoft Accsess) nun durch eine Webanwendung mit schon vorgegebener Datenbank ersetzt werden, was unsere Aufgabe für die 2 Semester war.
 
+Die Auftraggeber unseres Projektes "I3 Hochschulpartnerschaften Stabstelle Internationales" war die Stabstelle Internationales der HTW Dresden.
+Die HTW Dresden kooperiert weltweit mit rund 170 Partnerhochschulen, um Studierenden die
+Gelegenheit zu ermöglichen, sich kulturell weiterzubilden, neue Kontakte zu knüpfen und
+Sprachkenntnisse zu vertiefen. Zu diesem Zweck werden die Informationen zu den Partnerhochschulen und Spezifikationen zu den bestehenden Verträgen mit diesen, sprich Anzahl an
+Plätzen, Mentoren und verfügbare Fakultäten etc., sowie Daten über Incomings und Outgoings
+gespeichert und verarbeitet. Genutzt wurde hierfür bis jetzt eine Access Datenbank.
+Der Auftrag des Projektteams I3 bestand darin eine webbasierte Applikation mit Schnittstelle zu einer
+Datenbank zu realisieren, die die Verwaltung der Hochschulen für die Mitarbeiter der Stabsstelle internationales vereinfacht. 
 
 === Situation zum Semesterbeginn
 
+Zu Beginn des Semesters SS22 waren die Inception und Elaborationsphase des Projekts bereits
+abgeschlossen (Software Engineering I). Außerdem konnte im vorherigen Semester bereits ein Prototyp der Software mit einigen grundlegenden Funktionen erstellt werden. 
+
 === Projektorganisation
 ==== Team & Rollen
-Das Projekt Team besteht aus 8 Mitgieldern, dessen größe über die Module SE I und SE II konstant blieb. 
-In SE II nahmen wir anfänglich eine Rollenverteilung vor, welche am Anfang des Moduls SE II leicht verändert wurde.
-So hatte Patrick Matthes (allgemeine Informatik) zusammen mit Nico Rosenkranz (Wirtschafts-Informatik) anfänglich die Aufgabe sich mit Testmechanismen zu beschäftigen. 
-Luca Meißner, Roman Patzig, Thanh Ha Khoung, 
+Das Projektteam besteht aus 8 Mitgliedern, dessen größe über die Module SE I und SE II konstant blieb. 
 
-==== Kommunikation 
-Unsere Kommunikations Plattformen wurden in SE I etabliert und bis zum Projektabschluss beibehalten.
+• Project-Manager: Jakob Häcker (JH)
+• Analyst: Nico Rosenkranz, Patrick Matthes  
+• Architect: Pascal Thielemann
+• Developer: Pascal Thielemann, Thanh Ha Khoung, Jens Rosenkranz (JR)
+• Tester: Patrick Matthes, Roman Patzig
+• Deployment Engineer: Luca Meißner
+• Technical Writer: Thanh Ha Khoung, Jens Rosenkranz
+
+==== Kommunikation
+
+Aufgrund der vor allem im vorangegangenen Semester herrschenden Pandemie und des damit einhergehenden Onlinebetriebs an der Hochschule, hat sich für das ganze Projekt eine Kommukikation über Online-Videokonferenzen (Discord, Teams, BigBlue utton) sowie über Messenger (WhatsApp) etabliert. Zu keinem Zeitpunkt haben sich alle Teammitglieder in Präsenz getroffen.
+Die Meetings mit dem Auftraggeber und dem Coach wurden ebenfalls remote druchgeführt und
+fanden in sehr angemessenem Umfang regelmäßig statt (ca. alle 4 Wochen). Dank der Flexibilität von Online-Meetings konnten Termine zwischen den Teammitgliedern und auch mit dem Coach oder der Stabstelle konnten Termine auch kurzfirstig vereinabrt werden. 
+Die Versionsverwaltung des Projektes wurde über ein Git-Repository realisiert, was ein gleichzeitiges Arbeiten aller Teammitglieder an dem Projekt ermöglichte.
 
 ===== Teaminterne Kommunikation
-Wir haben unsere Kommunikation für langfristige Termine, Diskusionen die das gesamte Team betreffen, teaminterne Meetings und Absprachen innerhalb der Subteams (Rollen, siehe oben) über die Plattform Discord vorgenommen. 
-Die Administration unseres Servers auf der Plattform übernahm Luca Meißner.
-Als Erweiterung, für schnelle, spontane Absprachen hatten wir uns eine WhatsApp Gruppe erstellt.
+Um eine schnelle agile Kommunikation zwischen den einzelnen Gruppen bzw. Rollen innerhalb des Teams zu ermöglichen, wurden auf dem von Luca Meißner eingerichteten Discordserver für jede Rolle einzelne Untergruppen erzeugt.
+Als Erweiterung, für schnelle, spontane Absprachen  wurde eine WhatsApp Gruppe erstellt.
 
 ===== Kommunikation mit unserem Coach
-Termine mit unserme Coach, Herrn Ringel, wurden über das HTW E-Mail System abgesprochen und über einen MS Teams abgehalten.
+Termine mit dem Coach, Herrn Ringel, wurden über das HTW E-Mail System abgesprochen und über MS Teams abgehalten.
 
 ===== Kommunikation mit unseren Themenstellerinnen
-Wie bei unserem Coach wurden Termine und Unterlagen per E-Mail kommuniziert bzw. geteilt.
-Unsere Meetings haben wir über einen, von der SI zuverfügung gestellten, BBB Raum gehalten.
+Mit dem Themensteller, der Stabstelle Internationales, wurden Termine per E-Mail vereinbart und ebenso Dokumente geteilt.
+Meetings wurden über einen, von der SI zur Verfügung gestellten, BBB Raum gehalten.
 
 ==== Projektaufgabenverwaltung
-Unsere Aufgabenverwaltung haben wir in SE I über GitHub Issues organisiert und versucht eine Übergeordnete Organisations ebene mit Git Projects zu etablieren.
-Dies hat allerdings nicht wirklich Funktioniert, da der Zugang zu den Git Projects recht umständlich war und somit niemand diese Verwaltungsebene gepflegt hat.
-Weiterhin hatten wir Problem unser Aufgaben auf Issues abzubliden und diese Konstant zupfelegen. Die Issues wurden auch für Problem definiert, die viele kleine Unterissues beinhaltet hätten.
-Dies resultierte in ein Chaos, das keine übersichtliche Handhabung der Issues möglich machte.
-Des Weiteren bot es keine Möglichkeiten unseren Fortschritt zu veranschaulichen.
+Die Aufgabenverwaltung hat das Team in SE I über GitHub Issues organisiert und eine übergeordnete Organisationsebene mit Git Projects etabliert.
+Dies hat allerdings nur eingeschränkt funktioniert, da der Zugang zu den Git Projects sich für die Teammitglieder umständlich gestaltet hat und die Verwaltungsebene somit nicht ausreichend gepflegt wurde.
+Weiterhin war es unpraktisch sämtliche Aufgaben in GitHub als Issues abzubliden, da diese auch für Aufgaben und Probleme völlig unterschiedlicher Größenordnung definiert wurden.
+Dies hatte eine große Unübersichtlichkeit zur Folge, die eine strukturierte Handhabung der Issues unmöglich machte. Es war somit kaum Möglich den Fortschritt des Projekts zu veranschaulichen.
 Abhilfe für diese Problem schaffte das in der Mitte des SE II Moduls eingführte Tool ZenHub.
-Damit war es möglich Hirachien, Abhängigkeiten und arbeitsaufwände von Issues zu modellieren. Eine Visualisierung des Projektfortschrittes wurde zu dem ebenfalls ermöglicht, welche aber Aufgrund von inkonsitenter Nutzung dieser Möglichkeit nicht wirklich wirksam wurde.
-Jedoch hat uns diese Tool sehr viel mehr geholfen, als die Issue-Verwaltung vom default GitHub. 
+Damit war es möglich Hirachien, Abhängigkeiten und den jeweiligen Arbeitsaufwand der Issues zu modellieren. Eine Visualisierung des Projektfortschrittes wurde zudem ebenfalls ermöglicht.
+
+== Durchführung (JH + JR)
+
+Zu Beginn des Sommersemesters SS22 hat sich das Team zu einer Online-Besprechung getroffen um sich den Ist-Zustand des Projekts zu verdeutlichen und einen Überblick über die noch zu bewältigenden Aufgaben und Probleme zu verschaffen. Als Grundlage für das weitere Vorgehen wurde einerseits die noch offenen Issues aus ZenHub und andererseits das Dokument "Belegarbeiten Prüfungsorganisation" herangezogen, welches durch Herrn Prof. Anke zur Verfügung gestellt wurde.  Daraufhin wurden die Verantwortlichkeiten für die Aufgaben und zu erstellenden Dokumente an die einzelnen Gruppen (Implementierung, Test, Projektleitung, etc.) verteilt und ein größtenteils eigenverantwortliches Arbeiten vereinbart. 
 
 
-== Durchführung 
 // oder besser nur Iterationen beschreiben?
 // bzw beschreiben warum Iterationen eher schwammig waren (kein vorhandenes Inkrement bei manchen)
 === Inception
+
 ==== Ziele
 ==== Problem 
 ==== Ergebnisse
@@ -109,12 +143,11 @@ Jedoch hat uns diese Tool sehr viel mehr geholfen, als die Issue-Verwaltung vom 
 ==== Ergebnisse
 
 
-
 == Ergebnisse
 === Softwaresystem
 ==== Lizenz
 
-=== Refelxtion der Teammitglieder
+=== Reflexion der Teammitglieder
 
 ==== Jakob Häcker
 Das erstellen von komplexen Software Systemen, war für mich vor dem Modul Software Engineering nicht greifbar und somit hatte ich auch keine Vorstellung was es eigentlich bedeutet komplexe Software in Teamarbeit zu erstellen, geschweige denn was alles dafür nötig ist.
@@ -143,3 +176,5 @@ Ich habe durch das Projekt viel gelernt und die erste echte Erfahrung in Softwar
 
 ==== Nico Rosenkranz
 ==== Pascal Thielemann
+
+
