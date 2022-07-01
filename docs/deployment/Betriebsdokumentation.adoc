@@ -1,42 +1,15 @@
+
+include::../_includes/default-attributes.inc.adoc[]
+
+= Betriebsdokumentation: {project-name}
 // --- 2. Teammitglieder -----------------------
 Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
 
 // --- 3. Abgabedatum --------------------------
-08. Juli 2022
-
-:docs: ../docs
-include::{docs}/_includes/default-attributes.inc.adoc[]
-// ---
-:doctype: book
-:toc:
-:toclevels: 2
-:toc-title: Inhaltsverzeichnis
-:sectnums:
-:icons: font
-//:source-highlighter: highlightjs
-:source-highlighter: rouge
-:rouge-style: github
-:xrefstyle: full
-:experimental:
-:chapter-label:
-:figure-caption: Abbildung
-:table-caption: Tabelle
-:listing-caption: Listing
-:!example-caption:
-:experimental:
-// Folders
-:imagesdir-reset: {imagesdir}
 
 
 
-:docs-test2: {docs}/test2
-:docs-requirements: {docs}/requirements
-:docs-project-management: {docs}/project_management
-:docs-architecture: {docs}/architecture
-:docs-test: {docs}/test
-:docs-development: {docs}/development
-
-= Einführung
+== Einführung
 In diesem Dokument werden wichtig Hinweis und Aleitungen zur Installation und Wartung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden bereitgestellt. Das Ziel ist es dem Administrator alle notwendigen Schritte übersichtlich aufzuzeigen.
 
 Das Hauptaugenmerk unseres Projektes ist es ein Webfrontend unter Nutzung einer gegeben Datenbank zu erstellen.
@@ -47,8 +20,9 @@ Funktionen wie das Löschen können nun jedoch auch im Webfrontend geschehen, we
 
 Detailierte Beschreibungen zu der Bedienung der Software finden sich in der Anwenderdokumentation.
 
-= Systemvoraussetzungen
+== Systemvoraussetzungen
 Um die Software erfolgreich zu installieren sind folgende Voraussetzungen zu erfüllen:
+
 * Software-Vorraussetzungen:
 ** Verbindung zum Internet/Intranet (der HTW) 
 ** mindestens ein Python3.x Interpreter (getestet mit Python3.8)
@@ -60,15 +34,15 @@ Um die Software erfolgreich zu installieren sind folgende Voraussetzungen zu erf
 
 * Hardware-Vorraussetzungen:
 
-[cols="4,3"]
+[cols="1,1"]
 |===
-| Hardware | Virtuelle Maschiene | Mindestanforderung
-| CPU       | Intel(R) Xeon(R) Gold 6132 CPU @ 2.60GHz | 4 x 1,6 GHz
-| RAM       | 4 GB  | 4 GB |
-| Speicher  (nur für Software) | 37 GB  | 50 MB 
+| Hardware | Virtuelle Maschiene = Mindestanforderung
+| CPUs     | 2 (uU. reicht eine) 
+| RAM      | 4 GB 
+| Speicher | 35 GB
 |===
 
-= Deployment
+== Deployment
 Die folgenden Absätze beziehen sich nur noch auf auf das Deployment innerhalb des HTW-Netzes.
 Mit geringfügien Änderungen im Quelltext ist dies aber auch innerhalb anderer Umgebungen möglich.
 
@@ -135,6 +109,7 @@ sudo systemctl enable se_webserver.service
 // Start von system units
 // stop von system units
 // 
-= Datenbank
 
-= FAQ
+== Datenbank
+
+== FAQ
