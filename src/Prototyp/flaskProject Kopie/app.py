@@ -17,8 +17,8 @@ app.secret_key = os.urandom(24)
 
 def login_required(f):
     '''
-        This is a sample documentation
-        
+    Andere Funktionen werden nur aufgerufen, 
+    wenn der Benutzer eingeloggt ist
     '''
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -33,6 +33,11 @@ def login_required(f):
 # redirect user to homepage if he is already logged in
 @app.route('/', methods=['GET', 'POST'])
 def LoginPage():
+    '''
+    Nutzer mit DB-Informationen anmelden
+    Nutzer zur Homepage umleiten und Login Daten in session speichern, 
+    wenn er erfolgreich eingeloggt ist
+    '''
     if request.method == 'GET':
         if 'usr' in session:
             return redirect('/homepage/institutes')
@@ -52,6 +57,9 @@ def LoginPage():
 @app.route('/homepage/<name>', methods=['GET', 'POST'])
 @login_required
 def hp_file(name):
+    '''
+    HTML Hauptseite rendern
+    '''
     if name == 'mentor':
         return render_template('mentor.html')
     elif name == 'countries':
@@ -68,6 +76,9 @@ def hp_file(name):
 @app.route('/get/<name>', methods=['GET'])
 @login_required
 def load_filter(name):
+    '''
+    Filterwerte (Hochschule, Vertragstyp, Länder, Fakultät) für Hochschule laden
+    '''
     if name == 'institutes':
         return Querries.institutes_ret()
     elif name == 'agreements':
@@ -83,6 +94,9 @@ def load_filter(name):
 @app.route('/delete/<object_type>', methods=['POST'])
 @login_required
 def delete_object(object_type):
+    '''
+    Das zu löschende Objekt überprüfen
+    '''
     return Querries.checkLength(object_type, request.form.to_dict()['id'])
 
 
@@ -91,6 +105,9 @@ def delete_object(object_type):
 @app.route('/openModal', methods=['POST'])
 @login_required
 def load_institute_modal_data():
+    '''
+    Erforderliche Daten zum Öffnen des Institut Bearbeitungsmodals abrufen
+    '''
     return Querries.for_institute_modal(request.form['id'])
 
 
@@ -99,12 +116,19 @@ def load_institute_modal_data():
 @app.route('/openMentorModal', methods=['POST'])
 @login_required
 def load_mentor_modal_data():
+    '''
+    Erforderliche Daten zum Öffnen des Mentor Bearbeitungsmodals abrufen
+    '''
     return Querries.for_mentor_modal(request.form['id'])
 
 
 @app.route('/add/<name>', methods=['POST', 'GET'])
 @login_required
 def new_object(name):
+    '''
+    Neu erstellte Objekt (Mentor, Hochschule, Agreement, Restriktion) formatieren
+    An der Funktion zum Hinzufügen zur Datenbank übergeben
+    '''
     if name == 'Mentor':
         active = 0
         req = request.form.to_dict()
@@ -213,6 +237,11 @@ def new_object(name):
 @app.route('/filterInstitute', methods=['POST'])
 @login_required
 def handle_filter():
+    '''
+    Die Filterwerte (Anzeige auf HTW-Seite und aktive Verträge) formatieren 
+    Diese Werte an Querries.filter_institutes() übergeben
+    Gefilterte Hochschule zurückgeben
+    '''
     if request.method == 'POST':
         my_list = request.form.to_dict()
         # Filter Anzeige auf HTW Seite
@@ -232,6 +261,10 @@ def handle_filter():
 @app.route('/changeData/<name>', methods=['POST'])
 @login_required
 def changes(name):
+    '''
+    Wird aufgerufen, wenn die Speichern Button des Bearbeitungsmodals gedrückt wird
+    Die geänderten Werten an Querries.edit() übergeben
+    '''
     x = request.form.to_dict()
     change_id = 0
     change_type = ''
@@ -273,6 +306,10 @@ def changes(name):
 @app.route('/loader/<name>', methods=['GET', 'POST']) # <name> : URL-Parameter kann übergeben
 @login_required
 def ret_js(name):
+    '''
+    Die gesamte Daten für Mentor, Länder, Kurse, Fakultäten, Vereinbarungen 
+    von Funktionen in Querries (von Datenbank) zurückgeben
+    '''
     if name == 'mentor':
         return Querries.return_mentor()
     elif name == 'country':
@@ -289,6 +326,9 @@ def ret_js(name):
 
 @app.route('/logout', methods=['GET'])
 def logout():
+    '''
+    Nutzer abmelden
+    '''
     resp = make_response(redirect(url_for('LoginPage')))
     session.pop('usr', None)
     session.pop('admin', None)
@@ -299,10 +339,16 @@ def logout():
 @app.route('/<string:filename>', methods=['GET'])
 @login_required
 def ret_file(filename):
+    '''
+    Die benötigten Dateien rendern
+    '''
     return send_from_directory('templates', filename)
 
 
 def return_session():
+    '''
+    Das eingeloggte Nutzerkonto zurückgeben
+    '''
     return session['admin']
 
 
