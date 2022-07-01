@@ -1,13 +1,16 @@
 
 include::../_includes/default-attributes.inc.adoc[]
+:doctype: book
+:toc:
+:toclevels: 3
+:toc-title: Inhaltsverzeichnis
+//:sectnums:
+:icons: font
+:imagesdir: images
 
 = Betriebsdokumentation: {project-name}
-// --- 2. Teammitglieder -----------------------
-Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
-
-// --- 3. Abgabedatum --------------------------
-
-
+Jakob Häcker (JH)
+08.Juli 2021
 
 == Einführung
 In diesem Dokument werden wichtig Hinweis und Aleitungen zur Installation und Wartung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden bereitgestellt. Das Ziel ist es dem Administrator alle notwendigen Schritte übersichtlich aufzuzeigen.
