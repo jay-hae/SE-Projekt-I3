@@ -6,6 +6,9 @@ from flask import jsonify
 
 # get all institutes saved in tbl_institutes
 def institutes_ret():
+    '''
+    Alle Institute, die in tbl_institutes gespeichert sind, holen
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     # execute stored procedure
@@ -22,6 +25,9 @@ def institutes_ret():
 
 # Laden des Vertragstyp in den Filter Dropdown
 def ag_type_ret():
+    '''
+    Die Vertragtypen in den Filter Dropdown laden
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     cur.execute('SELECT ID, deu FROM tbl_partnership_type ORDER BY deu')
@@ -42,6 +48,9 @@ def ag_type_ret():
 # same logic as in institutes_ret() func
 # Laden der Länderliste in den Filter Länder
 def all_countries():
+    '''
+    Alle Länder, die in tbl_country gespeichert sind, für die Filterwerte holen
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     cur.execute("SELECT de, id FROM tbl_country ORDER BY de")
@@ -62,6 +71,9 @@ def all_countries():
 # same logic as in institutes_ret() func
 # Laden der Fakultäten in den Filter Fakultäten
 def faculty():
+    '''
+    Alle Fakultäten, die in tbl_faculty gespeichert sind, holen
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     cur.execute("SELECT ID, deu FROM tbl_faculty ORDER BY deu")
@@ -80,6 +92,10 @@ def faculty():
 
 # get all data needed for institut modal box; specified inst by ID given from html site
 def for_institute_modal(institute_id):
+    '''
+    Alle Daten, die für die Bearbeitungsmodal von gewählte Hochschule
+    benötigt werden, aus der Datenbank zurückgegeben
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     param_list = (institute_id,)
@@ -120,6 +136,10 @@ def for_institute_modal(institute_id):
 # der Code hier darunter ist nur von for_modal (lädt Daten für Mentor Modal) kopiert.
 # get all data needed for mentor modal box; specified mentor by ID given from html site
 def for_mentor_modal(mentor_id):
+    '''
+    Alle Daten, die für die Bearbeitungsmodal von gewählte Mentor
+    benötigt werden, aus der Datenbank zurückgegeben
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     param_list = (mentor_id,)
@@ -158,6 +178,9 @@ def for_mentor_modal(mentor_id):
 
 # get mobility agreements referring to institute / partnership and all course restrictions
 def get_ma_and_courses(institute):
+    '''
+    Alle Partnerschaftsverträge und Restriktion bezüglich des Instituts aus der Datenbank holen
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     param_list = (institute,)
@@ -205,6 +228,9 @@ def get_ma_and_courses(institute):
 
 
 def filter_institutes(parameters):
+    '''
+    Die gefilterte Institute aus der Datenbank holen
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     payload = []  # empty payload to put data in later
@@ -221,6 +247,9 @@ def filter_institutes(parameters):
 
 
 def new_mentor(columns, values):
+    '''
+    Neue angelegte Mentor in der Datenbank speichern
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     query_parameter = helper.dynamic_querries(columns)
@@ -237,6 +266,9 @@ def new_mentor(columns, values):
 
 
 def new_object(object_type, tuple_columns, tuple_values, inst_name=None, inst_ps_type=None):
+    '''
+    Neu angelegtes Objekt in der Datenbank speichern
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     state = "failed" # set initial status that is returned when it failed to set changes in db
@@ -272,6 +304,9 @@ def new_object(object_type, tuple_columns, tuple_values, inst_name=None, inst_ps
 
 # Laden der Länder in die Tabelle auf der Seite Länderübersicht
 def return_countries():
+    '''
+    Laden der Länder in die Tabelle auf der Seite Länderübersicht
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     cur.execute('SELECT de, en, erasmus FROM tbl_country ORDER BY de')
@@ -291,6 +326,9 @@ def return_countries():
 
 # Laden der Studiengänge in die Tabelle auf der Seite Studiengänge
 def return_courses():
+    '''
+    Laden der Studiengänge in die Tabelle auf der Seite Studiengänge 
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     cur.execute('SELECT deu, eng, ID FROM tbl_course ORDER BY deu')
@@ -310,7 +348,9 @@ def return_courses():
 
 # Laden der Mentoren in die Tabelle auf der Seite Mentoren
 def return_mentor():  # get all mentor information and store on client storage
-
+    '''
+    Laden der Mentoren in die Tabelle auf der Seite Mentoren
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     query = """SELECT m.ID, m.faculty_ID, m.active, m.title, m.firstname, m.lastname, m.gender_ID,
@@ -346,6 +386,9 @@ def return_mentor():  # get all mentor information and store on client storage
 
 
 def return_faculties():
+    '''
+    Laden der Fakultäten in die Tabelle auf der Seite Fakultäten
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     query = """SELECT f.deu, f.eng, COUNT(m.faculty_ID) 
@@ -370,6 +413,9 @@ def return_faculties():
 
 
 def return_institutes(result_set):
+    '''
+    Die Institute in payload speichern
+    '''
     payload = []
     for result in result_set:
         content = {
@@ -383,6 +429,9 @@ def return_institutes(result_set):
 
 
 def edit(keys, values, change_id, change_type):  # institute = institute ID
+    '''
+    Die geänderte Werte in der Datenbank aktualisieren
+    '''
     tbl_names = {'institute': "tbl_institute", 'agreement': "tbl_mobility_agreement", 'restriction': "tbl_mobility_agreement_x_course", 'mentor': 'tbl_mentor'}
     parameter = helper.dynamic_querries(keys)
     query_string = helper.create_update_string(keys)
@@ -398,6 +447,11 @@ def edit(keys, values, change_id, change_type):  # institute = institute ID
 
 
 def checkLength(key, object_id):
+    '''
+    Prüfen, ob die Institute einen bestehenden Vertrag und Einschränkung enthalten
+    Prüfen, ob die Vertrag eine bestehende Einschränkung enthalten
+    Falls das Objekt nichts enthaltet, es ist löschbar
+    '''
     strip = object_id
     object_id = (object_id,)
     print(key, object_id)
@@ -423,6 +477,9 @@ def checkLength(key, object_id):
 
 
 def delete(tbl, row_id):
+    '''
+    Objekte (Hochschule, Vertrag) löschen
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     if tbl == 'tbl_institute':
