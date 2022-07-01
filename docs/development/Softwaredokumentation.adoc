@@ -10,6 +10,6 @@ include::../_includes/default-attributes.inc.adoc[]
 == JavaScript
 
 Für den JavaScript Quellcode wurde die Dokumentation mittels JSDoc automatisch erzeugt. 
-Diese kann unter https://www.informatik.htw-dresden.de/~s82099/jsdocFiles/index.html abgerufen werden. Dies funktioniert allerdings nur aus dem HTW-Netz heraus (VPN)
+Diese kann unter https://www.informatik.htw-dresden.de/~s82099/jsdocFiles/index.html abgerufen werden. 
 
 == Python
