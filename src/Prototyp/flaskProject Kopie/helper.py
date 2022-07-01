@@ -1,7 +1,9 @@
 import Login
 
-
 def dynamic_querries(col):
+    '''
+    Die Parameter für andere Funktionen, wenn die Anzahl unbekannt ist, formatieren
+    '''
     all_vals = "%s," * len(col)
     all_cols = ""
     for column in col:
@@ -10,6 +12,9 @@ def dynamic_querries(col):
 
 
 def create_update_string(values):
+    '''
+    Die Zeichenfolge aus geänderten Werten erstellen
+    '''
     string = ""
     for i in values:
         string += " " + i + " = %s,"
@@ -17,6 +22,10 @@ def create_update_string(values):
 
 
 def checkValidPartnership(partnership_id, institute_id):
+    '''
+    Die Gültigkeit von Partnerschaft beim Erstellen überprüfen
+    Wenn gültig, rufen createPartnership() auf
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     query = f"SELECT ID FROM tbl_partnership WHERE institute_ID = {institute_id} AND partnership_type_ID = {partnership_id}"
@@ -29,6 +38,9 @@ def checkValidPartnership(partnership_id, institute_id):
 
 
 def createPartnership(partnership_id, institute_id):
+    '''
+    Neue Partnerschaft erstellen
+    '''
     cnxn = Login.newConnection()
     cur = cnxn.cursor()
     params = (institute_id, partnership_id,)
