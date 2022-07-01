@@ -14,9 +14,6 @@ In diesem Dokument werden wichtig Hinweis und Aleitungen zur Installation und Wa
 
 Das Hauptaugenmerk unseres Projektes ist es ein Webfrontend unter Nutzung einer gegeben Datenbank zu erstellen.
 Von daher werden Datenbank spezifische Erläuterungen nicht vorgenommen.
-Ausführlich Erläuterungen wurden bereits vom letzten Team dieses Projekts erstellt.
-Hier wird lediglich auf dieses Dokument verwiesen.
-Funktionen wie das Löschen können nun jedoch auch im Webfrontend geschehen, weshalb nicht mehr alle Anleitung aus dem "Vorteam" nötig sind.
 
 Detailierte Beschreibungen zu der Bedienung der Software finden sich in der Anwenderdokumentation.
 
@@ -24,7 +21,7 @@ Detailierte Beschreibungen zu der Bedienung der Software finden sich in der Anwe
 Um die Software erfolgreich zu installieren sind folgende Voraussetzungen zu erfüllen:
 
 * Software-Vorraussetzungen:
-** Verbindung zum Internet/Intranet (der HTW) 
+** Verbindung zum Intranet (der HTW) 
 ** mindestens ein Python3.x Interpreter (getestet mit Python3.8)
 ** GNU Bash (nur für das Deploy Script)
 
@@ -39,7 +36,7 @@ Um die Software erfolgreich zu installieren sind folgende Voraussetzungen zu erf
 | Hardware | Virtuelle Maschiene = Mindestanforderung
 | CPUs     | 2 (uU. reicht eine) 
 | RAM      | 4 GB 
-| Speicher | 35 GB
+| Speicher (inklusive Platz für Ubuntu) | 35 GB
 |===
 
 == Deployment
@@ -59,7 +56,7 @@ Aufgrund dessen, dass die VM nur innerhalb des HTW Netzes errichbar ist, ist kei
 Unter Windows empfiehlt sich die Nutzung von WinSCP zum Übertragen von Daten per SSH, Linux Nutzer können die Boardmittel nutzen.
 
 Mit folgenden daten kann eine Verbindung zur Virtuellen Mascheiene Aufgebaut werden:
-[cols="5,2"]
+[cols="1,1"]
 |===
 | Adresse | seproject@iseproject03
 | Passwort| -
@@ -79,8 +76,9 @@ git clone https://github.com/jay-hae/SE-Projekt-I3.git
 ----
 
 Für das Starten des Servers auf einem Linux System gibt es 2 Möglichkeiten:
+
 * maunelles starten mit Python 
-* das Starten und im Hintergrundlaufen lassen über eine System Unit (empfolen)
+* das Starten und im Hintergrundlaufen lassen über ein System Unit (empfolen)
 
 ==== manuelles starten mit Python
 // TODO Ordnerstruktur überarbeiten
@@ -89,6 +87,7 @@ Dafür ist es nur notwendig in dem Ordner src/ mit folgendem Befehl den Server z
 ----
 python3.8 app.py
 ----
+In der Ausgabe des Befehls ist nun die URL zu der Webseite zu finden.
 
 ==== Anlegen eines Linux System Units
 Eine System Unit ermöglicht es bestimmte Scripte im Hintergrund ausführen zulassen.
@@ -100,16 +99,66 @@ Genauer Inforamtionen sind bitte aus dem Internet zu entnehmen. Hier eine Empfeh
 ----
 cp ./SE-Projekt-I3/deploy_scripts/se_webserver.service /etc/systemd/system/ 
 ----
-* System Unit regestrieren und starten. Danach ist der Webserver unter 
+
+* System Unit regestrieren und starten. 
 [source, bash]
 ----
 sudo systemctl enable se_webserver.service
+sudo systemctl start se_webserver.service
 ----
-// Start der Software mit python um link zu erhalten
-// Start von system units
-// stop von system units
-// 
+Nach "systemctl start" ist der Webserver unter der URL zu erreichen, welche beim manuellen starten des Servers angezeigt wird (siehe Vorheriges Kapitel).
+
+[NOTE]
+====
+Um den Server wieder zu stoppen:
+[source, bash]
+----
+sudo systemctl stop se_webserver.service
+----
+
+Um das Systen Unit wieder zu Entfernen:
+[source, bash]
+----
+sudo systemctl disable se_webserver.service
+----
+====
 
 == Datenbank
+
+=== Einführung
+Die portierte MariaDB beinhaltet Daten zur Darstellung aller Hochschulen, Partnerschaftsverträge, Mentoren der HTW und Statistiken (wobei die Generierung und Anzeige der Statistiken im Verwaltungsfrontend nicht realisiert wurde).
+
+Im Gegensatz zur ursprünglich genutzten Access Datenbank, beinhaltet diese keine personenbezogenen Daten von Studenten und nur noch öffentlich zugängliche Daten von Mentoren der HTW und Ansprechpartner der Hochschulen.
+
+* Dadurch ist kein periodisches Löschen personenbezogener Daten notwendig.
+
+=== Aufbau
+
+In folgendem Diagramm wurden Spalten ohne Beziehungen weggelassen, um eine bessere Übersicht zu erzielen.
+
+[[phys_erm]]
+.physisches Entity-Relationship-Diagram
+image::../../development/images/physical_erm.svg[]
+
+Die als HTW markierten Tabellen beinhalten Daten der HTW und nicht der Partnerhochschulen.
+
+Durch das mitgelieferte SQL Backup wird die gesamte Struktur mit Daten bereitgestellt. Innerhalb von phpMyAdmin besitzen fast alle Spalten Kommentare zur genaueren Erläuterung.
+
+<<<
+// <<< erzwingt neue Seite
+
+=== Tabellen
+
+include::../development/design.adoc[tags=explain_tables]
+
+=== Datensätze außerhalb des Frontends bearbeiten
+
+Wie aus der Tabelle ersichtlich, kann das Verwaltungsfrontend nur einen Teil der Datenbank modifizieren und gar nichts löschen.
+
+Um dennoch beispielsweise falsche Hochschuleinträge zu entfernen werden diese mithilfe von phpMyAdmin gelöscht, dabei beinhaltet keine Beziehung `ON DELETE CASCADE`. Wodurch auch abhängige Datensätze bereinigt werden müssen.
+
+Dies erscheint zunächst unnötig komplex, besonders da das Verwaltungsfrontend die Tabelle _tbl_exchange_ für statistische Zwecke überhaupt nicht nutzt. Hintergrund ist jedoch das wir die Statistik nicht verfälschen möchten da eventuell das Verwaltungsfrontend um Funktionen erweitert wird.
+
+In den FAQs werden bekannte Anwendungsfälle vorgeführt.
 
 == FAQ
