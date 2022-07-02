@@ -153,10 +153,28 @@ Zu Beginn des Sommersemesters SS22 hat sich das Team zu einer Online-Besprechung
 Das erstellen von komplexen Software Systemen, war für mich vor dem Modul Software Engineering nicht greifbar und somit hatte ich auch keine Vorstellung was es eigentlich bedeutet komplexe Software in Teamarbeit zu erstellen, geschweige denn was alles dafür nötig ist.
 Eins blieb mir jedoch aus dem Fakultativen Modul von Frau Hauptmann - Soziale Kompetenzen im Projektmanagement - in Erinnerung.
 Nämlich, dass ca. 50% der Softwareprojekte im Team an zwischen Menschlichen kompetenzen scheitern.
-Inspieret von diesem Modul entschied ich mich als Projektleiter vorzuschalgen.
-Was ich nicht wusste war, welche Verantwortung ich mir mit dieser Wahl auferlegte.
+Inspieret von diesem zusatz Modul entschied ich mich als Projektleiter vorzuschalgen.
+//Was ich nicht wusste war, welche Verantwortung ich mir mit dieser Wahl auferlegte.
 
-Zu beginn des ersten Semesters war zwar die Motivation hoch, allerdings viel es mir sehr schwer die vermittelten Konzepte der Vorlesung auf die Projekt realität zu adaptieren und anzuwenden. Die Hilfestellung OpenUp war für mich zu diesem Zeitpunkt auch eher unverständlich und da alles nur eine Empfehlung war wusste ich nicht viel damit anzufangen.
+Was ich hauptsächlich aus der Projekt arbeit mitnehme:
+1) Mann muss Entscheidungen fällen auch wenn sie sich höchstwahrscheinlch in naher Zukunft als falsch erweisen.
+- geht im allgemeinen darum das man lernen muss die Angst vor wichtigen entscheidungen ablegt und lieber etwas zu entscheiden als garnichts zu entscheiden
+- schein bar simpel aber ohne es Erlbt zu haben weiß man nicht wirklich was der Satz tatsächlich bedeutet
+- ist in dem Projekt kontext sehr wichtig dass verstanden zu haben, da sonst viel zeit verloren geht und man auch keine grundlage hat die man verbessern kann. 
+- auch zwingt es einen 
+
+2) Was es bedeutet verantwortung zu übernehemen
+- entscheidungen fällen
+- ansprech partner für alle zu sein (hat mir viel freude bereitet)
+
+
+
+Am Anfang des Projektes wurde ich von der Freiheit in der Gestaltung der Projektorganisation sehr überrascht.
+Es viel mir schwerer als Gedacht grundlegende Entscheidungen zu treffen deren Folgen absolut ungewiss sind und die Vorlesungsinhalte auf die Projektrealität zu adaptieren.
+Rückblickend war mir anfänglich auch nicht Bewusst, wie wichtig die entscheidungen in der ersten Projetk phase sind.
+Somit war ich auch eher Halbherzig bei der Sache und habe die Hilfestellungen (zB OpenUP) zu wenig verwendet.
+Nicht zu letzt des Wegen, da ich nicht wirklich wusste mit ihnen umzugehen und mir die Konzepte dort aus irgendwelchen gründen ziemlich Abstrakt wirken (mit der jetzigen Erfahrung ist dies natürlich nicht mehr so wodurch ich mein Handeln auch nicht mehr Nachvollziehen kann).
+
 ==== Thanh Ha Khuong
 
 ==== Patrick Matthes
