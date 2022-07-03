@@ -57,7 +57,7 @@ ifndef::plantumlsdir[:plantumlsdir: plantuml]
 
 
 == Einführung (JH + JR)
-Dieses Dokument enthält den Projektbericht zum Aufbau einer Hochschulpartnerschafts-Verwaltungs-Software im Rahmen des SE I und SE II Moduls des Teams I3.
+Dieses Dokument enthält den Projektbericht über die Erstellung der Webanwendung zur Verwaltung der Hochschulpartnerschaften und Austauschprogramme. Das Projekt wurde im Rahmen des SE I und SE II Moduls des Teams I3 durchgeführt.
 
 == Planung (JH + JR)
 === Aufgabenstellung & Auftraggeber
@@ -78,14 +78,14 @@ abgeschlossen (Software Engineering I). Außerdem konnte im vorherigen Semester 
 
 === Projektorganisation
 ==== Team & Rollen
-Das Projektteam besteht aus 8 Mitgliedern, dessen größe über die Module SE I und SE II konstant blieb. 
+Das Projektteam besteht aus 8 Mitgliedern, dessen Größe über die Module SE I und SE II konstant geblieben sind. 
 
 • Project-Manager: Jakob Häcker (JH)
-• Analyst: Nico Rosenkranz, Patrick Matthes  
-• Architect: Pascal Thielemann
-• Developer: Pascal Thielemann, Thanh Ha Khoung, Jens Rosenkranz (JR)
-• Tester: Patrick Matthes, Roman Patzig
-• Deployment Engineer: Luca Meißner
+• Analyst: Nico Rosenkranz (NR), Patrick Matthes  (PM) 
+• Architect: Pascal Thielemann (PT)
+• Developer: Pascal Thielemann, Thanh Ha Khoung (HK), Jens Rosenkranz (JR)
+• Tester: Patrick Matthes, Roman Patzig (RP)
+• Deployment Engineer: Luca Meißner (LM)
 • Technical Writer: Thanh Ha Khoung, Jens Rosenkranz
 
 ==== Kommunikation
@@ -106,7 +106,10 @@ Termine mit dem Coach, Herrn Ringel, wurden über das HTW E-Mail System abgespro
 Mit dem Themensteller, der Stabstelle Internationales, wurden Termine per E-Mail vereinbart und ebenso Dokumente geteilt.
 Meetings wurden über einen, von der SI zur Verfügung gestellten, BBB Raum gehalten.
 
-==== Projektaufgabenverwaltung
+==== Projektaufgabenverwaltung und eingesetzte Tools
+
+===== Aufgabenverwaltung
+
 Die Aufgabenverwaltung hat das Team in SE I über GitHub Issues organisiert und eine übergeordnete Organisationsebene mit Git Projects etabliert.
 Dies hat allerdings nur eingeschränkt funktioniert, da der Zugang zu den Git Projects sich für die Teammitglieder umständlich gestaltet hat und die Verwaltungsebene somit nicht ausreichend gepflegt wurde.
 Weiterhin war es unpraktisch sämtliche Aufgaben in GitHub als Issues abzubliden, da diese auch für Aufgaben und Probleme völlig unterschiedlicher Größenordnung definiert wurden.
@@ -114,21 +117,59 @@ Dies hatte eine große Unübersichtlichkeit zur Folge, die eine strukturierte Ha
 Abhilfe für diese Problem schaffte das in der Mitte des SE II Moduls eingführte Tool ZenHub.
 Damit war es möglich Hirachien, Abhängigkeiten und den jeweiligen Arbeitsaufwand der Issues zu modellieren. Eine Visualisierung des Projektfortschrittes wurde zudem ebenfalls ermöglicht.
 
+===== Protokollierung
+
+Um die Ergebnisse und Erkenntnisse aus den Teamm-Meetings sowie den Meetings mit dem Coach und den Themenstellern festhalten zu können, haben wir das online Toll Pentapad verwendet. Dieses erlaubt es allen Teilnehmern kollaborativ während der Meetings ein gemeinsames Protokoll anzufertigen. Dies hat sich als sehr Vorteilhaft herausgestellt, da durch die gemeinsame Mitschrift alle Ergebnisse der Meetings notiert werden konnten und auch sofort allen zur Verfügung standen.
+
+
+
 == Durchführung (JH + JR)
 
-Zu Beginn des Sommersemesters SS22 hat sich das Team zu einer Online-Besprechung getroffen um sich den Ist-Zustand des Projekts zu verdeutlichen und einen Überblick über die noch zu bewältigenden Aufgaben und Probleme zu verschaffen. Als Grundlage für das weitere Vorgehen wurde einerseits die noch offenen Issues aus ZenHub und andererseits das Dokument "Belegarbeiten Prüfungsorganisation" herangezogen, welches durch Herrn Prof. Anke zur Verfügung gestellt wurde.  Daraufhin wurden die Verantwortlichkeiten für die Aufgaben und zu erstellenden Dokumente an die einzelnen Gruppen (Implementierung, Test, Projektleitung, etc.) verteilt und ein größtenteils eigenverantwortliches Arbeiten vereinbart. 
+Zu Beginn des Sommersemesters SS22 hat sich das Team zu einer Online-Besprechung getroffen um sich den Ist-Zustand des Projekts zu verdeutlichen und einen Überblick über die noch zu bewältigenden Aufgaben und Probleme zu verschaffen. Als Grundlage für das weitere Vorgehen wurde einerseits die noch offenen Issues aus ZenHub und andererseits das Dokument "Belegarbeiten Prüfungsorganisation" herangezogen, welches durch Herrn Prof. Anke zur Verfügung gestellt wurde. Daraufhin wurden die Verantwortlichkeiten für die Aufgaben und zu erstellenden Dokumente an die einzelnen Gruppen bzw. Rollen (Implementierung, Test, Projektleitung, etc.) verteilt und ein eigenverantwortliches Arbeiten innerhalb dieser kleineren Teams vereinbart. 
+
+
 
 
 // oder besser nur Iterationen beschreiben?
 // bzw beschreiben warum Iterationen eher schwammig waren (kein vorhandenes Inkrement bei manchen)
 === Inception
 
+In der Inception Phase haben sich die Teammitglieder zum ersten mal kennengelernt. Auf Grund der Corona-Pandemie und des damit einhergehenden generellen Online-Modus haben sich die Teammitglieder ausschließlich über zunächst verschiedene Tools (Teams, BBB, Discord) online getroffen. Da die meisten Teammitglieder ohnehin Discord als Kommunikationstool nutzten, hat Luca Meißner einen Discord-Server für das Projekt eingerichtet und hat sich für die restliche Projektdauer um die Verwaltung des Servers gekümmert.
+Innerhalb der ersten Vorstellungsrunde haben die Teammitglieder ihre projektrelevanten Vorkenntnisse und ihre bevorzugten Rollen für das Projekt genannt. Dabei hat sich herausgestellt, dass bis auf einen, kein Teammitglied Vorkenntnisse in der Erstellung von Softwareprodukten dieser Größe hatten und sich nicht in der Lage sahen die Rollen Architect, Developer der Tester zu erfüllen. Trotz dieser anfänglichen Hürde konnten letztendlich alle Rollen in gegenseitigem Einverständnis besetzt werden. Beim ersten Meeting wurde auch vereinabrt wöchentliche Teammeetings abzuhalten um jeweils die anstehenden Aufgaben und den Ist-Zustand des Projekts zu besprechen. 
+Um sich einen Überblick über die Projektaufgabe zu verschaffen, haben sich die Teammitglieder darauf geeinigt sich selbstständig in die von Herrn Prof. Anke bzw. vom Themensteller sowie der Vorgruppe bereitgestellten Dokumente zu lesen und für sich Fragen zu formulieren. Außerdem wurden bereits die ersten Treffen mit dem Coach und den Themenstellern vereinbart. Damit die Teammitglieder gemeinsam an der Software und den Dokumenten arbeiten konnten hat Jakob Häcker ein GitHub Repository erstellt, welches für die gesamte Dauer des Projekts weiterverwendet wurde.
+Auf Basis der Aufgabenstellung und ersten Gesprächen mit den Themenstellern konnte eine Vision für das Projekt erstellt werden. Ebenso wurde für die ersten beiden Phasen des Projekts eine Risklist mit den zentralen Projektrisiken  erstellt. Die Teammitglieder haben sich dabei gemeinsam über GitHub an den Dokumenten gearbeitet, da bezüglich der korrekten Ausführung noch große Unsicherheit herrschte. 
+Es stellte sich früh heraus das Pascal Thielemann hinsichtlich der Software Entwicklung über die meisten Kenntnisse verfügte. Daher hat sich das Team entschieden ihm die Entscheidung über die einzusenden IDE und die Softwarearchitektur überlassen. Generell wurden Entscheidungen demokratisch entschieden, wobei denjenigen die Entscheidung überlassen wurde, die zu der jeweiligen Fragestellung bereits Kenntnisse hatten. Innerhalb der wöchentlichen Teammeetings wurden Aufgaben gesammelt und protokolliert. Bevor das Meeting jeweils geschlossen wurde, wurden die Aufgaben verteilt bis für jede ein Verantwortlicher feststand.
+
+
 ==== Ziele
+* Team verteilt Rollen und Aufgaben
+* Das Visionsdokument beginnen
+* Iterationsplan für die erste Iteration Inception erstellen
+* Das Glossar beginnen und ab sofort pflegen
+* Eine Risklist erstellen
+* Kontakt zu Aufgabenstellern und Coach herstellen
+* Terminfindung für wöchentliche Meetings der Teammitglieder
+
 ==== Problem 
+
+===== Terminfindung
+Es hat sich als sehr schwierig herausgestellt einen Termin zu für das wöchentliche Teammeeting zu finden. Um dieses Problem zu lösen wurde zunächst eine Exceltabelle mit den einer Art Kalender erstellt, in den alle Teammitglieder ihre Verfügbarkeiten eingetragen haben. Die Verfügbarkeiten wurden dann abgeglichen und auf Überschneidungen untersucht. Mit dieser Methode konnte kein gemeinsamer Termin gefunden werden. Um den Abgleich agile zu gestalten, wurde das online-Tool doodle verwendet und ein erneuter Versuch gestartet. Nachdem auch das nicht funktioniert hat, hat man sich auf einen Termin geeinigt an dem die meisten Teammitglieder Zeit hatten. Für diejenigen, die an den Meetings nicht live teilnehmen konnten, wurden ausführliche Protokollen angefertigt und nachträglich Telefonate mit einzelnen Teammitgliedern geführt, um jeden auf den neuesten Stand zu bringen.
+
+===== geringe Programmierkenntnise
+
+Da nur Pascal Thielemann nennenswerte Vorkenntisse in der Programmierung von Webanwendung hatte, hat das Team schon früh ein Scheitern des Projekts befürchtet. Daher haben sich die Teammitglieder Ha Khuong und Jens Rosenkranz frühzeitig mit dem Erlernen von CSS, HTML, Java Script und Python beschäftigt um langfristig bei der Softwareerstellung unterstützen zu können.
+
+===== Arbeit in Rollen
+
+Die Arbeit strikt nach den vorgegebenen Rollen hat sich anfänglich besonder schwierig gestaltet, da nicht klar wann wer welche Aufgaben zu erledigen hat und worin die Aufgaben von zum Beispiel Testern am Anfang des Projekt bestehen. Das Team hat sich daher darauf geeinigt die Rollenverteilung als Verantwortlichkeiten zu betrachten. Wer eine Rolle inne hat, ist nicht allein für den Bereich verantwortlich und arbeitet auch nicht nur an der Aufgaben dieser Rollen, sonder ist lediglich Ansprechpartner und behält den Überblick über die zu erledigenden Aufagaben welche ebenfalls durch den Rolleninhaber an alle Teammitglieder delegiert werdne.
+
 ==== Ergebnisse
+
+In der Iterationsphase konnten nach anfänglichen Schwierigkeiten gute Fortschritte erreicht werden. Es herrschte Einigkeit über die Rollenverteilung, geeignete Tools zur Kommunikation mit sämtlichen Akteuern waren gefunden und die Infrastruktur zum kollaborativen Arbeiten war bereitgestellt. Außerdem konnten die zum Projektbeginn benötigten Dokumente, wie die Vision und die Risklist erfolgreich begonnen werden. Ebenso konnte Pascal Thielemann mit den ersten Zeilen Code ein "proof of concept" liefern und unter Beweis stellen, dass die von ihm Gewählten Programmiersprachen sich für die Durchführung des Projekts eigneten.
 
 === Elaboration
 ==== Ziele
+
 ==== Problem 
 ==== Ergebnisse
 
@@ -153,10 +194,28 @@ Zu Beginn des Sommersemesters SS22 hat sich das Team zu einer Online-Besprechung
 Das erstellen von komplexen Software Systemen, war für mich vor dem Modul Software Engineering nicht greifbar und somit hatte ich auch keine Vorstellung was es eigentlich bedeutet komplexe Software in Teamarbeit zu erstellen, geschweige denn was alles dafür nötig ist.
 Eins blieb mir jedoch aus dem Fakultativen Modul von Frau Hauptmann - Soziale Kompetenzen im Projektmanagement - in Erinnerung.
 Nämlich, dass ca. 50% der Softwareprojekte im Team an zwischen Menschlichen kompetenzen scheitern.
-Inspieret von diesem Modul entschied ich mich als Projektleiter vorzuschalgen.
-Was ich nicht wusste war, welche Verantwortung ich mir mit dieser Wahl auferlegte.
+Inspieret von diesem zusatz Modul entschied ich mich als Projektleiter vorzuschalgen.
+//Was ich nicht wusste war, welche Verantwortung ich mir mit dieser Wahl auferlegte.
 
-Zu beginn des ersten Semesters war zwar die Motivation hoch, allerdings viel es mir sehr schwer die vermittelten Konzepte der Vorlesung auf die Projekt realität zu adaptieren und anzuwenden. Die Hilfestellung OpenUp war für mich zu diesem Zeitpunkt auch eher unverständlich und da alles nur eine Empfehlung war wusste ich nicht viel damit anzufangen.
+Was ich hauptsächlich aus der Projekt arbeit mitnehme:
+1) Mann muss Entscheidungen fällen auch wenn sie sich höchstwahrscheinlch in naher Zukunft als falsch erweisen.
+- geht im allgemeinen darum das man lernen muss die Angst vor wichtigen entscheidungen ablegt und lieber etwas zu entscheiden als garnichts zu entscheiden
+- schein bar simpel aber ohne es Erlbt zu haben weiß man nicht wirklich was der Satz tatsächlich bedeutet
+- ist in dem Projekt kontext sehr wichtig dass verstanden zu haben, da sonst viel zeit verloren geht und man auch keine grundlage hat die man verbessern kann. 
+- auch zwingt es einen 
+
+2) Was es bedeutet verantwortung zu übernehemen
+- entscheidungen fällen
+- ansprech partner für alle zu sein (hat mir viel freude bereitet)
+
+
+
+Am Anfang des Projektes wurde ich von der Freiheit in der Gestaltung der Projektorganisation sehr überrascht.
+Es viel mir schwerer als Gedacht grundlegende Entscheidungen zu treffen deren Folgen absolut ungewiss sind und die Vorlesungsinhalte auf die Projektrealität zu adaptieren.
+Rückblickend war mir anfänglich auch nicht Bewusst, wie wichtig die entscheidungen in der ersten Projetk phase sind.
+Somit war ich auch eher Halbherzig bei der Sache und habe die Hilfestellungen (zB OpenUP) zu wenig verwendet.
+Nicht zu letzt des Wegen, da ich nicht wirklich wusste mit ihnen umzugehen und mir die Konzepte dort aus irgendwelchen gründen ziemlich Abstrakt wirken (mit der jetzigen Erfahrung ist dies natürlich nicht mehr so wodurch ich mein Handeln auch nicht mehr Nachvollziehen kann).
+
 ==== Thanh Ha Khuong
 
 ==== Patrick Matthes
@@ -164,6 +223,18 @@ Zu beginn des ersten Semesters war zwar die Motivation hoch, allerdings viel es 
 ==== Meißner Luca
 
 ==== Roman Patzig
+Das Projekt „Verwaltung der Hochschulpartnerschaften“ in Zusammenarbeit mit der Stabsstelle Internationales der HTW Dresden war das erste komplexe Software-Projekt, in welchem ich von Anfang bis Ende mitwirken durfte. Daher hat es nicht nur mich, sondern auch uns als Team vor neuen Herausforderungen gestellt, welche uns allen zahlreiche Möglichkeiten geboten haben, unsere Fähigkeiten zu erweitern.
+
+Trotz Vorkenntnisse im Bereich Projektmanagement hat das Projekt durch den Umfang, Größe des Teams sowie der Spezifität viel neues von mir abverlangt. Dies hat durch die Kontinuität des Projektes jedoch viele Vorteile gebracht – das Lernen neuer Programmiersprachen, das Arbeiten mit Selenium und somit auch erstmals automatisiertes Testen, das Arbeiten mit GitHub, welches nicht zuletzt auch für andere Module sehr praktisch war, und das Koordinieren im Team durch regelmäßige Meetings und Aufgabenverteilungen. 
+
+Durch das Projekt konnte ich direkt anwendungsbezogen Einblicke in die Programmiersprache Phyton bekommen, was mir die dazugehörige Arbeit als Tester mit Selenium direkt erleichterte. Dadurch konnte ich zielgerichtet automatisierte Tests entwickeln, die auf derselben Programmiersprache laufen, wie die eigentliche Software. Dabei hat mir die Zusammenarbeit im Team sowie in kleineren Unterteams sehr gut gefallen, weil man sich jederzeit darüber austauschen konnte und Aufgaben gegebenenfalls auch aufteilen konnte.
+
+Um das Projekt zu dokumentieren und zu analysieren, war dann GitHub zur Stelle. Nach einiger Eingewöhnungszeit sowie dem Einrichten mit der lokalen Entwicklungsumgebung war das Projekt startklar, jedoch wurde schnell klar, dass man übersichtlicher arbeiten müsse, um gegebenenfalls freie Ressourcen besser einplanen zu können. Also haben wir Issues angelegt und Aufgaben verteilt. Jedoch gab es nach wie vor Probleme mit dem Überblick, weshalb wir uns dann für die Erweiterung ZenHub entschieden haben. Dies hat es uns ermöglicht nicht nur die Dringlichkeit der Issues hervorzuheben, sondern auch intuitiv via Drag and Drop innerhalb einer Übersicht den Status zu verändern. Dies hat mir persönlich sehr gut gefallen und der Organisation im Team nochmals weitergeholfen.
+
+Während meiner Arbeit als Analyst war ich dafür zuständig die jeweiligen Risiken zu erkennen, zu sortieren und letztlich auch einzuordnen. Hierfür hat sich die Arbeit mit der Risk_List als sehr hilfreich gezeigt – weil somit das gesamte Team einen Einblick über Risiken während des gesamten Projektverlaufes erhalten konnte und somit direkt den Problemen entgegengewirkt werden konnte, bevor sie überhaupt entstanden.
+
+Durch das Projekt kann ich nun auch in zukünftigen Projekten die neu erworbenen persönlichen Fähigkeiten nutzen, um somit noch effizienter arbeiten zu können. Ich weiß nun auch wie wichtig es ist auf die Deadlines zu achten, damit andere Ihren Aufgaben nachgehen können und wie essenziell es ist diese nicht zu unterschätzen. Der Einblick in die Welt des Projektmanagements hat mich weitergebracht und auch in der längerfristigen Zusammenarbeit mit dem Team Freude bereitet.
+
 
 ==== Jens Rosenkranz
 Das Projekt "Verwaltung der Hochschulpartnerschaften" der HTW Dresden war für mich das erste Softwareprojekt dieser Größe und Komplexität. Außerdem hatte ich bis dahin noch nicht mit so vielen Teilnehmern an einem Projekt zusammengearbeitet. Meine Erfahrung in der Softwareentwicklung beschränkte sich zum Anfang des Projekts ausschließlich auf die bisherigen Projekte des Studiums. Insbesondere hatte ich keinerlei Kenntnisse in der Programmierung von Webanwendungen, davon wie man Datenbanken mit einer Programmiersprache wie Python ansteuert oder wie man über ein Repository im Team programmiert. Insofern kann man sagen, dass meine Vorkenntnisse zum Projektbeginn sehr gering waren. Daher wollte ich ursprünglich eher die organisatorischen Aufgaben übernehmen und mich um die Ausgestaltung der Dokumente kümmern. Allerdings hat sich in der ersten Vorstellungsrunde der Teammitglieder herausgestellt, dass auch alle anderen Teammitglieder nahezu keine Vorkenntnisse hatten und ebenfalls eher organisatorische Aufgaben übernehmen wollten. Das hat dazu geführt, dass ich letztendlich die Rolle eines Entwicklers übernommen habe. Es hat sich also schnell abgezeichnet, dass ich mir sehr schnell sehr viel Wissen aneignen werden muss, um das Modul zu bestehen. Insbesondere während des dritten Semesters, also dem Projektbeginn, habe ich es als sehr große Herausforderung empfunden, neben dem Vorlesungsstoff noch zusätzlich selbstständig Programmierung in HTML, CSS und Javascript zu erlernen. Glücklicherweise hatte ein Teammitglied schon genug Vorkenntnisse, um das Projekt entwicklerseitig ins Rollen zu bringen. Im vierten Semester konnte ich mich mehr und mehr in die Entwicklung des Prototyps einbringen, da in diesem Semester die benötigten Kenntnisse innerhalb der verschiedenen Vorlesungen und Praktika vermittelt wurden. Zum Beispiel war Webprogrammierung ein Inhalt der Veranstaltung Internettechnologien und Datenbankprogrammierung Inhalt der Vorlesung Programmieren von Komponentenarchitekturen. 
