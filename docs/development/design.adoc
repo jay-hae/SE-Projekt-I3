@@ -27,7 +27,8 @@ image::physical_erm.SVG[]
 
 
 ==== Tabellen
-
+// tag::explain_tables[]
+// Bitte das tag stehen lassen, es wird in der Betriebsdokumentation verwendet!!
 Untenstehend werden alle Tabellen erläutert und aufgezeigt, was innerhalb des Verwaltungsfrontends ermöglicht wird:
 
 
@@ -63,6 +64,8 @@ _tbl_mobility_agreement_x_course_ und der Statistik | Anlegen, Bearbeiten, Deakt
 TIP: Für eine detaillierte Anzeige der Tabellen betrachten Sie bitte die mitgelieferte SQL Backup Datei. Diese ist als Text lesbar und bildet die gesamte Struktur mitsamt Kommentaren ab.
 
 NOTE: Um Probleme mit Modifikationen zu vermeiden, ist allein dem Super-User das Löschen fehlerhafter Datensätze erlaubt. Der Nutzen dieser Funktion sollte jedoch die Ausnahme bilden und nicht die Regel.
+
+// end::explain_tables[]
 
 ==== Views
 
