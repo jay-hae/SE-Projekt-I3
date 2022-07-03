@@ -154,14 +154,95 @@ Durch das mitgelieferte SQL Backup wird die gesamte Struktur mit Daten bereitges
 
 include::../development/design.adoc[tags=explain_tables]
 
-=== Datensätze außerhalb des Frontends bearbeiten
-
-Wie aus der Tabelle ersichtlich, kann das Verwaltungsfrontend nur einen Teil der Datenbank modifizieren und gar nichts löschen.
-
-Um dennoch beispielsweise falsche Hochschuleinträge zu entfernen werden diese mithilfe von phpMyAdmin gelöscht, dabei beinhaltet keine Beziehung `ON DELETE CASCADE`. Wodurch auch abhängige Datensätze bereinigt werden müssen.
-
-Dies erscheint zunächst unnötig komplex, besonders da das Verwaltungsfrontend die Tabelle _tbl_exchange_ für statistische Zwecke überhaupt nicht nutzt. Hintergrund ist jedoch das wir die Statistik nicht verfälschen möchten da eventuell das Verwaltungsfrontend um Funktionen erweitert wird.
-
-In den FAQs werden bekannte Anwendungsfälle vorgeführt.
 
 == FAQ
+
+=== Wo finde ich den link zum Verwaltungsfrontend?
+
+Diesen findet man wenn man app.py mit dem Pythoninterpreter auf dem Server ausführt.
+[source, bash]
+----
+python3.8 app.py
+----
+
+Wenn man sich nicht im Verzeichnis befindet, in dem die Datei app.py liegt, muss man den gesamten Pfad zu der Datei angeben.
+Siehe Kapitel "manuelles starten mit Python".
+
+=== Was ist zu tun wenn das Verwaltungsfrontend nicht erreichbar ist obwolh der Server läuft?
+
+. Befindet man sich im HTW Netz?
+.. *Nein*: In das HTW Netz mit einem VPN Client einloggen.
+.. *Ja*: siehe nächster Punkt.
+
+. Ist der richtige "Run-Mode" in den letzten 2 Zeilen app.py gesetzt?
+[source, python]
+----
+if __name__ == '__main__':
+    app.run(host="0.0.0.0") 
+----
+
+. Wird der Server über die System Unit gesteuert?
+.. *Ja*: siehe nächster Punkt
+
+. Ist im Quelltext der Unit der Richtige Pfad zu der Datei app.py angegeben?
+.. Das WorkingDirectory
+
+=== Was ist zu tun wenn der Server nicht gestartet werden kann?
+. Ist der Server per SSH erreichbar?
+.. *Nein*: Mit dem Administrator des Servers in Verbindung setzen und erfragen was die Ursache ist.
+.. *Ja*: siehe nächster Punkt.
+
+. erscheinen beim manuellen Ausführen der app.py Error Meldungen?
+.. *Ja*: 
+... Wenn Pythonbibliotheken fehlen, installieren Sie diese nach. Informieren sie sich unter https://www.python.org/
+... Installieren sie gegebenfalls die mindest Python Version
+.. *Nein*: siehe nächster Punkt.
+
+=== Wie kann man eine vorhandene Systemunit configurieren?
+. Die Systemunit abmelden mit 
+. Die Systemunit ändern (im Beispiel mit Vim)
+. dann diese wieder regestrieren und evtl. starten
+[source, bash]
+----
+sudo systemctl disable se_webserver.service
+sudo vi /etc/systemd/system/se_webserver.service
+
+# Änderungen vornehemen und speichern
+
+sudo systemctl enable se_webserver.service
+sudo systemctl start se_webserver.service
+----
+
+=== Wie kann man die passwörter der Datenbank und des Servers ändern?
+. Für die Datenbank muss das Rechenzentrum gefragt werden
+. auf den Server ist dies mit dem Befehl "passwd" getan
+
+== Gibt es automatische Backups?
+Ja, das Rechenzetrum macht periodisch Backups.
+Um diese Einzuspielen muss das Rechenzentrum kontaktiert werden.
+
+=== Wie erstelle ich ein manuelles Backup?
+
+Periodisch ist das gar nicht nötig, da das Rechenzentrum automatische Backups anlegt. Bei Änderungen durch phpMyAdmin schadet aber auch ein Backup nicht, besonders da die Ausgabe eine lesbare SQL Textdatei ist.
+
+==== komplett 
+
+Hilfreich sollte sich etwas an der Datenbankstruktur ändern oder ein komplettes Backup gewünscht sein.
+
+.Backup der Struktur und Daten
+image::Betrieb_complete_backup.jpg[]
+
+. Datenbank auswählen
+. Exportieren
+. Exportmethode: Schnell - Format SQL
+
+==== nur Daten
+
+.Backup der Daten
+image::Betrieb_data_only_backup.jpg[]
+
+. Datenbank auswählen
+. Exportieren
+. Exportmethode: angepasst
+. Häckchen aus Struktur entfernen
+. alle anderen Optionen ignorieren, herunterscrollen und bestätigen
