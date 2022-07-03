@@ -142,11 +142,34 @@ Es stellte sich früh heraus das Pascal Thielemann hinsichtlich der Software Ent
 
 
 ==== Ziele
+* Team verteilt Rollen und Aufgaben
+* Das Visionsdokument beginnen
+* Iterationsplan für die erste Iteration Inception erstellen
+* Das Glossar beginnen und ab sofort pflegen
+* Eine Risklist erstellen
+* Kontakt zu Aufgabenstellern und Coach herstellen
+* Terminfindung für wöchentliche Meetings der Teammitglieder
+
 ==== Problem 
+
+===== Terminfindung
+Es hat sich als sehr schwierig herausgestellt einen Termin zu für das wöchentliche Teammeeting zu finden. Um dieses Problem zu lösen wurde zunächst eine Exceltabelle mit den einer Art Kalender erstellt, in den alle Teammitglieder ihre Verfügbarkeiten eingetragen haben. Die Verfügbarkeiten wurden dann abgeglichen und auf Überschneidungen untersucht. Mit dieser Methode konnte kein gemeinsamer Termin gefunden werden. Um den Abgleich agile zu gestalten, wurde das online-Tool doodle verwendet und ein erneuter Versuch gestartet. Nachdem auch das nicht funktioniert hat, hat man sich auf einen Termin geeinigt an dem die meisten Teammitglieder Zeit hatten. Für diejenigen, die an den Meetings nicht live teilnehmen konnten, wurden ausführliche Protokollen angefertigt und nachträglich Telefonate mit einzelnen Teammitgliedern geführt, um jeden auf den neuesten Stand zu bringen.
+
+===== geringe Programmierkenntnise
+
+Da nur Pascal Thielemann nennenswerte Vorkenntisse in der Programmierung von Webanwendung hatte, hat das Team schon früh ein Scheitern des Projekts befürchtet. Daher haben sich die Teammitglieder Ha Khuong und Jens Rosenkranz frühzeitig mit dem Erlernen von CSS, HTML, Java Script und Python beschäftigt um langfristig bei der Softwareerstellung unterstützen zu können.
+
+===== Arbeit in Rollen
+
+Die Arbeit strikt nach den vorgegebenen Rollen hat sich anfänglich besonder schwierig gestaltet, da nicht klar wann wer welche Aufgaben zu erledigen hat und worin die Aufgaben von zum Beispiel Testern am Anfang des Projekt bestehen. Das Team hat sich daher darauf geeinigt die Rollenverteilung als Verantwortlichkeiten zu betrachten. Wer eine Rolle inne hat, ist nicht allein für den Bereich verantwortlich und arbeitet auch nicht nur an der Aufgaben dieser Rollen, sonder ist lediglich Ansprechpartner und behält den Überblick über die zu erledigenden Aufagaben welche ebenfalls durch den Rolleninhaber an alle Teammitglieder delegiert werdne.
+
 ==== Ergebnisse
+
+In der Iterationsphase konnten nach anfänglichen Schwierigkeiten gute Fortschritte erreicht werden. Es herrschte Einigkeit über die Rollenverteilung, geeignete Tools zur Kommunikation mit sämtlichen Akteuern waren gefunden und die Infrastruktur zum kollaborativen Arbeiten war bereitgestellt. Außerdem konnten die zum Projektbeginn benötigten Dokumente, wie die Vision und die Risklist erfolgreich begonnen werden. Ebenso konnte Pascal Thielemann mit den ersten Zeilen Code ein "proof of concept" liefern und unter Beweis stellen, dass die von ihm Gewählten Programmiersprachen sich für die Durchführung des Projekts eigneten.
 
 === Elaboration
 ==== Ziele
+
 ==== Problem 
 ==== Ergebnisse
 
