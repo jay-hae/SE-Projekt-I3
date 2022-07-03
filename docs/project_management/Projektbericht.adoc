@@ -57,7 +57,7 @@ ifndef::plantumlsdir[:plantumlsdir: plantuml]
 
 
 == Einführung (JH + JR)
-Dieses Dokument enthält den Projektbericht zum Aufbau einer Hochschulpartnerschafts-Verwaltungs-Software im Rahmen des SE I und SE II Moduls des Teams I3.
+Dieses Dokument enthält den Projektbericht über die Erstellung der Webanwendung zur Verwaltung der Hochschulpartnerschaften und Austauschprogramme. Das Projekt wurde im Rahmen des SE I und SE II Moduls des Teams I3 durchgeführt.
 
 == Planung (JH + JR)
 === Aufgabenstellung & Auftraggeber
@@ -78,14 +78,14 @@ abgeschlossen (Software Engineering I). Außerdem konnte im vorherigen Semester 
 
 === Projektorganisation
 ==== Team & Rollen
-Das Projektteam besteht aus 8 Mitgliedern, dessen größe über die Module SE I und SE II konstant blieb. 
+Das Projektteam besteht aus 8 Mitgliedern, dessen Größe über die Module SE I und SE II konstant geblieben sind. 
 
 • Project-Manager: Jakob Häcker (JH)
-• Analyst: Nico Rosenkranz, Patrick Matthes  
-• Architect: Pascal Thielemann
-• Developer: Pascal Thielemann, Thanh Ha Khoung, Jens Rosenkranz (JR)
-• Tester: Patrick Matthes, Roman Patzig
-• Deployment Engineer: Luca Meißner
+• Analyst: Nico Rosenkranz (NR), Patrick Matthes  (PM) 
+• Architect: Pascal Thielemann (PT)
+• Developer: Pascal Thielemann, Thanh Ha Khoung (HK), Jens Rosenkranz (JR)
+• Tester: Patrick Matthes, Roman Patzig (RP)
+• Deployment Engineer: Luca Meißner (LM)
 • Technical Writer: Thanh Ha Khoung, Jens Rosenkranz
 
 ==== Kommunikation
@@ -106,7 +106,10 @@ Termine mit dem Coach, Herrn Ringel, wurden über das HTW E-Mail System abgespro
 Mit dem Themensteller, der Stabstelle Internationales, wurden Termine per E-Mail vereinbart und ebenso Dokumente geteilt.
 Meetings wurden über einen, von der SI zur Verfügung gestellten, BBB Raum gehalten.
 
-==== Projektaufgabenverwaltung
+==== Projektaufgabenverwaltung und eingesetzte Tools
+
+===== Aufgabenverwaltung
+
 Die Aufgabenverwaltung hat das Team in SE I über GitHub Issues organisiert und eine übergeordnete Organisationsebene mit Git Projects etabliert.
 Dies hat allerdings nur eingeschränkt funktioniert, da der Zugang zu den Git Projects sich für die Teammitglieder umständlich gestaltet hat und die Verwaltungsebene somit nicht ausreichend gepflegt wurde.
 Weiterhin war es unpraktisch sämtliche Aufgaben in GitHub als Issues abzubliden, da diese auch für Aufgaben und Probleme völlig unterschiedlicher Größenordnung definiert wurden.
@@ -114,14 +117,29 @@ Dies hatte eine große Unübersichtlichkeit zur Folge, die eine strukturierte Ha
 Abhilfe für diese Problem schaffte das in der Mitte des SE II Moduls eingführte Tool ZenHub.
 Damit war es möglich Hirachien, Abhängigkeiten und den jeweiligen Arbeitsaufwand der Issues zu modellieren. Eine Visualisierung des Projektfortschrittes wurde zudem ebenfalls ermöglicht.
 
+===== Protokollierung
+
+Um die Ergebnisse und Erkenntnisse aus den Teamm-Meetings sowie den Meetings mit dem Coach und den Themenstellern festhalten zu können, haben wir das online Toll Pentapad verwendet. Dieses erlaubt es allen Teilnehmern kollaborativ während der Meetings ein gemeinsames Protokoll anzufertigen. Dies hat sich als sehr Vorteilhaft herausgestellt, da durch die gemeinsame Mitschrift alle Ergebnisse der Meetings notiert werden konnten und auch sofort allen zur Verfügung standen.
+
+
+
 == Durchführung (JH + JR)
 
-Zu Beginn des Sommersemesters SS22 hat sich das Team zu einer Online-Besprechung getroffen um sich den Ist-Zustand des Projekts zu verdeutlichen und einen Überblick über die noch zu bewältigenden Aufgaben und Probleme zu verschaffen. Als Grundlage für das weitere Vorgehen wurde einerseits die noch offenen Issues aus ZenHub und andererseits das Dokument "Belegarbeiten Prüfungsorganisation" herangezogen, welches durch Herrn Prof. Anke zur Verfügung gestellt wurde.  Daraufhin wurden die Verantwortlichkeiten für die Aufgaben und zu erstellenden Dokumente an die einzelnen Gruppen (Implementierung, Test, Projektleitung, etc.) verteilt und ein größtenteils eigenverantwortliches Arbeiten vereinbart. 
+Zu Beginn des Sommersemesters SS22 hat sich das Team zu einer Online-Besprechung getroffen um sich den Ist-Zustand des Projekts zu verdeutlichen und einen Überblick über die noch zu bewältigenden Aufgaben und Probleme zu verschaffen. Als Grundlage für das weitere Vorgehen wurde einerseits die noch offenen Issues aus ZenHub und andererseits das Dokument "Belegarbeiten Prüfungsorganisation" herangezogen, welches durch Herrn Prof. Anke zur Verfügung gestellt wurde. Daraufhin wurden die Verantwortlichkeiten für die Aufgaben und zu erstellenden Dokumente an die einzelnen Gruppen bzw. Rollen (Implementierung, Test, Projektleitung, etc.) verteilt und ein eigenverantwortliches Arbeiten innerhalb dieser kleineren Teams vereinbart. 
+
+
 
 
 // oder besser nur Iterationen beschreiben?
 // bzw beschreiben warum Iterationen eher schwammig waren (kein vorhandenes Inkrement bei manchen)
 === Inception
+
+In der Inception Phase haben sich die Teammitglieder zum ersten mal kennengelernt. Auf Grund der Corona-Pandemie und des damit einhergehenden generellen Online-Modus haben sich die Teammitglieder ausschließlich über zunächst verschiedene Tools (Teams, BBB, Discord) online getroffen. Da die meisten Teammitglieder ohnehin Discord als Kommunikationstool nutzten, hat Luca Meißner einen Discord-Server für das Projekt eingerichtet und hat sich für die restliche Projektdauer um die Verwaltung des Servers gekümmert.
+Innerhalb der ersten Vorstellungsrunde haben die Teammitglieder ihre projektrelevanten Vorkenntnisse und ihre bevorzugten Rollen für das Projekt genannt. Dabei hat sich herausgestellt, dass bis auf einen, kein Teammitglied Vorkenntnisse in der Erstellung von Softwareprodukten dieser Größe hatten und sich nicht in der Lage sahen die Rollen Architect, Developer der Tester zu erfüllen. Trotz dieser anfänglichen Hürde konnten letztendlich alle Rollen in gegenseitigem Einverständnis besetzt werden. Beim ersten Meeting wurde auch vereinabrt wöchentliche Teammeetings abzuhalten um jeweils die anstehenden Aufgaben und den Ist-Zustand des Projekts zu besprechen. 
+Um sich einen Überblick über die Projektaufgabe zu verschaffen, haben sich die Teammitglieder darauf geeinigt sich selbstständig in die von Herrn Prof. Anke bzw. vom Themensteller sowie der Vorgruppe bereitgestellten Dokumente zu lesen und für sich Fragen zu formulieren. Außerdem wurden bereits die ersten Treffen mit dem Coach und den Themenstellern vereinbart. Damit die Teammitglieder gemeinsam an der Software und den Dokumenten arbeiten konnten hat Jakob Häcker ein GitHub Repository erstellt, welches für die gesamte Dauer des Projekts weiterverwendet wurde.
+Auf Basis der Aufgabenstellung und ersten Gesprächen mit den Themenstellern konnte eine Vision für das Projekt erstellt werden. Ebenso wurde für die ersten beiden Phasen des Projekts eine Risklist mit den zentralen Projektrisiken  erstellt. Die Teammitglieder haben sich dabei gemeinsam über GitHub an den Dokumenten gearbeitet, da bezüglich der korrekten Ausführung noch große Unsicherheit herrschte. 
+Es stellte sich früh heraus das Pascal Thielemann hinsichtlich der Software Entwicklung über die meisten Kenntnisse verfügte. Daher hat sich das Team entschieden ihm die Entscheidung über die einzusenden IDE und die Softwarearchitektur überlassen. Generell wurden Entscheidungen demokratisch entschieden, wobei denjenigen die Entscheidung überlassen wurde, die zu der jeweiligen Fragestellung bereits Kenntnisse hatten. Innerhalb der wöchentlichen Teammeetings wurden Aufgaben gesammelt und protokolliert. Bevor das Meeting jeweils geschlossen wurde, wurden die Aufgaben verteilt bis für jede ein Verantwortlicher feststand.
+
 
 ==== Ziele
 ==== Problem 
