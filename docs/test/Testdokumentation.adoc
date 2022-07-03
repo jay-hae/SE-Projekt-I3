@@ -26,15 +26,13 @@
 
 === Testobjekte
 
+
+
 === Testmethoden
 
+
+
 === Testdurchführungsplanung
-
-
-
-== Test Cases
-
-:leveloffset: +1
 
 include::../../docs/test/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
 
@@ -42,9 +40,11 @@ include::../../docs/test/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 == Testergebnisse
 
-== Abnahmetests
 
-=== Funktionalität
+
+=== Abnahmetests
+
+==== Funktionalität
 [%header, cols="3,1,3"]
 |===
 |UseCase/Szenario | Abnahme | Anmerkung
@@ -58,7 +58,7 @@ include::../../docs/test/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
 |Use-Case: Berichte für Externe Anzeigen (UC08) | Nein | nicht vorhanden
 |===
 
-=== Systemweite Anforderungen
+==== Systemweite Anforderungen
 [%header, cols="3,1,3"]
 |===
 |Anforderung | Abnahme | Anmerkung
