@@ -83,10 +83,10 @@ Das Projektteam besteht aus 8 Mitgliedern, dessen Größe über die Module SE I 
 • Project-Manager: Jakob Häcker (JH)
 • Analyst: Nico Rosenkranz (NR), Patrick Matthes  (PM) 
 • Architect: Pascal Thielemann (PT)
-• Developer: Pascal Thielemann, Thanh Ha Khoung (HK), Jens Rosenkranz (JR)
+• Developer: Pascal Thielemann, Thanh Ha Khuong (HK), Jens Rosenkranz (JR)
 • Tester: Patrick Matthes, Roman Patzig (RP)
 • Deployment Engineer: Luca Meißner (LM)
-• Technical Writer: Thanh Ha Khoung, Jens Rosenkranz
+• Technical Writer: Thanh Ha Khuong, Jens Rosenkranz
 
 ==== Kommunikation
 
@@ -217,6 +217,14 @@ Somit war ich auch eher Halbherzig bei der Sache und habe die Hilfestellungen (z
 Nicht zu letzt des Wegen, da ich nicht wirklich wusste mit ihnen umzugehen und mir die Konzepte dort aus irgendwelchen gründen ziemlich Abstrakt wirken (mit der jetzigen Erfahrung ist dies natürlich nicht mehr so wodurch ich mein Handeln auch nicht mehr Nachvollziehen kann).
 
 ==== Thanh Ha Khuong
+Das Projekt „Verwaltung von Hochschulpartnerschaften“ in Kooperation mit dem International Office der HTW Dresden war nicht nur für mich, sondern auch für die meisten meiner Teammitglied das erste komplexe Großprojekt. Ich freue mich, Teil des Teams zu sein und zum Softwareentwicklungsprozess beizutragen. Ich habe durch dieses Projekt viele Dinge gelernt, insbesondere wie die Software aufgebaut ist und wie man mit anderen Menschen zusammenarbeitet.
+
+Trotz der Herausforderungen und des holprigen Starts freue ich mich, dass unser Team das Projekt abschließen kann. Zu Beginn der Projekte standen wir vor vielen Herausforderungen, wie z. B. fehlenden technischen und organisatorischen Fähigkeiten. Das Management hat sich von Anfang bis Ende stark verbessert. Die Kommunikation ist viel effizienter, da sich das Team regelmäßiger trifft, um das laufende Thema zu besprechen, Aufgaben aufzuteilen und zu verfolgen und Missverständnisse auszuräumen. Die Organisation der Aufgaben ist mit GitHub viel übersichtlicher, sodass jeder den Überblick hat, wer für welche Aufgaben zuständig ist. Wir haben insgesamt einen strukturierteren Arbeitsablauf. Ich genieße es auch, das Subteam in 2-3 Personen aufzuteilen, da wir uns mehr auf bestimmte Aufgaben konzentrieren und uns bei Bedarf gegenseitig helfen können.
+Außerdem haben wir einen echten Kunden, mit dem wir zusammenarbeiten können. Am Anfang holten wir die Ideen nur langsam ein, aber die Kunden waren sehr geduldig und führten uns freundlich durch. Es war eine Herausforderung, einen Termin mit dem achtköpfigen Team und den Kunden zu vereinbaren, aber schließlich konnten wir uns abstimmen und uns regelmäßig treffen.
+
+Das Projekt hat mir anwendungsbezogene Einblicke in die Programmiersprache Python und das Flask-Framework gegeben. Ich habe auch die Möglichkeit, meine Kenntnisse in HTML, CSS und der Bootstrap-Bibliothek anzuwenden, um die Schnittstelle zu erstellen. Ich lerne auch, wie das Softwareprogramm aufgebaut ist und wie man den Code versteht und dokumentiert. Ich verstehe jetzt, wie wichtig sauberer, verständlicher Code für ein Softwareprojekt ist. Ich hoffe, dass das nächste Team von unsere Prototyp profitieren kann.
+
+Das Projekt hat mir aufgrund des Umfangs und der Größe des Teams viel Neues abverlangt. Durch die Projekte habe ich gelernt, dass es nicht reicht, nur meinen Teil Gutes zu tun, sondern auch einen Überblick über das Projekt zu haben. Außerdem müssen wir gut kommunizieren, um das Projekt zum Erfolg zu führen. Ich bin stolz darauf, von Anfang bis Ende zum Projekt beizutragen. Ich habe durch dieses Projekt in einem sicheren Raum viele Dinge gelernt. Dies ist eine wirklich schöne Gelegenheit für mich, einen Einblick in die Welt des Software Engineering zu bekommen.
 
 ==== Patrick Matthes
 
