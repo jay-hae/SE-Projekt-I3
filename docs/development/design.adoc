@@ -76,7 +76,7 @@ Die MariaDB wird durch einen Mitarbeiter des Rechenzentrums der HTW betreut.
 
 ==== Aufbau
 
-Als Webserver dient eine virtuelle Maschine, welche vom Rechenzentrum bereitgestellt wird. Dort läuft das Backend in Python und das Frontend mithilfe von HTML, CSS und Javascript.
+Als Webserver dient eine virtuelle Maschine, welche vom Laborbereich Informatik der HTW Dresden bereitgestellt wird. Dort läuft das Backend in Python und das Frontend mithilfe von HTML, CSS und Javascript.
 
 ==== Authentifizierung im Browser
 
