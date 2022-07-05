@@ -124,7 +124,7 @@ Da nur Pascal Thielemann nennenswerte Vorkenntisse in der Programmierung von Web
 
 ===== Arbeit in Rollen
 
-Die Arbeit strikt nach den vorgegebenen Rollen hat sich anfänglich besonder schwierig gestaltet, da nicht klar wann wer welche Aufgaben zu erledigen hat und worin die Aufgaben von zum Beispiel Testern am Anfang des Projekt bestehen. Das Team hat sich daher darauf geeinigt die Rollenverteilung als Verantwortlichkeiten zu betrachten. Wer eine Rolle inne hat, ist nicht allein für den Bereich verantwortlich und arbeitet auch nicht nur an der Aufgaben dieser Rollen, sonder ist lediglich Ansprechpartner und behält den Überblick über die zu erledigenden Aufagaben welche ebenfalls durch den Rolleninhaber an alle Teammitglieder delegiert werdne.
+Die Arbeit strikt nach den vorgegebenen Rollen hat sich anfänglich schwierig gestaltet, da nicht klar wann, wer, welche Aufgaben zu erledigen hat und worin die Aufgaben von zum Beispiel Testern am Anfang des Projekts überhaupt bestehen. Das Team hat sich daher darauf geeinigt die Rollenverteilung als Verantwortlichkeiten zu betrachten. Wer eine Rolle inne hat, ist nicht allein für die Ausführung der Aufgaben zuständig und arbeitet auch nicht nur an der Aufgaben seiner Rolle, sondern ist lediglich Ansprechpartner und behält den Überblick über die zu erledigenden Aufagaben welche ebenfalls durch den Rolleninhaber an alle Teammitglieder delegiert werden.
 
 ==== Ergebnisse
 
@@ -136,8 +136,15 @@ Des weiteren konnten die Stakeholder Identifiziert werden und eine Skizze der An
 
 
 ==== Ziele
+* erste Wireframes erstellen
+* Infrastruktur zur Kooperativen Arbeit aufbauen
+* Use Cases und Systemweite Anforderungen identifizieren
+* mit der Entwicklung des Prototyps beginnen
+* Dokumente (Vision, Risklist, Use Cases) weiter ausarbeiten
 
 ==== Problem 
+
+
 ==== Ergebnisse
 
 === Construction
