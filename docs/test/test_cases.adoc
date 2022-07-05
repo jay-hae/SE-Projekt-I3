@@ -91,6 +91,10 @@
 - Die Daten wurden korrekt und vollständig übertragen
 - Datenänderungen werden unverzüglich in das System übernommen
 - direkter Datenbankzugriff um Änderungen vorzunehmen
+| Ablauf (manuell) a|. Das Skript öffnet ein Browser-Fenster und geht auf führt innerhalb des Netzwerkes der HTW auf die Login-Seite des Prototyps
+. Es erfolgt die automatisierte Eingabe der Zugangsdaten (Nutzername + Passwort)
+. Das Skript betätigt den Login Button
+. Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet und der Login-Vorgang somit erfolgreich war
 | Nachbedingung | Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
 |===
 
@@ -102,6 +106,10 @@
 - Die Daten wurden korrekt und vollständig übertragen
 - Datenänderungen werden unverzüglich in das System übernommen
 - direkter Datenbankzugriff um Änderungen vorzunehmen
+| Ablauf (manuell) a|. Das Skript öffnet ein Browser-Fenster und geht auf führt innerhalb des Netzwerkes der HTW auf die Login-Seite des Prototyps
+. Es erfolgt die automatisierte Eingabe der Zugangsdaten (Nutzername + Passwort)
+. Das Skript betätigt den Login Button
+. Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet und der Login-Vorgang somit erfolgreich war
 | Nachbedingung | Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
 |===
 
@@ -113,5 +121,9 @@
 - Die Daten wurden korrekt und vollständig übertragen
 - Datenänderungen werden unverzüglich in das System übernommen
 - direkter Datenbankzugriff um Änderungen vorzunehmen
+| Ablauf (manuell) a|. Das Skript öffnet ein Browser-Fenster und geht auf führt innerhalb des Netzwerkes der HTW auf die Login-Seite des Prototyps
+. Es erfolgt die automatisierte Eingabe der Zugangsdaten (Nutzername + Passwort)
+. Das Skript betätigt den Login Button
+. Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet und der Login-Vorgang somit erfolgreich war
 | Nachbedingung | Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
 |===
