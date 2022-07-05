@@ -7,9 +7,29 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == CSS
 
+Für den CSS wurde die Bibliothek Bootstrap genutzt. 
+Vorgehen:
+  1. Bootstrap CDN in HTML Dateien einbinden.
+  2. Der zu formatierendedn Komponenten in Bootstrap Dokumentation suchen.
+  3. Die passende Klasse zur HTML Komponente hinzufügen.
+  
 == JavaScript
 
 Für den JavaScript Quellcode wurde die Dokumentation mittels JSDoc automatisch erzeugt. 
 Diese kann unter https://www.informatik.htw-dresden.de/~s82099/jsdocFiles/index.html abgerufen werden. 
 
 == Python
+
+Die volle automatisch erzeugte Dokumentation kann unter src/Prototyp/flaskProject Kopie/docs/_build/html/ finden.
+
+Login.py
+
+app.py
+
+Querries.py
+
+helper.py
+* Funktionen zum Formatierung
+* Funktion zum Validierung und Erzeugung von Partnerschaft
+
+
