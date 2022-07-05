@@ -23,13 +23,34 @@ Diese kann unter https://www.informatik.htw-dresden.de/~s82099/jsdocFiles/index.
 Die volle automatisch erzeugte Dokumentation kann unter src/Prototyp/flaskProject Kopie/docs/_build/html/ finden.
 
 Login.py
+* Funktion zum Authorisierung der Nutzer beim Öffnen der Anwendung
+* Funktion zum erneuten Verbinden mit der Datenbank, nachdem der Benutzerdaten in der Session gespeichert wurde
 
 app.py
+* mittlere Schicht zwischen REST-Anfragen von Javascript und Python-Abfrage, um Informationen aus der Datenbank zu erhalten, in Querries.py
+* wichtige Funktionen:
+** `+ login_required(f) +`: Andere Funktionen werden nur aufgerufen, wenn der Benutzer bereits eingeloggt ist
+** Funktion zum Laden von Hauptseite
+** Funktionen zum Rückgabe von gefilterte Hochschulen (weiter an Querries.py übergegeben)
+** Funktionen zum Abrufen der erforderlichen Daten zum Öffen des Bearbeitungsmodal (Mentor, Hochschule) (weiter an Querries.py übergegeben)
+** Funktion zum Löschen von Objekte (Hochschule, Vertrag, Restriktion) (weiter an Querries.py übergegeben)
+** Funktion zum Hinzufügen von Objekte (weiter an Querries.py übergegeben) 
+** Funktion zum Speichern von bearbeitete Objekte (Hochschule, Vertrag, Restriktion, Mentor) (weiter an Querries.py übergegeben)
+** Funktion zum Ausloggen
 
 Querries.py
+* enthält direkte Abfragen zu Datenbank
+* Daten von Datenbank zurückgeben
+* wichtige Funktionen:
+** Alle Hochschulen, Verträge, Ländern, Fakultäten, Mentor, die in der Datenbank gespeichert sind, holen
+** Alle Daten, die für die Bearbeitungsmodal benötigt werden, werden aus der Datenbank zurückgegeben
+** Die Werte für die Filteroption aus der Datenbank holen
+** Neu angelegtes Objekt in der Datenbank speichern
+** Die geänderte Werte von Hochschule / Verträge / Restriktion / Mentor in der Datenbank aktualisieren
+** Funktion zum Prüfen der Löschbarkeit von Hochschule
+** Funktion zum Löschen von Hochschule / Vertrag / Restriktion
 
 helper.py
-* Funktionen zum Formatierung
+* Funktionen zum Formatierung von Nutzereingabe
 * Funktion zum Validierung und Erzeugung von Partnerschaft
-
 
