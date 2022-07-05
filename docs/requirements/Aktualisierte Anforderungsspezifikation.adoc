@@ -1,7 +1,7 @@
 = Aktualisierte Anforderungsspezifikation: {project-name}
 // Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
-// {localdatetime}
-// include::../_includes/default-attributes.inc.adoc[]
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
 include::../_includes/default-attributes.inc.adoc[]
@@ -15,12 +15,13 @@ include::../_includes/default-attributes.inc.adoc[]
 
 *Im Nachfolgenden werden alle aktualisierten Spezifikationen aus dem SE1-Beleg in einem Dokument zusammengefasst.*
 
-== Chapter Risk List
+== Risk List
 
 :leveloffset: +1
 :imagesdir: ../project_management/images
 include::../project_management/risk_list.adoc[tags=include_update]
 :leveloffset: -1
+
 
 == Chapter Domänenmodell
 
@@ -43,14 +44,14 @@ include::glossary.adoc[tags=include_update]
 include::system-wide_requirements.adoc[tags=include_update]
 :leveloffset: -1
 
-== Chapter Use Case Model
+= Chapter Use Case Model
 
 :leveloffset: +1
 :imagesdir: ../requirements/images
 include::use-case_model.adoc[tags=include_update]
 :leveloffset: -1
 
-== Chapter Vision
+= Chapter Vision
 
 :leveloffset: +1
 :imagesdir: ../requirements/images
