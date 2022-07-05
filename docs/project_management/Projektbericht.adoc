@@ -17,14 +17,14 @@ Dieses Dokument enthält den Projektbericht über die Erstellung der Webanwendun
 == Planung (JH + JR)
 === Aufgabenstellung & Auftraggeber
 
-Die Auftraggeber unseres Projektes "I3 Hochschulpartnerschaften Stabstelle Internationales" war die Stabstelle Internationales der HTW Dresden.
+Die Auftraggebenden unseres Projektes "I3 Hochschulpartnerschaften Stabstelle Internationales" war die Stabstelle Internationales der HTW Dresden.
 Die HTW Dresden kooperiert weltweit mit rund 170 Partnerhochschulen, um Studierenden die
 Gelegenheit zu ermöglichen, sich kulturell weiterzubilden, neue Kontakte zu knüpfen und
 Sprachkenntnisse zu vertiefen. Zu diesem Zweck werden die Informationen zu den Partnerhochschulen und Spezifikationen zu den bestehenden Verträgen, zB. Anzahl an verfügbaren
-Plätzen, Mentoren und verfügbare Fakultäten etc., sowie Daten über Incomings und Outgoings
+Plätzen, Mentor:Innen und verfügbare Fakultäten etc., sowie Daten über Incomings und Outgoings
 gespeichert und verarbeitet. Genutzt wurde hierfür bis jetzt eine Access Datenbank.
 Der Auftrag des Projektteams I3 bestand darin eine webbasierte Applikation mit Schnittstelle zu einer
-Datenbank zu realisieren, die die Verwaltung der Hochschulen für die Mitarbeiter der Stabsstelle internationales vereinfacht. 
+Datenbank zu realisieren, die die Verwaltung der Hochschulen für die Mitarbeitenden der Stabsstelle internationales vereinfacht. 
 
 === Situation zum Semesterbeginn
 
@@ -38,16 +38,16 @@ Das Projektteam besteht aus 8 Mitgliedern, dessen Größe über die Module SE I 
 • Project-Manager: Jakob Häcker (JH)
 • Analyst: Nico Rosenkranz (NR), Patrick Matthes  (PM) 
 • Architect: Pascal Thielemann (PT)
-• Developer: Pascal Thielemann, Thanh Ha Khuong (HK), Jens Rosenkranz (JR)
+• Developers: Pascal Thielemann, Thanh Ha Khuong (HK), Jens Rosenkranz (JR)
 • Tester: Patrick Matthes, Roman Patzig (RP)
 • Deployment Engineer: Luca Meißner (LM)
-• Technical Writer: Thanh Ha Khuong, Jens Rosenkranz
+• Technical Writers: Thanh Ha Khuong, Jens Rosenkranz
 
 ==== Kommunikation
 
 Aufgrund der vor allem im vorangegangenen Semester herrschenden Pandemie und des damit einhergehenden Onlinebetriebs an der Hochschule, hat sich für das ganze Projekt eine Kommukikation über Online-Videokonferenzen (Discord, Teams, BigBlueButton) sowie über den Messenger (WhatsApp) etabliert. Zu keinem Zeitpunkt haben sich alle Teammitglieder in Präsenz getroffen.
-Die Meetings mit dem Auftraggeber und dem Coach wurden ebenfalls remote druchgeführt und
-fanden regelmäßig (ca. alle 4 Wochen) statt. Dank der Flexibilität von Online-Meetings konnten Termine zwischen den Teammitgliedern, Meetings mit dem Coach oder mit der Stabstelle Internationales auch kurzfirstig vereinabrt werden.
+Die Meetings mit den Auftraggebenden und dem Coach Herrn Ringel wurden ebenfalls remote druchgeführt und
+fanden regelmäßig (ca. alle 4 Wochen) statt. Dank der Flexibilität von Online-Meetings konnten Termine zwischen den Teammitgliedern, Meetings mit dem Coach oder mit der Stabstelle Internationales auch kurzfirstig vereinbart werden.
 Die Versionsverwaltung des Projektes wurde über ein GitHub-Repository realisiert, was ein komfortables gleichzeitiges Arbeiten aller Teammitglieder an dem Projekt ermöglichte.
 
 ===== Teaminterne Kommunikation
@@ -55,10 +55,10 @@ Um eine schnelle und agile Kommunikation zwischen den einzelnen Gruppen bzw. Rol
 Als Erweiterung, für schnelle, spontane Absprachen  wurde eine WhatsApp Gruppe erstellt.
 
 ===== Kommunikation mit unserem Coach
-Termine mit unserem Coach, Herrn Ringel, wurden über das HTW E-Mail System abgesprochen und über MS Teams abgehalten.
+Termine mit unserem Coach, Herrn Ringel, wurden über das HTW E-Mail-System abgesprochen und über MS Teams abgehalten.
 
 ===== Kommunikation mit unseren Themenstellerinnen
-Mit den Themenstellenden, die Stabstelle Internationales, wurden Termine per E-Mail vereinbart und aufgleichen Wege Dokumente geteilt.
+Mit den Themenstellenden, der Stabstelle Internationales, wurden Termine per E-Mail vereinbart und auf gleichem Wege Dokumente geteilt.
 Meetings wurden über einen, von der SI zur Verfügung gestellten, BBB Raum gehalten.
 
 ==== Projektaufgabenverwaltung und eingesetzte Tools
@@ -74,15 +74,15 @@ Damit war es möglich Hirachien, Abhängigkeiten und den jeweiligen Arbeitsaufwa
 
 ===== Protokollierung
 
-Um die Ergebnisse und Erkenntnisse aus den Team-Meetings sowie den Meetings mit dem Coach und den Themenstellenden festhalten zu können, haben wir das online Toll Pentapad verwendet. Dieses erlaubt es allen Teilnehmern kollaborativ während der Meetings ein gemeinsames Protokoll anzufertigen. Dies hat sich als sehr Vorteilhaft herausgestellt, da durch die gemeinsame Mitschrift alle Ergebnisse der Meetings notiert werden konnten und auch sofort allen zur Verfügung standen.
+Um die Ergebnisse und Erkenntnisse aus den Team-Meetings sowie den Meetings mit dem Coach und den Themenstellenden festhalten zu können, haben wir das online-Tool Pentapad verwendet. Dieses erlaubt es allen Teilnehmern kollaborativ während der Meetings ein gemeinsames Protokoll anzufertigen. Dies hat sich als sehr Vorteilhaft herausgestellt, da durch die gemeinsame Mitschrift alle Ergebnisse der Meetings notiert werden konnten und auch sofort allen zur Verfügung standen.
 
 ===== Team-Regeln
 
-Im laufe des Projektes wurden Regeln für die Teamarbeit auf gestellt.
+Im Laufe des Projektes wurden Regeln für die Teamarbeit aufgestellt.
 Diese waren zunächst lose Vereinbarungen ohne wirkliche Wirkung.
-Mit wachsender Komplexität des Projektes wurde es allerdings nötig diese schriftlich Fest zuhalten.
-Dies wurde besonders Wirksam als das neue Tool ZenHub eingeführt wurde, da dies eine doch sehr weitreichende Umstellung mitten im Projekt war und somit klar Umrissene Handlungswiesen verlangte, wie zum Beispiel wann gehöhren Issues in welche ZenHub Pipline, wann ist ein ToDo ein Issue, wann ein übergeordnetes Issue (Epic), etc. .
-Zusätzlich war es das Ziel der Regelen, durch eine einheitliche Grundlage an Verhaltensweisen, Kommunikationsaufwand zu sparen, eine klarere Struktur in der Verzeichnisherachie des Repositories zuschaffen und bestimmte Prozesse wie das Protokollieren und Planen der Iterationen zu rutinieren um so Zeit für wichtigere Dinge zu haben.
+Mit wachsender Komplexität des Projektes wurde es allerdings nötig diese schriftlich festzuhalten.
+Dies wurde besonders Wirksam als das neue Tool ZenHub eingeführt wurde, da dies eine doch sehr weitreichende Umstellung mitten im Projekt war und somit klar umrissene Handlungsweisen verlangte. Dazu gehörten die Fragestellungen wann Issues in welche ZenHub Pipeline gehören, wann ist ein ToDo ein Issue, wann ein übergeordnetes Issue (Epic), etc. .
+Zusätzlich war es das Ziel der Regeln, durch eine einheitliche Grundlage an Verhaltensweisen, Kommunikationsaufwand zu sparen, eine klarere Struktur in der Verzeichnishierachie des Repositories zu schaffen und bestimmte Prozesse wie das Protokollieren und Planen der Iterationen zu standardisieren um so Zeit für wichtigere Dinge zu haben.
 
 == Durchführung (JH + JR)
 
