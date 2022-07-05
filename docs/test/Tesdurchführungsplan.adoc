@@ -1,0 +1,25 @@
+= Testdurchführungsplan und Ergebnisse
+
+== Funktionale Tests
+
+[cols="5,2,2,1,2,2"]
+|===
+| Test Case | Verantwortlich | Durchführung | Datum | Ergebnis | Auswirkung
+
+| TC01: Erfolgreich ins System einloggen | Patrick | Roman |  |  |
+| TC02: Anlegen von Hochschulpartnerschaften | Patrick | Roman |  |  |
+| TC03: Bearbeiten von Hochschulpartnerschaften | Patrick | Roman |  |  |
+| TC04: Löschen von fehlerhaften Datensätzen | Patrick | Patrick |  |  |
+| TC05: Mentoren editieren | Patrick | Patrick |  |  |
+|===
+
+== Nicht-Funktionale Tests
+
+[cols="5,2,2,1,2,2"]
+|===
+| Test Case | Verantwortlich | Durchführung | Datum | Ergebnis | Auswirkung
+
+| TC06: Gleichzeitiges Bearbeiten von Datensätzen durch mehrere Personen | Patrick | Patrick/Jakob |  |  | 
+| TC07: Wechseln der Hauptreiter in max. 3s | Patrick | Patrick |  |  |
+| TC08: Ausführen der wichtigsten Aktionen in max. 2s | Patrick | Patrick |  |  |
+|===

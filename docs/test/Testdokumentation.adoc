@@ -30,17 +30,11 @@
 
 === Testmethoden
 
-
-
-=== Testdurchführungsplanung
-
 include::../../docs/test/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-:leveloffset: -1
+== Testdurchführungsplanung und Testergebnisse
 
-== Testergebnisse
-
-
+include::../../docs/test/Testdurchführungsplan.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 === Abnahmetests
 
