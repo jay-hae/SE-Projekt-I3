@@ -7,11 +7,11 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == CSS
 
-Für den CSS wurde die Bibliothek Bootstrap genutzt. 
+Für die gestaltung der Webanwendung in CSS wurde die Bibliothek Bootstrap genutzt. 
 Vorgehen:
   1. Bootstrap CDN in HTML Dateien einbinden.
-  2. Der zu formatierendedn Komponenten in Bootstrap Dokumentation suchen.
-  3. Die passende Klasse zur HTML Komponente hinzufügen.
+  2. Die zu formatierenden Komponenten in der Dookumentation auf der Webseite von Bootstrap suchen.
+  3. Die gewünschte Klasse zur HTML Komponente hinzufügen.
   
 == JavaScript
 
@@ -20,37 +20,43 @@ Diese kann unter https://www.informatik.htw-dresden.de/~s82099/jsdocFiles/index.
 
 == Python
 
-Die volle automatisch erzeugte Dokumentation kann unter src/Prototyp/flaskProject Kopie/docs/_build/html/ finden.
+Für den Python Quellcode wurde die Dokumentation automatisch erzeugt. 
+Diese kann unter https://www.informatik.htw-dresden.de/~s82099/docs/_build/html/index.html abgerufen werden. 
 
 Login.py
-* Funktion zum Authorisierung der Nutzer beim Öffnen der Anwendung
-* Funktion zum erneuten Verbinden mit der Datenbank, nachdem der Benutzerdaten in der Session gespeichert wurde
+
+* Funktion zur Authorisierung der Nutzer beim Öffnen der Anwendung
+* Funktion zum erneuten Verbinden mit der Datenbank, nachdem die Benutzerdaten in der Session gespeichert wurden
 
 app.py
-* mittlere Schicht zwischen REST-Anfragen von Javascript und Python-Abfrage, um Informationen aus der Datenbank zu erhalten, in Querries.py
+
+* mittlere Schicht zwischen REST-Anfragen aus Javascript  und Python-Abfragen in Querries.py , um Informationen aus der Datenbank zu erhalten
+
 * wichtige Funktionen:
-** `+ login_required(f) +`: Andere Funktionen werden nur aufgerufen, wenn der Benutzer bereits eingeloggt ist
-** Funktion zum Laden von Hauptseite
-** Funktionen zum Rückgabe von gefilterte Hochschulen (weiter an Querries.py übergegeben)
-** Funktionen zum Abrufen der erforderlichen Daten zum Öffen des Bearbeitungsmodal (Mentor, Hochschule) (weiter an Querries.py übergegeben)
-** Funktion zum Löschen von Objekte (Hochschule, Vertrag, Restriktion) (weiter an Querries.py übergegeben)
-** Funktion zum Hinzufügen von Objekte (weiter an Querries.py übergegeben) 
-** Funktion zum Speichern von bearbeitete Objekte (Hochschule, Vertrag, Restriktion, Mentor) (weiter an Querries.py übergegeben)
+** Andere Funktionen werden nur aufgerufen, wenn der Benutzer bereits eingeloggt ist
+** Funktion zum Laden der Hauptseiten
+** Funktionen zur Rückgabe von gefilterte Hochschulen (werden an Querries.py übergegeben)
+** Funktionen zum Abrufen der erforderlichen Daten zum Öffen des Bearbeitungsmodal (Mentor, Hochschule) (werden an Querries.py übergegeben)
+** Funktion zum Löschen von Objekten (Hochschule, Vertrag, Restriktion) (werden an Querries.py übergegeben)
+** Funktion zum Hinzufügen von Objekten (werden an Querries.py übergegeben) 
+** Funktion zum Speichern von bearbeiteten Objekten (Hochschule, Vertrag, Restriktion, Mentor) (werden an Querries.py übergegeben)
 ** Funktion zum Ausloggen
 
 Querries.py
-* enthält direkte Abfragen zu Datenbank
-* Daten von Datenbank zurückgeben
+
+* stellt Abfragen an die Datenbank aus Anwendung
+* gibt Daten aus Datenbank an Anwendung zurück
 * wichtige Funktionen:
-** Alle Hochschulen, Verträge, Ländern, Fakultäten, Mentor, die in der Datenbank gespeichert sind, holen
-** Alle Daten, die für die Bearbeitungsmodal benötigt werden, werden aus der Datenbank zurückgegeben
-** Die Werte für die Filteroption aus der Datenbank holen
-** Neu angelegtes Objekt in der Datenbank speichern
-** Die geänderte Werte von Hochschule / Verträge / Restriktion / Mentor in der Datenbank aktualisieren
-** Funktion zum Prüfen der Löschbarkeit von Hochschule
-** Funktion zum Löschen von Hochschule / Vertrag / Restriktion
+** Alle Hochschulen, Verträge, Ländern, Fakultäten, Mentor, die in der Datenbank gespeichert sind, aus Datenbank bereitstellen
+** Alle Daten, die für die Bearbeitungsmodale benötigt werden, werden aus der Datenbank abgefragt
+** Die möglichen Werte für die Filteroption aus der Datenbank abfragen
+** Neu angelegte Objekte in der Datenbank speichern
+** Die geänderten Werte von Hochschule / Verträge / Restriktion / Mentor in der Datenbank aktualisieren
+** Funktion zum Prüfen der Löschbarkeit von Hochschulen
+** Funktion zum Löschen von Hochschulen / Verträgen / Restriktionen
 
 helper.py
-* Funktionen zum Formatierung von Nutzereingabe
-* Funktion zum Validierung und Erzeugung von Partnerschaft
+
+* Funktionen zur Formatierung von Nutzereingaben
+* Funktion zur Validierung und Erzeugung von Partnerschaften
 
