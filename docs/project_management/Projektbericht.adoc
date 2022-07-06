@@ -15,7 +15,8 @@ Sprachkenntnisse zu vertiefen. Zu diesem Zweck werden die Informationen zu den P
 Plätzen, Mentor:Innen und verfügbare Fakultäten etc., sowie Daten über Incomings und Outgoings
 gespeichert und verarbeitet. Genutzt wurde hierfür bis jetzt eine Access Datenbank.
 Der Auftrag des Projektteams I3 bestand darin eine webbasierte Applikation mit Schnittstelle zu einer
-Datenbank zu realisieren, die die Verwaltung der Hochschulen für die Mitarbeitenden der Stabsstelle internationales vereinfacht. 
+Datenbank zu realisieren, die die Verwaltung der Hochschulen für die Mitarbeitenden der Stabsstelle internationales vereinfacht. Eine genaue Auflistungen der Aufgaben
+ist in der Vision zu finden.
 
 === Situation zum Semesterbeginn
 
@@ -103,13 +104,14 @@ Es stellte sich früh heraus das Pascal Thielemann hinsichtlich der Software Ent
 * Terminfindung für wöchentliche Meetings der Teammitglieder
 * die Stakeholder identifizieren
 * Skizze der Anforderungen erhalten
+* Infrastruktur zur Kooperativen Arbeit am Code aufbauen
 
 ==== Problem 
 
 ===== Terminfindung
 Es hat sich als sehr schwierig herausgestellt einen Termin zu für das wöchentliche Teammeeting zu finden. Um dieses Problem zu lösen wurde zunächst eine Exceltabelle mit den einer Art Kalender erstellt, in den alle Teammitglieder ihre Verfügbarkeiten eingetragen haben. Die Verfügbarkeiten wurden dann abgeglichen und auf Überschneidungen untersucht. Mit dieser Methode konnte kein gemeinsamer Termin gefunden werden. Um den Abgleich agile zu gestalten, wurde das online-Tool doodle verwendet und ein erneuter Versuch gestartet. Nachdem auch das nicht funktioniert hat, hat man sich auf einen Termin geeinigt an dem die meisten Teammitglieder Zeit hatten. Für diejenigen, die an den Meetings nicht live teilnehmen konnten, wurden ausführliche Protokollen angefertigt und nachträglich Telefonate mit einzelnen Teammitgliedern geführt, um jeden auf den neuesten Stand zu bringen.
 
-===== geringe Programmierkenntnise
+===== geringe Programmierkenntnisse
 
 Da nur Pascal Thielemann nennenswerte Vorkenntisse in der Programmierung von Webanwendung hatte, hat das Team schon früh ein Scheitern des Projekts befürchtet. Daher haben sich die Teammitglieder Ha Khuong und Jens Rosenkranz frühzeitig mit dem Erlernen von CSS, HTML, Java Script und Python beschäftigt um langfristig bei der Softwareerstellung unterstützen zu können.
 
@@ -124,18 +126,19 @@ Des weiteren konnten die Stakeholder Identifiziert werden und eine Skizze der An
 
 === Elaboration
 
-
+In der zweiten Phase des Projekts 
 
 ==== Ziele
 * erste Wireframes erstellen
-* Infrastruktur zur Kooperativen Arbeit aufbauen
 * Use Cases und Systemweite Anforderungen identifizieren
 * bestehendes Datenmodell erfassen
 * mit der Entwicklung des Prototyps beginnen
-* Dokumente (Vision, Risklist, Use Cases) weiter ausarbeiten
+* Dokumente (Vision, Risklist, Use Cases) ausarbeiten
+* Dokument zur Belegabgabe fertigstellen
 
 ==== Problem 
 
+===== 
 
 ==== Ergebnisse
 
