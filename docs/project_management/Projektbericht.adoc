@@ -2,15 +2,6 @@ include::../_includes/default-attributes.inc.adoc[]
 
 = Projektbericht: {project-name} 
 
-// :imagesdir-reset: {imagesdir}
-// :docs-test2: {docs}/test2
-// :docs-requirements: {docs}/requirements
-// :docs-project-management: {docs}/project_management
-// :docs-architecture: {docs}/architecture
-// :docs-test: {docs}/test
-// :docs-development: {docs}/development
-
-
 == Einführung (JH + JR)
 Dieses Dokument enthält den Projektbericht über die Erstellung der Webanwendung zur Verwaltung der Hochschulpartnerschaften und Austauschprogramme. Das Projekt wurde im Rahmen des SE I und SE II Moduls des Teams I3 durchgeführt.
 
@@ -139,6 +130,7 @@ Des weiteren konnten die Stakeholder Identifiziert werden und eine Skizze der An
 * erste Wireframes erstellen
 * Infrastruktur zur Kooperativen Arbeit aufbauen
 * Use Cases und Systemweite Anforderungen identifizieren
+* bestehendes Datenmodell erfassen
 * mit der Entwicklung des Prototyps beginnen
 * Dokumente (Vision, Risklist, Use Cases) weiter ausarbeiten
 
