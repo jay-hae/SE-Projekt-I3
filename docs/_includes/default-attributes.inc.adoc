@@ -6,6 +6,9 @@
 :toclevels: 2
 :sectnums: 1
 :icons: font
+
+//wenn ":doctype: book" in adoc Dokument, dann steht vor "Kapitel" vor Level 1 Sections (Chapters) 
+:chapter-signifier: Kapitel 
 //:source-highlighter: highlightjs
 :source-highlighter: rouge
 :rouge-style: github

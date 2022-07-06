@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo systemctl stop se_webserver.service
+git clone https://github.com/jay-hae/SE-Projekt-I3.git
+sudo systemctl start se_webserver.service
+

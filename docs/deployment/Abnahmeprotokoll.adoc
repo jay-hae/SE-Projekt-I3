@@ -1,0 +1,54 @@
+include::../_includes/default-attributes.inc.adoc[]
+
+= Abnahmeprotokoll: {project-name}
+
+
+// Dokument wurde am 13.6 von Jakob bearbeitet und spiegelt den ist zustand wieder 
+// vor der Abgabe muss das Protokoll aktualisiert werden!!
+
+== Projektangaben
+
+Thema: {project-name}
+
+Abgabedatum: 28.06.2022
+
+GitHub Repository: https://github.com/jay-hae/SE-Projekt-I3
+
+== Funktionalität
+[%header, cols="3,1,3"]
+|===
+|UseCase/Szenario | Erfüllt | Anmerkung
+|Use-Case: In System Einloggen (UC01) | Ja | Logout aktualisiert Seite nicht automatisch, muss daher manuell aktualisiert werden. Nach dem drücken auf "Logout" ist man ausgeloggt.
+|Use-Case: Partnerhochschulen Anlegen (UC02) | Ja | Manuelles Speichern ist notwendig.
+|Use-Case: Partnerhochschulen Editieren (UC03) |Ja | Manuelles Speichern ist notwendig.
+|Use-Case: Datensätze Löschen (UC04) | Ja | Nur für den Datenbank Account, welcher die Rechte für das Löschen auf der Datenbank hat, für andere Accounts wird die Funktion des Löschens nicht angezeigt. (siehe SWFA-3)
+|Use-Case: Mentoren Editieren (UC05) | Ja | Löschen von Mentoren nicht möglich.
+|Use-Case: Berichte Erstellen (UC06) | nein | 
+|Use-Case: Erstellte Berichte Exportieren (UC07) | nein |
+|Use-Case: Berichte für Externe Anzeigen (UC08) | nein | 
+|===
+
+== Systemweite Anforderungen
+[%header, cols="3,1,3"]
+|===
+|Anforderung | Erfüllt | Anmerkung
+|SWFA-1: Das System muss alle Hochschulpartnerschaften und Statistiken persistent speichern. | Ja  | Nur statistiken werden nicht gespeichert (siehe UC06)
+|SWFA-2: Nur autorisierte Mitarbeitende der Stabsstelle Internationales dürfen Zugriff auf das Verwaltungsfrontend haben. | Ja  | Im Prinzip alle, die über die Anmeldedaten der Datenbank verfügen.
+|SWFA-3: Das Interface des Systems ist je nach Nutzerklasse unterschiedlich. Einige Funktionen können nur von bestimmten Nutzerklassen durchgeführt werden. | Ja | Lösch-Button nur mit Admin-Login sichtbar
+|NFAU-1: Das System sollte sowohl auf großen PC-Monitoren sowie auf kleinen Laptop Bildschirmen bedienbar sein. | Ja  |
+|NFAU-2: Das Verwaltungsfrontend sollte auf den Browsern Brave, Chrome, Firefox und Edge laufen | Ja |
+|NFAR-1: Bei einer Wiederherstellung der Datenbank auf einen Vorzustand muss das Verwaltungsfrontend weiterhin funktionieren. | Ja | Erfüllt, solange die Tabellenstruktur nicht verändert wird.
+|NFAR-2: Das Verwaltungsfrontend und das Informationsfrontend müssen parallel auf Daten zugreifen können. | Nein | nicht erreicht (siehe UC08)
+|NFAR-3: Das System muss paralleles Lesen und Schreiben im Verwaltungsfrontend unterstützen. | Ja  | Erfüllt, es besteht aber die Gefahr von "Lost-Updates".
+|NFAP-1: Der Wechsel zwischen den Reitern des Verwaltungsfrontends sollte maximal 3 Sekunden dauern | Ja | Ist erfüllt. Es wurden deutlich schnellere Zeiten bei den Testungen gemessen.
+|NFAP-2: In mindestens 90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein. | Ja | Ist erfüllt. Es wurden deutlich schnellere Zeiten bei den Testungen gemessen.
+|Zusätzlich: Das System muss mit der bereits bestehenden Datenbankstruktur funktionieren. | Ja |
+|===
+
+== Unterschriften
+Hiermit wird die Abnahme vollständig / mit Mängeln bestätigt.
+
+|===
+|> |>
+| Unterschrift Themenersteller/in  | Unterschrift Projektleiter/in 
+|===

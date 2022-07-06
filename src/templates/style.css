@@ -1,0 +1,122 @@
+/*
+#add-new-agreement {
+  color: green;
+}
+#add-new-agreement:hover {
+  background-color: green;
+  color: white;
+}
+*/
+
+table {
+  font-weight: lighter; !important;
+}
+
+#addAgreements {
+  font-weight: lighter; !important;
+}
+
+#add-new-agreement-container {
+  margin-bottom: 0;
+  justify-content: right;
+  justify-items: right;
+  justify-self: right;
+}
+
+
+#Page_one {
+  width: 100%;
+  height: 100%;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+/* Navigation Bar */
+
+#my-nav {
+  /*position: sticky;
+    position: -webkit-sticky;
+    top: 0;*/
+  display: inline-block;
+  width: 100%;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+}
+
+.in-navbar {
+  display: inline-block;
+}
+
+#htw-logo {
+  max-width: 100%;
+  height: 3rem;
+}
+
+#Themen {
+  float: right;
+  height: 100%;
+}
+
+#handbuch {
+  float: right;
+  height: 100%;
+}
+
+#Logout {
+  float: right;
+  height: 100%;
+}
+
+.my-content {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+/* Filter */
+
+#fil {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter {
+  background-color: #f7f7f7;
+  border-radius: 0.4rem;
+  border: none;
+  /* border: 1px solid black; */
+  margin: 0.2rem;
+  padding: 0.4rem 0.6rem;
+}
+
+#filter_form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  column-gap: 0.7rem;
+  grid-template-rows: auto auto;
+  row-gap: 0.3rem;
+}
+
+.modal
+
+/* Table */
+
+.add-hs {
+  align-items: center;
+  margin: auto;
+}
+
+/* Buttons */
+
+.table-wrap {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.rounded-border {
+  border-radius: 10px;
+}

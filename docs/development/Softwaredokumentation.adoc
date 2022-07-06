@@ -1,5 +1,64 @@
-= Softwaredokumentation
-Jens Rosenkranz <s82099@htw-dresden.de>; Pascal Thielemann <s82101@htw-dresden.de>; Patrick Matthes <s82016@htw-dresden.de >; Nico Rosenkranz <s82122@htw-dresden.de>; Luca Meißner <s82091@htw-dresden.de>; Jakob Häcker <s82048@htw-dresden.de>; Roman Patzig <s82132@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>;
+= Softwaredokumentation (HK + JR)
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
+
+== HTML
+
+Beim erstellen der einzelnen Seiten wurde Wert darauf gelegt, den Aufwand so gering wie möglich zu halten und die Implementierung sehr simpel zu gestalten. Daher wurden alle Seiten in HTML geschrieben. Des Weiteren wurde darauf geachtet, nur HTML-Features zu nutzen welche auch von den gängigsten Browsern unterstüzt werden. So kann eine unterschiedliche Darstellung je nach Arbeitsplatz ausgeschlossen werden. 
+
+== CSS
+
+Für die gestaltung der Webanwendung in CSS wurde die Bibliothek Bootstrap genutzt. 
+Vorgehen:
+  1. Bootstrap CDN in HTML Dateien einbinden.
+  2. Die zu formatierenden Komponenten in der Dookumentation auf der Webseite von Bootstrap suchen.
+  3. Die gewünschte Klasse zur HTML Komponente hinzufügen.
+  
+== JavaScript
+
+Für den JavaScript Quellcode wurde die Dokumentation mittels JSDoc automatisch erzeugt. 
+Diese kann unter https://www.informatik.htw-dresden.de/~s82099/jsdocFiles/index.html abgerufen werden. 
+
+== Python
+
+Für den Python Quellcode wurde die Dokumentation automatisch erzeugt. 
+Diese kann unter https://www.informatik.htw-dresden.de/~s82099/docs/_build/html/index.html abgerufen werden. 
+
+Login.py
+
+* Funktion zur Authorisierung der Nutzer beim Öffnen der Anwendung
+* Funktion zum erneuten Verbinden mit der Datenbank, nachdem die Benutzerdaten in der Session gespeichert wurden
+
+app.py
+
+* mittlere Schicht zwischen REST-Anfragen aus Javascript  und Python-Abfragen in Querries.py , um Informationen aus der Datenbank zu erhalten
+
+* wichtige Funktionen:
+** Andere Funktionen werden nur aufgerufen, wenn der Benutzer bereits eingeloggt ist
+** Funktion zum Laden der Hauptseiten
+** Funktionen zur Rückgabe von gefilterte Hochschulen (werden an Querries.py übergegeben)
+** Funktionen zum Abrufen der erforderlichen Daten zum Öffen des Bearbeitungsmodal (Mentor, Hochschule) (werden an Querries.py übergegeben)
+** Funktion zum Löschen von Objekten (Hochschule, Vertrag, Restriktion) (werden an Querries.py übergegeben)
+** Funktion zum Hinzufügen von Objekten (werden an Querries.py übergegeben) 
+** Funktion zum Speichern von bearbeiteten Objekten (Hochschule, Vertrag, Restriktion, Mentor) (werden an Querries.py übergegeben)
+** Funktion zum Ausloggen
+
+Querries.py
+
+* stellt Abfragen an die Datenbank aus Anwendung
+* gibt Daten aus Datenbank an Anwendung zurück
+* wichtige Funktionen:
+** Alle Hochschulen, Verträge, Ländern, Fakultäten, Mentor, die in der Datenbank gespeichert sind, aus Datenbank bereitstellen
+** Alle Daten, die für die Bearbeitungsmodale benötigt werden, werden aus der Datenbank abgefragt
+** Die möglichen Werte für die Filteroption aus der Datenbank abfragen
+** Neu angelegte Objekte in der Datenbank speichern
+** Die geänderten Werte von Hochschule / Verträge / Restriktion / Mentor in der Datenbank aktualisieren
+** Funktion zum Prüfen der Löschbarkeit von Hochschulen
+** Funktion zum Löschen von Hochschulen / Verträgen / Restriktionen
+
+helper.py
+
+* Funktionen zur Formatierung von Nutzereingaben
+* Funktion zur Validierung und Erzeugung von Partnerschaften
+

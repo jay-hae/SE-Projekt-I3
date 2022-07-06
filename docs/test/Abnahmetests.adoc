@@ -1,0 +1,21 @@
+= Abnahmetests
+
+== Funktionalität
+[%header, cols="4,1,3"]
+|===
+|TestCase/Szenario | Abnahme | Anmerkung
+|TC01: Erfolgreich ins System einloggen | mit Mängeln | Logout benötigt Refresh
+|TC02: Anlegen von Hochschulpartnerschaften | Ja |
+|TC03: Bearbeiten von Hochschulpartnerschaften | Ja |
+|TC04: Löschen von fehlerhaften Datensätzen | Ja |
+|TC05: Mentoren editieren | mit Mängeln | Löschen nicht möglich
+|===
+
+== Systemweite Anforderungen
+[%header, cols="4,1,3"]
+|===
+|Anforderung | Abnahme | Anmerkung
+|TC06: Gleichzeitiges Bearbeiten von Datensätzen durch mehrere Personen | Ja | Erfüllt aber Gefahr eines "Lost-Update"
+|TC07: Wechseln der Hauptreiter in max. 3s | Ja | 
+|TC08: Ausführen der wichtigsten Aktionen in max. 2s | Ja |
+|===

@@ -1,0 +1,32 @@
+= Testdurchführungsplan und Ergebnisse
+// Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+// {localdatetime}
+// include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
+
+== Funktionale Tests
+
+[cols="3,2,2,1,2,2"]
+|===
+| Test Case | Verantwortlich | Durchführung | Datum | Ergebnis | Auswirkung
+
+| TC01: Erfolgreich ins System einloggen | Patrick | Roman |  | erfolgreich | keine
+| TC02: Anlegen von Hochschulpartnerschaften | Patrick | Roman |  | erfolgreich | keine
+| TC03: Bearbeiten von Hochschulpartnerschaften | Patrick | Roman |  | erfolgreich | keine
+| TC04: Löschen von fehlerhaften Datensätzen | Patrick | Patrick |  | erfolgreich | keine
+| TC05: Mentoren editieren | Patrick | Patrick |  | erfolgreich | keine
+|===
+
+== Nicht-Funktionale Tests
+
+[cols="3,2,2,1,2,2"]
+|===
+| Test Case | Verantwortlich | Durchführung | Datum | Ergebnis | Auswirkung
+
+| TC06: Gleichzeitiges Bearbeiten von Datensätzen durch mehrere Personen | Patrick | Patrick/Jakob |  | erfolgreich +
+("Lost Update" kann bei der Arbeit um selben Datensatz enstehen) | Warnung für die Arbeit am selben Datensatz
+| TC07: Wechseln der Hauptreiter in max. 3s | Patrick | Patrick |  | erfolgreich +
+(1,5 - 2s) | keine
+| TC08: Ausführen der wichtigsten Aktionen in max. 2s | Patrick | Patrick |  | erfolgreich +
+(ca. 1s) | keine
+|===

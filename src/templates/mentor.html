@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mentoren</title>
+
+    <link href="../bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="../style.css" rel="stylesheet">
+
+    <script src="../ajax.js"></script>
+    <script src="../navbar_functionality.js"></script>
+    <script src="../mentor_main.js"></script>
+    <script src="../mentor_modal_add.js"></script>
+    <script src="../mentor_modal_edit.js"></script>
+
+    <script src="../modal_blur_effect.js"></script>
+
+    <script src="../general_helper.js"></script>
+</head>
+<body>
+<!-- HAUPTANSICHT -->
+<div id="Page_one" > <!-- class container -->
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-dark bg-dark" style="background-color: #e3f2fd;">
+        <a class="navbar-brand ms-3" href="#">HTW Dresden</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="/homepage/faculties">Fakultäten</a></li>
+            <li class="nav-item"><a class="nav-link" href="/homepage/institutes">Hochschulen</a></li>
+            <li class="nav-item"><a class="nav-link" href="/homepage/countries">Länder</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/homepage/mentor">Mentoren</a></li>
+            <li class="nav-item"><a class="nav-link" href="/homepage/courses">Studiengänge</a></li>
+        </ul>
+        <ul class="navbar-nav me-2">
+        <li class="nav-item m-1">
+            <div class="in-navbar" id="handbuch">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Handbücher</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Anwenderdokumentation</a></li>
+                        <li><a class="dropdown-item" href="#">Betriebsdokumentation</a></li>
+                        <li><a class="dropdown-item" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        
+        <li class="nav-item m-1">
+            <div class="in-navbar" id="Logout">
+                <button class="btn btn-sm btn-outline-danger btn-logout" type="button">Logout</button>
+            </div>
+        </li>
+        </ul>
+    </div>
+    </nav>
+     <div class="my-content">
+        <h1 class="text-center m-4">Mentoren</h1>
+        <!-- Tabelle für die Partnerhochschulen -->
+        <div id="tbl">
+            <div class="search_mentor text-center mt-2 mb-2 ps-3 navbar navbar-light bg-light rounded-border">
+                  <form class="form-inline d-flex">
+                    <input id="tbl_search" onkeyup="searchMentor()" type="text" placeholder="Mentor suchen" class="form-control">
+                  </form>
+                <button type="button" class="btn btn-outline-primary me-3" id="add_mentor_btn">Mentor hinzufügen</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="tbl_mentor_head" id="tbl_mentor_last">Nachname</th>
+                        <th class="tbl_mentor_head" id="tbl_mentor_first">Vorname</th>
+                        <th>Aktiv</th>
+                        <th>Fakultät</th>
+                        <th>Betreute Agreements</th>
+                        <th></th>
+                    </tr>
+                </thead class="thead-dark">
+                <tbody id="mnt_body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: MENTOR BEARBEITEN -->
+<div id="modal_edit_mentor" class="modal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Mentor bearbeiten</h2>
+                <button type="button" class="btn-close close_modal_edit_mentor"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div>
+                        <div>
+                            <header>Betreute Agreements</header>
+                            <p>Fakultät | Partnerhochschule | Vertragstyp</p>
+                        </div>
+                        <div id="guided-agreements">
+
+                        </div>
+                    </div>
+                    <div class="col-sm p-3 m-3 pt-1">
+                        <form class="mentor_slide modal_form_mentor" id="mentor_edit_form" >
+                            <input style="display: none;" type="text" id="edit_mentor_id">
+                            <label for="edit_mentor_title" class="form-label">Titel</label>
+                            <input class="form-control" type="text" id="edit_mentor_title"><br>
+                            <label for="edit_mentor_firstname" class="form-label">Vorname</label>
+                            <input class="form-control" type="text" id="edit_mentor_firstname"><br>
+                            <label for="edit_mentor_lastname" class="form-label">Nachname</label>
+                            <input class="form-control" type="text" id="edit_mentor_lastname" name="edit_mentor_lastname"><br>
+                            <label class="form-label" for="edit_men_faculty">Fakultät</label>
+                            <select class="edit_mentor_fac form-select" id="edit_men_faculty" name="edit_mentor_faculty">
+                                <!-- Add options for faculties (dropdown) -->
+                            </select><br>
+                            <label for="edit_mentor_gender" class="form-label">Geschlecht</label>
+                            <select id="edit_mentor_gender" class="form-select">
+                                <option value="3">Divers</option>
+                                <option value="1">Männlich</option>
+                                <option value="2">Weiblich</option>
+                            </select><br>
+                            <label for="edit_mentor_homepage" class="form-label">Webseite</label>
+                            <input class="form-control" type="text" id="edit_mentor_homepage"><br>
+                            <label for="edit_mentor_email" class="form-label">Email</label>
+                            <input class="form-control" type="text" id="edit_mentor_email"><br>
+                            <input type="checkbox" id="edit_mentor_active" class="form-check-input">
+                            <label for="edit_mentor_active" class="form-check-label">Inaktiv?</label><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close_modal_edit_mentor">Abbrechen</button>
+                <button onclick="saveMentorButton(this)" class="btn btn-primary edit-mentor save-modal">Speichern</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL: MENTOR ANLEGEN -->
+<div id="modal_add_mentor" class="modal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Mentor anlegen</h2>
+                <button type="button" class="btn-close close-modal cancel close_modal_add_mentor""></button>
+            </div>
+            <div class="modal-body">
+                <form class="mentor_slide modal_form_mentor" id="mentor_add_form">
+                    <label class="form-label" for="mentor_add_title">Titel</label><br>
+                    <input class="form-control" type="text" id="mentor_add_title" name="title"><br>
+                    <label class="form-label" for="mentor_add_firstname">Vorname</label><br>
+                    <input class="form-control" type="text" id="mentor_add_firstname" name="firstname"><br>
+                    <label class="form-label" for="mentor_add_lastname">Nachname</label><br>
+                    <input class="form-control" type="text" id="mentor_add_lastname" name="lastname"><br>
+                    <label class="form-label mandatory" for="mentor_fac">Fakultät</label><br>
+                    <select id="mentor_fac" class="edit_mentor_fac form-select" name="faculty_ID">
+
+                    </select><br>
+                    <label for="edit_mentor_gender" class="form-label">Geschlecht</label><br>
+                    <select id="mentor_gender" name="gender_ID" class="form-select">
+                        <option value="1">Männlich</option>
+                        <option value="2">Weiblich</option>
+                        <option value="3">Divers</option>
+                    </select><br>
+                    <label class="form-label" for="mentor_add_homepage">Homepage</label><br>
+                    <input class="form-control" type="text" id="mentor_add_homepage" name="homepage"><br>
+                    <label class="form-label" for="mentor_add_mail">Email</label><br>
+                    <input class="form-control" type="text" id="mentor_add_mail" name="email"><br>
+                    <input class="form-check-input" type="checkbox" id="mentor_add_active" name="active">
+                    <label class="form-check-label mandatory" for="mentor_add_active">An HTW aktiv?</label>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary cancel close-modal close_modal_add_mentor">Abbrechen</button>
+                <button class="btn btn-primary new_mentor mentor-add-btn">Speichern</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
