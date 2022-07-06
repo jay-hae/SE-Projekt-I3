@@ -2,15 +2,6 @@ include::../_includes/default-attributes.inc.adoc[]
 
 = Projektbericht: {project-name} 
 
-// :imagesdir-reset: {imagesdir}
-// :docs-test2: {docs}/test2
-// :docs-requirements: {docs}/requirements
-// :docs-project-management: {docs}/project_management
-// :docs-architecture: {docs}/architecture
-// :docs-test: {docs}/test
-// :docs-development: {docs}/development
-
-
 == Einführung (JH + JR)
 Dieses Dokument enthält den Projektbericht über die Erstellung der Webanwendung zur Verwaltung der Hochschulpartnerschaften und Austauschprogramme. Das Projekt wurde im Rahmen des SE I und SE II Moduls des Teams I3 durchgeführt.
 
@@ -139,6 +130,7 @@ Des weiteren konnten die Stakeholder Identifiziert werden und eine Skizze der An
 * erste Wireframes erstellen
 * Infrastruktur zur Kooperativen Arbeit aufbauen
 * Use Cases und Systemweite Anforderungen identifizieren
+* bestehendes Datenmodell erfassen
 * mit der Entwicklung des Prototyps beginnen
 * Dokumente (Vision, Risklist, Use Cases) weiter ausarbeiten
 
@@ -165,15 +157,49 @@ Des weiteren konnten die Stakeholder Identifiziert werden und eine Skizze der An
 === Reflexion der Teammitglieder
 
 ==== Jakob Häcker
-//Was ich nicht wusste war, welche Verantwortung ich mir mit dieser Wahl auferlegte.
+Das erstellen von komplexen Software Systemen, war für mich vor dem Modul Software Engineering nicht greifbar und somit hatte ich auch keine Vorstellung was es eigentlich bedeutet komplexe Software in Teamarbeit zu erstellen, geschweige denn was alles dafür nötig ist.
+Aus dem Fakultativen Modul von Frau Hauptmann - Soziale Kompetenzen im Projektmanagement - blieb mir jedoch in Erinnerung.
+Nämlich, dass ca. 50% der Softwareprojekte im Team an zwischen Menschlichen kompetenzen scheitern.
+Inspieret von diesem zusatz Modul und überzeugt von meinen sozialen Fähigkeiten, entschied ich mich als Projektleiter vorzuschalgen.
+Dieser Wunsch ging auch tatsächlich in Erfüllung. Offen für die Erfahrung und motiviert freut ich mich sehr als unser Projekt begann.
 
+Am Anfang des Projektes war ich schier von der Freiheit der Gestaltungsmöglichkeiten überfordert.
+Die Vorlesungsinhalte schienen daher eher abstrakt als anwendungsspezifisch und nicht leicht auf die Projektrealität übertragbar. 
+Für Hilfestellungen galt für mich das geleiche. Vorallem OpenUp erschlug mich mit der seiner Größe, dem Detailreichtum und der Tatsache, dass die Seite auf Englisch ist (My englisch is not the yellow from the egg!), demotivierte mich weiter zulesen, da ich noch länger brauchte die Inhalte zu verstehen.
 
+Dies resultiert darin, dass ich mir nur noch die Text las, wo "Project Management" stand, die Abschnitte meist nur überflog und mir auch nicht die Zeit genommen hatte die Einleitung oder auch andere Abschnitte zu lesen, welche für mich jetzt nicht direkt wichtig waren mir aber zusätzlich zur Vorlesung, einen viel besseren Überblick hätten geben können.(Ich hätte mir aufjeden fall die Zeit nehemen müssen die Einführungs texte zu lesen.)
 
-Am Anfang des Projektes wurde ich von der Freiheit in der Gestaltung der Projektorganisation sehr überrascht.
-Es viel mir schwerer als Gedacht grundlegende Entscheidungen zu treffen deren Folgen absolut ungewiss sind und die Vorlesungsinhalte auf die Projektrealität zu adaptieren.
-Rückblickend war mir anfänglich auch nicht Bewusst, wie wichtig die entscheidungen in der ersten Projetk phase sind.
-Somit war ich auch eher Halbherzig bei der Sache und habe die Hilfestellungen (zB OpenUP) zu wenig verwendet.
-Nicht zu letzt des Wegen, da ich nicht wirklich wusste mit ihnen umzugehen und mir die Konzepte dort aus irgendwelchen gründen ziemlich Abstrakt wirken (mit der jetzigen Erfahrung ist dies natürlich nicht mehr so wodurch ich mein Handeln auch nicht mehr Nachvollziehen kann).
+So habe ich schon anfänglich "das Handtuch geworfen", mich eher auf mein Bauchgefühl verlassen und mich auf die wenigen Punkte konzentiret, welche offensichtlich für den Projket erfolg waren. 
+Darunter fiel: Wann muss welches dokumnte fertig sein; Wie kann man die anfallenden Aufgaben gleichmäßig auf die Rollen (da meist mehrer Teammitglieder einer Rolle zugeordnet waren, verwende ich auch gerene den Begriff "Subteams") aufteilen; Die, die nichts zutun hatten halfen den anderen oder informierten sich schon mal über grundlegenden Verfahren ihrer eigenen Aufgabengebite. 
+Das ich dadurch viele Aspekte außer Acht ließ, die mir und besonders dem Team später auf die Füße fallen würden, war mir leider nicht klar.
+Auch wenn ich es zu dem Zeitpunkt nicht wahr haben wollte, so scheint es mir jetzt, war ich davon überzeugt - wenn auch unterbewusst:  ",dass die Projekt Organisation ja nicht so schwer sein kann und der ganze "Overhead" (die Dokumentenerstellung, das Dokumentieren einzelner Handlungschritte, das festhalten von Entscheidungen) zwar für größere Projekte sicherlich Sinnvoll ist allerdings für unsere Projektgröße und Umfang schon nicht so ausschlaggebend seien wird."
+Jetzt kann ich sagen, dass diese Haltung definitv aus einem flaschen Gefühl der Komplexität dieser Thematik resultierte (auch allgemien als Dunnig-Krueger-Effekt in der Psychologie bekannt).
+
+Am meisten gelitten hat dabei das Konzept "the prove of work", welches ich im SS22 zwar einführte aber nicht mehr wirklich wirkung entfalten konnte, weil alte Vorgehensweisen schon etabliert waren und die Umgewöhnung ein längerdauernder, nicht berücksichtigter Prozess, in der Plaung von mir war.
+Die erste sehr wichtig Erkenntnis die ich mitnehmen kann ist daher, dass sobald ich versuche eine Thematik als unkomplex abzustempeln, ich genau dann inne halten muss und mich fragen sollte: "Wie genau kenn ich mich eigentlich damit aus? Warum denke ich, dass es eine einfache Antwort gibt obwohl Menschen mit mehr expertise an der gleichen Frage scheitern können?".
+Die Kunst besteht jedoch unweigerlich darin, überhaut zu erkennen, dass ich eine simplifizierende Haltung habe, da diese sehr subtil ist, und darin eigene Schein-Antworten zu entlarven wie: "Das ist für unsere Projekt größe nicht ausschlaggebend." 
+Wenn ich auf diese Fragen slebst keine Antwort gefunden hätte wäre es dann höchste Zeit gewesen sich mit unserem Coach in Verbindung zu setzen.
+Eine Hilfestellung, die ich selbst viel zu Häufig ausschlug. 
+Dafür gabe es wiederum verschiedene Gründe:
+. Ich hatte nicht unbedingt das Gefühl das etwas schieflaufen könnte.
+. Mir war nicht bewusst, dass ich auch einfach so das Gespräch hätte suchen können ohne einen bestimmten Grund gehabt zu haben. Allein Ihm in regelmäßigen Abständen (evtl. aller 2 Wochen - also deutlich mehr als die gefordertet mindest Anzahl an Coach-Treffen) zu berichten was wir gerade machen, hätte schon ausgereicht aufzudecken, dass evtl. einiges nicht funktioniert.
+. *Vorallem* die Scham zugeben zu müssen, dass etwas nicht funktioniert.
+
+Das Ereignis, was mich veranlasste die Scham aus Punkt 3. allmälich abzubauen, war die Vorstellung des Prototypens am Ende des 1. Semesters unserer Projektarbeit.
+Aufgrund "unglücklicher" Ereignisse sollte ich die Vorstellung des Protoypens alleine Übernehmen (die meisten meiner Teamkollegen waren, aus jetziger Perspektive nicht mehr rekonsturierbaren aber vorhandenen Gründen (!) nicht anwesend).
+Ich kannte mich mit dem Prototypen gut genug aus um diesen Vorstellen zu können aber nicht gut genug um auf die gestellten Fragen von Herrn Ringel und Herrn Prof. Anke eingehen zukönnen.
+Eine Erfahrung, die ich jedem Kommilitonen gewünscht hätte. 
+Ich meine ab diesen Zeitpunkt begonnen zu haben einen Lern-Aspekt dieser Projektarbeit zu verstehen und zwar, dass es nicht darum geht den Eindruck zu vermitteln "es sei alles gut" um eine gute Note zu erhalten, sondern darum das Scheitern im kleinen als notwendiges Mittel für den Erfolg im großen zu akzeptieren.
+Obwohl Herr Prof. Anke das mindestens 3 mal während der Vorlesung und in den Praktikas saget, bedurfte es bei mir erst das Erleben dessen um eine Vorstellung von dem zuerhalten was die gesagten Worte bedeuten.
+
+Als ich nun versuchte meinen Teamkollgen diese Erfahrung näher zubringen wurde mir - zum wiederholten male - ein Defizit in meiner Kommunikationsfähigkeit bewusst.
+Dieses besteht darin meine Erfahrungen nicht klar und verständlich kommunizieren zu können. Ein Problem, welches mir während der Projektarbeit öffter aufgefallen war, ich aber nicht weiß wie ich das ändern kann, da es wahrscheinlich ein tieferer Teil meiner Persönlichkeit ist.
+In folge dessen hatten wir einige Team interne Gespräche, welche zeigten, dass wir alle die gleiche Antwort auf die Frage hatten: "Was ist das Ziel unsere Projektarbeit?" aber gleichzeitig offenlegt, dass wir die Frage: "Warum ist das das Ziel unserer Projektarbeit?" von jedem Mitglied anders beantwortet wurde. Im Zuge dessen konnte eine Einigung erfolgen und somit das Projekt wieder auf eine gemeinsame Basis gestellte werden. 
+Aus meiner jetzigen Perspektive ist dies eine so wichtige Frage, dass ich diese bei einem "zweiten Versuch" dierekt am Anfang des Projektes klären möchte.
+
+Ich kann und ich vermute es ist auch garnicht möglich in Worte zu fassen, wie sehr diese Erfahrung meinen Horzizont erweitert hat.
+Im Zuge dessen möchte ich mich bei allen Teammitgliedern für diese Zeit bedanken, es war mir eine große Freude das Projekt mit euch gemeinsam zu gestalten.
+
 
 ==== Thanh Ha Khuong
 Das Projekt „Verwaltung von Hochschulpartnerschaften“ in Kooperation mit dem International Office der HTW Dresden war nicht nur für mich, sondern auch für die meisten meiner Teammitglied das erste komplexe Großprojekt. Ich freue mich, Teil des Teams zu sein und zum Softwareentwicklungsprozess beizutragen. Ich habe durch dieses Projekt viele Dinge gelernt, insbesondere wie die Software aufgebaut ist und wie man mit anderen Menschen zusammenarbeitet.
@@ -214,5 +240,17 @@ Ich habe durch das Projekt viel gelernt und die erste echte Erfahrung in Softwar
 
 ==== Nico Rosenkranz
 ==== Pascal Thielemann
+
+Mit dem Start des Projektes “Verwaltung von Hochschulpartnerschaften” im 3. Semester kamen bei mir erstmal viele Fragen auf, gerade weil es mein 1. Projekt war welches nicht allein, und auf Anfrage eines echten Kunden entwickelt werden musste. Dies brachte natürlich viele Herausforderungen mit sich, man musste sich mit 7 fremden Menschen anfangen arbeitstechnisch zu organisieren, nebenbei sein Studium weiter durchziehen und eine Software entwickeln. Da kam die Frage auf, wie soll dieses Projekt überhaupt bewältigt werden?
+
+
+Gleich zu Beginn der Teamarbeit wurde klar, dass die Entwicklung zu meiner Hauptaufgabe wird, da ich das einzige Teammitglied mit Vorerfahrung im Bereich Webentwicklung war. Vorerst war es für uns alle ein riesiger Vorteil, mit Beginn des 2. Semesters der Projektarbeit wurde aber langsam klar dass der Programmieraufwand für einen einzelnen zu groß ist und wir das Projekt ein wenig unterschätzt haben. Der Einstieg der beiden anderen Entwickler viel am Ende aber nicht so leicht, da ich bei der Entwicklung nach Eigeninitiative weder gängige Codekonventionen beachtet, noch eine saubere Dokumentation vorweisen konnte. Es folgte ein reges refactoren des Codes, während nebenbei die Entwicklerdokumentation stetig geändert werden musste. Die Weiterentwicklung und Anpassung des Prototypen durfte nebenbei natürlich nicht auf der Strecke bleiben, da es immer Anmerkungen und Verbesserungsvorschläge der Themensteller gab. 
+An diesem Punkt des Projektes ist mir dann zum 1. mal wirklich aufgefallen, was agile Entwicklung wirklich bedeutet. Die übergebene Software wäre ohne ständige Meetings mit den Themenstellern und innerhalb des Teams so nicht entstanden, sondern wir hätten am Ende ein gescheitertes Projekt gehabt. 
+Trotz dessen kam für mich als Hauptverantwortlichen der Implementierung, gegen Ende des Projektes der Punkt, an dem ich alle weiteren Änderungen und neue Anforderungen zurückgewiesen habe. Für mich stand in diesem Moment die nicht-Gefährdung des Projektes an erster Stelle, da eine Implementierung neuer Features auch eine gewisse Zeit in Anspruch nimmt, wobei das Testen noch nicht einberechnet ist.
+Für mich war das aber auch kein Abstimmungsproblem innerhalb des Teams, meiner Meinung nach wurden unsere Themensteller mit der Zeit aber immer fordernder und wir mussten sie ein wenig ausbremsen. 
+
+
+Persönlich konnte man durch dieses Projekt sehr wachsen, zum einen wurde man auf die Arbeitswelt vorbereitet. Schließlich weiß man nie in welches Team man später kommt, es wird also wichtig sich integrieren zu können und zu wissen worauf man bei einem Teamprojekt zu achten hat. Ich habe gelernt für mich selbst einzustehen, auch vor “zahlenden Kunden”, auch wenn diese in unserem Fall nur fiktiv waren. Das Erlebnis diesen zu Widersprechen und ihnen realistische Ziele näher zu bringen war eine einprägende Erfahrung und hat mir gezeigt wie schnell Kunden einen manipulieren können wenn man nicht aufpasst. 
+Der für mich wichtigste Teil war aber das Sammeln der Erfahrung in der Entwicklung, zum einen konnte ich meine Programmierkenntnisse erheblich steigern, war aber auch in der Lage die Unentbehrlichkeit von guter Dokumentation und einer klaren Programmarchitektur kennenzulernen. Ich freue mich schon auf mein nächstes Softwareprojekt, dann finden die gelernten Skills hoffentlich Verwendung und helfen dabei diese Anfängerfehler größtenteils zu vermeiden.  
 
 
