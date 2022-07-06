@@ -4,6 +4,7 @@
 include::../_includes/default-attributes.inc.adoc[]
 :imagesdir: images
 
+// tag::include_update[]
 
 In diesem Dokument sind die wesentlichen Risiken des Projekts aufgeführt.
 

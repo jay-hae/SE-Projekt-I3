@@ -4,6 +4,7 @@ Jens Rosenkranz <s82099@htw-dresden.de>; Thanh Ha Khuong <s81983@htw-dresden.de>
 include::../_includes/default-attributes.inc.adoc[]
 Platzhalter für weitere Dokumenten-Attribute
 
+// tag::include_update[]
 
 == Allgemeine Informationen
 Das Domain Model bildet die relevante Terminologie der Fachdomäne ab, mit dem Ziel, eine gemeinsame Sprache zwischen Entwicklern und Fachexperten herzustellen und Missverständnissen vorzubeugen. Es handelt sich um ein so genanntes „Visual Data Dictionary", welches für ein besseres Verständnis im Team über fachliche Zusammenhänge sorgen soll.

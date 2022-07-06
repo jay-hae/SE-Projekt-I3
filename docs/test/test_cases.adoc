@@ -1,9 +1,4 @@
 = Test Cases
-// Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
-// {localdatetime}
-// include::../_includes/default-attributes.inc.adoc[]
-// Platzhalter für weitere Dokumenten-Attribute
-
 
 == Allgemeine Informationen
 
@@ -14,6 +9,7 @@
 
 === Test Case 01: Erfolgreich ins System einloggen
 
+[cols="1,4"]
 |===
 | Beschreibung | Die Arbeitskraft gibt ihre Anmeldedaten zur Authentifizierung ein, um Zugang zum System zu erlangen.
 | Vorbedingungen und benötigte Daten a| - die Arbeitskraft ist als Nutzer angelegt
@@ -28,6 +24,7 @@
 
 === Test Case 02: Anlegen von Hochschulpartnerschaften
 
+[cols="1,4"]
 |===
 | Beschreibung | Die Arbeitskraft wählt die Funktion zum Anlegen einer neuen Hochschulpartnerschaft, trägt alle notwendigen Daten ein und speichert diese selbstständig.
 | Vorbedingungen und benötigte Daten a| - die Arbeitskraft hat sich erfolgreich angemeldet
@@ -40,12 +37,12 @@
 . Das Skript trägt in jedes Feld der Eingabe-Maske definierte Werte ein, die nicht dem Default entsprechen
 . Der Speichern Button wird betätigt
 . Der neue Datensatz erscheint nun in der Übersicht
-| Nachbedingung a| 
-- Der Datenbank wurde eine valide Hochschule in der richtigen Tabelle hinzugefügt
+| Nachbedingung | Der Datenbank wurde eine valide Hochschule in der richtigen Tabelle hinzugefügt
 |===
 
 === Test Case 03: Bearbeiten von Hochschulpartnerschaften
 
+[cols="1,4"]
 |===
 | Beschreibung | Die Arbeitskraft wählt die Bearbeitungsfunktion an einer bereits vorhandenen Partnerhochschule, um einzelne Attribute zu verändern.
 | Vorbedingungen und benötigte Daten a| - Die Arbeitskraft hat sich erfolgreich angemeldet
@@ -63,6 +60,7 @@
 
 === Test Case 04: Löschen von fehlerhaften Datensätzen
 
+[cols="1,4"]
 |===
 | Beschreibung | Eine leitende Arbeitskraft mit erweiterten Befugnissen nutzt diese um fehlerhafte Datensätze aus dem System zu löschen.
 | Vorbedingungen und benötigte Daten a| - Die Arbeitskraft hat sich erfolgreich mit den vorgesehenen Admin Zugangsdaten eingeloggt 
@@ -81,6 +79,7 @@
 
 === Test Case 05: Mentoren editieren
 
+[cols="1,4"]
 |===
 | Beschreibung | Eine Arbeitskraft will Änderungen am Datensatz der Mentoren vornehmen
 | Vorbedingungen und benötigte Daten a| - Die Daten wurden korrekt und vollständig übertragen
@@ -101,45 +100,56 @@
 
 === Test Case 06: Gleichzeitiges Bearbeiten von Datensätzen durch mehrere Personen
 
+[cols="1,4"]
 |===
-| Beschreibung | Mindestens zwei Arbeitskräfte wollen Datensätze im System bearbeiten
-| Vorbedingungen und benötigte Daten | - alle Arbeitskräfte sind erfolgreichg angemeldet
+| Beschreibung | Mindestens zwei Arbeitskräfte wollen gleichzeitig Datensätze im System bearbeiten
+| Vorbedingungen und benötigte Daten a| - alle Arbeitskräfte sind erfolgreich angemeldet
 - Die Daten wurden korrekt und vollständig übertragen
 - Datenänderungen werden unverzüglich in das System übernommen
 - direkter Datenbankzugriff um Änderungen vorzunehmen
-| Ablauf (manuell) a|. Das Skript öffnet ein Browser-Fenster und geht auf führt innerhalb des Netzwerkes der HTW auf die Login-Seite des Prototyps
-. Es erfolgt die automatisierte Eingabe der Zugangsdaten (Nutzername + Passwort)
-. Das Skript betätigt den Login Button
-. Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet und der Login-Vorgang somit erfolgreich war
-| Nachbedingung | Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
+| Ablauf (manuell) a|. Die Testenden öffnen jeweils ein Browser-Fenster und gehen innerhalb des Netzwerkes der HTW auf die Login-Seite der Webanwendung
+. Es erfolgt die Eingabe der Zugangsdaten (Nutzername + Passwort) und die Bestätigung mit dem Login-Button
+. Nach erfolgreichem Login wählen die Testenden Datensätze, die sie bearbeiten möchten und betätigen den Bearbeiten-Button
+. Die Testenden tragen in die Felder der Eingabe-Maske ihre gewünschten Werte ein
+. Der Speichern Button wird betätigt
+. Die bearbeiteten Datensatz erscheinen nun in der Übersicht
+| Nachbedingung a| - Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
+- Bie Bearbeitung des selben Datensatzes wird die letzte Änderung gespeichert und angezeigt
 |===
 
 === Test Case 07: Wechseln der Hauptreiter in max. 3s
 
+[cols="1,4"]
 |===
-| Beschreibung | Mindestens zwei Arbeitskräfte wollen Datensätze im System bearbeiten
-| Vorbedingungen und benötigte Daten | - alle Arbeitskräfte sind erfolgreichg angemeldet
-- Die Daten wurden korrekt und vollständig übertragen
-- Datenänderungen werden unverzüglich in das System übernommen
-- direkter Datenbankzugriff um Änderungen vorzunehmen
-| Ablauf (manuell) a|. Das Skript öffnet ein Browser-Fenster und geht auf führt innerhalb des Netzwerkes der HTW auf die Login-Seite des Prototyps
-. Es erfolgt die automatisierte Eingabe der Zugangsdaten (Nutzername + Passwort)
-. Das Skript betätigt den Login Button
-. Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet und der Login-Vorgang somit erfolgreich war
-| Nachbedingung | Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
+| Beschreibung | Eine Arbeitskraft will den Hauptreiter im Hauptmenü wechseln
+| Vorbedingungen und benötigte Daten a| - die Arbeitskraft ist erfolgreich angemeldet
+- die Arbeitskraft befindet sich im Hauptmenü
+| Ablauf (manuell) a|.  Die testende Person öffnet ein Browser-Fenster und geht innerhalb des Netzwerkes der HTW auf die Login-Seite der Webanwendung
+. Es erfolgt die Eingabe der Zugangsdaten (Nutzername + Passwort) und die Bestätigung mit dem Login-Button
+. Nach erfolgreichem Login wählt die testende Person im Hauptmenü den Reiter in dem sie arbeiten möchte
+. Während des Ladevorgangs beim Wechseln der Hauptreiter misst die testende Person mit einer Stoppuhr die Dauer vom Betätigen des Buttons für den Reiter bis zur Anzeige des neuen Reiters
+| Nachbedingung | Bei erfolgreichem Wechsel des Hauptreiters wird der neue Reiter in unter 3s angezeigt
 |===
 
 === Test Case 08: Ausführen der wichtigsten Aktionen in max. 2s
 
+[cols="1,4"]
 |===
-| Beschreibung | Mindestens zwei Arbeitskräfte wollen Datensätze im System bearbeiten
-| Vorbedingungen und benötigte Daten | - alle Arbeitskräfte sind erfolgreichg angemeldet
+| Beschreibung | Eine Arbeitskraft will sich einloggen oder einen Datensatz erstellen, bearbeiten oder entfernen
+| Vorbedingungen und benötigte Daten a| - die Arbeitskraft ist erfolgreich angemeldet mit den vorgesehenen Admin Zugangsdaten eingeloggt
+- Reguläre Arbeitskräfte haben keinen Zugriff auf das Löschen der Datensätze
+- Ruhende Partnerschaften dürfen nicht gelöscht werden
 - Die Daten wurden korrekt und vollständig übertragen
 - Datenänderungen werden unverzüglich in das System übernommen
 - direkter Datenbankzugriff um Änderungen vorzunehmen
-| Ablauf (manuell) a|. Das Skript öffnet ein Browser-Fenster und geht auf führt innerhalb des Netzwerkes der HTW auf die Login-Seite des Prototyps
-. Es erfolgt die automatisierte Eingabe der Zugangsdaten (Nutzername + Passwort)
-. Das Skript betätigt den Login Button
-. Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet und der Login-Vorgang somit erfolgreich war
-| Nachbedingung | Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
+| Ablauf (manuell) a|.  Die testende Person öffnet ein Browser-Fenster und geht innerhalb des Netzwerkes der HTW auf die Login-Seite der Webanwendung
+. Es erfolgt die Eingabe der Zugangsdaten (Nutzername + Passwort) und die Bestätigung mit dem Login-Button
+. Währenddessen misst die testende Person mit einer Stoppuhr die Dauer vom Betätigen des Login-Buttons bis zur Anzeige des Hauptmenüs
+. Nach erfolgreichem Login betätigt sie den Button zum Anlegen einer neuen Partnerhochschule und füllt die Felder in der Eingabe-Maske aus
+. Anschließend betätigt die testende Person den Speichern-Button und misst die Dauer vom Betätigen des Buttons bis zur Anzeige der neuen Partnerhochschule in der Übersicht
+. Daraufhin wählt sie die erstellte Partnerhochschule aus und drückt den Bearbeiten-Button
+. Dann verändert die testende Person die Bezeichnung der Partnerhochschule und betätigt den Speichern-Button
+. Erneut misst sie die Dauer vom Betätigen des Buttons bis zur Anzeige der veränderten Bezeichnung in der Übersicht
+. Nun betätigt die testende Person den Löschen-Button bei der erstellten Partnerhochschule und misst die Dauer vom Betätigen des Buttons bis zum Verschwinden der Partnerhochschule aus der Übersicht
+| Nachbedingung | Alle gemessenen Zeiten liegen beim erfolgreichen Durchführen der jeweiligen Aktionen unter 2s
 |===

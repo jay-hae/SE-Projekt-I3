@@ -4,6 +4,7 @@
 // include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+// tag::include_update[]
 
 == Einführung
 In diesem Dokument werden die systemweiten Anforderungen für das Projekt {project-name} spezifiziert. Die Gliederung erfolgt nach der FURPS+ Anforderungsklassifikation:
@@ -70,7 +71,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 ** Zur Überprüfung wird ein Skript Seitenaufrufe simulieren und deren Antwortzeit messen.
 
-*NFAP-2: In 90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein.*
+*NFAP-2: In  90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein.*
 
 ** Zur Überprüfung wird ein Skript SQL Befehle ausführen und deren Abarbeitungszeit messen.
 

@@ -1,9 +1,5 @@
 #!/bin/bash
 sudo systemctl stop se_webserver.service
 git clone https://github.com/jay-hae/SE-Projekt-I3.git
-cd SE-Projekt-I3/src/Prototyp/
-mv flaskProject\ Kopie/ flaskProject_Kopie/
-cd flaskProject_Kopie/
-sed -i -e 's/(debug=True)/(host="0.0.0.0")/g' app.py
 sudo systemctl start se_webserver.service
 

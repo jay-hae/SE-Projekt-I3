@@ -96,11 +96,11 @@ Daraufhin wurden die Verantwortlichkeiten für die Aufgaben und die zu erstellen
 === Inception
 
 In der Inception Phase haben sich die Teammitglieder zum ersten mal kennengelernt. Auf Grund der Corona-Pandemie und des damit einhergehenden generellen Online-Modus haben sich die Teammitglieder ausschließlich über zunächst verschiedene Tools (Teams, BBB, Discord) online getroffen. Da die meisten Teammitglieder ohnehin Discord als Kommunikationstool nutzten, hat Luca Meißner einen Discord-Server für das Projekt eingerichtet und hat sich für die restliche Projektdauer um die Verwaltung des Servers gekümmert.
-Innerhalb der ersten Vorstellungsrunde haben die Teammitglieder ihre projektrelevanten Vorkenntnisse und ihre bevorzugten Rollen für das Projekt genannt. Dabei hat sich herausgestellt, dass bis auf einen, kein Teammitglied Vorkenntnisse in der Erstellung von Softwareprodukten dieser Größe hatten und sich nicht in der Lage sahen die Rollen Architect, Developer der Tester zu erfüllen. Trotz dieser anfänglichen Hürde konnten letztendlich alle Rollen in gegenseitigem Einverständnis besetzt werden. Beim ersten Meeting wurde auch vereinabrt wöchentliche Teammeetings abzuhalten um jeweils die anstehenden Aufgaben und den Ist-Zustand des Projekts zu besprechen. 
+Innerhalb der ersten Vorstellungsrunde haben die Teammitglieder ihre projektrelevanten Vorkenntnisse und ihre bevorzugten Rollen für das Projekt genannt. Dabei hat sich herausgestellt, dass bis auf einen, kein Teammitglied Vorkenntnisse in der Erstellung von Softwareprodukten dieser Größe hatten und sich nicht in der Lage sahen die Rollen Architect, Developer oder Tester zu erfüllen. Trotz dieser anfänglichen Hürde konnten letztendlich alle Rollen in gegenseitigem Einverständnis besetzt werden. Beim ersten Meeting wurde auch vereinabrt wöchentliche Teammeetings abzuhalten um jeweils die anstehenden Aufgaben und den Ist-Zustand des Projekts zu besprechen. 
 Um sich einen Überblick über die Projektaufgabe zu verschaffen, haben sich die Teammitglieder darauf geeinigt sich selbstständig in die von Herrn Prof. Anke bzw. vom Themensteller sowie der Vorgruppe bereitgestellten Dokumente zu lesen und für sich Fragen zu formulieren. Außerdem wurden bereits die ersten Treffen mit dem Coach und den Themenstellern vereinbart. Damit die Teammitglieder gemeinsam an der Software und den Dokumenten arbeiten konnten hat Jakob Häcker ein GitHub Repository erstellt, welches für die gesamte Dauer des Projekts weiterverwendet wurde.
-Auf Basis der Aufgabenstellung und ersten Gesprächen mit den Themenstellern konnte eine Vision für das Projekt erstellt werden. Ebenso wurde für die ersten beiden Phasen des Projekts eine Risklist mit den zentralen Projektrisiken  erstellt. Die Teammitglieder haben sich dabei gemeinsam über GitHub an den Dokumenten gearbeitet, da bezüglich der korrekten Ausführung noch große Unsicherheit herrschte. 
+Auf Basis der Aufgabenstellung und ersten Gesprächen mit den Themenstellern konnte ein Entwurf für Vision für das Projekt erstellt werden. Ebenso wurde für die ersten beiden Phasen des Projekts eine Risklist mit den zentralen Projektrisiken  erstellt. Die Teammitglieder haben sich dabei gemeinsam über GitHub an den Dokumenten gearbeitet, da bezüglich der korrekten Ausführung noch große Unsicherheit herrschte. 
 Es stellte sich früh heraus das Pascal Thielemann hinsichtlich der Software Entwicklung über die meisten Kenntnisse verfügte. Daher hat sich das Team entschieden ihm die Entscheidung über die einzusenden IDE und die Softwarearchitektur überlassen. Generell wurden Entscheidungen demokratisch entschieden, wobei denjenigen die Entscheidung überlassen wurde, die zu der jeweiligen Fragestellung bereits Kenntnisse hatten. Innerhalb der wöchentlichen Teammeetings wurden Aufgaben gesammelt und protokolliert. Bevor das Meeting jeweils geschlossen wurde, wurden die Aufgaben verteilt bis für jede ein Verantwortlicher feststand.
-
+// 
 
 ==== Ziele
 * Team verteilt Rollen und Aufgaben
@@ -110,6 +110,8 @@ Es stellte sich früh heraus das Pascal Thielemann hinsichtlich der Software Ent
 * Eine Risklist erstellen
 * Kontakt zu Aufgabenstellern und Coach herstellen
 * Terminfindung für wöchentliche Meetings der Teammitglieder
+* die Stakeholder identifizieren
+* Skizze der Anforderungen erhalten
 
 ==== Problem 
 
@@ -127,6 +129,7 @@ Die Arbeit strikt nach den vorgegebenen Rollen hat sich anfänglich schwierig ge
 ==== Ergebnisse
 
 In der Iterationsphase konnten nach anfänglichen Schwierigkeiten gute Fortschritte erreicht werden. Es herrschte Einigkeit über die Rollenverteilung, geeignete Tools zur Kommunikation mit sämtlichen Akteuern waren gefunden und die Infrastruktur zum kollaborativen Arbeiten war bereitgestellt. Außerdem konnten die zum Projektbeginn benötigten Dokumente, wie die Vision und die Risklist erfolgreich begonnen werden. Ebenso konnte Pascal Thielemann mit den ersten Zeilen Code ein "proof of concept" liefern und unter Beweis stellen, dass die von ihm gewählten Programmiersprachen sich für die Durchführung des Projekts eigneten.
+Des weiteren konnten die Stakeholder Identifiziert werden und eine Skizze der Anforderungen sorgten für ein grobes Verständnis der Aufgabe.
 
 === Elaboration
 
@@ -162,22 +165,7 @@ In der Iterationsphase konnten nach anfänglichen Schwierigkeiten gute Fortschri
 === Reflexion der Teammitglieder
 
 ==== Jakob Häcker
-Das erstellen von komplexen Software Systemen, war für mich vor dem Modul Software Engineering nicht greifbar und somit hatte ich auch keine Vorstellung was es eigentlich bedeutet komplexe Software in Teamarbeit zu erstellen, geschweige denn was alles dafür nötig ist.
-Eins blieb mir jedoch aus dem Fakultativen Modul von Frau Hauptmann - Soziale Kompetenzen im Projektmanagement - in Erinnerung.
-Nämlich, dass ca. 50% der Softwareprojekte im Team an zwischen Menschlichen kompetenzen scheitern.
-Inspieret von diesem zusatz Modul entschied ich mich als Projektleiter vorzuschalgen.
 //Was ich nicht wusste war, welche Verantwortung ich mir mit dieser Wahl auferlegte.
-
-Was ich hauptsächlich aus der Projekt arbeit mitnehme:
-1) Mann muss Entscheidungen fällen auch wenn sie sich höchstwahrscheinlch in naher Zukunft als falsch erweisen.
-- geht im allgemeinen darum das man lernen muss die Angst vor wichtigen entscheidungen ablegt und lieber etwas zu entscheiden als garnichts zu entscheiden
-- schein bar simpel aber ohne es Erlbt zu haben weiß man nicht wirklich was der Satz tatsächlich bedeutet
-- ist in dem Projekt kontext sehr wichtig dass verstanden zu haben, da sonst viel zeit verloren geht und man auch keine grundlage hat die man verbessern kann. 
-- auch zwingt es einen 
-
-2) Was es bedeutet verantwortung zu übernehemen
-- entscheidungen fällen
-- ansprech partner für alle zu sein (hat mir viel freude bereitet)
 
 
 

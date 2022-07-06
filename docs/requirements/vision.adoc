@@ -10,6 +10,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 // Platzhalter für weitere Dokumenten-Attribute
 
+// tag::include_update[]
 
 == Einführung
 Um das Projekt im Groben einordnen zu können, ist es wichtig sich mit den Rahemenbedingungen des Projektes vertraut zu machen.
@@ -31,9 +32,9 @@ der Datenbank der Stabsstelle Internationales, das von Team I3 entwickelt wird.
 Das System wird es den Mitarbeitern der Stabsstelle Internationales erlauben, innerhalb einer Webanwendung die Hochschulpartnerschaften sowie die Austauschprogramme für Studierende und Hochschullehrer zu verwalten und Statistiken und Berichte aus diesen Informationen zu erstellen. Außerdem werden für Studierende relevante Informationen zu den Hochschulpartnerschaften aus der Datenbank im Backend auf der Webseite angezeigt. 
 
 
-=== Definitionen, Akronyme und Abkürzungen
+//=== Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
-Siehe <<#glossary, Glossar>>.
+//Siehe <<#glossary, Glossar>>.
 
 === Referenzen
 Referenzen und Verweise werden - gegebenenfalls - an den benötigten Stellen eingefügt.
@@ -169,67 +170,42 @@ Die Priorität der Funktion ist mit den Zahlen 1 bis 10 skaliert, wobei 1 die ni
 [%header, cols="4,1,4,1"]
 |===
 | Funktionalität | Priorität | Features | Geplantes Release
-| System login 
+| In System Einloggen
 | 10 
 | soll den Nutzern per Authentifizierung den Zugang zum Verwaltungsfrontend gewähren 
 | Sommersemester 2022
 
-| Anlegen von Partnerhochschulen
+| Partnerhochschulen Anlegen
 | 10 
 | Zum Erzeugen neuer Partnerhochschulen im Verwaltungsfrontend
 | Sommersemester 2022
 
-| Bearbeiten von Hochschulen 
+| Partnerhochschulen Editieren 
 | 10 
-| Zum Snpassen eines oder mehrerer Hochschulattribute im Verwaltungsfrontend
+| Zum Anpassen eines oder mehrerer Hochschulattribute im Verwaltungsfrontend
 | Sommersemester 2022
 
-| Löschen von fehlerhaften Datensätzen
+| Datensätzen Löschen
 | 5 
 | Zum Löschen eines Datenbankattributes im Verwaltungsfrontend
 | Sommersemester 2022
 
-| Anlegen von Mentoren 
+| Mentoren Editieren 
 | 7
-| Zum Erzeugen neuer Mentoren im Verwaltungsfrontend
+| Zum Anpassen eines oder mehreren Mentoren im Verwaltungsfrontend
 | Sommersemester 2022
 
-| Bearbeiten von Mentoren 
-| 7
-| Zum Anpassen eines Mentoren im Verwaltungsfrontend
-| Sommersemester 2022
-
-| Löschen von Mentoren
-| 5 
-| Zum Löschen eines Mentoren im Verwaltungsfrontend
-| Sommersemester 2022
-
-| Erstellen von Berichten über Erasmusvereinbarungen
+| Berichte Erstellen
 | 3 
 | Zum Erstellen eines Berichtes im Verwaltungsfrontend
 | Sommersemester 2022
 
-| Erstellen von Berichten über Mentoren
-| 3 
-| Zum Erstellen eines Berichtes im Verwaltungsfrontend
-| Sommersemester 2022
-
-| Erstellen von Berichten über Hochschulvereinbarungen
-| 3 
-| Zum Erstellen eines Berichtes im Verwaltungsfrontend
-| Sommersemester 2022
-
-| Erstellen von Berichten über Abkommen nach Länder sortiert
-| 3 
-| Zum Erstellen eines Berichtes im Verwaltungsfrontend
-| Sommersemester 2022
-
-| Berichte Exportieren
+| Erstellte Berichte Exportieren
 | 3 
 | Zum Exportieren eines Berichtes im Verwaltungsfrontend
 | Sommersemester 2022
 
-| Externe Abfragen
+| Berichte für Externe Anzeigen
 | 3 
 | Zum Anzeigen von Informationen für Externe
 | Sommersemester 2022

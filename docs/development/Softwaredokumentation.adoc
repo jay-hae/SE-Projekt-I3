@@ -5,6 +5,8 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == HTML
 
+Beim erstellen der einzelnen Seiten wurde Wert darauf gelegt, den Aufwand so gering wie möglich zu halten und die Implementierung sehr simpel zu gestalten. Daher wurden alle Seiten in HTML geschrieben. Des Weiteren wurde darauf geachtet, nur HTML-Features zu nutzen welche auch von den gängigsten Browsern unterstüzt werden. So kann eine unterschiedliche Darstellung je nach Arbeitsplatz ausgeschlossen werden. 
+
 == CSS
 
 Für die gestaltung der Webanwendung in CSS wurde die Bibliothek Bootstrap genutzt. 
