@@ -106,7 +106,7 @@ Es stellte sich früh heraus das Pascal Thielemann hinsichtlich der Software Ent
 * Skizze der Anforderungen erhalten
 * Infrastruktur zur Kooperativen Arbeit am Code aufbauen
 
-==== Problem 
+==== Probleme
 
 ===== Terminfindung
 Es hat sich als sehr schwierig herausgestellt einen Termin zu für das wöchentliche Teammeeting zu finden. Um dieses Problem zu lösen wurde zunächst eine Exceltabelle mit den einer Art Kalender erstellt, in den alle Teammitglieder ihre Verfügbarkeiten eingetragen haben. Die Verfügbarkeiten wurden dann abgeglichen und auf Überschneidungen untersucht. Mit dieser Methode konnte kein gemeinsamer Termin gefunden werden. Um den Abgleich agile zu gestalten, wurde das online-Tool doodle verwendet und ein erneuter Versuch gestartet. Nachdem auch das nicht funktioniert hat, hat man sich auf einen Termin geeinigt an dem die meisten Teammitglieder Zeit hatten. Für diejenigen, die an den Meetings nicht live teilnehmen konnten, wurden ausführliche Protokollen angefertigt und nachträglich Telefonate mit einzelnen Teammitgliedern geführt, um jeden auf den neuesten Stand zu bringen.
@@ -126,35 +126,82 @@ Des weiteren konnten die Stakeholder Identifiziert werden und eine Skizze der An
 
 === Elaboration
 
-In der zweiten Phase des Projekts 
+Zu Beginn der zweiten Phase des Projekts hat sich zwischen den Teammitgliedern langsam ein solider Arbeitsrythmus entwickelt.  In den Treffen mit den Themenstellenden wurden die wichtigsten Use Cases und die systemweitern Anforderungen herausgearbeitet. Mit der Hilfe von Wireframes konnte sich das Team mit der SI auf die Struktur der Oberfläche der Webanwendung einigen und die Vision von der fertigen Anwendung weiter ausarbeiten. Auf Basis dieser Erkenntnis nahm auch der Prototyp langsam Form an und erhielt erste Funktionalitäten.
 
 ==== Ziele
 * erste Wireframes erstellen
 * Use Cases und Systemweite Anforderungen identifizieren
+* Use Case Modell erstellen
 * bestehendes Datenmodell erfassen
 * mit der Entwicklung des Prototyps beginnen
 * Dokumente (Vision, Risklist, Use Cases) ausarbeiten
 * Dokument zur Belegabgabe fertigstellen
 
-==== Problem 
+==== Probleme 
 
-===== 
+===== Schlechte Vorbereitung auf Meetings mit Themenstellenden
+
+Während das Team auf eine gewissen Regelmäßigkeit bei den Treffen mit der SI geachtet hat und auch eine gute Arbeitsatmosphäre bei den Treffen erzeugen konnte, ist es doch einige Male deutlich geworden, dass man sich auf die Treffen hätte besser vorbereiten müssen. So waren zum Beispiel Software-Anwendungen die zur Präsentation von Zwischenergebnisse benötigt wurden noch nicht im Vorfeld gestartet worden, was zu Wartezeiten führte. Wenn Teammitlgieder nicht Anwesend sein konnten, haben sich die übrigen Teammitglieder nicht rechtzeitig über deren Arbeitsfortschritt informiert und es konnten diese nicht präsentiert werden. Um sich dahingehend zu verbessern hat sich insbesondere der Projektleiter Jakob Häcker bemüht vor den Meetings mit der SI alle Informationen zu sammeln und die Teammitglieder an eine gute Vorbereitung ihrer Präsentation zu erinnern. 
+
+===== Missverständnisse mit dem Kunden
+
+Obwohl das Team jedes Meeting mit der Stabstelle Internationales protokolliert hatte, kam es einige Male zu Missverständnissen. Die Dokumentation der Vereinbarungen der Meetings war teilweise nicht ausführlich genug oder es wurde versäumt wichtige Informationen festzuhalten. Daraufhin wurde  neben einer höheren Disziplin beim Protokollieren ebenso die Verantwortlichkeit neu vereinbart. Statt nur einem Teammitglied sollten ab sofort alle, die gerade nicht sprechen bzw. präsentieren, ausführliche Notizen im Protokollierungstool Pentapad machen. Das gemeinsame Protokollieren hat zu umfassenden und verlässlichen Ergebnisse geführt. 
+
+===== Hohe Arbeitsbelastung zum Semesterende
+
+Das Team hat glücklicherweise schon früh in der Elaborationsphase realisiert, dass die Arbeitsbelastung am Ende des Semesters auf Grund sonstiger Verpflichtungen im Studium zu Problemen für das Projekt führen könnte. Um dies zu verhindern wurden Deadlines künstlich vorverlegt. Dieses vorgehen konnte zumindest extreme Stressphasen verhindern.
 
 ==== Ergebnisse
+
+Am Ende der Elaborationsphase konnte das Team, die im ersten Semester geforderten Dokumente und Modelle erstellen. Dazu gehörten das Use Case Modell und die Use Case Beschreibungen, das Datenmodell und die Ausarbeitung des Projektplans. Ebenso konnte das Team den Protypen so weiterentwickeln, dass eine funktionsfähige Software zum Ende des Projekts erreichbar wurde. Die Webanwenung konnte zu diesem Zeitpunkt von der Virtuellen Maschine abgerufen werden und bereits die Inhalte aus der Datenbank anzeigen.
 
 === Construction
+
+Mit dem vierten Semester begann die dritte Phase des Projekts, die Construction Phase. In den Semesterferien hatten die Teammitglieder Gelegenheit das vergangene Semester und die ersten Phasen des Projektes zu reflektieren und sind zu dem Schluss gekommen, ihre Arbeitsweise agiler gestalten zu wollen und die Rollen so zu verteilen wie es sich durch das bisherige Engagement ergeben hat. Bisher wurden wöchentlich einzelne Detail-Aufgaben identifiziert und in den Meetings verteilt. 
+Es wurden kleine Arbeitsgruppen vereinbart, die einen ganzen Bereich übernehmen sollten. Roman Patzig und Patrick Matthes waren ab sofort für das Testen verantwortlich, Nico Rosenkranz für das Aktualisieren der Anforderungsspezifikaton, Luca Meißner für die Anwenderdokumentation und Jakob Häcker für die Betriebsdokumentation. Pascal Thielemann würde weiter als Hauptprogrammiere agiern mit er Unterstützung durch Thanh Ha Khuong und Jens Rosenkranz, die außerdem die Entwicklerdokumentation übernehmen sollten.
+Dieses Konzept des eigenverantwortlichen Arbeitsens, gepaart mit klaren Deadlines und Arbeitszielen hat sich schnell als sehr effektiv herausgestellt. Das Hauptaugenmerk dieser Phase sollte natürlich auf der Implementierung liegen. Glücklicherweise konnten ab dieser Phase weitere Teammitglieder bei der der Softwareprogrammierung unterstützen und den Prozess somit beschleunigen. 
+Weiterhin hat sich das Team eine einfache Erweiterbarkeit und Wartbarkeit ihrer Software zum Ziel gesetzt und sich um eine ausführliche Softwaredokumentation, eindeutige Datei- und Variablenbennenung bemüht.
+
 ==== Ziele
+
+* Ausarbeitung der Softwaredokumentation
+* Implementierung der Funktionalitäten
+* Definition und Durchführung der Tests
+* Fertigstellung Benutzerdokumentation
+* Vorbereitung Zielumgebung für Installation
+
 ==== Problem 
+
+===== Einige Use Cases konnten nicht umgesetzt werden
+
+Im Laufe der Construction Phase hat sich abgezeichnet, dass nicht mehr alle ursprünglich vereinbarten Funktionen der Software umgesetzt werden können. Während die Umsetzung der Funktion zur Erstellung von Statistiken leicht möglich wäre, fehlte dazu am Ende einfach die Zeit.
+
+
 ==== Ergebnisse
+
 
 === Transition
 ==== Ziele
+
+* Finale Tests durchführen
+* Abnahmeprotokoll erstellen
+* Überführung des Systems auf Zielplattform
+* Schulung der Mitarbeiter der SI
+* Abschluss des Projekts
+
 ==== Problem 
+
+===== Virtual Machine wird gelöscht
+
+
 ==== Ergebnisse
 
 
 == Ergebnisse
+
+
 === Softwaresystem
+
 ==== Lizenz
 
 === Reflexion der Teammitglieder
