@@ -71,6 +71,14 @@
 | Vorbedingungen und benötigte Daten a| - Die Arbeitskraft hat sich erfolgreich mit den vorgesehenen Admin Zugangsdaten eingeloggt 
 - Reguläre Arbeitskräfte haben keinen Zugriff auf das Löschen der Datensätze
 - Ruhende Partnerschaften dürfen nicht gelöscht werden
+| Ablauf (automatisiert) a|. Das Skript öffnet ein Browser-Fenster und geht auf führt innerhalb des Netzwerkes der HTW auf die Login-Seite des Prototyps
+. Es erfolgt die automatisierte Eingabe der Admin-Zugangsdaten (Nutzername + Passwort)
+. Das Skript betätigt den Login Button
+. Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet
+. Es wird der Lösch-Button eines bestehenden Datensatzes betätigt
+. Es erfolgt eine Abfrage ob der ausgewählte Datensatz wirklich gelöscht werden soll
+. Der Bestätigungs-Button wird betätigt
+. Der Datensatz wurde erfolgreich gelöscht
 | Nachbedingung a| Der fehlerhafte Datensatz wurde aus der entsprechenden Datenbankrelation entfernt
 |===
 
@@ -82,6 +90,14 @@
 | Vorbedingungen und benötigte Daten a| - Die Daten wurden korrekt und vollständig übertragen
 -  Datenänderungen werden unverzüglich in das System übernommen
 - direkter Datenbankzugriff um Änderungen vorzunehmen
+| Ablauf (manuell) a|. Das Skript öffnet ein Browser-Fenster und geht auf führt innerhalb des Netzwerkes der HTW auf die Login-Seite des Prototyps
+. Es erfolgt die automatisierte Eingabe der Zugangsdaten (Nutzername + Passwort)
+. Das Skript betätigt den Login Button
+. Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet
+. In der Headline wird unterm Menüpunkt Themen der Punkt Mentoren ausgewählt
+. Es wird der Bearbeitungs-Button des zu bearbeitenden Datensatzes angeklickt
+. Im Anschluss werden die Default-Werte mit neuen Werten ersetzt
+. Der Speichern-Button wird betätigt
 | Nachbedingung a| Bei erfolgreicher Änderung werden die Daten aus dem Datensatz ersetzt und bei Abfrage erfolgreich angezeigt
 |===
 

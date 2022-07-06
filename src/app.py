@@ -353,4 +353,4 @@ def return_session():
 
 
 if __name__ == '__main__':
-    app.run(debug=True) # bei Fehlern in der VM debug=True durch host='0.0.0.0' ersetzen
+    app.run(host="0.0.0.0") # zum debuggen: host='0.0.0.0' durch debug=True ersetzen

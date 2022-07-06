@@ -8,7 +8,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Projektangaben
 
-Thema: Verwaltung von Hochschulpartnerschaften
+Thema: {project-name}
 
 Abgabedatum: 28.06.2022
 
@@ -33,15 +33,15 @@ GitHub Repository: https://github.com/jay-hae/SE-Projekt-I3
 |===
 |Anforderung | Erfüllt | Anmerkung
 |SWFA-1: Das System muss alle Hochschulpartnerschaften und Statistiken persistent speichern. | Ja  | Nur statistiken werden nicht gespeichert (siehe UC06)
-|SWFA-2: Nur autorisierte Mitarbeiter des Akademischen Auslandsamtes dürfen Zugriff auf das Verwaltungsfrontend haben. | Ja  | Im prinzip alle, die über die Anmeldedaten der Datenbank verfügen.
-|SWFA-3: Das Interface des Systems ist je nach Nutzer unterschiedlich. Einige Funktionen können nur von bestimmten Nutzern durchgeführt werden. | Ja | Lösch-Button nur mit Admin-Login sichtbar
+|SWFA-2: Nur autorisierte Mitarbeitende der Stabsstelle Internationales dürfen Zugriff auf das Verwaltungsfrontend haben. | Ja  | Im Prinzip alle, die über die Anmeldedaten der Datenbank verfügen.
+|SWFA-3: Das Interface des Systems ist je nach Nutzerklasse unterschiedlich. Einige Funktionen können nur von bestimmten Nutzerklassen durchgeführt werden. | Ja | Lösch-Button nur mit Admin-Login sichtbar
 |NFAU-1: Das System sollte sowohl auf großen PC-Monitoren sowie auf kleinen Laptop Bildschirmen bedienbar sein. | Ja  |
-|NFAU-2: Das Verwaltungsfrontend sollte auf Brave, Chrome, Firefox und Edge laufen | Ja |
-|NFAR-1: Bei einer Wiederherstellung der Datenbank auf einen Vorzustand muss das Verwaltungsfrontend weiterhin funktionieren. | Ja | Erfüllt, solange sich Tabellenstruktur nicht verändert.
-|NFAR-2: Das Verwaltungsfrontend und das Informationsfrontend müssen parallel auf Daten zugreifen können. | Nein | nicht erreichbar siehe Use-Case 8
+|NFAU-2: Das Verwaltungsfrontend sollte auf den Browsern Brave, Chrome, Firefox und Edge laufen | Ja |
+|NFAR-1: Bei einer Wiederherstellung der Datenbank auf einen Vorzustand muss das Verwaltungsfrontend weiterhin funktionieren. | Ja | Erfüllt, solange die Tabellenstruktur nicht verändert wird.
+|NFAR-2: Das Verwaltungsfrontend und das Informationsfrontend müssen parallel auf Daten zugreifen können. | Nein | nicht erreicht (siehe UC08)
 |NFAR-3: Das System muss paralleles Lesen und Schreiben im Verwaltungsfrontend unterstützen. | Ja  | Erfüllt, es besteht aber die Gefahr von "Lost-Updates".
-|NFAP-1: Der Wechsel zwischen den Reitern des Verwaltungsfrontends sollte maximal 3 Sekunden dauern | Ja | Es gab keinen Test, in dem das Gegenteil der Fall war.
-|NFAP-2: In mindestens 90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein. | Ja | Es gab keinen Test, in dem das Gegenteil der Fall war.
+|NFAP-1: Der Wechsel zwischen den Reitern des Verwaltungsfrontends sollte maximal 3 Sekunden dauern | Ja | Ist erfüllt. Es wurden deutlich schnellere Zeiten bei den Testungen gemessen.
+|NFAP-2: In mindestens 90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein. | Ja | Ist erfüllt. Es wurden deutlich schnellere Zeiten bei den Testungen gemessen.
 |Zusätzlich: Das System muss mit der bereits bestehenden Datenbankstruktur funktionieren. | Ja |
 |===
 
