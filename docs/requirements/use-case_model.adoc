@@ -21,11 +21,11 @@ Im folgenden werden die bisher identifizierten Use Cases benannt. Die 6 wichtigs
 * <<_uc01_in_system_einloggen>>
 * <<_uc02_partnerhochschulen_anlegen>>
 * <<_uc03_partnerhochschulen_editieren>>
-* <<_uc04_fehlerhafte_datensätze_löschen>>
+* <<_uc04_datensätze_löschen>>
 * <<_uc05_mentoren_editieren>>
-* <<_uc06_berichte_erstellen>>
-* <<_uc07_erstellte_berichte_exportieren>>
-* <<_uc08_berichte_für_externe_anzeigen>>
+* <<_uc06_berichte_erstellen>> (geplant)
+* <<_uc07_erstellte_berichte_exportieren>> (geplant)
+* <<_uc08_berichte_für_externe_anzeigen>> (geplant)
 
 === für Akteur Mitarbeiter SI
 ==== *UC01*: In System Einloggen
