@@ -5,7 +5,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == HTML
 
-Beim erstellen der einzelnen Seiten wurde Wert darauf gelegt, den Aufwand so gering wie möglich zu halten und die Implementierung sehr simpel zu gestalten. Daher wurden alle Seiten in HTML geschrieben. Des Weiteren wurde darauf geachtet, nur HTML-Features zu nutzen welche auch von den gängigsten Browsern unterstüzt werden. So kann eine unterschiedliche Darstellung je nach Arbeitsplatz ausgeschlossen werden. 
+Beim erstellen der Grundstruktur der Webanwendung in HTML lag das Hauptaugenmerk darauf die Implementierung möglichst simpel zu gestalten und gleichzeitig den Programmieraufwand gering zu halten. Das Team hat sich daher dazu entschieden auf die Implementierung einer Single-Page Application zu verzichten und die Seiten (Mentoren, Fakultäten, Hochschulen etc.) einzeln zu coden. Des Weiteren wurde darauf geachtet nur HTML-Features zu nutzen, welche auch von den gängigsten Browsern unterstützt werden. So kann eine unterschiedliche Darstellung je nach Arbeitsplatz ausgeschlossen werden. 
 
 == CSS
 
