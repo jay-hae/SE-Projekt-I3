@@ -28,7 +28,7 @@
 
 // Test Cases
 
-include::../../docs/test/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
+include::../../docs/test/test_cases.adoc[lines=1..-1,leveloffset=+1]
 
 :leveloffset: -1
 
@@ -36,10 +36,10 @@ include::../../docs/test/test_cases.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 :leveloffset: +1
 
-include::../../docs/test/Testdurchführungsplan.adoc[lines=1..1;4..-1,leveloffset=+1]
+include::../../docs/test/Testdurchführungsplan.adoc[lines=1..-1,leveloffset=+1]
 
 // Abnahmetests
 
-include::../../docs/test/Abnahmetests.adoc[lines=1..1;4..-1,leveloffset=+1]
+include::../../docs/test/Abnahmetests.adoc[lines=1..-1,leveloffset=+1]
 
 :leveloffset: -1
