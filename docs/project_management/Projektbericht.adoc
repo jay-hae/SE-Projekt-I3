@@ -27,13 +27,15 @@ abgeschlossen (Software Engineering I). Außerdem konnte im vorherigen Semester 
 ==== Team & Rollen
 Das Projektteam besteht aus 8 Mitgliedern, dessen Größe über die Module SE I und SE II konstant geblieben sind. 
 
-• Project-Manager: Jakob Häcker (JH)
+Vorläufige Teamaufteilung:
+• Project-Manager: Jakob Häcker (JH), Luca Meißner (LM)
 • Analyst: Nico Rosenkranz (NR), Patrick Matthes  (PM) 
 • Architect: Pascal Thielemann (PT)
 • Developers: Pascal Thielemann, Thanh Ha Khuong (HK), Jens Rosenkranz (JR)
 • Tester: Patrick Matthes, Roman Patzig (RP)
-• Deployment Engineer: Luca Meißner (LM)
+• Deployment Engineer: nicht besetzt
 • Technical Writers: Thanh Ha Khuong, Jens Rosenkranz
+Diese hat sich zum Beginn des 2. Projekt-Semesters ein wenig geändert.
 
 ==== Kommunikation
 
@@ -157,7 +159,8 @@ Am Ende der Elaborationsphase konnte das Team, die im ersten Semester geforderte
 
 === Construction
 
-Mit dem vierten Semester begann die dritte Phase des Projekts, die Construction Phase. In den Semesterferien hatten die Teammitglieder Gelegenheit das vergangene Semester und die ersten Phasen des Projektes zu reflektieren und sind zu dem Schluss gekommen, ihre Arbeitsweise agiler gestalten zu wollen und die Rollen so zu verteilen wie es sich durch das bisherige Engagement ergeben hat. Bisher wurden wöchentlich einzelne Detail-Aufgaben identifiziert und in den Meetings verteilt. 
+Mit dem vierten Semester begann die dritte Phase des Projekts, die Construction Phase. In den Semesterferien hatten die Teammitglieder Gelegenheit das vergangene Semester und die ersten Phasen des Projektes zu reflektieren und sind zu dem Schluss gekommen, ihre Arbeitsweise agiler gestalten zu wollen und die Rollen so zu verteilen wie es sich durch das bisherige Engagement ergeben hat. Der Beginn unseres 2. Projekt-Semesters begann alos mit einer Umstrukturierung des Teams.
+Da, in den ersten 2 Phasen, die Zuweisung der Rollen in der Projektpraxis meist nicht der Aufgabenzuteilung entsprachen haben sich die tatsächlichen Rollen auf die Teammitglieder wie von selbst etwas Verschoben.Bisher wurden wöchentlich einzelne Detail-Aufgaben identifiziert und in den Meetings verteilt. 
 Es wurden kleine Arbeitsgruppen vereinbart, die einen ganzen Bereich übernehmen sollten. Roman Patzig und Patrick Matthes waren ab sofort für das Testen verantwortlich, Nico Rosenkranz für das Aktualisieren der Anforderungsspezifikaton, Luca Meißner für die Anwenderdokumentation und Jakob Häcker für die Betriebsdokumentation. Pascal Thielemann würde weiter als Hauptprogrammiere agiern mit er Unterstützung durch Thanh Ha Khuong und Jens Rosenkranz, die außerdem die Entwicklerdokumentation übernehmen sollten.
 Dieses Konzept des eigenverantwortlichen Arbeitsens, gepaart mit klaren Deadlines und Arbeitszielen hat sich schnell als sehr effektiv herausgestellt. Das Hauptaugenmerk dieser Phase sollte natürlich auf der Implementierung liegen. Glücklicherweise konnten ab dieser Phase weitere Teammitglieder bei der der Softwareprogrammierung unterstützen und den Prozess somit beschleunigen. 
 Weiterhin hat sich das Team eine einfache Erweiterbarkeit und Wartbarkeit ihrer Software zum Ziel gesetzt und sich um eine ausführliche Softwaredokumentation, eindeutige Datei- und Variablenbennenung bemüht.
@@ -181,6 +184,8 @@ Im Laufe der Construction Phase hat sich abgezeichnet, dass nicht mehr alle ursp
 
 
 === Transition
+Das Ende unserer Projekt arbeit 
+
 ==== Ziele
 
 * Finale Tests durchführen
@@ -193,8 +198,20 @@ Im Laufe der Construction Phase hat sich abgezeichnet, dass nicht mehr alle ursp
 
 ===== Virtual Machine wird gelöscht
 
+* Anwenderdokumentation schreiben (LM)
+* Entwickler/Softwaredokumentation schreiben (HK, JR)
+* Bugfixing (PT)
+* Test Dokumentation durchführen (PM, RP)
+* Betriebsdokumentation schreiben, Deployment-Situation klären (JH)
+* Anforderungspezifikation auf konsistenz Prüfen (NR)
+* Lizenzbeschreigung erstellen (NR)
+
+==== Problem 
+===== neue Anforderungen
+===== Deployment
 
 ==== Ergebnisse
+
 
 
 == Ergebnisse
