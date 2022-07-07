@@ -244,19 +244,6 @@ Das Ende unserer Projektarbeit
 In dieser Phase konnten wir unseren Themenstellern bereits eine weitläufig funktionsfähige Software zu testzwecken bereitstellen. Dadurch ist es kundenseitig zu neuen Anforderungen und Wünschen gekommen, die wir in der verbleibenden Zeit nicht mehr umsetzen konnten. 
 Wir konnten den Themenstellern allerdings versichern, dass wir für etwaige Folgeteams die Erweiterbarkeit auf einem möglichst hohen Level halten werden und das ihre Wünsche in Zukunft zumindest teilweise umgesetzt werden könnten. 
 
-===== Virtual Machine wird gelöscht
-
-== Produktergebnis
-
-
-
-===== Deployment
-
-==== Ergebnisse
-
-Der Prototyp war zu diesem Zeitpunkt schon fertig, alle zu schaffenden Use Cases waren implementiert. Wir haben uns schlussendlich darauf geeinigt, noch einige kleine, von der SI gewünschte, Änderungen umzusetzen. Darauf haben wir zum einen darauf geachtet unseren Projektabschluss nicht zu gefährden, außerdem war es für uns wichtig keine große Funktionalitätsänderung mehr umzusetzen. Dadurch wurde sichergestellt dass sich an der Software-/ und Entwicklerdokumentation nichts mehr ändert. Grundlegend wurden nur kleine Änderungen am User Interface vorgenommen, einige Layouts der Eingabemasken wurden verändert und wir haben die Datenbankanfragen ein wenig angepasst um mehr Informationen anzeigen zu können. 
-
-
 === Softwaresystem
 
 ==== Lizenz
@@ -264,7 +251,17 @@ Der Prototyp war zu diesem Zeitpunkt schon fertig, alle zu schaffenden Use Cases
 Informationen zur Lizenz sind in der README des GitHub-Repositories zu finden.
 
 
-=== Reflexion der Teammitglieder
+===== Virtual Machine wird gelöscht
+
+
+== Produktergebnis
+
+Der Prototyp war zu diesem Zeitpunkt schon fertig, alle zu schaffenden Use Cases waren implementiert. Wir haben uns schlussendlich darauf geeinigt, noch einige kleine, von der SI gewünschte, Änderungen umzusetzen. Darauf haben wir zum einen darauf geachtet unseren Projektabschluss nicht zu gefährden, außerdem war es für uns wichtig keine große Funktionalitätsänderung mehr umzusetzen. Dadurch wurde sichergestellt dass sich an der Software-/ und Entwicklerdokumentation nichts mehr ändert. Grundlegend wurden nur kleine Änderungen am User Interface vorgenommen, einige Layouts der Eingabemasken wurden verändert und wir haben die Datenbankanfragen ein wenig angepasst um mehr Informationen anzeigen zu können. 
+
+
+
+
+== Reflexion der Teammitglieder
 
 ==== Jakob Häcker
 Das Erstellen von komplexen Software Systemen, war für mich vor dem Modul Software Engineering nicht greifbar und somit hatte ich auch keine Vorstellung was es eigentlich bedeutet komplexe Software in Teamarbeit zu erstellen, geschweige denn was alles dafür nötig ist.
