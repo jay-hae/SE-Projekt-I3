@@ -193,21 +193,24 @@ Das Ende unserer Projekt arbeit
 * Überführung des Systems auf Zielplattform
 * Schulung der Mitarbeiter der SI
 * Abschluss des Projekts
-
-==== Problem 
-
-===== Virtual Machine wird gelöscht
-
 * Anwenderdokumentation schreiben (LM)
 * Entwickler/Softwaredokumentation schreiben (HK, JR)
-* Bugfixing (PT)
+* Bugfixing (PT, HK, JR)
 * Test Dokumentation durchführen (PM, RP)
 * Betriebsdokumentation schreiben, Deployment-Situation klären (JH)
 * Anforderungspezifikation auf konsistenz Prüfen (NR)
 * Lizenzbeschreigung erstellen (NR)
 
 ==== Problem 
+
+===== Virtual Machine wird gelöscht
+
+
+
+==== Problem 
+
 ===== neue Anforderungen
+
 ===== Deployment
 
 ==== Ergebnisse
