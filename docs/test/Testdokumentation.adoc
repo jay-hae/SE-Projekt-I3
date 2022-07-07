@@ -24,6 +24,16 @@
 
 == Testkonzept
 
+Eine Software besteht aus vielen unterschiedlichen Teilen und bietet eine ebenso große Anzahl an Funktionen. Dazu kommen einige nicht-funktionale Fassetten, welche die allgemeine Qualität der Software erhöhen. Um eine ausreichende Qualitätssicherung zu betreiben, benötigen wir daher ein klar definiertes Vorgehen, welches auf die Testung der einzelnen Bestandteile unserer Software abziehlt. Durch diese Testung lassen sich dann Fehler bei der Implementierung, welche dann behoben werden können aufdecken und schlussendlich kann dem Kunden die Funktionalität und Qualität unseres Softwareprodukts nachgewiesen werden. Dementsprechend wird die Testung auf Testobjekte aufgeteilt, um durch viele kleinere Tests eine Einschätzung für das Gesamtprodukt zu erarbeiten. Die Prioritisierung unserer Test Cases erfolgt absteigend (Je höher die TC-Nummer, desto niedriger die Priorität), allerdings getrennt zwischen funktionalen und nicht-funktionalen Test Cases.
+
+In unserem Projekt haben wir dafür 2 Objekte, die es zu Testen gilt, identifiziert. Zum einen ist die Schnittstelle zur Datenbank essentiell für unsere Anwendung und zum zweiten ist unser Frontend, also die Arbeitsoberfläche mit der unsere Kunden später arbeiten sollen, eins der wichtigsten Bestandteile unserer Software. 
+
+Das erste Testobjekt, die Schnittstelle zwischen Datenbank und Webanwendung,  implementiert dabei den Großteil der Funktionalitäten. Diese Umfassen die Überprüfung der Zugangsberechtigung über ein Login-Verfahren, sowie das Anlegen, Bearbeiten und Löschen von unterschiedlichen Datensätzen. Getetestet werden diese in den Test Cases 01, 02, 03, 04, 05 und 06.  und spiegelt sich aus unseren Use Cases wieder.
+
+Das zweite Testobjekt, die Arbeitsoberfläche im Browser, ist hingegen für die Nutzbarkeit der Gesamtsoftware ausgehend vom Kunden nötig. Im Vordergrund stehen in unserem Fall die einfache Durchführung und Performance der Grundfunktionen unserer Software. Die Test Cases 02, 03, 07 und 08 sind für dieses Testobjekt die Wichtigsten.
+
+Methodisch haben wir bei der Testung mit dem "Black-Box"-Prinzip gearbeitet, da die Vorgehensweiße einfach durch den Kunden nachvollziehbar ist. Dabei werden alle Eingaben über das Frontend getätigt ohne Kenntnis vom Backend zu haben. Tests sind dann erfolgreich, wenn bei der Ausführung und Eingabe, der in den Tests vorgegebenen Aktionen und Eingabedaten, die Ausgabedaten mit den vor der Testdurchführung erwarteten Ausgabedaten übereinstimmen. Die Test Cases 01-05 sind dabei automatisiert über Selenium durchgeführt wurden, wodurch die Tests einfacher zu reproduzieren sind. Die restlichen Tests 06-08 wurden hingegen manuell durchgeführt.
+
 
 
 // Test Cases

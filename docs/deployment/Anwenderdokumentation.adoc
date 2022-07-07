@@ -3,7 +3,7 @@ include::../_includes/default-attributes.inc.adoc[]
 = Anwenderdokumentation: {project-name}
 
 == 1. Einführung
-Bei diesem Dokument handelt es sich um eine Anleitung zur Handhabung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden. Alle Schritte zur Erfüllung eines Use Cases und somit Durchführung einer Aufgabe mithilfe der Software sind nachfolgend erläutert. 
+Bei diesem Dokument handelt es sich um eine Anleitung zur Handhabung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden. Alle Schritte zur Erfüllung eines Use Cases, und somit die Durchführung einer Aufgabe mithilfe der Software sind nachfolgend erläutert. 
 
 == 2. Systemvorrausetzungen
 Um mit der Web-Applikation arbeiten zu können, müssen einige Bedingungen für die Reibungslose Funktion erfüllt sein:
@@ -54,7 +54,7 @@ image::uc3-1.png[Bearbeiten von Hochschulen, 450]
 
 Über den Button "Partnerschaften" wird die Ansicht umgeschaltet und es können Verträge angelegt, bearbeitet und deaktiviert werden.
 
-Um einen neuen Vertrag mit einer Hochschule anzulegen, muss zunächst im Dropdown-Menü die Vertragsart gewählt und anschließend "Neuen Vertrag Anlegen" geklickt werden. Anschließend müssen die entsprechenden Daten in der Eingabemaske ausgefüllt und mit dem Button "Vertrag speichern" bestätigt werden. Pflichtfelder sind hierbei rot beschriftet und mit einem * markiert. 
+Um einen neuen Vertrag mit einer Hochschule anzulegen, muss zunächst im Dropdown-Menü die Vertragsart gewählt und "Neuen Vertrag Anlegen" geklickt werden. Anschließend müssen die entsprechenden Daten in der Eingabemaske ausgefüllt und mit dem Button "Vertrag speichern" bestätigt werden. Pflichtfelder sind hierbei rot beschriftet und mit einem * markiert. 
 
 Achtung: Alle eingegebene Daten werden erst mit einem Klick auf den "Speichern" Button in die Datenbank übernommen. Wird die Maske vorher geschlossen, können Daten verloren gehen. 
 
@@ -87,7 +87,7 @@ image::uc4-1.png[Bearbeiten von Hochschulen, 450]
 
 *3.5 Use-Case: Use-Case: Mentoren Editieren (UC05)*
 
-Um Mentoren anzulegen oder zu bearbeiten, muss in der Navigationsleiste am oberen Rand der Reiter „Mentoren“ ausgewählt werden. 
+Um Mentoren anzulegen oder zu bearbeiten muss in der Navigationsleiste am oberen Rand der Reiter „Mentoren“ ausgewählt werden. 
 
 Zum Anlegen einer Partnerhochschule muss der Button "Partnerhochschule hinzufügen" oben rechts auf der Startseite geklickt werden.
 

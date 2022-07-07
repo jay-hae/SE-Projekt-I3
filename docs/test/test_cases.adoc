@@ -52,7 +52,7 @@
 . Das Skript betätigt den Login Button
 . Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet
 . Es wird der Bearbeiten-Button eines bestehenden, im Skript definierten Datensatzes betätigt
-. Das Skript trägt in jedes Feld der Eingabe-Maske definierte Werte ein, die nicht dem Default entsprechen
+. Das Skript trägt in jedes Feld der Eingabemaske definierte Werte ein, die nicht dem Default entsprechen
 . Der Speichern Button wird betätigt
 . Der bearbeitete Datensatz erscheint nun in der Übersicht
 | Nachbedingung a| Attribute des Datensatzes der Hochschulpartnerschaft wurden erfolgreich sowie fehlerfrei aktualisiert. 
@@ -62,7 +62,7 @@
 
 [cols="1,4"]
 |===
-| Beschreibung | Eine leitende Arbeitskraft mit erweiterten Befugnissen nutzt diese um fehlerhafte Datensätze aus dem System zu löschen.
+| Beschreibung | Eine leitende Arbeitskraft mit erweiterten Befugnissen nutzt diese, um fehlerhafte Datensätze aus dem System zu löschen.
 | Vorbedingungen und benötigte Daten a| - Die Arbeitskraft hat sich erfolgreich mit den vorgesehenen Admin Zugangsdaten eingeloggt 
 - Reguläre Arbeitskräfte haben keinen Zugriff auf das Löschen der Datensätze
 - Ruhende Partnerschaften dürfen nicht gelöscht werden
@@ -71,7 +71,7 @@
 . Das Skript betätigt den Login Button
 . Nach erfolgreichem Login wird geprüft, ob sich das Skript auf der gewünschten Seite befindet
 . Es wird der Lösch-Button eines bestehenden Datensatzes betätigt
-. Es erfolgt eine Abfrage ob der ausgewählte Datensatz wirklich gelöscht werden soll
+. Es erfolgt eine Abfrage, ob der ausgewählte Datensatz wirklich gelöscht werden soll
 . Der Bestätigungs-Button wird betätigt
 . Der Datensatz wurde erfolgreich gelöscht
 | Nachbedingung a| Der fehlerhafte Datensatz wurde aus der entsprechenden Datenbankrelation entfernt
@@ -110,9 +110,9 @@
 | Ablauf (manuell) a|. Die Testenden öffnen jeweils ein Browser-Fenster und gehen innerhalb des Netzwerkes der HTW auf die Login-Seite der Webanwendung
 . Es erfolgt die Eingabe der Zugangsdaten (Nutzername + Passwort) und die Bestätigung mit dem Login-Button
 . Nach erfolgreichem Login wählen die Testenden Datensätze, die sie bearbeiten möchten und betätigen den Bearbeiten-Button
-. Die Testenden tragen in die Felder der Eingabe-Maske ihre gewünschten Werte ein
+. Die Testenden tragen in die Felder der Eingabemaske ihre gewünschten Werte ein
 . Der Speichern Button wird betätigt
-. Die bearbeiteten Datensatz erscheinen nun in der Übersicht
+. Die bearbeiteten Datensätze erscheinen nun in der Übersicht
 | Nachbedingung a| - Bei erfolgreicher Änderung werden die Daten aus den Datensätzen ersetzt und bei Abfrage erfolgreich angezeigt
 - Bie Bearbeitung des selben Datensatzes wird die letzte Änderung gespeichert und angezeigt
 |===
@@ -126,7 +126,7 @@
 - die Arbeitskraft befindet sich im Hauptmenü
 | Ablauf (manuell) a|.  Die testende Person öffnet ein Browser-Fenster und geht innerhalb des Netzwerkes der HTW auf die Login-Seite der Webanwendung
 . Es erfolgt die Eingabe der Zugangsdaten (Nutzername + Passwort) und die Bestätigung mit dem Login-Button
-. Nach erfolgreichem Login wählt die testende Person im Hauptmenü den Reiter in dem sie arbeiten möchte
+. Nach erfolgreichem Login wählt die testende Person im Hauptmenü den Reiter, in dem sie arbeiten möchte
 . Während des Ladevorgangs beim Wechseln der Hauptreiter misst die testende Person mit einer Stoppuhr die Dauer vom Betätigen des Buttons für den Reiter bis zur Anzeige des neuen Reiters
 | Nachbedingung | Bei erfolgreichem Wechsel des Hauptreiters wird der neue Reiter in unter 3s angezeigt
 |===
@@ -145,7 +145,7 @@
 | Ablauf (manuell) a|.  Die testende Person öffnet ein Browser-Fenster und geht innerhalb des Netzwerkes der HTW auf die Login-Seite der Webanwendung
 . Es erfolgt die Eingabe der Zugangsdaten (Nutzername + Passwort) und die Bestätigung mit dem Login-Button
 . Währenddessen misst die testende Person mit einer Stoppuhr die Dauer vom Betätigen des Login-Buttons bis zur Anzeige des Hauptmenüs
-. Nach erfolgreichem Login betätigt sie den Button zum Anlegen einer neuen Partnerhochschule und füllt die Felder in der Eingabe-Maske aus
+. Nach erfolgreichem Login betätigt sie den Button zum Anlegen einer neuen Partnerhochschule und füllt die Felder in der Eingabenmaske aus
 . Anschließend betätigt die testende Person den Speichern-Button und misst die Dauer vom Betätigen des Buttons bis zur Anzeige der neuen Partnerhochschule in der Übersicht
 . Daraufhin wählt sie die erstellte Partnerhochschule aus und drückt den Bearbeiten-Button
 . Dann verändert die testende Person die Bezeichnung der Partnerhochschule und betätigt den Speichern-Button
