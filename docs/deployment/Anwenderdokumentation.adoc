@@ -87,7 +87,7 @@ image::uc4-1.png[Bearbeiten von Hochschulen, 450]
 
 *3.5 Use-Case: Use-Case: Mentoren Editieren (UC05)*
 
-Um [big red yellow-background]*Mentoren* anzulegen oder zu bearbeiten, muss in der Navigationsleiste am oberen Rand der Reiter „Mentoren“ ausgewählt werden. 
+Um Mentoren anzulegen oder zu bearbeiten, muss in der Navigationsleiste am oberen Rand der Reiter „Mentoren“ ausgewählt werden. 
 
 Zum Anlegen einer Partnerhochschule muss der Button "Partnerhochschule hinzufügen" oben rechts auf der Startseite geklickt werden.
 
