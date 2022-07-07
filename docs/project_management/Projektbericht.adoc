@@ -12,7 +12,7 @@ Die Auftraggebenden unseres Projektes "I3 Hochschulpartnerschaften Stabsstelle I
 Die HTW Dresden kooperiert weltweit mit rund 170 Partnerhochschulen, um Studierenden die
 Gelegenheit zu ermöglichen, sich kulturell weiterzubilden, neue Kontakte zu knüpfen und
 Sprachkenntnisse zu vertiefen. Zu diesem Zweck pflegen Sie Informationen zu den Partnerhochschulen und Spezifikationen zu den bestehenden Verträgen, zB. Anzahl an verfügbaren
-Plätzen, Mentor:Innen und verfügbare Fakultäten, Daten über Incomings und Outgoings (siehe Glossar), etc. . Genutzt wurde hierfür bis jetzt eine Access Datenbank.
+Plätzen, Mentor:Innen und verfügbare Fakultäten, Daten über Incomings und Outgoings (siehe Glossar), etc. . Genutzt wurde dafür bis jetzt eine MS Access Datenbank.
 Der Auftrag des Projektteams I3 bestand darin eine webbasierte Applikation mit Schnittstelle zu einer
 Datenbank zu realisieren, die die Verwaltung der Hochschulen für die Mitarbeitenden der Stabsstelle internationales vereinfacht. Eine genaue Auflistungen der Aufgaben
 ist in der Vision zu finden.
@@ -205,7 +205,6 @@ Zum Ende der Constructionphase konnten die wichtigsten Funktionalitäten der Web
 Die in der letzten Phase vereinbarten Tests sind größtenteils erfolgreich verlaufen und das Erreichen der angestrebten Anforderungen konnte dadurch bewiesen werden. 
 
 
-
 === Transition
 Das Ende unserer Projektarbeit 
 
@@ -228,16 +227,14 @@ Das Ende unserer Projektarbeit
 
 ===== Virtual Machine wird gelöscht
 
-===== neue Anforderungen
+== Produktergebnis
+
+
 
 ===== Deployment
 
 ==== Ergebnisse
 Der Prototyp war zu diesem Zeitpunkt schon fertig, alle zu schaffenden Use Cases waren implementiert. Wir haben uns schlussendlich darauf geeinigt, noch einige kleine, von der SI gewünschte, Änderungen umzusetzen. Darauf haben wir zum einen darauf geachtet unseren Projektabschluss nicht zu gefährden, außerdem war es für uns wichtig keine große Funktionalitätsänderung mehr umzusetzen. Dadurch wurde sichergestellt dass sich an der Software-/ und Entwicklerdokumentation nichts mehr ändert. Grundlegend wurden nur kleine Änderungen am User Interface vorgenommen, einige Layouts der Eingabemasken wurden verändert und wir haben die Datenbankanfragen ein wenig angepasst um mehr Informationen anzeigen zu können. 
-
-
-
-== Ergebnisse
 
 
 === Softwaresystem
