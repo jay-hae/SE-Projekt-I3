@@ -130,7 +130,7 @@ Wer eine Rolle inne hat, ist nicht allein für die Ausführung der Aufgaben zust
 In der Inceptionphase konnten nach anfänglichen Schwierigkeiten gute Fortschritte erreicht werden.
 Es herrschte Einigkeit über die Rollenverteilung, geeignete Tools zur Kommunikation mit sämtlichen Akteuern waren gefunden und die Infrastruktur zum kollaborativen Arbeiten war bereitgestellt.
 Außerdem konnten die zum Projektbeginn benötigten Dokumente, wie die Vision und die Risklist erfolgreich begonnen werden.
-Ebenso konnte Pascal Thielemann mit den ersten Zeilen Code ein "proof of concept" liefern und unter Beweis stellen, dass die von ihm gewählten Programmiersprachen sich für die Durchführung des Projekts eigneten.
+Ebenso konnte Pascal Thielemann mit den ersten Zeilen Code ein "proof of concept" liefern und unter Beweis stellen, dass die von ihm gewählten Programmiersprachen sich für die Durchführung des Projekts eigneten. Es wurde ein kleiner Prototyp angefertigt, welcher grundlegend die Programmstruktur vorgegeben hat. Durch ihn wurde anfänglich die Kommunikation über alle Schichten und eine Verträglichkeit der Daten getestet. So wurde sichergestellt dass die Daten immer in der Reihenfolge: Datenbank <-> Backend <-> Frontend übertragen werden und es keine Migrationsprobleme der Daten gibt. Lesen & Schreiben in der Datenbank wurde durch das Programm ermöglicht, vorerst aber nur auf einem lokalen Rechner. 
 Des weiteren konnten die Stakeholder Identifiziert werden und eine Skizze der Anforderungen sorgten für ein grobes Verständnis der Aufgabe.
 
 === Elaboration
@@ -151,7 +151,7 @@ Zu Beginn der zweiten Phase des Projekts hat sich zwischen den Teammitgliedern l
 
 ==== Probleme 
 
-===== Schlechte Vorbereitung auf Meetings mit den Themenster:Innen
+===== Schlechte Vorbereitung auf Meetings mit den Themensteller:Innen
 
 Während das Team auf eine gewissen Regelmäßigkeit bei den Treffen mit der SI geachtet hat und auch eine gute Arbeitsatmosphäre bei den Treffen erzeugen konnte, ist es doch einige Male deutlich geworden, dass man sich auf die Treffen hätte besser vorbereiten müssen.
 So waren zum Beispiel Software-Anwendungen die zur Präsentation von Zwischenergebnisse benötigt wurden noch nicht im Vorfeld gestartet worden, was zu Wartezeiten führte.
@@ -168,7 +168,7 @@ Das Team hat glücklicherweise schon früh in der Elaborationsphase realisiert, 
 
 ==== Ergebnisse
 
-Am Ende der Elaborationsphase konnte das Team, die im ersten Semester geforderten Dokumente und Modelle erstellen. Dazu gehörten das Use Case Modell und die Use Case Beschreibungen, das Datenmodell und die Ausarbeitung des Projektplans. Ebenso konnte das Team den Protypen so weiterentwickeln, dass eine funktionsfähige Software zum Ende des Projekts erreichbar wurde. Die Webanwenung konnte zu diesem Zeitpunkt von der Virtuellen Maschine abgerufen werden und bereits die Inhalte aus der Datenbank anzeigen.
+Am Ende der Elaborationsphase konnte das Team, die im ersten Semester geforderten Dokumente und Modelle erstellen. Dazu gehörten das Use Case Modell und die Use Case Beschreibungen, das Datenmodell und die Ausarbeitung des Projektplans. Ebenso konnte das Team den Protypen so weiterentwickeln, dass eine funktionsfähige Software zum Ende des Projekts erreichbar wurde. Die Webanwendung konnte zu diesem Zeitpunkt von der Virtuellen Maschine abgerufen werden und bereits die Inhalte aus der Datenbank anzeigen. Die Konzentration in dieser Phase lag vorerst nur auf dem schaffen einer schlüssigen Programmlogik. Es wurden Datenbank, Backend und Frontend bearbeitet, im Frontend lag der Fokus jedoch auf dem auswerten der Daten und nicht auf dem Design des User Interface. Alle notwendigen HTML Dateien waren zwar erstellt, das Layout und vorallem die Gestaltung der einzelnen Objekte musste aber auf einen anderen Zeitraum und ein anderes Teammitglied verlagert werden.
 
 === Construction
 
@@ -201,7 +201,7 @@ Wir konnten den Themenstellern allerdings versichern, dass wir für etwaige Folg
 
 ==== Ergebnisse
 
-Zum Ende der Constructionphase konnten die wichtigsten Funktionalitäten der Webanwendung umgesetzt werden und das Design entsprechend der Wünsche durch den Kunden angepasst werden. Die Softwaredokumentation konnte ebenso abgeschlossen werden und in die Entwicklerdokumentation eingegliedert werden.
+Zum Ende der Constructionphase konnten die wichtigsten Funktionalitäten der Webanwendung umgesetzt werden und das Design entsprechend der Wünsche durch den Kunden angepasst werden. Dabei wurde das Design des User Interfaces größtenteils durch Thanh Ha Khuong übernommen, die ZUständigkeit über die Implementierung blieb bei Pascal Thielemann. Im Zusammenspiel beider Entwickler, und mit der Hilfe von Jens Rosenkranz, welcher mit voranschreiten des Projektes anwendbare Fähigkeiten in der Implementierung erwerben konnte, entwickelte sich die Software relativ zügig in die richtige Richtung. Die, für die Themensteller, wichtigsten Use Cases konnten erfolgreich implementiert werden, wobei Bugfixing einen großen Teil der Arbeit ausmachte. Unsere Programmstruktur bekam noch kleine Anpassungen, aber für große Änderungen war es zu spät. Die Softwaredokumentation konnte ebenso abgeschlossen und in die Entwicklerdokumentation eingegliedert werden.
 Die in der letzten Phase vereinbarten Tests sind größtenteils erfolgreich verlaufen und das Erreichen der angestrebten Anforderungen konnte dadurch bewiesen werden. 
 
 
@@ -233,6 +233,7 @@ Das Ende unserer Projektarbeit
 ===== Deployment
 
 ==== Ergebnisse
+Der Prototyp war zu diesem Zeitpunkt schon fertig, alle zu schaffenden Use Cases waren implementiert. Wir haben uns schlussendlich darauf geeinigt, noch einige kleine, von der SI gewünschte, Änderungen umzusetzen. Darauf haben wir zum einen darauf geachtet unseren Projektabschluss nicht zu gefährden, außerdem war es für uns wichtig keine große Funktionalitätsänderung mehr umzusetzen. Dadurch wurde sichergestellt dass sich an der Software-/ und Entwicklerdokumentation nichts mehr ändert. Grundlegend wurden nur kleine Änderungen am User Interface vorgenommen, einige Layouts der Eingabemasken wurden verändert und wir haben die Datenbankanfragen ein wenig angepasst um mehr Informationen anzeigen zu können. 
 
 
 
