@@ -1,6 +1,4 @@
-//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-
-== Use-Case: In System Einloggen (UC01)
+//== Use-Case: In System Einloggen (UC01)
 
 === Kurzbeschreibung
 Bei diesem Use Case soll den Mitarbeitern per Authentifizierung der Zugang zum System gewährt werden.

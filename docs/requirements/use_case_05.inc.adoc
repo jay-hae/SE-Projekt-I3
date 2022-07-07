@@ -1,7 +1,7 @@
-== Use-Case: Mentoren Editieren (UC05)
+//== Use-Case: Mentoren Editieren (UC05)
 
 === Kurzbeschreibung
-Eine Arbeitskraft der Stabsstelle Internationales verändert Attribute eines Mentoren oder legt einen neuen Mentor an.
+Eine Arbeitskraft der Stabsstelle Internationales verändert Attribute eines Mentoren oder legt einen neuen Mentoren an.
 
 === Kurzbeschreibung der Akteure
 ==== Mitarbeiter*Innen Stabsstelle Internationales
@@ -49,11 +49,11 @@ Nach erfolgreichem Abschluss des Use Cases lautet der Ist-Zustand wie folgt:
 === Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 
-==== <Zugangssperre>
+==== Zugangssperre
 Der Zugang zum System darf nur innerhalb des HTW-Netzes erfolgen, eine IP-Sperre ist erforderlich.
 
-==== <Gültigkeitsregeln>
+==== Gültigkeitsregeln
 Die entsprechenden Abhängigkeiten und Datentypen innerhalb der bestehenden Datenbank müssen eingehalten werden.
 
-==== <Benutzeroberfläche>
+==== Benutzeroberfläche
 Das Interface welches, zum Eingeben der Objektattribute und dem speichern des Objektes benutzt werden soll, muss als externes Fenster auf der Seite geöffnet werden.

@@ -205,8 +205,8 @@ Die Priorität der Funktion ist mit den Zahlen 1 bis 10 skaliert, wobei 1 die ni
 | Zum Exportieren eines Berichtes im Verwaltungsfrontend
 | Sommersemester 2022
 
-| Berichte für Externe Anzeigen
-| 3 
+| Bereitstellen von Informationen für Externe
+| 5 
 | Zum Anzeigen von Informationen für Externe
 | Sommersemester 2022
 
@@ -254,3 +254,6 @@ Hinweise:
 | Sommersemester 2022
 
 |===
+
+
+// end::include_update[]

@@ -103,3 +103,5 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 === Rechtliche Anforderungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
 * Da die Datenbank abgesehen von ohnehin schon frei zugänglichen Mentorendaten keine personenbezogenen Daten abspeichert (sondern nur Statistiken) ist die Anwendung datenschutzrechtlich unbedenklich.
+
+// end::include_update[]

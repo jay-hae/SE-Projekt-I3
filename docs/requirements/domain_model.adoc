@@ -11,3 +11,5 @@ Das Domain Model bildet die relevante Terminologie der Fachdomäne ab, mit dem Z
 
 == Domänenmodel
 image::domain_model.png[]
+
+// end::include_update[]

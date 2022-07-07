@@ -1,6 +1,4 @@
-//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-
-== Use-Case: Partnerhochschulen Editieren (UC03)
+//== Use-Case: Partnerhochschulen Editieren (UC03)
 
 === Kurzbeschreibung
 Bei diesem Use Case soll der Mitarbeiter Hochschulattribute einer Hochschule verändern.

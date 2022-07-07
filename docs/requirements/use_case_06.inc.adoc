@@ -1,4 +1,4 @@
-== Use-Case: Berichte Erstellen (UC06)
+//== Use-Case: Berichte Erstellen (UC06)
 
 === Kurzbeschreibung
 Bei diesem Use Case soll der Mitarbeiter einen Bericht erstellen.

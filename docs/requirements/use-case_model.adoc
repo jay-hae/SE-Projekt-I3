@@ -14,7 +14,7 @@
 
 == Allgemeine Informationen
 // ...
-Im folgenden werden die bisher identifizierten Use Cases benannt. Die 6 wichtigsten werden detailiert beschreiben.
+Im folgenden werden die bisher identifizierten Use Cases benannt. Die 5 wichtigsten werden detailiert beschreiben.
 
 == Identifizierte Use Cases
 // Liste aller identifizierten Use Cases (priorisiert)
@@ -25,41 +25,40 @@ Im folgenden werden die bisher identifizierten Use Cases benannt. Die 6 wichtigs
 * <<_uc05_mentoren_editieren>>
 * <<_uc06_berichte_erstellen>> (geplant)
 * <<_uc07_erstellte_berichte_exportieren>> (geplant)
-* <<_uc08_berichte_für_externe_anzeigen>> (geplant)
+* <<_uc08_bereitstellen_von_informationen_für_externe>> (geplant)
 
-=== für Akteur Mitarbeiter SI
-==== *UC01*: In System Einloggen
+=== *UC01*: In System Einloggen
 
 include::use_case_01.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 image::wf_uc01_anmelden.jpg[]
 
-==== *UC02*: Partnerhochschulen Anlegen
+=== *UC02*: Partnerhochschulen Anlegen
 
 include::use_case_02.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 image::wf_uc02_hochschule_anlegen.jpg[]
 image::wf_uc02_hochschulen_uebersicht.jpg[]
 
-====  *UC03*: Partnerhochschulen Editieren
+===  *UC03*: Partnerhochschulen Editieren
 
 include::use_case_03.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 image::wf_uc03_hochschule_bearbeiten_1.jpg[]
 image::wf_uc03_hochschule_bearbeiten_2.jpg[]
 
 
-==== *UC04*: Datensätze Löschen
+=== *UC04*: Datensätze Löschen
 include::use_case_04.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC05*: Mentoren Editieren
+=== *UC05*: Mentoren Editieren
 include::use_case_05.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC06*: Berichte Erstellen
+=== *UC06*: Berichte Erstellen
 include::use_case_06.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 image::wf_uc06_Bericht_Uebersicht.jpg[]
 
-==== *UC07*: Erstellte Berichte Exportieren
+=== *UC07*: Erstellte Berichte Exportieren
 include::use_case_07.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
-==== *UC08*: Berichte für Externe Anzeigen
+=== *UC08*: Bereitstellen von Informationen für Externe
 include::use_case_08.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 
 
@@ -79,18 +78,14 @@ include::use_case_08.inc.adoc[lines=1..1;4..-1,leveloffset=+1]
 //* *UC13*: Anzeigen persönliche Daten
 
 == Use Case Diagramm
-// ...
-.Use Case Diagramm
-[#diagram_use_case_diagram]
-[plantuml, "{diagramsdir}/use_case_diagram", svg]
-....
-include::{plantumlsdir}/use_case_diagram.puml[]
-....
+
+image::use_case_diagram.png[]
+
 //Fügen Sie nachfolgend alle detailierten Use-Cases per Include ein.
 //Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem use_case_01.inc.adoc Template basiert.
 //<<<
 
-.Use Case Diagram 
+//.Use Case Diagram 
 //Merge coflict:
 //[#use_case_diagram]
 //[plantuml, "{diagramsdir}/use_case_diagram",svg]
@@ -105,3 +100,4 @@ include::{plantumlsdir}/use_case_diagram.puml[]
 // ....
 
 
+// end::include_update[]

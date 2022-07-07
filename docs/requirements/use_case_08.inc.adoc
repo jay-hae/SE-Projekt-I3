@@ -1,4 +1,4 @@
-== Use-Case: bereitstellen von Informationen für Externe (UC08) 
+//== Use-Case: Bereitstellen von Informationen für Externe (UC08) 
 
 === Kurzbeschreibung
 Externe sollen die Möglichkeithaben bestehende Hochschulpartnerschaften auf der HTW-Webseite einzusehen und nach verschiedenen Kriterien zu filtern

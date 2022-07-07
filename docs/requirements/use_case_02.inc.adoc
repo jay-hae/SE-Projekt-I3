@@ -1,6 +1,4 @@
-//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
-
-== Use-Case: Partnerhochschulen Anlegen (UC02)
+//== Use-Case: Partnerhochschulen Anlegen (UC02)
 
 === Kurzbeschreibung
 Bei diesem Use Case soll der Mitarbeiter eine neue Hochschule anlegen.

@@ -26,7 +26,7 @@ actor Nutzer
 
 rectangle "Informationsfrontend" {
 
-usecase "UC08\nBerichte für Externe Anzeigen" as uc08
+usecase "UC08\nBereitstellen von Informationen für Externe" as uc08
 }
 Nutzer -- uc08
 
