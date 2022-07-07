@@ -27,13 +27,15 @@ abgeschlossen (Software Engineering I). Außerdem konnte im vorherigen Semester 
 ==== Team & Rollen
 Das Projektteam besteht aus 8 Mitgliedern, dessen Größe über die Module SE I und SE II konstant geblieben sind. 
 
-• Project-Manager: Jakob Häcker (JH)
+Vorläufige Teamaufteilung:
+• Project-Manager: Jakob Häcker (JH), Luca Meißner (LM)
 • Analyst: Nico Rosenkranz (NR), Patrick Matthes  (PM) 
 • Architect: Pascal Thielemann (PT)
 • Developers: Pascal Thielemann, Thanh Ha Khuong (HK), Jens Rosenkranz (JR)
 • Tester: Patrick Matthes, Roman Patzig (RP)
-• Deployment Engineer: Luca Meißner (LM)
+• Deployment Engineer: nicht besetzt
 • Technical Writers: Thanh Ha Khuong, Jens Rosenkranz
+Diese hat sich zum Beginn des 2. Projekt-Semesters ein wenig geändert.
 
 ==== Kommunikation
 
@@ -143,14 +145,32 @@ In der zweiten Phase des Projekts
 ==== Ergebnisse
 
 === Construction
+
+Der Beginn unseres 2. Projekt-Semesters begann mit einer Umstrukturierung des Teams.
+Da, in den ersten 2 Phasen, die Zuweisung der Rollen in der Projektpraxis meist nicht der Aufgabenzuteilung entsprachen haben sich die tatsächlichen Rollen auf die Teammitglieder wie von selbst etwas Verschoben.
+
 ==== Ziele
 ==== Problem 
 ==== Ergebnisse
 
 === Transition
+Das Ende unserer Projekt arbeit 
+
 ==== Ziele
+* Anwenderdokumentation schreiben (LM)
+* Entwickler/Softwaredokumentation schreiben (HK, JR)
+* Bugfixing (PT)
+* Test Dokumentation durchführen (PM, RP)
+* Betriebsdokumentation schreiben, Deployment-Situation klären (JH)
+* Anforderungspezifikation auf konsistenz Prüfen (NR)
+* Lizenzbeschreigung erstellen (NR)
+
 ==== Problem 
+===== neue Anforderungen
+===== Deployment
+
 ==== Ergebnisse
+
 
 
 == Ergebnisse
