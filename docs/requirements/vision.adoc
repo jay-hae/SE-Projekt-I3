@@ -13,7 +13,7 @@ include::../_includes/default-attributes.inc.adoc[]
 // tag::include_update[]
 
 == Einführung
-Um das Projekt im Groben einordnen zu können, ist es wichtig sich mit den Rahemenbedingungen des Projektes vertraut zu machen.
+Um das Projekt im Groben einordnen zu können, ist es wichtig sich mit den Rahmenbedingungen des Projektes vertraut zu machen.
 Dafür werden in dem Dokument das Grundproblem, Stakeholder und wesentliche Anforderungen definiert.
 Die Details, wie die Webanwendung diese Anforderungen erfüllt, werden in der Use-Case und
 systemweite Anforderungen beschrieben.
@@ -62,7 +62,7 @@ zu verändern bzw. zu löschen, welche durch eine Maria-Datenbank bereitgestellt
 | betrifft | Mitarbeiter der Stabsstelle Internationales, Studentische Hilfskräfte (SHK) und implizit Externe, die sich über die Partnerschaften informieren wollen
 | die Auswirkung davon ist | ein erhöhter und umständlicher Arbeitsaufwand in der Verwaltung.
 | Eine erfolgreiche Lösung wäre | ein neues Online-Datenbankverwaltungssystem für die
-Hochschulpartnerschaften zur Pflege der Daten der Hochschul-Partnerschaften zu etablieren. Sowie eine automatisierte Berichtsanfertigung, eine zuverlässige Schnittstelle zum Informationsfrontend zu gewährleisten und evtl.Weiterentwicklungsmöglichkeiten bereitzustellen.
+Hochschulpartnerschaften zur Pflege der Daten der Hochschul-Partnerschaften zu etablieren. Sowie eine automatisierte Berichtsanfertigung, eine zuverlässige Schnittstelle zum Informationsfrontend zu gewährleisten und evtl. Weiterentwicklungsmöglichkeiten bereitzustellen.
 |===
 
 ////

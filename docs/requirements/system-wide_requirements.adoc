@@ -28,7 +28,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 ** Zur Überprüfung wird versucht von außerhalb des HTW-Netzes auf das Verwaltungsfrontend zu zugreifen. Weiterhin werden falsche Login-Daten getestet.
 
-*SWFA-3: Das Interface des Systems ist je nach Nutzer unterschiedlich. Einige Funktionen können nur von bestimmten Nutzern durchgeführt werden.*
+*SWFA-3: Das Interface des Systems ist je nach Nutzerklasse unterschiedlich. Einige Funktionen können nur von bestimmten Nutzerklassen durchgeführt werden.*
 
 ** Zur Überprüfung wird sich mit 2 Accounts angemeldet welche verschiedene Rechte haben, daraufhin wird die Funktionsvielfalt innerhalb der Verwaltungsanwendung verglichen
 
@@ -67,11 +67,11 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 === Effizienz (Performance)
 // Die Performanz Charakteristiken des Systems sollten in diesem Bereich ausgeführt werden. Beispiele sind Antwortzeit, Durchsatz, Kapazität und Zeiten zum Starten oder Beenden.
 
-*NFAP-1: Der Wechsel zwischen Seiten des Verwaltungsfrontends sollte maximal 3 Sekunden dauern (innerhalb der Hochschule mit funktionierendem Netz)*
+*NFAP-1: Der Wechsel zwischen Seiten des Verwaltungsfrontends sollte maximal 3 Sekunden dauern*
 
 ** Zur Überprüfung wird ein Skript Seitenaufrufe simulieren und deren Antwortzeit messen.
 
-*NFAP-2: In  90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein.*
+*NFAP-2: In mindestens 90% der Fälle sollen Datenbank relevante Funktionen in 2 Sekunden ausgeführt sein.*
 
 ** Zur Überprüfung wird ein Skript SQL Befehle ausführen und deren Abarbeitungszeit messen.
 
@@ -83,9 +83,6 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 === Einschränkungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
-
-* Das Verwaltungsfrontend muss auf den Rechnern der Stabstelle Internationales lauffähig sein.
-** Windows 10 mit den Browsern Edge, Firefox und Chrome
 
 * Das System muss mit der bereits bestehenden Datenbankstruktur funktionieren.
 
@@ -102,6 +99,6 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 === Rechtliche Anforderungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
-* Da die Datenbank abgesehen von ohnehin schon frei zugänglichen Mentorendaten keine personenbezogenen Daten abspeichert (sondern nur Statistiken) ist die Anwendung datenschutzrechtlich unbedenklich.
+* Da die Datenbank abgesehen von ohnehin schon frei zugänglichen Daten der Mentoren keine personenbezogenen Daten abspeichert (sondern nur Statistiken) ist die Anwendung datenschutzrechtlich unbedenklich.
 
 // end::include_update[]

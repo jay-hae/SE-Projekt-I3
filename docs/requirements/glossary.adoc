@@ -15,7 +15,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Wörter in Bezug auf Persone
 |===
 | Begriff | Definition und Erläuterung | Synonyme
 
-| Akademisches Auslandsamt | Stabstelle Internationales | --
+| Akademisches Auslandsamt | Stabsstelle Internationales | --
 
 | Austauschprogramm | Verschiedene Arten von Programmen, wie Erasmus oder Freemover | Exchange
 
@@ -47,7 +47,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Wörter in Bezug auf Persone
 
 | Hochschulattribute | Alle möglichen Attribute einer Hochschule (siehe Verzeichnis Datenstrukturen) | Attribute, Hochschuleigenschaften
 
-| Incoming | Studierende aus dem Ausland, die zeitweise an der HTW-Dresden studieren | An die Hochschule kommende Auslandsstudierende
+| Incoming | Studierende aus dem Ausland, die zeitweise an der HTW-Dresden studieren | An die Hochschule kommende ausländische Studenten
 
 | Informationsfrontend | Das bisher bestehende Frontend zur Datenbank, das Externen Informationen über die bestehenden Partnerschaften ermöglicht
 | Frontend für die Studierenden, Anzeigefrontend, bisheriges Frontend
@@ -82,7 +82,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Wörter in Bezug auf Persone
 //* architekturzentrierte Vorgehen | OpenUP
 //| Open Unified Process | Ein Open-Source-Softwareentwicklungsmodell, beinhaltet unteranderem: iterative Softwareentwicklung, Anwendungsfälle, szenarienbasierte Entwicklung, Risikomanagement, architekturzentrierte Vorgehen | OpenUP
 
-| Outgoing | Studierende der HTW, die an einem Austauschprogramm zu einer ausländischen Hochschule teilnehmen | Von der Hochschule gehende Auslandsstudierende
+| Outgoing | Studierende der HTW, die an einem Austauschprogramm zu einer ausländischen Hochschule teilnehmen | Von der Hochschule gehende Studenten
 
 | Partnerschaftsvertrag | Vertrag zwischen HTW und ausländischen Hochschulen über ein Austauschprogramm | --
 
@@ -109,7 +109,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Wörter in Bezug auf Persone
 
 //| User Interface | Bereich der Software mit der eine Person mit dem Programm in Interaktion tritt | Benutzerschnittstelle
 
-//| Verwaltungsfrontend | Für den Nutzer sichtbarerer Teil der Software, der von der Stabstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabstelle Internationales (Verwaltungsanwendung)
+//| Verwaltungsfrontend | Für den Nutzer sichtbarerer Teil der Software, der von der Stabsstelle Internationales genutzt wird, um die Hochschulpartnerschaften zu verwalten | Frontend für die Stabsstelle Internationales (Verwaltungsanwendung)
 
 //| Wireframe | Früher konzeptioneller Entwurf einer Webseite oder eines Softwarefrontends | Drahtmodell
 
@@ -142,13 +142,13 @@ Es ist anzumerken, dass alle verwendeten maskulinen Wörter in Bezug auf Persone
 
 | HTW | Hochschule | Hochschule für Technik und Wirtschaft Dresden
 
-| MSI | Mitarbeiter oder Leitungs Person der Stabsstelle Internationales | Hauptnutzer der Software
+| MSI | Mitarbeiter oder Leitungsperson der Stabsstelle Internationales | Hauptnutzer der Software
 
 | NFA | Nicht-funktionale Anforderung | Anforderungen, die die Qualität des Systems sicherstellen
 
 | ODBC | Open Database Connectivity | Programmierschnittstelle, die eine einheitliche Kommunikation mit unterschiedlichen Datenbankentypen ermöglicht
 
-| SI | Stabstelle Internationales | Auftraggeber des Softwareprojektes
+| SI | Stabsstelle Internationales | Auftraggeber des Softwareprojektes
 
 | SHK | Studentische Hilfskräfte | Studenten die Mitarbeiter in der SI sind
 
@@ -171,7 +171,7 @@ Es ist anzumerken, dass alle verwendeten maskulinen Wörter in Bezug auf Persone
 | Anmeldedaten
 | Zusammensetzung von Benutzername und Passwort.
 | String
-| Emailadresse muss `@`-Zeichen und `.` Punkt enthalten.
+| E-Mail-Adresse muss `@`-Zeichen und `.` Punkt enthalten.
 | Login
 
 
@@ -203,9 +203,9 @@ a| - Gültigkeitsdauer muss "von-bis"-Datum sein
 | --
 
 | Mentor
-| Name, Titel, Email und Webadresse
+| Name, Titel, E-Mail und Webadresse
 | String
-a| - Emailadresse muss @-Zeichen und Punkt enthalten
+a| - E-Mail-Adresse muss @-Zeichen und Punkt enthalten
 - Webadresse muss Punkt und Top Level Domain enthalten
 | --
 
