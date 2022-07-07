@@ -244,20 +244,19 @@ Das Ende unserer Projektarbeit
 In dieser Phase konnten wir unseren Themenstellern bereits eine weitläufig funktionsfähige Software zu testzwecken bereitstellen. Dadurch ist es kundenseitig zu neuen Anforderungen und Wünschen gekommen, die wir in der verbleibenden Zeit nicht mehr umsetzen konnten. 
 Wir konnten den Themenstellern allerdings versichern, dass wir für etwaige Folgeteams die Erweiterbarkeit auf einem möglichst hohen Level halten werden und das ihre Wünsche in Zukunft zumindest teilweise umgesetzt werden könnten. 
 
-=== Softwaresystem
+===== Virtual Machine wird gelöscht
+
+Der Prototyp war zu diesem Zeitpunkt schon fertig, alle zu schaffenden Use Cases waren implementiert. Wir haben uns schlussendlich darauf geeinigt, noch einige kleine, von der SI gewünschte, Änderungen umzusetzen. Darauf haben wir zum einen darauf geachtet unseren Projektabschluss nicht zu gefährden, außerdem war es für uns wichtig keine große Funktionalitätsänderung mehr umzusetzen. Dadurch wurde sichergestellt dass sich an der Software-/ und Entwicklerdokumentation nichts mehr ändert. Grundlegend wurden nur kleine Änderungen am User Interface vorgenommen, einige Layouts der Eingabemasken wurden verändert und wir haben die Datenbankanfragen ein wenig angepasst um mehr Informationen anzeigen zu können. 
+
+=== Informationen zum Softwaresystem
 
 ==== Lizenz
 
 Informationen zur Lizenz sind in der README des GitHub-Repositories zu finden.
 
-
-===== Virtual Machine wird gelöscht
-
-
 == Produktergebnis
 
-Der Prototyp war zu diesem Zeitpunkt schon fertig, alle zu schaffenden Use Cases waren implementiert. Wir haben uns schlussendlich darauf geeinigt, noch einige kleine, von der SI gewünschte, Änderungen umzusetzen. Darauf haben wir zum einen darauf geachtet unseren Projektabschluss nicht zu gefährden, außerdem war es für uns wichtig keine große Funktionalitätsänderung mehr umzusetzen. Dadurch wurde sichergestellt dass sich an der Software-/ und Entwicklerdokumentation nichts mehr ändert. Grundlegend wurden nur kleine Änderungen am User Interface vorgenommen, einige Layouts der Eingabemasken wurden verändert und wir haben die Datenbankanfragen ein wenig angepasst um mehr Informationen anzeigen zu können. 
-
+Das von Team I3 erstellte Softwareprodukt ermöglicht es die relevanten Informationen zu Hochschulpartnerschaften innerhalb einer Webanwendung zu verwalten. Es können neue Hochschulen angelegt und mit Verträgen, Fakultäten sowie Mentoren verknüpft werden. Insbesondere erlaubt die Webanwendung im Gegensatz zu MS Access das gleichzeitige Arbeiten mehrerer Mitarbeiter:Innen. Außerdem bietet die Anwendung erstmalig die Möglichkeit über einen Account mit besonderen Rechten auch Alt-Daten zu löschen und die Datenbank so besser zu pflegen. Lediglich die Funktionen Statistiken und Berichte erstellen konnten nicht mehr umgesetzt werden. Damit sind die wichtigsten Anforderungen durch das Team erfüllt worden und zur großen Freude aller Teammitglieder des Teams I3, wurde die Webanwendung durch die Stabstelle Internationales abgenommen und wird voraussichtlich ab nächstem Semester in Betrieb gehen.
 
 
 
