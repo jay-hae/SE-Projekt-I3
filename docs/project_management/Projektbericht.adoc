@@ -8,12 +8,11 @@ Dieses Dokument enthält den Projektbericht über die Erstellung der Webanwendun
 == Planung (JH + JR)
 === Aufgabenstellung & Auftraggeber
 
-Die Auftraggebenden unseres Projektes "I3 Hochschulpartnerschaften Stabstelle Internationales" war die Stabstelle Internationales der HTW Dresden.
+Die Auftraggebenden unseres Projektes "I3 Hochschulpartnerschaften Stabsstelle Internationales" war die Stabsstelle Internationales (SI) der HTW Dresden.
 Die HTW Dresden kooperiert weltweit mit rund 170 Partnerhochschulen, um Studierenden die
 Gelegenheit zu ermöglichen, sich kulturell weiterzubilden, neue Kontakte zu knüpfen und
-Sprachkenntnisse zu vertiefen. Zu diesem Zweck werden die Informationen zu den Partnerhochschulen und Spezifikationen zu den bestehenden Verträgen, zB. Anzahl an verfügbaren
-Plätzen, Mentor:Innen und verfügbare Fakultäten etc., sowie Daten über Incomings und Outgoings
-gespeichert und verarbeitet. Genutzt wurde hierfür bis jetzt eine Access Datenbank.
+Sprachkenntnisse zu vertiefen. Zu diesem Zweck pflegen Sie Informationen zu den Partnerhochschulen und Spezifikationen zu den bestehenden Verträgen, zB. Anzahl an verfügbaren
+Plätzen, Mentor:Innen und verfügbare Fakultäten, Daten über Incomings und Outgoings (siehe Glossar), etc. . Genutzt wurde hierfür bis jetzt eine Access Datenbank.
 Der Auftrag des Projektteams I3 bestand darin eine webbasierte Applikation mit Schnittstelle zu einer
 Datenbank zu realisieren, die die Verwaltung der Hochschulen für die Mitarbeitenden der Stabsstelle internationales vereinfacht. Eine genaue Auflistungen der Aufgaben
 ist in der Vision zu finden.
@@ -27,41 +26,44 @@ abgeschlossen (Software Engineering I). Außerdem konnte im vorherigen Semester 
 ==== Team & Rollen
 Das Projektteam besteht aus 8 Mitgliedern, dessen Größe über die Module SE I und SE II konstant geblieben sind. 
 
-Vorläufige Teamaufteilung:
-• Project-Manager: Jakob Häcker (JH), Luca Meißner (LM)
-• Analyst: Nico Rosenkranz (NR), Patrick Matthes  (PM) 
-• Architect: Pascal Thielemann (PT)
-• Developers: Pascal Thielemann, Thanh Ha Khuong (HK), Jens Rosenkranz (JR)
-• Tester: Patrick Matthes, Roman Patzig (RP)
-• Deployment Engineer: nicht besetzt
-• Technical Writers: Thanh Ha Khuong, Jens Rosenkranz
-Diese hat sich zum Beginn des 2. Projekt-Semesters ein wenig geändert.
+Vorläufige Rollenaufteilung:
+
+* Project-Manager: Jakob Häcker (JH), Luca Meißner (LM)
+* Analyst: Nico Rosenkranz (NR), Patrick Matthes  (PM) 
+* Architect: Pascal Thielemann (PT)
+* Developers: Pascal Thielemann, Thanh Ha Khuong (HK), Jens Rosenkranz (JR)
+* Tester: Patrick Matthes, Roman Patzig (RP)
+* Deployment Engineer: nicht besetzt
+* Technical Writers: Thanh Ha Khuong, Jens Rosenkranz
+
+Diese hat sich zum Beginn des 2. Projekt-Semesters (SS22) ein wenig geändert.
 
 ==== Kommunikation
 
 Aufgrund der vor allem im vorangegangenen Semester herrschenden Pandemie und des damit einhergehenden Onlinebetriebs an der Hochschule, hat sich für das ganze Projekt eine Kommukikation über Online-Videokonferenzen (Discord, Teams, BigBlueButton) sowie über den Messenger (WhatsApp) etabliert. Zu keinem Zeitpunkt haben sich alle Teammitglieder in Präsenz getroffen.
 Die Meetings mit den Auftraggebenden und dem Coach Herrn Ringel wurden ebenfalls remote druchgeführt und
-fanden regelmäßig (ca. alle 4 Wochen) statt. Dank der Flexibilität von Online-Meetings konnten Termine zwischen den Teammitgliedern, Meetings mit dem Coach oder mit der Stabstelle Internationales auch kurzfirstig vereinbart werden.
-Die Versionsverwaltung des Projektes wurde über ein GitHub-Repository realisiert, was ein komfortables gleichzeitiges Arbeiten aller Teammitglieder an dem Projekt ermöglichte.
+fanden ca. alle 4 Wochen statt. Dank der Flexibilität von Online-Meetings konnten Termine zwischen den Teammitgliedern, Meetings mit dem Coach oder mit der SI auch kurzfirstig vereinbart werden.
+
 
 ===== Teaminterne Kommunikation
-Um eine schnelle und agile Kommunikation zwischen den einzelnen Gruppen bzw. Rollen innerhalb des Teams zu ermöglichen, wurden auf dem von Luca Meißner eingerichteten Discordserver für jede Rolle einzelne Untergruppen erzeugt.
+Um eine schnelle und agile Kommunikation zwischen den einzelnen Gruppen bzw. Rollen innerhalb des Teams zu ermöglichen, wurden, auf dem von Luca Meißner eingerichteten Discordserver, für jede Rolle einzelne Untergruppen erzeugt.
 Als Erweiterung, für schnelle, spontane Absprachen  wurde eine WhatsApp Gruppe erstellt.
 
 ===== Kommunikation mit unserem Coach
 Termine mit unserem Coach, Herrn Ringel, wurden über das HTW E-Mail-System abgesprochen und über MS Teams abgehalten.
 
 ===== Kommunikation mit unseren Themenstellerinnen
-Mit den Themenstellenden, der Stabstelle Internationales, wurden Termine per E-Mail vereinbart und auf gleichem Wege Dokumente geteilt.
-Meetings wurden über einen, von der SI zur Verfügung gestellten, BBB Raum gehalten.
+Mit den Themensteller:Innen der SI, wurden Termine per E-Mail vereinbart und auf gleichem Wege Dokumente geteilt.
+Meetings wurden über einen, von der SI zur Verfügung gestellten, BigBlueButton Raum gehalten.
 
 ==== Projektaufgabenverwaltung und eingesetzte Tools
 
 ===== Aufgabenverwaltung
 
-Die Aufgabenverwaltung hat das Team in SE I über GitHub Issues organisiert und eine übergeordnete Organisationsebene mit Git Projects etabliert.
+Die Aufgaben- und Versionsverwaltung des Projektes wurde über ein GitHub-Repository realisiert, was ein komfortables gleichzeitiges Arbeiten aller Teammitglieder an dem Projekt ermöglichte.
+Speziell, die Aufgabenverwaltung hat das Team in SE I über GitHub Issues organisiert und eine übergeordnete Organisationsebene mit Git Projects etabliert.
 Dies hat allerdings nur eingeschränkt funktioniert, da der Zugang zu den Git Projects sich für die Teammitglieder umständlich gestaltet hat und die Verwaltungsebene somit nicht ausreichend gepflegt wurde.
-Weiterhin war es unpraktisch sämtliche Aufgaben in GitHub als Issues abzubliden, da diese auch für Aufgaben und Probleme völlig unterschiedlicher Größenordnung definiert wurden.
+Weiterhin war es unpraktisch sämtliche Aufgaben in GitHub als Issues abzubliden, da diese auch für Aufgaben und Probleme völlig unterschiedlicher Größenordnungen definiert wurden.
 Dies hatte eine große Unübersichtlichkeit zur Folge, die eine strukturierte Handhabung der Issues unmöglich machte. Es war somit kaum Möglich den Fortschritt des Projekts zu veranschaulichen.
 Abhilfe für diese Problem schaffte das in der Mitte des SE II Moduls eingführte Tool ZenHub.
 Damit war es möglich Hirachien, Abhängigkeiten und den jeweiligen Arbeitsaufwand der Issues zu modellieren. Eine Visualisierung des Projektfortschrittes wurde zudem ebenfalls ermöglicht.
@@ -78,6 +80,9 @@ Mit wachsender Komplexität des Projektes wurde es allerdings nötig diese schri
 Dies wurde besonders Wirksam als das neue Tool ZenHub eingeführt wurde, da dies eine doch sehr weitreichende Umstellung mitten im Projekt war und somit klar umrissene Handlungsweisen verlangte. Dazu gehörten die Fragestellungen wann Issues in welche ZenHub Pipeline gehören, wann ist ein ToDo ein Issue, wann ein übergeordnetes Issue (Epic), etc. .
 Zusätzlich war es das Ziel der Regeln, durch eine einheitliche Grundlage an Verhaltensweisen, Kommunikationsaufwand zu sparen, eine klarere Struktur in der Verzeichnishierachie des Repositories zu schaffen und bestimmte Prozesse wie das Protokollieren und Planen der Iterationen zu standardisieren um so Zeit für wichtigere Dinge zu haben.
 
+===== Unser "Way of Working"
+
+
 == Durchführung (JH + JR)
 
 Zu Beginn des Sommersemesters SS22 hat sich das Team zu einer Online-Besprechung getroffen um sich den Ist-Zustand des Projekts zu verdeutlichen und einen Überblick über die noch zu bewältigenden Aufgaben und Probleme zu verschaffen.
@@ -85,8 +90,6 @@ Als Grundlage für das weitere Vorgehen wurden einerseits die noch offenen Issue
 Daraufhin wurden die Verantwortlichkeiten für die Aufgaben und die zu erstellenden Dokumente an die einzelnen Gruppen bzw. Rollen (Implementierung, Test, Projektleitung, etc.) verteilt und ein eigenverantwortliches Arbeiten innerhalb dieser kleineren Teams vereinbart. 
 
 
-// oder besser nur Iterationen beschreiben?
-// bzw beschreiben warum Iterationen eher schwammig waren (kein vorhandenes Inkrement bei manchen)
 === Inception
 
 In der Inception Phase haben sich die Teammitglieder zum ersten mal kennengelernt. Auf Grund der Corona-Pandemie und des damit einhergehenden generellen Online-Modus haben sich die Teammitglieder ausschließlich über zunächst verschiedene Tools (Teams, BBB, Discord) online getroffen. Da die meisten Teammitglieder ohnehin Discord als Kommunikationstool nutzten, hat Luca Meißner einen Discord-Server für das Projekt eingerichtet und hat sich für die restliche Projektdauer um die Verwaltung des Servers gekümmert.
@@ -94,7 +97,6 @@ Innerhalb der ersten Vorstellungsrunde haben die Teammitglieder ihre projektrele
 Um sich einen Überblick über die Projektaufgabe zu verschaffen, haben sich die Teammitglieder darauf geeinigt sich selbstständig in die von Herrn Prof. Anke bzw. vom Themensteller sowie der Vorgruppe bereitgestellten Dokumente zu lesen und für sich Fragen zu formulieren. Außerdem wurden bereits die ersten Treffen mit dem Coach und den Themenstellern vereinbart. Damit die Teammitglieder gemeinsam an der Software und den Dokumenten arbeiten konnten hat Jakob Häcker ein GitHub Repository erstellt, welches für die gesamte Dauer des Projekts weiterverwendet wurde.
 Auf Basis der Aufgabenstellung und ersten Gesprächen mit den Themenstellern konnte ein Entwurf für Vision für das Projekt erstellt werden. Ebenso wurde für die ersten beiden Phasen des Projekts eine Risklist mit den zentralen Projektrisiken  erstellt. Die Teammitglieder haben sich dabei gemeinsam über GitHub an den Dokumenten gearbeitet, da bezüglich der korrekten Ausführung noch große Unsicherheit herrschte. 
 Es stellte sich früh heraus das Pascal Thielemann hinsichtlich der Software Entwicklung über die meisten Kenntnisse verfügte. Daher hat sich das Team entschieden ihm die Entscheidung über die einzusenden IDE und die Softwarearchitektur überlassen. Generell wurden Entscheidungen demokratisch entschieden, wobei denjenigen die Entscheidung überlassen wurde, die zu der jeweiligen Fragestellung bereits Kenntnisse hatten. Innerhalb der wöchentlichen Teammeetings wurden Aufgaben gesammelt und protokolliert. Bevor das Meeting jeweils geschlossen wurde, wurden die Aufgaben verteilt bis für jede ein Verantwortlicher feststand.
-// 
 
 ==== Ziele
 * Team verteilt Rollen und Aufgaben
@@ -119,35 +121,46 @@ Da nur Pascal Thielemann nennenswerte Vorkenntisse in der Programmierung von Web
 
 ===== Arbeit in Rollen
 
-Die Arbeit strikt nach den vorgegebenen Rollen hat sich anfänglich schwierig gestaltet, da nicht klar wann, wer, welche Aufgaben zu erledigen hat und worin die Aufgaben von zum Beispiel Testern am Anfang des Projekts überhaupt bestehen. Das Team hat sich daher darauf geeinigt die Rollenverteilung als Verantwortlichkeiten zu betrachten. Wer eine Rolle inne hat, ist nicht allein für die Ausführung der Aufgaben zuständig und arbeitet auch nicht nur an der Aufgaben seiner Rolle, sondern ist lediglich Ansprechpartner und behält den Überblick über die zu erledigenden Aufagaben welche ebenfalls durch den Rolleninhaber an alle Teammitglieder delegiert werden.
+Die Arbeit strikt nach den vorgegebenen Rollen hat sich anfänglich schwierig gestaltet, da oft nicht klar war wann, wer, welche Aufgaben zu erledigen hat und worin die Aufgaben von zum Beispiel unseren Testern am Anfang des Projekts überhaupt bestehen.
+Das Team hat sich daher darauf geeinigt die Rollenverteilung als Verantwortlichkeiten zu betrachten.
+Wer eine Rolle inne hat, ist nicht allein für die Ausführung der Aufgaben zuständig und arbeitet auch nicht nur an der Aufgaben seiner Rolle, sondern ist lediglich Ansprechpartner und behält den Überblick über die zu erledigenden Aufagaben welche ebenfalls durch den Rolleninhaber an alle Teammitglieder delegiert werden.
 
 ==== Ergebnisse
 
-In der Iterationsphase konnten nach anfänglichen Schwierigkeiten gute Fortschritte erreicht werden. Es herrschte Einigkeit über die Rollenverteilung, geeignete Tools zur Kommunikation mit sämtlichen Akteuern waren gefunden und die Infrastruktur zum kollaborativen Arbeiten war bereitgestellt. Außerdem konnten die zum Projektbeginn benötigten Dokumente, wie die Vision und die Risklist erfolgreich begonnen werden. Ebenso konnte Pascal Thielemann mit den ersten Zeilen Code ein "proof of concept" liefern und unter Beweis stellen, dass die von ihm gewählten Programmiersprachen sich für die Durchführung des Projekts eigneten.
+In der Inceptionphase konnten nach anfänglichen Schwierigkeiten gute Fortschritte erreicht werden.
+Es herrschte Einigkeit über die Rollenverteilung, geeignete Tools zur Kommunikation mit sämtlichen Akteuern waren gefunden und die Infrastruktur zum kollaborativen Arbeiten war bereitgestellt.
+Außerdem konnten die zum Projektbeginn benötigten Dokumente, wie die Vision und die Risklist erfolgreich begonnen werden.
+Ebenso konnte Pascal Thielemann mit den ersten Zeilen Code ein "proof of concept" liefern und unter Beweis stellen, dass die von ihm gewählten Programmiersprachen sich für die Durchführung des Projekts eigneten.
 Des weiteren konnten die Stakeholder Identifiziert werden und eine Skizze der Anforderungen sorgten für ein grobes Verständnis der Aufgabe.
 
 === Elaboration
 
 Zu Beginn der zweiten Phase des Projekts hat sich zwischen den Teammitgliedern langsam ein solider Arbeitsrythmus entwickelt.  In den Treffen mit den Themenstellenden wurden die wichtigsten Use Cases und die systemweitern Anforderungen herausgearbeitet. Mit der Hilfe von Wireframes konnte sich das Team mit der SI auf die Struktur der Oberfläche der Webanwendung einigen und die Vision von der fertigen Anwendung weiter ausarbeiten. Auf Basis dieser Erkenntnis nahm auch der Prototyp langsam Form an und erhielt erste Funktionalitäten.
+// hier einfügen was als erstes implementiert wurde
+// die muss ungefähr zu dem Prototypen passen der am ende des letzten Semsters von Jakob vorgestellt wurde
 
 ==== Ziele
 * erste Wireframes erstellen
 * Use Cases und Systemweite Anforderungen identifizieren
 * Use Case Modell erstellen
 * bestehendes Datenmodell erfassen
+* VM organisieren
 * mit der Entwicklung des Prototyps beginnen
 * Dokumente (Vision, Risklist, Use Cases) ausarbeiten
 * Dokument zur Belegabgabe fertigstellen
 
 ==== Probleme 
 
-===== Schlechte Vorbereitung auf Meetings mit Themenstellenden
+===== Schlechte Vorbereitung auf Meetings mit den Themenster:Innen
 
-Während das Team auf eine gewissen Regelmäßigkeit bei den Treffen mit der SI geachtet hat und auch eine gute Arbeitsatmosphäre bei den Treffen erzeugen konnte, ist es doch einige Male deutlich geworden, dass man sich auf die Treffen hätte besser vorbereiten müssen. So waren zum Beispiel Software-Anwendungen die zur Präsentation von Zwischenergebnisse benötigt wurden noch nicht im Vorfeld gestartet worden, was zu Wartezeiten führte. Wenn Teammitlgieder nicht Anwesend sein konnten, haben sich die übrigen Teammitglieder nicht rechtzeitig über deren Arbeitsfortschritt informiert und es konnten diese nicht präsentiert werden. Um sich dahingehend zu verbessern hat sich insbesondere der Projektleiter Jakob Häcker bemüht vor den Meetings mit der SI alle Informationen zu sammeln und die Teammitglieder an eine gute Vorbereitung ihrer Präsentation zu erinnern. 
+Während das Team auf eine gewissen Regelmäßigkeit bei den Treffen mit der SI geachtet hat und auch eine gute Arbeitsatmosphäre bei den Treffen erzeugen konnte, ist es doch einige Male deutlich geworden, dass man sich auf die Treffen hätte besser vorbereiten müssen.
+So waren zum Beispiel Software-Anwendungen die zur Präsentation von Zwischenergebnisse benötigt wurden noch nicht im Vorfeld gestartet worden, was zu Wartezeiten führte.
+Wenn Teammitlgieder nicht Anwesend sein konnten, haben sich die übrigen Teammitglieder nicht rechtzeitig über deren Arbeitsfortschritt informiert und es konnten diese nicht präsentiert werden.
+Um sich dahingehend zu verbessern hat sich insbesondere der Projektleiter Jakob Häcker bemüht vor den Meetings mit der SI alle Informationen zu sammeln, welche in dem kommenden Meeting besprochen werden sollten. Damit war es Möglich, dass sich die Teammitglieder besser auf ihre Präsentation vorbereiten können und auch alle eine Vorstellung davon haben was der Hauptgegenstand des Meetings ist. 
 
-===== Missverständnisse mit dem Kunden
+===== Missverständnisse mit den Kunden:Innen
 
-Obwohl das Team jedes Meeting mit der Stabstelle Internationales protokolliert hatte, kam es einige Male zu Missverständnissen. Die Dokumentation der Vereinbarungen der Meetings war teilweise nicht ausführlich genug oder es wurde versäumt wichtige Informationen festzuhalten. Daraufhin wurde  neben einer höheren Disziplin beim Protokollieren ebenso die Verantwortlichkeit neu vereinbart. Statt nur einem Teammitglied sollten ab sofort alle, die gerade nicht sprechen bzw. präsentieren, ausführliche Notizen im Protokollierungstool Pentapad machen. Das gemeinsame Protokollieren hat zu umfassenden und verlässlichen Ergebnisse geführt. 
+Obwohl das Team jedes Meeting mit der SI protokolliert hatte, kam es einige Male zu Missverständnissen. Die Dokumentation der Vereinbarungen der Meetings war teilweise nicht ausführlich genug oder es wurde versäumt wichtige Informationen festzuhalten. Daraufhin wurde neben einer höheren Disziplin beim Protokollieren ebenso die Verantwortlichkeit neu vereinbart. Statt nur einem Teammitglied sollten ab sofort alle, die gerade nicht sprechen bzw. präsentieren, ausführliche Notizen im Protokollierungstool Pentapad machen. Das gemeinsame Protokollieren hat zu umfassenden und verlässlichen Ergebnisse geführt. 
 
 ===== Hohe Arbeitsbelastung zum Semesterende
 
@@ -168,7 +181,7 @@ Weiterhin hat sich das Team eine einfache Erweiterbarkeit und Wartbarkeit ihrer 
 ==== Ziele
 
 * Ausarbeitung der Softwaredokumentation
-* Implementierung der Funktionalitäten
+* Implementierung der Funktionalitäten anhand der ersten 5 Use Cases
 * Definition und Durchführung der Tests
 * Fertigstellung Benutzerdokumentation
 * Vorbereitung Zielumgebung für Installation
@@ -215,10 +228,6 @@ Das Ende unserer Projektarbeit
 
 ===== Virtual Machine wird gelöscht
 
-
-
-==== Problem 
-
 ===== neue Anforderungen
 
 ===== Deployment
@@ -233,6 +242,9 @@ Das Ende unserer Projektarbeit
 === Softwaresystem
 
 ==== Lizenz
+
+Informationen zur Lizenz sind in der README des GitHub-Repositorys zu finden.
+
 
 === Reflexion der Teammitglieder
 
@@ -312,7 +324,7 @@ Durch das Projekt kann ich nun auch in zukünftigen Projekten die neu erworbenen
 ==== Jens Rosenkranz
 Das Projekt "Verwaltung der Hochschulpartnerschaften" der HTW Dresden war für mich das erste Softwareprojekt dieser Größe und Komplexität. Außerdem hatte ich bis dahin noch nicht mit so vielen Teilnehmern an einem Projekt zusammengearbeitet. Meine Erfahrung in der Softwareentwicklung beschränkte sich zum Anfang des Projekts ausschließlich auf die bisherigen Projekte des Studiums. Insbesondere hatte ich keinerlei Kenntnisse in der Programmierung von Webanwendungen, davon wie man Datenbanken mit einer Programmiersprache wie Python ansteuert oder wie man über ein Repository im Team programmiert. Insofern kann man sagen, dass meine Vorkenntnisse zum Projektbeginn sehr gering waren. Daher wollte ich ursprünglich eher die organisatorischen Aufgaben übernehmen und mich um die Ausgestaltung der Dokumente kümmern. Allerdings hat sich in der ersten Vorstellungsrunde der Teammitglieder herausgestellt, dass auch alle anderen Teammitglieder nahezu keine Vorkenntnisse hatten und ebenfalls eher organisatorische Aufgaben übernehmen wollten. Das hat dazu geführt, dass ich letztendlich die Rolle eines Entwicklers übernommen habe. Es hat sich also schnell abgezeichnet, dass ich mir schnell sehr viel Wissen aneignen werden muss, um die Aufgaben erfüllen zu können. Insbesondere während des dritten Semesters, also dem Projektbeginn, habe ich es als große Herausforderung empfunden, neben dem Vorlesungsstoff noch zusätzlich selbstständig Programmierung in HTML, CSS und Javascript zu erlernen. Glücklicherweise hatte ein Teammitglied schon genug Vorkenntnisse, um das Projekt entwicklerseitig ins Rollen zu bringen. Im vierten Semester konnte ich mich mehr und mehr in die Entwicklung des Prototyps einbringen, da in diesem Semester die benötigten Kenntnisse innerhalb der verschiedenen Vorlesungen und Praktika vermittelt wurden. Zum Beispiel war Webprogrammierung ein Inhalt der Veranstaltung Internettechnologien und Datenbankprogrammierung Inhalt der Vorlesung Programmieren von Komponentenarchitekturen. 
 Das Projekt war in jedem Fall der beste Beweis dafür, dass es absolut sinnvoll ist die Entwicklung einer komplexeren Anwendung im Team strukturiert anzugehen und sich im Vorfeld darüber klar zu werden, was der Kunde genau will und was man in der Lage ist tatsächlich umzusetzen, wer welche Aufgabe und Verantwortung hat und was man bis zu welchem Zeitpunkt erledigt haben will. Anderfalls ist es praktisch garantiert, dass wir auf Grund von Missverständnissen auf jeder Ebene gescheitert wären. Mir hat insbesondere das agile Vorgehen gut gefallen, da wir erst nach und nach durch mehrere Meetings mit dem Kunden verschiedenste Missverständnisse ausräumen konnten. Hätten wir nur vorab die Anforderungen und Wünsche mit den Kunden besproche, wäre am Ende sehr sicher nicht das dabei herausgekommen, was sich der Kunde vorgestellt hat. 
-Die Zusammenarbeit mit unserem Kunden, der Stabstelle Internationales an der HTW, war insgesamt gut, auch wenn wir regelmäßig Erwartungshaltungsmanagement betreiben mussten. Die SI ist uns in vielen Punkten entgegengekommen und hat unserem Team gegenüber viel Geduld und Verständnis gezeigt. Die Zusammenarbeit mit einem echten Kunden, war sehr lehrreich. Es war ein Prozess zu verstehen, was der Kunde genau möchte und ebenso zu vermitteln, was wir zu liefern in der Lage sind. Das in einem realistischen Szenario üben zu können, war eine super Erfahrung. 
+Die Zusammenarbeit mit unserem Kunden, der SI an der HTW, war insgesamt gut, auch wenn wir regelmäßig Erwartungshaltungsmanagement betreiben mussten. Die SI ist uns in vielen Punkten entgegengekommen und hat unserem Team gegenüber viel Geduld und Verständnis gezeigt. Die Zusammenarbeit mit einem echten Kunden, war sehr lehrreich. Es war ein Prozess zu verstehen, was der Kunde genau möchte und ebenso zu vermitteln, was wir zu liefern in der Lage sind. Das in einem realistischen Szenario üben zu können, war eine super Erfahrung. 
 Genauso war es eine herausfordernde und lehrreiche Erfahrung in einem Team von acht Kommilitonen zusammenzuarbeiten. Nachdem anfänglich große Unsicherheit wegen der fehlenden Kenntnisse herrschte, hat sich nach einigen Wochen eine relativ gute Arbeitsteilung zwischen den meisten Teammitgliedern ergeben. Trotz des spürbaren Drucks durch das Projekt und das Studium im allgemeinen, sind nur wenige Konflikte entstanden und diese konnten zur Zufriedenheit aller gelöst werden. Die Teammitglieder waren größtenteils sehr motiviert und haben ihre Rollen und Aufgaben verantwortungsvoll erfüllt. Durch das Projekt "Verwaltung von Hochschulpartnerschaften" konnte ich zum ersten mal die
 unterschiedlichen Phasen einer agilen Software Entwicklung innerhalb eins  Teams erleben. Die Aufteilung eines komplexen Softwareprojekts in Teilbereiche, die Analyse, Modellierung und schließlich die Implementierung im Team mittels GitHub waren neu für mich und haben Spaß gemacht.
 Ich habe durch das Projekt viel gelernt und die erste echte Erfahrung in Softwareentwicklung gemacht. Wie das immer so ist, wächst man mit seinen Herausforderungen.
@@ -320,7 +332,7 @@ Ich habe durch das Projekt viel gelernt und die erste echte Erfahrung in Softwar
 
 ==== Nico Rosenkranz
 
-Das Projekt "Verwaltung der Hochschulpartnerschaften" in Kooperation mit der (SI) Stabsstelle Internationales in Software Engineering 1 und 2 war das zweite Projekt an dem ich mitgearbeitet habe. Ich habe bereits an einem Projekt auf dem Beruflichen Gymnasium im Fach Informations- Kommunikationstechnologie mitgearbeitet, wo ebenso ein Verwaltungstool erstellt werden sollte, dass mit einer Datenbank verbunden ist. Jedoch war es die erste Erfahrung im Umgang mit den Phasen der agilen Software Entwicklung. Aus diesem Grund war es für mich sowie andere aus dem Team eine große Herausforderung, wo man aber zugleich viele neue Fähigkeiten erlernen konnte, die man zuvor in den Vorlesungen gehört beziehungsweise in den Praktika geübt hatte. 
+Das Projekt "Verwaltung der Hochschulpartnerschaften" in Kooperation mit der SI in Software Engineering 1 und 2 war das zweite Projekt an dem ich mitgearbeitet habe. Ich habe bereits an einem Projekt auf dem Beruflichen Gymnasium im Fach Informations- Kommunikationstechnologie mitgearbeitet, wo ebenso ein Verwaltungstool erstellt werden sollte, dass mit einer Datenbank verbunden ist. Jedoch war es die erste Erfahrung im Umgang mit den Phasen der agilen Software Entwicklung. Aus diesem Grund war es für mich sowie andere aus dem Team eine große Herausforderung, wo man aber zugleich viele neue Fähigkeiten erlernen konnte, die man zuvor in den Vorlesungen gehört beziehungsweise in den Praktika geübt hatte. 
 
 Zu Beginn von Software Engineering 1 war der Start in die Projektarbeit ein wenig holprig, da man erst einmal überfordert war, wie man anfängt. Des Weiteren waren wir uns zum Projektstart noch recht fremd und keiner wusste welche Fähigkeiten der jeweils andere schon besitzt. Nach den ersten Meetings haben wir unsere Schwerpunkte festgelegt, was für mich Analyse und Entwurf war. Das bedeutet, dass ich mich zum Beispiel um die verschieden Use Cases gekümmert habe, beziehungsweise und alles was dazu gehörte. Durch die Praktika hat man zwar einen guten Einblick erhalten, aber diese dann auch am eigenen Projekt anzuwenden, hat noch einmal den ein oder anderen Nerv geraubt. Da wir in Software Engineering 1 einige Probleme mit der Zuteilung in Github hatten, zum Beispiel wer welche Issues bearbeitet, haben wir uns in Software Engineering 2 dazu entschieden die Erweiterung Zenhub dazu zunehmen. Dadurch gab es eine bessere Zuordnung wie weit der Issue vorgeschritten ist. Je weiter wir in der Projektarbeit fortgeschritten sind, desto besser wurde auch die Kommunikation innerhalb der Gruppe, aber auch mit der Stabsstelle Internationales. Die Kommunikation in so einer Projektarbeit ist eines der Wichtigsten Punkte, da so relativ schnell Missverständnisse auftauchen können, wodurch die Bearbeitungszeit deutlich verlängert wird und dadurch die Zeit während der zwei Semester sehr schnell vorüber gehen kann, ohne dass man weiter vorankommt. Die Stabsstelle Internationales ist uns auch sehr entgegen gekommen und man kann somit sehr zufrieden mit dem Ausgang des Projekts sein kann.
  
