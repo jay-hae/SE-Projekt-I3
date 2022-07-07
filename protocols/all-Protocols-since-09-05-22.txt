@@ -1,0 +1,395 @@
+Gespräch mit Herrn Zirkelbach
+- evtl virtual box (siehe Raphael) 
+- kann erstaml an gelassen werden, bis maximal ende Sebtember
+- wenn irgendwas passiert wird niemand was machen können, sie ist dann einfach weg (oder an mich wenden)
+
+- kopie des Repos machen das wird der folge gruppe gegeben
+- Admin aufgaben:
+- updates machen
+- wenn was ist muss jemand da sein
+
+
+Meeting 05.07
+Anwesende: Jakob, Jens, Nico, Ha, Roman, Pascal, Patrick
+
+Wer hat was gemacht (kurze vorstellung)?
+- Test Doku: Patrick & Roman
+- Test konzept fehlt sonst noch kleinigkeiten 
+- keine wirklich Inhaltiliche prüfung notwendig
+- SW Doku: komplett fertig
+- Jens: an Projektbericht gearbeitet, Softwaredoku fertig, Software-Design überarbeitet, automatisch generierten Dateien auf eigenen Studentenserver, Reflexion fertig
+
+- Anwenderdoku:
+- Soweit Fertig kleinigkeiten (Geschlechter neutrale sprache)
+
+- Betribesdoku:
+- Todo #96 muss beendet werden (Jakob) nach meeting
+-  Problem, der Übergabe erläutert, nach treffen nötig
+
+- Anforderungs Analyse:
+- SWA-Dok: mit Abnahme protokoll abgleichen (während des Meetings)
+- bis morgen fertig
+
+Was muss noch gemacht werden?
+- Header Prüfung
+
+Treffen zur finalisierung? (alles nochmal prüfen und lesen)
+- Do fast alle 17:00
+
+- Abnahme Protokoll ab schicken (gecheck)
+
+Abgabe des Projekts 8.7
+- Wer gibt ab? (Vorschlag Jakob)
+
+Fragen fürs Praktikum:
+- muss Risklist mit in Anforderungsspezifikation (die Vorgruppe hatte das) -> verweis dass es im Repo liegt, da nicht zur abgabe gefordert
+- Wo muss Linzenz hin In Projektbericht?? Lizenz beschreibung muss mit ins Repo (gibt in GitHub ein Guid der das macht mindestens mit in README es gibt aber eine LIZENZ Datei von GitHub)
+- wann wird VM abgschaltet -> ende Sebtember
+
+- wann genau am Freitag
+
+Meeting 26.06
+
+- Anke fragen wo Anforderungen hin müssen, die erst kurz vor abgabe eingereicht wurden?
+- NFAP ins testdokument 
+- Montag abend, html docs von JS auf Funktions Acc ziehen
+
+
+Meeting mit Pascal und Jakob 22.06
+- WF wurden abgenommen aber im nachhinen anders gewünscht
+- auslaufende Verträge, hinten anstellen wurde auch erst gegen ende des Projektes genannt
+- UI verbessern -> Ha ? 
+
+
+Meeting mit SI 21.06
+Anwesende: Luca, Raphael, Patrick, Nico, Jens, Jakob
+
+Was noch getan werden muss:
+
+Selbstreflexion: (Jakob mit Anke klären)
+- selbstreflexion zu jedem Themengebiet bzw. jeder einzelne?!?!
+- alle selbst refelxion? 
+- 
+Deploymentdiagramm + Deploymentinfos (Luca interviewt Herrn Zirkelbach)
+- Muss das Deploymentdiagramm gemacht werden oder nicht?
+- Wo liegt bzw. wie heißt der Datenbankserver?
+- Auf welchem Server läuft die Webanwendung bzw. VM?
+
+Entwicklerdoku:  (Jens + Ha)
+- Nicht Webspace sondern virtuelle Maschien
+- weiter an der Softwaredokumentation arbeiten
+
+Implementierung: (Pascal)
+
+    - bei gleichzeitigem Arbeiten mit dem selben Login; kommt es zu Kollisionen? Wird Eingabe irgendwie gesperrt? (Achtung gleicher Login)
+    
+    - Hauptseite Filter Länder: nur die Länder anzeigen mit denen Verträge existieren
+    - Hochschule bearbeiten: Dropdown Verträge 
+    - Vertragsarte eines Vertrags ändern. aber wenigstens löschbar machen
+    - welche Bugs können noch gefixt werden
+    - dokumentiern was nicht erfüllt werden kann
+    
+    Anforderungsspezifikationen aktualiseiren: (Nico)
+    -Use cases
+    -Vision
+    -Risk List
+    -Anforderungen
+
+Test: (Patrick)
+- paralleles Bearbeiten / Hinzufügen von Daten innerhalb des selben Logins testen.
+
+Abnahmeprotokoll:
+- alles rein was nicht funktioner
+- (vertragstyp kann nicht nachträglich geändert werden -> muss gelöscht und neu erstellt werden)
+
+ToDo:
+- Termin Test Case: 8 -> multiuser Freitag
+- * Termin anforderungen nochmal durch gehen und das was nicht geht notiert wird
+- Pascal fragen wann wenn er fertig ist damit * erledigt werden kann (Sonntag?) wann kann pascal?
+
+
+
+Meeting mit SI 16.06
+Anwesende: Jakob, Pascal, Nico, Fr. Terpe, Fr. Wunderlich, Raphael,
+
+Was muss gemacht werden:
+- Logout button funktionen
+
+- Partnerschaftsverträgeansicht wechseln:
+- Übersicht über alle Verträge + Anzahl der Abeschloßenen verträge für diese Hochschule unter der Überschrift  "Verträge"
+- Dropdown neben "Neuen Vertrag anlegen" nur zum anlegen eines neuen Vertrages
+- null Bemerkung:
+- null -> Leeren string
+- Aktive - 1/0 in ja/nein
+- Verträge -> erasmus:
+-  
+- Wenn vertrag ausläuft:
+- reiter: "Ablaufende Verträge" :
+- verträge anzeigen die in 3 Monaten ablaufen
+- verträge anzeigen die abgelaufen sind und auf aktiv gesetzt 
+- Restriktionen umbennen zu Studiengänge
+- diesen Button nach ganz unten auf dieser Seite schieben
+- Tabelle zurück setzten
+- "neue Restiktionen" zu "neuer Studiengang" benennen
+
+Partnerhochule anlegen:
+- "Partnerhochschule anlegen" Schrift vergrößern
+    - Ansprechpartner --> bei Titel Auswahlfelder geben 
+- Partenerhoschule Anglegen größer Schreiben als Hochschule
+- Daten werden noch nicht richtig zurück gesetzt -> Datenwerden nur raus gelöscht wenn man auf abbrechen drückt?
+
+- Schrift farbe etwas grauer
+- Schrift größe etwas kleiner 
+- kompakter gestalten
+- bei PopUp den Hintergrund (an den Rändern) unschärfer machen oder ganz weg
+- Gruppieren -> enger oder rahemen drum
+-> Partnerschaften bearbeiten -> Vertragsansicht bemerkung evtl dadrunter
+
+UC4: Pascal hat was in DC dazu geschrieben, nur lesender Acc von Raphael verwenden
+
+UC5: 
+- anzeigen welche Agreements der Mentor  betreut
+- unter mentor Bearbeiten : "Betreute Agreements" -> agreements auflisten
+- Pop Up kompakter gestallten
+- Reiter Metor: Fakultät in Mentortabelle hinzufügen (Zahl der Fak. reicht) 
+- Fakultäten sortieren wie daneben nach Mentoren-Namen (nice to have)
+
+
+Weiteres vorgehen:
+-
+
+
+Ablauf:
+- Bisherige Funktionale UC vorstellen 
+- Hochschulbarbeitung: verschiedene Vereinbarungen sofort anzeigen
+- Über Drop-Down Menü ein Element wo alle Sachen angezeigt werden oder dahinter anzeigen wie viele
+-Drop Down Menü --> ein Standardfeld hinzufügen: -leerer Vertrag
+
+
+Meeting 13.6
+Anwesende: Nico, Patrick, Ha, Raphael, Jens, Jakob
+
+Dokumentationen:
+- Abgabe der Dokumentationen einzeln?
+-> Frage: Wie muss man die Dokumente abgeben?
+Nico gibt termin für nächste Woche mit Jakob
+
+Meeting mit SI 10.6
+Anwesende: Jakob
+
+Review Prototyp:
+- Prototyp scheint nicht richtig zu funktionieren
+- spätestens Montag wegen SI meeting am 16.6
+
+nochmTermin:
+- Do. 16.6 13:30 (ist Termin E-Mail angekommen?)-> wie will man UC04 umsetzten falls kein 2. DB Acc vorhanden 
+- link zum Aktuellen Prototypen (13.6)
+- Liste aller umgesetzten Anforderungen ebfalls am Montag(13.6)
+- Use-Case Spezifikation mit geben uns system anforderungen ebenfalls (13.6)
+- wir gehen alles noch mal durch 
+- am anfang wiird Ziel zusammengefasst, dann wird gezeigt was funktioniert (schell durch gehen) bzw nicht funktioniert
+- das was nicht funktioniert wird lösung im Meeting besprochen wie es bis zur tatsächlichen abnahme gehandhabt werden soll
+
+- der Termin 16.6 wie general Probe für Abnahme letzt möglich Review
+
+Unser Plan:
+- UC8 , und UC 6,7 nicht mehr umsetz bar
+- alles Fertig machen
+
+Stand Datenbank Acc:
+- kontakt aufgenommen, Frau Lose ist momentan im Urlaub (Frau Bretschneider wollte herraus finden ob das jemand anders machen kann)
+- spätestens Dienstag nochmal nach fragen
+
+Termin am 24.06:
+- Frau Terpe kann vom 20.6-24.6 kann Frau Terpe nicht
+- Abnahme in der Woche von 27.6-1.7 -> Anke anschrieben
+- Abnahme Protokoll spätestens am 21.6 an SI
+- vlt 28.6 max 1 Std. ab 13:30 - 14:30 https://ibbb4.informatik.htw-dresden.de/html5client/join?sessionToken=2okehhevd7i8f1iy 
+- kleine Reflextion: worauf muss (als Tipp für das nächste Team) geachtete werden, was können wir der SI sagen was sie beim nächsten Team meit geben sollen, was kann die SI besser machen 
+- Welche anforde
+
+
+Meeting mit Ringel 2.06
+(gedächnis Prtotkoll):
+Anwesende: Pascal (halbe Stunde), Jakob
+
+Strategie bis zur abgabe:
+- keine Neue baustelle anfangen (mit SI drüber sprechen)
+- die sache definiert und ordentlich zum abschluss brignen
+
+Tipps:
+- Dokumente schreiben wir nicht weil wir sie abgeben müssen sondern weil sie einen Zweck habe
+-> immer aus sicht des Zwecks schreiben (zB für einen Kunden, Teammitglied)
+
+Fragen zu Testdoku:
+- Soll der Code von den Tests in die Doku?: 
+-> gegen Frage ist der Code des Prototypens in der Doku (nein)
+- Sollen die automatisch erstellten Dokumentationen irgendwie in die Dokumentation integriert werden oder nur ins Git-Repository gespeichert werden?:
+-> nein, da sich diese die ganze Zeit ändern wenn neuer Code,etc. hinzukommt
+- Belegarbeiten-PDF: Abnahmetests bei der Übergabe? was ist damit gemeint?
+-> VERMUTLICH sind hier die Test von der Kundenseite gemeint, also was läuft, was nicht...
+
+- haben uns über arbeits wiese unterhalten, reflektiert warum wir so viel zeit vergeudet haben
+
+Was muss in den Proj.-Bericht:
+- Warum haben wir nicht 100% geschafft
+- Was hätten wir anders machen müssen um 100% zu erreichen bezogen auf Methoden von der VL
+- Verpasste Chancen darstellen, warum habe wir sie verpasst
+
+Meeting 31.05
+Anwesende: Pascal, Patrick, Ha, Jens, Jakob, Raphael
+
+TOP 1: Was ist der Stand?
+Prototypen:
+- aktuelle Bug Labels in ZenHub niedrig prioriseirt
+- erstmal Statistiken (warten auf Nicos upload)
+- DB Acc: weg über Frau Terpe Mail, was genau wollen wir (was soll der neue Acc können)
+Testen:
+- letzten mal nicht viel passiert
+- sporadisch Kommuniktion
+- Ziel machbar (Login Test Case zum nächsten Dienstag)
+
+TOP 2: Was muss gemacht werden?
+- was soll der neue Acc können? : nur lesen und schreiben (rechte)
+- idee von Raphael zum löschen:
+- allgemeiner Button zum löschen welcher nur von Admin Acc 
+-Abnahmeprotokoll vorbereiten (Luca) bis 24.06 issue #68
+-Projektbericht (koordination Jakob)
+-Aktualisierte Anforderungsspezifikation (Nico, Ha und Jens drüberschauen)
+-Entwicklerdokumention (Ha und Jens, Pascal drüberschauen)
+-Testdokumentation (Patrick und Roman)
+-Betriebsdokumentation (Jakob) (zB wie ändere ich den Admin Acc)
+-Nutzungsbedingungen (Jakob schaut es sich an)
+
+
+TOP 3: Wie kann man euren Fortschritt sehen ohne es im Teammeeting ansperchen zu müssen?
+- relevanz (?)
+- bitte Commentar Issues
+
+TOP 4: SI Fragen
+- Löschen von DS: laut Protokoll soll nur Länder und Fakultäten nicht löschbar sein ist das aktuell?
+
+
+TODO (auch als Issue nach dem Meeting):
+- als Issue: 
+Aktualisierte Anforderungspezifikation (10%)
+(Vision, Use Cases, SSWA,
+Glossar, Domänenmodell)
+- VM aktuallisieren
+- Frau Terpe kontaktieren, dass sie das RZ kontatktieren soll das wir 1 Weiteren DB Acc brauchen
+- übergabe spätetsten 24.06 -> SI treffen
+-> abnahme Protokoll
+- Patrick meeting mit Herrn Ringel diesen Do: Fragen für die Testdokumentation:
+- Soll der Code von den Tests in die Doku?
+- Sollen die automatisch erstellten Dokumentationen irgendwie in die Dokumentation integriert werden oder nur ins Git-Repository gespeichert werden?
+- Belegarbeiten-PDF: Abnahmetests bei der Übergabe? was ist damit gemeint?
+
+Meeting mit Raphael 23.05
+Anwesende: Ha, Patrick, Raphael, Jakob
+
+TOP1: Wie war der Fachaustausch? Was wurde mitgenommen?
+- feedback über C4 modell und 
+
+TOP2: Wie hat sich der Umgang mit ZenHub entwickelt (jeder kurzes Statment)
+- Patrick: für die gute Einarbeitung in den Workflow fehlt die Zeit
+- allgemein noch kein großer Vorteil
+
+TOP3: Iterations planung - sind die Issues noch aktuell? Was kommt dazu? 
+- Test Case 1: Login implementieren und TC durchführen
+
+
+Fragen an SI:
+
+Berichte:
+- Planung der Umsetzung
+
+TODO:
+- Deployment Modell ausarbeiten
+- Proto auf VM kann da auch die Login seite dazu?
+- mit Luca auseinander setzten
+- Meeting fürher ankündigen
+- neue Teammeeting zeit.
+
+Meeting mit SI 17.05.22
+Protokollverantwortliche:
+Anwesende: Jens, Nico, Patrick, Lisa Wunderlich, Juliane Terpe, Raphael, später Jakob
+
+TOP 1: Welche Berichte müssen erstellt werden?
+Die von Nico gesammelten Berichte sind so erstmal vollständig.
+- Anpassung der Kästchengröße (alle gleich groß)
+- Berichte müssen filterbar sein. Also zB nur die Werte einer Hochschule anzeigen.
+
+TOP2: Desgin Wireframes (falls vorhanden) 
+-> WireFrame ist in TOP1 behandelt wurden) 
+
+TOP3: PDF exportformat (?)
+- PDF und Excel wären gut.
+In erster Linie Excel da damit auch PDF erstellt werden können.
+Wenn möglich beides. über ODBC Driver
+
+
+
+TOP4: Welcher Vertragstyp sollte Standard sein? 
+- es gibt keinen expliziten Standardvertrag. Einfach so wie es jetzt ist. Erster Vertrag in der Liste ist ausgewählt. Niemals kein Vertrag
+- Erstmal keine Auswahl und dementsprechend nichts anzeigen und dann Auswahl über Drop-Down-Menü welcher Vertragstyp. Also User zwingen einen Vertragstyp auszuwählen bevor etwas angezeigt wird.
+
+TOP5: Sonstiges 
+- Termine in Vorlauf von 5 Tagen
+- erst Termine, dann Themen und eher kurzfristig Absagen als kurzfristig Ansagen
+
+
+TOP6: Hochschule bearbeiten Modal
+- im Modal anzeigen welche Hochschule aktuell bearbeitet wird. So könnte man vermeiden die Seite Hochschule und Partnerschaften auf einer Seite anzeigen zu müssen
+
+
+
+
+
+Meeting mit Raphael 09.05.22
+Protokollverantwortliche: Jakob
+Anwesende: Jakob, Raphael,  Nico, Jens, Ha, Patrick
+
+TOP 1 Was wurde gemacht/Was müssen wir uns als Team ansehen?
+
+- Mentoren hinzufügen - An HTW aktiv soll checkbox sein (boolean)
+-Hochschule -> bearbeiten Modal -> Partnerschaften -> Vertragstyp eher kein Dropdown sondern eher wie verschieden Reiter, da ohnehin nie kein Vertragstyp ausgewählt sein darf (Defaultwert: Hochschulvertrag)
+- Falls wir die Bearbeitenansicht Verträge und Hochschulinformationen NICHT auf eine Seite bringen sondern so belassen wie bisher (wechsel zwischen den Ansichten) Dann muss im Modal der Name der Hochschule zu sehen sein.
+- Jakob hat Glossar gekürzt
+
+- Nico 
+
+- Tests:
+- 1. Test diese Woche, einarbeit mit Selenium (wichtige UC an dem das Testen getestet wird)
+
+TOP 2 UC Spezifikation von Nico
+- UC für Berichte erstellt und überarbeitet
+- UC von SI abnehmen lassen
+- kann Bericht bild mit in die UC spezifikation
+
+TOP 3 Was wollen wir die Iteration erreichen?
+(was ist übrig?, Berichte od Login?, Issue #27,47,54,26)
+- Berichte: erste Bugs fixen, dann WF (Nico) für Berichte und dann
+- Test: Ansatz: 3 UC Test + evtl anfang nicht funktionale Anforderungen (eher Planung)
+
+TOP 4 Was müssen wir dafür machen (Issues in Sprint Backlog)
+- Bug1: Modal (popup) Mentorenhinzufügen -> An HTW aktiv zu checkbox 
+- Bug2: Filter "Aktive verträge" ändern 
+- Bug3: Hochschule -> bearbeiten Modal -> Partnerschaften -> Vertragstyp eher kein Dropdown sondern eher wie verschieden Reiter, da ohnehin nie kein Vertragstyp ausgewählt sein darf (Defaultwert: Hochschulvertrag)
+- Bug4: Button Mentoren => bearbeiten funktioniert nicht
+- Bug 5: Unter Mentoren => anlegen => abbrechen und speichern Button funktionieren nicht 
+- Bug 6:  Generell Speichern von verändernden Daten noch nicht persitent.
+
+- WF anlegen für Berichte (UC 6-7)
+- Anke wegen abgabe termin fragen
+- Test C1 + Doku -> Epic Testen
+- Test C2 + Doku
+- Test C3 + Doku
+- 
+TOP 5 SI Meeting:
+- UC's 6-8 abnehhmen lassen (diese Woche)
+- WF für die Berichte (diese Woche) am an Freitag (Luca, Nico, Jakob)
+- Hochschule -> bearbeiten Modal -> Partnerschaften -> Vertragstyp. In Zukunft wird ein Vertragstyp als defaultwert ausgewählt und die Daten dementsprechend gefiltert. Frage: Welcher Vertragstyp sollte standard sein?
+
+Tipps von Raphael:
+- https://www.figma.com/ für WF 
+
