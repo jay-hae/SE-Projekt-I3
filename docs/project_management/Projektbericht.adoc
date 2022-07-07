@@ -177,14 +177,24 @@ Weiterhin hat sich das Team eine einfache Erweiterbarkeit und Wartbarkeit ihrer 
 
 ===== Einige Use Cases konnten nicht umgesetzt werden
 
-Im Laufe der Construction Phase hat sich abgezeichnet, dass nicht mehr alle ursprünglich vereinbarten Funktionen der Software umgesetzt werden können. Während die Umsetzung der Funktion zur Erstellung von Statistiken leicht möglich wäre, fehlte dazu am Ende einfach die Zeit.
+Im Laufe der Construction Phase hat sich abgezeichnet, dass nicht mehr alle ursprünglich vereinbarten Funktionen der Software umgesetzt werden können. Während die Umsetzung der Funktion zur Erstellung von Statistiken leicht möglich wäre, fehlte dazu am Ende einfach die Zeit. Stattdessen hat sich das Team auf eine erfolgreiche Umsetzung der wichtigsten Use Cases und auf einen leicht erweiterbaren Code konzentriert.
+
+
+===== neue Anforderungen durch Kunden "Last Minute"
+
+In dieser Phase konnten wir unseren Themenstellern bereits eine weitläufig funktionsfähige Software zu testzwecken bereitstellen. Dadurch ist es kundenseitig zu neuen Anforderungen und Wünschen gekommen, die wir in der verbleibenden Zeit nicht mehr umsetzen konnten. 
+Wir konnten den Themenstellern allerdings versichern, dass wir für etwaige Folgeteams die Erweiterbarkeit auf einem möglichst hohen Level halten werden und das ihre Wünsche in Zukunft zumindest teilweise umgesetzt werden könnten. 
 
 
 ==== Ergebnisse
 
+Zum Ende der Constructionphase konnten die wichtigsten Funktionalitäten der Webanwendung umgesetzt werden und das Design entsprechend der Wünsche durch den Kunden angepasst werden. Die Softwaredokumentation konnte ebenso abgeschlossen werden und in die Entwicklerdokumentation eingegliedert werden.
+Die in der letzten Phase vereinbarten Tests sind größtenteils erfolgreich verlaufen und das Erreichen der angestrebten Anforderungen konnte dadurch bewiesen werden. 
+
+
 
 === Transition
-Das Ende unserer Projekt arbeit 
+Das Ende unserer Projektarbeit 
 
 ==== Ziele
 
