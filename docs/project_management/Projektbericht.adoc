@@ -82,6 +82,24 @@ Zusätzlich war es das Ziel der Regeln, durch eine einheitliche Grundlage an Ver
 
 ===== Unser "Way of Working"
 
+Als Vorlage für das Vorgehen im Projekt diente der Open Unified Process.
+Um einen Überblick über den Projektstand zu erhalten wurde der bereitgestellte Essence Navigator verwendet.
+Das Projekt wurde in 11 Iterationen mit je 2 Wochen länge aufgeteilt.
+In den Iterations konstituierenden Sizungen wurden die Ziele der jeweiligen Iteration definert und diese wiederrum in Aufgaben unterteilt, welche dann den entsprchenden Rollen zugeordent wurden.
+Die Aufgaben wurden dann anschließend, von den zu geordneten Personen, priorisiert und grob der Arbeitsaufwand mit exponential wachsenden Aufgaben geschätzt.
+Zusätzlich wurde am Anfang der Iterations konstituierenden Meetings, am Ende des WS21, eine Reflextions-Phase eingebaut, in der Problem, Erfolge und nicht geschaffte Aufgaben diskutiert und protokolliert wurden.
+Dadurch war es auch möglich eine stetige Effektivitätssteigerung in der Aufgabenbewältigung zu realisieren.
+
+Nach jedem Meeting sind neue Aufgaben als Issues festgahelten wurden (unserer Work Item List). Diese erhielten entsprechende Lables zur Klassifizierung des übergeordneten Ziels.
+In Einzelarbeit oder in kleineren Teams (bis zu 3 Personen) wurden dann die Aufgaben bearbeitet und zum Ende der Iteration vorgestellt.
+Eine Review der Aufgaben außer halb der Meetings ist mit dem, in SS22 eingführten Tool ZenHub realisiert worden, was dazu führte, dass die Meetingzeit sich drastisch verkürzte.
+
+Da die Meetings wöchentlich stattfanden und nur jede 2. Woche die Planung einer Iteration anstand wurden in den verbeliebenden Meetings, wichtige absprachen vorgenommen, die Erfoderlich waren, da die Aufgaben oft in einander.
+
+====== Kritik am Way of Working
+
+Es ist nicht wirklich gelungen einen Mechanismus zu finden, der effektiv und losgelöst von unerer Aufgabenbewältigung unser Way of Working bewertet. Dadurch waren wir nicht in der Lage unser Way of Working dynamisch an unsere Erfahrungen anzupassen. Dies ist leider nur selten und im kleien Erflogt (siehe Einführung von Reviews, der bearbeiteten Aufgabe). Dies Resultierte darin, dass wir schnell einen Obergrenze in unserer Arbeitseffektivität erreichten. Eine Lösung des Problems wäre es gewesen gesondertes Meeting zur Reflextion unserer Arbeitsweise mit unserem Coach durch zu führen.
+
 
 == Durchführung (JH + JR)
 
@@ -233,6 +251,7 @@ Das Ende unserer Projektarbeit
 ===== Deployment
 
 ==== Ergebnisse
+
 Der Prototyp war zu diesem Zeitpunkt schon fertig, alle zu schaffenden Use Cases waren implementiert. Wir haben uns schlussendlich darauf geeinigt, noch einige kleine, von der SI gewünschte, Änderungen umzusetzen. Darauf haben wir zum einen darauf geachtet unseren Projektabschluss nicht zu gefährden, außerdem war es für uns wichtig keine große Funktionalitätsänderung mehr umzusetzen. Dadurch wurde sichergestellt dass sich an der Software-/ und Entwicklerdokumentation nichts mehr ändert. Grundlegend wurden nur kleine Änderungen am User Interface vorgenommen, einige Layouts der Eingabemasken wurden verändert und wir haben die Datenbankanfragen ein wenig angepasst um mehr Informationen anzeigen zu können. 
 
 
