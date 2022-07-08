@@ -5,10 +5,10 @@ include::../_includes/default-attributes.inc.adoc[]
 Luca Meißner (LM)
 {localtime}
 
-== 1. Einführung
+== Einführung
 Bei diesem Dokument handelt es sich um eine Anleitung zur Handhabung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden. Alle Schritte zur Erfüllung eines Use Cases, und somit die Durchführung einer Aufgabe mithilfe der Software sind nachfolgend erläutert. 
 
-== 2. Systemvorrausetzungen
+== Systemvorrausetzungen
 Um mit der Web-Applikation arbeiten zu können, müssen einige Bedingungen für die Reibungslose Funktion erfüllt sein:
 
 * aktive, stabile Internetverbindung
@@ -17,8 +17,8 @@ Um mit der Web-Applikation arbeiten zu können, müssen einige Bedingungen für 
 * installierter Webbrowser (Google Chrome, Brave, Mozilla Firefox, es wird empfohlen stets die aktuellste Version des Browsers zu verwenden)
 
 
-== 3. Use-Cases
-*3.1 Use-Case: In System einloggen (UC01)*
+== Use-Cases
+=== Use-Case: In System einloggen (UC01)
 
 Voraussetzung: Nutzung eines Rechners im HTW-Netzwerk oder einer VPN-Verbindung in dieses.
 
@@ -32,7 +32,7 @@ Der Zugang ist nur für Mitarbeitende der Stabsstelle Internationales mit entspr
 image::uc1.png[Login]
 
 
-*3.2 Use-Case: Partnerhochschulen Anlegen (UC02)*
+=== Use-Case: Partnerhochschulen Anlegen (UC02)
 
 Zum Anlegen einer Partnerhochschule muss der Button "Partnerhochschule hinzufügen" oben rechts auf der Startseite geklickt werden.
 
@@ -44,7 +44,7 @@ Anschließend öffnet sich eine Eingabemaske, in welcher die entsprechenden Date
 [.text-center]
 image::uc2-2.png[Partnerhochschule hinzufügen]
 
-*3.3 Use-Case: Partnerhochschulen Editieren (UC03)*
+=== Use-Case: Partnerhochschulen Editieren (UC03)
 
 Um eine bereits erstellte Hochschule bearbeiten zu können, muss im Hauptmenü rechts neben dem Namen der zu bearbeitenden Hochschule auf "Bearbeiten" geklickt werden. Es öffnet sich eine Eingabemaske mit allen Informationen zur Hochschule. 
 
@@ -81,14 +81,14 @@ image::uc3-3.png[Bearbeiten von Hochschulen, 450]
 
 Um zur vorherigen Ansicht zurück zu wechseln, muss der Button „Zu Hochschulinformationsansicht wechseln“ geklickt werden. 
 
-*3.4 Use-Case: Datensätze Löschen (UC04)*
+=== Use-Case: Datensätze Löschen (UC04)
 
 Zum Löschen einer Hochschule muss im Hauptmenü der Button "Del" rechts neben der entsprechenden Hochschule geklickt werden. Eine bestehende Hochschule kann nur durch einen Administrator gelöscht werden. Eine Hochschule kann nur dann gelöscht werden, wenn sie keine zugehörigen Verträge mehr hat.
 
 [.text-center]
 image::uc4-1.png[Bearbeiten von Hochschulen, 450]
 
-*3.5 Use-Case: Use-Case: Mentoren Editieren (UC05)*
+=== Use-Case: Use-Case: Mentoren Editieren (UC05)
 
 Um Mentoren anzulegen oder zu bearbeiten muss in der Navigationsleiste am oberen Rand der Reiter „Mentoren“ ausgewählt werden. 
 
@@ -103,15 +103,14 @@ Achtung: Die Daten werden erst mit einem Klick auf den "Speichern" Button aktual
 [.text-center]
 image::uc5.png[Mentoren Editieren]
 
-== 4. FAQ
+== FAQ
 
-*4.1. Wie kann ich eine Partnerhochschule oder einen
-Vertrag löschen?*
+=== Wie kann ich eine Partnerhochschule oder einen Vertrag löschen?
 
 Bei der Verwaltung der Daten gilt zu aller erst das Prinzip "Deaktivieren vor Löschen". Das bedeutet im Einzelfall, dass abgelaufene Verträge immer zunächst einfach nur inaktiv gesetzt werden, sobald sie nicht mehr aktuell sind und somit in der Ansicht aussortiert werden können. Genauso verhält es sich auch mit Partnerhochschulen ohne aktive Verträge. Falls einmal wirklich etwas aus
 einem speziellen Grund gelöscht werden muss, wenden Sie sich bitte an ihren Administrator. Dieser kann mit einem Administrator-Login Datensätze löschen.
 
-*4.2. Wie kann ich eine neue Fakultät, einen Studiengang oder ein Geschlecht anlegen?* 
+=== Wie kann ich eine neue Fakultät, einen Studiengang oder ein Geschlecht anlegen?
 
 Aufgrund dessen, dass ein solcher Use Case äußerst selten eintritt, wurde diese Funktion alleinig dem Administrator überlassen. Das hat den Vorteil, dass ein wesentlich geringeres Risiko von fehlerhaften Einträgen entsteht, sodass die Konsistenz und Korrektheit der Daten besser gewährleisten werden kann. Wenden Sie sich deshalb bitte mit ihrem Anliegen an ihren Administrator oder das Rechenzentrum.
 
