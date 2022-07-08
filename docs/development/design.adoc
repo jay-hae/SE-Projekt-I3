@@ -23,7 +23,7 @@ In folgendem Diagramm wurden Spalten ohne Beziehungen weggelassen, um eine besse
 
 [[phys_erm]]
 .physisches Entity-Relationship-Diagram
-image::physical_erm.SVG[]
+image::physical_erm.svg[]
 
 
 ==== Tabellen
