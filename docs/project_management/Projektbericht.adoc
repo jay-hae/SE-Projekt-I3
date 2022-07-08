@@ -2,6 +2,8 @@ include::../_includes/default-attributes.inc.adoc[]
 
 = Projektbericht: {project-name} 
 
+<<<
+    
 == Einführung (JH + JR)
 Dieses Dokument enthält den Projektbericht über die Erstellung der Webanwendung zur Verwaltung der Hochschulpartnerschaften und Austauschprogramme. Das Projekt wurde im Rahmen des SE I und SE II Moduls des Teams I3 durchgeführt.
 
