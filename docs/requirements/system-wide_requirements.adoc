@@ -15,7 +15,6 @@ In diesem Dokument werden die systemweiten Anforderungen für das Projekt {proje
 
 NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern mit dem System ergeben, sind als Use Cases in einem separaten Dokument festgehalten. <<#use-case_model, Use-Case Model>>
 
-
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
 
@@ -24,7 +23,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 ** Zur Überprüfung wird die Seite neu geladen.
 
-*SWFA-2: Nur autorisierte Mitarbeiter des Akademischen Auslandsamtes dürfen Zugriff auf das Verwaltungsfrontend haben.*
+*SWFA-2: Nur autorisierte Mitarbeiter des Stabsstelle Internationales dürfen Zugriff auf das Verwaltungsfrontend haben.*
 
 ** Zur Überprüfung wird versucht von außerhalb des HTW-Netzes auf das Verwaltungsfrontend zu zugreifen. Weiterhin werden falsche Login-Daten getestet.
 
