@@ -8,7 +8,7 @@ Dieses Dokument enthält den Projektbericht über die Erstellung der Webanwendun
 == Planung (JH + JR)
 === Aufgabenstellung & Auftraggeber
 
-Die Auftraggeber:Innen unseres Projektes "I3 Hochschulpartnerschaften Stabsstelle Internationales" war die Stabsstelle Internationales (SI) der HTW Dresden.
+Die Auftraggeber:Innen unseres Projektes "I3 Hochschulpartnerschaften Stabsstelle Internationales" waren die Stabsstelle Internationales (SI) der HTW Dresden.
 Die HTW Dresden kooperiert weltweit mit rund 170 Partnerhochschulen, um Studierenden die
 Gelegenheit zu ermöglichen, sich kulturell weiterzubilden, neue Kontakte zu knüpfen und
 Sprachkenntnisse zu vertiefen. Zu diesem Zweck pflegen Sie Informationen zu den Partnerhochschulen und Spezifikationen zu den bestehenden Verträgen, zB. Anzahl an verfügbaren
@@ -92,7 +92,7 @@ Dadurch war es auch möglich eine stetige Effektivitätssteigerung in der Aufgab
 
 Nach jedem Meeting sind neue Aufgaben als Issues festghalten worden (unserer Work Item List). Diese erhielten entsprechende Labels zur Klassifizierung des übergeordneten Ziels.
 In Einzelarbeit oder in kleineren Teams (bis zu 3 Personen) wurden dann die Aufgaben bearbeitet und zum Ende der Iteration vorgestellt.
-Eine Review der Aufgaben außerhalb der Meetings ist mit dem in SS22 eingeführten Tool ZenHub realisiert worden, was dazu führte, dass die Meetingzeit sich drastisch verkürzte.
+Eine Review der Aufgaben außerhalb der Meetings ist mit dem in SS22 eingeführten Tool ZenHub realisiert worden, was dazu führte, dass sich die Dauer der Meetings drastisch verkürzte.
 
 ====== Kritik am Way of Working
 
@@ -171,7 +171,7 @@ Zu Beginn der zweiten Phase des Projekts hat sich zwischen den Teammitgliedern l
 
 Während das Team auf eine gewisse Regelmäßigkeit bei den Treffen mit der SI geachtet hat und auch eine gute Arbeitsatmosphäre bei den Treffen erzeugen konnte, ist es doch einige Male deutlich geworden, dass man sich auf die Treffen hätte besser vorbereiten müssen.
 So waren zum Beispiel Softwareanwendungen die zur Präsentation von Zwischenergebnisse benötigt wurden noch nicht im Vorfeld gestartet worden, was zu Wartezeiten führte.
-Wenn Teammitglieder nicht anwesend sein konnten, haben sich die übrigen Teammitglieder nicht rechtzeitig über deren Arbeitsfortschritt informiert, sodas diese nicht präsentiert werden konnten.
+Wenn Teammitglieder nicht anwesend sein konnten, haben sich die übrigen Teammitglieder nicht rechtzeitig über deren Arbeitsfortschritt informiert, sodass diese nicht präsentiert werden konnten.
 Um sich dahingehend zu verbessern hat sich insbesondere der Projektleiter Jakob Häcker bemüht vor den Meetings mit der SI alle Informationen zu sammeln, welche in dem kommenden Meeting besprochen werden sollten. Damit war es möglich, dass sich die Teammitglieder besser auf ihre Präsentation vorbereiten können und auch alle eine Vorstellung davon haben was der Hauptgegenstand des Meetings ist. 
 
 ===== Missverständnisse mit den Kund:Innen
@@ -184,12 +184,12 @@ Das Team hat glücklicherweise schon früh in der Elaborationsphase realisiert, 
 
 ==== Ergebnisse
 
-Am Ende der Elaborationsphase konnte das Team, die im ersten Semester geforderten Dokumente und Modelle erstellen. Dazu gehörten das Use Case Modell und die Use Case Beschreibungen, das Datenmodell und die Ausarbeitung des Projektplans. Ebenso konnte das Team den Protypen so weiterentwickeln, dass eine funktionsfähige Software zum Ende des Projekts erreichbar wurde. Die Webanwendung konnte zu diesem Zeitpunkt von der Virtuellen Maschine abgerufen werden und bereits die Inhalte aus der Datenbank anzeigen. Die Konzentration in dieser Phase lag zunächste auf einer schlüssigen Programmlogik. Es wurden Datenbank, Backend und Frontend bearbeitet, im Frontend lag der Fokus jedoch auf dem Auswerten der Daten und nicht auf dem Design des User Interface. Alle notwendigen HTML Dateien waren zwar erstellt, das Layout und vorallem die Gestaltung der einzelnen HTML-Objekte musste aber auf einen anderen Zeitraum und ein anderes Teammitglied verlagert werden.
+Am Ende der Elaborationsphase konnte das Team, die im ersten Semester geforderten Dokumente und Modelle erstellen. Dazu gehörten das Use Case Modell und die Use Case Beschreibungen, das Datenmodell und die Ausarbeitung des Projektplans. Ebenso konnte das Team den Protypen so weiterentwickeln, dass eine funktionsfähige Software zum Ende des Projekts erreichbar wurde. Die Webanwendung konnte zu diesem Zeitpunkt von der Virtuellen Maschine abgerufen werden und bereits die Inhalte aus der Datenbank anzeigen. Die Konzentration in dieser Phase lag zunächst auf einer schlüssigen Programmlogik. Es wurden Datenbank, Backend und Frontend bearbeitet, im Frontend lag der Fokus jedoch auf dem Auswerten der Daten und nicht auf dem Design des User Interface. Alle notwendigen HTML Dateien waren zwar erstellt, das Layout und vorallem die Gestaltung der einzelnen HTML-Objekte musste aber auf einen anderen Zeitraum und ein anderes Teammitglied verlagert werden.
 
 === Construction
 
-Mit dem vierten Semester begann die dritte Phase des Projekts, die Construction Phase. In den Semesterferien hatten die Teammitglieder Gelegenheit das vergangene Semester und die ersten Phasen des Projektes zu reflektieren und sind zu dem Schluss gekommen, ihre Arbeitsweise effektiver gestalten zu wollen und die Rollen so zu verteilen wie es sich durch das bisherige Engagement ergeben hat. Der Beginn unseres 2. Projekt-Semesters begann also mit einer Umstrukturierung des Teams.
-Da in den ersten beiden Phasen die Zuweisung der Rollen in der Projektpraxis meist nicht der Aufgabenzuteilung entsprachen, haben sich die tatsächlichen Rollen auf die Teammitglieder verschoben. Bisher wurden wöchentlich einzelne Detail-Aufgaben identifiziert und in den Meetings verteilt. 
+Mit dem vierten Semester begann die dritte Phase des Projekts, die Construction Phase. In den Semesterferien hatten die Teammitglieder Gelegenheit das vergangene Semester und die ersten Phasen des Projektes zu reflektieren und sind zu dem Schluss gekommen, ihre Arbeitsweise effektiver gestalten zu wollen und die Rollen so zu verteilen wie es sich durch das bisherige Engagement ergeben hat. Das 2. Projekt-Semesters begann also mit einer Umstrukturierung des Teams.
+Da in den ersten beiden Phasen die Zuweisung der Rollen in der Projektpraxis meist nicht der Aufgabenzuteilung entsprachen, haben sich die tatsächlichen Rollen der Teammitglieder verschoben. Bisher wurden wöchentlich einzelne Detail-Aufgaben identifiziert und in den Meetings verteilt. 
 Stattdessen wurden kleine Arbeitsgruppen vereinbart, die einen ganzen Bereich übernehmen sollten. Roman Patzig und Patrick Matthes waren ab sofort für das Testen verantwortlich, Nico Rosenkranz für das Aktualisieren der Anforderungsspezifikaton, Luca Meißner für die Anwenderdokumentation und Jakob Häcker für die Betriebsdokumentation. Pascal Thielemann sollte weiter als Hauptprogrammierer agiern mit der Unterstützung durch Thanh Ha Khuong und Jens Rosenkranz, die außerdem die Entwicklerdokumentation übernehmen sollten.
 Dieses Konzept des eigenverantwortlichen Arbeitens, gepaart mit klaren Deadlines und Arbeitszielen hat sich schnell als effektiv herausgestellt. Das Hauptaugenmerk dieser Phase sollte auf der Implementierung liegen. Glücklicherweise konnten ab dieser Phase weitere Teammitglieder bei der Softwareprogrammierung unterstützen und den Prozess somit beschleunigen. 
 Weiterhin hat sich das Team eine einfache Erweiterbarkeit und Wartbarkeit ihrer Software zum Ziel gesetzt und sich um eine ausführliche Softwaredokumentation, eindeutige und sprechende Benennung der Dateien und Variablen bemüht.
@@ -200,52 +200,35 @@ Weiterhin hat sich das Team eine einfache Erweiterbarkeit und Wartbarkeit ihrer 
 * Implementierung der Funktionalitäten 
 * Definition und Durchführung der Tests
 * Vorbereitung Zielumgebung für Installation
-* Erweiterbarkeit der Software prüfen
+* Erweiterbarkeit der Software prüfen und verbessern
 
 ==== Problem 
 
 ===== Retrospektive
 
-Eines der größten Probleme ware es die Reflexion der Teammitglierder in Eigenverantwortung gegeben zu haben. Damit ist es zwar gelungen im einzelnen Methoden zur Arbietseffektivitätssteigerung zu erzielen aber keine wirksamen Maßnahmen in der Verbesserung unserer Zusammenarbeit zu entwickeln.
+Eine der größten Herausforderungen war es regelmäßig und methodisch Reflexionen der Teammitglieder durchzuführen. 
 Dadurch fiel ein wichtiger Mechanismus der Rückkopplung weg.
-Eine groß angelegte Retrospektive, welche nicht zu den regulären Arbeitsmeetings statt fand, wurde durch die disjunkten Terminkalender vereitelt.
-Eine Retrospektive zu den Arbeitsmeetings wurde, als nicht Sinnvoll erachtete, da uns dadurch wichtige Arbeitszeit abhanden ging, die wir aus damaliger perspektive als wichtiger empfanden.
-Angestoßene kleiener Retrospektiven, am Ende von den Meetings, waren wegen gesunkener Konzentration und schlechter Vor- und Nachbereitung wirkungslos.
+Eine Retrospektive mit dem gesamten Team konnte nicht stattfinden, da es bis zuletzt nicht möglich war, einen Termin zu finden an dem alle Teammitglieder teilnehmen konnten.
+Eine Retrospektive zu den Arbeitsmeetings wurde von den meisten Teammitgliedern als nicht sinnvoll erachtet, da dem Team dadurch wichtige Arbeitszeit für die Implementierung und Dokumentation gefehlt hätte.
+Kleinere eher unstrukturierte Retrospektiven am Ende der Teammeetings konnten aber die Stimmung innerhalb der Teams verbessern und haben zu einem besseren Gruppengefühl und einer höheren Motivation geführt.
 
 
 ==== Ergebnisse
 
-<<<<<<< HEAD
 Zum Ende der Constructionphase konnten die wichtigsten Funktionalitäten der Webanwendung umgesetzt werden und das Design entsprechend der Wünsche durch den Kunden angepasst werden.
-Dabei wurde das Design des User Interfaces größtenteils durch Thanh Ha Khuong übernommen, die Zuständigkeit über die Implementierung blieb bei Pascal Thielemann.
-Im Zusammenspiel beider Entwickler, und mit der Hilfe von Jens Rosenkranz, welcher mit voranschreiten des Projektes anwendbare Fähigkeiten in der Implementierung erwerben konnte, entwickelte sich die Software relativ zügig in die richtige Richtung.
-Die, für die Themensteller, wichtigsten Use Cases konnten erfolgreich implementiert werden, wobei Bugfixing einen großen Teil der Arbeit ausmachte.
-Unsere Programmstruktur bekam noch kleine Anpassungen, aber für große Änderungen war es zu spät.
-Die Softwaredokumentation konnte ebenso zugroßen Teilen abgeschlossen und in die Entwicklerdokumentation eingegliedert werden.
-=======
-Glücklicherweise konnten ab dieser Phase weitere Teammitglieder bei der der Softwareprogrammierung unterstützen und den Prozess der Implementierung somit beschleunigen. 
-Weiterhin hat sich das Team eine einfache Erweiterbarkeit und Wartbarkeit ihrer Software zum Ziel gesetzt und sich um eine ausführliche Softwaredokumentation, eindeutige und sprechende Benennung der Dateien und Variablen bemüht.
-Zum Ende der Constructionphase konnten die wichtigsten Funktionalitäten der Webanwendung umgesetzt werden und das Design entsprechend der Wünsche durch den Kunden angepasst werden. Dabei wurde das Design des User Interfaces größtenteils durch Thanh Ha Khuong übernommen, die Zuständigkeit über die Implementierung blieb bei Pascal Thielemann. Im Zusammenspiel beider Entwickler, und mit der Hilfe von Jens Rosenkranz, entwickelte sich die Software relativ zügig in die richtige Richtung. Die für die Themensteller wichtigsten Use Cases konnten erfolgreich implementiert werden. Die Softwaredokumentation konnte ebenso abgeschlossen und in die Entwicklerdokumentation eingegliedert werden.
->>>>>>> a7bfec9d577a717abba5cfe6dd7657d4d110d617
-Die in der letzten Phase vereinbarten Tests sind größtenteils erfolgreich verlaufen und das Erreichen der angestrebten Anforderungen konnte dadurch bewiesen werden. 
+Das Design des User Interfaces wurde hauptsächlich durch Thanh Ha Khuong umgesetzt. 
+Im Zusammenspiel der Entwickler Thielemann, Khuong und Rosenkranz entwickelte sich die Software relativ zügig hin zu einem funktionalen Prototypen.
+Die für die SI wichtigsten Use Cases konnten erfolgreich implementiert werden. Zum Ende der Construction Phase bestand ein Großteil der Arbeit aus Bugfixing.
+Die Softwaredokumentation konnte ebenso zu großen Teilen abgeschlossen und in die Entwicklerdokumentation eingegliedert werden.
+Die in der vorangegangen Phase vereinbarten Tests sind größtenteils erfolgreich verlaufen und das Erreichen der angestrebten Anforderungen konnte durch sie bewiesen werden. 
 
 
 === Transition
 
-
-Das Ende unserer Projektarbeit kam mit großen Schritten auf uns zu.
-Das eigenverantwortliche Arbeiten lief aus unsere Perspektive sehr gut.
-Dadurch war es möglich sehr einfach parallel zur Entwicklung die finalen Dokumentationen zu schreiben.
-Diese zeigten uns auf was noch fehlte und während der Construction-Phase zurück blieb.
-Darunter fiel die Software auf eine einfache Installation auf andere System vorzubereiten, was eine Änderungen unsere Ordnerstruktur in Quellcode-Ordnern zur Folge hatte.
-Beim Testen fielen dadurch schlecht formulierte Systemweiteanforderungen auf, die es zu überarbeiten galt.
-Der großteils fertige Softwarecode, wurde darauf hin ebenfalls logischer strukturiert und besser kommentiert. 
-
-Als wir jedoch mit unserem Coach Rücksprache über den Stand in unserer Entwicklung hielten, ist aufgefallen, dass unser Zeitplan doch zu optimistisch war und wir trotz unserer agil geglaubten Arbeitsweise wieder in alte muster fielen, welche leider doch größere Ähnlichkeiten zu dem Wasserfallmodell hatte als wir angenommen hatten.
-(Hinweise darauf gab es, aus jetziger Perspektive, viele. Zum Beispiel, dass erst am Ende der Entwicklung die Konzentration auf das Testen lag).
-Er riet uns also keine neue Funktionalitäten zu implementieren, sondern die bestehenden Funktionalitäten zu einem sauberen Ende zu bringen.
-Ein großer Vorteil für uns und unseren Themensteller:Innen war es, mit der SI einen Probe-Abgabe-Termin vereinbart zu haben. 
-In dem wir die Zeit hatten über kleiner Bugs zusprechen, die wir noch ändern konnten, und einen Strategie zu entwickeln wie wir mit den fehlenden Use-Cases umgehen konnten.
+In der Tansitionphase wurde weiter am Konzept des eigenverantwortlichen Arbeitens festgehalten.  Nachdem die Implementierung und das Bugfixing abgeschlossen waren, galt es die Übergabe an die SI vorzubereiten.
+Dazu musste die Software zum Zweck einer einfachen Installation auf anderen Systemen angepasst werden, was eine Änderungen der Ordnerstruktur in den Quellcode-Ordnern erforderte. Der Softwarecode wurde daraufhin ebenfalls umstrukturiert und im Zuge der Sofrwaredokumentation ausführtlich kommentiert. 
+Durch das Testen wurden unzureichend formulierte Systemweiteanforderungen identifiziert, die daraufhin ebenfalls überarbeitet wurden. 
+Im Meeting mit der SI zur Abnahme der Webanwendung wurde die fertige Software präsentiert und die fehlenden Funktionalitäten besprochen und notiert. 
 
 ==== Ziele
 
@@ -262,34 +245,28 @@ In dem wir die Zeit hatten über kleiner Bugs zusprechen, die wir noch ändern k
 
 ==== Problem 
 
+=== geringe Agilität in der Entwicklung
+
+In einem Gespräch mit dem Team-Coach Herrn Ringel wurde das Vorgehen bei der Entwicklung der Software besprochen. Dabei hat das Team reflektiert, dass die Arbeitsweise des Teams nicht vollständig den Prinzipien der agilen Softwareentwicklung entsprochen hat. Beispielsweise hat das Team erst zum Ende der Entwicklung mit dem Testen begonnen und schon sehr früh mit der Implementierung von komplexen Funktionalitäten begonnen. Andererseits wurden aber zu jedem Zeitpunkt Anforderungen durch die Themensteller:Innen aufgenommen, sowie die Ziele und Risiken überprüft und angepasst.
+
 ===== Einige Use Cases konnten nicht umgesetzt werden
 
-Nach dem Meeting mit Herrn Ringel war offensichtlich, dass nicht mehr alle ursprünglich vereinbarten Funktionen der Software umgesetzt werden können. Während die Umsetzung der Funktion zur Erstellung von Statistiken leicht möglich wäre, fehlte dazu am Ende einfach die Zeit. Stattdessen hat sich das Team auf eine erfolgreiche Umsetzung der wichtigsten Use Cases und auf einen leicht erweiterbaren Code konzentriert.
+Inn Rücksprache mit Herrn Ringel wurde beschlossen, dass nicht mehr alle ursprünglich vereinbarten Funktionen der Software umgesetzt werden. Während die Umsetzung der Funktion zur Erstellung von Statistiken leicht möglich wäre, hätte dies aus zeitgründen die Fertigstellung der Hauptfunktionalitäten gefährdet. Stattdessen hat sich das Team auf eine erfolgreiche Umsetzung der wichtigsten Use Cases und auf einen leicht erweiterbaren Code konzentriert.
 
 ===== neue Anforderungen durch Kunden
 
-Wir konnten unseren Themensteller:Innen zwar bereits eine weitläufig funktionsfähige Software zu testzwecken bereitstellen. Jedoch ist es dadurch kundenseitig zu neuen Anforderungen und Wünschen gekommen, die wir in der verbleibenden Zeit nicht mehr umsetzen konnten. (Diese lagen außerhalb unser vorher definierten Anforderungen) 
-Wir konnten den Themenstellern allerdings versichern, dass wir für etwaige Folgeteams die Erweiterbarkeit auf einem möglichst hohen Level bringen werden.
-
+Das Team konnte den Themensteller:Innen in dieser Phase bereits eine größtenteils funktionsfähige Software zu Testzwecken bereitstellen. Durch die Arbeit mit der Software ist es kundenseitig zu neuen Anforderungen und Wünschen gekommen, die in der verbleibenden Zeit nicht mehr umgesetzt werden konnten. Das Team hat den Themensteller:Innen aber versichert, dass die Erweiterung für etwaige Folgeteams oder eine studentische Hilfkraft der SI möglich sei.
 
 ==== Ergebnisse
 
-Es ist uns gelungen eine einsatzfähige Software zu entwickeln, welche für die wichtigsten Use-Cases kohärent ist. Die fehlenden Use-Cases sind wegen einer guten Priorisierung nicht allzu ausschlaggebend.
-Alle Dokumentation konnten, mit der Erfahrung aus dem ersten Projekt-Semester, in viel unaufwendigerer Weise produziert und ohne großen Stress am Ende des Projektes finalisiert werden.
+Zum Ende dieser Projektphase konnte die Software fertiggestellt und übergeben werden. Die zum Projektabschluss erforderlichen Dokumente konnten mit der Erfahrung aus dem ersten Projekt-Semester in viel effektiverer Weise erstellt und finalisiert werden. 
 
-Was leider, über die gesamte Projektdauer nicht wirklich gelungen war, sind die Konzepte "proof of work" und "proof of concept" wirkungsvoll umzusetzen.
-Gründe dafür wurden in dem Unterkapitel "Retrospektive" erläutert. In dem Kapitel "Kritik am Way of Work" wurde bereits diese Schwachstelle unserer Teamarbeit bereits genannt.
-Doch gerade des wegen ist es deutlich geworden, was man bei einem erneuten Software Projekt in Teamarbeit verbessern kann.
-Dies ist zum einen sich die Zeit für Retrospektiven und Zeit für die Planung zu nehmen und andererseits eine bessere Infrastruktur zur Dokumentation von einzelnen Entscheidungen und Handlungsschritten bereit zustellen.
-Des Weiteren ist es wichtig in den Meetings genauer auf Vorteile einer Veränderten Projekt Organisation hinzuweisen und ein Bewusstsein dafür zu schaffen, was nicht gut funktioniert.
-
-Doch gerade desswegen können wir behaupten viel geschafft, geleistet und gelernt zu haben.
 
 === Informationen zum Softwaresystem
 
 == Produktergebnis
 
-Das von Team I3 erstellte Softwareprodukt ermöglicht es die relevanten Informationen zu Hochschulpartnerschaften innerhalb einer Webanwendung zu verwalten. Es können neue Hochschulen angelegt und mit Verträgen, Fakultäten sowie Mentoren verknüpft werden. Insbesondere erlaubt die Webanwendung im Gegensatz zu MS Access das gleichzeitige Arbeiten mehrerer Mitarbeiter:Innen. Außerdem bietet die Anwendung erstmalig die Möglichkeit über einen Account mit besonderen Rechten auch Alt-Daten zu löschen und die Datenbank so besser zu pflegen. Lediglich die Funktionen Statistiken und Berichte erstellen konnten nicht mehr umgesetzt werden. Damit sind die wichtigsten Anforderungen durch das Team erfüllt worden und zur großen Freude aller Teammitglieder des Teams I3, wurde die Webanwendung durch die Stabstelle Internationales abgenommen und wird voraussichtlich ab nächstem Semester in Betrieb gehen.
+Das von Team I3 erstellte Softwareprodukt ermöglicht es den Mitarbeiter:Innen der SI die relevanten Informationen zu Hochschulpartnerschaften innerhalb einer Webanwendung zu verwalten. Es können neue Hochschulen angelegt und mit Verträgen, Fakultäten sowie Mentoren verknüpft werden. Insbesondere erlaubt die Webanwendung im Gegensatz zu MS Access das gleichzeitige Arbeiten mehrerer Mitarbeiter:Innen. Außerdem bietet die Anwendung erstmalig die Möglichkeit über einen Account mit besonderen Rechten auch Alt-Daten zu löschen und die Datenbank so besser zu pflegen. Lediglich die Funktionen Statistiken und Berichte erstellen konnten nicht mehr umgesetzt werden. Damit sind die wichtigsten Anforderungen durch das Team erfüllt worden und zur großen Freude aller Teammitglieder des Teams I3, wurde die Webanwendung durch die Stabstelle Internationales abgenommen und wird voraussichtlich ab nächstem Semester in Betrieb gehen.
 
 
 
@@ -298,13 +275,8 @@ Das von Team I3 erstellte Softwareprodukt ermöglicht es die relevanten Informat
 ==== Jakob Häcker
 Das Erstellen von komplexen Software Systemen, war für mich vor dem Modul Software Engineering nicht greifbar und somit hatte ich auch keine Vorstellung was es eigentlich bedeutet komplexe Software in Teamarbeit zu erstellen, geschweige denn was alles dafür nötig ist.
 Aus dem Fakultativen Modul von Frau Hauptmann - Soziale Kompetenzen im Projektmanagement - blieb mir jedoch in Erinnerung.
-<<<<<<< HEAD
 Nämlich, dass ca. 50% der Softwareprojekte im Team an Zwischenmenschlichen Kompetenzen scheitern.
 Inspiriert von diesem zusatz Modul und überzeugt von meinen sozialen Fähigkeiten, entschied ich mich als Projektleiter vorzuschlagen.
-=======
-Nämlich, dass ca. 50% der Softwareprojekte im Team an zwischenmenschlichen Kompetenzen scheitern.
-Anspielet von diesem Zusatzmodul und überzeugt von meinen sozialen Fähigkeiten, entschied ich mich als Projektleiter vorzuschlagen.
->>>>>>> a7bfec9d577a717abba5cfe6dd7657d4d110d617
 Dieser Wunsch ging auch tatsächlich in Erfüllung. Offen für die Erfahrung und motiviert freut ich mich sehr als unser Projekt begann.
 
 Am Anfang des Projektes war ich schier von der Freiheit der Gestaltungsmöglichkeiten überfordert.
@@ -388,7 +360,7 @@ Durch das Projekt kann ich nun auch in zukünftigen Projekten die neu erworbenen
 Das Projekt "Verwaltung der Hochschulpartnerschaften" der HTW Dresden war für mich das erste Softwareprojekt dieser Größe und Komplexität. Außerdem hatte ich bis dahin noch nicht mit so vielen Teilnehmern an einem Projekt zusammengearbeitet. Meine Erfahrung in der Softwareentwicklung beschränkte sich zum Anfang des Projekts ausschließlich auf die bisherigen Projekte des Studiums. Insbesondere hatte ich keinerlei Kenntnisse in der Programmierung von Webanwendungen, davon wie man Datenbanken mit einer Programmiersprache wie Python ansteuert oder wie man über ein Repository im Team programmiert. Insofern kann man sagen, dass meine Vorkenntnisse zum Projektbeginn sehr gering waren. Daher wollte ich ursprünglich eher die organisatorischen Aufgaben übernehmen und mich um die Ausgestaltung der Dokumente kümmern. Allerdings hat sich in der ersten Vorstellungsrunde der Teammitglieder herausgestellt, dass auch alle anderen Teammitglieder nahezu keine Vorkenntnisse hatten und ebenfalls eher organisatorische Aufgaben übernehmen wollten. Das hat dazu geführt, dass ich letztendlich die Rolle eines Entwicklers übernommen habe. Es hat sich also schnell abgezeichnet, dass ich mir schnell sehr viel Wissen aneignen werden muss, um die Aufgaben erfüllen zu können. Insbesondere während des dritten Semesters, also dem Projektbeginn, habe ich es als große Herausforderung empfunden, neben dem Vorlesungsstoff noch zusätzlich selbstständig Programmierung in HTML, CSS und JavaScript zu erlernen. Glücklicherweise hatte ein Teammitglied schon genug Vorkenntnisse, um das Projekt entwicklerseitig ins Rollen zu bringen. Im vierten Semester konnte ich mich mehr und mehr in die Entwicklung des Prototyps einbringen, da in diesem Semester die benötigten Kenntnisse innerhalb der verschiedenen Vorlesungen und Praktika vermittelt wurden. Zum Beispiel war Webprogrammierung ein Inhalt der Veranstaltung Internettechnologien und Datenbankprogrammierung Inhalt der Vorlesung Programmieren von Komponentenarchitekturen. 
 Das Projekt war in jedem Fall der beste Beweis dafür, dass es absolut sinnvoll ist die Entwicklung einer komplexeren Anwendung im Team strukturiert anzugehen und sich im Vorfeld darüber klar zu werden, was der Kunde genau will und was man in der Lage ist tatsächlich umzusetzen, wer welche Aufgabe und Verantwortung hat und was man bis zu welchem Zeitpunkt erledigt haben will. Andernfalls ist es praktisch garantiert, dass wir auf Grund von Missverständnissen auf jeder Ebene gescheitert wären. Mir hat insbesondere das agile Vorgehen gut gefallen, da wir erst nach und nach durch mehrere Meetings mit dem Kunden verschiedenste Missverständnisse ausräumen konnten. Hätten wir nur vorab die Anforderungen und Wünsche mit den Kunden besprochen, wäre am Ende sehr sicher nicht das dabei herausgekommen, was sich der Kunde vorgestellt hat. 
 Die Zusammenarbeit mit unserem Kunden, der SI an der HTW, war insgesamt gut, auch wenn wir regelmäßig Erwartungshaltungsmanagement betreiben mussten. Die SI ist uns in vielen Punkten entgegengekommen und hat unserem Team gegenüber viel Geduld und Verständnis gezeigt. Die Zusammenarbeit mit einem echten Kunden, war sehr lehrreich. Es war ein Prozess zu verstehen, was der Kunde genau möchte und ebenso zu vermitteln, was wir zu liefern in der Lage sind. Das in einem realistischen Szenario üben zu können, war eine super Erfahrung. 
-Genauso war es herausfordernd und lehrreiche in einem Team mit acht Kommilitonen zusammenzuarbeiten. Nachdem anfänglich große Unsicherheit wegen der fehlenden Kenntnisse herrschte, hat sich nach einigen Wochen eine relativ gute Arbeitsteilung zwischen den meisten Teammitgliedern ergeben. Trotz des spürbaren Drucks durch das Projekt und das Studium im Allgemeinen, sind nur wenige Konflikte entstanden und diese konnten zur Zufriedenheit aller gelöst werden. Die Teammitglieder waren größtenteils sehr motiviert und haben ihre Rollen und Aufgaben verantwortungsvoll erfüllt. Durch das Projekt "Verwaltung von Hochschulpartnerschaften" konnte ich zum ersten Mal die
+Genauso war es herausfordernd und lehrreich in einem Team mit acht Kommilitonen zusammenzuarbeiten. Nachdem anfänglich große Unsicherheit wegen der fehlenden Kenntnisse herrschte, hat sich nach einigen Wochen eine relativ gute Arbeitsteilung zwischen den meisten Teammitgliedern ergeben. Trotz des spürbaren Drucks durch das Projekt und das Studium im Allgemeinen, sind nur wenige Konflikte entstanden und diese konnten zur Zufriedenheit aller gelöst werden. Die Teammitglieder waren größtenteils sehr motiviert und haben ihre Rollen und Aufgaben verantwortungsvoll erfüllt. Durch das Projekt "Verwaltung von Hochschulpartnerschaften" konnte ich zum ersten Mal die
 unterschiedlichen Phasen einer agilen Softwareentwicklung innerhalb eines Teams erleben. Die Aufteilung eines komplexen Softwareprojekts in Teilbereiche, die Analyse, Modellierung und schließlich die Implementierung im Team mittels GitHub waren neu für mich und haben Spaß gemacht.
 Ich habe durch das Projekt viel gelernt und die erste echte Erfahrung in Softwareentwicklung gemacht. Wie das immer so ist, wächst man mit seinen Herausforderungen.
 
