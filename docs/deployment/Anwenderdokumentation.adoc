@@ -1,6 +1,9 @@
 include::../_includes/default-attributes.inc.adoc[]
+:doctype: book
 
 = Anwenderdokumentation: {project-name}
+Luca Meißner (LM)
+{localtime}
 
 == 1. Einführung
 Bei diesem Dokument handelt es sich um eine Anleitung zur Handhabung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden. Alle Schritte zur Erfüllung eines Use Cases, und somit die Durchführung einer Aufgabe mithilfe der Software sind nachfolgend erläutert. 
