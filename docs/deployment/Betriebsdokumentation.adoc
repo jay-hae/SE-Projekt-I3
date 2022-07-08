@@ -7,12 +7,9 @@ include::../_includes/default-attributes.inc.adoc[]
 :imagesdir: images 
 
   
-
 = Betriebsdokumentation: {project-name} 
-
 Jakob Häcker (JH) 
-
-08.Juli 2021 
+{localtime}
 
   
 
@@ -20,23 +17,17 @@ Jakob Häcker (JH)
 
 In diesem Dokument werden wichtige Hinweise und Anleitungen zur Installation und Wartung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden bereitgestellt. Das Ziel ist es dem Administrator alle notwendigen Schritte übersichtlich aufzuzeigen. 
 
-  
-
-Das Hauptaugenmerk unseres Projektes ist es ein Web Frontend unter Nutzung einer gegebenen Datenbank zu erstellen. 
-
-Aus diesem Grund werden Datenbank spezifische Erläuterungen nicht vorgenommen. 
-
-  
-
 Detaillierte Beschreibungen zur Bedienung der Software finden sich in der Anwenderdokumentation. 
 
-  
+Die folgenden Absätze beziehen sich nur noch auf das Deployment innerhalb des HTW-Netzes, da nur dies gefordert war.
+
+Wie man das von dem Vorteam verwendete phpMyAdmin benutzt unnd installiert, um die Datenbank mit MySQL befehlen zu bearbeiten oder neue Datenbanken zu importieren, wird in der Betriebsdokumentation unseres Vorteams detailiert beschriebn.
+Siehe: https://github.com/Rezaii-Djafari/i5-hochschulpartnerschaften/tree/master/docs/deployment[]
 
 == Systemvoraussetzungen 
 
 Um die Software erfolgreich zu installieren sind folgende Voraussetzungen zu erfüllen: 
 
-  
 
 * Software-Voraussetzungen: 
 
@@ -57,39 +48,15 @@ Um die Software erfolgreich zu installieren sind folgende Voraussetzungen zu erf
   
 
 * Hardware-Voraussetzungen: 
-
-  
-
 [cols="1,1"] 
-
 |=== 
-
 | Hardware | Virtuelle Maschine = Mindestanforderung 
-
 | CPUs     | 2 (uU. reicht eine)  
-
 | RAM      | 4 GB  
-
 | Speicher (inklusive Platz für Ubuntu) | 35 GB 
-
 |=== 
 
   
-
-== Deployment 
-
-Die folgenden Absätze beziehen sich nur noch auf das Deployment innerhalb des HTW-Netzes. 
-
-Mit geringfügigen Änderungen im Quelltext ist dies aber auch innerhalb anderer Umgebungen möglich. 
-
-  
-
-Wir gehen davon aus, dass das Rechenzentrum eine MariaDB mit der erforderlichen Datenstruktur bereitstellt. 
-
-Wie man das von dem Vorteam verwendete phpMyAdmin benutzt um die Datenbank mit MySQL befehlen zu bearbeiten oder neue Datenbanken zu importieren, verweisen wir wieder auf die Betriebsdokumentation unseres "Vorteams". 
-
-  
-
 == Webserver   
 
 Um ein Webserver innerhalb des HTW-Netzes mit den oben genannten Mindestanforderungen zu erhalten, muss man das Rechenzentrum der HTW kontaktieren. 
@@ -102,32 +69,22 @@ Aufgrund dessen, dass die VM nur innerhalb des HTW Netzes erreichbar ist, ist ke
 
   
 
-=== Verbindung auf die Virtuelle Maschine 
+=== Verbindung auf die Virtuelle Maschine (VM)
 
 Unter Windows empfiehlt sich die Nutzung von WinSCP zum Übertragen von Daten per SSH, Linux Nutzer können die Boardmittel nutzen. 
-
-  
 
 Mit folgenden Daten kann eine Verbindung zur Virtuellen Maschine aufgebaut werden: 
 
 [cols="1,1"] 
 
 |=== 
-
 | Adresse | seproject@iseproject03 
-
 | Passwort| - 
-
 | Bemerkung | nur innerhalb des HTW Intra-Netzes erreichbar  
-
 |=== 
 
-  
 
 Man befindet sich nun im Home-Verzeichnis der VM und kann die Installation der Software vornehmen. 
-
-  
-
 Die Adresse muss bei Verwendung einer VM vom RZ angepasst werden. 
 
   
@@ -135,28 +92,17 @@ Die Adresse muss bei Verwendung einer VM vom RZ angepasst werden.
 === Installation der Server-Software 
 
 Im Folgenden wird vorausgesetzt, dass die Installation in einer Linux Umgebung stattfindet. 
-
 Eine Adaption auf Windows ist ohne weiters möglich, allerdings gilt dies nur für die Installation. 
-
 Weitere Kapitel beziehen sich nur auf Linux Systeme. 
-
-  
 
 * Clonen des GitHub Repositorys 
 
 [source, bash] 
-
 ---- 
-
 git clone https://github.com/jay-hae/SE-Projekt-I3.git 
-
 ---- 
-
-  
 
 Für das Starten des Servers auf einem Linux System gibt es 2 Möglichkeiten: 
-
-  
 
 . manuelles starten mit Python  
 
@@ -169,22 +115,17 @@ Für das Starten des Servers auf einem Linux System gibt es 2 Möglichkeiten:
 Dafür ist es nur notwendig in dem Ordner src/ mit folgendem Befehl den Server zu starten: 
 
 [source, bash] 
-
 ---- 
-
 python3.8 app.py 
-
 ---- 
 
 In der Ausgabe des Befehls ist nun die URL zu der Webseite zu finden. 
 
   
 
-==== Anlegen einer Linux System Unit 
-
-Eine System Unit ermöglicht es bestimmte Skripte im Hintergrund ausführen zulassen. 
-
-Ein System Unit Skript ist im geclonten Reposetory unter deploy_scripts/se_webserver.service 
+==== Anlegen einer Linux System-Unit 
+Eine System-Unit ermöglicht es bestimmte Skripte im Hintergrund ausführen zulassen. 
+Ein System-Unit-Skript ist im geclonten Reposetory unter deploy_scripts/se_webserver.service 
 
 Genaue Informationen sind bitte aus dem Internet zu entnehmen. Hier eine Empfehlung: https://wiki.ubuntuusers.de/systemd/Units/[] 
 
@@ -193,11 +134,8 @@ Genaue Informationen sind bitte aus dem Internet zu entnehmen. Hier eine Empfehl
 * System Unit in das Verzeichnis /etc/systemd/system/ kopieren oder dort selbst anlegen. 
 
 [source, bash] 
-
 ---- 
-
 cp ./SE-Projekt-I3/deploy_scripts/se_webserver.service /etc/systemd/system/  
-
 ---- 
 
   
@@ -205,13 +143,10 @@ cp ./SE-Projekt-I3/deploy_scripts/se_webserver.service /etc/systemd/system/
 * System Unit registrieren und starten.  
 
 [source, bash] 
-
 ---- 
-
 sudo systemctl enable se_webserver.service 
 
 sudo systemctl start se_webserver.service 
-
 ---- 
 
 Nach "systemctl start" ist der Webserver unter der URL zu erreichen, welche beim manuellen Starten des Servers angezeigt wird (siehe Vorheriges Kapitel). 
@@ -219,38 +154,25 @@ Nach "systemctl start" ist der Webserver unter der URL zu erreichen, welche beim
   
 
 [NOTE] 
-
 ==== 
-
 Um den Server wieder zu stoppen: 
-
 [source, bash] 
-
 ---- 
-
 sudo systemctl stop se_webserver.service 
-
 ---- 
 
   
 
 Um das Systen Unit wieder zu Entfernen: 
-
 [source, bash] 
-
 ---- 
-
 sudo systemctl disable se_webserver.service 
-
 ---- 
-
 ==== 
 
   
 
 == Datenbank 
-
-  
 
 === Einführung 
 
@@ -271,13 +193,8 @@ Im Gegensatz zur ursprünglich genutzten Access Datenbank, beinhaltet diese kein
 === Import von einer Datenbank 
 
 [NOTE] 
-
 ==== 
-
 Es ist bereits eine Datenbank vorhanden. Daher wird dieser Abschnitt lediglich zum einspielen von Backups Referenziert siehe <<_wie_spiele_ich_ein_manuelles_backup_ein>> 
-
-  
-
 ==== 
 
   
