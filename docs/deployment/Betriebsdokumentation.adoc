@@ -1,286 +1,571 @@
+ 
 
-include::../_includes/default-attributes.inc.adoc[]
-:doctype: book
-:imagesdir: images
-
-= Betriebsdokumentation: {project-name}
-Jakob Häcker (JH)
-08.Juli 2021
-
-== Einführung
-In diesem Dokument werden wichtige Hinweise und Anleitungen zur Installation und Wartung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden bereitgestellt. Das Ziel ist es dem Administrator alle notwendigen Schritte übersichtlich aufzuzeigen.
-
-Das Hauptaugenmerk unseres Projektes ist es ein Webfrontend unter Nutzung einer gegebenen Datenbank zu erstellen.
-Von daher werden Datenbank spezifische Erläuterungen nicht vorgenommen.
-
-Detaillierte Beschreibungen zur Bedienung der Software finden sich in der Anwenderdokumentation.
-
-== Systemvoraussetzungen
-Um die Software erfolgreich zu installieren sind folgende Voraussetzungen zu erfüllen:
-
-* Software-Voraussetzungen:
-** Verbindung zum Intranet (der HTW) 
-** mindestens ein Python3.x Interpreter (getestet mit Python3.8)
-** GNU Bash (nur für das Deploy Script)
-
-* innerhalb der HTW:
-** SSH-Programm (für UNIX zB. OpenSSH oder für Windows zB. Putty oder WinSCP)
-** MariaDB bereitgestellt vom Rechenzentrum der HTW
-
-* Hardware-Voraussetzungen:
-
-[cols="1,1"]
-|===
-| Hardware | Virtuelle Maschine = Mindestanforderung
-| CPUs     | 2 (uU. reicht eine) 
-| RAM      | 4 GB 
-| Speicher (inklusive Platz für Ubuntu) | 35 GB
-|===
-
-== Deployment
-Die folgenden Absätze beziehen sich nur noch auf das Deployment innerhalb des HTW-Netzes.
-Mit geringfügigen Änderungen im Quelltext ist dies aber auch innerhalb anderer Umgebungen möglich.
-
-Wir gehen davon aus, dass das Rechenzentrum eine MariaDB mit der erforderlichen Datenstruktur bereitstellt.
-Wie man das von dem Vorteam verwendete phpMyAdmin benutzt um die Datenbank mit MySQL befehlen zu bearbeiten oder neue Datenbanken zu importieren, verweisen wir wieder auf die Betriebsdokumentation unseres "Vorteams".
-
-== Webserver  
-Um ein Webserver innerhalb des HTW-Netzes mit den oben genannten Mindestanforderungen zu erhalten, muss man das Rechenzentrum der HTW kontaktieren.
-Eine andere Möglichkeit besteht darin, einen Server selbst einzurichten. Dies wird allerdings nicht in diesem Dokument behandelt.
-Hier wird nur die Funktionsweise und Installation auf einer vom Laborbereich der Fakultät Informatik bereitgestellten Virtuellen Maschine gezeigt. Dies ist gleich bedeutend mit einer Installation auf einer, vom Rechenzentrum bereitgestellten, Virtuellen Maschine.
-Aufgrund dessen, dass die VM nur innerhalb des HTW Netzes erreichbar ist, ist keine IP sperre über eine .htaccess Datei nötig. Falls diese doch benötigt wird findet sich eine Anleitung in der Betreibsdokumentation des Vorteams im abschnitt 3.1.3.
-
-=== Verbindung auf die Virtuelle Maschiene
-Unter Windows empfiehlt sich die Nutzung von WinSCP zum Übertragen von Daten per SSH, Linux Nutzer können die Boardmittel nutzen.
+include::../_includes/default-attributes.inc.adoc[] 
 
-Mit folgenden daten kann eine Verbindung zur Virtuellen Maschine Aufgebaut werden:
-[cols="1,1"]
-|===
-| Adresse | seproject@iseproject03
-| Passwort| -
-| Bemerkung | nur innerhalb des HTW Intra-Netzes erreichbar 
-|===
+:doctype: book 
 
-Man befindet sich nun im Home-Verzeichnis der VM und kann die Installation der Software vornehemen.
+:imagesdir: images 
 
-Die Adresse muss bei Verwendung einer VM vom RZ angepasst werden.
+  
 
-=== Installation der Server-Software
-Im folgenden wird vorausgesetzt, dass die Installation in einer Linux Umgebung statt findet.
-Eine Adaption auf Windows ist ohne weiters möglich, allerdings gilt dies nur für die Installation.
-Weitere unter Kapitel  beziehen sich nur auf Linux Systeme.
+= Betriebsdokumentation: {project-name} 
 
-* Clonen des GitHub Repositorys
-[source, bash]
-----
-git clone https://github.com/jay-hae/SE-Projekt-I3.git
-----
+Jakob Häcker (JH) 
 
-Für das Starten des Servers auf einem Linux System gibt es 2 Möglichkeiten:
+08.Juli 2021 
 
-. manuelles starten mit Python 
-. das Starten und im Hintergrundlaufen lassen über ein System Unit (empfohlen)
+  
 
-==== manuelles starten mit Python
-Dafür ist es nur notwendig in dem Ordner src/ mit folgendem Befehl den Server zu starten:
-[source, bash]
-----
-python3.8 app.py
-----
-In der Ausgabe des Befehls ist nun die URL zu der Webseite zu finden.
+== Einführung 
 
-==== Anlegen einer Linux System Unit
-Eine System Unit ermöglicht es bestimmte Scripte im Hintergrund ausführen zulassen.
-Ein System Unit Script ist im geclonten Reposetory unter deploy_scripts/se_webserver.service
-Genaue Informationen sind bitte aus dem Internet zu entnehmen. Hier eine Empfehlung: https://wiki.ubuntuusers.de/systemd/Units/[]
+In diesem Dokument werden wichtige Hinweise und Anleitungen zur Installation und Wartung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden bereitgestellt. Das Ziel ist es dem Administrator alle notwendigen Schritte übersichtlich aufzuzeigen. 
 
-* System Unit in das Verzeichnis /etc/systemd/system/ kopieren oder dort selbst anlegen.
-[source, bash]
-----
-cp ./SE-Projekt-I3/deploy_scripts/se_webserver.service /etc/systemd/system/ 
-----
+  
 
-* System Unit registrieren und starten. 
-[source, bash]
-----
-sudo systemctl enable se_webserver.service
-sudo systemctl start se_webserver.service
-----
-Nach "systemctl start" ist der Webserver unter der URL zu erreichen, welche beim manuellen Starten des Servers angezeigt wird (siehe Vorheriges Kapitel).
+Das Hauptaugenmerk unseres Projektes ist es ein Web Frontend unter Nutzung einer gegebenen Datenbank zu erstellen. 
 
-[NOTE]
-====
-Um den Server wieder zu stoppen:
-[source, bash]
-----
-sudo systemctl stop se_webserver.service
-----
+Aus diesem Grund werden Datenbank spezifische Erläuterungen nicht vorgenommen. 
 
-Um das Systen Unit wieder zu Entfernen:
-[source, bash]
-----
-sudo systemctl disable se_webserver.service
-----
-====
+  
 
-== Datenbank
+Detaillierte Beschreibungen zur Bedienung der Software finden sich in der Anwenderdokumentation. 
 
-=== Einführung
-Die Datenbank kann mit dem Webinterface, welches unter dem Link: https://www2.htw-dresden.de/~aaapartnerhs/phpmyadmin/ zu ereichen ist, unabhängig zum Verwaltungsfrontend portiert, editiert und gebackuped werden.
-Diese Datenbank ist eine MariaDB und beinhaltet Daten zur Darstellung aller Hochschulen, Partnerschaftsverträge, Mentoren der HTW und Statistiken (wobei die Generierung und Anzeige der Statistiken im Verwaltungsfrontend nicht realisiert wurde).
+  
 
-Im Gegensatz zur ursprünglich genutzten Access Datenbank, beinhaltet diese keine personenbezogenen Daten von Studenten und nur noch öffentlich zugängliche Daten von Mentoren der HTW und Ansprechpartner der Hochschulen.
+== Systemvoraussetzungen 
 
-* Dadurch ist kein periodisches Löschen personenbezogener Daten notwendig.
+Um die Software erfolgreich zu installieren sind folgende Voraussetzungen zu erfüllen: 
 
-=== Import von einer Datenbank
-[NOTE]
-====
-Es ist bereits eine Datenbank vorhanden. Daher wird dieser Abschnitt lediglich zum einspielen von Backups Referenziert siehe <<_wie_spiele_ich_ein_manuelles_backup_ein>>
+  
 
-====
+* Software-Voraussetzungen: 
 
-Das Webinterface verlangt einen Datenbanknutzer, welcher von der Stabsstelle Internationales oder dem Rechenzentrum anzufragen ist.
+** Verbindung zum Intranet (der HTW)  
 
-Nach dem Login werden im linken Reiter die verfügbaren Datenbanken angezeigt.
-Wir wählen die Datenbank `aaapartnerhs` aus, dann Importieren, wählen die bereitgestellte SQL Datei (das Backup) `aaapartnerhs_final.sql` aus und bestätigen den Import.
+** mindestens ein Python3.x Interpreter (getestet mit Python3.8) 
 
-.Import der Datenbank
-image::Betrieb_ImportDB.jpg[]
+** GNU Bash (nur für das “deploy”-Skript) 
 
-Wenn unter aaapartnerhs nun gefüllte Tabellen zu finden sind, war der Import erfolgreich.
+  
 
+* innerhalb der HTW: 
 
-=== Aufbau
+** SSH-Programm (für UNIX zB. OpenSSH oder für Windows zB. Putty oder WinSCP) 
 
-In folgendem Diagramm wurden Spalten ohne Beziehungen weggelassen, um eine bessere Übersicht zu erzielen.
+** MariaDB bereitgestellt vom Rechenzentrum der HTW 
 
-[[phys_erm]]
-.physisches Entity-Relationship-Diagram
-image::../../development/images/physical_erm.svg[]
+  
 
-Die als HTW markierten Tabellen beinhalten Daten der HTW und nicht der Partnerhochschulen.
+* Hardware-Voraussetzungen: 
 
-Durch das mitgelieferte SQL Backup wird die gesamte Struktur mit Daten bereitgestellt. Innerhalb von phpMyAdmin besitzen fast alle Spalten Kommentare zur genaueren Erläuterung.
+  
 
-<<<
-// <<< erzwingt neue Seite
+[cols="1,1"] 
 
-=== Tabellen
+|=== 
 
-include::../development/design.adoc[tags=explain_tables]
+| Hardware | Virtuelle Maschine = Mindestanforderung 
 
-== FAQ
-[NOTE]
-====
-Auf den Bildern sind ggf. Nummern abgebildet, die ein Hinweis auf die Handlungsfolge geben.
+| CPUs     | 2 (uU. reicht eine)  
 
-====
+| RAM      | 4 GB  
 
-=== Wo finde ich den Link zum Verwaltungsfrontend?
+| Speicher (inklusive Platz für Ubuntu) | 35 GB 
 
-Diesen findet man wenn man app.py mit dem Pythoninterpreter auf dem Server ausführt.
-[source, bash]
-----
-python3.8 app.py
-----
+|=== 
 
-Wenn man sich nicht im Verzeichnis befindet, in dem die Datei app.py liegt, muss man den gesamten Pfad zu der Datei angeben.
-Siehe Kapitel "manuelles starten mit Python".
+  
 
-=== Was ist zu tun wenn das Verwaltungsfrontend nicht erreichbar ist obwohl der Server läuft?
+== Deployment 
 
-. Befindet man sich im HTW Netz?
-.. *Nein*: In das HTW Netz mit einem VPN Client einloggen.
-.. *Ja*: siehe nächster Punkt.
+Die folgenden Absätze beziehen sich nur noch auf das Deployment innerhalb des HTW-Netzes. 
 
-. Ist der richtige "Run-Mode" in den letzten 2 Zeilen app.py gesetzt?
-[source, python]
-----
-if __name__ == '__main__':
-    app.run(host="0.0.0.0") 
-----
+Mit geringfügigen Änderungen im Quelltext ist dies aber auch innerhalb anderer Umgebungen möglich. 
 
-. Wird der Server über die System Unit gesteuert?
-.. *Ja*: siehe nächster Punkt
+  
 
-. Ist im Quelltext der Unit der Richtige Pfad zu der Datei app.py angegeben?
-.. Das WorkingDirectory
+Wir gehen davon aus, dass das Rechenzentrum eine MariaDB mit der erforderlichen Datenstruktur bereitstellt. 
 
-=== Was ist zu tun wenn der Server nicht gestartet werden kann?
-. Ist der Server per SSH erreichbar?
-.. *Nein*: Mit dem Administrator des Servers in Verbindung setzen und erfragen was die Ursache ist.
-.. *Ja*: siehe nächster Punkt.
+Wie man das von dem Vorteam verwendete phpMyAdmin benutzt um die Datenbank mit MySQL befehlen zu bearbeiten oder neue Datenbanken zu importieren, verweisen wir wieder auf die Betriebsdokumentation unseres "Vorteams". 
 
-. erscheinen beim manuellen Ausführen der app.py Error Meldungen?
-.. *Ja*: 
-... Wenn Pythonbibliotheken fehlen, installieren Sie diese nach. Informieren sie sich unter https://www.python.org/
-... Installieren sie gegeben falls Python 3
-.. *Nein*: siehe nächster Punkt.
+  
 
-=== Wie kann man eine vorhandene Systemunit konfigurieren?
-. Die Systemunit abmelden mit 
-. Die Systemunit ändern (im Beispiel mit Vim)
-. dann diese wieder registrieren und evtl. starten
-[source, bash]
-----
-sudo systemctl disable se_webserver.service
-sudo vi /etc/systemd/system/se_webserver.service
+== Webserver   
 
-# Änderungen vornehemen und speichern
+Um ein Webserver innerhalb des HTW-Netzes mit den oben genannten Mindestanforderungen zu erhalten, muss man das Rechenzentrum der HTW kontaktieren. 
 
-sudo systemctl enable se_webserver.service
-sudo systemctl start se_webserver.service
-----
+Eine andere Möglichkeit besteht darin, einen Server selbst einzurichten. Dies wird allerdings nicht in diesem Dokument behandelt. 
 
-=== Wie kann man die Passwörter der Datenbank und des Servers ändern?
-. Für die Datenbank muss das Rechenzentrum gefragt werden
-. Auf den Server ist dies mit dem Befehl "passwd" getan
+Hier wird nur die Funktionsweise und Installation auf einer, vom Laborbereich der Fakultät Informatik, bereitgestellten Virtuellen Maschine gezeigt. Dies ist gleichbedeutend mit einer Installation auf einer, vom Rechenzentrum bereitgestellten, Virtuellen Maschine. 
 
-=== Gibt es automatische Backups?
-Ja, das Rechenzentrum macht periodisch Backups.
-Um diese Einzuspielen, muss das Rechenzentrum kontaktiert werden.
+Aufgrund dessen, dass die VM nur innerhalb des HTW Netzes erreichbar ist, ist keine IP-Sperre über eine .htaccess Datei nötig. Falls diese doch benötigt wird findet sich eine Anleitung in der Betriebsdokumentation des Vorteams im Abschnitt 3.1.3. 
 
-=== Wie erstelle ich ein manuelles Backup?
+  
 
-Periodisch ist das gar nicht nötig, da das Rechenzentrum automatische Backups anlegt. Bei Änderungen durch phpMyAdmin schadet aber auch ein Backup nicht, besonders da die Ausgabe eine lesbare SQL Textdatei ist.
+=== Verbindung auf die Virtuelle Maschine 
+
+Unter Windows empfiehlt sich die Nutzung von WinSCP zum Übertragen von Daten per SSH, Linux Nutzer können die Boardmittel nutzen. 
+
+  
+
+Mit folgenden Daten kann eine Verbindung zur Virtuellen Maschine aufgebaut werden: 
+
+[cols="1,1"] 
+
+|=== 
+
+| Adresse | seproject@iseproject03 
+
+| Passwort| - 
+
+| Bemerkung | nur innerhalb des HTW Intra-Netzes erreichbar  
+
+|=== 
+
+  
+
+Man befindet sich nun im Home-Verzeichnis der VM und kann die Installation der Software vornehmen. 
+
+  
+
+Die Adresse muss bei Verwendung einer VM vom RZ angepasst werden. 
+
+  
+
+=== Installation der Server-Software 
+
+Im Folgenden wird vorausgesetzt, dass die Installation in einer Linux Umgebung stattfindet. 
+
+Eine Adaption auf Windows ist ohne weiters möglich, allerdings gilt dies nur für die Installation. 
+
+Weitere Kapitel beziehen sich nur auf Linux Systeme. 
+
+  
+
+* Clonen des GitHub Repositorys 
+
+[source, bash] 
+
+---- 
+
+git clone https://github.com/jay-hae/SE-Projekt-I3.git 
+
+---- 
+
+  
+
+Für das Starten des Servers auf einem Linux System gibt es 2 Möglichkeiten: 
+
+  
+
+. manuelles starten mit Python  
+
+. das Starten und im Hintergrundlaufen lassen über ein System Unit (empfohlen) 
+
+  
+
+==== manuelles starten mit Python 
+
+Dafür ist es nur notwendig in dem Ordner src/ mit folgendem Befehl den Server zu starten: 
+
+[source, bash] 
+
+---- 
+
+python3.8 app.py 
+
+---- 
+
+In der Ausgabe des Befehls ist nun die URL zu der Webseite zu finden. 
+
+  
+
+==== Anlegen einer Linux System Unit 
+
+Eine System Unit ermöglicht es bestimmte Skripte im Hintergrund ausführen zulassen. 
+
+Ein System Unit Skript ist im geclonten Reposetory unter deploy_scripts/se_webserver.service 
+
+Genaue Informationen sind bitte aus dem Internet zu entnehmen. Hier eine Empfehlung: https://wiki.ubuntuusers.de/systemd/Units/[] 
+
+  
+
+* System Unit in das Verzeichnis /etc/systemd/system/ kopieren oder dort selbst anlegen. 
+
+[source, bash] 
+
+---- 
+
+cp ./SE-Projekt-I3/deploy_scripts/se_webserver.service /etc/systemd/system/  
+
+---- 
+
+  
+
+* System Unit registrieren und starten.  
+
+[source, bash] 
+
+---- 
+
+sudo systemctl enable se_webserver.service 
+
+sudo systemctl start se_webserver.service 
+
+---- 
+
+Nach "systemctl start" ist der Webserver unter der URL zu erreichen, welche beim manuellen Starten des Servers angezeigt wird (siehe Vorheriges Kapitel). 
+
+  
+
+[NOTE] 
+
+==== 
+
+Um den Server wieder zu stoppen: 
+
+[source, bash] 
+
+---- 
+
+sudo systemctl stop se_webserver.service 
+
+---- 
+
+  
+
+Um das Systen Unit wieder zu Entfernen: 
+
+[source, bash] 
+
+---- 
+
+sudo systemctl disable se_webserver.service 
+
+---- 
+
+==== 
+
+  
+
+== Datenbank 
+
+  
+
+=== Einführung 
+
+Die Datenbank kann mit dem Webinterface, welches unter dem Link: https://www2.htw-dresden.de/~aaapartnerhs/phpmyadmin/ zu ereichen ist, unabhängig zum Verwaltungsfrontend portiert, editiert und gebackuped werden. 
+
+Diese Datenbank ist eine MariaDB und beinhaltet Daten zur Darstellung aller Hochschulen, Partnerschaftsverträge, Mentoren der HTW und Statistiken (wobei die Generierung und Anzeige der Statistiken im Verwaltungsfrontend nicht realisiert wurde). 
+
+  
+
+Im Gegensatz zur ursprünglich genutzten Access Datenbank, beinhaltet diese keine personenbezogenen Daten von Studenten und nur noch öffentlich zugängliche Daten von Mentoren der HTW und Ansprechpartner der Hochschulen. 
+
+  
+
+* Dadurch ist kein periodisches Löschen personenbezogener Daten notwendig. 
+
+  
+
+=== Import von einer Datenbank 
+
+[NOTE] 
+
+==== 
+
+Es ist bereits eine Datenbank vorhanden. Daher wird dieser Abschnitt lediglich zum einspielen von Backups Referenziert siehe <<_wie_spiele_ich_ein_manuelles_backup_ein>> 
+
+  
+
+==== 
+
+  
+
+Das Webinterface verlangt einen Datenbanknutzer, welcher von der Stabsstelle Internationales oder dem Rechenzentrum anzufragen ist. 
+
+  
+
+Nach dem Login werden im linken Reiter die verfügbaren Datenbanken angezeigt. 
+
+Wir wählen die Datenbank `aaapartnerhs` aus, dann Importieren, wählen die bereitgestellte SQL Datei (das Backup) `aaapartnerhs_final.sql` aus und bestätigen den Import. 
+
+  
+
+.Import der Datenbank 
+
+image::Betrieb_ImportDB.jpg[] 
+
+  
+
+Wenn unter aaapartnerhs nun gefüllte Tabellen zu finden sind, war der Import erfolgreich. 
+
+  
+
+  
+
+=== Aufbau 
+
+  
+
+In folgendem Diagramm wurden Spalten ohne Beziehungen weggelassen, um eine bessere Übersicht zu erzielen. 
+
+  
+
+[[phys_erm]] 
+
+.physisches Entity-Relationship-Diagram 
+
+image::../../development/images/physical_erm.svg[] 
+
+  
+
+Die als HTW markierten Tabellen beinhalten Daten der HTW und nicht der Partnerhochschulen. 
+
+  
+
+Durch das mitgelieferte SQL Backup wird die gesamte Struktur mit Daten bereitgestellt. Innerhalb von phpMyAdmin besitzen fast alle Spalten Kommentare zur genaueren Erläuterung. 
+
+  
+
+<<< 
+
+// <<< erzwingt neue Seite 
+
+  
+
+=== Tabellen 
+
+  
+
+include::../development/design.adoc[tags=explain_tables] 
+
+  
+
+== FAQ 
+
+[NOTE] 
+
+==== 
+
+Auf den Bildern sind ggf. Nummern abgebildet, die ein Hinweis auf die Handlungsfolge geben. 
+
+  
+
+==== 
+
+  
+
+=== Wo finde ich den Link zum Verwaltungsfrontend? 
+
+  
+
+Diesen findet man wenn man app.py mit dem Python Interpreter auf dem Server ausführt. 
+
+[source, bash] 
+
+---- 
+
+python3.8 app.py 
+
+---- 
+
+  
+
+Wenn man sich nicht im Verzeichnis befindet, in dem die Datei app.py liegt, muss man den gesamten Pfad zu der Datei angeben. 
+
+Siehe Kapitel "manuelles starten mit Python". 
+
+  
+
+=== Was ist zu tun wenn das Verwaltungsfrontend nicht erreichbar ist obwohl der Server läuft? 
+
+  
+
+. Befindet man sich im HTW Netz? 
+
+.. *Nein*: In das HTW Netz mit einem VPN Client einloggen. 
+
+.. *Ja*: siehe nächster Punkt. 
+
+  
+
+. Ist der richtige "Run-Mode" in den letzten 2 Zeilen app.py gesetzt? 
+
+[source, python] 
+
+---- 
+
+if __name__ == '__main__': 
+
+    app.run(host="0.0.0.0")  
+
+---- 
+
+  
+
+. Wird der Server über die System Unit gesteuert? 
+
+.. *Ja*: siehe nächster Punkt 
+
+  
+
+. Ist im Quelltext der Unit der Richtige Pfad zu der Datei app.py angegeben? 
+
+.. Das WorkingDirectory 
+
+  
+
+=== Was ist zu tun wenn der Server nicht gestartet werden kann? 
+
+. Ist der Server per SSH erreichbar? 
+
+.. *Nein*: Mit dem Administrator des Servers in Verbindung setzen und erfragen was die Ursache ist. 
+
+.. *Ja*: siehe nächster Punkt. 
+
+  
+
+. erscheinen beim manuellen Ausführen der app.py Error Meldungen? 
+
+.. *Ja*:  
+
+... Wenn Python Bibliotheken fehlen, installieren Sie diese nach. Informieren sie sich unter https://www.python.org/ 
+
+... Installieren sie gegebenenfalls Python 3 
+
+.. *Nein*: siehe nächster Punkt. 
+
+  
+
+=== Wie kann man eine vorhandene Systemunit konfigurieren? 
+
+. Die Systemunit abmelden mit  
+
+. Die Systemunit ändern (im Beispiel mit Vim) 
+
+. dann diese wieder registrieren und evtl. starten 
+
+[source, bash] 
+
+---- 
+
+sudo systemctl disable se_webserver.service 
+
+sudo vi /etc/systemd/system/se_webserver.service 
+
+  
+
+# Änderungen vornehmen und speichern 
+
+  
+
+sudo systemctl enable se_webserver.service 
+
+sudo systemctl start se_webserver.service 
+
+---- 
+
+  
+
+=== Wie kann man die Passwörter der Datenbank und des Servers ändern? 
+
+. Für die Datenbank muss das Rechenzentrum gefragt werden 
+
+. Auf den Server ist dies mit dem Befehl "passwd" getan 
+
+  
+
+=== Gibt es automatische Backups? 
+
+Ja, das Rechenzentrum macht periodisch Backups. 
+
+Um diese Einzuspielen, muss das Rechenzentrum kontaktiert werden. 
+
+  
+
+=== Wie erstelle ich ein manuelles Backup? 
+
+  
+
+Periodisch ist das gar nicht nötig, da das Rechenzentrum automatische Backups anlegt. Bei Änderungen durch phpMyAdmin schadet aber auch ein Backup nicht.  
+
+==== komplett  
+
+  
+
+Hilfreich sollte sich etwas an der Datenbankstruktur ändern oder ein komplettes Backup gewünscht sein. 
+
+  
+
+.Backup der Struktur und Daten 
+
+image::Betrieb_complete_backup.jpg[] 
+
+  
+
+. Datenbank auswählen 
+
+. Exportieren 
+
+. Exportmethode: Schnell - Format SQL 
+
+  
+
+<<< 
+
+  
+
+==== nur Daten 
+
+  
+
+.Backup der Daten 
+
+image::Betrieb_data_only_backup.jpg[] 
+
+  
+
+. Datenbank auswählen 
+
+. Exportieren 
+
+. Exportmethode: angepasst 
+
+. Häkchen aus Struktur entfernen 
+
+. alle anderen Optionen ignorieren, herunterscrollen und bestätigen 
+
+  
+
+=== Wie spiele ich ein manuelles Backup ein? 
+
+  
 
 ==== komplett 
 
-Hilfreich sollte sich etwas an der Datenbankstruktur ändern oder ein komplettes Backup gewünscht sein.
+Damit ein komplettes Backup manuell eingespielt werden darf die Datenbank keine Tabellen beinhalten. 
 
-.Backup der Struktur und Daten
-image::Betrieb_complete_backup.jpg[]
+  
 
-. Datenbank auswählen
-. Exportieren
-. Exportmethode: Schnell - Format SQL
+.Tabellen löschen 
 
-<<<
+image::Betrieb_drop_table.jpg[] 
 
-==== nur Daten
+  
 
-.Backup der Daten
-image::Betrieb_data_only_backup.jpg[]
+Zum Wiedereinspielen betrachten Sie die Importanweisungen unter <<_testen_der_verbindung_und_import_der_db>>.  
 
-. Datenbank auswählen
-. Exportieren
-. Exportmethode: angepasst
-. Häkchen aus Struktur entfernen
-. alle anderen Optionen ignorieren, herunterscrollen und bestätigen
+  
 
-=== Wie spiele ich ein manuelles Backup ein?
+==== nur Daten 
 
-==== komplett
-Damit ein komplettes Backup manuell eingespielt werden darf die Datenbank keine Tabellen beinhalten.
+Um ein reines Datenbackup einzuspielen, müssen die Tabellen leer sein. Gehen Sie genau so wie beim Einspielen eines kompletten Backups vor, aber wählen Sie im Schritt 3 `Leeren` aus. 
 
-.Tabellen löschen
-image::Betrieb_drop_table.jpg[]
+  
 
-Zum Wiedereinspielen betrachten Sie die Importanweisungen unter <<_testen_der_verbindung_und_import_der_db>>. 
+Zum Wiedereinspielen betrachten Sie die Importanweisungen unter <<_testen_der_verbindung_und_import_der_db>>.  
 
-==== nur Daten
-Um ein reines Daten Backup einzuspielen müssen die Tabellen leer sein. Gehen Sie genau so wie beim Einspielen eines kompletten Backups vor, aber wählen Sie im Schritt 3 `Leeren` aus.
+ 
 
-Zum Wiedereinspielen betrachten Sie die Importanweisungen unter <<_testen_der_verbindung_und_import_der_db>>. 
-
+ 
