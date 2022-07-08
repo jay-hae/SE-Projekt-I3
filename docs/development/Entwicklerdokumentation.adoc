@@ -28,11 +28,11 @@ Thanh Ha Khuong (HK) und Jens Rosenkranz (JR)
 
 //TODO maybe change back tocleve to 3?
 
-=== Einführung
+== Einführung
 
 Dieses Dokument beinhaltet alle wichtigen Informationen über den Aufbau, die Wirkungsweise und den Inhalt des Quellcodes für das Projekt Webanwendung zur Verwaltung von Hochschulpartnerschaften. Diese Informationen dienen dazu, die Software zu warten, zu modifizieren oder gegebenenfalls weiterzuentwickeln.
 
-//== Architektur
+== Architektur
 
 :leveloffset: +1
 
