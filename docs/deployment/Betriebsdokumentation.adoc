@@ -11,7 +11,7 @@ Jakob Häcker (JH)
 In diesem Dokument werden wichtige Hinweise und Anleitungen zur Installation und Wartung der Software für die Verwaltung der Partnerhochschulen der HTW Dresden bereitgestellt. Das Ziel ist es dem Administrator alle notwendigen Schritte übersichtlich aufzuzeigen.
 
 Das Hauptaugenmerk unseres Projektes ist es ein Webfrontend unter Nutzung einer gegebenen Datenbank zu erstellen.
-Von daher werden Datenbank spezifische Erläuterungen nicht vorgenommen.
+Aus diesem Grund werden Datenbank spezifische Erläuterungen nicht vorgenommen.
 
 Detaillierte Beschreibungen zur Bedienung der Software finden sich in der Anwenderdokumentation.
 
@@ -47,13 +47,13 @@ Wie man das von dem Vorteam verwendete phpMyAdmin benutzt um die Datenbank mit M
 == Webserver  
 Um ein Webserver innerhalb des HTW-Netzes mit den oben genannten Mindestanforderungen zu erhalten, muss man das Rechenzentrum der HTW kontaktieren.
 Eine andere Möglichkeit besteht darin, einen Server selbst einzurichten. Dies wird allerdings nicht in diesem Dokument behandelt.
-Hier wird nur die Funktionsweise und Installation auf einer vom Laborbereich der Fakultät Informatik bereitgestellten Virtuellen Maschine gezeigt. Dies ist gleich bedeutend mit einer Installation auf einer, vom Rechenzentrum bereitgestellten, Virtuellen Maschine.
-Aufgrund dessen, dass die VM nur innerhalb des HTW Netzes erreichbar ist, ist keine IP sperre über eine .htaccess Datei nötig. Falls diese doch benötigt wird findet sich eine Anleitung in der Betreibsdokumentation des Vorteams im abschnitt 3.1.3.
+Hier wird nur die Funktionsweise und Installation auf einer, vom Laborbereich der Fakultät Informatik, bereitgestellten Virtuellen Maschine gezeigt. Dies ist gleich bedeutend mit einer Installation auf einer, vom Rechenzentrum bereitgestellten, Virtuellen Maschine.
+Aufgrund dessen, dass die VM nur innerhalb des HTW Netzes erreichbar ist, ist keine IP-Sperre über eine .htaccess Datei nötig. Falls diese doch benötigt wird findet sich eine Anleitung in der Betreibsdokumentation des Vorteams im Abschnitt 3.1.3.
 
-=== Verbindung auf die Virtuelle Maschiene
+=== Verbindung auf die Virtuelle Maschine
 Unter Windows empfiehlt sich die Nutzung von WinSCP zum Übertragen von Daten per SSH, Linux Nutzer können die Boardmittel nutzen.
 
-Mit folgenden daten kann eine Verbindung zur Virtuellen Maschine Aufgebaut werden:
+Mit folgenden Daten kann eine Verbindung zur Virtuellen Maschine aufgebaut werden:
 [cols="1,1"]
 |===
 | Adresse | seproject@iseproject03
@@ -68,7 +68,7 @@ Die Adresse muss bei Verwendung einer VM vom RZ angepasst werden.
 === Installation der Server-Software
 Im folgenden wird vorausgesetzt, dass die Installation in einer Linux Umgebung statt findet.
 Eine Adaption auf Windows ist ohne weiters möglich, allerdings gilt dies nur für die Installation.
-Weitere unter Kapitel  beziehen sich nur auf Linux Systeme.
+Weitere Kapitel beziehen sich nur auf Linux Systeme.
 
 * Clonen des GitHub Repositorys
 [source, bash]
@@ -215,7 +215,7 @@ if __name__ == '__main__':
 . erscheinen beim manuellen Ausführen der app.py Error Meldungen?
 .. *Ja*: 
 ... Wenn Pythonbibliotheken fehlen, installieren Sie diese nach. Informieren sie sich unter https://www.python.org/
-... Installieren sie gegeben falls Python 3
+... Installieren sie gegebenenfalls Python 3
 .. *Nein*: siehe nächster Punkt.
 
 === Wie kann man eine vorhandene Systemunit konfigurieren?
@@ -280,7 +280,7 @@ image::Betrieb_drop_table.jpg[]
 Zum Wiedereinspielen betrachten Sie die Importanweisungen unter <<_testen_der_verbindung_und_import_der_db>>. 
 
 ==== nur Daten
-Um ein reines Daten Backup einzuspielen müssen die Tabellen leer sein. Gehen Sie genau so wie beim Einspielen eines kompletten Backups vor, aber wählen Sie im Schritt 3 `Leeren` aus.
+Um ein reines Datenbackup einzuspielen, müssen die Tabellen leer sein. Gehen Sie genau so wie beim Einspielen eines kompletten Backups vor, aber wählen Sie im Schritt 3 `Leeren` aus.
 
 Zum Wiedereinspielen betrachten Sie die Importanweisungen unter <<_testen_der_verbindung_und_import_der_db>>. 
 
