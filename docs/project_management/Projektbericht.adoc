@@ -188,10 +188,11 @@ Am Ende der Elaborationsphase konnte das Team, die im ersten Semester geforderte
 
 === Construction
 
-Mit dem vierten Semester begann die dritte Phase des Projekts, die Construction Phase. In den Semesterferien hatten die Teammitglieder Gelegenheit das vergangene Semester und die ersten Phasen des Projektes zu reflektieren und sind zu dem Schluss gekommen, ihre Arbeitsweise effektiver gestalten zu wollen und die Rollen so zu verteilen wie es sich durch das bisherige Engagement ergeben hat. Der Beginn unseres 2. Projekt-Semesters begann also mit einer Umstrukturierung des Teams.
-Da in den ersten beiden Phasen die Zuweisung der Rollen in der Projektpraxis meist nicht der Aufgabenzuteilung entsprachen, haben sich die tatsächlichen Rollen auf die Teammitglieder verschoben. Bisher wurden wöchentlich einzelne Detail-Aufgaben identifiziert und in den Meetings verteilt. 
+Mit dem vierten Semester begann die dritte Phase des Projekts, die Construction Phase. In den Semesterferien hatten die Teammitglieder Gelegenheit das vergangene Semester und die ersten Phasen des Projektes zu reflektieren und sind zu dem Schluss gekommen, ihre Arbeitsweise effektiver gestalten zu wollen und die Rollen so zu verteilen wie es sich durch das bisherige Engagement ergeben hat. Das 2. Projekt-Semesters begann also mit einer Umstrukturierung des Teams.
+Da in den ersten beiden Phasen die Zuweisung der Rollen in der Projektpraxis meist nicht der Aufgabenzuteilung entsprachen, haben sich die tatsächlichen Rollen der Teammitglieder verschoben. Bisher wurden wöchentlich einzelne Detail-Aufgaben identifiziert und in den Meetings verteilt. 
 Stattdessen wurden kleine Arbeitsgruppen vereinbart, die einen ganzen Bereich übernehmen sollten. Roman Patzig und Patrick Matthes waren ab sofort für das Testen verantwortlich, Nico Rosenkranz für das Aktualisieren der Anforderungsspezifikaton, Luca Meißner für die Anwenderdokumentation und Jakob Häcker für die Betriebsdokumentation. Pascal Thielemann sollte weiter als Hauptprogrammierer agiern mit der Unterstützung durch Thanh Ha Khuong und Jens Rosenkranz, die außerdem die Entwicklerdokumentation übernehmen sollten.
-Dieses Konzept des eigenverantwortlichen Arbeitens, gepaart mit klaren Deadlines und Arbeitszielen hat sich schnell als effektiv herausgestellt. Das Hauptaugenmerk dieser Phase sollte auf der Implementierung liegen. 
+Dieses Konzept des eigenverantwortlichen Arbeitens, gepaart mit klaren Deadlines und Arbeitszielen hat sich schnell als effektiv herausgestellt. Das Hauptaugenmerk dieser Phase sollte auf der Implementierung liegen. Glücklicherweise konnten ab dieser Phase weitere Teammitglieder bei der Softwareprogrammierung unterstützen und den Prozess somit beschleunigen. 
+Weiterhin hat sich das Team eine einfache Erweiterbarkeit und Wartbarkeit ihrer Software zum Ziel gesetzt und sich um eine ausführliche Softwaredokumentation, eindeutige und sprechende Benennung der Dateien und Variablen bemüht.
 
 ==== Ziele
 
@@ -199,48 +200,35 @@ Dieses Konzept des eigenverantwortlichen Arbeitens, gepaart mit klaren Deadlines
 * Implementierung der Funktionalitäten 
 * Definition und Durchführung der Tests
 * Vorbereitung Zielumgebung für Installation
-* Erweiterbarkeit der Software prüfen
+* Erweiterbarkeit der Software prüfen und verbessern
 
 ==== Problem 
 
 ===== Retrospektive
 
-Eines der größten Probleme ware es die Reflexion der Teammitglierder in Eigenverantwortung gegeben zu haben. Damit ist es zwar gelungen im einzelnen Methoden zur Arbietseffektivitätssteigerung zu erzielen aber keine wirksamen Maßnahmen in der Verbesserung unserer Zusammenarbeit zu entwickeln.
+Eine der größten Herausforderungen war es regelmäßig und methodisch Reflexionen der Teammitglieder durchzuführen. 
 Dadurch fiel ein wichtiger Mechanismus der Rückkopplung weg.
-Eine groß angelegte Retrospektive, welche nicht zu den regulären Arbeitsmeetings statt fand, wurde durch die disjunkten Terminkalender vereitelt.
-Eine Retrospektive zu den Arbeitsmeetings wurde, als nicht Sinnvoll erachtete, da uns dadurch wichtige Arbeitszeit abhanden ging, die wir aus damaliger perspektive als wichtiger empfanden.
-Angestoßene kleiener Retrospektiven, am Ende von den Meetings, waren wegen gesunkener Konzentration und schlechter Vor- und Nachbereitung wirkungslos.
+Eine Retrospektive mit dem gesamten Team konnte nicht stattfinden, da es bis zuletzt nicht möglich war, einen Termin zu finden an dem alle Teammitglieder teilnehmen konnten.
+Eine Retrospektive zu den Arbeitsmeetings wurde von den meisten Teammitgliedern als nicht sinnvoll erachtet, da dem Team dadurch wichtige Arbeitszeit für die Implementierung und Dokumentation gefehlt hätte.
+Kleinere eher unstrukturierte Retrospektiven am Ende der Teammeetings konnten aber die Stimmung innerhalb der Teams verbessern und haben zu einem besseren Gruppengefühl und einer höheren Motivation geführt.
 
 
 ==== Ergebnisse
 
-Glücklicherweise konnten ab dieser Phase weitere Teammitglieder bei der Softwareprogrammierung unterstützen und den Prozess somit beschleunigen. 
-Weiterhin hat sich das Team eine einfache Erweiterbarkeit und Wartbarkeit ihrer Software zum Ziel gesetzt und sich um eine ausführliche Softwaredokumentation, eindeutige und sprechende Benennung der Dateien und Variablen bemüht.
 Zum Ende der Constructionphase konnten die wichtigsten Funktionalitäten der Webanwendung umgesetzt werden und das Design entsprechend der Wünsche durch den Kunden angepasst werden.
-Dabei wurde das Design des User Interfaces größtenteils durch Thanh Ha Khuong übernommen, die Zuständigkeit über die Implementierung blieb bei Pascal Thielemann.
-Im Zusammenspiel der Entwickler,  entwickelte sich die Software relativ zügig in die richtige Richtung.
-Die, für die Themensteller, wichtigsten Use Cases konnten erfolgreich implementiert werden, wobei Bugfixing einen großen Teil der Arbeit ausmachte.
-Unsere Programmstruktur bekam noch kleine Anpassungen, aber für große Änderungen war es zu spät.
-Die Softwaredokumentation konnte ebenso zugroßen Teilen abgeschlossen und in die Entwicklerdokumentation eingegliedert werden.
-Die in der letzten Phase vereinbarten Tests sind größtenteils erfolgreich verlaufen und das Erreichen der angestrebten Anforderungen konnte dadurch bewiesen werden. 
+Das Design des User Interfaces wurde hauptsächlich durch Thanh Ha Khuong umgesetzt. 
+Im Zusammenspiel der Entwickler Thielemann, Khuong und Rosenkranz entwickelte sich die Software relativ zügig hin zu einem funktionalen Prototypen.
+Die für die SI wichtigsten Use Cases konnten erfolgreich implementiert werden. Zum Ende der Construction Phase bestand ein Großteil der Arbeit aus Bugfixing.
+Die Softwaredokumentation konnte ebenso zu großen Teilen abgeschlossen und in die Entwicklerdokumentation eingegliedert werden.
+Die in der vorangegangen Phase vereinbarten Tests sind größtenteils erfolgreich verlaufen und das Erreichen der angestrebten Anforderungen konnte durch sie bewiesen werden. 
 
 
 === Transition
 
-
-Das Ende unserer Projektarbeit kam mit großen Schritten auf uns zu.
-Das eigenverantwortliche Arbeiten lief aus unsere Perspektive sehr gut.
-Dadurch war es möglich sehr einfach parallel zur Entwicklung die finalen Dokumentationen zu schreiben.
-Diese zeigten uns auf was noch fehlte und während der Construction-Phase zurück blieb.
-Darunter fiel die Software auf eine einfache Installation auf andere System vorzubereiten, was eine Änderungen unsere Ordnerstruktur in Quellcode-Ordnern zur Folge hatte.
-Beim Testen fielen dadurch schlecht formulierte Systemweiteanforderungen auf, die es zu überarbeiten galt.
-Der großteils fertige Softwarecode, wurde darauf hin ebenfalls logischer strukturiert und besser kommentiert. 
-
-Als wir jedoch mit unserem Coach Rücksprache über den Stand in unserer Entwicklung hielten, ist aufgefallen, dass unser Zeitplan doch zu optimistisch war und wir trotz unserer agil geglaubten Arbeitsweise wieder in alte muster fielen, welche leider doch größere Ähnlichkeiten zu dem Wasserfallmodell hatte als wir angenommen hatten.
-(Hinweise darauf gab es, aus jetziger Perspektive, viele. Zum Beispiel, dass erst am Ende der Entwicklung die Konzentration auf das Testen lag).
-Er riet uns also keine neue Funktionalitäten zu implementieren, sondern die bestehenden Funktionalitäten zu einem sauberen Ende zu bringen.
-Ein großer Vorteil für uns und unseren Themensteller:Innen war es, mit der SI einen Probe-Abgabe-Termin vereinbart zu haben. 
-In dem wir die Zeit hatten über kleiner Bugs zusprechen, die wir noch ändern konnten, und einen Strategie zu entwickeln wie wir mit den fehlenden Use-Cases umgehen konnten.
+In der Tansitionphase wurde weiter am Konzept des eigenverantwortlichen Arbeitens festgehalten.  Nachdem die Implementierung und das Bugfixing abgeschlossen waren, galt es die Übergabe an die SI vorzubereiten.
+Dazu musste die Software zum Zweck einer einfachen Installation auf anderen Systemen angepasst werden, was eine Änderungen der Ordnerstruktur in den Quellcode-Ordnern erforderte. Der Softwarecode wurde daraufhin ebenfalls umstrukturiert und im Zuge der Sofrwaredokumentation ausführtlich kommentiert. 
+Durch das Testen wurden unzureichend formulierte Systemweiteanforderungen identifiziert, die daraufhin ebenfalls überarbeitet wurden. 
+Im Meeting mit der SI zur Abnahme der Webanwendung wurde die fertige Software präsentiert und die fehlenden Funktionalitäten besprochen und notiert. 
 
 ==== Ziele
 
@@ -257,28 +245,22 @@ In dem wir die Zeit hatten über kleiner Bugs zusprechen, die wir noch ändern k
 
 ==== Problem 
 
+=== geringe Agilität in der Entwicklung
+
+In einem Gespräch mit dem Team-Coach Herrn Ringel wurde das Vorgehen bei der Entwicklung der Software besprochen. Dabei hat das Team reflektiert, dass die Arbeitsweise des Teams nicht vollständig den Prinzipien der agilen Softwareentwicklung entsprochen hat. Beispielsweise hat das Team erst zum Ende der Entwicklung mit dem Testen begonnen und schon sehr früh mit der Implementierung von komplexen Funktionalitäten begonnen. Andererseits wurden aber zu jedem Zeitpunkt Anforderungen durch die Themensteller:Innen aufgenommen, sowie die Ziele und Risiken überprüft und angepasst.
+
 ===== Einige Use Cases konnten nicht umgesetzt werden
 
-Nach dem Meeting mit Herrn Ringel war offensichtlich, dass nicht mehr alle ursprünglich vereinbarten Funktionen der Software umgesetzt werden können. Während die Umsetzung der Funktion zur Erstellung von Statistiken leicht möglich wäre, fehlte dazu am Ende einfach die Zeit. Stattdessen hat sich das Team auf eine erfolgreiche Umsetzung der wichtigsten Use Cases und auf einen leicht erweiterbaren Code konzentriert.
+Inn Rücksprache mit Herrn Ringel wurde beschlossen, dass nicht mehr alle ursprünglich vereinbarten Funktionen der Software umgesetzt werden. Während die Umsetzung der Funktion zur Erstellung von Statistiken leicht möglich wäre, hätte dies aus zeitgründen die Fertigstellung der Hauptfunktionalitäten gefährdet. Stattdessen hat sich das Team auf eine erfolgreiche Umsetzung der wichtigsten Use Cases und auf einen leicht erweiterbaren Code konzentriert.
 
 ===== neue Anforderungen durch Kunden
 
-Wir konnten unseren Themensteller:Innen zwar bereits eine weitläufig funktionsfähige Software zu testzwecken bereitstellen. Jedoch ist es dadurch kundenseitig zu neuen Anforderungen und Wünschen gekommen, die wir in der verbleibenden Zeit nicht mehr umsetzen konnten. (Diese lagen außerhalb unser vorher definierten Anforderungen) 
-Wir konnten den Themenstellern allerdings versichern, dass wir für etwaige Folgeteams die Erweiterbarkeit auf einem möglichst hohen Level bringen werden.
-
+Das Team konnte den Themensteller:Innen in dieser Phase bereits eine größtenteils funktionsfähige Software zu Testzwecken bereitstellen. Durch die Arbeit mit der Software ist es kundenseitig zu neuen Anforderungen und Wünschen gekommen, die in der verbleibenden Zeit nicht mehr umgesetzt werden konnten. Das Team hat den Themensteller:Innen aber versichert, dass die Erweiterung für etwaige Folgeteams oder eine studentische Hilfkraft der SI möglich sei.
 
 ==== Ergebnisse
 
-Es ist uns gelungen eine einsatzfähige Software zu entwickeln, welche für die wichtigsten Use-Cases kohärent ist. Die fehlenden Use-Cases sind wegen einer guten Priorisierung nicht allzu ausschlaggebend.
-Alle Dokumentation konnten, mit der Erfahrung aus dem ersten Projekt-Semester, in viel unaufwendigerer Weise produziert und ohne großen Stress am Ende des Projektes finalisiert werden.
+Zum Ende dieser Projektphase konnte die Software fertiggestellt und übergeben werden. Die zum Projektabschluss erforderlichen Dokumente konnten mit der Erfahrung aus dem ersten Projekt-Semester in viel effektiverer Weise erstellt und finalisiert werden. 
 
-Was leider, über die gesamte Projektdauer nicht wirklich gelungen war, sind die Konzepte "proof of work" und "proof of concept" wirkungsvoll umzusetzen.
-Gründe dafür wurden in dem Unterkapitel "Retrospektive" erläutert. In dem Kapitel "Kritik am Way of Work" wurde bereits diese Schwachstelle unserer Teamarbeit bereits genannt.
-Doch gerade des wegen ist es deutlich geworden, was man bei einem erneuten Software Projekt in Teamarbeit verbessern kann.
-Dies ist zum einen sich die Zeit für Retrospektiven und Zeit für die Planung zu nehmen und andererseits eine bessere Infrastruktur zur Dokumentation von einzelnen Entscheidungen und Handlungsschritten bereit zustellen.
-Des Weiteren ist es wichtig in den Meetings genauer auf Vorteile einer Veränderten Projekt Organisation hinzuweisen und ein Bewusstsein dafür zu schaffen, was nicht gut funktioniert.
-
-Doch gerade desswegen können wir behaupten viel geschafft, geleistet und gelernt zu haben.
 
 === Informationen zum Softwaresystem
 
