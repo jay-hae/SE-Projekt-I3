@@ -1,6 +1,9 @@
 include::../_includes/default-attributes.inc.adoc[]
+:doctype: book
 
 = Projektbericht: {project-name} 
+Jens Rosenkranz (JR) und Jakob Häcker (JH)
+{localtime}
 
 <<<
     
